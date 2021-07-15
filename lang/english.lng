@@ -1,0 +1,222 @@
+##grflangid 0x01
+
+lang: 7F
+
+STR_GRF_NAME :JP+ Engines & Wagons v0.10.0
+STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, (c) 2021 GPLv2+.
+
+STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
+STR_PARAM_DESC_BASECOSTMODBUY	:Ajdust vehicle purchase costs, to match Japan Set
+
+STR_PARAM_NAME_BASECOSTMODRUN	:Running costs
+STR_PARAM_DESC_BASECOSTMODRUN	:Adjust vehicle running costs, to match Japan Set
+
+STR_PARAM_VLOW		:Very Low
+STR_PARAM_LOW		:Low
+STR_PARAM_NORMAL	:Normal
+STR_PARAM_HIGH		:High
+STR_PARAM_VHIGH		:Very High
+
+STR_ERROR_JAPANSETTRAINS	:Must be loaded after Japan Set 3: Trains!
+
+STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
+
+STR_NAME_JNR_DD54	:DD54 (diesel)
+STR_NAME_JNR_EB10	:EB10 (electric)
+STR_NAME_JNR_EF30	:EF30 (electric)
+STR_NAME_JNR_EF60	:EF60 (electric)
+STR_NAME_JNR_EF63	:EF63 (electric)
+STR_NAME_JNR_ED53	:ED19 / ED53 (electric)
+STR_NAME_JNR_ED62	:ED61 / ED62 (electric)
+STR_NAME_JNR_ED70	:ED70 (electric)
+STR_NAME_JNR_ED75	:ED75 / ED79 (electric)
+STR_NAME_JNR_ED76	:ED76 (electric)
+STR_NAME_JNR_ED79	:DELETE ME!!!
+STR_NAME_JNR_EF57	:EF57 (electric)
+STR_NAME_JNR_EH10	:EH10 (electric)
+
+STR_NAME_JR_EF500	:EF500 (electric)
+STR_NAME_JR_ED500	:ED500 (electric)
+STR_NAME_JR_EH800	:EH800 (electric)
+
+STR_NAME_DEKI_400	:DeKi 400 (electric)
+STR_NAME_SEIBU_E851	:Seibu E851 (electric)
+STR_NAME_SEIBU_E31	:Seibu E31 (electric)
+
+
+STR_NAME_PASSENGER_12	:12 Series Passenger Coach
+STR_NAME_PASSENGER_24	:24 Series Passenger Coach
+STR_NAME_PASSENGER_50	:50 Series Passenger Coach
+
+STR_NAME_MAIL_15		:SUYU 15 Postal Van
+STR_NAME_MAIL_50		:MANI 50 Express Van
+STR_NAME_MAIL_44		:MANI 44 Parcel Van
+STR_NAME_MAIL_30		:MANI 30 Armoured Van
+STR_NAME_MAIL_8000		:WAKI 8000 Express Van
+
+STR_NAME_CAR_CARRIER	:Future Car Transporter
+STR_NAME_SUPPLY_CARRIER	:Old Vehicle Flatbed
+STR_NAME_BOXCAR			:Future Box Van
+STR_NAME_COVERED_HOPPER	:Future Covered Hopper
+STR_NAME_OPEN_HOPPER	:Future Hopper
+
+STR_NAME_COIL_CARRIER	:Metal Coil Carrier
+STR_NAME_SLAG_LADLE		:Slag Ladle Wagon
+STR_NAME_TORPEDO		:Torpedo Wagon
+
+STR_NAME_WA_1			:WA 1 Box Van
+STR_NAME_WAKI_1			:WAKI 1 Express Van
+STR_NAME_WAKI_1000		:WAKI 1000 Express Van
+STR_NAME_WAKI_5000		:WAKI 5000 Box Van
+STR_NAME_WAKI_10000		:WAKI 10000 Box Van
+STR_NAME_WAMU_50000		:WAMU 50000 Box Van
+STR_NAME_WAMU_80000		:WAMU 80000 Box Van
+STR_NAME_WA_1_ICE		:RE 1 Ice Box Van
+STR_NAME_RESA_10000		:RESA 10000 Refrigerated Van
+STR_NAME_REMU_5000		:REMU 5000 Refrigerated Van
+
+
+
+STR_NAME_KOKI_5500		:KOKI 5500 Container Carrier
+STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
+STR_NAME_CONTAINER		:KOKI 100 Container Carrier
+STR_NAME_ROADRAILER		:WA 100 Dual Mode Transport
+
+STR_NAME_TORA_5000		:TORA 5000 Open Wagon
+STR_NAME_TORA_90000		:TORA 90000 Open Wagon
+STR_NAME_TOKI_900		:TOKI 900 Open Wagon
+
+STR_NAME_SEKI_3000		:SEKI 3000 Hopper
+STR_NAME_HOKI_650		:HOKI 650 Covered Hopper
+STR_NAME_HOKI_1000		:HOKI 1000 Covered Hopper
+STR_NAME_HOKI_2200		:HOKI 2200 Covered Grain Hopper
+STR_NAME_HOKI_2500		:HOKI 2500 Hopper
+STR_NAME_HOKI_6900		:HOKI 6900 Covered Hopper
+STR_NAME_HOKI_10000		:HOKI 10000 Hopper
+
+STR_NAME_TAKI_3000		:TAKI 3000 Tanker
+STR_NAME_TAKI_1000		:TAKI 1000 Tanker
+STR_NAME_TAKI_43000		:TAKI 43000 Tanker
+
+
+STR_NAME_YO_5000		:YO 5000 Brake Van
+STR_NAME_YO_8000		:YO 8000 Brake Van
+
+
+STR_TEXT_JGR		:Operators: {GOLD}JGR
+STR_TEXT_JGR_JNR	:Operators: {GOLD}JGR/JNR
+STR_TEXT_JNR		:Operators: {GOLD}JNR
+STR_TEXT_JNR_JRF	:Operators: {GOLD}JNR, JR Freight
+STR_TEXT_JNR_DD51	:Operators: {GOLD}JNR, JR East/West/Freight/Hokkaido
+STR_TEXT_JNR_EF63	:Operators: {GOLD}JNR/JR East/JR Freight
+STR_TEXT_JNR_ED75	:Operators: {GOLD}JNR/JR East/JR Freight
+STR_TEXT_JNR_ED79	:Operators: {GOLD}JR Freight/JR Hokkaido
+STR_TEXT_DEKI_400	:Operators: {GOLD}Meitetsu
+
+
+STR_REFIT_YEARDEP	: Year-Dependent
+STR_REFIT_CC		: Company Colour
+STR_REFIT_RANDOM	: Random
+STR_REFIT_FBROWN	: Brown
+STR_REFIT_FBLACK	: Black
+STR_REFIT_FGREEN	: Green
+STR_REFIT_FBLUE		: Blue
+
+STR_REFIT_RED		: JNR Standard Red
+STR_REFIT_BLUE		: JNR Standard Blue
+STR_REFIT_BLACK		: JNR Standard Black
+STR_REFIT_GREEN		: JNR Light Green
+STR_REFIT_TOKKYU	: JNR "Tokkyu" Blue
+STR_REFIT_JRF_RED	: JR Freight Red
+STR_REFIT_JRF_BLUE	: JR Freight Blue
+STR_REFIT_JRF_REFIT	: JR Freight Refurbished
+STR_REFIT_HOKBLUE	: JR Hokkaido "Hokutosei"
+STR_REFIT_HOKRED	: JR Freight Hokkaido
+STR_REFIT_EUROLINER	: JR Central "Euroliner"
+STR_REFIT_LOGO		: JR Freight Large Logo
+STR_REFIT_EXP		: JR Freight Experimental
+STR_REFIT_OLDRED	: JNR Classic Red
+STR_REFIT_OLDSTRIPE	: JNR Classic Red with Stripe
+STR_REFIT_BROWN	    : JNR Classic Brown
+STR_REFIT_RAINBOW		: JR East "Super Express Rainbow"
+STR_REFIT_TWILIGHT	: JR West "Twilight Express"
+STR_REFIT_STAINLESS	: JNR Stainless Steel
+STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
+STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
+STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
+
+STR_REFIT_DE10_1112		: DE10 1112 Brown/Yellow
+STR_REFIT_DE10_1148		: DE10 1148 Light Blue/White
+STR_REFIT_DE10_1152		: DE10 1152 Blue/Orange
+STR_REFIT_DE10_1660		: DE10 1660 Green/Gold
+STR_REFIT_DE10_KYUSHU		: DE10 JR Kyushu Black
+
+STR_REFIT_ED61_CC		: ED61 Company Coloured
+STR_REFIT_ED61_BROWN	: ED61 JNR Classic Brown
+STR_REFIT_ED61_BLUE		: ED61 JNR Standard Blue
+STR_REFIT_ED62_CC		: ED62 Company Coloured
+STR_REFIT_ED62_BROWN	: ED62 JNR Classic Brown
+STR_REFIT_ED62_BLUE		: ED62 JNR Standard Blue
+STR_REFIT_ED62_JRF		: ED62 JR Freight
+STR_REFIT_ED62_HAMA		: ED62 "Hamamatsu Depot"
+
+STR_REFIT_ED75_GOLD	: ED75 711 "Orient Saloon"
+STR_REFIT_ED75_M1	: ED75 JR Freight Red with Stripe
+STR_REFIT_ED75_M2	: ED75 JR Freight "Panda"
+STR_REFIT_ED75_M3	: ED75 JR Freight Red and White
+
+STR_REFIT_ED79_CC	: ED79 Company Colour {GOLD}(110km/h)
+STR_REFIT_ED79_RED	: ED79 Classic Red {GOLD}(110km/h)
+STR_REFIT_ED79_JRF	: ED79 JR Freight  {GOLD}(110km/h)
+
+STR_REFIT_EF58_61	: Imperial Train
+STR_REFIT_EF58_X1	: Experimental Blue/Yellow
+STR_REFIT_EF58_X2	: Experimental Green/Yellow
+STR_REFIT_EF58_X3	: Experimental Blue/Orange
+STR_REFIT_EF58_X4	: Experimental Green
+
+STR_REFIT_EF60_NEW	: EF60 JNR Standard Blue (New Style)
+STR_REFIT_EF60_AMERICAN	: EF60 "American Train"
+STR_REFIT_EF60_YASURAGI	: EF60 "Yasuragi"
+
+STR_REFIT_EF64_1_BROWN	: EF64-1000 Classic Brown
+STR_REFIT_EF64_1_BLUE	: EF64-1000 JNR Standard Blue
+STR_REFIT_EF64_1_REFIT	: EF64-1000 JR Freight Refurbished
+STR_REFIT_EF64_1_STRIPE	: EF64-1000 JR Freight Stripe
+STR_REFIT_EF64_1_SLOGO	: EF64-1000 JR Freight Stripe with Logo
+STR_REFIT_EF64_1_LLOGO	: EF64-1000 JR Freight Large Logo
+
+STR_REFIT_EF81_450		: EF81-450 Modern Headlights
+
+STR_REFIT_EF30_STRIPE	: Stainless with Red Stripe
+
+
+STR_REFIT_EF66_100	: EF66-100 
+
+STR_REFIT_EF67		: EF67 Banker
+
+STR_REFIT_EF210_300	: EF210-300 Banker
+
+STR_REFIT_EH10		: EH10 Standard Black
+STR_REFIT_EH10_HS	: EH10 High Speed Brown {GOLD}(110km/h)
+
+STR_REFIT_EF13_CROC_BROWN	: EF13 Standard Brown (Original Shape)
+STR_REFIT_EF13_BLOC_BROWN	: EF13 Standard Brown (New Shape)
+STR_REFIT_EF13_CROC_CC		: EF13 Company Colour (Original Shape)
+STR_REFIT_EF13_BLOC_CC		: EF13 Comapny Colour (New Shape)
+
+
+STR_REFIT_DEKI_1	: Original (Black) Livery
+STR_REFIT_DEKI_2	: Refurbished (Blue) Livery
+
+
+STR_REFIT_WAKI_STRIPE	: Orange Stripe "Express Service"
+STR_REFIT_WAKI_GREENSTRIPE : Brown with Green Stripe
+
+STR_REFIT_KU_NISSAN			: Red/White/Blue "Nissan"
+
+
+
+
+
+
