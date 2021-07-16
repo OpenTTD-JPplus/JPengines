@@ -22,7 +22,7 @@ STR_ERROR_JAPANSETTRAINS	:Must be loaded after Japan Set 3: Trains!
 STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
 STR_NAME_JNR_DD54	:DD54 (diesel)
-STR_NAME_JNR_EB10	:EB10 (electric)
+STR_NAME_JNR_EB10	:AB10 / EB10 (electric)
 STR_NAME_JNR_EF30	:EF30 (electric)
 STR_NAME_JNR_EF60	:EF60 (electric)
 STR_NAME_JNR_EF63	:EF63 (electric)
@@ -200,10 +200,10 @@ STR_REFIT_EF210_300	: EF210-300 Banker
 STR_REFIT_EH10		: EH10 Standard Black
 STR_REFIT_EH10_HS	: EH10 High Speed Brown {GOLD}(110km/h)
 
-STR_REFIT_EF13_CROC_BROWN	: EF13 Standard Brown (Original Shape)
-STR_REFIT_EF13_BLOC_BROWN	: EF13 Standard Brown (New Shape)
-STR_REFIT_EF13_CROC_CC		: EF13 Company Colour (Original Shape)
-STR_REFIT_EF13_BLOC_CC		: EF13 Comapny Colour (New Shape)
+STR_REFIT_BROWN_OLD	    : Standard Brown (Old Shape)
+STR_REFIT_BROWN_NEW	    : Standard Brown (New Shape)
+STR_REFIT_CC_OLD		: Company Colour (Old Shape)
+STR_REFIT_CC_NEW		: Comapny Colour (New Shape)
 
 
 STR_REFIT_DEKI_1	: Original (Black) Livery
