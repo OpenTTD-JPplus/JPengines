@@ -5596,68 +5596,68 @@ item (FEAT_TRAINS, boxcar, 1406) {
 
 // RoadRailer!!!
 
-spriteset(spriteset_dmt_proto_purchase, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_proto_purchase, "gfx/freight/dmt_front.png") {
 	template_purchase(1, 416)
 }
 
-spriteset(spriteset_dmt_jrf_purchase, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_jrf_purchase, "gfx/freight/dmt_front.png") {
 	template_purchase(89, 416)
 }
 
-spriteset(spriteset_dmt_rear, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_rear, "gfx/freight/dmt_front.png") {
 	template_2cc_dmt(180, 1)
 }
 
 
-spriteset(spriteset_dmt_front_a, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_a, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dmt_front_b, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_b, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dmt_front_c, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_c, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dmt_front_d, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_d, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dmt_front_e, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_e, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dmt_front_f, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_f, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dmt_front_g, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_g, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dmt_front_h, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_h, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_dmt_front_i, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_i, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_dmt_front_j, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_j, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_dmt_front_k, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_k, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 320)
 }
 
-spriteset(spriteset_dmt_front_l, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_l, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 352)
 }
 
-spriteset(spriteset_dmt_front_m, "gfx/dmt_front.png") {
+spriteset(spriteset_dmt_front_m, "gfx/freight/dmt_front.png") {
 	template_2cc_std(1, 384)
 }
 
@@ -5665,55 +5665,55 @@ spriteset(spriteset_dmt_front_m, "gfx/dmt_front.png") {
 //mids
 
 
-spriteset(spriteset_dmt_mid_a, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_a, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dmt_mid_b, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_b, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dmt_mid_c, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_c, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dmt_mid_d, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_d, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dmt_mid_e, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_e, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dmt_mid_f, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_f, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dmt_mid_g, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_g, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dmt_mid_h, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_h, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_dmt_mid_i, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_i, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_dmt_mid_j, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_j, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_dmt_mid_k, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_k, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 320)
 }
 
-spriteset(spriteset_dmt_mid_l, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_l, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 352)
 }
 
-spriteset(spriteset_dmt_mid_m, "gfx/dmt_mid.png") {
+spriteset(spriteset_dmt_mid_m, "gfx/freight/dmt_mid.png") {
 	template_2cc_std(1, 384)
 }
 
@@ -5866,6 +5866,7 @@ item (FEAT_TRAINS, dmt_middle, 1408) {
 		introduction_date: date(1992,1,1);
 		length: 7;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
 		length: switch_dmt_middle_length;
@@ -5883,6 +5884,7 @@ item (FEAT_TRAINS, dmt_rear, 1409) {
 		weight: 1;
 		length: 1;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
 		default: spriteset_dmt_rear;
