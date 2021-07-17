@@ -223,6 +223,16 @@ STR_REFIT_WAKI_GREENSTRIPE : Brown with Green Stripe
 
 STR_REFIT_KU_NISSAN			: Red/White/Blue "Nissan"
 
+STR_REFIT_DMT_PROTO		: DMT Prototype
+STR_REFIT_DMT_SAGAWA	: Sagawa
+STR_REFIT_DMT_JRF		: JR Freight
+STR_REFIT_DMT_YAMATO	: Yamato
+STR_REFIT_DMT_SEINO		: Seino
+STR_REFIT_DMT_FUKUYAMA	: Fukuyama
+STR_REFIT_DMT_FISH		: Refrigerated Fish
+STR_REFIT_DMT_NITTSU	: Nittsu
+
+
 
 
 
