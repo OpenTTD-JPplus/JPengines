@@ -7028,8 +7028,12 @@ spriteset(spriteset_de10_flip_kyushu, "gfx/de10_flip.png") {
 
 
 
-spriteset(spriteset_de10_purchase, "gfx/de10.png") {
+spriteset(spriteset_de10_red_purchase, "gfx/de10.png") {
 	template_purchase(1, 480)
+}
+
+spriteset(spriteset_de10_jrf_purchase, "gfx/de10.png") {
+	template_purchase(89, 480)
 }
 
 
@@ -7124,6 +7128,11 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_de10_purchase, current_year) {
+	0..1999: spriteset_de10_red_purchase;
+	spriteset_de10_jrf_purchase;
+	}
+
 
 item (FEAT_TRAINS, de10, 25) {
 
@@ -7146,7 +7155,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_de10_subtype_text;
   default: switch_de10_livery;
-  purchase: spriteset_de10_purchase;
+  purchase: switch_de10_purchase;
   }
 }
 
