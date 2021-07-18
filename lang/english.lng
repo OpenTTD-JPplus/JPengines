@@ -138,6 +138,7 @@ STR_REFIT_HOKBLUE	: JR Hokkaido "Hokutosei"
 STR_REFIT_HOKRED	: JR Freight Hokkaido
 STR_REFIT_EUROLINER	: JR Central "Euroliner"
 STR_REFIT_LOGO		: JR Freight Large Logo
+STR_REFIT_JR_LOGO	: JR Large Logo
 STR_REFIT_EXP		: JR Freight Experimental
 STR_REFIT_OLDRED	: JNR Classic Red
 STR_REFIT_OLDSTRIPE	: JNR Classic Red with Stripe
@@ -148,6 +149,8 @@ STR_REFIT_STAINLESS	: JNR Stainless Steel
 STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
 STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
 STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
+STR_REFIT_YUYU_RED		: JR West Red/Gold "Yuyu Salon Okayama"
+STR_REFIT_YUYU_ORANGE	: JR West Orange "Yuyu Salon Okayama"
 
 STR_REFIT_DE10_1112		: DE10 1112 Brown/Yellow
 STR_REFIT_DE10_1148		: DE10 1148 Light Blue/White
@@ -178,6 +181,8 @@ STR_REFIT_EF58_X1	: Experimental Blue/Yellow
 STR_REFIT_EF58_X2	: Experimental Green/Yellow
 STR_REFIT_EF58_X3	: Experimental Blue/Orange
 STR_REFIT_EF58_X4	: Experimental Green
+STR_REFIT_EF58_BLUE	: JNR Express Blue/Cream
+STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
 
 STR_REFIT_EF60_NEW	: EF60 JNR Standard Blue (New Style)
 STR_REFIT_EF60_AMERICAN	: EF60 "American Train"

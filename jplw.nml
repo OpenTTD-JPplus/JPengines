@@ -7423,13 +7423,7 @@ property {
 
 //Spriteset EF58
 
-spriteset(spriteset_ef58_old_brown, "gfx/ef58.png") {
-	template_2cc_std(180, 1)
-}
 
-spriteset(spriteset_ef58_old_cc, "gfx/ef58.png") {
-	template_2cc_std(180, 32)
-}
 
 
 spriteset(spriteset_ef58_brown, "gfx/ef58.png") {
@@ -7448,7 +7442,7 @@ spriteset(spriteset_ef58_x1, "gfx/ef58.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef58_x2, "gfx/ef58.png") {
+spriteset(spriteset_ef58_tokaido_green, "gfx/ef58.png") {
 	template_2cc_std(1, 128)
 }
 
@@ -7459,6 +7453,23 @@ spriteset(spriteset_ef58_x3, "gfx/ef58.png") {
 spriteset(spriteset_ef58_x4, "gfx/ef58.png") {
 	template_2cc_std(1, 192)
 }
+
+spriteset(spriteset_ef58_old_brown, "gfx/ef58.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef58_old_cc, "gfx/ef58.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef58_large_logo, "gfx/ef58.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef58_tokaido_blue, "gfx/ef58.png") {
+	template_2cc_std(180, 96)
+}
+
 
 spriteset(spriteset_ef58_cc, "gfx/ef58.png") {
 	template_2cc_std(1, 224)
@@ -7492,12 +7503,14 @@ switch(FEAT_TRAINS, SELF, switch_ef58_livery, cargo_subtype) {
 	2: spriteset_ef58_brown;
 	3: spriteset_ef58_imperial;
 	4: spriteset_ef58_blue;
-	5: spriteset_ef58_x1;
-	6: spriteset_ef58_x2;
-	7: spriteset_ef58_x3;
-	8: spriteset_ef58_x4;
-	9: spriteset_ef58_old_cc;
-	10: spriteset_ef58_cc;	
+	5: spriteset_ef58_tokaido_green;
+	6: spriteset_ef58_tokaido_blue;	
+	7: spriteset_ef58_x1;
+	8: spriteset_ef58_x3;
+	9: spriteset_ef58_x4;
+	10: spriteset_ef58_large_logo;
+	11: spriteset_ef58_old_cc;
+	12: spriteset_ef58_cc;	
 	switch_ef58_yeardep_livery;
 }
 
@@ -7509,12 +7522,14 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
 	2: return string(STR_REFIT_BROWN_NEW);
 	3: return string(STR_REFIT_EF58_61);
 	4: return string(STR_REFIT_BLUE);
-	5: return string(STR_REFIT_EF58_X1);
-	6: return string(STR_REFIT_EF58_X2);
-	7: return string(STR_REFIT_EF58_X3);
-	8: return string(STR_REFIT_EF58_X4);
-	9: return string(STR_REFIT_CC_OLD);	
-	10: return string(STR_REFIT_CC_NEW);	
+	5: return string(STR_REFIT_TOKAIDO_GREEN);
+	6: return string(STR_REFIT_EF58_BLUE);
+	7: return string(STR_REFIT_EF58_X1);
+	8: return string(STR_REFIT_EF58_X3);
+	9: return string(STR_REFIT_EF58_X4);
+	10: return string(STR_REFIT_LOGO);
+	11: return string(STR_REFIT_CC_OLD);	
+	12: return string(STR_REFIT_CC_NEW);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -7720,7 +7735,7 @@ spriteset(spriteset_ef65_tokkyu, "gfx/ef65.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef65_large_logo, "gfx/ef65.png") {
+spriteset(spriteset_ef65_jr_logo, "gfx/ef65.png") {
 	template_2cc_std(1, 128)
 }
 
@@ -7748,6 +7763,21 @@ spriteset(spriteset_ef65_cc, "gfx/ef65.png") {
 	template_2cc_std(1, 320)
 }
 
+spriteset(spriteset_ef65_yuyu_red, "gfx/ef65.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef65_yuyu_orange, "gfx/ef65.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef65_tokaido_green, "gfx/ef65.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef65_large_logo, "gfx/ef65.png") {
+	template_2cc_std(180, 96)
+}
 
 
 spriteset(spriteset_ef65_0_purchase, "gfx/ef65.png") {
@@ -7760,24 +7790,27 @@ spriteset(spriteset_ef65_1_purchase, "gfx/ef65.png") {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef65_yeardep_livery, build_year) {
-	1000..1982: spriteset_ef65_tokkyu;
-	1982..1989: spriteset_ef65_blue;
+	0..1982: spriteset_ef65_tokkyu;
 	1989..9999: spriteset_ef65_jrf;
-    CB_FAILED;
+    spriteset_ef65_blue;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef65_livery, cargo_subtype) {
 	1: spriteset_ef65_brown;
 	2: spriteset_ef65_tokkyu;
 	3: spriteset_ef65_blue;
-	4: spriteset_ef65_jrf;
-	5: spriteset_ef65_euroliner;
-	6: spriteset_ef65_rainbow;
-	7: spriteset_ef65_twilight;
-	8: spriteset_ef65_large_logo;
-	9: spriteset_ef65_experimental;
-	10: spriteset_ef65_ef67;
-	11: spriteset_ef65_cc;
+	4: spriteset_ef65_tokaido_green;
+	5: spriteset_ef65_jrf;
+	6: spriteset_ef65_euroliner;
+	7: spriteset_ef65_rainbow;
+	8: spriteset_ef65_twilight;
+	9: spriteset_ef65_jr_logo;
+	10: spriteset_ef65_large_logo;
+	11: spriteset_ef65_experimental;
+	12: spriteset_ef65_yuyu_red;
+	13: spriteset_ef65_yuyu_orange;
+	14: spriteset_ef65_ef67;
+	15: spriteset_ef65_cc;
 	switch_ef65_yeardep_livery;
 }
 
@@ -7788,14 +7821,18 @@ switch(FEAT_TRAINS, SELF, switch_ef65_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_BROWN);
 	2: return string(STR_REFIT_TOKKYU);
 	3: return string(STR_REFIT_BLUE);
-	4: return string(STR_REFIT_JRF_BLUE);
-	5: return string(STR_REFIT_EUROLINER);
-	6: return string(STR_REFIT_RAINBOW);
-	7: return string(STR_REFIT_TWILIGHT);
-	8: return string(STR_REFIT_LOGO);
-	9: return string(STR_REFIT_EXP);
-	10: return string(STR_REFIT_EF67);
-	11: return string(STR_REFIT_CC);
+	4: return string(STR_REFIT_TOKAIDO_GREEN);
+	5: return string(STR_REFIT_JRF_BLUE);
+	6: return string(STR_REFIT_EUROLINER);
+	7: return string(STR_REFIT_RAINBOW);
+	8: return string(STR_REFIT_TWILIGHT);
+	9: return string(STR_REFIT_JR_LOGO);
+	10: return string(STR_REFIT_LOGO);
+	11: return string(STR_REFIT_EXP);
+	12: return string(STR_REFIT_YUYU_RED);
+	13: return string(STR_REFIT_YUYU_ORANGE);
+	14: return string(STR_REFIT_EF67);
+	15: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
