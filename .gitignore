@@ -2,3 +2,5 @@
 *.ods#
 *.cache
 *.cacheindex
+*.cache
+*.cacheindex
