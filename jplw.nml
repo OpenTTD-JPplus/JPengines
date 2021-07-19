@@ -5847,6 +5847,29 @@ random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_all) {
 	1: spriteset_dmt_mid_m;
 }
 
+
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_nocc) {
+	1: spriteset_dmt_front_a;
+    1: spriteset_dmt_front_b;
+	1: spriteset_dmt_front_c;
+    1: spriteset_dmt_front_d;
+	1: spriteset_dmt_front_e;
+	1: spriteset_dmt_front_f;
+	1: spriteset_dmt_front_g;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_nocc) {
+	1: spriteset_dmt_mid_a;
+    1: spriteset_dmt_mid_b;
+	1: spriteset_dmt_mid_c;
+    1: spriteset_dmt_mid_d;
+	1: spriteset_dmt_mid_e;
+	1: spriteset_dmt_mid_f;
+	1: spriteset_dmt_mid_g;
+}
+
+
 random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_proto) {
 	1: spriteset_dmt_front_h;
 	1: spriteset_dmt_front_i;
@@ -5880,6 +5903,15 @@ switch(FEAT_TRAINS, SELF, switch_dmt_articulated_part, extra_callback_info1) {
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
+switch (FEAT_TRAINS, SELF, switch_dmt_front_yeardep, build_year) {
+	0..2002: switch_dmt_front_random_proto;
+	switch_dmt_front_random_nocc;
+}
+	
+switch (FEAT_TRAINS, SELF, switch_dmt_middle_yeardep, build_year) {
+	0..2002: switch_dmt_middle_random_proto;
+	switch_dmt_middle_random_nocc;
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_dmt_front_livery, cargo_subtype) {
@@ -5893,7 +5925,8 @@ switch(FEAT_TRAINS, SELF, switch_dmt_front_livery, cargo_subtype) {
 	8: spriteset_dmt_front_h;
 	9: switch_dmt_front_random_proto;
 	10:  switch_dmt_front_random_cc;
-	switch_dmt_front_random_all;
+	11: switch_dmt_front_random_all;
+	switch_dmt_front_yeardep;
 }
 
 switch(FEAT_TRAINS, SELF, switch_dmt_middle_livery, cargo_subtype) {
@@ -5907,11 +5940,14 @@ switch(FEAT_TRAINS, SELF, switch_dmt_middle_livery, cargo_subtype) {
 	8: spriteset_dmt_mid_h;
 	9: switch_dmt_middle_random_proto;
 	10: switch_dmt_middle_random_cc;
-	switch_dmt_middle_random_all;
+	11: switch_dmt_middle_random_all;
+	switch_dmt_middle_yeardep;
 }
 
+
+
 switch(FEAT_TRAINS, SELF, switch_dmt_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_DMT_SAGAWA);
 	2: return string(STR_REFIT_DMT_JRF);
 	3: return string(STR_REFIT_DMT_YAMATO);
@@ -5922,6 +5958,7 @@ switch(FEAT_TRAINS, SELF, switch_dmt_subtype_text, cargo_subtype) {
 	8: return string(STR_REFIT_DMT_SEINO);
 	9: return string(STR_REFIT_DMT_PROTO);
 	10: return string(STR_REFIT_CC);
+	11: return string(STR_REFIT_RANDOM);
 	   return CB_RESULT_NO_TEXT;
 	}
 
