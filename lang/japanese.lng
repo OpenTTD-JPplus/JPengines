@@ -1,4 +1,4 @@
-##grflangid 0x01
+##grflangid 0x39
 
 lang: 7F
 
@@ -46,9 +46,9 @@ STR_NAME_SEIBU_E851	:Seibu E851 (electric)
 STR_NAME_SEIBU_E31	:Seibu E31 (electric)
 
 
-STR_NAME_PASSENGER_12	:12 Series Passenger Coach
-STR_NAME_PASSENGER_24	:24 Series Passenger Coach
-STR_NAME_PASSENGER_50	:50 Series Passenger Coach
+STR_NAME_PASSENGER_12	:12 Series 客車
+STR_NAME_PASSENGER_24	:24 Series 客車
+STR_NAME_PASSENGER_50	:50 Series 客車
 
 STR_NAME_MAIL_15		:SUYU 15 Postal Van
 STR_NAME_MAIL_50		:MANI 50 Express Van
@@ -124,9 +124,9 @@ STR_REFIT_FBLACK	: Black
 STR_REFIT_FGREEN	: Green
 STR_REFIT_FBLUE		: Blue
 
-STR_REFIT_JGR		: JGR Classic Brown
+STR_REFIT_JGR		: JGR ぶどう色2号
 STR_REFIT_RED		: JNR Standard Red
-STR_REFIT_BLUE		: JNR Standard Blue
+STR_REFIT_BLUE		: JNR 青15号
 STR_REFIT_BLACK		: JNR Standard Black
 STR_REFIT_GREEN		: JNR Light Green
 STR_REFIT_TOKKYU	: JNR "Tokkyu" Blue
@@ -140,9 +140,9 @@ STR_REFIT_EUROLINER	: JR Central "Euroliner"
 STR_REFIT_LOGO		: JR Freight Large Logo
 STR_REFIT_JR_LOGO	: JR Large Logo
 STR_REFIT_EXP		: JR Freight Experimental
-STR_REFIT_OLDRED	: JNR Classic Red
-STR_REFIT_OLDSTRIPE	: JNR Classic Red with Stripe
-STR_REFIT_BROWN	    : JNR Classic Brown
+STR_REFIT_OLDRED	: JNR 赤13号
+STR_REFIT_OLDSTRIPE	: JNR 赤13号 with Stripe
+STR_REFIT_BROWN	    : JNR ぶどう色2号
 STR_REFIT_RAINBOW		: JR East "Super Express Rainbow"
 STR_REFIT_TWILIGHT	: JR West "Twilight Express"
 STR_REFIT_STAINLESS	: JNR Stainless Steel
@@ -159,11 +159,11 @@ STR_REFIT_DE10_1660		: DE10 1660 Green/Gold
 STR_REFIT_DE10_KYUSHU		: DE10 JR Kyushu Black
 
 STR_REFIT_ED61_CC		: ED61 Company Coloured
-STR_REFIT_ED61_BROWN	: ED61 JNR Classic Brown
-STR_REFIT_ED61_BLUE		: ED61 JNR Standard Blue
+STR_REFIT_ED61_BROWN	: ED61 JNR ぶどう色2号
+STR_REFIT_ED61_BLUE		: ED61 JNR 青15号
 STR_REFIT_ED62_CC		: ED62 Company Coloured
-STR_REFIT_ED62_BROWN	: ED62 JNR Classic Brown
-STR_REFIT_ED62_BLUE		: ED62 JNR Standard Blue
+STR_REFIT_ED62_BROWN	: ED62 JNR ぶどう色2号
+STR_REFIT_ED62_BLUE		: ED62 JNR 青15号
 STR_REFIT_ED62_JRF		: ED62 JR Freight
 STR_REFIT_ED62_HAMA		: ED62 "Hamamatsu Depot"
 
@@ -173,7 +173,7 @@ STR_REFIT_ED75_M2	: ED75 JR Freight "Panda"
 STR_REFIT_ED75_M3	: ED75 JR Freight Red and White
 
 STR_REFIT_ED79_CC	: ED79 Company Colour {GOLD}(110km/h)
-STR_REFIT_ED79_RED	: ED79 Classic Red {GOLD}(110km/h)
+STR_REFIT_ED79_RED	: ED79 赤13号 {GOLD}(110km/h)
 STR_REFIT_ED79_JRF	: ED79 JR Freight  {GOLD}(110km/h)
 
 STR_REFIT_EF58_61	: Imperial Train
@@ -181,15 +181,15 @@ STR_REFIT_EF58_X1	: Experimental Blue/Yellow
 STR_REFIT_EF58_X2	: Experimental Green/Yellow
 STR_REFIT_EF58_X3	: Experimental Blue/Orange
 STR_REFIT_EF58_X4	: Experimental Green
-STR_REFIT_EF58_BLUE	: JNR Express Blue/Cream
-STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
+STR_REFIT_EF58_BLUE	: JNR Express 青15号
+STR_REFIT_TOKAIDO_GREEN	: JNR 淡緑5号
 
-STR_REFIT_EF60_NEW	: EF60 JNR Standard Blue (New Shape)
+STR_REFIT_EF60_NEW	: EF60 JNR 青15号 (New Shape)
 STR_REFIT_EF60_AMERICAN	: EF60 "American Train"
 STR_REFIT_EF60_YASURAGI	: EF60 "Yasuragi"
 
-STR_REFIT_EF64_1_BROWN	: EF64-1000 Classic Brown
-STR_REFIT_EF64_1_BLUE	: EF64-1000 JNR Standard Blue
+STR_REFIT_EF64_1_BROWN	: EF64-1000 ぶどう色2号
+STR_REFIT_EF64_1_BLUE	: EF64-1000 JNR 青15号
 STR_REFIT_EF64_1_REFIT	: EF64-1000 JR Freight Refurbished
 STR_REFIT_EF64_1_STRIPE	: EF64-1000 JR Freight Stripe
 STR_REFIT_EF64_1_SLOGO	: EF64-1000 JR Freight Stripe with Logo

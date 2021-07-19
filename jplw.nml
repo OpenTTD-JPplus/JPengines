@@ -6343,13 +6343,13 @@ spritegroup spritegroup_toki_900_black_piece_covered {
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_phalf, spriteset_toki_900_black_tarp];
 }
 
-
+//todo fix
 switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): spritegroup_toki_900_black_bulk;
 	bitmask(CC_BULK, CC_COVERED): spritegroup_toki_900_black_covered;
-	bitmask(CC_PIECE_GOODS): spritegroup_toki_900_black_piece;
+	bitmask(CC_PIECE_GOODS): spritegroup_toki_900_black_piece_covered;
 	
-	spritegroup_toki_900_black_piece_covered;
+	spritegroup_toki_900_black_covered;
 }
 
 
