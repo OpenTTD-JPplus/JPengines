@@ -8028,7 +8028,7 @@ spriteset(spriteset_ef81_jrf_stripe, "gfx/ef81a.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ef81_rainbow, "gfx/ef81a.png") {
+spriteset(spriteset_ef81_jrf_450, "gfx/ef81a.png") {
 	template_2cc_std(1, 224)
 }
 
@@ -8049,7 +8049,7 @@ spriteset(spriteset_ef81_oldred, "gfx/ef81b.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef81_jrf_450, "gfx/ef81b.png") {
+spriteset(spriteset_ef81_rainbow, "gfx/ef81b.png") {
 	template_2cc_std(1, 128)
 }
 
