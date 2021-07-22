@@ -227,7 +227,8 @@ STR_REFIT_DEKI_2	: Refurbished (Blue) Livery
 STR_REFIT_WAKI_STRIPE	: Orange Stripe "Express Service"
 STR_REFIT_WAKI_GREENSTRIPE : Brown with Green Stripe
 
-STR_REFIT_KU_NISSAN			: Red/White/Blue "Nissan"
+STR_REFIT_KU_NISSAN			: JRF Red/White/Blue "Nissan"
+STR_REFIT_KU_REDBLUE		: JRF Red/Blue
 
 STR_REFIT_DMT_PROTO		: DMT Prototype
 STR_REFIT_DMT_SAGAWA	: Sagawa
