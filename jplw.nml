@@ -78,7 +78,7 @@ sort(FEAT_TRAINS, [
 //diesels
 71, 25, 20, 63, 
 //wagons
-1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460]);
+1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1500]);
  
 //2cc templates
 
@@ -9107,7 +9107,7 @@ random_switch(FEAT_TRAINS, SELF, random_taki_1000) {
 
 
 
-item (FEAT_TRAINS, taki_1000, 1500) {
+item (FEAT_TRAINS, taki_1000, 1490) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
