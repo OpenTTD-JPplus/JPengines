@@ -2341,7 +2341,7 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 //BOXCARS
 
 //WA 
-item (FEAT_TRAINS, jp_wa_boxcar, 0x20) {
+item (FEAT_TRAINS, jp_wa_boxcar, 32) {
 
 property {
 	default_cargo_type: GOOD;
@@ -2676,7 +2676,7 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, wamu_80000, 0x33) {
+item (FEAT_TRAINS, wamu_80000, 51) {
 
 property {
 	name: string(STR_NAME_WAMU_80000);
@@ -2776,7 +2776,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, waki_5000, 0x35) {
+item (FEAT_TRAINS, waki_5000, 53) {
 property {
 	name: string(STR_NAME_WAKI_5000);
 	speed: 85 km/h;
@@ -2826,7 +2826,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_10000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, waki_10000, 0x0508) {
+item (FEAT_TRAINS, waki_10000, 1288) {
 
 property {
 	name: string(STR_NAME_WAKI_10000);
@@ -2891,7 +2891,7 @@ random_switch (FEAT_TRAINS, SELF, random_remu_5000) {
  1: spriteset_remu_5000_3;
 }
 
-item (FEAT_TRAINS, remu_5000, 0x0506) {
+item (FEAT_TRAINS, remu_5000, 1286) {
 
 property {
 	introduction_date: date(1960,1,1);
@@ -5950,7 +5950,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
 }
 
 
-item (FEAT_TRAINS, tora_90000, 0x500) {
+item (FEAT_TRAINS, tora_90000, 1280) {
 
 property {
 //	introduction_date: date(1940,1,1);
@@ -6042,7 +6042,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
 }
 
 
-item (FEAT_TRAINS, tora_5000, 0x21) {
+item (FEAT_TRAINS, tora_5000, 33) {
 
 property {
 //	introduction_date: date(1940,1,1);
@@ -6130,7 +6130,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
 }
 
 
-item (FEAT_TRAINS, toki_900, 0x504) {
+item (FEAT_TRAINS, toki_900, 1284) {
 
 property {
 //	introduction_date: date(1940,1,1);
@@ -8105,16 +8105,148 @@ property {
 
 
 
-//wagon overrides - TEMPORARY
+//koki 71
 
-item (FEAT_TRAINS, koki_71, 0x2b) {
+
+spriteset(spriteset_koki_71_empty, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_71_closed, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_71_purchase, "gfx/freight/koki_71_cars.png") {
+	template_purchase(1, 352)
+}
+
+
+
+spriteset(spriteset_koki_71_cars_a_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_71_cars_a_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_71_cars_b_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_71_cars_b_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_koki_71_cars_c_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_71_cars_c_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 192)
+}
+
+
+spriteset(spriteset_koki_71_cars_d_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_71_cars_d_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 256)
+}
+
+
+
+
+spriteset(spriteset_koki_71_conts_a_half, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_71_conts_a_full, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_71_conts_b_half, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_71_conts_b_full, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 128)
+}
+
+
+
+spritegroup spritegroup_koki_71_cars_a {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_a_half, spriteset_koki_71_cars_a_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_a_half, spriteset_koki_71_cars_a_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_b {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_b_half, spriteset_koki_71_cars_b_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_b_half, spriteset_koki_71_cars_b_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_c {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_c_half, spriteset_koki_71_cars_c_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_c_half, spriteset_koki_71_cars_c_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_d {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_d_half, spriteset_koki_71_cars_d_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_d_half, spriteset_koki_71_cars_d_full, spriteset_koki_71_closed];
+}
+
+
+spritegroup spritegroup_koki_71_conts_a {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_conts_a_half, spriteset_koki_71_conts_a_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_conts_a_half, spriteset_koki_71_conts_a_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_conts_b {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_conts_b_half, spriteset_koki_71_conts_b_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_conts_b_half, spriteset_koki_71_conts_b_full, spriteset_koki_71_closed];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_71_cars_random) {
+	1: spritegroup_koki_71_cars_a;
+	1: spritegroup_koki_71_cars_b;
+	1: spritegroup_koki_71_cars_c;
+	1: spritegroup_koki_71_cars_d;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_71_conts_random) {
+	1: spritegroup_koki_71_conts_a;
+	1: spritegroup_koki_71_conts_b;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
+	VEHI: switch_koki_71_cars_random;
+	switch_koki_71_conts_random;
+	}
+	
+	switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_capacity, cargo_type_in_veh) {
+	VEHI: return 50;
+	return 75;
+	}
+
+
+
+item (FEAT_TRAINS, koki_71, 43) {
 
 property {
+	name: string(STR_NAME_KOKI_71);
 	default_cargo_type: VEHI;
-	refittable_cargo_classes: 0; 
+	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
 	non_refittable_cargo_classes: 0; 
 	cargo_allow_refit: [VEHI]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	default: switch_koki_71_cargo_type;
+	purchase: spriteset_koki_71_purchase;
+	cargo_capacity: switch_koki_71_cargo_capacity;
 	}
 }
 
@@ -8887,9 +9019,10 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, ku_5000, 0x2c) {
+item (FEAT_TRAINS, ku_5000, 44) {
 
 property {
+	name: string(STR_NAME_KU_5000);
 	introduction_date: date(1966,1,1);
 	default_cargo_type: VEHI;
 	refittable_cargo_classes: 0; 
@@ -8910,7 +9043,7 @@ graphics {
 
 //temporary hokis
 
-item (FEAT_TRAINS, hoki_10000, 0x34) {
+item (FEAT_TRAINS, hoki_10000, 52) {
 
 property {
 	name: string(STR_NAME_HOKI_10000);
@@ -8919,7 +9052,7 @@ property {
 	}
 }
 
-item (FEAT_TRAINS, hoki_6900, 0x050a) {
+item (FEAT_TRAINS, hoki_6900, 1290) {
 
 property {
 	name: string(STR_NAME_HOKI_6900);
@@ -8928,7 +9061,7 @@ property {
 	}
 }
 
-item (FEAT_TRAINS, hoki_2200, 0x050b) {
+item (FEAT_TRAINS, hoki_2200, 1291) {
 
 property {
 	name: string(STR_NAME_HOKI_2200);
@@ -8994,7 +9127,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_cargo_class, cargo_classes) {
 }
 
 
-item (FEAT_TRAINS, hoki_2500, 0x2a) {
+item (FEAT_TRAINS, hoki_2500, 42) {
 
 property {
 //	introduction_date: date(1940,1,1);
@@ -9029,7 +9162,7 @@ spriteset(spriteset_hoki_650_purchase, "gfx/freight/hoki_2500.png") {
 
 
 
-item (FEAT_TRAINS, hoki_650, 0x0505) {
+item (FEAT_TRAINS, hoki_650, 1285) {
 
 property {
 	introduction_date: date(1951,1,1);
@@ -9051,7 +9184,7 @@ graphics {
 
 
 
-item (FEAT_TRAINS, jp_chisa_flatcar, 0x22) {
+item (FEAT_TRAINS, jp_chisa_flatcar, 34) {
 
 property {
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
@@ -9060,7 +9193,7 @@ property {
 	}
 }
 
-item (FEAT_TRAINS, jp_chiki_flatcar, 0x29) {
+item (FEAT_TRAINS, jp_chiki_flatcar, 41) {
 
 property {
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS); 
@@ -9071,7 +9204,7 @@ property {
 
 //tankers
 
-item (FEAT_TRAINS, taki_3000, 0x2D) {
+item (FEAT_TRAINS, taki_3000, 45) {
 
 property {
 	name: string(STR_NAME_TAKI_3000);
@@ -9144,7 +9277,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 //brake vans
 
 //todo YO 8000 refits and variants
-item (FEAT_TRAINS, yo_8000, 0x23) {
+item (FEAT_TRAINS, yo_8000, 35) {
 
 property {
 	introduction_date: date(1974,1,1);

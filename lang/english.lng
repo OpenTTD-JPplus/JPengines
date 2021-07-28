@@ -78,7 +78,8 @@ STR_NAME_RESA_10000		:RESA 10000 Refrigerated Van
 STR_NAME_REMU_5000		:REMU 5000 Refrigerated Van
 
 
-
+STR_NAME_KU_5000		:KU 5000 Car Transporter
+STR_NAME_KOKI_71		:KOKI 71 Car Rack
 STR_NAME_KOKI_5500		:KOKI 5500 Container Carrier
 STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
 STR_NAME_CONTAINER		:KOKI 100 Container Carrier
