@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 60;
+ version: 61;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -6033,12 +6033,21 @@ spritegroup spritegroup_tora_5000_black_piece_covered {
 }
 
 
+
+
+
 switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): spritegroup_tora_5000_black_bulk;
-	bitmask(CC_BULK, CC_COVERED): spritegroup_tora_5000_black_covered;
+	bitmask(CC_COVERED): spritegroup_tora_5000_black_covered;
 	bitmask(CC_PIECE_GOODS): spritegroup_tora_5000_black_piece;
 	
-	spritegroup_tora_5000_black_piece_covered;
+	spritegroup_tora_5000_black_covered;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
+	BDMT: spritegroup_tora_5000_black_piece_covered;
+	WDPR: spritegroup_tora_5000_black_piece_covered;
+	switch_tora_5000_cargo_class;
 }
 
 
@@ -6056,7 +6065,7 @@ property {
 	}
 graphics {
 	cargo_capacity: return 40;
-	default: switch_tora_5000_cargo_class;
+	default: switch_tora_5000_cargo_type;
 	purchase: spriteset_tora_5000_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
