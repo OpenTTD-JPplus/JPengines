@@ -73,12 +73,18 @@ train_width_32_px = 1;
 sort(FEAT_TRAINS, [
 //non JNR/JR
 1005, 1100, 
-//electrics
-1010, 1011, 02, 1050, 08, 103, 1015, 1016, 10, 1020, 14, 1030, 1040, 22, 24, 26, 1060, 1065, 1070, 1071, 1075, 55, 60, 84, 1080, 1085, 1090, 18, 1095, 
+//electrics ED
+1010, 1011, 02, 1050, 1060, 1065, 1070, 1071, 1075, 1090, 
+//electrics EF
+08, 103, 1015, 1016, 10, 1020, 14, 1030, 1040, 22, 24, 26, 55, 60, 84, 1080, 1085, 105,
+//electrics EH 
+18, 88, 67, 1095, 
 //diesels
-71, 25, 20, 63, 
-//wagons
-1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1500]);
+71, 25, 20, 63, 111,
+//wagons pax/mail
+1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 
+//wagons freight
+32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1500]);
  
 //2cc templates
 
@@ -6655,6 +6661,105 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 }
 
 
+//eh200
+
+spriteset(spriteset_eh200_blue_front, "gfx/eh200.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh200_blue_rear, "gfx/eh200.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh200_cc_front, "gfx/eh200.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh200_cc_rear, "gfx/eh200.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_eh200_purchase, "gfx/eh200.png") {
+	template_purchase(1, 128)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh200_livery, cargo_subtype) {
+	1: spriteset_eh200_cc_front;
+	spriteset_eh200_blue_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh200_livery_rear, cargo_subtype) {
+	1: spriteset_eh200_cc_rear;
+	spriteset_eh200_blue_rear;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh200_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JRF_BLUE);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
+	1: return eh200_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+
+item (FEAT_TRAINS, eh200, 88) {
+
+property {
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh200_subtype_text;
+  default: switch_eh200_livery;
+  purchase: spriteset_eh200_purchase;
+  articulated_part: switch_eh200_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh200_rear, 1088) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_JNR_EH200);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh200_livery_rear;
+	}
+}
+
+
+
+
+
+
+
 
 
 
@@ -7154,6 +7259,84 @@ property {
   }
 }
 
+
+//hd300
+//hd300
+
+//Spriteset hd300
+spriteset(spriteset_hd300_red, "gfx/hd300.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hd300_flip_red, "gfx/hd300.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_hd300_cc, "gfx/hd300.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_hd300_flip_cc, "gfx/hd300.png") {
+	template_2cc_flip(1, 96)
+}
+
+
+spriteset(spriteset_hd300_red_purchase, "gfx/hd300.png") {
+	template_purchase(1, 128)
+}
+
+
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_hd300_flip_red, vehicle_is_flipped) {
+	0: spriteset_hd300_red;
+	1: spriteset_hd300_flip_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hd300_flip_cc, vehicle_is_flipped) {
+	0: spriteset_hd300_cc;
+	1: spriteset_hd300_flip_cc;
+}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hd300_livery, cargo_subtype) {
+	1: switch_hd300_flip_cc;	
+	switch_hd300_flip_red;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JRF_RED);
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, hd300, 111) {
+
+property {
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	
+//	running_cost_factor: 115;
+	}
+
+
+  graphics { // graphics for engine
+//  additional_text:	string(STR_NAME_JNR_HD300);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_hd300_subtype_text;
+  default: switch_hd300_livery;
+  purchase: spriteset_hd300_red_purchase;
+  }
+}
 
 
 
