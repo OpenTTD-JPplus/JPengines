@@ -150,8 +150,13 @@ STR_REFIT_STAINLESS	: JNR Stainless Steel
 STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
 STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
 STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
+STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
 STR_REFIT_YUYU_RED		: JR West Red/Gold "Yuyu Salon Okayama"
 STR_REFIT_YUYU_ORANGE	: JR West Orange "Yuyu Salon Okayama"
+
+STR_REFIT_EXP1			: Experimental Livery 1
+STR_REFIT_EXP2			: Experimental Livery 2
+STR_REFIT_EXP3			: Experimental Livery 3
 
 STR_REFIT_DE10_1112		: DE10 1112 Brown/Yellow
 STR_REFIT_DE10_1148		: DE10 1148 Light Blue/White
@@ -178,12 +183,7 @@ STR_REFIT_ED79_RED	: ED79 Classic Red {GOLD}(110km/h)
 STR_REFIT_ED79_JRF	: ED79 JR Freight  {GOLD}(110km/h)
 
 STR_REFIT_EF58_61	: Imperial Train
-STR_REFIT_EF58_X1	: Experimental Blue/Yellow
-STR_REFIT_EF58_X2	: Experimental Green/Yellow
-STR_REFIT_EF58_X3	: Experimental Blue/Orange
-STR_REFIT_EF58_X4	: Experimental Green
 STR_REFIT_EF58_BLUE	: JNR Express Blue/Cream
-STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
 
 STR_REFIT_EF60_NEW	: EF60 JNR Standard Blue (New Shape)
 STR_REFIT_EF60_AMERICAN	: EF60 "American Train"

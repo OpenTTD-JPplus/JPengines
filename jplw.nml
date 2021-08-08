@@ -6794,9 +6794,22 @@ spriteset(spriteset_dd51_euroliner, "gfx/dd51.png") {
 	template_2cc_std(1, 192)
 }
 
+spriteset(spriteset_dd51_testred, "gfx/dd51.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_dd51_testwhite, "gfx/dd51.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_dd51_testblue, "gfx/dd51.png") {
+	template_2cc_std(180, 64)
+}
+
 spriteset(spriteset_dd51_cc, "gfx/dd51.png") {
 	template_2cc_std(1, 224)
 }
+
 
 
 
@@ -6829,7 +6842,10 @@ switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
 	5: spriteset_dd51_freight_blue;
 	6: spriteset_dd51_freight_red;
 	7: spriteset_dd51_euroliner;
-	8: spriteset_dd51_cc;	
+	8: spriteset_dd51_testred;
+	9: spriteset_dd51_testwhite;
+	10: spriteset_dd51_testblue;
+	11: spriteset_dd51_cc;	
 	switch_dd51_yeardep_livery;
 }
 
@@ -6844,7 +6860,10 @@ switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
 	5: return string(STR_REFIT_JRF_BLUE);
 	6: return string(STR_REFIT_JRF_RED);
 	7: return string(STR_REFIT_EUROLINER);
-	8: return string(STR_REFIT_CC);	
+	8: return string(STR_REFIT_EXP1);
+	9: return string(STR_REFIT_EXP2);
+	10: return string(STR_REFIT_EXP3);
+	11: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6945,7 +6964,7 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_DD51);
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_df50_subtype_text;
   default: switch_df50_livery;
@@ -7530,9 +7549,9 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
 	4: return string(STR_REFIT_BLUE);
 	5: return string(STR_REFIT_TOKAIDO_GREEN);
 	6: return string(STR_REFIT_EF58_BLUE);
-	7: return string(STR_REFIT_EF58_X1);
-	8: return string(STR_REFIT_EF58_X3);
-	9: return string(STR_REFIT_EF58_X4);
+	7: return string(STR_REFIT_EXP1);
+	8: return string(STR_REFIT_EXP2);
+	9: return string(STR_REFIT_EXP3);
 	10: return string(STR_REFIT_LOGO);
 	11: return string(STR_REFIT_CC_OLD);	
 	12: return string(STR_REFIT_CC_NEW);	
