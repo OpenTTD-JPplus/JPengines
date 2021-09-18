@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 61;
+ version: 62;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -664,7 +664,7 @@ cargotable {
     PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, METL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, 
 	SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BEER, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, DYES, ENSP, FERT, 
 	FICR, FISH, FMSP, FRVG, GLAS, GRVL, LIME, MILK, MNSP, OLSD, PETR, PHOS, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, TOUR, 
-	VEHI, WDPR, WOOL, JAVA, EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD
+	VEHI, WDPR, WOOL, JAVA, EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR
 	}
 	
 	
@@ -2381,7 +2381,10 @@ spriteset(spriteset_wamu_50000_4, "gfx/wamu_50000.png") {
 }
 
 
-//caboose?
+spriteset(spriteset_wamu_50000_caboose, "gfx/wamu_50000.png") {
+	template_2cc_std(1, 160)
+}
+
 
 spriteset(spriteset_wamu_50000_purchase, "gfx/wamu_50000.png") {
 	template_purchase(1, 192)
@@ -2395,6 +2398,10 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_50000) {
  1: spriteset_wamu_50000_4;
 }
 
+switch (FEAT_TRAINS, SELF, switch_wamu_50000_caboose, position_in_consist_from_end) {
+	0: spriteset_wamu_50000_caboose;
+	random_wamu_50000;
+	}
 
 
 item (FEAT_TRAINS, wamu_50000, 1435) {
@@ -2422,7 +2429,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 	}
 	graphics {
 		cargo_capacity: return 30;
-		default: random_wamu_50000;
+		default: switch_wamu_50000_caboose;
 		purchase: spriteset_wamu_50000_purchase;
 		
 	}
@@ -8451,7 +8458,7 @@ property {
 	default_cargo_type: VEHI;
 	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
 	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI]; 
+	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
