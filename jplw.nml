@@ -69,7 +69,7 @@ basecost {
 traininfo_y_offset = 2;
 train_width_32_px = 1;
 
-//sort in depot
+//sort in depot //could change to item names instead of ID numbers
 sort(FEAT_TRAINS, [
 //non JNR/JR
 1005, 1100, 
@@ -7540,37 +7540,50 @@ switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_livery, build_year) {
 	spriteset_ef58_imperial;
 }
 
-switch(FEAT_TRAINS, SELF, switch_ef58_livery, cargo_subtype) {
+
+switch(FEAT_TRAINS, SELF, switch_ef58_oldshape_livery, cargo_subtype) {
 	1: spriteset_ef58_old_brown;
-	2: spriteset_ef58_brown;
-	3: spriteset_ef58_imperial;
-	4: spriteset_ef58_blue;
-	5: spriteset_ef58_tokaido_green;
-	6: spriteset_ef58_tokaido_blue;	
-	7: spriteset_ef58_x1;
-	8: spriteset_ef58_x3;
-	9: spriteset_ef58_x4;
-	10: spriteset_ef58_large_logo;
-	11: spriteset_ef58_old_cc;
-	12: spriteset_ef58_cc;	
+	2: spriteset_ef58_old_cc;
 	switch_ef58_yeardep_livery;
 }
 
 
+switch(FEAT_TRAINS, SELF, switch_ef58_newshape_livery, cargo_subtype) {
+	1: spriteset_ef58_old_brown;
+	2: spriteset_ef58_old_cc;
+	3: spriteset_ef58_brown;
+	4: spriteset_ef58_imperial;
+	5: spriteset_ef58_blue;
+	6: spriteset_ef58_tokaido_green;
+	7: spriteset_ef58_tokaido_blue;	
+	8: spriteset_ef58_x1;
+	9: spriteset_ef58_x3;
+	10: spriteset_ef58_x4;
+	11: spriteset_ef58_large_logo;
+	12: spriteset_ef58_cc;	
+	switch_ef58_yeardep_livery;
+}
 
-switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_ef58_oldshape_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_BROWN_OLD);
-	2: return string(STR_REFIT_BROWN_NEW);
-	3: return string(STR_REFIT_EF58_61);
-	4: return string(STR_REFIT_BLUE);
-	5: return string(STR_REFIT_TOKAIDO_GREEN);
-	6: return string(STR_REFIT_EF58_BLUE);
-	7: return string(STR_REFIT_EXP1);
-	8: return string(STR_REFIT_EXP2);
-	9: return string(STR_REFIT_EXP3);
-	10: return string(STR_REFIT_LOGO);
-	11: return string(STR_REFIT_CC_OLD);	
+	2: return string(STR_REFIT_CC_OLD);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_newshape_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_BROWN_OLD);
+	2: return string(STR_REFIT_CC_OLD);	
+	3: return string(STR_REFIT_BROWN_NEW);
+	4: return string(STR_REFIT_EF58_61);
+	5: return string(STR_REFIT_BLUE);
+	6: return string(STR_REFIT_TOKAIDO_GREEN);
+	7: return string(STR_REFIT_EF58_BLUE);
+	8: return string(STR_REFIT_EXP1);
+	9: return string(STR_REFIT_EXP2);
+	10: return string(STR_REFIT_EXP3);
+	11: return string(STR_REFIT_LOGO);
 	12: return string(STR_REFIT_CC_NEW);	
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -7579,6 +7592,17 @@ switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
 	0..1949: spriteset_ef58_old_purchase;
     1949..1965: spriteset_ef58_brown_purchase;
 	spriteset_ef58_blue_purchase;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_refit, current_year) {
+	0..1949: switch_ef58_oldshape_livery;
+	switch_ef58_newshape_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_subtype_text, current_year) {
+	0..1949: switch_ef58_oldshape_subtype_text;
+	switch_ef58_newshape_subtype_text;
 }
 
 
@@ -7601,8 +7625,8 @@ property {
   graphics { // graphics for engine
 //  additional_text:	string(STR_TEXT_JNR_EF58);
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef58_subtype_text;
-  default: switch_ef58_livery;
+  cargo_subtype_text: switch_ef58_yeardep_subtype_text;
+  default: switch_ef58_yeardep_refit;
   purchase: switch_ef58_yeardep_purchase;
   }
 }
@@ -9223,20 +9247,29 @@ random_switch(FEAT_TRAINS, SELF, switch_ku_random_livery) {
 	1: switch_ku_rb_livery;
 }
 
+
+switch(FEAT_TRAINS, SELF, switch_ku_5000_yeardep, current_year) {
+	0..1990: switch_ku_red_livery;
+	switch_ku_rwb_livery;
+	}
+
+
 switch(FEAT_TRAINS, SELF, switch_ku_5000_livery, cargo_subtype) {
-	1: switch_ku_rwb_livery;
-	2: switch_ku_rb_livery;
-	3: switch_ku_cc_livery;
-	4: switch_ku_random_livery;
-	switch_ku_red_livery;
+	1: switch_ku_red_livery;
+	2: switch_ku_rwb_livery;
+	3: switch_ku_rb_livery;
+	4: switch_ku_cc_livery;
+	5: switch_ku_random_livery;
+	switch_ku_5000_yeardep;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ku_5000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RED);
-	1: return string(STR_REFIT_KU_NISSAN);
-	2: return string(STR_REFIT_KU_REDBLUE);
-	3: return string(STR_REFIT_CC);
-	4: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED);
+	2: return string(STR_REFIT_KU_NISSAN);
+	3: return string(STR_REFIT_KU_REDBLUE);
+	4: return string(STR_REFIT_CC);
+	5: return string(STR_REFIT_RANDOM);
 	   return CB_RESULT_NO_TEXT;
 	}
 
