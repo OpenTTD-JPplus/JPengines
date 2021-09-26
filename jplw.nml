@@ -88,7 +88,7 @@ sort(FEAT_TRAINS, [
 //wagons box/cont
 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 1400, 1405, 1407, 44, 43, 
 //wagons hoppers/open
-1439, 1440, 1441, 1442, 1443, 1285, 1455, 1456, 52, 1290, 1291, 42, 1410, 1411, 29, 1280, 33, 1284, 1470,
+1439, 1440, 1441, 1442, 1443, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 29, 1280, 33, 1284, 1470,
 //wagons flatbeds
 
 //wagons tankers
@@ -151,263 +151,11 @@ template template_2cc_anim(x, y) {
 
 //BULK  Recolour sprites for cargo
 
-recolour_grai = reserve_sprites(1);
-replace(recolour_grai) {
-    recolour_sprite {
-        0xE5: 0x3F;
-        0xE8: 0x40;
-        0xE9: 0x41;
-        0xEA: 0x42;
-        0xEB: 0x43;
-        0xEC: 0x33;
-        0xED: 0x44;
-        0xEE: 0x34;
-    }
-}
+recolour_bulk = reserve_sprites(25);
 
-recolour_sulp = reserve_sprites(1);
-replace(recolour_sulp) {
-    recolour_sprite {
-        0xE5: 0x40;
-        0xE8: 0x41;
-        0xE9: 0x57;
-        0xEA: 0x5E;
-        0xEB: 0x42;
-        0xEC: 0x32;
-        0xED: 0x5F;
-        0xEE: 0x34;
-    }
-}
+replace(recolour_bulk) {
 
-recolour_sand = reserve_sprites(1);
-replace(recolour_sand) {
-    recolour_sprite {
-        0xE5: 0x6F;
-        0xE8: 0x3A;
-        0xE9: 0x1E;
-        0xEA: 0x3B;
-        0xEB: 0x26;
-        0xEC: 0x1F;
-        0xED: 0x27;
-        0xEE: 0xA8;
-    }
-}
-
-recolour_aore = reserve_sprites(1);
-replace(recolour_aore) {
-    recolour_sprite {
-        0xE5: 0x48;
-        0xE8: 0x2B;
-        0xE9: 0x4A;
-        0xEA: 0x2C;
-        0xEB: 0xA2;
-        0xEC: 0x4B;
-        0xED: 0x4C;
-        0xEE: 0x75;
-    }
-}
-
-recolour_core = reserve_sprites(1);
-replace(recolour_core) {
-    recolour_sprite {
-        0xE5: 0x18;
-        0xE8: 0x19;
-        0xE9: 0x36;
-        0xEA: 0x1A;
-        0xEB: 0x37;
-        0xEC: 0x38;
-        0xED: 0x39;
-        0xEE: 0x1D;
-    }
-}
-
-recolour_fert = reserve_sprites(1);
-replace(recolour_fert) {
-    recolour_sprite {
-        0xE5: 0x69;
-        0xE8: 0x35;
-        0xE9: 0x6B;
-        0xEA: 0x6C;
-        0xEB: 0x6D;
-        0xEC: 0x6E;
-        0xED: 0x6F;
-        0xEE: 0x3A;
-    }
-}
-
-recolour_iore = reserve_sprites(1);
-replace(recolour_iore) {
-    recolour_sprite {
-        0xE5: 0x46;
-        0xE8: 0x47;
-        0xE9: 0x48;
-        0xEA: 0x49;
-        0xEB: 0x4A;
-        0xEC: 0x4B;
-        0xED: 0x4C;
-        0xEE: 0x4D;
-    }
-}
-
-recolour_clay = reserve_sprites(1);
-replace(recolour_clay) {
-    recolour_sprite {
-        0xE5: 0x22;
-        0xE8: 0x6D;
-        0xE9: 0x6D;
-        0xEA: 0x4C;
-        0xEB: 0x75;
-        0xEC: 0x76;
-        0xED: 0x4F;
-        0xEE: 0x26;
-    }
-}
-
-recolour_olsd = reserve_sprites(1);
-replace(recolour_olsd) {
-    recolour_sprite {
-        0xE5: 0x22;
-        0xE8: 0x6D;
-        0xE9: 0x38;
-        0xEA: 0x5C;
-        0xEB: 0x6F;
-        0xEC: 0x5E;
-        0xED: 0x3B;
-        0xEE: 0x26;
-    }
-}
-
-recolour_lime = reserve_sprites(1);
-replace(recolour_lime) {
-    recolour_sprite {
-        0xE5: 0x08;
-        0xE8: 0x0A;
-        0xE9: 0x1E;
-        0xEA: 0x0B;
-        0xEB: 0x3B;
-        0xEC: 0x0C;
-        0xED: 0x0D;
-        0xEE: 0x0E;
-    }
-}
-
-recolour_pota = reserve_sprites(1);
-replace(recolour_pota) {
-    recolour_sprite {
-        0xE5: 0x16;
-        0xE8: 0x17;
-        0xE9: 0x0D;
-        0xEA: 0x87;
-        0xEB: 0x0E;
-        0xEC: 0xD2;
-        0xED: 0x0F;
-        0xEE: 0x0F;
-    }
-}
-
-
-
-recolour_grvl = reserve_sprites(1);
-replace(recolour_grvl) {
-    recolour_sprite {
-        0xE5: 0x07;
-        0xE8: 0x08;
-        0xE9: 0x09;
-        0xEA: 0x0A;
-        0xEB: 0x0B;
-        0xEC: 0x0C;
-        0xED: 0x0D;
-        0xEE: 0x0E;
-    }
-}
-
-recolour_coal = reserve_sprites(1);
-replace(recolour_coal) {
-    recolour_sprite {
-        0xE5: 0x01;
-        0xE8: 0x01;
-        0xE9: 0x02;
-        0xEA: 0x03;
-        0xEB: 0x01;
-        0xEC: 0x04;
-        0xED: 0x05;
-        0xEE: 0x06;
-    }
-}
-
-recolour_frut = reserve_sprites(1);
-replace(recolour_frut) {
-    recolour_sprite {
-        0xE5: 0x03;
-        0xE8: 0x04;
-        0xE9: 0x1D;
-        0xEA: 0x40;
-        0xEB: 0xC2;
-        0xEC: 0x42;
-        0xED: 0x5F;
-        0xEE: 0x43;
-    }
-}
-
-recolour_scmt = reserve_sprites(1);
-replace(recolour_scmt) {
-    recolour_sprite {
-        0xE5: 0x02;
-        0xE8: 0x03;
-        0xE9: 0x7B;
-        0xEA: 0x11;
-        0xEB: 0x13;
-        0xEC: 0x4C;
-        0xED: 0x16;
-        0xEE: 0x17;
-    }
-}
-
-recolour_sgbt = reserve_sprites(1);
-replace(recolour_sgbt) {
-    recolour_sprite {
-        0xE5: 0x36;
-        0xE8: 0x69;
-        0xE9: 0x5C;
-        0xEA: 0x6D;
-        0xEB: 0x3B;
-        0xEC: 0x1A;
-        0xED: 0x6C;
-        0xEE: 0x35;
-    }
-}
-/*
-recolour_sgcn = reserve_sprites(1);
-replace(recolour_sgcn) {
-    recolour_sprite {
-        0xE5: 0x60;
-        0xE8: 0x69;
-        0xE9: 0x55;
-        0xEA: 0x53;
-        0xEB: 0x51;
-        0xEC: 0x59;
-        0xED: 0x50;
-        0xEE: 0x40;
-    }
-}
-
-recolour_java = reserve_sprites(1);
-replace(recolour_java) {
-    recolour_sprite {
-        0xE5: 0x68;
-        0xE8: 0x6A;
-        0xE9: 0x60;
-        0xEA: 0x69;
-        0xEB: 0x46;
-        0xEC: 0x5C;
-        0xED: 0x3C;
-        0xEE: 0x47;
-    }
-}
-
-*/
-recolour_blue = reserve_sprites(1);
-replace(recolour_blue) {
+//blue 0
     recolour_sprite {
         0xE5: 0x90;
         0xE8: 0x91;
@@ -418,11 +166,205 @@ replace(recolour_blue) {
         0xED: 0x96;
         0xEE: 0x97;
     }
-}
-
-
-recolour_rcyc = reserve_sprites(1);
-replace(recolour_rcyc) {
+//grain 1
+    recolour_sprite {
+        0xE5: 0x3F;
+        0xE8: 0x40;
+        0xE9: 0x41;
+        0xEA: 0x42;
+        0xEB: 0x43;
+        0xEC: 0x33;
+        0xED: 0x44;
+        0xEE: 0x34;
+    }
+//iore 2
+	recolour_sprite {
+        0xE5: 0x46;
+        0xE8: 0x47;
+        0xE9: 0x48;
+        0xEA: 0x49;
+        0xEB: 0x4A;
+        0xEC: 0x4B;
+        0xED: 0x4C;
+        0xEE: 0x4D;
+    }
+//sulp 3
+    recolour_sprite {
+        0xE5: 0x40;
+        0xE8: 0x41;
+        0xE9: 0x57;
+        0xEA: 0x5E;
+        0xEB: 0x42;
+        0xEC: 0x32;
+        0xED: 0x5F;
+        0xEE: 0x34;
+    }
+//sand 4
+    recolour_sprite {
+        0xE5: 0x6F;
+        0xE8: 0x3A;
+        0xE9: 0x1E;
+        0xEA: 0x3B;
+        0xEB: 0x26;
+        0xEC: 0x1F;
+        0xED: 0x27;
+        0xEE: 0xA8;
+    }
+//bauxite 5
+    recolour_sprite {
+        0xE5: 0x48;
+        0xE8: 0x2B;
+        0xE9: 0x4A;
+        0xEA: 0x2C;
+        0xEB: 0xA2;
+        0xEC: 0x4B;
+        0xED: 0x4C;
+        0xEE: 0x75;
+    }
+//copper ore 6
+    recolour_sprite {
+        0xE5: 0x18;
+        0xE8: 0x19;
+        0xE9: 0x36;
+        0xEA: 0x1A;
+        0xEB: 0x37;
+        0xEC: 0x38;
+        0xED: 0x39;
+        0xEE: 0x1D;
+    }
+//fertiliser 7
+    recolour_sprite {
+        0xE5: 0x69;
+        0xE8: 0x35;
+        0xE9: 0x6B;
+        0xEA: 0x6C;
+        0xEB: 0x6D;
+        0xEC: 0x6E;
+        0xED: 0x6F;
+        0xEE: 0x3A;
+    }
+//clay 8
+    recolour_sprite {
+        0xE5: 0x22;
+        0xE8: 0x6D;
+        0xE9: 0x6D;
+        0xEA: 0x4C;
+        0xEB: 0x75;
+        0xEC: 0x76;
+        0xED: 0x4F;
+        0xEE: 0x26;
+    }
+//oil seeds 9
+    recolour_sprite {
+        0xE5: 0x22;
+        0xE8: 0x6D;
+        0xE9: 0x38;
+        0xEA: 0x5C;
+        0xEB: 0x6F;
+        0xEC: 0x5E;
+        0xED: 0x3B;
+        0xEE: 0x26;
+    }
+//limestone 10
+    recolour_sprite {
+        0xE5: 0x08;
+        0xE8: 0x0A;
+        0xE9: 0x1E;
+        0xEA: 0x0B;
+        0xEB: 0x3B;
+        0xEC: 0x0C;
+        0xED: 0x0D;
+        0xEE: 0x0E;
+    }
+//potash 11
+    recolour_sprite {
+        0xE5: 0x16;
+        0xE8: 0x17;
+        0xE9: 0x0D;
+        0xEA: 0x87;
+        0xEB: 0x0E;
+        0xEC: 0xD2;
+        0xED: 0x0F;
+        0xEE: 0x0F;
+    }
+//gravel 12
+    recolour_sprite {
+        0xE5: 0x07;
+        0xE8: 0x08;
+        0xE9: 0x09;
+        0xEA: 0x0A;
+        0xEB: 0x0B;
+        0xEC: 0x0C;
+        0xED: 0x0D;
+        0xEE: 0x0E;
+    }
+//coal 13
+    recolour_sprite {
+        0xE5: 0x01;
+        0xE8: 0x01;
+        0xE9: 0x02;
+        0xEA: 0x03;
+        0xEB: 0x01;
+        0xEC: 0x04;
+        0xED: 0x05;
+        0xEE: 0x06;
+    }
+//fruit 14
+    recolour_sprite {
+        0xE5: 0x03;
+        0xE8: 0x04;
+        0xE9: 0x1D;
+        0xEA: 0x40;
+        0xEB: 0xC2;
+        0xEC: 0x42;
+        0xED: 0x5F;
+        0xEE: 0x43;
+    }
+//scrap 15
+    recolour_sprite {
+        0xE5: 0x02;
+        0xE8: 0x03;
+        0xE9: 0x7B;
+        0xEA: 0x11;
+        0xEB: 0x13;
+        0xEC: 0x4C;
+        0xED: 0x16;
+        0xEE: 0x17;
+    }
+//sugar beet 16
+    recolour_sprite {
+        0xE5: 0x36;
+        0xE8: 0x69;
+        0xE9: 0x5C;
+        0xEA: 0x6D;
+        0xEB: 0x3B;
+        0xEC: 0x1A;
+        0xED: 0x6C;
+        0xEE: 0x35;
+    }
+//sugar cane 17
+    recolour_sprite {
+        0xE5: 0x60;
+        0xE8: 0x69;
+        0xE9: 0x55;
+        0xEA: 0x53;
+        0xEB: 0x51;
+        0xEC: 0x59;
+        0xED: 0x50;
+        0xEE: 0x40;
+    }
+//coffee 18
+    recolour_sprite {
+        0xE5: 0x68;
+        0xE8: 0x6A;
+        0xE9: 0x60;
+        0xEA: 0x69;
+        0xEB: 0x46;
+        0xEC: 0x5C;
+        0xED: 0x3C;
+        0xEE: 0x47;
+    }
+//waste 19
     recolour_sprite {
         0xE5: 0x02;
         0xE8: 0x03;
@@ -433,10 +375,7 @@ replace(recolour_rcyc) {
         0xED: 0x16;
         0xEE: 0x1E;
     }
-}
-
-recolour_bdmt = reserve_sprites(1);
-replace(recolour_bdmt) {
+//building mat 20
     recolour_sprite {
         0xE5: 0x68;
         0xE8: 0x69;
@@ -447,10 +386,7 @@ replace(recolour_bdmt) {
         0xED: 0x6E;
         0xEE: 0x6F;
     }
-}
-
-recolour_ficr = reserve_sprites(1);
-replace(recolour_ficr) {
+//fibre crops 21
     recolour_sprite {
         0xE5: 0x68;
         0xE8: 0x35;
@@ -461,11 +397,7 @@ replace(recolour_ficr) {
         0xED: 0x3A;
         0xEE: 0x3B;
     }
-}
-
-
-recolour_slag = reserve_sprites(1);
-replace(recolour_slag) {
+//slag 22
     recolour_sprite {
         0xE5: 0x01;
         0xE8: 0xE9;
@@ -476,11 +408,7 @@ replace(recolour_slag) {
         0xED: 0x05;
         0xEE: 0x06;
     }
-}
-
-
-recolour_phos = reserve_sprites(1);
-replace(recolour_phos) {
+//phosphate 23
     recolour_sprite {
         0xE5: 0x6F;
         0xE8: 0x3A;
@@ -491,156 +419,105 @@ replace(recolour_phos) {
         0xED: 0x86;
         0xEE: 0xA8;
     }
+//salt 24
+    recolour_sprite {
+        0xE5: 0x0A;
+        0xE8: 0x0B;
+        0xE9: 0x0C;
+        0xEA: 0x0C;
+        0xEB: 0x0D;
+        0xEC: 0x0E;
+        0xED: 0x0F;
+        0xEE: 0x0F;
+    }
 }
 
 /*
 
-recolour_stel = reserve_sprites(1);
-replace(recolour_stel) {
-    recolour_sprite {
-        227: 19;
-        228: 20;
-        229: 21;
-        230: 22;
-        231: 23;
-    }
-}
-
-recolour_wdpr = reserve_sprites(1);
-replace(recolour_wdpr) {
-    recolour_sprite {
-        227: 35;
-        228: 36;
-        229: 37;
-        230: 38;
-        231: 39;
-    }
-}
-
-recolour_glas = reserve_sprites(1);
-replace(recolour_glas) {
-    recolour_sprite {
-        227: 131;
-        228: 132;
-        229: 133;
-        230: 134;
-        231: 135;
-    }
-}
-
-recolour_copr = reserve_sprites(1);
-replace(recolour_copr) {
-    recolour_sprite {
-        227: 117;
-        228: 118;
-        229: 119;
-        230: 120;
-        231: 121;
-    }
-}
-
-recolour_metl = reserve_sprites(1);
-replace(recolour_metl) {
-    recolour_sprite {
-        227: 10;
-        228: 11;
-        229: 12;
-        230: 13;
-        231: 14;
-    }
-}
-
-recolour_zinc = reserve_sprites(1);
-replace(recolour_zinc) {
-    recolour_sprite {
-        227: 157;
-        228: 158;
-        229: 159;
-        230: 160;
-        231: 161;
-    }
-}
-
-recolour_wood = reserve_sprites(1);
-replace(recolour_wood) {
-    recolour_sprite {
-        227: 104;
-        228: 105;
-        229: 106;
-        230: 107;
-        231: 108;
-    }
-}
-
-recolour_iron = reserve_sprites(1);
-replace(recolour_iron) {
-    recolour_sprite {
-        227: 43;
-        228: 44;
-        229: 45;
-        230: 46;
-        231: 47;
-    }
-}
-
-recolour_bale = reserve_sprites(1);
-replace(recolour_bale) {
-    recolour_sprite {
-        227: 27;
-        228: 28;
-        229: 29;
-        230: 30;
-        231: 31;
-    }
-}
-
-Might figure a way to fix that ^^^
-
-/*
-
-* GENERIC RECOLOUR CALLBACK
+* GENERIC RECOLOUR CALLBACK 
 
 */
 
+//todo add more recolours
+
+//nickel, zinc ore, kaolin/lithium, ferrochrome
+
+
 switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_type_in_veh) {
-	GRAI: recolour_grai;
-    SULP: recolour_sulp;
-	PHOS: recolour_phos;
-    SAND: recolour_sand;
-    AORE: recolour_aore;
-    CORE: recolour_core;
-    FERT: recolour_fert;
-    IORE: recolour_iore;
-    CLAY: recolour_clay;
-    OLSD: recolour_olsd;
-    LIME: recolour_grvl;
-    POTA: recolour_pota;
-    GRVL: recolour_grvl;
-    COAL: recolour_coal;
-    FRUT: recolour_frut;
-    SCMT: recolour_scmt;
-	RCYC: recolour_rcyc;
-    SGBT: recolour_sgbt;
-    SGCN: recolour_sgbt;
-    JAVA: recolour_bdmt;
-	BDMT: recolour_bdmt;
-	FICR: recolour_ficr;
-	MNO2: recolour_fert;
-	CMNT: recolour_grvl;
-	SLAG: recolour_slag;
-	COKE: recolour_coal;
-	PORE: recolour_iore;
-	BEAN: recolour_olsd;
-	QLME: recolour_lime;
-	SALT: recolour_grvl;
-	SASH: recolour_pota;
-	NITR: recolour_sand;
-	PEAT: recolour_fert;
-	KAOL: recolour_pota;
-	WOOD: recolour_bdmt;
-	WOOL: recolour_grvl;
+	GRAI: return recolour_bulk +1;
+	CERE: return recolour_bulk +1;
+	MAIZ: return recolour_bulk +1;	
+	WHEA: return recolour_bulk +1;
 	
-    recolour_blue;
+	IORE: return recolour_bulk +2;
+	PORE: return recolour_bulk +2;
+
+    SULP: return recolour_bulk +3;
+
+    SAND: return recolour_bulk +4;
+	NITR: return recolour_bulk +4;
+	KAOL: return recolour_bulk +4;
+
+    AORE: return recolour_bulk +5;
+
+	CORE: return recolour_bulk +6;
+	NICK: return recolour_bulk +6;
+
+    FERT: return recolour_bulk +7;
+	MNO2: return recolour_bulk +7;
+	
+	CLAY: return recolour_bulk +8;
+
+    OLSD: return recolour_bulk +9;
+	BEAN: return recolour_bulk +9;
+	SEED: return recolour_bulk +9;
+	
+    LIME: return recolour_bulk +10;
+	SASH: return recolour_bulk +10;
+
+    POTA: return recolour_bulk +11;
+	QLME: return recolour_bulk +11;
+
+    GRVL: return recolour_bulk +12;
+    FECR: return recolour_bulk +12;
+	CMNT: return recolour_bulk +12;
+
+    COAL: return recolour_bulk +13;
+	COKE: return recolour_bulk +13;
+	CBLK: return recolour_bulk +13;
+	
+    FRUT: return recolour_bulk +14;
+    FRVG: return recolour_bulk +14;
+	
+    SCMT: return recolour_bulk +15;	
+
+    SGBT: return recolour_bulk +16;
+	CASS: return recolour_bulk +16;
+	
+    SGCN: return recolour_bulk +17;
+	TWOD: return recolour_bulk +17;
+	
+    JAVA: return recolour_bulk +18;	
+	PEAT: return recolour_bulk +18;
+	NUTS: return recolour_bulk +18;
+	
+	RCYC: return recolour_bulk +19;
+	WSTE: return recolour_bulk +19;
+	
+	BDMT: return recolour_bulk +20;
+	WOOD: return recolour_bulk +20;
+	
+	FICR: return recolour_bulk +21;
+	
+	SLAG: return recolour_bulk +22;
+	
+	PHOS: return recolour_bulk +23;
+
+	SALT: return recolour_bulk +24;
+	BAKE: return recolour_bulk +24;
+	SUGR: return recolour_bulk +24;
+
+    recolour_bulk; //blue
 }
 
 
@@ -671,10 +548,21 @@ railtypetable {
 	}
 
 cargotable {
-    PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, METL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, 
-	SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BEER, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, DYES, ENSP, FERT, 
-	FICR, FISH, FMSP, FRVG, GLAS, GRVL, LIME, MILK, MNSP, OLSD, PETR, PHOS, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, TOUR, 
-	VEHI, WDPR, WOOL, JAVA, EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE
+	//DEFAULT
+    PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, 
+	//TOYLAND
+	SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, 
+	//ECS
+	AORE, BRCK, BDMT, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL, 
+	//FIRS3, XIS
+	METL, BEER, CLAY, COPR, ENSP, FMSP, GRVL, MILK, MNSP, PHOS, RCYC, SCMT, SGBT, SGCN, JAVA, CASS, NUTS, 
+	EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE, 
+	//FIRS 4
+	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG,
+	//OTIS
+	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NICK, OTI1, OTI2, OYST, PCL_, SEED, SESP, TEXT, TWOD, WSTE, 
+	//MISC
+	YETI, YETY
 	}
 	
 	
@@ -5984,7 +5872,7 @@ property {
 //	introduction_date: date(1920,1,1);
 //	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ];
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -9302,36 +9190,6 @@ graphics {
 
 
 
-//temporary hokis //UPDATE
-
-item (FEAT_TRAINS, hoki_10000, 52) {
-
-property {
-	name: string(STR_NAME_HOKI_10000);
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	speed: 100 km/h;	
-	}
-}
-
-item (FEAT_TRAINS, hoki_6900, 1290) {
-
-property {
-	name: string(STR_NAME_HOKI_6900);
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	speed: 100 km/h;
-	}
-}
-
-item (FEAT_TRAINS, hoki_2200, 1291) {
-
-property {
-	name: string(STR_NAME_HOKI_2200);
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	cargo_allow_refit: [GRAI, BEAN, FICR, SGBT];
-	introduction_date: date(1966,1,1);	
-	speed: 100 km/h;
-	}
-}
 
 //SEKI
 
@@ -9625,6 +9483,100 @@ graphics {
 
 
 
+spriteset(spriteset_hoki_8500_red_empty, "gfx/freight/hoki_8500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_8500_red_quarter, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_hoki_8500_red_half, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_hoki_8500_red_full, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_hoki_8500_black_empty, "gfx/freight/hoki_8500.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_hoki_8500_black_quarter, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_hoki_8500_black_half, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 192)
+}
+
+spriteset(spriteset_hoki_8500_black_full, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_hoki_8500_jnr_purchase, "gfx/freight/hoki_8500.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_hoki_8500_jrf_purchase, "gfx/freight/hoki_8500.png") {
+	template_purchase(89, 256)
+}
+
+
+spritegroup spritegroup_hoki_8500_red_bulk {
+    loading: [spriteset_hoki_8500_red_empty, spriteset_hoki_8500_red_quarter, spriteset_hoki_8500_red_half, spriteset_hoki_8500_red_full];
+    loaded:  [spriteset_hoki_8500_red_empty, spriteset_hoki_8500_red_quarter, spriteset_hoki_8500_red_half, spriteset_hoki_8500_red_full];
+}
+
+spritegroup spritegroup_hoki_8500_black_bulk {
+    loading: [spriteset_hoki_8500_black_empty, spriteset_hoki_8500_black_quarter, spriteset_hoki_8500_black_half, spriteset_hoki_8500_black_full];
+    loaded:  [spriteset_hoki_8500_black_empty, spriteset_hoki_8500_black_quarter, spriteset_hoki_8500_black_half, spriteset_hoki_8500_black_full];
+}
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_8500_livery) {
+	1: spritegroup_hoki_8500_red_bulk;
+	1: spritegroup_hoki_8500_black_bulk;
+}	
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_8500_purchase, current_year) {
+	0..1987: spriteset_hoki_8500_jnr_purchase;
+	spriteset_hoki_8500_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, hoki_8500, 1285) {
+
+property {
+	introduction_date: date(1967,1,1);
+	name: string(STR_NAME_HOKI_8500);
+	speed: 100 km/h;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 60;
+	default: random_hoki_8500_livery;
+	purchase: switch_hoki_8500_purchase;
+//	cargo_subtype_text: switch_hoki_8500_subtype_text;
+	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+
+
+
+
+
+
+
 //HOKI 2500 9500
 
 spriteset(spriteset_hoki_2500_red_empty, "gfx/freight/hoki_2500.png") {
@@ -9689,8 +9641,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, hoki_2500, 42) {
 
 property {
-//	introduction_date: date(1940,1,1);
-
+	introduction_date: date(1970,1,1);
 	name: string(STR_NAME_HOKI_2500);
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
@@ -9747,27 +9698,263 @@ switch(FEAT_TRAINS, SELF, switch_hoki_650_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hoki_650, 1285) {
+item (FEAT_TRAINS, hoki_650, 1444) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1971,1,1);
-
-	name: string(STR_NAME_HOKI_650);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_SEKI_1000);
 	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 45; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
 	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SULP]; 
-	cargo_disallow_refit: [GRAI, WDPR, WOOL];
+	cargo_disallow_refit: [GRAI, SGBT, WOOL];
+	weight: 15;
+	cost_factor: 13;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	cargo_capacity: return 45;
 	default: switch_hoki_650_livery;
-	purchase: spriteset_hoki_650_purchase;
 	cargo_subtype_text: switch_hoki_650_subtype_text;
+	purchase: spriteset_hoki_650_purchase;
 	}
 }
+
+
+
+
+
+spriteset(spriteset_hoki_10000_cc_empty, "gfx/freight/hoki_10000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_10000_cc_quarter, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_hoki_10000_cc_half, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_hoki_10000_cc_full, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_hoki_10000_black_empty, "gfx/freight/hoki_10000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_hoki_10000_black_quarter, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_hoki_10000_black_half, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 192)
+}
+
+spriteset(spriteset_hoki_10000_black_full, "gfx/freight/hoki_10000.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_hoki_10000_jnr_purchase, "gfx/freight/hoki_10000.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_hoki_10000_jrf_purchase, "gfx/freight/hoki_10000.png") {
+	template_purchase(89, 256)
+}
+
+
+spritegroup spritegroup_hoki_10000_cc_bulk {
+    loading: [spriteset_hoki_10000_cc_empty, spriteset_hoki_10000_cc_quarter, spriteset_hoki_10000_cc_half, spriteset_hoki_10000_cc_full];
+    loaded:  [spriteset_hoki_10000_cc_empty, spriteset_hoki_10000_cc_quarter, spriteset_hoki_10000_cc_half, spriteset_hoki_10000_cc_full];
+}
+
+spritegroup spritegroup_hoki_10000_black_bulk {
+    loading: [spriteset_hoki_10000_black_empty, spriteset_hoki_10000_black_quarter, spriteset_hoki_10000_black_half, spriteset_hoki_10000_black_full];
+    loaded:  [spriteset_hoki_10000_black_empty, spriteset_hoki_10000_black_quarter, spriteset_hoki_10000_black_half, spriteset_hoki_10000_black_full];
+}
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_10000_livery) {
+	1: spritegroup_hoki_10000_cc_bulk;
+	1: spritegroup_hoki_10000_black_bulk;
+}	
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_10000_purchase, current_year) {
+	0..1987: spriteset_hoki_10000_jnr_purchase;
+	spriteset_hoki_10000_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, hoki_10000, 52) {
+
+property {
+	introduction_date: date(1980,1,1);
+	name: string(STR_NAME_HOKI_10000);
+	speed: 100 km/h;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+//	cargo_capacity: return 70;
+	default: random_hoki_10000_livery;
+	purchase: switch_hoki_10000_purchase;
+//	cargo_subtype_text: switch_hoki_10000_subtype_text;
+	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+
+spriteset(spriteset_hoki_2200_cream, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_2200_white, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 32)
+}
+
+
+spriteset(spriteset_hoki_2200_purchase, "gfx/freight/hoki_covered.png") {
+	template_purchase(1, 96)
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_2200_cream) {
+	1: spriteset_hoki_2200_cream;
+	1: spriteset_hoki_2200_white;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_2200_livery, cargo_subtype) {
+	1: spriteset_hoki_2200_cream;
+	2: spriteset_hoki_2200_white;
+	random_hoki_2200_cream;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hoki_2200_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_REFIT_FCREAM);
+	2: return string(STR_REFIT_FWHITE);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, hoki_2200, 1291) {
+
+property {
+	introduction_date: date(1966,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_HOKI_2200);
+	speed: 100 km/h;
+	loading_speed: 40;
+//	refittable_cargo_classes: bitmask(CC_COVERED); 
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_disallow_refit: [WOOL];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 58;
+	default: switch_hoki_2200_livery;
+	cargo_subtype_text: switch_hoki_2200_subtype_text;
+	purchase: spriteset_hoki_2200_purchase;
+	}
+}
+
+
+
+
+spriteset(spriteset_hoki_8300_black, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_hoki_8300_logo, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_hoki_8300_cream, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 192)
+}
+
+
+spriteset(spriteset_hoki_8300_purchase, "gfx/freight/hoki_covered.png") {
+	template_purchase(1, 256)
+}
+
+
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_8300_all) {
+	1: spriteset_hoki_8300_cream;
+	1: spriteset_hoki_8300_black;
+	1: spriteset_hoki_8300_logo;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_hoki_8300_black) {
+	1: spriteset_hoki_8300_black;
+	1: spriteset_hoki_8300_logo;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_8300_livery, cargo_subtype) {
+	1: random_hoki_8300_black;
+	2: spriteset_hoki_8300_cream;
+	random_hoki_8300_all;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hoki_8300_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_REFIT_FBLACK);
+	2: return string(STR_REFIT_FCREAM);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, hoki_8300, 1290) {
+
+property {
+	introduction_date: date(1974,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_HOKI_8300);
+	speed: 100 km/h;
+	loading_speed: 40;
+//	refittable_cargo_classes: bitmask(CC_COVERED); 
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_disallow_refit: [WOOL];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 65;
+	default: switch_hoki_8300_livery;
+	cargo_subtype_text: switch_hoki_8300_subtype_text;
+	purchase: spriteset_hoki_8300_purchase;
+	}
+}
+
+
+
+
+//flatcar temp
 
 
 
