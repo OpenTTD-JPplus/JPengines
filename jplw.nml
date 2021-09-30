@@ -88,7 +88,7 @@ sort(FEAT_TRAINS, [
 //wagons box/cont
 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 1400, 1405, 1407, 44, 43, 
 //wagons hoppers/open
-1439, 1440, 1441, 1442, 1443, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 29, 1280, 33, 1284, 1470,
+1439, 1440, 1441, 1442, 1443, 1444, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 29, 1280, 33, 1284, 1470,
 //wagons flatbeds
 
 //wagons tankers
@@ -151,7 +151,7 @@ template template_2cc_anim(x, y) {
 
 //BULK  Recolour sprites for cargo
 
-recolour_bulk = reserve_sprites(25);
+recolour_bulk = reserve_sprites(26);
 
 replace(recolour_bulk) {
 
@@ -422,13 +422,24 @@ replace(recolour_bulk) {
 //salt 24
     recolour_sprite {
         0xE5: 0x0A;
-        0xE8: 0x0B;
-        0xE9: 0x0C;
+        0xE8: 0x0A;
+        0xE9: 0x0B;
         0xEA: 0x0C;
         0xEB: 0x0D;
         0xEC: 0x0E;
         0xED: 0x0F;
         0xEE: 0x0F;
+    }
+//uranium 25
+    recolour_sprite {
+        0xE5: 0x0A;
+        0xE8: 0xCE;
+        0xE9: 0xCF;
+        0xEA: 0xD0;
+        0xEB: 0xD1;
+        0xEC: 0x5E;
+        0xED: 0x5F;
+        0xEE: 0x67;
     }
 }
 
@@ -516,6 +527,8 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_type_in_veh) {
 	SALT: return recolour_bulk +24;
 	BAKE: return recolour_bulk +24;
 	SUGR: return recolour_bulk +24;
+	
+	URAN: return recolour_bulk +25;
 
     recolour_bulk; //blue
 }
@@ -9259,7 +9272,7 @@ switch(FEAT_TRAINS, SELF, switch_seki_1_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seki_1_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FSTRIPE);
 	2: return string(STR_REFIT_FBLACK);
 	   return CB_RESULT_NO_TEXT;
@@ -9330,7 +9343,7 @@ switch(FEAT_TRAINS, SELF, switch_seki_1000_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seki_1000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FSTRIPE);
 	2: return string(STR_REFIT_FBLACK);
 	   return CB_RESULT_NO_TEXT;
@@ -9438,7 +9451,7 @@ switch(FEAT_TRAINS, SELF, switch_seki_3000_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seki_3000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FSTRIPE);
 	2: return string(STR_REFIT_FBLACK);
 	   return CB_RESULT_NO_TEXT;
@@ -9630,7 +9643,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_hoki_2500_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FOPEN);
 	2: return string(STR_REFIT_FCOVER);
 	   return CB_RESULT_NO_TEXT;
@@ -9689,7 +9702,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_650_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_hoki_650_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FSTRIPE);
 	2: return string(STR_REFIT_FBLACK);
 	   return CB_RESULT_NO_TEXT;
@@ -9705,7 +9718,7 @@ property {
 	track_type: NAAN;
 	introduction_date: date(1971,1,1);
 	climates_available: ALL_CLIMATES;
-	name: string(STR_NAME_SEKI_1000);
+	name: string(STR_NAME_HOKI_650);
 	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
@@ -9850,7 +9863,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2200_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_hoki_2200_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FCREAM);
 	2: return string(STR_REFIT_FWHITE);
 	   return CB_RESULT_NO_TEXT;
