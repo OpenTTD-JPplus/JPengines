@@ -71,8 +71,7 @@ train_width_32_px = 1;
 
 //sort in depot //could change to item names instead of ID numbers
 sort(FEAT_TRAINS, [
-//non JNR/JR
-1005, 1100, 
+
 //electrics ED
 1010, 1011, 02, 1050, 1060, 1065, 1070, 1071, 1075, 1090, 
 //electrics EF
@@ -81,21 +80,25 @@ sort(FEAT_TRAINS, [
 18, 88, 67, 1095, 
 //diesels
 71, 25, 20, 63, 111,
-//wagons non JNR/JR
-1402, 1420, 1421,
+//non JNR/JR
+1005, 1100, 
+
 //wagons pax/mail
 1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 
 //wagons box/cont
-32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 1400, 1405, 1407, 44, 43, 
+32, 1282, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 39, 1400, 1405, 1407, 44, 43, 
 //wagons hoppers/open
 1439, 1440, 1441, 1442, 1443, 1444, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 29, 1280, 33, 1284, 1470,
 //wagons flatbeds
-
+1480, 1481, 34, 41, 50,
 //wagons tankers
-1490, 1491, 1492, 1493, 1494,
+1488, 30, 45, 1490, 1491, 1492, 1493, 1494,
 //brake vans
-1600, 35]);
- 
+1600, 35,
+//wagons non JNR/JR
+1402, 1420, 1421
+]);
+
 //2cc templates
 
 template template_2cc_std(x, y) {
@@ -151,7 +154,7 @@ template template_2cc_anim(x, y) {
 
 //BULK  Recolour sprites for cargo
 
-recolour_bulk = reserve_sprites(26);
+recolour_bulk = reserve_sprites(27);
 
 replace(recolour_bulk) {
 
@@ -246,7 +249,7 @@ replace(recolour_bulk) {
 //clay 8
     recolour_sprite {
         0xE5: 0x22;
-        0xE8: 0x6D;
+        0xE8: 0x22;
         0xE9: 0x6D;
         0xEA: 0x4C;
         0xEB: 0x75;
@@ -441,6 +444,18 @@ replace(recolour_bulk) {
         0xED: 0x5F;
         0xEE: 0x67;
     }
+	
+//kaol/lithium 26
+    recolour_sprite {
+        0xE5: 0x0B;
+        0xE8: 0x0C;
+        0xE9: 0x9E;
+        0xEA: 0x0D;
+        0xEB: 0x9F;
+        0xEC: 0xA0;
+        0xED: 0x0E;
+        0xEE: 0xA1;
+    }
 }
 
 /*
@@ -467,7 +482,6 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_type_in_veh) {
 
     SAND: return recolour_bulk +4;
 	NITR: return recolour_bulk +4;
-	KAOL: return recolour_bulk +4;
 
     AORE: return recolour_bulk +5;
 
@@ -476,6 +490,7 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_type_in_veh) {
 
     FERT: return recolour_bulk +7;
 	MNO2: return recolour_bulk +7;
+	TOFF: return recolour_bulk +7;
 	
 	CLAY: return recolour_bulk +8;
 
@@ -529,6 +544,8 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_type_in_veh) {
 	SUGR: return recolour_bulk +24;
 	
 	URAN: return recolour_bulk +25;
+	
+	KAOL: return recolour_bulk +26;
 
     recolour_bulk; //blue
 }
@@ -2258,17 +2275,221 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 //BOXCARS
 
 //WA 
-item (FEAT_TRAINS, jp_wa_boxcar, 32) {
+
+
+spriteset(spriteset_wa_1_stripe_closed, "gfx/freight/wa_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_wa_1_stripe_empty, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_wa_1_stripe_full, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_wa_1_black_closed, "gfx/freight/wa_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_wa_1_black_empty, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_wa_1_black_full, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_wa_1_brown_closed, "gfx/freight/wa_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_wa_1_brown_empty, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_wa_1_brown_full, "gfx/freight/wa_1.png") {
+	template_2cc_anim(1, 256)
+}
+
+
+spriteset(spriteset_wa_1_jgr_purchase, "gfx/freight/wa_1.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_wa_1_jnr_purchase, "gfx/freight/wa_1.png") {
+	template_purchase(89, 288)
+}
+
+
+
+spritegroup spritegroup_wa_1_stripe_load {
+    loading: [spriteset_wa_1_stripe_empty, spriteset_wa_1_stripe_full, spriteset_wa_1_stripe_closed];
+    loaded:  [spriteset_wa_1_stripe_closed];
+}
+
+
+spritegroup spritegroup_wa_1_black_load {
+    loading: [spriteset_wa_1_black_empty, spriteset_wa_1_black_full, spriteset_wa_1_black_closed];
+    loaded:  [spriteset_wa_1_black_closed];
+}
+
+spritegroup spritegroup_wa_1_brown_load {
+    loading: [spriteset_wa_1_brown_empty, spriteset_wa_1_brown_full, spriteset_wa_1_brown_closed];
+    loaded:  [spriteset_wa_1_brown_closed];
+}
+
+
+
+random_switch(FEAT_TRAINS, SELF, random_wa_1_black) {
+	1: spritegroup_wa_1_black_load;
+	1: spritegroup_wa_1_stripe_load;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_wa_1_all) {
+	1: spritegroup_wa_1_black_load;
+	1: spritegroup_wa_1_stripe_load;
+	1: spritegroup_wa_1_brown_load;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_wa_1_livery, cargo_subtype) {
+	1: spritegroup_wa_1_stripe_load;
+	2: random_wa_1_black;
+	3: spritegroup_wa_1_brown_load;
+	random_wa_1_all;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_FRANDOM);
+	1: return string(STR_REFIT_FBLACK);
+	2: return string(STR_REFIT_FBROWN);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, wa_1, 32) {
 
 property {
-	default_cargo_type: GOOD;
 	name: string(STR_NAME_WA_1);
+	introduction_date: date(1870,1,1);
+	default_cargo_type: GOOD;
+	cargo_capacity: 20;
+	speed: 65 km/h;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
+graphics {
+	cargo_capacity: return 20;
+	default: switch_wa_1_livery;
+	cargo_subtype_text: switch_wa_1_subtype_text;
+	purchase: spriteset_wa_1_jgr_purchase;
+//	colour_mapping: switch_generic_recolour;
+	}
 }
+
+//KA 1 lvst vans
+
+//BOXCARS
+
+//WA 
+
+
+
+
+spriteset(spriteset_ka_1_grey_empty, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_ka_1_grey_half, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_ka_1_grey_full, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_ka_1_grey_closed, "gfx/freight/ka_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ka_1_brown_empty, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_ka_1_brown_half, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_ka_1_brown_full, "gfx/freight/ka_1.png") {
+	template_2cc_anim(1, 192)
+}
+
+spriteset(spriteset_ka_1_brown_closed, "gfx/freight/ka_1.png") {
+	template_2cc_std(1, 224)
+}
+
+
+
+
+
+spriteset(spriteset_ka_1_jgr_purchase, "gfx/freight/ka_1.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_ka_1_jnr_purchase, "gfx/freight/ka_1.png") {
+	template_purchase(89, 288)
+}
+
+
+
+spritegroup spritegroup_ka_1_grey_load {
+    loading: [spriteset_ka_1_grey_empty, spriteset_ka_1_grey_half, spriteset_ka_1_grey_full, spriteset_ka_1_grey_closed];
+    loaded:  [spriteset_ka_1_grey_empty, spriteset_ka_1_grey_closed];
+}
+
+
+spritegroup spritegroup_ka_1_brown_load {
+    loading: [spriteset_ka_1_brown_empty, spriteset_ka_1_brown_half, spriteset_ka_1_brown_full, spriteset_ka_1_brown_closed];
+    loaded:  [spriteset_ka_1_brown_empty, spriteset_ka_1_brown_closed];
+}
+
+
+
+
+random_switch(FEAT_TRAINS, SELF, random_ka_1_livery) {
+	1: spritegroup_ka_1_grey_load;
+	1: spritegroup_ka_1_brown_load;
+	}
+	
+
+
+
+item (FEAT_TRAINS, ka_1, 1282) {
+
+property {
+	name: string(STR_NAME_KA_1);
+	introduction_date: date(1870,1,1);
+	default_cargo_type: LVST;
+	cargo_capacity: 20;
+	cargo_age_period: 0;
+	}
+graphics {
+	cargo_capacity: return 20;
+	default: random_ka_1_livery;
+//	cargo_subtype_text: switch_ka_1_subtype_text;
+	purchase: spriteset_ka_1_jgr_purchase;
+//	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+
 
 
 //WAMU 50000
@@ -2777,16 +2998,124 @@ graphics {
 
 //REEFERS
 
-//jp set wa reefer
-item (FEAT_TRAINS, jp_wa_reefer, 1281) {
+//BOXCARS
+
+//WA 
+
+
+spriteset(spriteset_re_1_grey_closed, "gfx/freight/re_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_re_1_grey_empty, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_re_1_grey_full, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_re_1_blue_closed, "gfx/freight/re_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_re_1_blue_empty, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_re_1_blue_full, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_re_1_yellow_closed, "gfx/freight/re_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_re_1_yellow_empty, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_re_1_yellow_full, "gfx/freight/re_1.png") {
+	template_2cc_anim(1, 256)
+}
+
+
+spriteset(spriteset_re_1_jgr_purchase, "gfx/freight/re_1.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_re_1_jnr_purchase, "gfx/freight/re_1.png") {
+	template_purchase(89, 288)
+}
+
+
+
+spritegroup spritegroup_re_1_grey_load {
+    loading: [spriteset_re_1_grey_empty, spriteset_re_1_grey_full, spriteset_re_1_grey_closed];
+    loaded:  [spriteset_re_1_grey_closed];
+}
+
+
+spritegroup spritegroup_re_1_blue_load {
+    loading: [spriteset_re_1_blue_empty, spriteset_re_1_blue_full, spriteset_re_1_blue_closed];
+    loaded:  [spriteset_re_1_blue_closed];
+}
+
+spritegroup spritegroup_re_1_yellow_load {
+    loading: [spriteset_re_1_yellow_empty, spriteset_re_1_yellow_full, spriteset_re_1_yellow_closed];
+    loaded:  [spriteset_re_1_yellow_closed];
+}
+
+
+
+random_switch(FEAT_TRAINS, SELF, random_re_1_stripe) {
+	1: spritegroup_re_1_blue_load;
+	1: spritegroup_re_1_yellow_load;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_re_1_all) {
+	4: spritegroup_re_1_grey_load;
+	1: spritegroup_re_1_yellow_load;
+	1: spritegroup_re_1_blue_load;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_re_1_livery, cargo_subtype) {
+	1: spritegroup_re_1_grey_load;
+	2: random_re_1_stripe;
+	random_re_1_all;
+}
+
+switch(FEAT_TRAINS, SELF, switch_re_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_FRANDOM);
+	1: return string(STR_REFIT_FWHITE);
+	2: return string(STR_REFIT_FSTRIPE);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, re_1, 1281) {
 
 property {
+	name: string(STR_NAME_RE_1);
+	introduction_date: date(1870,1,1);
 	default_cargo_type: FOOD;
-	name: string(STR_NAME_WA_1_ICE);
-	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0; 
+	cargo_capacity: 20;
+	speed: 65 km/h;
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
+	}
+graphics {
+	cargo_capacity: return 20;
+	default: switch_re_1_livery;
+	cargo_subtype_text: switch_re_1_subtype_text;
+	purchase: spriteset_re_1_jgr_purchase;
+//	colour_mapping: switch_generic_recolour;
 	}
 }
 
@@ -5761,72 +6090,6 @@ item (FEAT_TRAINS, dmt, 1407) {
 }
 
 
-//Hoppers!
-
-
-
-
-spriteset(spriteset_hoki_1000_a, "gfx/freight/hoki_1000.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_hoki_1000_b, "gfx/freight/hoki_1000.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_hoki_1000_c, "gfx/freight/hoki_1000.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_hoki_1000_d, "gfx/freight/hoki_1000.png") {
-	template_2cc_std(1, 96)
-}
-
-
-spriteset(spriteset_hoki_1000_purchase, "gfx/freight/hoki_1000.png") {
-	template_purchase(1, 128)
-}
-
-
-random_switch(FEAT_TRAINS, SELF, switch_hoki_1000_livery) {
-	3: spriteset_hoki_1000_a;
-    1: spriteset_hoki_1000_b;
-	1: spriteset_hoki_1000_c;
-    1: spriteset_hoki_1000_d;
-}
-
-
-
-item (FEAT_TRAINS, hoki_1000, 1410) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_HOKI_1000);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1990,1,1);
-		speed: 100 km/h;
-		air_drag_coefficient: 0;
-		power: 0;
-		dual_headed: 0;
-		cargo_capacity: 65; 
-		refit_cost: 0;
-		default_cargo_type: CMNT;
-		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_COVERED); 
-		non_refittable_cargo_classes: 0;
-		cargo_disallow_refit: [GRAI, SGBT, WOOL];
-		weight: 15;
-		cost_factor: 11;
-		length: 7;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
-	}
-	graphics {
-		cargo_capacity: return 65;
-		default: switch_hoki_1000_livery;
-		purchase: spriteset_hoki_1000_purchase;
-		refit_cost: CB_RESULT_AUTOREFIT;
-	}
-}
 
 
 
@@ -9200,6 +9463,134 @@ graphics {
 	}
 }
 
+//SE
+
+
+
+spriteset(spriteset_se_1_stripe_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_se_1_stripe_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_se_1_stripe_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_se_1_logo_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_se_1_logo_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_se_1_logo_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_se_1_black_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_se_1_black_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_se_1_black_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 256)
+}
+
+
+spriteset(spriteset_se_1_jgr_purchase, "gfx/freight/se_1.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_se_1_jnr_purchase, "gfx/freight/se_1.png") {
+	template_purchase(89, 288)
+}
+
+
+
+spritegroup spritegroup_se_1_stripe_bulk {
+    loading: [spriteset_se_1_stripe_empty, spriteset_se_1_stripe_half, spriteset_se_1_stripe_full];
+    loaded:  [spriteset_se_1_stripe_empty, spriteset_se_1_stripe_half, spriteset_se_1_stripe_full];
+}
+
+spritegroup spritegroup_se_1_logo_bulk {
+    loading: [spriteset_se_1_logo_empty, spriteset_se_1_logo_half, spriteset_se_1_logo_full];
+    loaded:  [spriteset_se_1_logo_empty, spriteset_se_1_logo_half, spriteset_se_1_logo_full];
+}
+
+spritegroup spritegroup_se_1_black_bulk {
+    loading: [spriteset_se_1_black_empty, spriteset_se_1_black_half, spriteset_se_1_black_full];
+    loaded:  [spriteset_se_1_black_empty, spriteset_se_1_black_half, spriteset_se_1_black_full];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_se_1_black) {
+	1: spritegroup_se_1_logo_bulk;
+	1: spritegroup_se_1_black_bulk;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_se_1_all) {
+	1: spritegroup_se_1_logo_bulk;
+	1: spritegroup_se_1_black_bulk;
+	1: spritegroup_se_1_stripe_bulk;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_se_1_livery, cargo_subtype) {
+	1: spritegroup_se_1_stripe_bulk;
+	2: random_se_1_black;
+	random_se_1_all;
+}
+
+switch(FEAT_TRAINS, SELF, switch_se_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_FRANDOM);
+	1: return string(STR_REFIT_FSTRIPE);
+	2: return string(STR_REFIT_FBLACK);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, se_1, 1439) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1870,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_SE_1);
+	speed: 60 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 20; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0; 
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+//	cargo_disallow_refit: [WDPR, WOOL];
+	weight: 9;
+	cost_factor: 6;
+	length: 4;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 20;
+	default: switch_se_1_livery;
+	cargo_subtype_text: switch_se_1_subtype_text;
+	purchase: spriteset_se_1_jgr_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}
 
 
 
@@ -9613,9 +10004,14 @@ spriteset(spriteset_hoki_2500_red_cover, "gfx/freight/hoki_2500.png") {
 }
 
 
-spriteset(spriteset_hoki_2500_purchase, "gfx/freight/hoki_2500.png") {
+spriteset(spriteset_hoki_2500_jnr_purchase, "gfx/freight/hoki_2500.png") {
 	template_purchase(1, 256)
 }
+
+spriteset(spriteset_hoki_2500_jrf_purchase, "gfx/freight/hoki_2500.png") {
+	template_purchase(89, 256)
+}
+
 
 
 
@@ -9650,6 +10046,11 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_subtype_text, cargo_subtype) {
 	}
 
 
+switch(FEAT_TRAINS, SELF, switch_hoki_2500_purchase, current_year) {
+	0..1987: spriteset_hoki_2500_jnr_purchase;
+	spriteset_hoki_2500_jrf_purchase;
+	}
+
 
 item (FEAT_TRAINS, hoki_2500, 42) {
 
@@ -9665,7 +10066,7 @@ property {
 graphics {
 	cargo_capacity: return 55;
 	default: switch_hoki_2500_livery;
-	purchase: spriteset_hoki_2500_purchase;
+	purchase: switch_hoki_2500_purchase;
 	cargo_subtype_text: switch_hoki_2500_subtype_text;
 	colour_mapping: switch_generic_recolour;
 	}
@@ -9826,7 +10227,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
-//	cargo_capacity: return 70;
+	cargo_capacity: return 70;
 	default: random_hoki_10000_livery;
 	purchase: switch_hoki_10000_purchase;
 //	cargo_subtype_text: switch_hoki_10000_subtype_text;
@@ -9881,7 +10282,7 @@ property {
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_allow_refit: [FOOD, GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
 	cargo_disallow_refit: [WOOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -9961,6 +10362,71 @@ graphics {
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;
 	purchase: spriteset_hoki_8300_purchase;
+	}
+}
+
+//HoKi 1000
+
+
+spriteset(spriteset_hoki_1000_a, "gfx/freight/hoki_1000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_1000_b, "gfx/freight/hoki_1000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_hoki_1000_c, "gfx/freight/hoki_1000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_hoki_1000_d, "gfx/freight/hoki_1000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_hoki_1000_purchase, "gfx/freight/hoki_1000.png") {
+	template_purchase(1, 128)
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_hoki_1000_livery) {
+	3: spriteset_hoki_1000_a;
+    1: spriteset_hoki_1000_b;
+	1: spriteset_hoki_1000_c;
+    1: spriteset_hoki_1000_d;
+}
+
+
+
+item (FEAT_TRAINS, hoki_1000, 1410) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_1000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1990,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 72; 
+		refit_cost: 0;
+		default_cargo_type: CMNT;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_COVERED); 
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [GRAI, SGBT, WOOL];
+		weight: 15;
+		cost_factor: 11;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 72;
+		default: switch_hoki_1000_livery;
+		purchase: spriteset_hoki_1000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
 
