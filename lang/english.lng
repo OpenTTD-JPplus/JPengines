@@ -21,6 +21,9 @@ STR_ERROR_JAPANSETTRAINS	:Must be loaded after Japan Set 3: Trains!
 
 STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
+
+STR_NAME_JGR_7100	:7100 1-C (steam)
+
 STR_NAME_JNR_DD54	:DD54 (diesel)
 STR_NAME_JNR_AB10	:AB10 (battery)
 STR_NAME_JNR_EB10	:EB10 (electric)
