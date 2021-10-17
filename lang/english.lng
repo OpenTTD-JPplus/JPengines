@@ -143,6 +143,8 @@ STR_REFIT_FWHITE	:, White
 STR_REFIT_FLOGO		:, Logo
 
 STR_REFIT_HCC		: Hokkaido Coal Company
+STR_REFIT_SEIBU		: Seibu Railway Red/Cream
+
 STR_REFIT_JGR		: JGR Classic Brown
 STR_REFIT_JGR_BLACK	: JGR Standard Black
 STR_REFIT_RED		: JNR Standard Red

@@ -72,16 +72,18 @@ train_width_32_px = 1;
 //sort in depot //could change to item names instead of ID numbers
 sort(FEAT_TRAINS, [
 
-//electrics ED
-1010, 1011, 02, 1050, 1060, 1065, 1070, 1071, 1075, 1090, 
-//electrics EF
-08, 103, 1015, 1016, 10, 1020, 14, 1030, 1040, 22, 24, 26, 55, 60, 84, 1080, 1085, 105,
-//electrics EH 
-18, 88, 67, 1095, 
+//steam
+900, 920,
+//electrics DC
+1010, 1011, 02, 1050, 1060, 18, 08, 103, 1016, 10, 1020, 14, 1030, 1040, 22, 24, 26, 60, 84, 
+//electrics AC
+1065, 1070, 1071, 1075, 
+//electrics MS 
+1015, 1080, 55, 1085, 105, 1090, 88, 67, 1095, 
 //diesels
 71, 25, 20, 63, 111,
 //non JNR/JR
-1005, 1100, 
+1005, 1100, 1101, 
 
 //wagons pax/mail
 1300, 1320, 1340, 1360, 1370, 1380, 1390, 1395, 
@@ -2132,13 +2134,30 @@ item (FEAT_TRAINS, eh800_rear, 1096) {
 
 //SEIBU E851
 
-spriteset(spriteset_seibu_e851, "gfx/e851.png") {
+spriteset(spriteset_seibu_e851, "gfx/private/seibu_e851.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_seibu_e851_purchase, "gfx/e851.png") {
+spriteset(spriteset_seibu_e851_cc, "gfx/private/seibu_e851.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_seibu_e851_purchase, "gfx/private/seibu_e851.png") {
 	template_purchase(1, 96)
 }
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e851_livery, cargo_subtype) {
+	1: spriteset_seibu_e851_cc;
+	spriteset_seibu_e851;
+}
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e851_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_SEIBU);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
 
 item (FEAT_TRAINS, seibu_e851, 1100) {
  property {
@@ -2153,8 +2172,8 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
   power: 2550 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-//  cargo_capacity: 1;
-//  cargo_allow_refit: [PASS];
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
   weight: 96;
   reliability_decay: 80;
   model_life: 45;
@@ -2167,10 +2186,73 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
   graphics { // graphics for engine
 //  additional_text:	string(STR_TEXT_DEKI_400);
   cargo_capacity: return 0;
-  default: spriteset_seibu_e851;
+  cargo_subtype_text: switch_seibu_e851_subtype_text;
+  default: switch_seibu_e851_livery;
   purchase: spriteset_seibu_e851_purchase;
   }
 }
+
+
+//SEIBU e31
+
+spriteset(spriteset_seibu_e31, "gfx/private/seibu_e31.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_seibu_e31_cc, "gfx/private/seibu_e31.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_seibu_e31_purchase, "gfx/private/seibu_e31.png") {
+	template_purchase(1, 96)
+}
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e31_livery, cargo_subtype) {
+	1: spriteset_seibu_e31_cc;
+	spriteset_seibu_e31;
+}
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_SEIBU);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, seibu_e31, 1101) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_SEIBU_E31);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1986,1,1);
+  speed: 70 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.27;
+  power: 520 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 40;
+  reliability_decay: 80;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 13;
+  length: 4;
+  running_cost_factor: 9;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_seibu_e31_subtype_text;
+  default: switch_seibu_e31_livery;
+  purchase: spriteset_seibu_e31_purchase;
+  }
+}
+
 
 // PAX WAGONS
 
