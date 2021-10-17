@@ -115,16 +115,6 @@ STR_NAME_YO_5000		:YO 5000 Brake Van
 STR_NAME_YO_8000		:YO 8000 Brake Van
 
 
-STR_TEXT_JGR		:Operators: {GOLD}JGR
-STR_TEXT_JGR_JNR	:Operators: {GOLD}JGR/JNR
-STR_TEXT_JNR		:Operators: {GOLD}JNR
-STR_TEXT_JNR_JRF	:Operators: {GOLD}JNR, JR Freight
-STR_TEXT_JNR_DD51	:Operators: {GOLD}JNR, JR East/West/Freight/Hokkaido
-STR_TEXT_JNR_EF63	:Operators: {GOLD}JNR/JR East/JR Freight
-STR_TEXT_JNR_ED75	:Operators: {GOLD}JNR/JR East/JR Freight
-STR_TEXT_JNR_ED79	:Operators: {GOLD}JR Freight/JR Hokkaido
-STR_TEXT_DEKI_400	:Operators: {GOLD}Meitetsu
-
 
 STR_REFIT_YEARDEP	: Year-Dependent
 STR_REFIT_CC		: Company Colour
@@ -242,8 +232,8 @@ STR_REFIT_CC_OLD		: Company Colour (Old Shape)
 STR_REFIT_CC_NEW		: Comapny Colour (New Shape)
 
 
-STR_REFIT_DEKI_1	: Original (Black) Livery
-STR_REFIT_DEKI_2	: Refurbished (Blue) Livery
+STR_REFIT_MEITETSU_BLACK	: Meitetsu Original Black
+STR_REFIT_MEITETSU_BLUE		: Meitetsu Refurbished Blue
 
 
 STR_REFIT_WAKI_STRIPE	: Orange Stripe "Express Service"
@@ -261,6 +251,47 @@ STR_REFIT_DMT_FUKUYAMA	: Fukuyama
 STR_REFIT_DMT_FISH		: Reefer
 STR_REFIT_DMT_NITTSU	: Nittsu
 
+
+#additional text specific
+
+STR_DESC_JNR_7100  :{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Usage: {SILVER}General Purpose{}{}{BLACK}Operators: {WHITE}Hokkaido Coal Company / JGR{}
+
+STR_DESC_JNR_860  :{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Usage: {SILVER}Light Passengers{}{}{BLACK}Operators: {WHITE}JGR / Sakhalin Railway{}
+
+STR_DESC_AB10		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{GOLD} Battery{}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
+
+
+
+
+
+
+
+STR_DESC_DEKI_400	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Aichi Railway / Meitetsu{}
+
+STR_DESC_SEIBU_E851	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway{}
+
+STR_DESC_SEIBU_E31	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway{}
+
+
+#additional text generic
+
+STR_DESC_JGR_ELF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
+
+STR_DESC_JGR_EEP	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Express Passengers{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
+
+STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
+
+STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
+
+
+
+STR_TEXT_JGR_JNR	:Operators: {GOLD}JGR/JNR
+STR_TEXT_JNR		:Operators: {GOLD}JNR
+STR_TEXT_JNR_JRF	:Operators: {GOLD}JNR, JR Freight
+STR_TEXT_JNR_DD51	:Operators: {GOLD}JNR, JR East/West/Freight/Hokkaido
+STR_TEXT_JNR_EF63	:Operators: {GOLD}JNR/JR East/JR Freight
+STR_TEXT_JNR_ED75	:Operators: {GOLD}JNR/JR East/JR Freight
+STR_TEXT_JNR_ED79	:Operators: {GOLD}JR Freight/JR Hokkaido
 
 
 
