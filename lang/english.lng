@@ -46,8 +46,8 @@ STR_NAME_JR_ED500	:ED500 (electric)
 STR_NAME_JR_EH800	:EH800 (electric)
 
 STR_NAME_DEKI_400	:DeKi 400 (electric)
-STR_NAME_SEIBU_E851	:Seibu E851 (electric)
-STR_NAME_SEIBU_E31	:Seibu E31 (electric)
+STR_NAME_SEIBU_E851	:E851 (electric)
+STR_NAME_SEIBU_E31	:E31 (electric)
 
 
 STR_NAME_PASSENGER_12	:12 Series Passenger Coach
@@ -279,7 +279,7 @@ STR_DESC_JGR_ELF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Ele
 
 STR_DESC_JGR_EEP	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Express Passengers{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
 
-STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
+STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
 
 STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
 

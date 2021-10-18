@@ -8339,7 +8339,7 @@ switch(FEAT_TRAINS, SELF, switch_ef64_livery, cargo_subtype) {
 	switch_ef64_yeardep_livery;
 }
 
-
+//TODO add year locked refit ef64 1000
 
 switch(FEAT_TRAINS, SELF, switch_ef64_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
