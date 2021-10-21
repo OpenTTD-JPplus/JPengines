@@ -120,6 +120,12 @@ STR_REFIT_YEARDEP	: Year-Dependent
 STR_REFIT_CC		: Company Colour
 STR_REFIT_RANDOM	: Random
 
+STR_REFIT_BROWN_OLD	    : Standard Brown (Old Shape)
+STR_REFIT_BROWN_NEW	    : Standard Brown (New Shape)
+STR_REFIT_CC_OLD		: Company Colour (Old Shape)
+STR_REFIT_CC_NEW		: Company Colour (New Shape)
+STR_REFIT_CC_PROTOTYPE	: Company Colour (Prototype)
+
 STR_REFIT_FRANDOM	:, Random
 STR_REFIT_FBROWN	:, Brown
 STR_REFIT_FBLACK	:, Black
@@ -146,12 +152,14 @@ STR_REFIT_JNR_LOGO	: JNR Large Logo
 STR_REFIT_JRF_RED	: JR Freight Red
 STR_REFIT_JRF_BLUE	: JR Freight Blue
 STR_REFIT_JRF_REFIT	: JR Freight Refurbished
+STR_REFIT_SILVER	: JR Freight Silver
 STR_REFIT_HOKBLUE	: JR Hokkaido "Hokutosei"
 STR_REFIT_HOKRED	: JR Freight Hokkaido
 STR_REFIT_EUROLINER	: JR Central "Euroliner"
 STR_REFIT_LOGO		: JR Freight Large Logo
 STR_REFIT_JR_LOGO	: JR Large Logo
 STR_REFIT_EXP		: JR Freight Experimental
+STR_REFIT_PROTOTYPE	: JR Freight Prototype
 STR_REFIT_OLDRED	: JNR Classic Red
 STR_REFIT_OLDSTRIPE	: JNR Classic Red with Stripe
 STR_REFIT_BROWN	    : JNR Classic Brown
@@ -159,6 +167,7 @@ STR_REFIT_RAINBOW		: JR East "Super Express Rainbow"
 STR_REFIT_TWILIGHT	: JR West "Twilight Express"
 STR_REFIT_STAINLESS	: JNR Stainless Steel
 STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
+STR_REFIT_HOKUTOSEI		: JR East "Hokutosei"
 STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
 STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
 STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
@@ -175,10 +184,10 @@ STR_REFIT_DE10_1152		: DE10 1152 Blue/Orange
 STR_REFIT_DE10_1660		: DE10 1660 Green/Gold
 STR_REFIT_DE10_KYUSHU		: DE10 JR Kyushu Black
 
-STR_REFIT_ED61_CC		: ED61 Company Coloured
+STR_REFIT_ED61_CC		: ED61 Company Colour
 STR_REFIT_ED61_BROWN	: ED61 JNR Classic Brown
 STR_REFIT_ED61_BLUE		: ED61 JNR Standard Blue
-STR_REFIT_ED62_CC		: ED62 Company Coloured
+STR_REFIT_ED62_CC		: ED62 Company Colour
 STR_REFIT_ED62_BROWN	: ED62 JNR Classic Brown
 STR_REFIT_ED62_BLUE		: ED62 JNR Standard Blue
 STR_REFIT_ED62_JRF		: ED62 JR Freight
@@ -220,16 +229,19 @@ STR_REFIT_EF67			: EF67 Banker
 
 STR_REFIT_EF210_300		: EF210-300 Banker
 
+STR_REFIT_EF510_RED		: JR Freight "Red Thunder"
+STR_REFIT_EF510_300		: EF510-300 JR Freight Silver
+
 STR_REFIT_DF200_NEW		: JR Freight "Red Bear"
 STR_REFIT_DF200_SS		: JR Kyushu "Seven Stars"
 
 STR_REFIT_EH10		: EH10 Standard Black
 STR_REFIT_EH10_HS	: EH10 High Speed Brown {GOLD}(110km/h)
 
-STR_REFIT_BROWN_OLD	    : Standard Brown (Old Shape)
-STR_REFIT_BROWN_NEW	    : Standard Brown (New Shape)
-STR_REFIT_CC_OLD		: Company Colour (Old Shape)
-STR_REFIT_CC_NEW		: Comapny Colour (New Shape)
+STR_REFIT_EH500_1	: EH500 Early version (Low Headlights)
+STR_REFIT_EH500_2	: EH500 Early version "Kintaro Eco-Power"
+STR_REFIT_EH500_3	: EH500 Late Version "Kintaro Eco-Power"
+STR_REFIT_EH500_4	: EH500 Late Version, No Logo 
 
 
 STR_REFIT_MEITETSU_BLACK	: Meitetsu Original Black
@@ -263,6 +275,13 @@ STR_DESC_AB10		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Elect
 
 
 
+STR_DESC_EF510		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}{BLACK}Usage: {SILVER}Express Passengers / Heavy Freight{}{}{BLACK}Operators: {WHITE}JR East / JR Freight{}
+
+STR_DESC_EH500		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JR Freight{}
+
+STR_DESC_EH800		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV) {WHITE}{}{BLACK}Usage: {SILVER}Express Passengers / Heavy Freight{}{}{BLACK}Operators: {WHITE}JR Freight{}
+
+
 
 
 
@@ -270,7 +289,7 @@ STR_DESC_DEKI_400	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}El
 
 STR_DESC_SEIBU_E851	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway{}
 
-STR_DESC_SEIBU_E31	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway{}
+STR_DESC_SEIBU_E31	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway / Ōigawa Railway{}
 
 
 #additional text generic
