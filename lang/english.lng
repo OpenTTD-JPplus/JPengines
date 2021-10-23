@@ -31,6 +31,8 @@ STR_NAME_JNR_EB10	:EB10 (electric)
 STR_NAME_JNR_EF30	:EF30 (electric)
 STR_NAME_JNR_EF60	:EF60 (electric)
 STR_NAME_JNR_EF63	:EF63 (electric)
+STR_NAME_JNR_EF70	:EF70 (electric)
+STR_NAME_JNR_EF80	:EF80 (electric)
 STR_NAME_JNR_ED53	:ED19 / ED53 (electric)
 STR_NAME_JNR_ED62	:ED61 / ED62 (electric)
 STR_NAME_JNR_ED70	:ED70 (electric)
@@ -120,8 +122,10 @@ STR_REFIT_YEARDEP	: Year-Dependent
 STR_REFIT_CC		: Company Colour
 STR_REFIT_RANDOM	: Random
 
-STR_REFIT_BROWN_OLD	    : Standard Brown (Old Shape)
-STR_REFIT_BROWN_NEW	    : Standard Brown (New Shape)
+STR_REFIT_BROWN_OLD	    : JNR Standard Brown (Old Shape)
+STR_REFIT_BROWN_NEW	    : JNR Standard Brown (New Shape)
+STR_REFIT_RED_OLD	    : JNR Standard Red (Old Shape)
+STR_REFIT_RED_NEW	    : JNR Standard Red (New Shape)
 STR_REFIT_CC_OLD		: Company Colour (Old Shape)
 STR_REFIT_CC_NEW		: Company Colour (New Shape)
 STR_REFIT_CC_PROTOTYPE	: Company Colour (Prototype)
@@ -171,6 +175,7 @@ STR_REFIT_HOKUTOSEI		: JR East "Hokutosei"
 STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
 STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
 STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
+STR_REFIT_JNR_EXPRESS	: JNR Express Cream/Red
 STR_REFIT_YUYU_RED		: JR West Red/Gold "Yuyu Salon Okayama"
 STR_REFIT_YUYU_ORANGE	: JR West Orange "Yuyu Salon Okayama"
 
@@ -215,6 +220,9 @@ STR_REFIT_EF64_1_REFIT	: EF64-1000 JR Freight Refurbished
 STR_REFIT_EF64_1_STRIPE	: EF64-1000 JR Freight Stripe
 STR_REFIT_EF64_1_SLOGO	: EF64-1000 JR Freight Stripe with Logo
 STR_REFIT_EF64_1_LLOGO	: EF64-1000 JR Freight Large Logo
+
+
+
 
 STR_REFIT_EF81_450		: EF81-450 Modern Headlights
 

@@ -77,7 +77,7 @@ sort(FEAT_TRAINS, [
 //electrics DC
 1010, 1011, 02, 1050, 08, 103, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
 //electrics AC
-1065, 1070, 1071, 1075, 
+1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
 1015, 1080, 55, 1085, 1090, 105, 67, 1095, 
 //diesels
@@ -1829,6 +1829,179 @@ item (FEAT_TRAINS, ed70, 1065) {
   purchase: spriteset_ed70_purchase;
   }
 }
+
+
+//ef70
+
+spriteset(spriteset_ef70_old_red, "gfx/ef70.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef70_new_red, "gfx/ef70.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef70_express, "gfx/ef70.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef70_cc, "gfx/ef70.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_ef70_purchase, "gfx/ef70.png") {
+	template_purchase(1, 128)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef70_yeardep_livery, build_year) {
+	0..1964: spriteset_ef70_old_red;
+    spriteset_ef70_new_red;
+}
+
+//maybe add switch to make tokkyu livery if pax are attached (also ef65)
+
+switch(FEAT_TRAINS, SELF, switch_ef70_livery, cargo_subtype) {
+	1: spriteset_ef70_old_red;
+	2: spriteset_ef70_new_red;
+	3: spriteset_ef70_express; 
+	4: spriteset_ef70_cc;
+	switch_ef70_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef70_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED_OLD);
+	2: return string(STR_REFIT_RED_NEW);
+	3: return string(STR_REFIT_JNR_EXPRESS);
+	4: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, ef70, 1045) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF70);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1961,1,1);
+  speed: 105 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 2300 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 40;
+  cost_factor: 56;
+  length: 7;
+  running_cost_factor: 88;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef70_subtype_text;
+  default: switch_ef70_livery;
+  purchase: spriteset_ef70_purchase;
+  }
+}
+
+
+//ef80
+
+spriteset(spriteset_ef80_old_red, "gfx/ef80.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef80_new_red, "gfx/ef80.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef80_cc, "gfx/ef80.png") {
+	template_2cc_std(1, 64)
+}
+
+
+
+spriteset(spriteset_ef80_purchase, "gfx/ef80.png") {
+	template_purchase(1, 128)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef80_yeardep_livery, build_year) {
+	0..1980: spriteset_ef80_old_red;
+    spriteset_ef80_new_red;
+}
+
+//maybe add switch to make tokkyu livery if pax are attached (also ef65)
+
+switch(FEAT_TRAINS, SELF, switch_ef80_livery, cargo_subtype) {
+	1: spriteset_ef80_old_red;
+	2: spriteset_ef80_new_red;
+	3: spriteset_ef80_cc;
+	switch_ef80_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED_OLD);
+	2: return string(STR_REFIT_RED_NEW);
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, ef80, 1080) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF80);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1962,1,1);
+  speed: 110 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1950 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 40;
+  cost_factor: 52;
+  length: 7;
+  running_cost_factor: 85;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef80_subtype_text;
+  default: switch_ef80_livery;
+  purchase: spriteset_ef80_purchase;
+  }
+}
+
 
 //EF500
 
@@ -9043,7 +9216,7 @@ switch(FEAT_TRAINS, SELF, switch_ef510_subtype_text, cargo_subtype) {
 	3: return string(STR_REFIT_CASSIOPEIA);
 	4: return string(STR_REFIT_HOKUTOSEI);
 	5: return string(STR_REFIT_SILVER);
-	6: return string(STR_REFIT_BLUE);
+	6: return string(STR_REFIT_JRF_BLUE);
 	7: return string(STR_REFIT_EF510_RED);
 	8: return string(STR_REFIT_EF510_300);
 	9: return string(STR_REFIT_CC);
