@@ -173,11 +173,12 @@ STR_REFIT_STAINLESS	: JNR Stainless Steel
 STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
 STR_REFIT_HOKUTOSEI		: JR East "Hokutosei"
 STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
-STR_REFIT_JRF_2TONE		: JRF Two-Tone Blue
+STR_REFIT_JRF_2TONE		: JR Freight Two-Tone Blue
 STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
 STR_REFIT_JNR_EXPRESS	: JNR Express Cream/Red
 STR_REFIT_YUYU_RED		: JR West Red/Gold "Yuyu Salon Okayama"
 STR_REFIT_YUYU_ORANGE	: JR West Orange "Yuyu Salon Okayama"
+STR_REFIT_SOUTHERNCROSS	: JR Kyushu "Southern Cross"
 
 STR_REFIT_EXP1			: Experimental Livery 1
 STR_REFIT_EXP2			: Experimental Livery 2
@@ -228,6 +229,9 @@ STR_REFIT_EF81_450		: EF81-450 Modern Headlights
 
 STR_REFIT_EF30_STRIPE	: Stainless with Red Stripe
 
+STR_REFIT_ED76_1000		: ED76-1000 JR Freight Refurbished
+STR_REFIT_ED76_500		: ED76-500 JR Hokkaido
+STR_REFIT_ED76_550		: ED76-550 Seikan Tunnel Version
 
 STR_REFIT_EF59			: EF59 Banker
 
