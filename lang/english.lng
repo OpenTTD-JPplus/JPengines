@@ -122,10 +122,10 @@ STR_REFIT_YEARDEP	: Year-Dependent
 STR_REFIT_CC		: Company Colour
 STR_REFIT_RANDOM	: Random
 
-STR_REFIT_BROWN_OLD	    : JNR Standard Brown (Old Shape)
-STR_REFIT_BROWN_NEW	    : JNR Standard Brown (New Shape)
-STR_REFIT_RED_OLD	    : JNR Standard Red (Old Shape)
-STR_REFIT_RED_NEW	    : JNR Standard Red (New Shape)
+STR_REFIT_BROWN_OLD	    : {WHITE}JNR{BLACK} Standard Brown (Old Shape)
+STR_REFIT_BROWN_NEW	    : {WHITE}JNR{BLACK} Standard Brown (New Shape)
+STR_REFIT_RED_OLD	    : {WHITE}JNR{BLACK} Standard Red (Old Shape)
+STR_REFIT_RED_NEW	    : {WHITE}JNR{BLACK} Standard Red (New Shape)
 STR_REFIT_CC_OLD		: Company Colour (Old Shape)
 STR_REFIT_CC_NEW		: Company Colour (New Shape)
 STR_REFIT_CC_PROTOTYPE	: Company Colour (Prototype)
@@ -142,43 +142,63 @@ STR_REFIT_FCREAM	:, Cream
 STR_REFIT_FWHITE	:, White
 STR_REFIT_FLOGO		:, Logo
 
-STR_REFIT_HCC		: Hokkaido Coal Company
-STR_REFIT_SEIBU		: Seibu Railway Red/Cream
+STR_REFIT_HCC		: {WHITE}Hokkaido Coal Company{BLACK}
+STR_REFIT_SEIBU		: {WHITE}Seibu Railway{BLACK} Red/Cream
 
-STR_REFIT_JGR		: JGR Classic Brown
-STR_REFIT_JGR_BLACK	: JGR Standard Black
-STR_REFIT_RED		: JNR Standard Red
-STR_REFIT_BLUE		: JNR Standard Blue
-STR_REFIT_BLACK		: JNR Standard Black
-STR_REFIT_GREEN		: JNR Light Green
-STR_REFIT_TOKKYU	: JNR "Tokkyu" Blue
-STR_REFIT_JNR_LOGO	: JNR Large Logo
-STR_REFIT_JRF_RED	: JR Freight Red
-STR_REFIT_JRF_BLUE	: JR Freight Blue
-STR_REFIT_JRF_REFIT	: JR Freight Refurbished
-STR_REFIT_SILVER	: JR Freight Silver
-STR_REFIT_HOKBLUE	: JR Hokkaido "Hokutosei"
-STR_REFIT_HOKRED	: JR Freight Hokkaido
-STR_REFIT_EUROLINER	: JR Central "Euroliner"
-STR_REFIT_LOGO		: JR Freight Large Logo
-STR_REFIT_JR_LOGO	: JR Large Logo
-STR_REFIT_EXP		: JR Freight Experimental
-STR_REFIT_PROTOTYPE	: JR Freight Prototype
-STR_REFIT_OLDRED	: JNR Classic Red
-STR_REFIT_OLDSTRIPE	: JNR Classic Red with Stripe
-STR_REFIT_BROWN	    : JNR Classic Brown
-STR_REFIT_RAINBOW		: JR East "Super Express Rainbow"
-STR_REFIT_TWILIGHT	: JR West "Twilight Express"
-STR_REFIT_STAINLESS	: JNR Stainless Steel
-STR_REFIT_MOMOTARO	: JR Freight "Momotaro"
-STR_REFIT_HOKUTOSEI		: JR East "Hokutosei"
-STR_REFIT_CASSIOPEIA	: JR East "Cassiopeia"
-STR_REFIT_JRF_2TONE		: JR Freight Two-Tone Blue
-STR_REFIT_TOKAIDO_GREEN	: JNR Tokaido Green/Yellow
-STR_REFIT_JNR_EXPRESS	: JNR Express Cream/Red
-STR_REFIT_YUYU_RED		: JR West Red/Gold "Yuyu Salon Okayama"
-STR_REFIT_YUYU_ORANGE	: JR West Orange "Yuyu Salon Okayama"
-STR_REFIT_SOUTHERNCROSS	: JR Kyushu "Southern Cross"
+STR_REFIT_JGR		: {WHITE}JGR{BLACK} Classic Brown
+STR_REFIT_JGR_BLACK	: {WHITE}JGR{BLACK} Standard Black
+STR_REFIT_RED		: {WHITE}JNR{BLACK} Standard Red
+STR_REFIT_BLUE		: {WHITE}JNR{BLACK} Standard Blue
+STR_REFIT_BLACK		: {WHITE}JNR{BLACK} Standard Black
+STR_REFIT_GREEN		: {WHITE}JNR{BLACK} Light Green
+STR_REFIT_TOKKYU	: {WHITE}JNR{BLACK} Blue/Cream {GOLD}"Tokkyu"{BLACK}
+STR_REFIT_JNR_LOGO	: {WHITE}JNR{BLACK} Large Logo
+STR_REFIT_JRF_RED	: {WHITE}JR Freight{BLACK} Red
+STR_REFIT_JRF_BLUE	: {WHITE}JR Freight{BLACK} Blue
+STR_REFIT_JRF_REFIT	: {WHITE}JR Freight{BLACK} Refurbished
+STR_REFIT_SILVER	: {WHITE}JR Freight{BLACK} Silver
+STR_REFIT_JRF_YELLOW	: {WHITE}JR Freight{BLACK} Red/Yellow
+STR_REFIT_JRF_PINK		: {WHITE}JR Freight{BLACK} Pink/Orange
+STR_REFIT_JRF_THICK		: {WHITE}JR Freight{BLACK} Red/White/Grey
+STR_REFIT_HOKBLUE	: {WHITE}JR Hokkaido{BLACK} {GOLD}"Hokutosei"{BLACK}
+STR_REFIT_HOKRED	: {WHITE}JR Freight{BLACK} Hokkaido
+STR_REFIT_EUROLINER	: {WHITE}JR Central{BLACK} {GOLD}"Euroliner"{BLACK}
+STR_REFIT_LOGO		: {WHITE}JR Freight{BLACK} Large Logo
+STR_REFIT_JR_LOGO	: {WHITE}JR Freight{BLACK} Large Logo
+STR_REFIT_EXP		: {WHITE}JR Freight{BLACK} Experimental
+STR_REFIT_PROTOTYPE	: {WHITE}JR Freight{BLACK} Prototype
+STR_REFIT_OLDRED	: {WHITE}JNR{BLACK} Classic Red
+STR_REFIT_OLDSTRIPE	: {WHITE}JNR{BLACK} Classic Red with Stripe
+STR_REFIT_JNR_BROWN	    : {WHITE}JNR{BLACK} Classic Brown
+STR_REFIT_RAINBOW		: {WHITE}JR East{BLACK} {GOLD}"Super Express Rainbow"{BLACK}
+STR_REFIT_TWILIGHT	: {WHITE}JR West{BLACK} {GOLD}"Twilight Express"{BLACK}
+STR_REFIT_STAINLESS	: {WHITE}JNR{BLACK} Stainless Steel
+STR_REFIT_MOMOTARO	: {WHITE}JR Freight{BLACK} {GOLD}"Momotaro"{BLACK}
+STR_REFIT_HOKUTOSEI		: {WHITE}JR East{BLACK} {GOLD}"Hokutosei"{BLACK}
+STR_REFIT_CASSIOPEIA	: {WHITE}JR East{BLACK} {GOLD}"Cassiopeia"{BLACK}
+STR_REFIT_JRF_2TONE		: {WHITE}JR Freight{BLACK} Two-Tone Blue
+STR_REFIT_TOKAIDO_GREEN	: {WHITE}JNR{BLACK} Green/Yellow {GOLD}"Tokaido"{BLACK}
+STR_REFIT_JNR_CREAM		: {WHITE}JNR{BLACK} Cream/Red
+STR_REFIT_YUYU_RED		: {WHITE}JR West{BLACK} Red/Gold {GOLD}"Yuyu Salon Okayama"{BLACK}
+STR_REFIT_YUYU_ORANGE	: {WHITE}JR West{BLACK} Orange {GOLD}"Yuyu Salon Okayama"{BLACK}
+STR_REFIT_SOUTHERNCROSS	: {WHITE}JR Kyushu{BLACK} Red/White {GOLD}"Southern Cross"{BLACK}
+STR_REFIT_OKUIZUMO		: {WHITE}JR West{BLACK} Blue/White {GOLD}"Okuizumo Orochi"{BLACK}
+STR_REFIT_NOSTALGICVIEW	: {WHITE}JR East{BLACK} Yellow/Brown {GOLD}"Nostalgic View"{BLACK}
+STR_REFIT_ISLANDEXPRESS	: {WHITE}JR Shikoku{BLACK} White/Blue {GOLD}"Island Express"{BLACK}
+STR_REFIT_KINOKUNI		: {WHITE}JR West{BLACK} Blue/Orange {GOLD}"Kinokuni Seaside"{BLACK}
+STR_REFIT_HOKKAIDO_BLACK		: {WHITE}JR Hokkaido{BLACK} Black
+STR_REFIT_HOKKAIDO_HET			: {WHITE}JR Hokkaido{BLACK} Blue/Yellow {GOLD}"Naebo Works"{BLACK}
+STR_REFIT_NOROKKO				: {WHITE}JR Hokkaido{BLACK} Green/Gold {GOLD}"Norokko"{BLACK}
+STR_REFIT_KYUSHU_RED	: {WHITE}JR Kyushu{BLACK} Black/Red
+STR_REFIT_KYUSHU_YELLOW	: {WHITE}JR Kyushu{BLACK} Black/Yellow
+
+
+STR_REFIT_WATARASE		: {WHITE}Watarase Keikoku{BLACK} Maroon/Gold
+STR_REFIT_KANSAI_BROWN	: {WHITE}Kansai Freight Railway{BLACK} Brown/Red
+STR_REFIT_KANSAI_BLUE	: {WHITE}Kansai Freight Railway{BLACK} Blue/Yellow
+STR_REFIT_SAGANO		: {WHITE}Sagano Scenic Railway{BLACK} Black/Red
+
+
 
 STR_REFIT_EXP1			: Experimental Livery 1
 STR_REFIT_EXP2			: Experimental Livery 2

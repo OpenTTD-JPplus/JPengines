@@ -848,7 +848,7 @@ switch(FEAT_TRAINS, SELF, switch_ab10_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -912,7 +912,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -1093,7 +1093,7 @@ switch(FEAT_TRAINS, SELF, switch_ef60_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_BLUE);
 	2: return string(STR_REFIT_EF60_NEW);
 	3: return string(STR_REFIT_TOKKYU);
-	4: return string(STR_REFIT_BROWN);
+	4: return string(STR_REFIT_JNR_BROWN);
 	5: return string(STR_REFIT_EF60_AMERICAN);
 	6: return string(STR_REFIT_EF60_YASURAGI);
 	7: return string(STR_REFIT_CC);
@@ -1181,7 +1181,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef63_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN);
+	1: return string(STR_REFIT_JNR_BROWN);
 	2: return string(STR_REFIT_BLUE);
     3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
@@ -1251,7 +1251,7 @@ switch(FEAT_TRAINS, SELF, switch_ed53_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -1726,7 +1726,7 @@ switch(FEAT_TRAINS, SELF, switch_ef53_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_JGR);
-	2: return string(STR_REFIT_BROWN);
+	2: return string(STR_REFIT_JNR_BROWN);
 	3: return string(STR_REFIT_EF59);
 	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
@@ -1996,7 +1996,7 @@ switch(FEAT_TRAINS, SELF, switch_ef70_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_RED_OLD);
 	2: return string(STR_REFIT_RED_NEW);
-	3: return string(STR_REFIT_JNR_EXPRESS);
+	3: return string(STR_REFIT_JNR_CREAM);
 	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -7283,7 +7283,7 @@ switch(FEAT_TRAINS, SELF, switch_ed17_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -7342,7 +7342,7 @@ switch(FEAT_TRAINS, SELF, switch_ef10_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_STAINLESS);
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
@@ -7772,7 +7772,7 @@ switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN);
+	1: return string(STR_REFIT_JNR_BROWN);
 	2: return string(STR_REFIT_RED);
 	3: return string(STR_REFIT_HOKBLUE);
 	4: return string(STR_REFIT_HOKRED);
@@ -7858,7 +7858,7 @@ switch(FEAT_TRAINS, SELF, switch_df50_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN);
+	1: return string(STR_REFIT_JNR_BROWN);
 	2: return string(STR_REFIT_RED);
 	3: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
@@ -7896,105 +7896,214 @@ property {
 //de10
 
 //Spriteset de10
-spriteset(spriteset_de10_red, "gfx/de10.png") {
+spriteset(spriteset_de10_red, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_de10_jrf_red, "gfx/de10.png") {
+spriteset(spriteset_de10_jrf_red, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_de10_jrf_blue, "gfx/de10.png") {
+spriteset(spriteset_de10_jrf_thick, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_de10_brown, "gfx/de10.png") {
+spriteset(spriteset_de10_jrf_blue, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_de10_1112, "gfx/de10.png") {
+spriteset(spriteset_de10_jnr_brown, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_de10_cc, "gfx/de10.png") {
+spriteset(spriteset_de10_jrf_pink, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_de10_1148, "gfx/de10.png") {
+spriteset(spriteset_de10_jrf_yellow, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_de10_1152, "gfx/de10.png") {
+spriteset(spriteset_de10_island_express, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_de10_watarase, "gfx/de10.png") {
+spriteset(spriteset_de10_kinokuni, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_de10_1660, "gfx/de10.png") {
+spriteset(spriteset_de10_kyushu_red, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_de10_kyushu, "gfx/de10.png") {
+spriteset(spriteset_de10_kyushu_yellow, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 320)
 }
 
-//de10_flip flip
-spriteset(spriteset_de10_flip_red, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 1)
+spriteset(spriteset_de10_hokutosei, "gfx/diesel/de10_a.png") {
+	template_2cc_std(1, 352)
 }
 
-spriteset(spriteset_de10_flip_jrf_red, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 32)
+//B
+spriteset(spriteset_de10_cc, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_de10_flip_jrf_blue, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 64)
+spriteset(spriteset_de10_watarase, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_de10_flip_brown, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 96)
+spriteset(spriteset_de10_norokko, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_de10_flip_1112, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 128)
+spriteset(spriteset_de10_jnr_cream, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_de10_flip_cc, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 160)
+spriteset(spriteset_de10_southerncross, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_de10_flip_1148, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 192)
+spriteset(spriteset_de10_hokkaido_het, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_de10_flip_1152, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 224)
+spriteset(spriteset_de10_okuizumo, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_de10_flip_watarase, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 256)
+spriteset(spriteset_de10_nostalgicview, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_de10_flip_1660, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 288)
+spriteset(spriteset_de10_sagano, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_de10_flip_kyushu, "gfx/de10_flip.png") {
-	template_2cc_flip(1, 320)
+spriteset(spriteset_de10_hokkaido_black, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_de10_kansai_blue, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_de10_kansai_brown, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 352)
 }
 
 
 
-
-spriteset(spriteset_de10_red_purchase, "gfx/de10.png") {
-	template_purchase(1, 480)
+//Spriteset de10 flipped
+spriteset(spriteset_de10_flip_red, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 1)
 }
 
-spriteset(spriteset_de10_jrf_purchase, "gfx/de10.png") {
-	template_purchase(89, 480)
+spriteset(spriteset_de10_flip_jrf_red, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 32)
 }
+
+spriteset(spriteset_de10_flip_jrf_thick, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 64)
+}
+
+spriteset(spriteset_de10_flip_jrf_blue, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 96)
+}
+
+spriteset(spriteset_de10_flip_jnr_brown, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 128)
+}
+
+spriteset(spriteset_de10_flip_jrf_pink, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 160)
+}
+
+spriteset(spriteset_de10_flip_jrf_yellow, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 192)
+}
+
+spriteset(spriteset_de10_flip_island_express, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 224)
+}
+
+spriteset(spriteset_de10_flip_kinokuni, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 256)
+}
+
+spriteset(spriteset_de10_flip_kyushu_red, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 288)
+}
+
+spriteset(spriteset_de10_flip_kyushu_yellow, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 320)
+}
+
+spriteset(spriteset_de10_flip_hokutosei, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 352)
+}
+
+//B
+spriteset(spriteset_de10_flip_cc, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_de10_flip_watarase, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 32)
+}
+
+spriteset(spriteset_de10_flip_norokko, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 64)
+}
+
+spriteset(spriteset_de10_flip_jnr_cream, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 96)
+}
+
+spriteset(spriteset_de10_flip_southerncross, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 128)
+}
+
+spriteset(spriteset_de10_flip_hokkaido_het, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 160)
+}
+
+spriteset(spriteset_de10_flip_okuizumo, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 192)
+}
+
+spriteset(spriteset_de10_flip_nostalgicview, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 224)
+}
+
+spriteset(spriteset_de10_flip_sagano, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 256)
+}
+
+spriteset(spriteset_de10_flip_hokkaido_black, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 288)
+}
+
+spriteset(spriteset_de10_flip_kansai_blue, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 320)
+}
+
+spriteset(spriteset_de10_flip_kansai_brown, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 352)
+}
+
+
+//purchase
+
+spriteset(spriteset_de10_red_purchase, "gfx/diesel/de10_a.png") {
+	template_purchase(1, 384)
+}
+
+spriteset(spriteset_de10_jrf_purchase, "gfx/diesel/de10_a.png") {
+	template_purchase(89, 384)
+}
+
 
 
 //flip switches
@@ -8003,44 +8112,59 @@ switch(FEAT_TRAINS, SELF, switch_de10_flip_red, vehicle_is_flipped) {
 	1: spriteset_de10_flip_red;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_blue, vehicle_is_flipped) {
-	0: spriteset_de10_jrf_blue;
-	1: spriteset_de10_flip_jrf_blue;
-}
-
 switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_red, vehicle_is_flipped) {
 	0: spriteset_de10_jrf_red;
 	1: spriteset_de10_flip_jrf_red;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_brown, vehicle_is_flipped) {
-	0: spriteset_de10_brown;
-	1: spriteset_de10_flip_brown;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_thick, vehicle_is_flipped) {
+	0: spriteset_de10_jrf_thick;
+	1: spriteset_de10_flip_jrf_thick;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_1112, vehicle_is_flipped) {
-	0: spriteset_de10_1112;
-	1: spriteset_de10_flip_1112;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_blue, vehicle_is_flipped) {
+	0: spriteset_de10_jrf_blue;
+	1: spriteset_de10_flip_jrf_blue;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_1148, vehicle_is_flipped) {
-	0: spriteset_de10_1148;
-	1: spriteset_de10_flip_1148;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jnr_brown, vehicle_is_flipped) {
+	0: spriteset_de10_jnr_brown;
+	1: spriteset_de10_flip_jnr_brown;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_1152, vehicle_is_flipped) {
-	0: spriteset_de10_1152;
-	1: spriteset_de10_flip_1152;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_pink, vehicle_is_flipped) {
+	0: spriteset_de10_jrf_pink;
+	1: spriteset_de10_flip_jrf_pink;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_1660, vehicle_is_flipped) {
-	0: spriteset_de10_1660;
-	1: spriteset_de10_flip_1660;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jrf_yellow, vehicle_is_flipped) {
+	0: spriteset_de10_jrf_yellow;
+	1: spriteset_de10_flip_jrf_yellow;
 }
 
-switch(FEAT_TRAINS, SELF, switch_de10_flip_kyushu, vehicle_is_flipped) {
-	0: spriteset_de10_kyushu;
-	1: spriteset_de10_flip_kyushu;
+switch(FEAT_TRAINS, SELF, switch_de10_flip_island_express, vehicle_is_flipped) {
+	0: spriteset_de10_island_express;
+	1: spriteset_de10_flip_island_express;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kinokuni, vehicle_is_flipped) {
+	0: spriteset_de10_kinokuni;
+	1: spriteset_de10_flip_kinokuni;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kyushu_red, vehicle_is_flipped) {
+	0: spriteset_de10_kyushu_red;
+	1: spriteset_de10_flip_kyushu_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kyushu_yellow, vehicle_is_flipped) {
+	0: spriteset_de10_kyushu_yellow;
+	1: spriteset_de10_flip_kyushu_yellow;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_hokutosei, vehicle_is_flipped) {
+	0: spriteset_de10_hokutosei;
+	1: spriteset_de10_flip_hokutosei;
 }
 
 switch(FEAT_TRAINS, SELF, switch_de10_flip_cc, vehicle_is_flipped) {
@@ -8048,9 +8172,66 @@ switch(FEAT_TRAINS, SELF, switch_de10_flip_cc, vehicle_is_flipped) {
 	1: spriteset_de10_flip_cc;
 }
 
+switch(FEAT_TRAINS, SELF, switch_de10_flip_watarase, vehicle_is_flipped) {
+	0: spriteset_de10_watarase;
+	1: spriteset_de10_flip_watarase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_norokko, vehicle_is_flipped) {
+	0: spriteset_de10_norokko;
+	1: spriteset_de10_flip_norokko;
+}
+switch(FEAT_TRAINS, SELF, switch_de10_flip_jnr_cream, vehicle_is_flipped) {
+	0: spriteset_de10_jnr_cream;
+	1: spriteset_de10_flip_jnr_cream;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_southerncross, vehicle_is_flipped) {
+	0: spriteset_de10_southerncross;
+	1: spriteset_de10_flip_southerncross;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_hokkaido_het, vehicle_is_flipped) {
+	0: spriteset_de10_hokkaido_het;
+	1: spriteset_de10_flip_hokkaido_het;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_okuizumo, vehicle_is_flipped) {
+	0: spriteset_de10_okuizumo;
+	1: spriteset_de10_flip_okuizumo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_nostalgicview, vehicle_is_flipped) {
+	0: spriteset_de10_nostalgicview;
+	1: spriteset_de10_flip_nostalgicview;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_sagano, vehicle_is_flipped) {
+	0: spriteset_de10_sagano;
+	1: spriteset_de10_flip_sagano;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_hokkaido_black, vehicle_is_flipped) {
+	0: spriteset_de10_hokkaido_black;
+	1: spriteset_de10_flip_hokkaido_black;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kansai_blue, vehicle_is_flipped) {
+	0: spriteset_de10_kansai_blue;
+	1: spriteset_de10_flip_kansai_blue;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kansai_brown, vehicle_is_flipped) {
+	0: spriteset_de10_kansai_brown;
+	1: spriteset_de10_flip_kansai_brown;
+}
+
+
+
+
 
 switch(FEAT_TRAINS, SELF, switch_de10_yeardep_livery, build_year) {
-	0..1967: switch_de10_flip_brown;
+	0..1967: switch_de10_flip_jnr_brown;
 	1988..1999: switch_de10_flip_jrf_blue;
 	1999..9999: switch_de10_flip_jrf_red;
     switch_de10_flip_red;
@@ -8060,13 +8241,27 @@ switch(FEAT_TRAINS, SELF, switch_de10_livery, cargo_subtype) {
 	1: switch_de10_flip_red;
 	2: switch_de10_flip_jrf_blue;
 	3: switch_de10_flip_jrf_red;
-	4: switch_de10_flip_brown;
-	5: switch_de10_flip_1112;
-	6: switch_de10_flip_1148;
-	7: switch_de10_flip_1152;
-	8: switch_de10_flip_1660;
-	9: switch_de10_flip_kyushu;
-	10: switch_de10_flip_cc;	
+	4: switch_de10_flip_jrf_thick;
+	5: switch_de10_flip_jrf_pink;
+	6: switch_de10_flip_jrf_yellow;
+	7: switch_de10_flip_jnr_brown;
+	8: switch_de10_flip_jnr_cream;
+	9: switch_de10_flip_kyushu_red;
+	10: switch_de10_flip_kyushu_yellow;
+	11: switch_de10_flip_hokkaido_black;
+	12: switch_de10_flip_hokkaido_het;
+	13: switch_de10_flip_hokutosei;
+	14: switch_de10_flip_southerncross;
+	15: switch_de10_flip_norokko;
+	16: switch_de10_flip_island_express;
+	17: switch_de10_flip_nostalgicview;
+	18: switch_de10_flip_okuizumo;
+	19: switch_de10_flip_kinokuni;
+	20: switch_de10_flip_sagano;
+	21: switch_de10_flip_watarase;
+	22: switch_de10_flip_kansai_brown;
+	23: switch_de10_flip_kansai_blue;
+	24: switch_de10_flip_cc;	
 	switch_de10_yeardep_livery;
 }
 
@@ -8077,13 +8272,27 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_RED);
 	2: return string(STR_REFIT_JRF_BLUE);
 	3: return string(STR_REFIT_JRF_RED);
-	4: return string(STR_REFIT_BROWN);
-	5: return string(STR_REFIT_DE10_1112);
-	6: return string(STR_REFIT_DE10_1148);
-	7: return string(STR_REFIT_DE10_1152);
-	8: return string(STR_REFIT_DE10_1660);
-	9: return string(STR_REFIT_DE10_KYUSHU);
-	10: return string(STR_REFIT_CC);	
+	4: return string(STR_REFIT_JRF_THICK);
+	5: return string(STR_REFIT_JRF_PINK);
+	6: return string(STR_REFIT_JRF_YELLOW);
+	7: return string(STR_REFIT_JNR_BROWN);
+	8: return string(STR_REFIT_JNR_CREAM);
+	9: return string(STR_REFIT_KYUSHU_RED);
+	10: return string(STR_REFIT_KYUSHU_YELLOW);
+	11: return string(STR_REFIT_HOKKAIDO_BLACK);
+	12: return string(STR_REFIT_HOKKAIDO_HET);
+	13: return string(STR_REFIT_HOKUTOSEI);
+	14: return string(STR_REFIT_SOUTHERNCROSS);
+	15: return string(STR_REFIT_NOROKKO);
+	16: return string(STR_REFIT_ISLANDEXPRESS);
+	17: return string(STR_REFIT_NOSTALGICVIEW);
+	18: return string(STR_REFIT_OKUIZUMO);
+	19: return string(STR_REFIT_KINOKUNI);
+	20: return string(STR_REFIT_SAGANO);
+	21: return string(STR_REFIT_WATARASE);
+	22: return string(STR_REFIT_KANSAI_BROWN);
+	23: return string(STR_REFIT_KANSAI_BLUE);
+	24: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -8328,7 +8537,7 @@ switch(FEAT_TRAINS, SELF, switch_ef55_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef55_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BROWN);
+	0: return string(STR_REFIT_JNR_BROWN);
 	1: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -8643,7 +8852,7 @@ switch(FEAT_TRAINS, SELF, switch_ef64_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef64_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN);
+	1: return string(STR_REFIT_JNR_BROWN);
 	2: return string(STR_REFIT_BLUE);
 	3: return string(STR_REFIT_JRF_BLUE);
 	4: return string(STR_REFIT_EUROLINER);
@@ -8786,7 +8995,7 @@ switch(FEAT_TRAINS, SELF, switch_ef65_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef65_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN);
+	1: return string(STR_REFIT_JNR_BROWN);
 	2: return string(STR_REFIT_TOKKYU);
 	3: return string(STR_REFIT_BLUE);
 	4: return string(STR_REFIT_TOKAIDO_GREEN);
