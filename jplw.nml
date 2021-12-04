@@ -1568,7 +1568,7 @@ item (FEAT_TRAINS, ed62, 1060) {
 
 //ed75/79
 
-spriteset(spriteset_ed75_classic, "gfx/ed75.png") {
+spriteset(spriteset_ed75_red, "gfx/ed75.png") {
 	template_2cc_std(1, 1)
 }
 
@@ -1576,7 +1576,7 @@ spriteset(spriteset_ed75_akebono, "gfx/ed75.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed75_red, "gfx/ed75.png") {
+spriteset(spriteset_ed75_newred, "gfx/ed75.png") {
 	template_2cc_std(1, 64)
 }
 
@@ -1600,6 +1600,14 @@ spriteset(spriteset_ed75_cc, "gfx/ed75.png") {
 	template_2cc_std(1, 224)
 }
 
+spriteset(spriteset_ed79_red, "gfx/ed75.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed79_singlearm, "gfx/ed75.png") {
+	template_2cc_std(1, 1)
+}
+
 spriteset(spriteset_ed79_jrf, "gfx/ed75.png") {
 	template_2cc_std(1, 256)
 }
@@ -1616,31 +1624,50 @@ spriteset(spriteset_ed79_purchase, "gfx/ed75.png") {
 	template_purchase(89, 320)
 }
 
+//32bpp
+
+alternative_sprites(spriteset_ed75_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_ed79_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_ed79_singlearm, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+	template_2cc_std(1, 64)
+}
+
+
+alternative_sprites(spriteset_ed75_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+	template_purchase(1, 256)
+}
+
+alternative_sprites(spriteset_ed79_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+	template_purchase(89, 256)
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_ed75_yeardep_livery, build_year) {
-	1993..2003: spriteset_ed75_refurb;
-	2003..9999: spriteset_ed75_redstripe;
-    spriteset_ed75_classic;
+	0..1985: spriteset_ed75_red;
+	1986..2008: spriteset_ed79_red;
+	spriteset_ed79_singlearm;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed75_yeardep_purchase, current_year) {
-	1987..9999: spriteset_ed79_purchase;
-    spriteset_ed75_purchase;
+	0..1986: spriteset_ed75_purchase;
+    spriteset_ed79_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed75_livery, cargo_subtype) {
-	1: spriteset_ed75_classic;
+	1: spriteset_ed75_red;
 	2: spriteset_ed75_akebono;
-	3: spriteset_ed75_red;
+	3: spriteset_ed75_newred;
 	4: spriteset_ed75_redstripe;
 	5: spriteset_ed75_rainbow;
 	6: spriteset_ed75_panda;
 	7: spriteset_ed75_refurb;
 	8: spriteset_ed75_cc;
-	9: spriteset_ed75_classic;
-	10: spriteset_ed79_jrf;
-	11: spriteset_ed79_cc;
 	switch_ed75_yeardep_livery;
 }
 
@@ -1654,17 +1681,65 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	6: return string(STR_REFIT_ED75_M2);
 	7: return string(STR_REFIT_ED75_M3);
 	8: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed79_livery, cargo_subtype) {
+	1: spriteset_ed75_red;
+	2: spriteset_ed75_akebono;
+	3: spriteset_ed75_newred;
+	4: spriteset_ed75_redstripe;
+	5: spriteset_ed75_rainbow;
+	6: spriteset_ed75_panda;
+	7: spriteset_ed75_refurb;
+	8: spriteset_ed75_cc;
+	9: spriteset_ed79_red;
+	10: spriteset_ed79_singlearm;
+	11: spriteset_ed79_jrf;
+	12: spriteset_ed79_cc;
+	switch_ed75_yeardep_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_OLDRED);
+	2: return string(STR_REFIT_ED75_GOLD);
+	3: return string(STR_REFIT_RED);
+	4: return string(STR_REFIT_ED75_M1);
+	5: return string(STR_REFIT_RAINBOW);
+	6: return string(STR_REFIT_ED75_M2);
+	7: return string(STR_REFIT_ED75_M3);
+	8: return string(STR_REFIT_CC);
 	9: return string(STR_REFIT_ED79_RED);
-	10: return string(STR_REFIT_ED79_JRF);
-	11: return string(STR_REFIT_ED79_CC);
+	10: return string(STR_REFIT_ED79_SINGLEARM);
+	11: return string(STR_REFIT_ED79_JRF);
+	12: return string(STR_REFIT_ED79_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 switch(FEAT_TRAINS, SELF, switch_ed75_speed, cargo_subtype) {
-	9..11: return 110;
+	9..12: return 110;
 
 	return 100;
 }
+
+
+switch(FEAT_TRAINS, SELF, switch_ed75_yeardep_refit, current_year) {
+	0..1985: switch_ed75_livery;
+	switch_ed79_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed75_yeardep_subtype_text, current_year) {
+	0..1985: switch_ed75_subtype_text;
+	switch_ed79_subtype_text;
+}
+
+
+
+
 
 item (FEAT_TRAINS, ed75, 1070) {
  property {
@@ -1694,8 +1769,8 @@ item (FEAT_TRAINS, ed75, 1070) {
   additional_text:	string(STR_TEXT_JNR_ED75);
   speed: switch_ed75_speed;
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ed75_subtype_text;
-  default: switch_ed75_livery;
+  cargo_subtype_text: switch_ed75_yeardep_subtype_text;
+  default: switch_ed75_yeardep_refit;
   purchase: switch_ed75_yeardep_purchase;
   }
 }
@@ -7260,8 +7335,8 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		track_type: NAAN;
 		name: string(STR_NAME_SLAG_LADLE);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1920,1,1);
-		speed: 65 km/h;
+		introduction_date: date(1900,1,1);
+		speed: 60 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -7269,10 +7344,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		refit_cost: 0;
 		default_cargo_type: SLAG;
 		loading_speed: 40;
-//		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
-//		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [SLAG]; 
-//		cargo_disallow_refit: [WDPR, WOOL];
+		cargo_allow_refit: [SLAG, IRON]; 
 		weight: 30;
 		cost_factor: 10;
 		length: 4;
