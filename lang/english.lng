@@ -2,8 +2,8 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.10.4 32bpp
-STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, (c) 2021 GPLv2+.
+STR_GRF_NAME :JP+ Engines & Wagons v0.10.5 32bpp
+STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
 STR_PARAM_DESC_BASECOSTMODBUY	:Adjust vehicle purchase costs, to match Japan Set
@@ -58,9 +58,10 @@ STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
 
-STR_NAME_MAIL_15		:SUYU 15 Postal Van
+STR_NAME_SUYU_10		:SUYU 10 Mail Van
+STR_NAME_MAIL_15		:SUYU 15 Mail Van
 STR_NAME_MAIL_50		:MANI 50 Express Van
-STR_NAME_MAIL_44		:MANI 44 Parcel Van
+STR_NAME_MAIL_44		:MANI 44 Express Van
 STR_NAME_MAIL_30		:MANI 30 Armoured Van
 STR_NAME_MAIL_8000		:WAKI 8000 Express Van
 

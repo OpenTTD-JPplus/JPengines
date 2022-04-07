@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 65;
+ version: 66;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -2984,7 +2984,94 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 
 //MAIL wagons
 
-spriteset(spriteset_suyu_15, "gfx/mailvans.png") {
+spriteset(spriteset_suyu_10_brown, "gfx/paxmail/suyu10.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_suyu_10_blue, "gfx/paxmail/suyu10.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_suyu_10_cc, "gfx/paxmail/suyu10.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_suyu_10_brown_purchase, "gfx/paxmail/suyu10.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_suyu_10_blue_purchase, "gfx/paxmail/suyu10.png") {
+	template_purchase(1, 192)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_10_yeardep_livery, build_year) {
+	0..1968: spriteset_suyu_10_brown;
+	spriteset_suyu_10_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_10_livery, cargo_subtype) {
+	1: spriteset_suyu_10_brown;
+	2: spriteset_suyu_10_blue;
+//    3: spriteset_suyu_10_cc;
+	switch_suyu_10_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_10_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JNR_BROWN);
+	2: return string(STR_REFIT_BLUE);
+//    3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_suyu_10_purchase_yeardep, current_year) {
+    0..1968: spriteset_suyu_10_brown_purchase;
+    spriteset_suyu_10_blue_purchase;
+    }
+
+
+
+item (FEAT_TRAINS, mail_suyu_10, 1359) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SUYU_10);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1955,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 20;
+		cost_factor: 11;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: switch_suyu_10_livery;
+		purchase: switch_suyu_10_purchase_yeardep;
+		cargo_subtype_text: switch_suyu_10_subtype_text;
+		
+	}
+}
+
+
+
+
+
+spriteset(spriteset_suyu_15, "gfx/paxmail/mailvans.png") {
 	template_2cc_std(1, 1)
 }
 
@@ -2992,7 +3079,7 @@ alternative_sprites(spriteset_suyu_15, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_suyu_15_purchase, "gfx/mailvans.png") {
+spriteset(spriteset_suyu_15_purchase, "gfx/paxmail/mailvans.png") {
 	template_purchase(1, 160)
 }
 
@@ -3030,7 +3117,7 @@ item (FEAT_TRAINS, mail_suyu_15, 1360) {
 }
 
 
-spriteset(spriteset_mani_50, "gfx/mailvans.png") {
+spriteset(spriteset_mani_50, "gfx/paxmail/mailvans.png") {
 	template_2cc_std(1, 32)
 }
 
@@ -3038,7 +3125,7 @@ alternative_sprites(spriteset_mani_50, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_mani_50_purchase, "gfx/mailvans.png") {
+spriteset(spriteset_mani_50_purchase, "gfx/paxmail/mailvans.png") {
 	template_purchase(1, 192)
 }
 
@@ -3077,7 +3164,7 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 
 
 
-spriteset(spriteset_mani_30, "gfx/mailvans.png") {
+spriteset(spriteset_mani_30, "gfx/paxmail/mailvans.png") {
 	template_2cc_std(1, 64)
 }
 
@@ -3085,7 +3172,7 @@ alternative_sprites(spriteset_mani_30, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_mani_30_purchase, "gfx/mailvans.png") {
+spriteset(spriteset_mani_30_purchase, "gfx/paxmail/mailvans.png") {
 	template_purchase(1, 224)
 }
 
