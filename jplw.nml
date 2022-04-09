@@ -12260,3 +12260,100 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		
 	}
 }
+
+
+//YO 8000 !
+
+spriteset(spriteset_yo_8000_black, "gfx/yo_8000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_8000_green, "gfx/yo_8000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_8000_blue, "gfx/yo_8000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_8000_redblue, "gfx/yo_8000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_yo_8000_whitered, "gfx/yo_8000.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_yo_8000_cc, "gfx/yo_8000.png") {
+	template_2cc_std(1, 192)
+}
+
+
+
+
+spriteset(spriteset_yo_8000_jnr_purchase, "gfx/yo_8000.png") {
+	template_purchase(1, 224)
+}
+
+spriteset(spriteset_yo_8000_jr_purchase, "gfx/yo_8000.png") {
+	template_purchase(89, 224)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_purchase_yeardep, current_year) {
+    0..1987: spriteset_yo_8000_jnr_purchase;
+    spriteset_yo_8000_jr_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
+	0: spriteset_yo_8000_black;
+	1: spriteset_yo_8000_green;
+	2: spriteset_yo_8000_blue;
+	3: spriteset_yo_8000_redblue;
+	4: spriteset_yo_8000_whitered;
+	5: spriteset_yo_8000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_BLACK);
+	1: return string(STR_REFIT_GREEN);
+	2: return string(STR_REFIT_BLUE);
+	3: return string(STR_REFIT_JRF_REDBLUE);
+	4: return string(STR_REFIT_JNR_CREAM);
+	5: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_8000, 35) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_8000);
+		climates_available: ALL_CLIMATES;
+//		introduction_date: date(1906,1,1);
+		speed: 85 km/h;
+//		air_drag_coefficient: 0;
+//		power: 0;
+//		dual_headed: 0;
+		cargo_capacity: 1; 
+//		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+//		loading_speed: 1;
+//		weight: 20;
+//		cost_factor: 8;
+//		running_cost_factor: 4;
+		length: 4;
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_yo_8000_livery;
+		purchase: switch_yo_8000_purchase_yeardep;
+		cargo_subtype_text: switch_yo_8000_subtype_text;
+		
+	}
+}
