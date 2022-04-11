@@ -472,7 +472,7 @@ replace(recolour_bulk) {
 
 //PIECE GOODS  Recolour sprites for cargo
 
-recolour_piece = reserve_sprites(11);
+recolour_piece = reserve_sprites(10);
 
 replace(recolour_piece) {
 
@@ -586,17 +586,6 @@ replace(recolour_piece) {
         0x8E: 0x26;
         0x8F: 0x27;
     }
-//scrap fake 10
-    recolour_sprite {
-        0xE5: 0x02;
-        0xE8: 0x03;
-        0xE9: 0x7B;
-        0xEA: 0x11;
-        0xEB: 0x13;
-        0xEC: 0x4C;
-        0xED: 0x16;
-        0xEE: 0x17;
-    }
 }
 
 /*
@@ -613,14 +602,15 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 //PIECE
 	STEL: return recolour_piece +3;
 	IRON: return recolour_piece +7;
-	METL: return recolour_piece;
+	METL: return recolour_piece ;
 	COPR: return recolour_piece +4;
-	ZINC: return recolour_piece +6;
+	ZINC: return recolour_piece +5;
 	ENSP: return recolour_piece +5;
 	FMSP: return recolour_piece +6;
 	MNSP: return recolour_piece +1;
 	VPTS: return recolour_piece +2;
 	PIPE: return recolour_piece +3;
+	WDPR: return recolour_piece +9;
 
 	WOOL: return recolour_piece +1;
 	GLAS: return recolour_piece +5;
@@ -629,15 +619,28 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	GOOD: return recolour_piece +6;
 	PAPR: return recolour_piece +1;
 	WOOD: return recolour_piece +8;
+	
 	STST: return recolour_piece +1;
 	STSE: return recolour_piece ;
 	STSH: return recolour_piece ;
 	STWR: return recolour_piece +2;
 	STAL: return recolour_piece +5;
+	TYRE: return recolour_piece +2;
+	
+	TWOD: return recolour_piece +8;
+	SESP: return recolour_piece +5;
+	MPTS: return recolour_piece +2;
+	FURN: return recolour_piece +9;
+	POWR: return recolour_piece +2;
+	TEXT: return recolour_piece +9;
+	URAN: return recolour_piece +6;
 
 //FAKE BULK
-	SCMT: return recolour_piece +10;
-
+	SCMT: return recolour_bulk +15;
+    SULP: return recolour_bulk +3;
+	SEED: return recolour_bulk +9;
+    FERT: return recolour_bulk +7;
+	SASH: return recolour_bulk +10;
 }
 
 switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
@@ -3169,7 +3172,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_24_series_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, pax_24_series, 1330) {
+item (FEAT_TRAINS, pax_24_series, 1540) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -3374,7 +3377,7 @@ switch(FEAT_TRAINS, SELF, switch_oyu_10_purchase_yeardep, current_year) {
 
 
 
-item (FEAT_TRAINS, mail_oyu_10, 1359) {
+item (FEAT_TRAINS, mail_oyu_10, 1668) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -7572,6 +7575,365 @@ item (FEAT_TRAINS, dmt, 1407) {
 
 //TOMU Open WAGONS
 
+
+//tomu 1
+
+spriteset(spriteset_tomu_1_a_empty, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_quarter, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_half, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_tomu_1_a_piece_half, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_tomu_1_a_piece_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_tomu_1_a_crates_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tomu_1_a_coils_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_tomu_1_a_tarpa, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tomu_1_a_tarpb, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spriteset(spriteset_tomu_1_purchase, "gfx/freight/tomu_1_a.png") {
+	template_purchase(1, 320)
+}
+
+
+
+
+spritegroup spritegroup_tomu_1_a_bulk {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+}
+
+spritegroup spritegroup_tomu_1_a_bulk_covered_a {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_tarpa];
+}
+
+spritegroup spritegroup_tomu_1_a_bulk_covered_b {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_tarpb];
+}
+
+spritegroup spritegroup_tomu_1_a_piece {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+}
+
+spritegroup spritegroup_tomu_1_a_piece_covered {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_a_crates {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+}
+
+spritegroup spritegroup_tomu_1_a_coils {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+}
+
+spritegroup spritegroup_tomu_1_a_paper {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full, spriteset_tomu_1_a_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_a_wool {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full, spriteset_tomu_1_a_tarpa];
+}
+
+//b 
+
+spriteset(spriteset_tomu_1_b_empty, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_quarter, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_half, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_tomu_1_b_piece_half, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_tomu_1_b_piece_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_tomu_1_b_crates_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tomu_1_b_coils_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_tomu_1_b_tarpa, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tomu_1_b_tarpb, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spritegroup spritegroup_tomu_1_b_bulk {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+}
+
+spritegroup spritegroup_tomu_1_b_bulk_covered_a {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_tarpa];
+}
+
+spritegroup spritegroup_tomu_1_b_bulk_covered_b {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_tarpb];
+}
+
+spritegroup spritegroup_tomu_1_b_piece {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+}
+
+spritegroup spritegroup_tomu_1_b_piece_covered {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_b_crates {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+}
+
+spritegroup spritegroup_tomu_1_b_coils {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+}
+
+spritegroup spritegroup_tomu_1_b_paper {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full, spriteset_tomu_1_b_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_b_wool {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full, spriteset_tomu_1_b_tarpa];
+}
+
+
+//todo open sides
+
+
+
+//random switches
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_metal) {
+ 1: spritegroup_tomu_1_a_piece;
+ 2: spritegroup_tomu_1_a_coils;
+ 1: spritegroup_tomu_1_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_supplies) {
+ 1: spritegroup_tomu_1_a_piece;
+ 2: spritegroup_tomu_1_a_crates;
+ 1: spritegroup_tomu_1_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_piece) {
+ 2: spritegroup_tomu_1_a_piece;
+ 1: spritegroup_tomu_1_a_crates;
+ 2: spritegroup_tomu_1_a_piece_covered;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_metal) {
+ 1: spritegroup_tomu_1_b_piece;
+ 2: spritegroup_tomu_1_b_coils;
+ 1: spritegroup_tomu_1_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_supplies) {
+ 1: spritegroup_tomu_1_b_piece;
+ 2: spritegroup_tomu_1_b_crates;
+ 1: spritegroup_tomu_1_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_piece) {
+ 2: spritegroup_tomu_1_b_piece;
+ 1: spritegroup_tomu_1_b_crates;
+ 2: spritegroup_tomu_1_b_piece_covered;
+}
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_metal) {
+ 2: random_tomu_1_a_metal;
+ 1: random_tomu_1_b_metal;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_supplies) {
+ 2: random_tomu_1_a_supplies;
+ 1: random_tomu_1_b_supplies;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_piece) {
+ 2: random_tomu_1_a_piece;
+ 1: random_tomu_1_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_wool) {
+ 2: spritegroup_tomu_1_a_wool;
+ 1: spritegroup_tomu_1_b_wool;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_paper) {
+ 2: spritegroup_tomu_1_a_paper;
+ 1: spritegroup_tomu_1_b_paper;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_rods) {
+ 2: spritegroup_tomu_1_a_piece;
+ 1: spritegroup_tomu_1_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_bulk) {
+ 2: spritegroup_tomu_1_a_bulk;
+ 1: spritegroup_tomu_1_b_bulk;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_covered) {
+ 2: spritegroup_tomu_1_a_bulk_covered_a;
+ 1: spritegroup_tomu_1_b_bulk_covered_a;
+ 2: spritegroup_tomu_1_a_bulk_covered_b;
+ 1: spritegroup_tomu_1_b_bulk_covered_b;
+}
+
+
+
+//todo fix
+
+
+switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
+	IRON: random_tomu_1_metal;
+	STEL: random_tomu_1_metal;
+	METL: random_tomu_1_metal;
+	ZINC: random_tomu_1_metal;
+	COPR: random_tomu_1_metal;
+	STST: random_tomu_1_metal;
+	STSH: random_tomu_1_metal;
+	STAL: random_tomu_1_metal;
+	
+	ENSP: random_tomu_1_supplies;
+	FMSP: random_tomu_1_supplies;
+	MNSP: random_tomu_1_supplies;
+	POWR: random_tomu_1_supplies;
+	VPTS: random_tomu_1_supplies;
+	MPTS: random_tomu_1_supplies;
+	GOOD: random_tomu_1_supplies;
+	
+	BDMT: random_tomu_1_piece;
+	WDPR: random_tomu_1_piece;
+	GLAS: random_tomu_1_piece;
+	BRCK: random_tomu_1_piece;
+	STWR: random_tomu_1_piece;
+	STSE: random_tomu_1_piece;
+	
+	PAPR: random_tomu_1_paper;
+	TYRE: random_tomu_1_paper;
+	WOOL: random_tomu_1_wool;
+	TEXT: random_tomu_1_wool;
+	
+	SCMT: random_tomu_1_bulk;
+	SULP: random_tomu_1_covered;
+	SEED: random_tomu_1_covered;
+	FERT: random_tomu_1_covered;
+	SASH: random_tomu_1_covered;
+	
+	random_tomu_1_rods;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_tomu_1_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_tomu_1_covered;
+
+	switch_tomu_1_cargo_type;
+}
+
+
+item (FEAT_TRAINS, tomu_1, 29) {
+
+property {
+//	introduction_date: date(1911,1,1);
+	speed: 65 km/h;
+	name: string(STR_NAME_TOMU_1);
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 30;
+	default: switch_tomu_1_cargo_class;
+	purchase: spriteset_tomu_1_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+
+
+
+
+//tora open green top
+
 spriteset(spriteset_tora_90000_empty, "gfx/tora_90000.png") {
 	template_2cc_std(1, 1)
 }
@@ -7640,99 +8002,356 @@ graphics {
 //tora 5000
 
 
-spriteset(spriteset_tora_5000_black_empty, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_empty, "gfx/freight/tora_5000_a.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_tora_5000_black_quarter, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_bulk_quarter, "gfx/freight/tora_5000_a.png") {
 	template_2cc_anim(1, 32)
 }
 
-spriteset(spriteset_tora_5000_black_half, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_bulk_half, "gfx/freight/tora_5000_a.png") {
 	template_2cc_anim(1, 64)
 }
 
-spriteset(spriteset_tora_5000_black_full, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_bulk_full, "gfx/freight/tora_5000_a.png") {
 	template_2cc_anim(1, 96)
 }
 
-spriteset(spriteset_tora_5000_black_phalf, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_piece_half, "gfx/freight/tora_5000_a.png") {
 	template_2cc_anim(1, 128)
 }
 
-spriteset(spriteset_tora_5000_black_pfull, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_piece_full, "gfx/freight/tora_5000_a.png") {
 	template_2cc_anim(1, 160)
 }
 
-spriteset(spriteset_tora_5000_black_tarp, "gfx/tora_5000.png") {
+spriteset(spriteset_tora_5000_a_crates_full, "gfx/freight/tora_5000_a.png") {
 	template_2cc_std(1, 192)
 }
 
+spriteset(spriteset_tora_5000_a_coils_full, "gfx/freight/tora_5000_a.png") {
+	template_2cc_std(1, 224)
+}
 
-spriteset(spriteset_tora_5000_purchase, "gfx/tora_5000.png") {
-	template_purchase(1, 224)
+spriteset(spriteset_tora_5000_a_tarpa, "gfx/freight/tora_5000_a.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tora_5000_a_tarpb, "gfx/freight/tora_5000_a.png") {
+	template_2cc_std(1, 288)
 }
 
 
 
-spritegroup spritegroup_tora_5000_black_bulk {
-    loading: [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_quarter, spriteset_tora_5000_black_half, spriteset_tora_5000_black_full];
-    loaded:  [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_quarter, spriteset_tora_5000_black_half, spriteset_tora_5000_black_full];
-}
-
-spritegroup spritegroup_tora_5000_black_covered {
-    loading: [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_quarter, spriteset_tora_5000_black_half, spriteset_tora_5000_black_full];
-    loaded:  [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_tarp];
-}
-
-spritegroup spritegroup_tora_5000_black_piece {
-    loading: [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_phalf, spriteset_tora_5000_black_pfull];
-    loaded:  [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_phalf, spriteset_tora_5000_black_pfull];
-}
-
-spritegroup spritegroup_tora_5000_black_piece_covered {
-    loading: [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_phalf, spriteset_tora_5000_black_pfull];
-    loaded:  [spriteset_tora_5000_black_empty, spriteset_tora_5000_black_phalf, spriteset_tora_5000_black_tarp];
+spriteset(spriteset_tora_5000_purchase, "gfx/freight/tora_5000_a.png") {
+	template_purchase(1, 320)
 }
 
 
 
 
-
-switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): spritegroup_tora_5000_black_bulk;
-	bitmask(CC_COVERED): spritegroup_tora_5000_black_covered;
-	bitmask(CC_PIECE_GOODS): spritegroup_tora_5000_black_piece;
-	
-	spritegroup_tora_5000_black_covered;
+spritegroup spritegroup_tora_5000_a_bulk {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_bulk_quarter, spriteset_tora_5000_a_bulk_half, spriteset_tora_5000_a_bulk_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_bulk_quarter, spriteset_tora_5000_a_bulk_half, spriteset_tora_5000_a_bulk_full];
 }
+
+spritegroup spritegroup_tora_5000_a_bulk_covered_a {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_bulk_quarter, spriteset_tora_5000_a_bulk_half, spriteset_tora_5000_a_bulk_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_tarpa];
+}
+
+spritegroup spritegroup_tora_5000_a_bulk_covered_b {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_bulk_quarter, spriteset_tora_5000_a_bulk_half, spriteset_tora_5000_a_bulk_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_tarpb];
+}
+
+spritegroup spritegroup_tora_5000_a_piece {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_piece_half, spriteset_tora_5000_a_piece_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_piece_half, spriteset_tora_5000_a_piece_full];
+}
+
+spritegroup spritegroup_tora_5000_a_piece_covered {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_piece_half, spriteset_tora_5000_a_piece_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_piece_half, spriteset_tora_5000_a_tarpa];
+}
+
+
+spritegroup spritegroup_tora_5000_a_crates {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_crates_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_crates_full];
+}
+
+spritegroup spritegroup_tora_5000_a_coils {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_coils_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_coils_full];
+}
+
+spritegroup spritegroup_tora_5000_a_paper {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_coils_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_coils_full, spriteset_tora_5000_a_tarpa];
+}
+
+
+spritegroup spritegroup_tora_5000_a_wool {
+    loading: [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_crates_full];
+    loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_crates_full, spriteset_tora_5000_a_tarpa];
+}
+
+//b 
+
+spriteset(spriteset_tora_5000_b_empty, "gfx/freight/tora_5000_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tora_5000_b_bulk_quarter, "gfx/freight/tora_5000_b.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tora_5000_b_bulk_half, "gfx/freight/tora_5000_b.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tora_5000_b_bulk_full, "gfx/freight/tora_5000_b.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_tora_5000_b_piece_half, "gfx/freight/tora_5000_b.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_tora_5000_b_piece_full, "gfx/freight/tora_5000_b.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_tora_5000_b_crates_full, "gfx/freight/tora_5000_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tora_5000_b_coils_full, "gfx/freight/tora_5000_b.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_tora_5000_b_tarpa, "gfx/freight/tora_5000_b.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tora_5000_b_tarpb, "gfx/freight/tora_5000_b.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spritegroup spritegroup_tora_5000_b_bulk {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_bulk_quarter, spriteset_tora_5000_b_bulk_half, spriteset_tora_5000_b_bulk_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_bulk_quarter, spriteset_tora_5000_b_bulk_half, spriteset_tora_5000_b_bulk_full];
+}
+
+spritegroup spritegroup_tora_5000_b_bulk_covered_a {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_bulk_quarter, spriteset_tora_5000_b_bulk_half, spriteset_tora_5000_b_bulk_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_tarpa];
+}
+
+spritegroup spritegroup_tora_5000_b_bulk_covered_b {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_bulk_quarter, spriteset_tora_5000_b_bulk_half, spriteset_tora_5000_b_bulk_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_tarpb];
+}
+
+spritegroup spritegroup_tora_5000_b_piece {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_piece_half, spriteset_tora_5000_b_piece_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_piece_half, spriteset_tora_5000_b_piece_full];
+}
+
+spritegroup spritegroup_tora_5000_b_piece_covered {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_piece_half, spriteset_tora_5000_b_piece_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_piece_half, spriteset_tora_5000_b_tarpa];
+}
+
+
+spritegroup spritegroup_tora_5000_b_crates {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_crates_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_crates_full];
+}
+
+spritegroup spritegroup_tora_5000_b_coils {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_coils_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_coils_full];
+}
+
+spritegroup spritegroup_tora_5000_b_paper {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_coils_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_coils_full, spriteset_tora_5000_b_tarpa];
+}
+
+
+spritegroup spritegroup_tora_5000_b_wool {
+    loading: [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_crates_full];
+    loaded:  [spriteset_tora_5000_b_empty, spriteset_tora_5000_b_crates_full, spriteset_tora_5000_b_tarpa];
+}
+
+
+//todo open sides
+
+
+
+//random switches
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_a_metal) {
+ 1: spritegroup_tora_5000_a_piece;
+ 2: spritegroup_tora_5000_a_coils;
+ 1: spritegroup_tora_5000_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_a_supplies) {
+ 1: spritegroup_tora_5000_a_piece;
+ 2: spritegroup_tora_5000_a_crates;
+ 1: spritegroup_tora_5000_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_a_piece) {
+ 2: spritegroup_tora_5000_a_piece;
+ 1: spritegroup_tora_5000_a_crates;
+ 2: spritegroup_tora_5000_a_piece_covered;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_b_metal) {
+ 1: spritegroup_tora_5000_b_piece;
+ 2: spritegroup_tora_5000_b_coils;
+ 1: spritegroup_tora_5000_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_b_supplies) {
+ 1: spritegroup_tora_5000_b_piece;
+ 2: spritegroup_tora_5000_b_crates;
+ 1: spritegroup_tora_5000_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_b_piece) {
+ 2: spritegroup_tora_5000_b_piece;
+ 1: spritegroup_tora_5000_b_crates;
+ 2: spritegroup_tora_5000_b_piece_covered;
+}
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_metal) {
+ 2: random_tora_5000_a_metal;
+ 1: random_tora_5000_b_metal;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_supplies) {
+ 2: random_tora_5000_a_supplies;
+ 1: random_tora_5000_b_supplies;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_piece) {
+ 2: random_tora_5000_a_piece;
+ 1: random_tora_5000_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_wool) {
+ 2: spritegroup_tora_5000_a_wool;
+ 1: spritegroup_tora_5000_b_wool;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_paper) {
+ 2: spritegroup_tora_5000_a_paper;
+ 1: spritegroup_tora_5000_b_paper;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_rods) {
+ 2: spritegroup_tora_5000_a_piece;
+ 1: spritegroup_tora_5000_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_bulk) {
+ 2: spritegroup_tora_5000_a_bulk;
+ 1: spritegroup_tora_5000_b_bulk;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tora_5000_covered) {
+ 2: spritegroup_tora_5000_a_bulk_covered_a;
+ 1: spritegroup_tora_5000_b_bulk_covered_a;
+ 2: spritegroup_tora_5000_a_bulk_covered_b;
+ 1: spritegroup_tora_5000_b_bulk_covered_b;
+}
+
+
+
+//todo fix
+
 
 switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
-	BDMT: spritegroup_tora_5000_black_piece_covered;
-	WDPR: spritegroup_tora_5000_black_piece_covered;
-	switch_tora_5000_cargo_class;
+	IRON: random_tora_5000_metal;
+	STEL: random_tora_5000_metal;
+	METL: random_tora_5000_metal;
+	ZINC: random_tora_5000_metal;
+	COPR: random_tora_5000_metal;
+	STST: random_tora_5000_metal;
+	STSH: random_tora_5000_metal;
+	STAL: random_tora_5000_metal;
+	
+	ENSP: random_tora_5000_supplies;
+	FMSP: random_tora_5000_supplies;
+	MNSP: random_tora_5000_supplies;
+	POWR: random_tora_5000_supplies;
+	VPTS: random_tora_5000_supplies;
+	MPTS: random_tora_5000_supplies;
+	GOOD: random_tora_5000_supplies;
+	
+	BDMT: random_tora_5000_piece;
+	WDPR: random_tora_5000_piece;
+	GLAS: random_tora_5000_piece;
+	BRCK: random_tora_5000_piece;
+	STWR: random_tora_5000_piece;
+	STSE: random_tora_5000_piece;
+	
+	PAPR: random_tora_5000_paper;
+	TYRE: random_tora_5000_paper;
+	WOOL: random_tora_5000_wool;
+	TEXT: random_tora_5000_wool;
+	
+	SCMT: random_tora_5000_bulk;
+	SULP: random_tora_5000_covered;
+	SEED: random_tora_5000_covered;
+	FERT: random_tora_5000_covered;
+	SASH: random_tora_5000_covered;
+	
+	random_tora_5000_rods;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_tora_5000_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_tora_5000_covered;
+
+	switch_tora_5000_cargo_type;
 }
 
 
 item (FEAT_TRAINS, tora_5000, 33) {
 
 property {
-//	introduction_date: date(1940,1,1);
-//	default_cargo_type: FOOD;
-
+	introduction_date: date(1930,1,1);
+	speed: 75 km/h;
 	name: string(STR_NAME_TORA_5000);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [EOIL, LVST, BOOM, VBOD, VEHI];
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	cargo_capacity: return 40;
-	default: switch_tora_5000_cargo_type;
+	default: switch_tora_5000_cargo_class;
 	purchase: spriteset_tora_5000_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
 }
+
+
 
 
 //toki 900
@@ -7791,7 +8410,12 @@ spritegroup spritegroup_toki_900_black_bulk {
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
 }
 
-spritegroup spritegroup_toki_900_black_bulk_covered {
+spritegroup spritegroup_toki_900_black_bulk_covered_a {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_tarpa];
+}
+
+spritegroup spritegroup_toki_900_black_bulk_covered_b {
     loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_tarpb];
 }
@@ -7805,6 +8429,7 @@ spritegroup spritegroup_toki_900_black_piece_covered {
     loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_tarpa];
 }
+
 
 spritegroup spritegroup_toki_900_black_crates {
     loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full];
@@ -7821,30 +8446,192 @@ spritegroup spritegroup_toki_900_black_paper {
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_coils_full, spriteset_toki_900_black_tarpa];
 }
 
+
 spritegroup spritegroup_toki_900_black_wool {
     loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full];
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full, spriteset_toki_900_black_tarpa];
 }
 
+//wood 
+
+spriteset(spriteset_toki_900_wood_empty, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_quarter, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_half, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_toki_900_wood_piece_half, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_toki_900_wood_piece_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_toki_900_wood_crates_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_toki_900_wood_coils_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_toki_900_wood_tarpa, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_toki_900_wood_tarpb, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spritegroup spritegroup_toki_900_wood_bulk {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+}
+
+spritegroup spritegroup_toki_900_wood_bulk_covered_a {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_tarpa];
+}
+
+spritegroup spritegroup_toki_900_wood_bulk_covered_b {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_tarpb];
+}
+
+spritegroup spritegroup_toki_900_wood_piece {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+}
+
+spritegroup spritegroup_toki_900_wood_piece_covered {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_tarpa];
+}
+
+
+spritegroup spritegroup_toki_900_wood_crates {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+}
+
+spritegroup spritegroup_toki_900_wood_coils {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+}
+
+spritegroup spritegroup_toki_900_wood_paper {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full, spriteset_toki_900_wood_tarpa];
+}
+
+
+spritegroup spritegroup_toki_900_wood_wool {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full, spriteset_toki_900_wood_tarpa];
+}
+
+
+//todo open sides
+
+
 
 //random switches
 
-random_switch (FEAT_TRAINS, SELF, random_toki_900_metal) {
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_black_metal) {
  1: spritegroup_toki_900_black_piece;
  2: spritegroup_toki_900_black_coils;
  1: spritegroup_toki_900_black_piece_covered;
 }
 
-random_switch (FEAT_TRAINS, SELF, random_toki_900_supplies) {
+random_switch (FEAT_TRAINS, SELF, random_toki_900_black_supplies) {
  1: spritegroup_toki_900_black_piece;
  2: spritegroup_toki_900_black_crates;
  1: spritegroup_toki_900_black_piece_covered;
 }
 
-random_switch (FEAT_TRAINS, SELF, random_toki_900_piece) {
+random_switch (FEAT_TRAINS, SELF, random_toki_900_black_piece) {
  2: spritegroup_toki_900_black_piece;
  1: spritegroup_toki_900_black_crates;
  2: spritegroup_toki_900_black_piece_covered;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_metal) {
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_coils;
+ 1: spritegroup_toki_900_wood_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_supplies) {
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_crates;
+ 1: spritegroup_toki_900_wood_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_piece) {
+ 2: spritegroup_toki_900_wood_piece;
+ 1: spritegroup_toki_900_wood_crates;
+ 2: spritegroup_toki_900_wood_piece_covered;
+}
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_metal) {
+ 2: random_toki_900_black_metal;
+ 1: random_toki_900_wood_metal;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_supplies) {
+ 2: random_toki_900_black_supplies;
+ 1: random_toki_900_wood_supplies;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_piece) {
+ 2: random_toki_900_black_piece;
+ 1: random_toki_900_wood_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_wool) {
+ 2: spritegroup_toki_900_black_wool;
+ 1: spritegroup_toki_900_wood_wool;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_paper) {
+ 2: spritegroup_toki_900_black_paper;
+ 1: spritegroup_toki_900_wood_paper;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_rods) {
+ 2: spritegroup_toki_900_black_piece;
+ 1: spritegroup_toki_900_wood_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_bulk) {
+ 2: spritegroup_toki_900_black_bulk;
+ 1: spritegroup_toki_900_wood_bulk;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_covered) {
+ 2: spritegroup_toki_900_black_bulk_covered_a;
+ 1: spritegroup_toki_900_wood_bulk_covered_a;
+ 2: spritegroup_toki_900_black_bulk_covered_b;
+ 1: spritegroup_toki_900_wood_bulk_covered_b;
 }
 
 
@@ -7867,6 +8654,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	MNSP: random_toki_900_supplies;
 	POWR: random_toki_900_supplies;
 	VPTS: random_toki_900_supplies;
+	MPTS: random_toki_900_supplies;
 	GOOD: random_toki_900_supplies;
 	
 	BDMT: random_toki_900_piece;
@@ -7876,17 +8664,23 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	STWR: random_toki_900_piece;
 	STSE: random_toki_900_piece;
 	
-	PAPR: spritegroup_toki_900_black_paper;
-	WOOL: spritegroup_toki_900_black_wool;
+	PAPR: random_toki_900_paper;
+	TYRE: random_toki_900_paper;
+	WOOL: random_toki_900_wool;
+	TEXT: random_toki_900_wool;
 	
-	SCMT: spritegroup_toki_900_black_bulk;
+	SCMT: random_toki_900_bulk;
+	SULP: random_toki_900_covered;
+	SEED: random_toki_900_covered;
+	FERT: random_toki_900_covered;
+	SASH: random_toki_900_covered;
 	
-	spritegroup_toki_900_black_piece;
+	random_toki_900_rods;
 }
 
 switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): spritegroup_toki_900_black_bulk;
-	bitmask(CC_BULK, CC_COVERED): spritegroup_toki_900_black_bulk_covered;
+	bitmask(CC_BULK): random_toki_900_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_toki_900_covered;
 
 	switch_toki_900_cargo_type;
 }
@@ -7901,7 +8695,7 @@ property {
 	name: string(STR_NAME_TOKI_900);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [EOIL, LVST, BOOM, VBOD, VEHI];
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -11651,7 +12445,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0; 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-//	cargo_disallow_refit: [WDPR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 9;
 	cost_factor: 6;
 	length: 4;
@@ -11764,7 +12558,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0; 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-//	cargo_disallow_refit: [WDPR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 13;
 	cost_factor: 9;
 	length: 5;
@@ -11834,7 +12628,7 @@ property {
 	loading_speed: 40;
 	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, SGBT, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -11943,7 +12737,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0; 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-//	cargo_disallow_refit: [WDPR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 14;
 	cost_factor: 11;
 	length: 5;
@@ -12035,7 +12829,7 @@ property {
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12134,7 +12928,7 @@ property {
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12205,7 +12999,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SULP]; 
-	cargo_disallow_refit: [GRAI, SGBT, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -12297,7 +13091,7 @@ property {
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL];
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12356,8 +13150,8 @@ property {
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [FOOD, GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
-	cargo_disallow_refit: [WOOL];
+	cargo_allow_refit: [FOOD, GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+	cargo_disallow_refit: [WOOL, WOOD];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12428,7 +13222,7 @@ property {
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
-	cargo_disallow_refit: [WOOL];
+	cargo_disallow_refit: [WOOL, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12490,7 +13284,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_COVERED); 
 		non_refittable_cargo_classes: 0;
-		cargo_disallow_refit: [GRAI, SGBT, WOOL];
+		cargo_disallow_refit: [GRAI, SGBT, WOOL, MAIZ, POWR, FURN, MPTS, PAPR, TEXT];
 		weight: 15;
 		cost_factor: 11;
 		length: 7;
