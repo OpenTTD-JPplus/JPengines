@@ -86,7 +86,7 @@ sort(FEAT_TRAINS, [
 1005, 1100, 1101, 
 
 //wagons pax/mail
-1300, 1320, 1330, 1340, 1359, 1360, 1370, 1380, 1390, 1395, 
+1300, 1320, 1540, 1340, 1341, 1668, 1360, 1370, 1380, 1390, 1395, 
 //wagons box/cont
 32, 1282, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 39, 1400, 1405, 1407, 44, 43, 
 //wagons hoppers/open
@@ -4583,9 +4583,9 @@ property {
 	default_cargo_type: FOOD;
 	cargo_capacity: 20;
 	speed: 65 km/h;
-	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+//	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
 	}
