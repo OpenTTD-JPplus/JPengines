@@ -2,8 +2,8 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.10.3 InDev
-STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, (c) 2021 GPLv2+.
+STR_GRF_NAME :JP+ Engines & Wagons v0.10.5 32bpp
+STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
 STR_PARAM_DESC_BASECOSTMODBUY	:Adjust vehicle purchase costs, to match Japan Set
@@ -58,11 +58,29 @@ STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
 
-STR_NAME_MAIL_15		:SUYU 15 Postal Van
+STR_REFIT_PAX_OHN25		: {SILVER}OHANE 25{BLACK} Sleeper Coach
+STR_REFIT_PAX_ORN24		: {SILVER}ORONE 24{BLACK} Sleeper Coach
+STR_REFIT_PAX_OHNF25	: {SILVER}OHANEFU 25{BLACK} Lounge Coach
+STR_REFIT_PAX_KN24		: {SILVER}KANI 24{BLACK} Generator Van
+
+
+
+STR_NAME_OYU_10		:OYU 10 Mail Van
+STR_NAME_MAIL_15		:SUYU 15 Mail Van
 STR_NAME_MAIL_50		:MANI 50 Express Van
-STR_NAME_MAIL_44		:MANI 44 Parcel Van
+STR_NAME_MAIL_44		:MANI 44 Express Van
 STR_NAME_MAIL_30		:MANI 30 Armoured Van
-STR_NAME_MAIL_8000		:WAKI 8000 Express Van
+STR_NAME_MAIL_8000		:SUNI 40 / SUYU 44 / WAKI 8000 Express Van
+
+STR_REFIT_SUNI_40		: {SILVER}SUNI 40{BLACK} Luggage Van
+STR_REFIT_SUYU_44		: {SILVER}SUYU 44{BLACK} Mail Van
+STR_REFIT_WAKI_8000		: {SILVER}WAKI 8000{BLACK} Express Box Van
+STR_REFIT_SUNI_41		: {SILVER}SUNI 41{BLACK} Mail Van with Conductor's Room
+STR_REFIT_WASAFU_8000	: {SILVER}WASAFU 8000{BLACK} Box Van with Conductor's Room (Silver)
+STR_REFIT_WASAFU_BLUE	: {SILVER}WASAFU 8000{BLACK} Box Van with Conductor's Room (Blue)
+
+
+
 
 STR_NAME_CAR_CARRIER	:Future Car Transporter
 STR_NAME_SUPPLY_CARRIER	:Old Vehicle Flatbed
@@ -94,6 +112,7 @@ STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
 STR_NAME_CONTAINER		:KOKI 100 Container Carrier
 STR_NAME_ROADRAILER		:WA 100 Dual Mode Transport
 
+STR_NAME_TOMU_1			:TOMU 1 Open Wagon
 STR_NAME_TORA_5000		:TORA 5000 Open Wagon
 STR_NAME_TORA_90000		:TORA 90000 Open Wagon
 STR_NAME_TOKI_900		:TOKI 900 Open Wagon
@@ -122,7 +141,8 @@ STR_NAME_YO_8000		:YO 8000 Brake Van
 
 STR_REFIT_YEARDEP	: {GREEN}Year-Dependent{BLACK}
 STR_REFIT_CC		: {GREEN}Company Colour{BLACK}
-STR_REFIT_RANDOM	: Random
+STR_REFIT_RANDOM	: {GREEN}Random{BLACK}
+STR_REFIT_AUTOFORM	: {GREEN}Auto-Formation{BLACK}
 
 STR_REFIT_BROWN_OLD	    : {WHITE}JNR{BLACK} Standard Brown (Old Shape)
 STR_REFIT_BROWN_NEW	    : {WHITE}JNR{BLACK} Standard Brown (New Shape)
@@ -153,6 +173,7 @@ STR_REFIT_JGR_BLACK	: {WHITE}JGR{BLACK} Black
 STR_REFIT_JNR_BROWN	    : {WHITE}JNR{BLACK} Brown
 STR_REFIT_JNR_YELLOW	: {WHITE}JNR{BLACK} Brown/Yellow
 STR_REFIT_RED		: {WHITE}JNR{BLACK} Red
+STR_REFIT_PINK		: {WHITE}JNR{BLACK} Rose Pink
 STR_REFIT_BLUE		: {WHITE}JNR{BLACK} Blue
 STR_REFIT_BLACK		: {WHITE}JNR{BLACK} Black
 STR_REFIT_GREEN		: {WHITE}JNR{BLACK} Light Green
@@ -165,6 +186,7 @@ STR_REFIT_SILVER	: {WHITE}JR Freight{BLACK} Silver
 STR_REFIT_JRF_YELLOW	: {WHITE}JR Freight{BLACK} Red/Yellow
 STR_REFIT_JRF_PINK		: {WHITE}JR Freight{BLACK} Pink/Orange
 STR_REFIT_JRF_THICK		: {WHITE}JR Freight{BLACK} Red/White/Grey
+STR_REFIT_JRF_REDBLUE	: {WHITE}JR Freight{BLACK} Red/Blue
 STR_REFIT_HOKBLUE	: {WHITE}JR Hokkaido{BLACK} {GOLD}"Hokutosei"{BLACK}
 STR_REFIT_HOKRED	: {WHITE}JR Freight{BLACK} Hokkaido
 STR_REFIT_EUROLINER	: {WHITE}JR Central{BLACK} {GOLD}"Euroliner"{BLACK}
@@ -174,6 +196,7 @@ STR_REFIT_EXP		: {WHITE}JR Freight{BLACK} Experimental
 STR_REFIT_PROTOTYPE	: {WHITE}JR Freight{BLACK} Prototype
 STR_REFIT_OLDRED	: {WHITE}JNR{BLACK} Classic Red
 STR_REFIT_OLDSTRIPE	: {WHITE}JNR{BLACK} Classic Red with Stripe
+STR_REFIT_BLUE_AC	: {WHITE}JNR{BLACK} Blue with A/C
 
 STR_REFIT_RAINBOW		: {WHITE}JR East{BLACK} {GOLD}"Super Express Rainbow"{BLACK}
 STR_REFIT_TWILIGHT	: {WHITE}JR West{BLACK} {GOLD}"Twilight Express"{BLACK}
@@ -227,9 +250,10 @@ STR_REFIT_ED75_M1	: {SILVER}ED75 {WHITE}JR Freight Red with Stripe
 STR_REFIT_ED75_M2	: {SILVER}ED75 {WHITE}JR Freight "Panda"
 STR_REFIT_ED75_M3	: {SILVER}ED75 {WHITE}JR Freight Red and White
 
-STR_REFIT_ED79_CC	: {SILVER}ED79 {BLACK}{GREEN}Company Colour{BLACK} {GOLD}(110km/h)
-STR_REFIT_ED79_RED	: {SILVER}ED79 {WHITE}JNR {BLACK} Red {GOLD}(110km/h)
-STR_REFIT_ED79_JRF	: {SILVER}ED79 {WHITE}JR Freight {BLACK}Blue/White {GOLD}(110km/h)
+STR_REFIT_ED79_CC			: {SILVER}ED79 {BLACK}{GREEN}Company Colour{BLACK} {GOLD}(110km/h)
+STR_REFIT_ED79_RED			: {SILVER}ED79 {WHITE}JR Freight {BLACK}Red {GOLD}(110km/h)
+STR_REFIT_ED79_SINGLEARM	: {SILVER}ED79 {WHITE}JR Freight {BLACK}Red with Single Arm Pantograph {GOLD}(110km/h)
+STR_REFIT_ED79_JRF			: {SILVER}ED79 {WHITE}JR Freight {BLACK}Blue/White {GOLD}(110km/h)
 
 STR_REFIT_EF58_61	: {WHITE}JNR {BLACK}Imperial Train
 STR_REFIT_EF58_BLUE	: {WHITE}JNR {BLACK}Express Blue/Cream
