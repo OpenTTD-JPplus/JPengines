@@ -626,6 +626,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	STWR: return recolour_piece +2;
 	STAL: return recolour_piece +5;
 	TYRE: return recolour_piece +2;
+	STCB: return recolour_piece +2;
 	
 	TWOD: return recolour_piece +8;
 	SESP: return recolour_piece +5;
@@ -768,9 +769,9 @@ cargotable {
 	//FIRS 4
 	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG,
 	//OTIS
-	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NICK, OTI1, OTI2, OYST, PCL_, SEED, SESP, TEXT, TWOD, WSTE, 
+	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NICK, OTI1, OTI2, OYST, PCL_, SEED, SESP, TEXT, TWOD,
 	//MISC
-	YETI, YETY
+	NKOR, NUKF, NUKW, OILI, OILD, CIGR, TBCO, WSTE, YETI, YETY
 	}
 	
 	
@@ -6774,162 +6775,6 @@ item (FEAT_TRAINS, koki_100, 1400) {
 
 
 
-spriteset(spriteset_coils_purchase, "gfx/coils_a.png") {
-	template_purchase(1, 256)
-}
-
-//blue
-
-spriteset(spriteset_coils_blue_empty, "gfx/coils_a.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_coils_steel_blue_half, "gfx/coils_a.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_coils_steel_blue_full, "gfx/coils_a.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_coils_metl_blue_half, "gfx/coils_a.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_coils_metl_blue_full, "gfx/coils_a.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_coils_copr_blue_half, "gfx/coils_a.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_coils_copr_blue_full, "gfx/coils_a.png") {
-	template_2cc_std(1, 192)
-}
-
-//green
-
-spriteset(spriteset_coils_green_empty, "gfx/coils_b.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_coils_steel_green_half, "gfx/coils_b.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_coils_steel_green_full, "gfx/coils_b.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_coils_metl_green_half, "gfx/coils_b.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_coils_metl_green_full, "gfx/coils_b.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_coils_copr_green_half, "gfx/coils_b.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_coils_copr_green_full, "gfx/coils_b.png") {
-	template_2cc_std(1, 192)
-}
-
-//coils spritegroups
-
-spritegroup spritegroup_coils_steel_blue {
-    loading: [spriteset_coils_blue_empty, spriteset_coils_steel_blue_half, spriteset_coils_steel_blue_full];
-    loaded: [spriteset_coils_blue_empty, spriteset_coils_steel_blue_half, spriteset_coils_steel_blue_full];
-}
-
-spritegroup spritegroup_coils_metl_blue {
-    loading: [spriteset_coils_blue_empty, spriteset_coils_metl_blue_half, spriteset_coils_metl_blue_full];
-    loaded: [spriteset_coils_blue_empty, spriteset_coils_metl_blue_half, spriteset_coils_metl_blue_full];
-}
-
-spritegroup spritegroup_coils_copr_blue {
-    loading: [spriteset_coils_blue_empty, spriteset_coils_copr_blue_half, spriteset_coils_copr_blue_full];
-    loaded: [spriteset_coils_blue_empty, spriteset_coils_copr_blue_half, spriteset_coils_copr_blue_full];
-}
-
-spritegroup spritegroup_coils_steel_green {
-    loading: [spriteset_coils_green_empty, spriteset_coils_steel_green_half, spriteset_coils_steel_green_full];
-    loaded: [spriteset_coils_green_empty, spriteset_coils_steel_green_half, spriteset_coils_steel_green_full];
-}
-
-spritegroup spritegroup_coils_metl_green {
-    loading: [spriteset_coils_green_empty, spriteset_coils_metl_green_half, spriteset_coils_metl_green_full];
-    loaded: [spriteset_coils_green_empty, spriteset_coils_metl_green_half, spriteset_coils_metl_green_full];
-}
-
-spritegroup spritegroup_coils_copr_green {
-    loading: [spriteset_coils_green_empty, spriteset_coils_copr_green_half, spriteset_coils_copr_green_full];
-    loaded: [spriteset_coils_green_empty, spriteset_coils_copr_green_half, spriteset_coils_copr_green_full];
-}
-
-
-random_switch(FEAT_TRAINS, SELF, switch_coils_steel_livery) {
-	1: spritegroup_coils_steel_blue;
-    1: spritegroup_coils_steel_green;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_coils_metl_livery) {
-	1: spritegroup_coils_metl_blue;
-    1: spritegroup_coils_metl_green;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_coils_copr_livery) {
-	1: spritegroup_coils_copr_blue;
-    1: spritegroup_coils_copr_green;
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_coils_cargo_selection, cargo_type_in_veh) {
-	STEL: switch_coils_steel_livery;
-	METL: switch_coils_metl_livery;
-	ZINC: switch_coils_metl_livery;
-	COPR: switch_coils_copr_livery;
-	IRON: switch_coils_copr_livery;
-	
-	switch_coils_steel_livery;
-}
-
-
-item (FEAT_TRAINS, coil_carrier, 1402) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_COIL_CARRIER);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1920,1,1);
-		speed: 65 km/h;
-		air_drag_coefficient: 0;
-		power: 0;
-		dual_headed: 0;
-		cargo_capacity: 42; 
-		refit_cost: 0;
-		default_cargo_type: STEL;
-		loading_speed: 20;
-		refittable_cargo_classes: 0; 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [STEL, METL, COPR, ZINC, IRON]; 
-		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
-		weight: 10;
-		cost_factor: 6;
-		length: 6;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
-	}
-	graphics {
-		cargo_capacity: return 42;
-		default: switch_coils_cargo_selection;
-		purchase: spriteset_coils_purchase;
-		refit_cost: CB_RESULT_AUTOREFIT;
-	}
-}
 
 //supply truck flatbed
 
@@ -7870,6 +7715,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	STST: random_tomu_1_metal;
 	STSH: random_tomu_1_metal;
 	STAL: random_tomu_1_metal;
+	STCB: random_tomu_1_metal;
 	
 	ENSP: random_tomu_1_supplies;
 	FMSP: random_tomu_1_supplies;
@@ -8294,6 +8140,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	STST: random_tora_5000_metal;
 	STSH: random_tora_5000_metal;
 	STAL: random_tora_5000_metal;
+	STCB: random_tora_5000_metal;
 	
 	ENSP: random_tora_5000_supplies;
 	FMSP: random_tora_5000_supplies;
@@ -8648,6 +8495,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	STST: random_toki_900_metal;
 	STSH: random_toki_900_metal;
 	STAL: random_toki_900_metal;
+	STCB: random_toki_900_metal;
 	
 	ENSP: random_toki_900_supplies;
 	FMSP: random_toki_900_supplies;
@@ -8710,7 +8558,192 @@ graphics {
 
 //steel wagons
 
+spriteset(spriteset_coilcarrier_purchase, "gfx/freight/steel_coilcarrier_a.png") {
+	template_purchase(1, 256)
+}
 
+//a
+
+spriteset(spriteset_coilcarrier_a_empty, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_coilcarrier_coils_a_half, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_coilcarrier_coils_a_full, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_coilcarrier_sheets_a_half, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_coilcarrier_sheets_a_full, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_coilcarrier_rods_a_half, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_coilcarrier_rods_a_full, "gfx/freight/steel_coilcarrier_a.png") {
+	template_2cc_std(1, 192)
+}
+
+//b
+
+spriteset(spriteset_coilcarrier_b_empty, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_coilcarrier_coils_b_half, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_coilcarrier_coils_b_full, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_coilcarrier_sheets_b_half, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_coilcarrier_sheets_b_full, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_coilcarrier_rods_b_half, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_coilcarrier_rods_b_full, "gfx/freight/steel_coilcarrier_b.png") {
+	template_2cc_std(1, 192)
+}
+
+//coilcarrier spritegroups
+
+spritegroup spritegroup_coilcarrier_coils_a {
+    loading: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_coils_a_half, spriteset_coilcarrier_coils_a_full];
+    loaded: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_coils_a_half, spriteset_coilcarrier_coils_a_full];
+}
+
+spritegroup spritegroup_coilcarrier_sheets_a {
+    loading: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_sheets_a_half, spriteset_coilcarrier_sheets_a_full];
+    loaded: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_sheets_a_half, spriteset_coilcarrier_sheets_a_full];
+}
+
+spritegroup spritegroup_coilcarrier_rods_a {
+    loading: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_rods_a_half, spriteset_coilcarrier_rods_a_full];
+    loaded: [spriteset_coilcarrier_a_empty, spriteset_coilcarrier_rods_a_half, spriteset_coilcarrier_rods_a_full];
+}
+
+spritegroup spritegroup_coilcarrier_coils_b {
+    loading: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_coils_b_half, spriteset_coilcarrier_coils_b_full];
+    loaded: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_coils_b_half, spriteset_coilcarrier_coils_b_full];
+}
+
+spritegroup spritegroup_coilcarrier_sheets_b {
+    loading: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_sheets_b_half, spriteset_coilcarrier_sheets_b_full];
+    loaded: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_sheets_b_half, spriteset_coilcarrier_sheets_b_full];
+}
+
+spritegroup spritegroup_coilcarrier_rods_b {
+    loading: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_rods_b_half, spriteset_coilcarrier_rods_b_full];
+    loaded: [spriteset_coilcarrier_b_empty, spriteset_coilcarrier_rods_b_half, spriteset_coilcarrier_rods_b_full];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_coils_livery) {
+	1: spritegroup_coilcarrier_coils_a;
+    1: spritegroup_coilcarrier_coils_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_sheets_livery) {
+	1: spritegroup_coilcarrier_sheets_a;
+    1: spritegroup_coilcarrier_sheets_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_rods_livery) {
+	1: spritegroup_coilcarrier_rods_a;
+    1: spritegroup_coilcarrier_rods_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_sections) {
+	1: random_coilcarrier_sheets_livery;
+    1: random_coilcarrier_rods_livery;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_metals) {
+	1: random_coilcarrier_coils_livery;
+    1: random_coilcarrier_sheets_livery;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_coilcarrier_all) {
+	1: random_coilcarrier_coils_livery;
+    1: random_coilcarrier_sheets_livery;
+    1: random_coilcarrier_rods_livery;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_coilcarrier_cargo_selection, cargo_type_in_veh) {
+	STEL: random_coilcarrier_coils_livery;
+	METL: random_coilcarrier_metals;
+	ZINC: random_coilcarrier_metals;
+	COPR: random_coilcarrier_metals;
+	IRON: random_coilcarrier_sheets_livery;
+	NICK: random_coilcarrier_metals;
+	STST: random_coilcarrier_metals;
+	STAL: random_coilcarrier_metals;
+	STCB: random_coilcarrier_metals;
+	STSE: random_coilcarrier_sections;
+	STSH: random_coilcarrier_sheets_livery;
+	STWR: random_coilcarrier_rods_livery;
+	
+	random_coilcarrier_all;
+}
+
+
+item (FEAT_TRAINS, coil_carrier, 1402) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_COIL_CARRIER);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1920,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 42; 
+		refit_cost: 0;
+		default_cargo_type: STEL;
+		loading_speed: 20;
+		refittable_cargo_classes: 0; 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [STEL, METL, COPR, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
+		weight: 10;
+		cost_factor: 6;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 42;
+		default: switch_coilcarrier_cargo_selection;
+		purchase: spriteset_coilcarrier_purchase;
+		colour_mapping: switch_generic_recolour;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+
+
+//slag ladle
 
 
 spriteset(spriteset_slag_ladle_empty, "gfx/steelwagons.png") {
