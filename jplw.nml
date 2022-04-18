@@ -8272,10 +8272,16 @@ spritegroup spritegroup_toki_900_black_piece {
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
 }
 
-spritegroup spritegroup_toki_900_black_piece_covered {
+spritegroup spritegroup_toki_900_black_piece_covered_a {
     loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
     loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_tarpa];
 }
+
+spritegroup spritegroup_toki_900_black_piece_covered_b {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_tarpb];
+}
+
 
 
 spritegroup spritegroup_toki_900_black_crates {
@@ -8363,10 +8369,15 @@ spritegroup spritegroup_toki_900_wood_piece {
     loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
 }
 
-spritegroup spritegroup_toki_900_wood_piece_covered {
+spritegroup spritegroup_toki_900_wood_piece_covered_a {
     loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
     loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_tarpa];
 }
+spritegroup spritegroup_toki_900_wood_piece_covered_b {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_tarpb];
+}
+
 
 
 spritegroup spritegroup_toki_900_wood_crates {
@@ -8397,61 +8408,39 @@ spritegroup spritegroup_toki_900_wood_wool {
 
 //random switches
 
-
-
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_black_metal) {
- 1: spritegroup_toki_900_black_piece;
- 2: spritegroup_toki_900_black_coils;
- 1: spritegroup_toki_900_black_piece_covered;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_black_supplies) {
- 1: spritegroup_toki_900_black_piece;
- 2: spritegroup_toki_900_black_crates;
- 1: spritegroup_toki_900_black_piece_covered;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_black_piece) {
- 2: spritegroup_toki_900_black_piece;
- 1: spritegroup_toki_900_black_crates;
- 2: spritegroup_toki_900_black_piece_covered;
-}
-
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_metal) {
- 1: spritegroup_toki_900_wood_piece;
- 2: spritegroup_toki_900_wood_coils;
- 1: spritegroup_toki_900_wood_piece_covered;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_supplies) {
- 1: spritegroup_toki_900_wood_piece;
- 2: spritegroup_toki_900_wood_crates;
- 1: spritegroup_toki_900_wood_piece_covered;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_toki_900_wood_piece) {
- 2: spritegroup_toki_900_wood_piece;
- 1: spritegroup_toki_900_wood_crates;
- 2: spritegroup_toki_900_wood_piece_covered;
-}
-
-
+//todo refits?
 
 random_switch (FEAT_TRAINS, SELF, random_toki_900_metal) {
- 2: random_toki_900_black_metal;
- 1: random_toki_900_wood_metal;
+ 1: spritegroup_toki_900_black_piece;
+ 3: spritegroup_toki_900_black_coils;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_coils;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_toki_900_supplies) {
- 2: random_toki_900_black_supplies;
- 1: random_toki_900_wood_supplies;
+ 1: spritegroup_toki_900_black_piece;
+ 2: spritegroup_toki_900_black_crates;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_crates;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_toki_900_piece) {
- 2: random_toki_900_black_piece;
- 1: random_toki_900_wood_piece;
+ 3: spritegroup_toki_900_black_piece;
+ 2: spritegroup_toki_900_black_crates;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 3: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_crates;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_toki_900_wool) {
