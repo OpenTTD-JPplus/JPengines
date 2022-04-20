@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 66;
+ version: 67;
  min_compatible_version: 60;
  
  //params, thanks tin

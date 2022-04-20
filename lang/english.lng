@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.10.5 32bpp
+STR_GRF_NAME :JP+ Engines & Wagons v0.10.6 32bpp
 STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
