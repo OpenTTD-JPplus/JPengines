@@ -90,7 +90,7 @@ sort(FEAT_TRAINS, [
 //wagons box/cont
 32, 1282, 1435, 1445, 1450, 51, 53, 1288, 1281, 1286, 1460, 1412, 1413, 39, 1400, 1405, 1407, 44, 43, 
 //wagons hoppers/open
-1439, 1440, 1441, 1442, 1443, 1444, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 29, 1280, 33, 1284, 1470,
+1439, 1440, 1441, 1442, 1443, 1444, 1455, 1456, 1285, 42, 1291, 1290, 52, 1410, 1411, 1469, 29, 1280, 33, 1284, 1470,
 //wagons flatbeds
 1480, 1481, 34, 41, 50,
 //wagons tankers
@@ -7420,6 +7420,232 @@ item (FEAT_TRAINS, dmt, 1407) {
 
 //TOMU Open WAGONS
 
+//TO 1
+
+spriteset(spriteset_to_1_a_empty, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_to_1_a_bulk_quarter, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_to_1_a_bulk_half, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_to_1_a_bulk_full, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_to_1_a_piece_half, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_to_1_a_piece_full, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_to_1_a_crates_full, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_to_1_a_tarpa, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_to_1_a_tarpb, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_to_1_a_tarpc, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spriteset(spriteset_to_1_purchase, "gfx/freight/to_1.png") {
+	template_purchase(1, 320)
+}
+
+
+
+
+spritegroup spritegroup_to_1_a_bulk {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_a {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpa];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_b {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpb];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_c {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpc];
+}
+
+spritegroup spritegroup_to_1_a_piece {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_a {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpa];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_b {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpb];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_c {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpc];
+}
+
+
+spritegroup spritegroup_to_1_a_crates {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_crates_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_crates_full];
+}
+
+
+
+//b 
+
+
+//random switches
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_metal) {
+ 4: spritegroup_to_1_a_piece;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_supplies) {
+ 1: spritegroup_to_1_a_piece;
+ 4: spritegroup_to_1_a_crates;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_piece) {
+ 4: spritegroup_to_1_a_piece;
+ 2: spritegroup_to_1_a_crates;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_covered) {
+ 1: spritegroup_to_1_a_bulk_covered_a;
+ 1: spritegroup_to_1_a_bulk_covered_b;
+ 1: spritegroup_to_1_a_bulk_covered_c;
+}
+
+
+
+//todo fix
+
+
+switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
+	IRON: random_to_1_metal;
+	STEL: random_to_1_metal;
+	METL: random_to_1_metal;
+	ZINC: random_to_1_metal;
+	COPR: random_to_1_metal;
+	STST: random_to_1_metal;
+	STSH: random_to_1_metal;
+	STAL: random_to_1_metal;
+	STCB: random_to_1_metal;
+	
+	ENSP: random_to_1_supplies;
+	FMSP: random_to_1_supplies;
+	MNSP: random_to_1_supplies;
+	POWR: random_to_1_supplies;
+	VPTS: random_to_1_supplies;
+	MPTS: random_to_1_supplies;
+	GOOD: random_to_1_supplies;
+	
+	BDMT: random_to_1_piece;
+	WDPR: random_to_1_piece;
+	GLAS: random_to_1_piece;
+	BRCK: random_to_1_piece;
+	STWR: random_to_1_piece;
+	STSE: random_to_1_piece;
+	
+	PAPR: random_to_1_supplies;
+	TYRE: random_to_1_supplies;
+	WOOL: random_to_1_supplies;
+	TEXT: random_to_1_supplies;
+	
+	SCMT: spritegroup_to_1_a_bulk;
+	SULP: random_to_1_covered;
+	SEED: random_to_1_covered;
+	FERT: random_to_1_covered;
+	SASH: random_to_1_covered;
+	
+	spritegroup_to_1_a_piece;
+}
+
+switch(FEAT_TRAINS, SELF, switch_to_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_to_1_a_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_to_1_covered;
+
+	switch_to_1_cargo_type;
+}
+
+
+item (FEAT_TRAINS, to_1, 1469) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1870,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_TO_1);
+	speed: 60 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 15; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+	weight: 9;
+	cost_factor: 6;
+	length: 4;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 30;
+	default: switch_to_1_cargo_class;
+	purchase: spriteset_to_1_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+
+
+
 
 //tomu 1
 
@@ -7757,7 +7983,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_class, cargo_classes) {
 item (FEAT_TRAINS, tomu_1, 29) {
 
 property {
-//	introduction_date: date(1911,1,1);
+	introduction_date: date(1911,1,1);
 	speed: 65 km/h;
 	name: string(STR_NAME_TOMU_1);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
@@ -7824,12 +8050,11 @@ switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
 item (FEAT_TRAINS, tora_90000, 1280) {
 
 property {
-//	introduction_date: date(1940,1,1);
+	introduction_date: date(1950,1,1);
 //	default_cargo_type: FOOD;
 
 	name: string(STR_NAME_TORA_90000);
 	speed: 75 km/h;
-//	introduction_date: date(1920,1,1);
 //	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
@@ -13419,14 +13644,6 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 
 //brake vans
 
-//todo YO 8000 refits and variants
-item (FEAT_TRAINS, yo_8000, 35) {
-
-property {
-	introduction_date: date(1974,1,1);
-	}
-}
-
 
 
 //YO 5000
@@ -13479,7 +13696,7 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		track_type: NAAN;
 		name: string(STR_NAME_YO_5000);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1906,1,1);
+		introduction_date: date(1870,1,1);//1906
 		speed: 85 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
@@ -13576,7 +13793,7 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		track_type: NAAN;
 		name: string(STR_NAME_YO_8000);
 		climates_available: ALL_CLIMATES;
-//		introduction_date: date(1906,1,1);
+		introduction_date: date(1974,1,1);
 		speed: 85 km/h;
 //		air_drag_coefficient: 0;
 //		power: 0;
