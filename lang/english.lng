@@ -23,6 +23,7 @@ STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
 
 STR_NAME_JGR_7100	:7100 1-C (steam)
+STR_NAME_JGR_7200	:7200 1-C (steam)
 STR_NAME_JGR_860	:860 1-B-1 (steam)
 
 STR_NAME_JNR_DD13	:DD13 (diesel)
