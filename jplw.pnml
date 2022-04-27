@@ -58,6 +58,8 @@
 #include "src/pax/24_series.pnml"
 #include "src/pax/50_series.pnml"
 
+#include "src/pax/sleeper_10series.pnml"
+
 #include "src/pax/mail_mani30.pnml"
 #include "src/pax/mail_mani44.pnml"
 #include "src/pax/mail_mani50.pnml"

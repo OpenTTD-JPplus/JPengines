@@ -1,0 +1,231 @@
+spriteset(spriteset_pax_orone10_blue, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_ohane17_blue, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_orone10_blue_green, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_ohane17_blue_green, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_orone10_brown_green, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_ohane17_brown_green, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_orone10_brown_blue, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_ohane17_brown_blue, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_orone10_brown, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_ohane17_brown, "gfx/paxmail/10series-sleeper.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+
+
+spriteset(spriteset_pax_10series_sleeper_jnr_brown_purchase, "gfx/paxmail/10series-sleeper.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_pax_10series_sleeper_jnr_blue_purchase, "gfx/paxmail/10series-sleeper.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_pax_10series_sleeper_jr_purchase, "gfx/paxmail/10series-sleeper.png") {
+	template_purchase(89, 320)
+}
+
+//random
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_brown) {
+	4: spriteset_pax_orone10_brown;
+	3: spriteset_pax_ohane17_brown;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1959) {
+	2: spriteset_pax_orone10_brown;
+	3: spriteset_pax_ohane17_brown;
+	1: spriteset_pax_orone10_brown_blue;
+	1: spriteset_pax_ohane17_brown_blue;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1964) {
+	3: spriteset_pax_orone10_brown;
+	2: spriteset_pax_ohane17_brown;
+	1: spriteset_pax_orone10_brown_green;
+	1: spriteset_pax_ohane17_brown_green;
+}
+	
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1979) {
+	4: spriteset_pax_orone10_brown;
+	4: spriteset_pax_ohane17_brown;
+	2: spriteset_pax_orone10_brown_green;
+	1: spriteset_pax_ohane17_brown_green;
+	4: spriteset_pax_orone10_blue;
+	4: spriteset_pax_ohane17_blue;
+	2: spriteset_pax_orone10_blue_green;
+	2: spriteset_pax_ohane17_blue_green;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1987) {
+	4: spriteset_pax_orone10_blue;
+	3: spriteset_pax_ohane17_blue;
+	2: spriteset_pax_orone10_blue_green;
+	1: spriteset_pax_ohane17_blue_green;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_blue) {
+	4: spriteset_pax_orone10_blue;
+	3: spriteset_pax_ohane17_blue;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1stclass_1959) {
+	1: spriteset_pax_orone10_brown_blue;
+	1: spriteset_pax_ohane17_brown_blue;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1stclass_1964) {
+	1: spriteset_pax_orone10_brown_green;
+	1: spriteset_pax_ohane17_brown_green;
+}
+	
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1stclass_1979) {
+	1: spriteset_pax_orone10_brown_green;
+	1: spriteset_pax_ohane17_brown_green;
+	1: spriteset_pax_orone10_blue_green;
+	1: spriteset_pax_ohane17_blue_green;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_1stclass_1987) {
+	2: spriteset_pax_orone10_blue_green;
+	1: spriteset_pax_ohane17_blue_green;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_pax_10series_sleeper_2ndclass_1979) {
+	1: spriteset_pax_orone10_brown;
+	1: spriteset_pax_ohane17_brown;
+	1: spriteset_pax_orone10_blue;
+	1: spriteset_pax_ohane17_blue;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_yeardep, current_year) {
+	0..1959: random_pax_10series_sleeper_1959;
+	1959..1964: random_pax_10series_sleeper_1964;
+	1964..1979: random_pax_10series_sleeper_1979;
+	1979..1987: random_pax_10series_sleeper_1987;	
+	random_pax_10series_sleeper_blue;
+}
+	
+	
+	
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_purchase, build_year) {
+	0..1964: spriteset_pax_10series_sleeper_jnr_brown_purchase;
+	spriteset_pax_10series_sleeper_jnr_blue_purchase;	
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_1stclass_yeardep, current_year) {
+	0..1959: random_pax_10series_sleeper_1stclass_1959;
+	1959..1964: random_pax_10series_sleeper_1stclass_1964;
+	1964..1979: random_pax_10series_sleeper_1stclass_1979;
+	random_pax_10series_sleeper_1stclass_1987;	
+}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_2ndclass_yeardep, build_year) {
+	0..1964: random_pax_10series_sleeper_brown;
+	1964..1979: random_pax_10series_sleeper_2ndclass_1979;	
+	random_pax_10series_sleeper_blue;
+}
+	
+	
+
+	
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_livery, cargo_subtype) {
+	0: switch_pax_10series_sleeper_yeardep;
+	1: switch_pax_10series_sleeper_1stclass_yeardep;
+	2: switch_pax_10series_sleeper_2ndclass_yeardep;
+	3: spriteset_pax_orone10_brown;
+	4: spriteset_pax_ohane17_brown;
+	5: spriteset_pax_orone10_brown_blue;
+	6: spriteset_pax_ohane17_brown_blue;
+	7: spriteset_pax_orone10_brown_green;
+	8: spriteset_pax_ohane17_brown_green;
+	9: spriteset_pax_orone10_blue;
+	10: spriteset_pax_ohane17_blue;
+	11: spriteset_pax_orone10_blue_green;
+	12: spriteset_pax_ohane17_blue_green;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOYEAR);
+	1: return string(STR_REFIT_YEARDEP_1ST);
+	2: return string(STR_REFIT_YEARDEP_2ND);
+	3: return string(STR_REFIT_PAX_ORN10_BROWN);
+	4: return string(STR_REFIT_PAX_OHN17_BROWN);
+	5: return string(STR_REFIT_PAX_ORN10_BROWN_BLUE);
+	6: return string(STR_REFIT_PAX_OHN17_BROWN_BLUE);
+	7: return string(STR_REFIT_PAX_ORN10_BROWN_GREEN);
+	8: return string(STR_REFIT_PAX_OHN17_BROWN_GREEN);
+	9: return string(STR_REFIT_PAX_ORN10_BLUE);
+	10: return string(STR_REFIT_PAX_OHN17_BLUE);
+	11: return string(STR_REFIT_PAX_ORN10_BLUE_GREEN);
+	12: return string(STR_REFIT_PAX_OHN17_BLUE_GREEN);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, pax_10series_sleeper, 1322) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SLEEPER_10);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1956,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 0;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 28;
+		cost_factor: 16;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 40;
+		default: switch_pax_10series_sleeper_livery;
+		purchase: switch_pax_10series_sleeper_purchase;
+		cargo_subtype_text: switch_pax_10series_sleeper_subtype_text;
+		
+	}
+}
