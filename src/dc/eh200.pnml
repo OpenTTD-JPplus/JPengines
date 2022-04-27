@@ -1,0 +1,91 @@
+spriteset(spriteset_eh200_blue_front, "gfx/eh200.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh200_blue_rear, "gfx/eh200.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh200_cc_front, "gfx/eh200.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh200_cc_rear, "gfx/eh200.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_eh200_purchase, "gfx/eh200.png") {
+	template_purchase(1, 128)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh200_livery, cargo_subtype) {
+	1: spriteset_eh200_cc_front;
+	spriteset_eh200_blue_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh200_livery_rear, cargo_subtype) {
+	1: spriteset_eh200_cc_rear;
+	spriteset_eh200_blue_rear;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh200_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JRF_BLUE);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
+	1: return eh200_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+
+item (FEAT_TRAINS, eh200, 88) {
+
+property {
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh200_subtype_text;
+  default: switch_eh200_livery;
+  purchase: spriteset_eh200_purchase;
+  articulated_part: switch_eh200_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh200_rear, 1088) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_JNR_EH200);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh200_livery_rear;
+	}
+}
+

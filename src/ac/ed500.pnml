@@ -1,0 +1,58 @@
+spriteset(spriteset_ed500_jrf, "gfx/ed500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed500_cc, "gfx/ed500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ed500_purchase, "gfx/ed500.png") {
+	template_purchase(1, 96)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed500_livery, cargo_subtype) {
+	1: spriteset_ed500_cc;
+	spriteset_ed500_jrf;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed500_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_EXP);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+}
+
+
+item (FEAT_TRAINS, ed500, 1090) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JR_ED500);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1992,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.27;
+  power: 4000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 67;
+  reliability_decay: 90;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 44;
+  length: 8;
+  running_cost_factor: 49;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  default: switch_ed500_livery;
+  cargo_subtype_text: switch_ed500_subtype_text;
+  purchase: spriteset_ed500_purchase;
+  }
+}

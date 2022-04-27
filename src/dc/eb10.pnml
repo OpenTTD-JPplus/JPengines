@@ -1,0 +1,129 @@
+spriteset(spriteset_ab10, "gfx/eb10.png") {
+	template_2cc_std(1, 32)
+}
+
+
+spriteset(spriteset_ab10_cc, "gfx/eb10.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_ab10_purchase, "gfx/eb10.png") {
+	template_purchase(1, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ab10_livery, cargo_subtype) {
+	1: spriteset_ab10_cc;
+	spriteset_ab10;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ab10, 1010) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_JNR_AB10);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1927,1,1);
+  speed: 40 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.24;
+  power: 125 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 30;
+  reliability_decay: 55;
+  model_life: 10;
+  vehicle_life: 10;
+  cost_factor: 20;
+  length: 4;
+  running_cost_factor: 32;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_AB10);
+  cargo_subtype_text: switch_ab10_subtype_text;
+  default: switch_ab10_livery;
+  purchase: spriteset_ab10_purchase;
+  cargo_capacity: return 0;  
+  }
+}
+
+
+
+spriteset(spriteset_eb10, "gfx/eb10.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eb10_cc, "gfx/eb10.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eb10_jgr_purchase, "gfx/eb10.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_eb10_jnr_purchase, "gfx/eb10.png") {
+	template_purchase(89, 160)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
+	1: spriteset_eb10_cc;
+	spriteset_eb10;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
+    0..1949: spriteset_eb10_jgr_purchase;
+    spriteset_eb10_jnr_purchase;
+    }
+
+
+item (FEAT_TRAINS, eb10, 1011) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EB10);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1931,1,1);
+  speed: 40 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.24;
+  power: 135 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 22;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 19;
+  length: 4;
+  running_cost_factor: 30;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_ELF);
+  cargo_subtype_text: switch_eb10_subtype_text;
+  default: switch_eb10_livery;
+  purchase: switch_eb10_purchase_yeardep;
+  cargo_capacity: return 0;
+  }
+}

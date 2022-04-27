@@ -1,0 +1,114 @@
+spriteset(spriteset_eh800_red_front, "gfx/eh800.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh800_red_rear, "gfx/eh800.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh800_cc_front, "gfx/eh800.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh800_cc_rear, "gfx/eh800.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_eh800_jrf_purchase, "gfx/eh800.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_eh800_jr_purchase, "gfx/eh800.png") {
+	template_purchase(89, 128)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh800_livery, cargo_subtype) {
+	1: spriteset_eh800_cc_front;
+	spriteset_eh800_red_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh800_livery_rear, cargo_subtype) {
+	1: spriteset_eh800_cc_rear;
+	spriteset_eh800_red_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh800_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JRF_RED);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh800_articulated_part, extra_callback_info1) {
+	1: return eh800_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh800_purchase, current_year) {
+	2018..9999: spriteset_eh800_jr_purchase;
+	spriteset_eh800_jrf_purchase;
+	}
+	
+
+item (FEAT_TRAINS, eh800, 1095) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JR_EH800);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2012,1,1);
+  speed: 140 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 4000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 134;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 60;
+  cost_factor: 100;
+  length: 6;
+  running_cost_factor: 66;
+  running_cost_base: RUNNING_COST_STEAM;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text: string(STR_DESC_EH800);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh800_subtype_text;
+  default: switch_eh800_livery;
+  purchase: switch_eh800_purchase;
+  articulated_part: switch_eh800_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh800_rear, 1096) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_JNR_eh800);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_ELECTRIC);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh800_livery_rear;
+	}
+}

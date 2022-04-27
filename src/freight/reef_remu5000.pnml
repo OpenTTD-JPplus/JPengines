@@ -1,0 +1,40 @@
+spriteset(spriteset_remu_5000_1, "gfx/reefers.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_remu_5000_2, "gfx/reefers.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_remu_5000_3, "gfx/reefers.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_remu_5000_purchase, "gfx/reefers.png") {
+	template_purchase(1, 192)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_remu_5000) {
+ 2: spriteset_remu_5000_1;
+ 5: spriteset_remu_5000_2;
+ 1: spriteset_remu_5000_3;
+}
+
+item (FEAT_TRAINS, remu_5000, 1286) {
+
+property {
+	introduction_date: date(1960,1,1);
+	default_cargo_type: FOOD;
+	cargo_capacity: 40; 
+	name: string(STR_NAME_REMU_5000);
+	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+	non_refittable_cargo_classes: 0; 
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	cargo_age_period: 0;
+	}
+graphics {
+	default: random_remu_5000;
+	purchase: spriteset_remu_5000_purchase;
+	}
+}

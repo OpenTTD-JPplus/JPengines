@@ -1,0 +1,124 @@
+spriteset(spriteset_se_1_stripe_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_se_1_stripe_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_se_1_stripe_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_se_1_logo_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_se_1_logo_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_se_1_logo_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_se_1_black_empty, "gfx/freight/se_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_se_1_black_half, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_se_1_black_full, "gfx/freight/se_1.png") {
+	template_2cc_anim(1, 256)
+}
+
+
+spriteset(spriteset_se_1_jgr_purchase, "gfx/freight/se_1.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_se_1_jnr_purchase, "gfx/freight/se_1.png") {
+	template_purchase(89, 288)
+}
+
+
+
+spritegroup spritegroup_se_1_stripe_bulk {
+    loading: [spriteset_se_1_stripe_empty, spriteset_se_1_stripe_half, spriteset_se_1_stripe_full];
+    loaded:  [spriteset_se_1_stripe_empty, spriteset_se_1_stripe_half, spriteset_se_1_stripe_full];
+}
+
+spritegroup spritegroup_se_1_logo_bulk {
+    loading: [spriteset_se_1_logo_empty, spriteset_se_1_logo_half, spriteset_se_1_logo_full];
+    loaded:  [spriteset_se_1_logo_empty, spriteset_se_1_logo_half, spriteset_se_1_logo_full];
+}
+
+spritegroup spritegroup_se_1_black_bulk {
+    loading: [spriteset_se_1_black_empty, spriteset_se_1_black_half, spriteset_se_1_black_full];
+    loaded:  [spriteset_se_1_black_empty, spriteset_se_1_black_half, spriteset_se_1_black_full];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_se_1_black) {
+	1: spritegroup_se_1_logo_bulk;
+	1: spritegroup_se_1_black_bulk;
+	}
+	
+random_switch(FEAT_TRAINS, SELF, random_se_1_all) {
+	1: spritegroup_se_1_logo_bulk;
+	1: spritegroup_se_1_black_bulk;
+	1: spritegroup_se_1_stripe_bulk;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_se_1_livery, cargo_subtype) {
+	1: spritegroup_se_1_stripe_bulk;
+	2: random_se_1_black;
+	random_se_1_all;
+}
+
+switch(FEAT_TRAINS, SELF, switch_se_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_FRANDOM);
+	1: return string(STR_REFIT_FSTRIPE);
+	2: return string(STR_REFIT_FBLACK);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, se_1, 1439) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1870,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_SE_1);
+	speed: 60 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 20; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0; 
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	weight: 9;
+	cost_factor: 6;
+	length: 4;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 20;
+	default: switch_se_1_livery;
+	cargo_subtype_text: switch_se_1_subtype_text;
+	purchase: spriteset_se_1_jgr_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}

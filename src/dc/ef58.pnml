@@ -1,0 +1,162 @@
+spriteset(spriteset_ef58_brown, "gfx/ef58.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef58_imperial, "gfx/ef58.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef58_blue, "gfx/ef58.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef58_x1, "gfx/ef58.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef58_tokaido_green, "gfx/ef58.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef58_x3, "gfx/ef58.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef58_x4, "gfx/ef58.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef58_old_brown, "gfx/ef58.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef58_old_cc, "gfx/ef58.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef58_large_logo, "gfx/ef58.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef58_tokaido_blue, "gfx/ef58.png") {
+	template_2cc_std(180, 96)
+}
+
+
+spriteset(spriteset_ef58_cc, "gfx/ef58.png") {
+	template_2cc_std(1, 224)
+}
+
+
+
+spriteset(spriteset_ef58_old_purchase, "gfx/ef58.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ef58_brown_purchase, "gfx/ef58.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_ef58_blue_purchase, "gfx/ef58.png") {
+	template_purchase(1, 320)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_livery, build_year) {
+	0..1949: spriteset_ef58_old_brown;
+	1949..1965: spriteset_ef58_brown;
+	1965..9999: spriteset_ef58_blue;
+	spriteset_ef58_imperial;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef58_oldshape_livery, cargo_subtype) {
+	1: spriteset_ef58_old_brown;
+	2: spriteset_ef58_old_cc;
+	switch_ef58_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef58_newshape_livery, cargo_subtype) {
+	1: spriteset_ef58_old_brown;
+	2: spriteset_ef58_old_cc;
+	3: spriteset_ef58_brown;
+	4: spriteset_ef58_imperial;
+	5: spriteset_ef58_blue;
+	6: spriteset_ef58_tokaido_green;
+	7: spriteset_ef58_tokaido_blue;	
+	8: spriteset_ef58_x1;
+	9: spriteset_ef58_x3;
+	10: spriteset_ef58_x4;
+	11: spriteset_ef58_large_logo;
+	12: spriteset_ef58_cc;	
+	switch_ef58_yeardep_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_oldshape_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_BROWN_OLD);
+	2: return string(STR_REFIT_CC_OLD);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_newshape_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_BROWN_OLD);
+	2: return string(STR_REFIT_CC_OLD);	
+	3: return string(STR_REFIT_BROWN_NEW);
+	4: return string(STR_REFIT_EF58_61);
+	5: return string(STR_REFIT_BLUE);
+	6: return string(STR_REFIT_TOKAIDO_GREEN);
+	7: return string(STR_REFIT_EF58_BLUE);
+	8: return string(STR_REFIT_EF58_EXP1);
+	9: return string(STR_REFIT_EF58_EXP2);
+	10: return string(STR_REFIT_EF58_EXP3);
+	11: return string(STR_REFIT_LOGO);
+	12: return string(STR_REFIT_CC_NEW);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
+	0..1949: spriteset_ef58_old_purchase;
+    1949..1965: spriteset_ef58_brown_purchase;
+	spriteset_ef58_blue_purchase;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_refit, current_year) {
+	0..1949: switch_ef58_oldshape_livery;
+	switch_ef58_newshape_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_subtype_text, current_year) {
+	0..1949: switch_ef58_oldshape_subtype_text;
+	switch_ef58_newshape_subtype_text;
+}
+
+
+
+
+item (FEAT_TRAINS, ef58, 14) {
+
+property {
+//	sprite_id: SPRITE_ID_NEW_TRAIN;
+//	track_type: NAAN;
+//	name: string(STR_NAME_OPEN_HOPPER);
+	speed: 110 km/h;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef58_yeardep_subtype_text;
+  default: switch_ef58_yeardep_refit;
+  purchase: switch_ef58_yeardep_purchase;
+  }
+}

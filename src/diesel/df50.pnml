@@ -1,0 +1,67 @@
+spriteset(spriteset_df50_red, "gfx/df50.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_df50_brown, "gfx/df50.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_df50_cc, "gfx/df50.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_df50_purchase, "gfx/df50.png") {
+	template_purchase(1, 96)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_df50_yeardep_livery, build_year) {
+	0..1965: spriteset_df50_brown;
+	spriteset_df50_red;
+
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_df50_livery, cargo_subtype) {
+	1: spriteset_df50_brown;
+	2: spriteset_df50_red;
+	3: spriteset_df50_cc;	
+	switch_df50_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JNR_BROWN);
+	2: return string(STR_REFIT_RED);
+	3: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, df50, 71) {
+
+property {
+//	sprite_id: SPRITE_ID_NEW_TRAIN;
+//	track_type: NAAN;
+//	name: string(STR_NAME_OPEN_HOPPER);
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);	
+//	running_cost_factor: 115;
+	}
+
+
+  graphics { // graphics for engine
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_df50_subtype_text;
+  default: switch_df50_livery;
+  purchase: spriteset_df50_purchase;
+  }
+}

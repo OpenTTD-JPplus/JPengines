@@ -1,0 +1,54 @@
+spriteset(spriteset_taki_1000_green_a, "gfx/freight/taki_1000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_taki_1000_green_b, "gfx/freight/taki_1000.png") {
+	template_2cc_std(1, 64)
+}
+
+
+
+
+spriteset(spriteset_taki_1000_purchase, "gfx/freight/taki_1000.png") {
+	template_purchase(89, 480)
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_taki_1000) {
+	1: spriteset_taki_1000_green_a;
+	1: spriteset_taki_1000_green_b;
+}
+
+
+
+
+item (FEAT_TRAINS, taki_1000, 1490) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TAKI_1000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 55; 
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 50;
+		weight: 20;
+		cost_factor: 22;
+		running_cost_factor: 14;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+//		cargo_capacity: return 0;
+		default: random_taki_1000;
+		purchase: spriteset_taki_1000_purchase;
+//		cargo_subtype_text: switch_yo_5000_subtype_text;
+		
+	}
+}

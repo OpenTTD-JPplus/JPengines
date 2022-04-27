@@ -1,0 +1,132 @@
+spriteset(spriteset_dd13_jnr_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dd13_jnr_brown_white, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_dd13_jnr_brown_yellow, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_dd13_asahikawa, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_dd13_akita_rinkai, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_dd13_tomakomai, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_dd13_nagoya_rinkai, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_dd13_kosaka, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_dd13_kamioka, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_dd13_kashima, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_dd13_cc, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 320)
+}
+
+
+spriteset(spriteset_dd13_brown_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_dd13_red_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(89, 352)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_yeardep_livery, build_year) {
+	0..1965: spriteset_dd13_jnr_brown_yellow;
+    spriteset_dd13_jnr_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_livery, cargo_subtype) {
+	1: spriteset_dd13_jnr_red;
+	2: spriteset_dd13_jnr_brown_white;
+	3: spriteset_dd13_jnr_brown_yellow;
+	4: spriteset_dd13_asahikawa;
+	5: spriteset_dd13_akita_rinkai;
+	6: spriteset_dd13_tomakomai;
+	7: spriteset_dd13_nagoya_rinkai;
+	8: spriteset_dd13_kosaka;
+	9: spriteset_dd13_kamioka;
+	10: spriteset_dd13_kashima;
+	11: spriteset_ed76_cc;
+	switch_dd13_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED);
+	2: return string(STR_REFIT_JNR_BROWN);
+	3: return string(STR_REFIT_JNR_YELLOW);
+	4: return string(STR_REFIT_ASAHIKAWA);
+	5: return string(STR_REFIT_AKITA_RINKAI);
+	6: return string(STR_REFIT_TOMAKOMAI);
+	7: return string(STR_REFIT_NAGOYA_RINKAI);
+	8: return string(STR_REFIT_KOSAKA);
+	9: return string(STR_REFIT_KAMIOKA);
+	10: return string(STR_REFIT_KASHIMA);
+	11: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_yeardep_purchase, current_year) {
+	0..1965: spriteset_dd13_brown_purchase;
+    spriteset_dd13_red_purchase;
+}
+
+
+item (FEAT_TRAINS, dd13, 1207) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_JNR_DD13);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1958,1,1);
+  speed: 70 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 735 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 56;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 55;
+  cost_factor: 2;
+  length: 5;
+  running_cost_factor: 84;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd13_subtype_text;
+  default: switch_dd13_livery;
+  purchase: switch_dd13_yeardep_purchase;
+  }
+}

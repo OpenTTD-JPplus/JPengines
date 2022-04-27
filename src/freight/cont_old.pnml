@@ -1,0 +1,900 @@
+spriteset(spriteset_koki_purchase, "gfx/cont_red.png") {
+	template_purchase(1, 352)
+}
+
+//cc
+spriteset(spriteset_koki_cc_empty, "gfx/cont_cc.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_cc_tank_a_1, "gfx/cont_cc.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_cc_tank_a_2, "gfx/cont_cc.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_cc_cont_a_1, "gfx/cont_cc.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_cc_cont_a_2, "gfx/cont_cc.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_cc_cont_a_3, "gfx/cont_cc.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_cc_cont_b_1, "gfx/cont_cc.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_cc_cont_b_2, "gfx/cont_cc.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_cc_cont_c_1, "gfx/cont_cc.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_cc_cont_c_2, "gfx/cont_cc.png") {
+	template_2cc_std(1, 288)
+}
+
+
+//red
+spriteset(spriteset_koki_red_empty, "gfx/cont_red.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_red_tank_a_1, "gfx/cont_red.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_red_tank_a_2, "gfx/cont_red.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_red_tank_b_1, "gfx/cont_red.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_red_tank_b_2, "gfx/cont_red.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_red_tank_b_3, "gfx/cont_red.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_red_cont_a_1, "gfx/cont_red.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_red_cont_a_2, "gfx/cont_red.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_red_cont_a_3, "gfx/cont_red.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_red_cont_b_1, "gfx/cont_red.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_red_cont_b_2, "gfx/cont_red.png") {
+	template_2cc_std(1, 320)
+}
+
+
+//blue
+spriteset(spriteset_koki_blue_empty, "gfx/cont_blue.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_blue_cont_a_1, "gfx/cont_blue.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_blue_cont_a_2, "gfx/cont_blue.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_blue_tank_a_1, "gfx/cont_blue.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_blue_tank_a_2, "gfx/cont_blue.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_blue_tank_b_1, "gfx/cont_blue.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_blue_tank_b_2, "gfx/cont_blue.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_blue_cont_b_1, "gfx/cont_blue.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_blue_cont_b_2, "gfx/cont_blue.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_blue_cont_c_1, "gfx/cont_blue.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_blue_cont_c_2, "gfx/cont_blue.png") {
+	template_2cc_std(1, 320)
+}
+
+//grey
+
+spriteset(spriteset_koki_grey_empty, "gfx/cont_grey.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_grey_tank_a_1, "gfx/cont_grey.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_grey_tank_a_2, "gfx/cont_grey.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_grey_tank_a_3, "gfx/cont_grey.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_grey_cont_a_1, "gfx/cont_grey.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_grey_cont_a_2, "gfx/cont_grey.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_grey_cont_b_1, "gfx/cont_grey.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_grey_cont_b_2, "gfx/cont_grey.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_grey_cont_c_1, "gfx/cont_grey.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_grey_cont_c_2, "gfx/cont_grey.png") {
+	template_2cc_std(1, 288)
+}
+
+
+//brown
+
+spriteset(spriteset_koki_brown_empty, "gfx/cont_brown.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_brown_tank_a_1, "gfx/cont_brown.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_brown_tank_a_2, "gfx/cont_brown.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_brown_tank_a_3, "gfx/cont_brown.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_brown_cont_a_1, "gfx/cont_brown.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_brown_cont_a_2, "gfx/cont_brown.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_brown_cont_a_3, "gfx/cont_brown.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_brown_cont_b_1, "gfx/cont_brown.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_brown_cont_b_2, "gfx/cont_brown.png") {
+	template_2cc_std(1, 256)
+}
+
+
+//FLIPPED wagon spritesets
+
+//cc
+spriteset(spriteset_flip_cc_empty, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_cc_tank_a_1, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_cc_tank_a_2, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_cc_cont_a_1, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_cc_cont_a_2, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_flip_cc_cont_a_3, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_cc_cont_b_1, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_cc_cont_b_2, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_flip_cc_cont_c_1, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_flip_cc_cont_c_2, "gfx/cont_cc.png") {
+	template_2cc_flip(1, 288)
+}
+
+
+//red
+spriteset(spriteset_flip_red_empty, "gfx/cont_red.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_red_tank_a_1, "gfx/cont_red.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_red_tank_a_2, "gfx/cont_red.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_red_tank_b_1, "gfx/cont_red.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_red_tank_b_2, "gfx/cont_red.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_flip_red_tank_b_3, "gfx/cont_red.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_red_cont_a_1, "gfx/cont_red.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_red_cont_a_2, "gfx/cont_red.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_flip_red_cont_a_3, "gfx/cont_red.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_flip_red_cont_b_1, "gfx/cont_red.png") {
+	template_2cc_flip(1, 288)
+}
+
+spriteset(spriteset_flip_red_cont_b_2, "gfx/cont_red.png") {
+	template_2cc_flip(1, 320)
+}
+
+
+//blue
+spriteset(spriteset_flip_blue_empty, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_blue_cont_a_1, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_blue_cont_a_2, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_blue_tank_a_1, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_blue_tank_a_2, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_flip_blue_tank_b_1, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_blue_tank_b_2, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_blue_cont_b_1, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_flip_blue_cont_b_2, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_flip_blue_cont_c_1, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 288)
+}
+
+spriteset(spriteset_flip_blue_cont_c_2, "gfx/cont_blue.png") {
+	template_2cc_flip(1, 320)
+}
+
+//grey
+
+spriteset(spriteset_flip_grey_empty, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_grey_tank_a_1, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_grey_tank_a_2, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_grey_tank_a_3, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_grey_cont_a_1, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_flip_grey_cont_a_2, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_grey_cont_b_1, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_grey_cont_b_2, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_flip_grey_cont_c_1, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_flip_grey_cont_c_2, "gfx/cont_grey.png") {
+	template_2cc_flip(1, 288)
+}
+
+
+//brown
+
+spriteset(spriteset_flip_brown_empty, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_brown_tank_a_1, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_brown_tank_a_2, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_brown_tank_a_3, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_brown_cont_a_1, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_flip_brown_cont_a_2, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_brown_cont_a_3, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_brown_cont_b_1, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_flip_brown_cont_b_2, "gfx/cont_brown.png") {
+	template_2cc_flip(1, 256)
+}
+
+
+//spritegroups 
+
+//cc
+
+spritegroup spritegroup_koki_cc_tank_a {
+    loading: [spriteset_koki_cc_empty, spriteset_koki_cc_tank_a_1, spriteset_koki_cc_tank_a_2];
+    loaded: [spriteset_koki_cc_empty, spriteset_koki_cc_tank_a_1, spriteset_koki_cc_tank_a_2];
+}
+
+spritegroup spritegroup_koki_cc_cont_a {
+    loading: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_a_1, spriteset_koki_cc_cont_a_2, spriteset_koki_cc_cont_a_3];
+    loaded: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_a_1, spriteset_koki_cc_cont_a_2, spriteset_koki_cc_cont_a_3];
+}
+
+spritegroup spritegroup_koki_cc_cont_b {
+    loading: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_b_1, spriteset_koki_cc_cont_b_2];
+    loaded: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_b_1, spriteset_koki_cc_cont_b_2];
+}
+
+spritegroup spritegroup_koki_cc_cont_c {
+    loading: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_c_1, spriteset_koki_cc_cont_c_2];
+    loaded: [spriteset_koki_cc_empty, spriteset_koki_cc_cont_c_1, spriteset_koki_cc_cont_c_2];
+}
+
+//red
+
+spritegroup spritegroup_koki_red_tank_a {
+    loading: [spriteset_koki_red_empty, spriteset_koki_red_tank_a_1, spriteset_koki_red_tank_a_2];
+    loaded: [spriteset_koki_red_empty, spriteset_koki_red_tank_a_1, spriteset_koki_red_tank_a_2];
+}
+
+spritegroup spritegroup_koki_red_tank_b {
+    loading: [spriteset_koki_red_empty, spriteset_koki_red_tank_b_1, spriteset_koki_red_tank_b_2, spriteset_koki_red_tank_b_3];
+    loaded: [spriteset_koki_red_empty, spriteset_koki_red_tank_b_1, spriteset_koki_red_tank_b_2, spriteset_koki_red_tank_b_3];
+}
+
+spritegroup spritegroup_koki_red_cont_a {
+    loading: [spriteset_koki_red_empty, spriteset_koki_red_cont_a_1, spriteset_koki_red_cont_a_2, spriteset_koki_red_cont_a_3];
+    loaded: [spriteset_koki_red_empty, spriteset_koki_red_cont_a_1, spriteset_koki_red_cont_a_2, spriteset_koki_red_cont_a_3];
+}
+
+spritegroup spritegroup_koki_red_cont_b {
+    loading: [spriteset_koki_red_empty, spriteset_koki_red_cont_b_1, spriteset_koki_red_cont_b_2];
+    loaded: [spriteset_koki_red_empty, spriteset_koki_red_cont_b_1, spriteset_koki_red_cont_b_2];
+}
+
+//blue
+
+spritegroup spritegroup_koki_blue_cont_a {
+    loading: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_a_1, spriteset_koki_blue_cont_a_2];
+    loaded: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_a_1, spriteset_koki_blue_cont_a_2];
+}
+
+spritegroup spritegroup_koki_blue_tank_a {
+    loading: [spriteset_koki_blue_empty, spriteset_koki_blue_tank_a_1, spriteset_koki_blue_tank_a_2];
+    loaded: [spriteset_koki_blue_empty, spriteset_koki_blue_tank_a_1, spriteset_koki_blue_tank_a_2];
+}
+
+spritegroup spritegroup_koki_blue_tank_b {
+    loading: [spriteset_koki_blue_empty, spriteset_koki_blue_tank_b_1, spriteset_koki_blue_tank_b_2];
+    loaded: [spriteset_koki_blue_empty, spriteset_koki_blue_tank_b_1, spriteset_koki_blue_tank_b_2];
+}
+
+spritegroup spritegroup_koki_blue_cont_b {
+    loading: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_b_1, spriteset_koki_blue_cont_b_2];
+    loaded: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_b_1, spriteset_koki_blue_cont_b_2];
+}
+
+spritegroup spritegroup_koki_blue_cont_c {
+    loading: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_c_1, spriteset_koki_blue_cont_c_2];
+    loaded: [spriteset_koki_blue_empty, spriteset_koki_blue_cont_c_1, spriteset_koki_blue_cont_c_2];
+}
+
+//grey
+
+spritegroup spritegroup_koki_grey_tank_a {
+    loading: [spriteset_koki_grey_empty, spriteset_koki_grey_tank_a_1, spriteset_koki_grey_tank_a_2, spriteset_koki_grey_tank_a_3];
+    loaded: [spriteset_koki_grey_empty, spriteset_koki_grey_tank_a_1, spriteset_koki_grey_tank_a_2, spriteset_koki_grey_tank_a_3];
+}
+
+spritegroup spritegroup_koki_grey_cont_a {
+    loading: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_a_1, spriteset_koki_grey_cont_a_2];
+    loaded: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_a_1, spriteset_koki_grey_cont_a_2];
+}
+
+spritegroup spritegroup_koki_grey_cont_b {
+    loading: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_b_1, spriteset_koki_grey_cont_b_2];
+    loaded: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_b_1, spriteset_koki_grey_cont_b_2];
+}
+
+spritegroup spritegroup_koki_grey_cont_c {
+    loading: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_c_1, spriteset_koki_grey_cont_c_2];
+    loaded: [spriteset_koki_grey_empty, spriteset_koki_grey_cont_c_1, spriteset_koki_grey_cont_c_2];
+}
+
+//brown
+
+spritegroup spritegroup_koki_brown_tank_a {
+    loading: [spriteset_koki_brown_empty, spriteset_koki_brown_tank_a_1, spriteset_koki_brown_tank_a_2, spriteset_koki_brown_tank_a_3];
+    loaded: [spriteset_koki_brown_empty, spriteset_koki_brown_tank_a_1, spriteset_koki_brown_tank_a_2, spriteset_koki_brown_tank_a_3];
+}
+
+spritegroup spritegroup_koki_brown_cont_a {
+    loading: [spriteset_koki_brown_empty, spriteset_koki_brown_cont_a_1, spriteset_koki_brown_cont_a_2, spriteset_koki_brown_cont_a_3];
+    loaded: [spriteset_koki_brown_empty, spriteset_koki_brown_cont_a_1, spriteset_koki_brown_cont_a_2, spriteset_koki_brown_cont_a_3];
+}
+
+spritegroup spritegroup_koki_brown_cont_b {
+    loading: [spriteset_koki_brown_empty, spriteset_koki_brown_cont_b_1, spriteset_koki_brown_cont_b_2];
+    loaded: [spriteset_koki_brown_empty, spriteset_koki_brown_cont_b_1, spriteset_koki_brown_cont_b_2];
+}
+
+//spritegroups FLIPPED
+
+//cc
+
+spritegroup spritegroup_flip_cc_tank_a {
+    loading: [spriteset_flip_cc_empty, spriteset_flip_cc_tank_a_1, spriteset_flip_cc_tank_a_2];
+    loaded: [spriteset_flip_cc_empty, spriteset_flip_cc_tank_a_1, spriteset_flip_cc_tank_a_2];
+}
+
+spritegroup spritegroup_flip_cc_cont_a {
+    loading: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_a_1, spriteset_flip_cc_cont_a_2, spriteset_flip_cc_cont_a_3];
+    loaded: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_a_1, spriteset_flip_cc_cont_a_2, spriteset_flip_cc_cont_a_3];
+}
+
+spritegroup spritegroup_flip_cc_cont_b {
+    loading: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_b_1, spriteset_flip_cc_cont_b_2];
+    loaded: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_b_1, spriteset_flip_cc_cont_b_2];
+}
+
+spritegroup spritegroup_flip_cc_cont_c {
+    loading: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_c_1, spriteset_flip_cc_cont_c_2];
+    loaded: [spriteset_flip_cc_empty, spriteset_flip_cc_cont_c_1, spriteset_flip_cc_cont_c_2];
+}
+
+//red
+
+spritegroup spritegroup_flip_red_tank_a {
+    loading: [spriteset_flip_red_empty, spriteset_flip_red_tank_a_1, spriteset_flip_red_tank_a_2];
+    loaded: [spriteset_flip_red_empty, spriteset_flip_red_tank_a_1, spriteset_flip_red_tank_a_2];
+}
+
+spritegroup spritegroup_flip_red_tank_b {
+    loading: [spriteset_flip_red_empty, spriteset_flip_red_tank_b_1, spriteset_flip_red_tank_b_2, spriteset_flip_red_tank_b_3];
+    loaded: [spriteset_flip_red_empty, spriteset_flip_red_tank_b_1, spriteset_flip_red_tank_b_2, spriteset_flip_red_tank_b_3];
+}
+
+spritegroup spritegroup_flip_red_cont_a {
+    loading: [spriteset_flip_red_empty, spriteset_flip_red_cont_a_1, spriteset_flip_red_cont_a_2, spriteset_flip_red_cont_a_3];
+    loaded: [spriteset_flip_red_empty, spriteset_flip_red_cont_a_1, spriteset_flip_red_cont_a_2, spriteset_flip_red_cont_a_3];
+}
+
+spritegroup spritegroup_flip_red_cont_b {
+    loading: [spriteset_flip_red_empty, spriteset_flip_red_cont_b_1, spriteset_flip_red_cont_b_2];
+    loaded: [spriteset_flip_red_empty, spriteset_flip_red_cont_b_1, spriteset_flip_red_cont_b_2];
+}
+
+//blue
+
+spritegroup spritegroup_flip_blue_cont_a {
+    loading: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_a_1, spriteset_flip_blue_cont_a_2];
+    loaded: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_a_1, spriteset_flip_blue_cont_a_2];
+}
+
+spritegroup spritegroup_flip_blue_tank_a {
+    loading: [spriteset_flip_blue_empty, spriteset_flip_blue_tank_a_1, spriteset_flip_blue_tank_a_2];
+    loaded: [spriteset_flip_blue_empty, spriteset_flip_blue_tank_a_1, spriteset_flip_blue_tank_a_2];
+}
+
+spritegroup spritegroup_flip_blue_tank_b {
+    loading: [spriteset_flip_blue_empty, spriteset_flip_blue_tank_b_1, spriteset_flip_blue_tank_b_2];
+    loaded: [spriteset_flip_blue_empty, spriteset_flip_blue_tank_b_1, spriteset_flip_blue_tank_b_2];
+}
+
+spritegroup spritegroup_flip_blue_cont_b {
+    loading: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_b_1, spriteset_flip_blue_cont_b_2];
+    loaded: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_b_1, spriteset_flip_blue_cont_b_2];
+}
+
+spritegroup spritegroup_flip_blue_cont_c {
+    loading: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_c_1, spriteset_flip_blue_cont_c_2];
+    loaded: [spriteset_flip_blue_empty, spriteset_flip_blue_cont_c_1, spriteset_flip_blue_cont_c_2];
+}
+
+
+//grey
+
+spritegroup spritegroup_flip_grey_tank_a {
+    loading: [spriteset_flip_grey_empty, spriteset_flip_grey_tank_a_1, spriteset_flip_grey_tank_a_2, spriteset_flip_grey_tank_a_3];
+    loaded: [spriteset_flip_grey_empty, spriteset_flip_grey_tank_a_1, spriteset_flip_grey_tank_a_2, spriteset_flip_grey_tank_a_3];
+}
+
+spritegroup spritegroup_flip_grey_cont_a {
+    loading: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_a_1, spriteset_flip_grey_cont_a_2];
+    loaded: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_a_1, spriteset_flip_grey_cont_a_2];
+}
+
+spritegroup spritegroup_flip_grey_cont_b {
+    loading: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_b_1, spriteset_flip_grey_cont_b_2];
+    loaded: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_b_1, spriteset_flip_grey_cont_b_2];
+}
+
+spritegroup spritegroup_flip_grey_cont_c {
+    loading: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_c_1, spriteset_flip_grey_cont_c_2];
+    loaded: [spriteset_flip_grey_empty, spriteset_flip_grey_cont_c_1, spriteset_flip_grey_cont_c_2];
+}
+
+//brown
+
+spritegroup spritegroup_flip_brown_tank_a {
+    loading: [spriteset_flip_brown_empty, spriteset_flip_brown_tank_a_1, spriteset_flip_brown_tank_a_2, spriteset_flip_brown_tank_a_3];
+    loaded: [spriteset_flip_brown_empty, spriteset_flip_brown_tank_a_1, spriteset_flip_brown_tank_a_2, spriteset_flip_brown_tank_a_3];
+}
+
+spritegroup spritegroup_flip_brown_cont_a {
+    loading: [spriteset_flip_brown_empty, spriteset_flip_brown_cont_a_1, spriteset_flip_brown_cont_a_2, spriteset_flip_brown_cont_a_3];
+    loaded: [spriteset_flip_brown_empty, spriteset_flip_brown_cont_a_1, spriteset_flip_brown_cont_a_2, spriteset_flip_brown_cont_a_3];
+}
+
+spritegroup spritegroup_flip_brown_cont_b {
+    loading: [spriteset_flip_brown_empty, spriteset_flip_brown_cont_b_1, spriteset_flip_brown_cont_b_2];
+    loaded: [spriteset_flip_brown_empty, spriteset_flip_brown_cont_b_1, spriteset_flip_brown_cont_b_2];
+}
+
+
+//random switches
+
+
+
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_mail) {
+	1: spritegroup_koki_red_cont_a;
+    1: spritegroup_koki_cc_cont_a;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_grey_cont_a;
+	1: spritegroup_koki_grey_cont_b;
+	1: spritegroup_koki_brown_cont_a;
+	1: spritegroup_koki_brown_cont_b;
+	1: spritegroup_flip_red_cont_a;
+    1: spritegroup_flip_cc_cont_a;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_grey_cont_a;
+	1: spritegroup_flip_grey_cont_b;
+	1: spritegroup_flip_brown_cont_a;
+	1: spritegroup_flip_brown_cont_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_goods) {
+	1: spritegroup_koki_red_cont_a;
+	1: spritegroup_koki_red_cont_b;
+    1: spritegroup_koki_cc_cont_a;
+	1: spritegroup_koki_cc_tank_a;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_blue_cont_c;
+	1: spritegroup_koki_grey_cont_a;
+	1: spritegroup_koki_grey_cont_b;
+	1: spritegroup_koki_brown_cont_a;
+	1: spritegroup_koki_brown_cont_b;
+	1: spritegroup_flip_red_cont_a;
+	1: spritegroup_flip_red_cont_b;
+    1: spritegroup_flip_cc_cont_a;
+	1: spritegroup_flip_cc_tank_a;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_blue_cont_c;
+	1: spritegroup_flip_grey_cont_a;
+	1: spritegroup_flip_grey_cont_b;
+	1: spritegroup_flip_brown_cont_a;
+	1: spritegroup_flip_brown_cont_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_food) {
+    1: spritegroup_koki_red_cont_b;
+    1: spritegroup_koki_cc_tank_a;	
+	1: spritegroup_koki_cc_cont_b;	
+	1: spritegroup_koki_cc_cont_c;	
+	1: spritegroup_koki_blue_cont_a;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_blue_tank_a;
+	1: spritegroup_koki_blue_tank_b;
+	1: spritegroup_koki_grey_cont_c;
+    1: spritegroup_flip_red_cont_b;
+    1: spritegroup_flip_cc_tank_a;	
+	1: spritegroup_flip_cc_cont_b;	
+	1: spritegroup_flip_cc_cont_c;	
+	1: spritegroup_flip_blue_cont_a;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_blue_tank_a;
+	1: spritegroup_flip_blue_tank_b;
+	1: spritegroup_flip_grey_cont_c;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_oil) {
+	1: spritegroup_koki_red_tank_a;
+    1: spritegroup_koki_red_tank_b;
+	1: spritegroup_koki_grey_tank_a;
+	1: spritegroup_koki_brown_tank_a;
+	1: spritegroup_flip_red_tank_a;
+    1: spritegroup_flip_red_tank_b;
+	1: spritegroup_flip_grey_tank_a;
+	1: spritegroup_flip_brown_tank_a;	
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_alcohol) {
+    1: spritegroup_koki_red_cont_b;
+    1: spritegroup_koki_cc_tank_a;	
+	1: spritegroup_koki_cc_cont_b;	
+	1: spritegroup_koki_cc_cont_c;	
+	1: spritegroup_koki_blue_cont_a;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_blue_tank_a;
+	1: spritegroup_koki_blue_tank_b;
+	1: spritegroup_koki_grey_cont_c;
+	1: spritegroup_koki_grey_tank_a;
+	1: spritegroup_koki_brown_tank_a;
+    1: spritegroup_flip_red_cont_b;
+    1: spritegroup_flip_cc_tank_a;	
+	1: spritegroup_flip_cc_cont_b;	
+	1: spritegroup_flip_cc_cont_c;	
+	1: spritegroup_flip_blue_cont_a;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_blue_tank_a;
+	1: spritegroup_flip_blue_tank_b;
+	1: spritegroup_flip_grey_cont_c;
+	1: spritegroup_flip_grey_tank_a;
+	1: spritegroup_flip_brown_tank_a;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_dry) {
+	1: spritegroup_koki_red_cont_a;
+	1: spritegroup_koki_red_cont_b;
+    1: spritegroup_koki_cc_cont_a;
+    1: spritegroup_koki_cc_cont_b;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_blue_cont_c;
+	1: spritegroup_koki_grey_cont_a;
+	1: spritegroup_koki_grey_cont_b;
+	1: spritegroup_koki_brown_cont_a;
+	1: spritegroup_koki_brown_cont_b;
+	1: spritegroup_flip_red_cont_a;
+	1: spritegroup_flip_red_cont_b;
+    1: spritegroup_flip_cc_cont_a;
+    1: spritegroup_flip_cc_cont_b;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_blue_cont_c;
+	1: spritegroup_flip_grey_cont_a;
+	1: spritegroup_flip_grey_cont_b;
+	1: spritegroup_flip_brown_cont_a;
+	1: spritegroup_flip_brown_cont_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_fluid) {
+	1: spritegroup_koki_red_tank_a;
+    1: spritegroup_koki_red_tank_b;
+	1: spritegroup_koki_cc_tank_a;	
+	1: spritegroup_koki_blue_tank_a;	
+	1: spritegroup_koki_blue_tank_b;	
+	1: spritegroup_koki_grey_tank_a;
+	1: spritegroup_koki_brown_tank_a;
+	1: spritegroup_flip_red_tank_a;
+    1: spritegroup_flip_red_tank_b;
+	1: spritegroup_flip_cc_tank_a;	
+	1: spritegroup_flip_blue_tank_a;	
+	1: spritegroup_flip_blue_tank_b;	
+	1: spritegroup_flip_grey_tank_a;
+	1: spritegroup_flip_brown_tank_a;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_edible_fluid) {
+	1: spritegroup_koki_cc_cont_c;
+    1: spritegroup_koki_red_tank_b;
+	1: spritegroup_koki_cc_tank_a;	
+	1: spritegroup_koki_blue_tank_a;	
+	1: spritegroup_koki_blue_tank_b;	
+	1: spritegroup_koki_blue_cont_a;
+	1: spritegroup_koki_brown_tank_a;
+	1: spritegroup_flip_cc_cont_c;
+    1: spritegroup_flip_red_tank_b;
+	1: spritegroup_flip_cc_tank_a;	
+	1: spritegroup_flip_blue_tank_a;	
+	1: spritegroup_flip_blue_tank_b;	
+	1: spritegroup_flip_blue_cont_a;
+	1: spritegroup_flip_brown_tank_a;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_refrigerated) {
+    1: spritegroup_koki_red_cont_b;	
+	1: spritegroup_koki_cc_cont_b;	
+	1: spritegroup_koki_cc_cont_c;	
+	1: spritegroup_koki_blue_cont_a;
+	1: spritegroup_koki_blue_cont_b;
+	1: spritegroup_koki_grey_cont_c;
+    1: spritegroup_flip_red_cont_b;
+	1: spritegroup_flip_cc_cont_b;	
+	1: spritegroup_flip_cc_cont_c;	
+	1: spritegroup_flip_blue_cont_a;
+	1: spritegroup_flip_blue_cont_b;
+	1: spritegroup_flip_grey_cont_c;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_koki_cargo_class, cargo_classes) {
+	bitmask(CC_LIQUID): switch_koki_cargo_general_fluid;
+	bitmask(CC_REFRIGERATED): switch_koki_cargo_general_refrigerated;
+	bitmask(CC_EXPRESS): switch_koki_cargo_goods;
+	
+	switch_koki_cargo_general_dry;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_cargo_selection, cargo_type_in_veh) {
+	MAIL: switch_koki_cargo_mail;
+	GOOD: switch_koki_cargo_goods;
+	FOOD: switch_koki_cargo_food;
+	OIL_: switch_koki_cargo_oil;
+	BEER: switch_koki_cargo_alcohol;
+	VEHI: switch_koki_cargo_goods;
+	
+	MILK: switch_koki_cargo_edible_fluid;
+	EOIL: switch_koki_cargo_edible_fluid;
+	
+	ACID: switch_koki_cargo_general_fluid;
+	SULP: switch_koki_cargo_general_fluid;
+	CHLO: switch_koki_cargo_general_fluid;
+	
+	FRUT: switch_koki_cargo_general_refrigerated;
+	FISH: switch_koki_cargo_general_refrigerated;
+	
+	switch_koki_cargo_class;
+}
+
+//container wagons
+//FIX LOAD SPEEDvvv, check for food bug
+item (FEAT_TRAINS, koki_100, 1400) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_CONTAINER);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1985,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 23;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 90;
+		default: switch_koki_cargo_selection;
+		purchase: spriteset_koki_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}

@@ -1,0 +1,46 @@
+spriteset(spriteset_suyu_15, "gfx/paxmail/suyu15.png") {
+	template_2cc_std(1, 1)
+}
+
+
+alternative_sprites(spriteset_suyu_15, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/mailvans32.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_suyu_15_purchase, "gfx/paxmail/suyu15.png") {
+	template_purchase(1, 160)
+}
+
+
+
+item (FEAT_TRAINS, mail_suyu_15, 1360) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_15);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1960,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 20;
+		cost_factor: 11;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: spriteset_suyu_15;
+		purchase: spriteset_suyu_15_purchase;
+		
+	}
+}

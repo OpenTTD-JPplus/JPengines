@@ -1,0 +1,146 @@
+//7200
+	
+	
+spriteset(spriteset_jgr_7200_hcc_front, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_jgr_7200_hcc_rear, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_jgr_7200_black_front, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_jgr_7200_black_rear, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 128)
+}
+
+//add cc
+spriteset(spriteset_jgr_7200_cc_front, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_jgr_7200_cc_rear, "gfx/steam/jgr_7200.png") {
+	template_2cc_std(1, 160)
+}
+
+
+spriteset(spriteset_jgr_7200_hcc_purchase, "gfx/steam/jgr_7200.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jgr_7200_purchase, "gfx/steam/jgr_7200.png") {
+	template_purchase(89, 192)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_yeardep, build_year) {
+	0..1906: spriteset_jgr_7200_hcc_front;
+	spriteset_jgr_7200_black_front;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_rear_yeardep, build_year) {
+	0..1906: spriteset_jgr_7200_hcc_rear;
+	spriteset_jgr_7200_black_rear;
+	}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_livery, cargo_subtype) {
+	1: spriteset_jgr_7200_hcc_front;
+	2: spriteset_jgr_7200_black_front;
+	3: spriteset_jgr_7200_cc_front;
+	switch_jgr_7200_yeardep;
+	
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_livery_rear, cargo_subtype) {
+	1: spriteset_jgr_7200_hcc_rear;
+	2: spriteset_jgr_7200_black_rear;
+	3: spriteset_jgr_7200_cc_rear;
+	switch_jgr_7200_rear_yeardep;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_HCC);
+	2: return string(STR_REFIT_JGR_BLACK);
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_articulated_part, extra_callback_info1) {
+	1: return jgr_7200_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_7200_purchase, current_year) {
+	0..1906: spriteset_jgr_7200_hcc_purchase;
+	spriteset_jgr_7200_purchase;
+	}
+
+item (FEAT_TRAINS, jgr_7200, 902) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_JGR_7200);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1890,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.20;
+  power: 480 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 45;
+  reliability_decay: 80;
+  model_life: 40;
+  vehicle_life: 60;
+  cost_factor: 23;
+  length: 5;
+  running_cost_factor: 11;
+  running_cost_base: RUNNING_COST_STEAM;
+	}
+
+
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_jgr_7200_subtype_text;
+  default: switch_jgr_7200_livery;
+  purchase: switch_jgr_7200_purchase;
+  articulated_part: switch_jgr_7200_articulated_part;
+  additional_text: string(STR_DESC_JNR_7100);
+  }
+}
+
+
+item (FEAT_TRAINS, jgr_7200_rear, 903) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_JNR_jgr_7200);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_jgr_7200_livery_rear;
+	}
+}

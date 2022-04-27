@@ -1,0 +1,124 @@
+spriteset(spriteset_waki_8000, "gfx/paxmail/waki8000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_suni_41, "gfx/paxmail/waki8000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_suni_41_flip, "gfx/paxmail/waki8000.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_wasafu_8000, "gfx/paxmail/waki8000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_wasafu_8000_flip, "gfx/paxmail/waki8000.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_wasafu_8000_blue, "gfx/paxmail/waki8000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_wasafu_8000_blue_flip, "gfx/paxmail/waki8000.png") {
+	template_2cc_flip(1, 96)
+}
+
+
+
+spriteset(spriteset_waki_8000_jnr_purchase, "gfx/paxmail/waki8000.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_waki_8000_jr_purchase, "gfx/paxmail/waki8000.png") {
+	template_purchase(89, 160)
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_purchase_yeardep, current_year) {
+    0..1987: spriteset_waki_8000_jnr_purchase;
+    spriteset_waki_8000_jr_purchase;
+    }
+
+random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
+ 1: spriteset_suni_41;
+ 1: spriteset_suni_41_flip;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_wasafu_8000_flip) {
+ 1: spriteset_wasafu_8000;
+ 1: spriteset_wasafu_8000_flip;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_wasafu_8000_blue_flip) {
+ 1: spriteset_wasafu_8000_blue;
+ 1: spriteset_wasafu_8000_blue_flip;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_44_caboose, position_in_consist_from_end) {
+	0: random_suni_41_flip;
+	spriteset_waki_8000;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_caboose, position_in_consist_from_end) {
+	0: random_wasafu_8000_flip;
+	spriteset_waki_8000;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_livery, cargo_subtype) {
+	1: switch_suyu_44_caboose;
+    2: switch_waki_8000_caboose;
+	3: random_suni_41_flip;
+	4: random_wasafu_8000_flip;
+	5: random_wasafu_8000_blue_flip;
+	spriteset_waki_8000;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_SUNI_40);
+	1: return string(STR_REFIT_SUYU_44);
+	2: return string(STR_REFIT_WAKI_8000);
+    3: return string(STR_REFIT_SUNI_41);
+	4: return string(STR_REFIT_WASAFU_8000);
+	5: return string(STR_REFIT_WASAFU_BLUE);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+item (FEAT_TRAINS, mail_waki_8000, 1395) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 10;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: switch_waki_8000_livery;
+		purchase: switch_waki_8000_purchase_yeardep;
+		cargo_subtype_text: switch_waki_8000_subtype_text;
+	}
+}

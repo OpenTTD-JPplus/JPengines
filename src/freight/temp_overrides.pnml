@@ -1,0 +1,28 @@
+item (FEAT_TRAINS, jp_chisa_flatcar, 34) {
+
+property {
+	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
+	cargo_disallow_refit: [LVST, BOOM];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+}
+
+item (FEAT_TRAINS, jp_chiki_flatcar, 41) {
+
+property {
+	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS); 
+	cargo_disallow_refit: [LVST, BOOM];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+}
+
+//tankers
+
+item (FEAT_TRAINS, taki_3000, 45) {
+
+property {
+	name: string(STR_NAME_TAKI_3000);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	speed: 85 km/h;
+	}
+}

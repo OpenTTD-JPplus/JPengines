@@ -1,0 +1,62 @@
+spriteset(spriteset_tora_90000_empty, "gfx/tora_90000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tora_90000_half, "gfx/tora_90000.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tora_90000_full, "gfx/tora_90000.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tora_90000_tarp, "gfx/tora_90000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_tora_90000_purchase, "gfx/tora_90000.png") {
+	template_purchase(1, 128)
+}
+
+
+
+spritegroup spritegroup_tora_90000_bulk {
+    loading: [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full];
+    loaded:  [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full];
+}
+
+spritegroup spritegroup_tora_90000_covered {
+    loading: [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full, spriteset_tora_90000_tarp];
+    loaded:  [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full, spriteset_tora_90000_tarp];
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_tora_90000_bulk;
+	bitmask(CC_COVERED): spritegroup_tora_90000_covered;
+	spritegroup_tora_90000_covered;
+}
+
+
+item (FEAT_TRAINS, tora_90000, 1280) {
+
+property {
+	introduction_date: date(1950,1,1);
+//	default_cargo_type: FOOD;
+
+	name: string(STR_NAME_TORA_90000);
+	speed: 75 km/h;
+//	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 35;
+	default: switch_tora_90000_cargo_class;
+	purchase: spriteset_tora_90000_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}

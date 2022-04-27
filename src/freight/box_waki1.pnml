@@ -1,0 +1,52 @@
+spriteset(spriteset_waki_1_1, "gfx/waki_1.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_waki_1_2, "gfx/waki_1.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_waki_1_purchase, "gfx/waki_1.png") {
+	template_purchase(1, 192)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1) {
+ 3: spriteset_waki_1_1;
+ 1: spriteset_waki_1_2;
+}
+
+
+
+item (FEAT_TRAINS, waki_1, 1445) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAKI_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1930,1,1);
+		speed: 74.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		non_refittable_cargo_classes: 0;  
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 20;
+		cost_factor: 8;
+		running_cost_factor: 5;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+//		cargo_capacity: return 45;
+		default: random_waki_1;
+		purchase: spriteset_waki_1_purchase;
+		
+	}
+}

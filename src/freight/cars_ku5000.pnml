@@ -1,0 +1,794 @@
+spriteset(spriteset_ku_5000_jnr_purchase, "gfx/freight/ku_red_a.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ku_5000_jrf_purchase, "gfx/freight/ku_rwb_a.png") {
+	template_purchase(1, 256)
+}
+
+
+//RED
+
+//a
+
+spriteset(spriteset_ku_red_a_empty, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_red_a_1a, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_red_a_1b, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_red_a_1c, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_red_a_2a, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_red_a_2b, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_red_a_2c, "gfx/freight/ku_red_a.png") {
+	template_2cc_std(1, 224)
+}
+
+//b
+
+spriteset(spriteset_ku_red_b_empty, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_red_b_1a, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_red_b_1b, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_red_b_1c, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_red_b_2a, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_red_b_2b, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_red_b_2c, "gfx/freight/ku_red_b.png") {
+	template_2cc_std(1, 224)
+}
+
+
+//flipped cars_a
+
+//blue
+
+spriteset(spriteset_flip_ku_red_a_empty, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_red_a_1a, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_red_a_1b, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_red_a_1c, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_red_a_2a, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_red_a_2b, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_red_a_2c, "gfx/freight/ku_red_a.png") {
+	template_2cc_flip(1, 224)
+}
+
+//green
+
+spriteset(spriteset_flip_ku_red_b_empty, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_red_b_1a, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_red_b_1b, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_red_b_1c, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_red_b_2a, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_red_b_2b, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_red_b_2c, "gfx/freight/ku_red_b.png") {
+	template_2cc_flip(1, 224)
+}
+
+
+//cars spritegroups
+
+spritegroup spritegroup_ku_red_a_1 {
+    loading: [spriteset_ku_red_a_empty, spriteset_ku_red_a_1a, spriteset_ku_red_a_1b, spriteset_ku_red_a_1c];
+    loaded: [spriteset_ku_red_a_empty, spriteset_ku_red_a_1a, spriteset_ku_red_a_1b, spriteset_ku_red_a_1c];
+}
+
+spritegroup spritegroup_ku_red_a_2 {
+    loading: [spriteset_ku_red_a_empty, spriteset_ku_red_a_2a, spriteset_ku_red_a_2b, spriteset_ku_red_a_2c];
+    loaded: [spriteset_ku_red_a_empty, spriteset_ku_red_a_2a, spriteset_ku_red_a_2b, spriteset_ku_red_a_2c];
+}
+
+spritegroup spritegroup_ku_red_a_3 {
+    loading: [spriteset_ku_red_a_empty, spriteset_flip_ku_red_a_1a, spriteset_flip_ku_red_a_1b, spriteset_flip_ku_red_a_1c];
+    loaded: [spriteset_ku_red_a_empty, spriteset_flip_ku_red_a_1a, spriteset_flip_ku_red_a_1b, spriteset_flip_ku_red_a_1c];
+}
+
+spritegroup spritegroup_ku_red_a_4 {
+    loading: [spriteset_ku_red_a_empty, spriteset_flip_ku_red_a_2a, spriteset_flip_ku_red_a_2b, spriteset_flip_ku_red_a_2c];
+    loaded: [spriteset_ku_red_a_empty, spriteset_flip_ku_red_a_2a, spriteset_flip_ku_red_a_2b, spriteset_flip_ku_red_a_2c];
+}
+
+
+spritegroup spritegroup_ku_red_b_1 {
+    loading: [spriteset_ku_red_b_empty, spriteset_ku_red_b_1a, spriteset_ku_red_b_1b, spriteset_ku_red_b_1c];
+    loaded: [spriteset_ku_red_b_empty, spriteset_ku_red_b_1a, spriteset_ku_red_b_1b, spriteset_ku_red_b_1c];
+}
+
+spritegroup spritegroup_ku_red_b_2 {
+    loading: [spriteset_ku_red_b_empty, spriteset_ku_red_b_2a, spriteset_ku_red_b_2b, spriteset_ku_red_b_2c];
+    loaded: [spriteset_ku_red_b_empty, spriteset_ku_red_b_2a, spriteset_ku_red_b_2b, spriteset_ku_red_b_2c];
+}
+
+spritegroup spritegroup_ku_red_b_3 {
+    loading: [spriteset_ku_red_b_empty, spriteset_flip_ku_red_b_1a, spriteset_flip_ku_red_b_1b, spriteset_flip_ku_red_b_1c];
+    loaded: [spriteset_ku_red_b_empty, spriteset_flip_ku_red_b_1a, spriteset_flip_ku_red_b_1b, spriteset_flip_ku_red_b_1c];
+}
+
+spritegroup spritegroup_ku_red_b_4 {
+    loading: [spriteset_ku_red_b_empty, spriteset_flip_ku_red_b_2a, spriteset_flip_ku_red_b_2b, spriteset_flip_ku_red_b_2c];
+    loaded: [spriteset_ku_red_b_empty, spriteset_flip_ku_red_b_2a, spriteset_flip_ku_red_b_2b, spriteset_flip_ku_red_b_2c];
+}
+
+
+
+
+//RWB Nissan
+
+//a
+
+spriteset(spriteset_ku_rwb_a_empty, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_rwb_a_1a, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_rwb_a_1b, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_rwb_a_1c, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_rwb_a_2a, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_rwb_a_2b, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_rwb_a_2c, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_std(1, 224)
+}
+
+//b
+
+spriteset(spriteset_ku_rwb_b_empty, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_rwb_b_1a, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_rwb_b_1b, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_rwb_b_1c, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_rwb_b_2a, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_rwb_b_2b, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_rwb_b_2c, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_std(1, 224)
+}
+
+
+//flipped cars_a
+
+//blue
+
+spriteset(spriteset_flip_ku_rwb_a_empty, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_1a, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_1b, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_1c, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_2a, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_2b, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_rwb_a_2c, "gfx/freight/ku_rwb_a.png") {
+	template_2cc_flip(1, 224)
+}
+
+//green
+
+spriteset(spriteset_flip_ku_rwb_b_empty, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_1a, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_1b, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_1c, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_2a, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_2b, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_rwb_b_2c, "gfx/freight/ku_rwb_b.png") {
+	template_2cc_flip(1, 224)
+}
+
+
+//cars spritegroups
+
+spritegroup spritegroup_ku_rwb_a_1 {
+    loading: [spriteset_ku_rwb_a_empty, spriteset_ku_rwb_a_1a, spriteset_ku_rwb_a_1b, spriteset_ku_rwb_a_1c];
+    loaded: [spriteset_ku_rwb_a_empty, spriteset_ku_rwb_a_1a, spriteset_ku_rwb_a_1b, spriteset_ku_rwb_a_1c];
+}
+
+spritegroup spritegroup_ku_rwb_a_2 {
+    loading: [spriteset_ku_rwb_a_empty, spriteset_ku_rwb_a_2a, spriteset_ku_rwb_a_2b, spriteset_ku_rwb_a_2c];
+    loaded: [spriteset_ku_rwb_a_empty, spriteset_ku_rwb_a_2a, spriteset_ku_rwb_a_2b, spriteset_ku_rwb_a_2c];
+}
+
+spritegroup spritegroup_ku_rwb_a_3 {
+    loading: [spriteset_ku_rwb_a_empty, spriteset_flip_ku_rwb_a_1a, spriteset_flip_ku_rwb_a_1b, spriteset_flip_ku_rwb_a_1c];
+    loaded: [spriteset_ku_rwb_a_empty, spriteset_flip_ku_rwb_a_1a, spriteset_flip_ku_rwb_a_1b, spriteset_flip_ku_rwb_a_1c];
+}
+
+spritegroup spritegroup_ku_rwb_a_4 {
+    loading: [spriteset_ku_rwb_a_empty, spriteset_flip_ku_rwb_a_2a, spriteset_flip_ku_rwb_a_2b, spriteset_flip_ku_rwb_a_2c];
+    loaded: [spriteset_ku_rwb_a_empty, spriteset_flip_ku_rwb_a_2a, spriteset_flip_ku_rwb_a_2b, spriteset_flip_ku_rwb_a_2c];
+}
+
+
+spritegroup spritegroup_ku_rwb_b_1 {
+    loading: [spriteset_ku_rwb_b_empty, spriteset_ku_rwb_b_1a, spriteset_ku_rwb_b_1b, spriteset_ku_rwb_b_1c];
+    loaded: [spriteset_ku_rwb_b_empty, spriteset_ku_rwb_b_1a, spriteset_ku_rwb_b_1b, spriteset_ku_rwb_b_1c];
+}
+
+spritegroup spritegroup_ku_rwb_b_2 {
+    loading: [spriteset_ku_rwb_b_empty, spriteset_ku_rwb_b_2a, spriteset_ku_rwb_b_2b, spriteset_ku_rwb_b_2c];
+    loaded: [spriteset_ku_rwb_b_empty, spriteset_ku_rwb_b_2a, spriteset_ku_rwb_b_2b, spriteset_ku_rwb_b_2c];
+}
+
+spritegroup spritegroup_ku_rwb_b_3 {
+    loading: [spriteset_ku_rwb_b_empty, spriteset_flip_ku_rwb_b_1a, spriteset_flip_ku_rwb_b_1b, spriteset_flip_ku_rwb_b_1c];
+    loaded: [spriteset_ku_rwb_b_empty, spriteset_flip_ku_rwb_b_1a, spriteset_flip_ku_rwb_b_1b, spriteset_flip_ku_rwb_b_1c];
+}
+
+spritegroup spritegroup_ku_rwb_b_4 {
+    loading: [spriteset_ku_rwb_b_empty, spriteset_flip_ku_rwb_b_2a, spriteset_flip_ku_rwb_b_2b, spriteset_flip_ku_rwb_b_2c];
+    loaded: [spriteset_ku_rwb_b_empty, spriteset_flip_ku_rwb_b_2a, spriteset_flip_ku_rwb_b_2b, spriteset_flip_ku_rwb_b_2c];
+}
+
+
+//RED BLUE
+
+//a
+
+spriteset(spriteset_ku_rb_a_empty, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_rb_a_1a, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_rb_a_1b, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_rb_a_1c, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_rb_a_2a, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_rb_a_2b, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_rb_a_2c, "gfx/freight/ku_rb_a.png") {
+	template_2cc_std(1, 224)
+}
+
+//b
+
+spriteset(spriteset_ku_rb_b_empty, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_rb_b_1a, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_rb_b_1b, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_rb_b_1c, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_rb_b_2a, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_rb_b_2b, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_rb_b_2c, "gfx/freight/ku_rb_b.png") {
+	template_2cc_std(1, 224)
+}
+
+
+//flipped cars_a
+
+//blue
+
+spriteset(spriteset_flip_ku_rb_a_empty, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_rb_a_1a, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_rb_a_1b, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_rb_a_1c, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_rb_a_2a, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_rb_a_2b, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_rb_a_2c, "gfx/freight/ku_rb_a.png") {
+	template_2cc_flip(1, 224)
+}
+
+//green
+
+spriteset(spriteset_flip_ku_rb_b_empty, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_rb_b_1a, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_rb_b_1b, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_rb_b_1c, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_rb_b_2a, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_rb_b_2b, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_rb_b_2c, "gfx/freight/ku_rb_b.png") {
+	template_2cc_flip(1, 224)
+}
+
+
+//cars spritegroups
+
+spritegroup spritegroup_ku_rb_a_1 {
+    loading: [spriteset_ku_rb_a_empty, spriteset_ku_rb_a_1a, spriteset_ku_rb_a_1b, spriteset_ku_rb_a_1c];
+    loaded: [spriteset_ku_rb_a_empty, spriteset_ku_rb_a_1a, spriteset_ku_rb_a_1b, spriteset_ku_rb_a_1c];
+}
+
+spritegroup spritegroup_ku_rb_a_2 {
+    loading: [spriteset_ku_rb_a_empty, spriteset_ku_rb_a_2a, spriteset_ku_rb_a_2b, spriteset_ku_rb_a_2c];
+    loaded: [spriteset_ku_rb_a_empty, spriteset_ku_rb_a_2a, spriteset_ku_rb_a_2b, spriteset_ku_rb_a_2c];
+}
+
+spritegroup spritegroup_ku_rb_a_3 {
+    loading: [spriteset_ku_rb_a_empty, spriteset_flip_ku_rb_a_1a, spriteset_flip_ku_rb_a_1b, spriteset_flip_ku_rb_a_1c];
+    loaded: [spriteset_ku_rb_a_empty, spriteset_flip_ku_rb_a_1a, spriteset_flip_ku_rb_a_1b, spriteset_flip_ku_rb_a_1c];
+}
+
+spritegroup spritegroup_ku_rb_a_4 {
+    loading: [spriteset_ku_rb_a_empty, spriteset_flip_ku_rb_a_2a, spriteset_flip_ku_rb_a_2b, spriteset_flip_ku_rb_a_2c];
+    loaded: [spriteset_ku_rb_a_empty, spriteset_flip_ku_rb_a_2a, spriteset_flip_ku_rb_a_2b, spriteset_flip_ku_rb_a_2c];
+}
+
+
+spritegroup spritegroup_ku_rb_b_1 {
+    loading: [spriteset_ku_rb_b_empty, spriteset_ku_rb_b_1a, spriteset_ku_rb_b_1b, spriteset_ku_rb_b_1c];
+    loaded: [spriteset_ku_rb_b_empty, spriteset_ku_rb_b_1a, spriteset_ku_rb_b_1b, spriteset_ku_rb_b_1c];
+}
+
+spritegroup spritegroup_ku_rb_b_2 {
+    loading: [spriteset_ku_rb_b_empty, spriteset_ku_rb_b_2a, spriteset_ku_rb_b_2b, spriteset_ku_rb_b_2c];
+    loaded: [spriteset_ku_rb_b_empty, spriteset_ku_rb_b_2a, spriteset_ku_rb_b_2b, spriteset_ku_rb_b_2c];
+}
+
+spritegroup spritegroup_ku_rb_b_3 {
+    loading: [spriteset_ku_rb_b_empty, spriteset_flip_ku_rb_b_1a, spriteset_flip_ku_rb_b_1b, spriteset_flip_ku_rb_b_1c];
+    loaded: [spriteset_ku_rb_b_empty, spriteset_flip_ku_rb_b_1a, spriteset_flip_ku_rb_b_1b, spriteset_flip_ku_rb_b_1c];
+}
+
+spritegroup spritegroup_ku_rb_b_4 {
+    loading: [spriteset_ku_rb_b_empty, spriteset_flip_ku_rb_b_2a, spriteset_flip_ku_rb_b_2b, spriteset_flip_ku_rb_b_2c];
+    loaded: [spriteset_ku_rb_b_empty, spriteset_flip_ku_rb_b_2a, spriteset_flip_ku_rb_b_2b, spriteset_flip_ku_rb_b_2c];
+}
+
+//CARS CC
+
+//a
+
+spriteset(spriteset_ku_cc_a_empty, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_cc_a_1a, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_cc_a_1b, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_cc_a_1c, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_cc_a_2a, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_cc_a_2b, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_cc_a_2c, "gfx/freight/ku_cc_a.png") {
+	template_2cc_std(1, 224)
+}
+
+//b
+
+spriteset(spriteset_ku_cc_b_empty, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ku_cc_b_1a, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ku_cc_b_1b, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ku_cc_b_1c, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ku_cc_b_2a, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ku_cc_b_2b, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ku_cc_b_2c, "gfx/freight/ku_cc_b.png") {
+	template_2cc_std(1, 224)
+}
+
+
+//flipped cars_a
+
+//blue
+
+spriteset(spriteset_flip_ku_cc_a_empty, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_cc_a_1a, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_cc_a_1b, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_cc_a_1c, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_cc_a_2a, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_cc_a_2b, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_cc_a_2c, "gfx/freight/ku_cc_a.png") {
+	template_2cc_flip(1, 224)
+}
+
+//green
+
+spriteset(spriteset_flip_ku_cc_b_empty, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_flip_ku_cc_b_1a, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_flip_ku_cc_b_1b, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_flip_ku_cc_b_1c, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_flip_ku_cc_b_2a, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_flip_ku_cc_b_2b, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_flip_ku_cc_b_2c, "gfx/freight/ku_cc_b.png") {
+	template_2cc_flip(1, 224)
+}
+
+
+//cars spritegroups
+
+spritegroup spritegroup_ku_cc_a_1 {
+    loading: [spriteset_ku_cc_a_empty, spriteset_ku_cc_a_1a, spriteset_ku_cc_a_1b, spriteset_ku_cc_a_1c];
+    loaded: [spriteset_ku_cc_a_empty, spriteset_ku_cc_a_1a, spriteset_ku_cc_a_1b, spriteset_ku_cc_a_1c];
+}
+
+spritegroup spritegroup_ku_cc_a_2 {
+    loading: [spriteset_ku_cc_a_empty, spriteset_ku_cc_a_2a, spriteset_ku_cc_a_2b, spriteset_ku_cc_a_2c];
+    loaded: [spriteset_ku_cc_a_empty, spriteset_ku_cc_a_2a, spriteset_ku_cc_a_2b, spriteset_ku_cc_a_2c];
+}
+
+spritegroup spritegroup_ku_cc_a_3 {
+    loading: [spriteset_ku_cc_a_empty, spriteset_flip_ku_cc_a_1a, spriteset_flip_ku_cc_a_1b, spriteset_flip_ku_cc_a_1c];
+    loaded: [spriteset_ku_cc_a_empty, spriteset_flip_ku_cc_a_1a, spriteset_flip_ku_cc_a_1b, spriteset_flip_ku_cc_a_1c];
+}
+
+spritegroup spritegroup_ku_cc_a_4 {
+    loading: [spriteset_ku_cc_a_empty, spriteset_flip_ku_cc_a_2a, spriteset_flip_ku_cc_a_2b, spriteset_flip_ku_cc_a_2c];
+    loaded: [spriteset_ku_cc_a_empty, spriteset_flip_ku_cc_a_2a, spriteset_flip_ku_cc_a_2b, spriteset_flip_ku_cc_a_2c];
+}
+
+
+spritegroup spritegroup_ku_cc_b_1 {
+    loading: [spriteset_ku_cc_b_empty, spriteset_ku_cc_b_1a, spriteset_ku_cc_b_1b, spriteset_ku_cc_b_1c];
+    loaded: [spriteset_ku_cc_b_empty, spriteset_ku_cc_b_1a, spriteset_ku_cc_b_1b, spriteset_ku_cc_b_1c];
+}
+
+spritegroup spritegroup_ku_cc_b_2 {
+    loading: [spriteset_ku_cc_b_empty, spriteset_ku_cc_b_2a, spriteset_ku_cc_b_2b, spriteset_ku_cc_b_2c];
+    loaded: [spriteset_ku_cc_b_empty, spriteset_ku_cc_b_2a, spriteset_ku_cc_b_2b, spriteset_ku_cc_b_2c];
+}
+
+spritegroup spritegroup_ku_cc_b_3 {
+    loading: [spriteset_ku_cc_b_empty, spriteset_flip_ku_cc_b_1a, spriteset_flip_ku_cc_b_1b, spriteset_flip_ku_cc_b_1c];
+    loaded: [spriteset_ku_cc_b_empty, spriteset_flip_ku_cc_b_1a, spriteset_flip_ku_cc_b_1b, spriteset_flip_ku_cc_b_1c];
+}
+
+spritegroup spritegroup_ku_cc_b_4 {
+    loading: [spriteset_ku_cc_b_empty, spriteset_flip_ku_cc_b_2a, spriteset_flip_ku_cc_b_2b, spriteset_flip_ku_cc_b_2c];
+    loaded: [spriteset_ku_cc_b_empty, spriteset_flip_ku_cc_b_2a, spriteset_flip_ku_cc_b_2b, spriteset_flip_ku_cc_b_2c];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_ku_red_livery) {
+	1: spritegroup_ku_red_a_1;
+    1: spritegroup_ku_red_a_2;
+	1: spritegroup_ku_red_a_3;
+	1: spritegroup_ku_red_a_4;
+	1: spritegroup_ku_red_b_1;
+    1: spritegroup_ku_red_b_2;
+	1: spritegroup_ku_red_b_3;
+	1: spritegroup_ku_red_b_4;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_ku_cc_livery) {
+	1: spritegroup_ku_cc_a_1;
+    1: spritegroup_ku_cc_a_2;
+	1: spritegroup_ku_cc_a_3;
+	1: spritegroup_ku_cc_a_4;
+	1: spritegroup_ku_cc_b_1;
+    1: spritegroup_ku_cc_b_2;
+	1: spritegroup_ku_cc_b_3;
+	1: spritegroup_ku_cc_b_4;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_ku_rwb_livery) {
+	1: spritegroup_ku_rwb_a_1;
+    1: spritegroup_ku_rwb_a_2;
+	1: spritegroup_ku_rwb_a_3;
+	1: spritegroup_ku_rwb_a_4;
+	1: spritegroup_ku_rwb_b_1;
+    1: spritegroup_ku_rwb_b_2;
+	1: spritegroup_ku_rwb_b_3;
+	1: spritegroup_ku_rwb_b_4;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_ku_rb_livery) {
+	1: spritegroup_ku_rb_a_1;
+    1: spritegroup_ku_rb_a_2;
+	1: spritegroup_ku_rb_a_3;
+	1: spritegroup_ku_rb_a_4;
+	1: spritegroup_ku_rb_b_1;
+    1: spritegroup_ku_rb_b_2;
+	1: spritegroup_ku_rb_b_3;
+	1: spritegroup_ku_rb_b_4;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_ku_random_livery) {
+	1: switch_ku_red_livery;
+	1: switch_ku_rwb_livery;
+	1: switch_ku_rb_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ku_5000_yeardep, current_year) {
+	0..1990: switch_ku_red_livery;
+	switch_ku_rwb_livery;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ku_5000_livery, cargo_subtype) {
+	1: switch_ku_red_livery;
+	2: switch_ku_rwb_livery;
+	3: switch_ku_rb_livery;
+	4: switch_ku_cc_livery;
+	5: switch_ku_random_livery;
+	switch_ku_5000_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ku_5000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED);
+	2: return string(STR_REFIT_KU_NISSAN);
+	3: return string(STR_REFIT_KU_REDBLUE);
+	4: return string(STR_REFIT_CC);
+	5: return string(STR_REFIT_RANDOM);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
+	0..1990: spriteset_ku_5000_jnr_purchase;
+	spriteset_ku_5000_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, ku_5000, 44) {
+
+property {
+	name: string(STR_NAME_KU_5000);
+	introduction_date: date(1966,1,1);
+	default_cargo_type: VEHI;
+	refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: 0; 
+	cargo_allow_refit: [VEHI]; 
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 40;
+	default: switch_ku_5000_livery;
+	purchase: switch_ku_5000_purchase;
+	cargo_subtype_text: switch_ku_5000_subtype_text;
+	}
+}

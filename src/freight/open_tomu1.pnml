@@ -1,0 +1,349 @@
+spriteset(spriteset_tomu_1_a_empty, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_quarter, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_half, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tomu_1_a_bulk_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_tomu_1_a_piece_half, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_tomu_1_a_piece_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_tomu_1_a_crates_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tomu_1_a_coils_full, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_tomu_1_a_tarpa, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tomu_1_a_tarpb, "gfx/freight/tomu_1_a.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spriteset(spriteset_tomu_1_purchase, "gfx/freight/tomu_1_a.png") {
+	template_purchase(1, 320)
+}
+
+
+
+
+spritegroup spritegroup_tomu_1_a_bulk {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+}
+
+spritegroup spritegroup_tomu_1_a_bulk_covered_a {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_tarpa];
+}
+
+spritegroup spritegroup_tomu_1_a_bulk_covered_b {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_bulk_quarter, spriteset_tomu_1_a_bulk_half, spriteset_tomu_1_a_bulk_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_tarpb];
+}
+
+spritegroup spritegroup_tomu_1_a_piece {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+}
+
+spritegroup spritegroup_tomu_1_a_piece_covered {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_piece_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_piece_half, spriteset_tomu_1_a_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_a_crates {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+}
+
+spritegroup spritegroup_tomu_1_a_coils {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+}
+
+spritegroup spritegroup_tomu_1_a_paper {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_coils_full, spriteset_tomu_1_a_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_a_wool {
+    loading: [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full];
+    loaded:  [spriteset_tomu_1_a_empty, spriteset_tomu_1_a_crates_full, spriteset_tomu_1_a_tarpa];
+}
+
+//b 
+
+spriteset(spriteset_tomu_1_b_empty, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_quarter, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_half, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_tomu_1_b_bulk_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_tomu_1_b_piece_half, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_tomu_1_b_piece_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_tomu_1_b_crates_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tomu_1_b_coils_full, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_tomu_1_b_tarpa, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_tomu_1_b_tarpb, "gfx/freight/tomu_1_b.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spritegroup spritegroup_tomu_1_b_bulk {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+}
+
+spritegroup spritegroup_tomu_1_b_bulk_covered_a {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_tarpa];
+}
+
+spritegroup spritegroup_tomu_1_b_bulk_covered_b {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_bulk_quarter, spriteset_tomu_1_b_bulk_half, spriteset_tomu_1_b_bulk_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_tarpb];
+}
+
+spritegroup spritegroup_tomu_1_b_piece {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+}
+
+spritegroup spritegroup_tomu_1_b_piece_covered {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_piece_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_piece_half, spriteset_tomu_1_b_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_b_crates {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+}
+
+spritegroup spritegroup_tomu_1_b_coils {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+}
+
+spritegroup spritegroup_tomu_1_b_paper {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_coils_full, spriteset_tomu_1_b_tarpa];
+}
+
+
+spritegroup spritegroup_tomu_1_b_wool {
+    loading: [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full];
+    loaded:  [spriteset_tomu_1_b_empty, spriteset_tomu_1_b_crates_full, spriteset_tomu_1_b_tarpa];
+}
+
+
+//todo open sides
+
+
+
+//random switches
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_metal) {
+ 1: spritegroup_tomu_1_a_piece;
+ 2: spritegroup_tomu_1_a_coils;
+ 1: spritegroup_tomu_1_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_supplies) {
+ 1: spritegroup_tomu_1_a_piece;
+ 2: spritegroup_tomu_1_a_crates;
+ 1: spritegroup_tomu_1_a_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_a_piece) {
+ 2: spritegroup_tomu_1_a_piece;
+ 1: spritegroup_tomu_1_a_crates;
+ 2: spritegroup_tomu_1_a_piece_covered;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_metal) {
+ 1: spritegroup_tomu_1_b_piece;
+ 2: spritegroup_tomu_1_b_coils;
+ 1: spritegroup_tomu_1_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_supplies) {
+ 1: spritegroup_tomu_1_b_piece;
+ 2: spritegroup_tomu_1_b_crates;
+ 1: spritegroup_tomu_1_b_piece_covered;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_b_piece) {
+ 2: spritegroup_tomu_1_b_piece;
+ 1: spritegroup_tomu_1_b_crates;
+ 2: spritegroup_tomu_1_b_piece_covered;
+}
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_metal) {
+ 2: random_tomu_1_a_metal;
+ 1: random_tomu_1_b_metal;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_supplies) {
+ 2: random_tomu_1_a_supplies;
+ 1: random_tomu_1_b_supplies;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_piece) {
+ 2: random_tomu_1_a_piece;
+ 1: random_tomu_1_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_wool) {
+ 2: spritegroup_tomu_1_a_wool;
+ 1: spritegroup_tomu_1_b_wool;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_paper) {
+ 2: spritegroup_tomu_1_a_paper;
+ 1: spritegroup_tomu_1_b_paper;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_rods) {
+ 2: spritegroup_tomu_1_a_piece;
+ 1: spritegroup_tomu_1_b_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_bulk) {
+ 2: spritegroup_tomu_1_a_bulk;
+ 1: spritegroup_tomu_1_b_bulk;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_tomu_1_covered) {
+ 2: spritegroup_tomu_1_a_bulk_covered_a;
+ 1: spritegroup_tomu_1_b_bulk_covered_a;
+ 2: spritegroup_tomu_1_a_bulk_covered_b;
+ 1: spritegroup_tomu_1_b_bulk_covered_b;
+}
+
+
+
+//todo fix
+
+
+switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
+	IRON: random_tomu_1_metal;
+	STEL: random_tomu_1_metal;
+	METL: random_tomu_1_metal;
+	ZINC: random_tomu_1_metal;
+	COPR: random_tomu_1_metal;
+	STST: random_tomu_1_metal;
+	STSH: random_tomu_1_metal;
+	STAL: random_tomu_1_metal;
+	STCB: random_tomu_1_metal;
+	
+	ENSP: random_tomu_1_supplies;
+	FMSP: random_tomu_1_supplies;
+	MNSP: random_tomu_1_supplies;
+	POWR: random_tomu_1_supplies;
+	VPTS: random_tomu_1_supplies;
+	MPTS: random_tomu_1_supplies;
+	GOOD: random_tomu_1_supplies;
+	
+	BDMT: random_tomu_1_piece;
+	WDPR: random_tomu_1_piece;
+	GLAS: random_tomu_1_piece;
+	BRCK: random_tomu_1_piece;
+	STWR: random_tomu_1_piece;
+	STSE: random_tomu_1_piece;
+	
+	PAPR: random_tomu_1_paper;
+	TYRE: random_tomu_1_paper;
+	WOOL: random_tomu_1_wool;
+	TEXT: random_tomu_1_wool;
+	
+	SCMT: random_tomu_1_bulk;
+	SULP: random_tomu_1_covered;
+	SEED: random_tomu_1_covered;
+	FERT: random_tomu_1_covered;
+	SASH: random_tomu_1_covered;
+	
+	random_tomu_1_rods;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_tomu_1_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_tomu_1_covered;
+
+	switch_tomu_1_cargo_type;
+}
+
+
+item (FEAT_TRAINS, tomu_1, 29) {
+
+property {
+	introduction_date: date(1911,1,1);
+	speed: 65 km/h;
+	name: string(STR_NAME_TOMU_1);
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 30;
+	default: switch_tomu_1_cargo_class;
+	purchase: spriteset_tomu_1_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}

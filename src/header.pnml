@@ -1,0 +1,49 @@
+grf {
+ grfid: "\4A\44\A1\E1";
+ name: string(STR_GRF_NAME);
+ desc: string(STR_GRF_DESCRIPTION);
+ version: 70;
+ min_compatible_version: 60;
+ 
+ //params, thanks tin
+		//basecosts
+		param 0 {
+				param_basecostbuy {
+						type: int;
+						name: string(STR_PARAM_NAME_BASECOSTMODBUY);
+						desc: string(STR_PARAM_DESC_BASECOSTMODBUY);
+						min_value: 0;
+						max_value: 2;
+						def_value: 1;
+						names: {
+												0: string(STR_PARAM_LOW);
+												1: string(STR_PARAM_NORMAL);
+												2: string(STR_PARAM_HIGH);
+						};
+				}
+		}
+		//runningcosts
+		param 1 {
+				param_basecostrun {
+						type: int;
+						name: string(STR_PARAM_NAME_BASECOSTMODRUN);
+						desc: string(STR_PARAM_DESC_BASECOSTMODRUN);
+						min_value: 0;
+						max_value: 4;
+						def_value: 2;
+						names: {
+												0: string(STR_PARAM_VLOW);
+												1: string(STR_PARAM_LOW);
+												2: string(STR_PARAM_NORMAL);
+												3: string(STR_PARAM_HIGH);
+												4: string(STR_PARAM_VHIGH);
+						};
+				}
+		}
+}
+
+//disable_item(FEAT_TRAINS);
+
+//train look nice thing
+traininfo_y_offset = 2;
+train_width_32_px = 1;

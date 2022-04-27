@@ -1,0 +1,71 @@
+spriteset(spriteset_pax_12_series_rear, "gfx/12series.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_12_series_front, "gfx/12series.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_12_series, "gfx/12series.png") {
+	template_2cc_std(1, 64)
+}
+
+alternative_sprites(spriteset_pax_12_series_rear, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/12series-32.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_pax_12_series_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/12series-32.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_pax_12_series, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/12series-32.png") {
+	template_2cc_std(1, 64)
+}
+
+
+spriteset(spriteset_pax_12_series_purchase, "gfx/12series.png") {
+	template_purchase(1, 128)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_12_series_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_12_series_rear;
+	spriteset_pax_12_series;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_pax_12_series_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_12_series_front;
+	switch_pax_12_series_end;
+	}
+
+
+item (FEAT_TRAINS, pax_12_series, 1320) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PASSENGER_12);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1969,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 85; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 26;
+		cost_factor: 15;
+		running_cost_factor: 9;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 85;
+		default: switch_pax_12_series_beginning;
+		purchase: spriteset_pax_12_series_purchase;
+	}
+}

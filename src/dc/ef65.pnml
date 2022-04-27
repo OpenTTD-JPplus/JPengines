@@ -1,0 +1,143 @@
+spriteset(spriteset_ef65_blue, "gfx/ef65.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef65_jrf, "gfx/ef65.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef65_brown, "gfx/ef65.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef65_tokkyu, "gfx/ef65.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef65_jr_logo, "gfx/ef65.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef65_twilight, "gfx/ef65.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef65_experimental, "gfx/ef65.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef65_rainbow, "gfx/ef65.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_ef65_ef67, "gfx/ef65.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_ef65_euroliner, "gfx/ef65.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_ef65_cc, "gfx/ef65.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_ef65_yuyu_red, "gfx/ef65.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef65_yuyu_orange, "gfx/ef65.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef65_tokaido_green, "gfx/ef65.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef65_large_logo, "gfx/ef65.png") {
+	template_2cc_std(180, 96)
+}
+
+
+spriteset(spriteset_ef65_0_purchase, "gfx/ef65.png") {
+	template_purchase(1, 416)
+}
+
+spriteset(spriteset_ef65_1_purchase, "gfx/ef65.png") {
+	template_purchase(1, 448)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef65_yeardep_livery, build_year) {
+	0..1982: spriteset_ef65_tokkyu;
+	1989..9999: spriteset_ef65_jrf;
+    spriteset_ef65_blue;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef65_livery, cargo_subtype) {
+	1: spriteset_ef65_brown;
+	2: spriteset_ef65_tokkyu;
+	3: spriteset_ef65_blue;
+	4: spriteset_ef65_tokaido_green;
+	5: spriteset_ef65_jrf;
+	6: spriteset_ef65_euroliner;
+	7: spriteset_ef65_rainbow;
+	8: spriteset_ef65_twilight;
+	9: spriteset_ef65_jr_logo;
+	10: spriteset_ef65_large_logo;
+	11: spriteset_ef65_experimental;
+	12: spriteset_ef65_yuyu_red;
+	13: spriteset_ef65_yuyu_orange;
+	14: spriteset_ef65_ef67;
+	15: spriteset_ef65_cc;
+	switch_ef65_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef65_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JNR_BROWN);
+	2: return string(STR_REFIT_TOKKYU);
+	3: return string(STR_REFIT_BLUE);
+	4: return string(STR_REFIT_TOKAIDO_GREEN);
+	5: return string(STR_REFIT_JRF_BLUE);
+	6: return string(STR_REFIT_EUROLINER);
+	7: return string(STR_REFIT_RAINBOW);
+	8: return string(STR_REFIT_TWILIGHT);
+	9: return string(STR_REFIT_JR_LOGO);
+	10: return string(STR_REFIT_LOGO);
+	11: return string(STR_REFIT_EXP);
+	12: return string(STR_REFIT_YUYU_RED);
+	13: return string(STR_REFIT_YUYU_ORANGE);
+	14: return string(STR_REFIT_EF67);
+	15: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef65_yeardep_purchase, current_year) {
+	1990..9999: spriteset_ef65_1_purchase;
+    spriteset_ef65_0_purchase;
+}
+
+
+
+item (FEAT_TRAINS, ef65, 24) {
+
+property {
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_JNR_EF66);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef65_subtype_text;
+  default: switch_ef65_livery;
+  purchase: switch_ef65_yeardep_purchase;
+  }
+}

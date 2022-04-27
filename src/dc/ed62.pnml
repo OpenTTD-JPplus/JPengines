@@ -1,0 +1,125 @@
+spriteset(spriteset_ed61_cc, "gfx/ed62.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed61_brown, "gfx/ed62.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ed61_blue, "gfx/ed62.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ed62_cc, "gfx/ed62.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ed62_brown, "gfx/ed62.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ed62_blue, "gfx/ed62.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ed62_jrf, "gfx/ed62.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ed62_hama, "gfx/ed62.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_ed61_purchase, "gfx/ed62.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ed62_purchase, "gfx/ed62.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_ed62_jrf_purchase, "gfx/ed62.png") {
+	template_purchase(1, 320)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed62_yeardep_livery, current_year) {
+	0..1965: spriteset_ed61_brown;
+	1965..1974: spriteset_ed61_blue;
+	1974..1988: spriteset_ed62_blue;
+	spriteset_ed62_jrf;
+
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed62_livery, cargo_subtype) {
+	1: spriteset_ed61_cc;
+	2: spriteset_ed61_brown;
+	3: spriteset_ed61_blue;
+	4: spriteset_ed62_cc;
+	5: spriteset_ed62_brown;
+	6: spriteset_ed62_blue;
+	7: spriteset_ed62_jrf;
+	8: spriteset_ed62_hama;
+	switch_ed62_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed62_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_ED61_CC);
+	2: return string(STR_REFIT_ED61_BROWN);
+	3: return string(STR_REFIT_ED61_BLUE);
+	4: return string(STR_REFIT_ED62_CC);
+	5: return string(STR_REFIT_ED62_BROWN);
+	6: return string(STR_REFIT_ED62_BLUE);
+	7: return string(STR_REFIT_ED62_JRF);
+	8: return string(STR_REFIT_ED62_HAMA);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed62_yeardep_purchase, current_year) {
+	0..1974: spriteset_ed61_purchase;
+	1990..9999: spriteset_ed62_jrf_purchase;
+	spriteset_ed62_purchase;
+
+}
+
+
+item (FEAT_TRAINS, ed62, 1060) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED62);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1958,1,1);
+  speed: 90 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1560 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 60;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 44;
+  length: 7;
+  running_cost_factor: 56;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_TEXT_JNR_JRF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed62_subtype_text;
+  default: switch_ed62_livery;
+  purchase: switch_ed62_yeardep_purchase;
+  }
+}

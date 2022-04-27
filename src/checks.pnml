@@ -1,0 +1,25 @@
+//check ottd
+if (ttd_platform != PLATFORM_OPENTTD) {
+    error(FATAL, USED_WITH, "OpenTTD");
+} else {
+    if (openttd_version < version_openttd(1, 2, 0, 23971)) {
+        error(FATAL, REQUIRES_OPENTTD, "1.2.0-RC1 / r23971");
+    }
+}
+
+
+//load order checks, thanks tin
+if (grf_order_behind("SZ\0D\00") == 0) {
+    error(WARNING, string(STR_ERROR_JAPANSETTRAINS));
+}
+
+/*
+if (grf_order_behind("BS\42\13") == 0) {
+    error(FATAL, string(STR_ERROR_JPPLUSSET));
+}
+*/
+
+
+//OVERRIDE JAPAN SET TRAINS 3
+
+ engine_override("\53\5A\0D\00");

@@ -1,0 +1,172 @@
+spriteset(spriteset_ef81_red, "gfx/ef81a.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef81_stainless, "gfx/ef81a.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef81_stainless_whiskers, "gfx/ef81a.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef81_twilight, "gfx/ef81a.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef81_cassiopeia, "gfx/ef81a.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef81_jrf, "gfx/ef81a.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef81_jrf_stripe, "gfx/ef81a.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef81_jrf_450, "gfx/ef81a.png") {
+	template_2cc_std(1, 224)
+}
+
+
+spriteset(spriteset_ef81_cc, "gfx/ef81b.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef81_jrf_red, "gfx/ef81b.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef81_oldred_stripe, "gfx/ef81b.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef81_oldred, "gfx/ef81b.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef81_rainbow, "gfx/ef81b.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef81_jrf_2tone, "gfx/ef81b.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef81_hokutosei, "gfx/ef81b.png") {
+	template_2cc_std(1, 192)
+}
+
+
+spriteset(spriteset_ef81_purchase, "gfx/ef81a.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ef81_jrf_purchase, "gfx/ef81a.png") {
+	template_purchase(1, 288)
+}
+
+//liveryt variants
+
+random_switch(FEAT_TRAINS, SELF, switch_ef81_stainless_livery) {
+	1: spriteset_ef81_stainless;
+    1: spriteset_ef81_stainless_whiskers;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_ef81_jrf_livery) {
+	1: spriteset_ef81_jrf;
+    1: spriteset_ef81_jrf_stripe;
+}
+
+//year variants
+
+random_switch(FEAT_TRAINS, SELF, switch_ef81_70s_livery) {
+	3: spriteset_ef81_oldred;
+    1: spriteset_ef81_stainless;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_ef81_90s_livery) {
+	3: switch_ef81_jrf_livery;
+    1: spriteset_ef81_stainless;
+	1: spriteset_ef81_oldred_stripe;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_ef81_00s_livery) {
+	3: switch_ef81_jrf_livery;
+    1: spriteset_ef81_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef81_yeardep_livery, build_year) {
+	1000..1986: switch_ef81_70s_livery;
+	1986..1999: switch_ef81_90s_livery;
+	1999..9999: switch_ef81_00s_livery;
+    CB_FAILED;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef81_livery, cargo_subtype) {
+
+	1: spriteset_ef81_oldred;
+	2: spriteset_ef81_oldred_stripe;
+	3: switch_ef81_stainless_livery;
+	4: spriteset_ef81_red;
+	5: switch_ef81_jrf_livery;
+	6: spriteset_ef81_jrf_450;
+	7: spriteset_ef81_jrf_2tone;
+	8: spriteset_ef81_jrf_red;
+	9: spriteset_ef81_twilight;
+	10: spriteset_ef81_cassiopeia;
+	11: spriteset_ef81_rainbow;
+	12: spriteset_ef81_hokutosei;
+	13: spriteset_ef81_cc;
+	
+	switch_ef81_yeardep_livery;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_ef81_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_OLDRED);
+	2: return string(STR_REFIT_OLDSTRIPE);
+	3: return string(STR_REFIT_STAINLESS);
+	4: return string(STR_REFIT_RED);
+	5: return string(STR_REFIT_JRF_BLUE);
+	6: return string(STR_REFIT_EF81_450);
+	7: return string(STR_REFIT_JRF_2TONE);
+	8: return string(STR_REFIT_JRF_RED);	
+	9: return string(STR_REFIT_TWILIGHT);	
+	10: return string(STR_REFIT_CASSIOPEIA);	
+	11: return string(STR_REFIT_RAINBOW);
+	12: return string(STR_REFIT_HOKBLUE);
+	13: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef81_yeardep_purchase, current_year) {
+	1990..9999: spriteset_ef81_jrf_purchase;
+    spriteset_ef81_purchase;
+}
+
+
+
+item (FEAT_TRAINS, ef81, 55) {
+
+property {
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_JNR_EF66);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef81_subtype_text;
+  default: switch_ef81_livery;
+  purchase: switch_ef81_yeardep_purchase;
+  }
+}

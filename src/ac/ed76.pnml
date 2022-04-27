@@ -1,0 +1,114 @@
+spriteset(spriteset_ed76_old_red, "gfx/ed76.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed76_twotone_blue, "gfx/ed76.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ed76_southerncross, "gfx/ed76.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ed76_0_refurbished, "gfx/ed76.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ed76_1000_refurbished, "gfx/ed76.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ed76_500, "gfx/ed76.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ed76_550, "gfx/ed76.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ed76_cc, "gfx/ed76.png") {
+	template_2cc_std(1, 224)
+}
+
+
+spriteset(spriteset_ed76_jnr_purchase, "gfx/ed76.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ed76_jrf_purchase, "gfx/ed76.png") {
+	template_purchase(1, 288)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_yeardep_livery, build_year) {
+	0..1987: spriteset_ed76_old_red;
+    spriteset_ed76_1000_refurbished;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_livery, cargo_subtype) {
+	1: spriteset_ed76_old_red;
+	2: spriteset_ed76_twotone_blue;
+	3: spriteset_ed76_southerncross;
+	4: spriteset_ed76_0_refurbished;
+	5: spriteset_ed76_1000_refurbished;
+	6: spriteset_ed76_500;
+	7: spriteset_ed76_550;
+	8: spriteset_ed76_cc;
+	switch_ed76_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_RED);
+	2: return string(STR_REFIT_JRF_2TONE);
+	3: return string(STR_REFIT_SOUTHERNCROSS);
+	4: return string(STR_REFIT_JRF_REFIT);
+	5: return string(STR_REFIT_ED76_1000);
+	6: return string(STR_REFIT_ED76_500);
+	7: return string(STR_REFIT_ED76_550);
+	8: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_yeardep_purchase, current_year) {
+	0..1987: spriteset_ed76_jnr_purchase;
+    spriteset_ed76_jrf_purchase;
+}
+
+
+item (FEAT_TRAINS, ed76, 1071) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED76);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1965,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 87;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 54;
+  length: 8;
+  running_cost_factor: 84;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed76_subtype_text;
+  default: switch_ed76_livery;
+  purchase: switch_ed76_yeardep_purchase;
+  }
+}

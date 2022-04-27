@@ -1,0 +1,339 @@
+spriteset(spriteset_toki_900_black_empty, "gfx/freight/toki_900.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_toki_900_black_bulk_quarter, "gfx/freight/toki_900.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_toki_900_black_bulk_half, "gfx/freight/toki_900.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_toki_900_black_bulk_full, "gfx/freight/toki_900.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_toki_900_black_piece_half, "gfx/freight/toki_900.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_toki_900_black_piece_full, "gfx/freight/toki_900.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_toki_900_black_crates_full, "gfx/freight/toki_900.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_toki_900_black_coils_full, "gfx/freight/toki_900.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_toki_900_black_tarpa, "gfx/freight/toki_900.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_toki_900_black_tarpb, "gfx/freight/toki_900.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spriteset(spriteset_toki_900_purchase, "gfx/freight/toki_900.png") {
+	template_purchase(1, 320)
+}
+
+
+
+
+spritegroup spritegroup_toki_900_black_bulk {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
+}
+
+spritegroup spritegroup_toki_900_black_bulk_covered_a {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_tarpa];
+}
+
+spritegroup spritegroup_toki_900_black_bulk_covered_b {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_bulk_quarter, spriteset_toki_900_black_bulk_half, spriteset_toki_900_black_bulk_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_tarpb];
+}
+
+spritegroup spritegroup_toki_900_black_piece {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
+}
+
+spritegroup spritegroup_toki_900_black_piece_covered_a {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_tarpa];
+}
+
+spritegroup spritegroup_toki_900_black_piece_covered_b {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_piece_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_piece_half, spriteset_toki_900_black_tarpb];
+}
+
+
+
+spritegroup spritegroup_toki_900_black_crates {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full];
+}
+
+spritegroup spritegroup_toki_900_black_coils {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_coils_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_coils_full];
+}
+
+spritegroup spritegroup_toki_900_black_paper {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_coils_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_coils_full, spriteset_toki_900_black_tarpa];
+}
+
+
+spritegroup spritegroup_toki_900_black_wool {
+    loading: [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full];
+    loaded:  [spriteset_toki_900_black_empty, spriteset_toki_900_black_crates_full, spriteset_toki_900_black_tarpa];
+}
+
+//wood 
+
+spriteset(spriteset_toki_900_wood_empty, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_quarter, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_half, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_toki_900_wood_bulk_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_toki_900_wood_piece_half, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_toki_900_wood_piece_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_toki_900_wood_crates_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_toki_900_wood_coils_full, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_toki_900_wood_tarpa, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_toki_900_wood_tarpb, "gfx/freight/toki_900_wood.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spritegroup spritegroup_toki_900_wood_bulk {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+}
+
+spritegroup spritegroup_toki_900_wood_bulk_covered_a {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_tarpa];
+}
+
+spritegroup spritegroup_toki_900_wood_bulk_covered_b {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_bulk_quarter, spriteset_toki_900_wood_bulk_half, spriteset_toki_900_wood_bulk_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_tarpb];
+}
+
+spritegroup spritegroup_toki_900_wood_piece {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+}
+
+spritegroup spritegroup_toki_900_wood_piece_covered_a {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_tarpa];
+}
+spritegroup spritegroup_toki_900_wood_piece_covered_b {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_piece_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_piece_half, spriteset_toki_900_wood_tarpb];
+}
+
+
+
+spritegroup spritegroup_toki_900_wood_crates {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+}
+
+spritegroup spritegroup_toki_900_wood_coils {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+}
+
+spritegroup spritegroup_toki_900_wood_paper {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_coils_full, spriteset_toki_900_wood_tarpa];
+}
+
+
+spritegroup spritegroup_toki_900_wood_wool {
+    loading: [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full];
+    loaded:  [spriteset_toki_900_wood_empty, spriteset_toki_900_wood_crates_full, spriteset_toki_900_wood_tarpa];
+}
+
+
+//todo open sides
+
+
+
+//random switches
+
+//todo refits?
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_metal) {
+ 1: spritegroup_toki_900_black_piece;
+ 3: spritegroup_toki_900_black_coils;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_coils;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_supplies) {
+ 1: spritegroup_toki_900_black_piece;
+ 2: spritegroup_toki_900_black_crates;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 1: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_crates;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_piece) {
+ 3: spritegroup_toki_900_black_piece;
+ 2: spritegroup_toki_900_black_crates;
+ 1: spritegroup_toki_900_black_piece_covered_a;
+ 1: spritegroup_toki_900_black_piece_covered_b;
+ 3: spritegroup_toki_900_wood_piece;
+ 2: spritegroup_toki_900_wood_crates;
+ 1: spritegroup_toki_900_wood_piece_covered_a;
+ 1: spritegroup_toki_900_wood_piece_covered_b;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_wool) {
+ 2: spritegroup_toki_900_black_wool;
+ 1: spritegroup_toki_900_wood_wool;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_paper) {
+ 2: spritegroup_toki_900_black_paper;
+ 1: spritegroup_toki_900_wood_paper;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_rods) {
+ 2: spritegroup_toki_900_black_piece;
+ 1: spritegroup_toki_900_wood_piece;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_bulk) {
+ 2: spritegroup_toki_900_black_bulk;
+ 1: spritegroup_toki_900_wood_bulk;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_900_covered) {
+ 2: spritegroup_toki_900_black_bulk_covered_a;
+ 1: spritegroup_toki_900_wood_bulk_covered_a;
+ 2: spritegroup_toki_900_black_bulk_covered_b;
+ 1: spritegroup_toki_900_wood_bulk_covered_b;
+}
+
+
+
+//todo fix
+
+
+switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
+	IRON: random_toki_900_metal;
+	STEL: random_toki_900_metal;
+	METL: random_toki_900_metal;
+	ZINC: random_toki_900_metal;
+	COPR: random_toki_900_metal;
+	STST: random_toki_900_metal;
+	STSH: random_toki_900_metal;
+	STAL: random_toki_900_metal;
+	STCB: random_toki_900_metal;
+	
+	ENSP: random_toki_900_supplies;
+	FMSP: random_toki_900_supplies;
+	MNSP: random_toki_900_supplies;
+	POWR: random_toki_900_supplies;
+	VPTS: random_toki_900_supplies;
+	MPTS: random_toki_900_supplies;
+	GOOD: random_toki_900_supplies;
+	
+	BDMT: random_toki_900_piece;
+	WDPR: random_toki_900_piece;
+	GLAS: random_toki_900_piece;
+	BRCK: random_toki_900_piece;
+	STWR: random_toki_900_piece;
+	STSE: random_toki_900_piece;
+	
+	PAPR: random_toki_900_paper;
+	TYRE: random_toki_900_paper;
+	WOOL: random_toki_900_wool;
+	TEXT: random_toki_900_wool;
+	
+	SCMT: random_toki_900_bulk;
+	SULP: random_toki_900_covered;
+	SEED: random_toki_900_covered;
+	FERT: random_toki_900_covered;
+	SASH: random_toki_900_covered;
+	
+	random_toki_900_rods;
+}
+
+switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_toki_900_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_toki_900_covered;
+
+	switch_toki_900_cargo_type;
+}
+
+
+item (FEAT_TRAINS, toki_900, 1284) {
+
+property {
+//	introduction_date: date(1940,1,1);
+//	default_cargo_type: FOOD;
+	speed: 65 km/h;
+	name: string(STR_NAME_TOKI_900);
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 45;
+	default: switch_toki_900_cargo_class;
+	purchase: spriteset_toki_900_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}

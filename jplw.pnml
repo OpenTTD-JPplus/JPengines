@@ -1,0 +1,123 @@
+#include "src/header.pnml"
+#include "src/basecost.pnml"
+#include "src/cargotable.pnml"
+#include "src/checks.pnml"
+#include "src/railtypetable.pnml"
+#include "src/sort.pnml"
+#include "src/template.pnml"
+#include "src/recolour.pnml"
+
+#include "src/steam/7100.pnml"
+#include "src/steam/7200.pnml"
+#include "src/steam/860.pnml"
+
+#include "src/dc/deki_400.pnml"
+#include "src/dc/e31.pnml"
+#include "src/dc/e851.pnml"
+#include "src/dc/eb10.pnml"
+#include "src/dc/ed17.pnml"
+#include "src/dc/ed53.pnml"
+#include "src/dc/ed62.pnml"
+#include "src/dc/ef10.pnml"
+#include "src/dc/ef13.pnml"
+#include "src/dc/ef53.pnml"
+#include "src/dc/ef55.pnml"
+#include "src/dc/ef57.pnml"
+#include "src/dc/ef58.pnml"
+#include "src/dc/ef60.pnml"
+#include "src/dc/ef63.pnml"
+#include "src/dc/ef64.pnml"
+#include "src/dc/ef65.pnml"
+#include "src/dc/ef66.pnml"
+#include "src/dc/ef200.pnml"
+#include "src/dc/ef210.pnml"
+#include "src/dc/eh10.pnml"
+#include "src/dc/eh200.pnml"
+
+#include "src/ac/ed70.pnml"
+#include "src/ac/ed75.pnml"
+#include "src/ac/ed76.pnml"
+#include "src/ac/ed500.pnml"
+#include "src/ac/ef30.pnml"
+#include "src/ac/ef70.pnml"
+#include "src/ac/ef80.pnml"
+#include "src/ac/ef81.pnml"
+#include "src/ac/ef500.pnml"
+#include "src/ac/ef510.pnml"
+#include "src/ac/eh500.pnml"
+#include "src/ac/eh800.pnml"
+
+#include "src/diesel/dd13.pnml"
+#include "src/diesel/dd51.pnml"
+#include "src/diesel/de10.pnml"
+#include "src/diesel/df50.pnml"
+#include "src/diesel/df200.pnml"
+#include "src/diesel/hd300.pnml"
+
+#include "src/pax/12_series.pnml"
+#include "src/pax/24_series.pnml"
+#include "src/pax/50_series.pnml"
+
+#include "src/pax/mail_mani30.pnml"
+#include "src/pax/mail_mani44.pnml"
+#include "src/pax/mail_mani50.pnml"
+#include "src/pax/mail_oyu10.pnml"
+#include "src/pax/mail_suyu15.pnml"
+#include "src/pax/mail_waki8000.pnml"
+
+#include "src/freight/box_ka1.pnml"
+#include "src/freight/box_wa1.pnml"
+#include "src/freight/box_wa50000.pnml"
+#include "src/freight/box_waki1.pnml"
+#include "src/freight/box_waki1000.pnml"
+#include "src/freight/box_waki5000.pnml"
+#include "src/freight/box_waki10000.pnml"
+#include "src/freight/box_wamu80000.pnml"
+
+#include "src/freight/bulk_hoki650.pnml"
+#include "src/freight/bulk_hoki1000.pnml"
+#include "src/freight/bulk_hoki2200.pnml"
+#include "src/freight/bulk_hoki2500.pnml"
+#include "src/freight/bulk_hoki8300.pnml"
+#include "src/freight/bulk_hoki8500.pnml"
+#include "src/freight/bulk_hoki10000.pnml"
+#include "src/freight/bulk_se1.pnml"
+#include "src/freight/bulk_seki1.pnml"
+#include "src/freight/bulk_seki1000.pnml"
+#include "src/freight/bulk_seki3000.pnml"
+
+#include "src/freight/cars_koki71.pnml"
+#include "src/freight/cars_ku5000.pnml"
+
+#include "src/freight/cont_dmt.pnml"
+#include "src/freight/cont_koki5500.pnml"
+#include "src/freight/cont_koki10000.pnml"
+#include "src/freight/cont_old.pnml"
+
+#include "src/freight/flat_coilcarrier.pnml"
+
+#include "src/freight/heavy_slagladle.pnml"
+#include "src/freight/heavy_torpedo.pnml"
+
+#include "src/freight/open_to1.pnml"
+#include "src/freight/open_toki900.pnml"
+#include "src/freight/open_tomu1.pnml"
+#include "src/freight/open_tora5000.pnml"
+#include "src/freight/open_tora90000.pnml"
+
+#include "src/freight/reef_re1.pnml"
+#include "src/freight/reef_remu5000.pnml"
+#include "src/freight/reef_resa10000.pnml"
+
+#include "src/freight/tank_taki1000.pnml"
+
+#include "src/freight/brake_yo5000.pnml"
+#include "src/freight/brake_yo8000.pnml"
+
+#include "src/freight/temp_overrides.pnml"
+
+
+
+
+
+

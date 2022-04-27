@@ -1,0 +1,368 @@
+spriteset(spriteset_dmt_proto_purchase, "gfx/freight/dmt_front.png") {
+	template_purchase(1, 416)
+}
+
+spriteset(spriteset_dmt_jrf_purchase, "gfx/freight/dmt_front.png") {
+	template_purchase(89, 416)
+}
+
+spriteset(spriteset_dmt_rear, "gfx/freight/dmt_front.png") {
+	template_2cc_dmt(180, 1)
+}
+
+
+spriteset(spriteset_dmt_front_a, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dmt_front_b, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_dmt_front_c, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_dmt_front_d, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_dmt_front_e, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_dmt_front_f, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_dmt_front_g, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_dmt_front_h, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_dmt_front_i, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_dmt_front_j, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_dmt_front_k, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_dmt_front_l, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_dmt_front_m, "gfx/freight/dmt_front.png") {
+	template_2cc_std(1, 384)
+}
+
+
+//mids
+
+
+spriteset(spriteset_dmt_mid_a, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dmt_mid_b, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_dmt_mid_c, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_dmt_mid_d, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_dmt_mid_e, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_dmt_mid_f, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_dmt_mid_g, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_dmt_mid_h, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_dmt_mid_i, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_dmt_mid_j, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_dmt_mid_k, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_dmt_mid_l, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_dmt_mid_m, "gfx/freight/dmt_mid.png") {
+	template_2cc_std(1, 384)
+}
+
+
+
+
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_all) {
+	1: spriteset_dmt_front_a;
+    1: spriteset_dmt_front_b;
+	1: spriteset_dmt_front_c;
+    1: spriteset_dmt_front_d;
+	1: spriteset_dmt_front_e;
+	1: spriteset_dmt_front_f;
+	1: spriteset_dmt_front_g;
+	1: spriteset_dmt_front_h;
+	1: spriteset_dmt_front_i;
+	1: spriteset_dmt_front_j;
+	1: spriteset_dmt_front_k;
+	1: spriteset_dmt_front_l;
+	1: spriteset_dmt_front_m;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_all) {
+	1: spriteset_dmt_mid_a;
+    1: spriteset_dmt_mid_b;
+	1: spriteset_dmt_mid_c;
+    1: spriteset_dmt_mid_d;
+	1: spriteset_dmt_mid_e;
+	1: spriteset_dmt_mid_f;
+	1: spriteset_dmt_mid_g;
+	1: spriteset_dmt_mid_h;
+	1: spriteset_dmt_mid_i;
+	1: spriteset_dmt_mid_j;
+	1: spriteset_dmt_mid_k;
+	1: spriteset_dmt_mid_l;
+	1: spriteset_dmt_mid_m;
+}
+
+
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_nocc) {
+	1: spriteset_dmt_front_a;
+    1: spriteset_dmt_front_b;
+	1: spriteset_dmt_front_c;
+    1: spriteset_dmt_front_d;
+	1: spriteset_dmt_front_e;
+	1: spriteset_dmt_front_f;
+	1: spriteset_dmt_front_g;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_nocc) {
+	1: spriteset_dmt_mid_a;
+    1: spriteset_dmt_mid_b;
+	1: spriteset_dmt_mid_c;
+    1: spriteset_dmt_mid_d;
+	1: spriteset_dmt_mid_e;
+	1: spriteset_dmt_mid_f;
+	1: spriteset_dmt_mid_g;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_proto) {
+	1: spriteset_dmt_front_h;
+	1: spriteset_dmt_front_i;
+	1: spriteset_dmt_front_j;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_proto) {
+	1: spriteset_dmt_mid_h;
+	1: spriteset_dmt_mid_i;
+	1: spriteset_dmt_mid_j;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_front_random_cc) {
+	1: spriteset_dmt_front_k;
+	1: spriteset_dmt_front_l;
+	1: spriteset_dmt_front_m;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_dmt_middle_random_cc) {
+	1: spriteset_dmt_mid_k;
+	1: spriteset_dmt_mid_l;
+	1: spriteset_dmt_mid_m;
+}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_dmt_articulated_part, extra_callback_info1) {
+	1: return dmt_middle;
+	2: return dmt_middle;
+    3: return dmt_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_TRAINS, SELF, switch_dmt_front_yeardep, build_year) {
+	0..2002: switch_dmt_front_random_proto;
+	switch_dmt_front_random_nocc;
+}
+	
+switch (FEAT_TRAINS, SELF, switch_dmt_middle_yeardep, build_year) {
+	0..2002: switch_dmt_middle_random_proto;
+	switch_dmt_middle_random_nocc;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dmt_front_livery, cargo_subtype) {
+	1: spriteset_dmt_front_a;
+	2: spriteset_dmt_front_b;
+	3: spriteset_dmt_front_c;
+	4: spriteset_dmt_front_d;
+	5: spriteset_dmt_front_e;
+	6: spriteset_dmt_front_f;
+	7: spriteset_dmt_front_g;
+	8: spriteset_dmt_front_h;
+	9: switch_dmt_front_random_proto;
+	10:  switch_dmt_front_random_cc;
+	11: switch_dmt_front_random_all;
+	switch_dmt_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_dmt_middle_livery, cargo_subtype) {
+	1: spriteset_dmt_mid_a;
+	2: spriteset_dmt_mid_b;
+	3: spriteset_dmt_mid_c;
+	4: spriteset_dmt_mid_d;
+	5: spriteset_dmt_mid_e;
+	6: spriteset_dmt_mid_f;
+	7: spriteset_dmt_mid_g;
+	8: spriteset_dmt_mid_h;
+	9: switch_dmt_middle_random_proto;
+	10: switch_dmt_middle_random_cc;
+	11: switch_dmt_middle_random_all;
+	switch_dmt_middle_yeardep;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dmt_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_DMT_SAGAWA);
+	2: return string(STR_REFIT_DMT_JRF);
+	3: return string(STR_REFIT_DMT_YAMATO);
+	4: return string(STR_REFIT_DMT_SEINO);
+	5: return string(STR_REFIT_DMT_FUKUYAMA);
+	6: return string(STR_REFIT_DMT_FISH);
+	7: return string(STR_REFIT_DMT_NITTSU);
+	8: return string(STR_REFIT_DMT_SEINO);
+	9: return string(STR_REFIT_DMT_PROTO);
+	10: return string(STR_REFIT_CC);
+	11: return string(STR_REFIT_RANDOM);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+switch (FEAT_TRAINS, SELF, switch_dmt_middle_length, position_in_vehid_chain_from_end) {
+	0: return 8;
+	return 7;
+}
+
+switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
+	0..2002: spriteset_dmt_proto_purchase;
+	spriteset_dmt_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, dmt_middle, 1408) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: NO_CLIMATE;
+		loading_speed: 40;
+		cargo_capacity: 90; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 60;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 15;
+		cost_factor: 11;
+		introduction_date: date(1992,1,1);
+		length: 7;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		length: switch_dmt_middle_length;
+		default: switch_dmt_middle_livery;
+	}
+}
+
+item (FEAT_TRAINS, dmt_rear, 1409) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1992,1,1);
+		weight: 1;
+		length: 1;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		default: spriteset_dmt_rear;
+	}
+}
+
+
+
+item (FEAT_TRAINS, dmt, 1407) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1992,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 60;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 15;
+		cost_factor: 11;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+//		cargo_capacity: return 50;
+		default: switch_dmt_front_livery;
+		purchase: switch_dmt_yeardep_purchase;
+//		length: switch_dmt_rear_length;
+		refit_cost: CB_RESULT_AUTOREFIT;
+		articulated_part: switch_dmt_articulated_part;
+		cargo_subtype_text: switch_dmt_subtype_text;
+	}
+}

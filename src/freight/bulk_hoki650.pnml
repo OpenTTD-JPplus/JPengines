@@ -1,0 +1,68 @@
+spriteset(spriteset_hoki_650_stripe, "gfx/freight/hoki_650.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_650_black, "gfx/freight/hoki_650.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_hoki_650_purchase, "gfx/freight/hoki_650.png") {
+	template_purchase(1, 256)
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_650_stripe) {
+	1: spriteset_hoki_650_stripe;
+	1: spriteset_hoki_650_black;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_650_livery, cargo_subtype) {
+	1: spriteset_hoki_650_stripe;
+	2: spriteset_hoki_650_black;
+	random_hoki_650_stripe;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hoki_650_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_FRANDOM);
+	1: return string(STR_REFIT_FSTRIPE);
+	2: return string(STR_REFIT_FBLACK);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, hoki_650, 1444) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1971,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_HOKI_650);
+	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 45; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_COVERED); 
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SULP]; 
+	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
+	weight: 15;
+	cost_factor: 13;
+	length: 5;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 45;
+	default: switch_hoki_650_livery;
+	cargo_subtype_text: switch_hoki_650_subtype_text;
+	purchase: spriteset_hoki_650_purchase;
+	}
+}

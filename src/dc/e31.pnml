@@ -1,0 +1,57 @@
+spriteset(spriteset_seibu_e31, "gfx/private/seibu_e31.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_seibu_e31_cc, "gfx/private/seibu_e31.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_seibu_e31_purchase, "gfx/private/seibu_e31.png") {
+	template_purchase(1, 96)
+}
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e31_livery, cargo_subtype) {
+	1: spriteset_seibu_e31_cc;
+	spriteset_seibu_e31;
+}
+
+switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_SEIBU);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, seibu_e31, 1101) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_SEIBU_E31);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1986,1,1);
+  speed: 70 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.27;
+  power: 520 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 40;
+  reliability_decay: 80;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 13;
+  length: 4;
+  running_cost_factor: 9;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_SEIBU_E31);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_seibu_e31_subtype_text;
+  default: switch_seibu_e31_livery;
+  purchase: spriteset_seibu_e31_purchase;
+  }
+}

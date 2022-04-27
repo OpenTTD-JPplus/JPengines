@@ -1,0 +1,76 @@
+spriteset(spriteset_ef210_blue, "gfx/ef210.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef210_momotaro, "gfx/ef210.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef210_300, "gfx/ef210.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef210_new, "gfx/ef210.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_ef210_cc, "gfx/ef210.png") {
+	template_2cc_std(1, 128)
+}
+
+
+
+spriteset(spriteset_ef210_purchase, "gfx/ef210.png") {
+	template_purchase(1, 160)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef210_yeardep_livery, build_year) {
+	2009..2019: spriteset_ef210_momotaro;
+	2019..9999: spriteset_ef210_new;
+    spriteset_ef210_blue;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef210_livery, cargo_subtype) {
+	1: spriteset_ef210_blue;
+	2: spriteset_ef210_momotaro;
+	3: spriteset_ef210_new;	
+	4: spriteset_ef210_300;
+	5: spriteset_ef210_cc;
+	switch_ef210_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef210_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JRF_BLUE);
+	2: return string(STR_REFIT_MOMOTARO);
+	3: return string(STR_REFIT_JRF_REFIT);
+	4: return string(STR_REFIT_EF210_300);
+	5: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, jr_ef210, 84) {
+
+property {
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_JNR_EF66);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef210_subtype_text;
+  default: switch_ef210_livery;
+  purchase: spriteset_ef210_purchase;
+  }
+}

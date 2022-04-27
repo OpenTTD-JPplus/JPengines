@@ -1,0 +1,85 @@
+spriteset(spriteset_hoki_8500_red_empty, "gfx/freight/hoki_8500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_8500_red_quarter, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_hoki_8500_red_half, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_hoki_8500_red_full, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_hoki_8500_black_empty, "gfx/freight/hoki_8500.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_hoki_8500_black_quarter, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_hoki_8500_black_half, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 192)
+}
+
+spriteset(spriteset_hoki_8500_black_full, "gfx/freight/hoki_8500.png") {
+	template_2cc_anim(1, 224)
+}
+
+spriteset(spriteset_hoki_8500_jnr_purchase, "gfx/freight/hoki_8500.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_hoki_8500_jrf_purchase, "gfx/freight/hoki_8500.png") {
+	template_purchase(89, 256)
+}
+
+
+spritegroup spritegroup_hoki_8500_red_bulk {
+    loading: [spriteset_hoki_8500_red_empty, spriteset_hoki_8500_red_quarter, spriteset_hoki_8500_red_half, spriteset_hoki_8500_red_full];
+    loaded:  [spriteset_hoki_8500_red_empty, spriteset_hoki_8500_red_quarter, spriteset_hoki_8500_red_half, spriteset_hoki_8500_red_full];
+}
+
+spritegroup spritegroup_hoki_8500_black_bulk {
+    loading: [spriteset_hoki_8500_black_empty, spriteset_hoki_8500_black_quarter, spriteset_hoki_8500_black_half, spriteset_hoki_8500_black_full];
+    loaded:  [spriteset_hoki_8500_black_empty, spriteset_hoki_8500_black_quarter, spriteset_hoki_8500_black_half, spriteset_hoki_8500_black_full];
+}
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_8500_livery) {
+	1: spritegroup_hoki_8500_red_bulk;
+	1: spritegroup_hoki_8500_black_bulk;
+}	
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_8500_purchase, current_year) {
+	0..1987: spriteset_hoki_8500_jnr_purchase;
+	spriteset_hoki_8500_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, hoki_8500, 1285) {
+
+property {
+	introduction_date: date(1967,1,1);
+	name: string(STR_NAME_HOKI_8500);
+	speed: 100 km/h;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 60;
+	default: random_hoki_8500_livery;
+	purchase: switch_hoki_8500_purchase;
+//	cargo_subtype_text: switch_hoki_8500_subtype_text;
+	colour_mapping: switch_generic_recolour;
+	}
+}

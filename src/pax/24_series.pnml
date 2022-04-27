@@ -1,0 +1,158 @@
+spriteset(spriteset_pax_24_sleeper, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_24_standard, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_24_front, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_24_front_generator, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_24_rear, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_24_rear_generator, "gfx/paxmail/24series.png") {
+	template_2cc_std(1, 160)
+}
+
+
+alternative_sprites(spriteset_pax_24_sleeper, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_pax_24_standard, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_pax_24_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 64)
+}
+
+alternative_sprites(spriteset_pax_24_front_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 96)
+}
+
+alternative_sprites(spriteset_pax_24_rear, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 128)
+}
+
+alternative_sprites(spriteset_pax_24_rear_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_2cc_std(1, 160)
+}
+
+
+
+
+spriteset(spriteset_pax_24_series_jnr_purchase, "gfx/paxmail/24series.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_pax_24_series_jr_purchase, "gfx/paxmail/24series.png") {
+	template_purchase(89, 256)
+}
+
+
+alternative_sprites(spriteset_pax_24_series_jnr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_purchase(1, 256)
+}
+
+alternative_sprites(spriteset_pax_24_series_jr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+	template_purchase(89, 256)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_yeardep_purchase, current_year) {
+	0..1987: spriteset_pax_24_series_jnr_purchase;
+	spriteset_pax_24_series_jr_purchase;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_pax_24_series_auto_middle) {
+	4: spriteset_pax_24_standard;
+	1: spriteset_pax_24_sleeper;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_auto_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24_rear;
+	random_pax_24_series_auto_middle;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_24_front_generator;
+	switch_pax_24_series_auto_end;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_standard_end, position_in_consist_from_end) {
+	0: spriteset_pax_24_rear;
+	spriteset_pax_24_front;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_generator_end, position_in_consist_from_end) {
+	0: spriteset_pax_24_rear_generator;
+	spriteset_pax_24_front_generator;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_livery, cargo_subtype) {
+	1: spriteset_pax_24_standard;
+	2: spriteset_pax_24_sleeper;
+	3: switch_pax_24_series_standard_end;
+	4: switch_pax_24_series_generator_end;
+	switch_pax_24_series_auto_beginning;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24_series_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOFORM);
+	1: return string(STR_REFIT_PAX_OHN25);
+	2: return string(STR_REFIT_PAX_ORN24);
+	3: return string(STR_REFIT_PAX_OHNF25);
+	4: return string(STR_REFIT_PAX_KN24);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+item (FEAT_TRAINS, pax_24_series, 1540) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PASSENGER_24);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1973,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 28;
+		cost_factor: 18;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 70;
+		default: switch_pax_24_series_livery;
+		purchase: switch_pax_24_series_yeardep_purchase;
+		cargo_subtype_text: switch_pax_24_series_subtype_text;
+	}
+}

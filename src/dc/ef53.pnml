@@ -1,0 +1,86 @@
+spriteset(spriteset_ef53_jgr, "gfx/ef53.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef53_jnr, "gfx/ef53.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef53_banker, "gfx/ef53.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef53_cc, "gfx/ef53.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_ef53_jgr_purchase, "gfx/ef53.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_ef53_jnr_purchase, "gfx/ef53.png") {
+	template_purchase(1, 160)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef53_yeardep_livery, build_year) {
+	0..1949: spriteset_ef53_jgr;
+	spriteset_ef53_jnr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef53_yeardep_purchase, current_year) {
+	0..1949: spriteset_ef53_jgr_purchase;
+	spriteset_ef53_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef53_livery, cargo_subtype) {
+	1: spriteset_ef53_jgr;
+	2: spriteset_ef53_jnr;
+	3: spriteset_ef53_banker;
+	4: spriteset_ef53_cc;
+	switch_ef53_yeardep_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_JNR_BROWN);
+	3: return string(STR_REFIT_EF59);
+	4: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef53, 1016) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF53);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1932,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 98;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 37;
+  length: 8;
+  running_cost_factor: 54;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef53_subtype_text;
+  default: switch_ef53_livery;
+  purchase: switch_ef53_yeardep_purchase;
+  }
+}

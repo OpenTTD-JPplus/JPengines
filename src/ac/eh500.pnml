@@ -1,0 +1,179 @@
+spriteset(spriteset_eh500_prototype_front, "gfx/eh500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh500_prototype_rear, "gfx/eh500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh500_1_front, "gfx/eh500.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh500_1_rear, "gfx/eh500.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_eh500_2_front, "gfx/eh500.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_eh500_2_rear, "gfx/eh500.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_eh500_3_front, "gfx/eh500.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_eh500_3_rear, "gfx/eh500.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_eh500_4_front, "gfx/eh500.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_eh500_4_rear, "gfx/eh500.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_eh500_cc_front, "gfx/eh500.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_eh500_cc_rear, "gfx/eh500.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_eh500_cc_prototype_front, "gfx/eh500.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_eh500_cc_prototype_rear, "gfx/eh500.png") {
+	template_2cc_std(180, 96)
+}
+
+
+spriteset(spriteset_eh500_1_purchase, "gfx/eh500.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_eh500_2_purchase, "gfx/eh500.png") {
+	template_purchase(89, 256)
+}
+
+spriteset(spriteset_eh500_3_purchase, "gfx/eh500.png") {
+	template_purchase(180, 256)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_front_yeardep, build_year) {
+	0..2000: spriteset_eh500_prototype_front;
+	2000..2001: spriteset_eh500_1_front;
+	2018..9999: spriteset_eh500_4_front;
+	spriteset_eh500_3_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_rear_yeardep, build_year) {
+	0..2000: spriteset_eh500_prototype_rear;
+	2000..2001: spriteset_eh500_1_rear;
+	2018..9999: spriteset_eh500_4_rear;
+	spriteset_eh500_3_rear;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_front_livery, cargo_subtype) {
+	1: spriteset_eh500_prototype_front;
+	2: spriteset_eh500_1_front;
+	3: spriteset_eh500_2_front;
+	4: spriteset_eh500_3_front; 
+	5: spriteset_eh500_4_front; 
+	6: spriteset_eh500_cc_prototype_front;
+	7: spriteset_eh500_cc_front;
+	switch_eh500_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_rear_livery, cargo_subtype) {
+	1: spriteset_eh500_prototype_rear;
+	2: spriteset_eh500_1_rear;
+	3: spriteset_eh500_2_rear;
+	4: spriteset_eh500_3_rear; 
+	5: spriteset_eh500_4_rear; 
+	6: spriteset_eh500_cc_prototype_rear;
+	7: spriteset_eh500_cc_rear;
+	switch_eh500_rear_yeardep;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_PROTOTYPE);
+	2: return string(STR_REFIT_EH500_1);
+	3: return string(STR_REFIT_EH500_2);
+	4: return string(STR_REFIT_EH500_3);
+	5: return string(STR_REFIT_EH500_4);
+	6: return string(STR_REFIT_CC_PROTOTYPE);
+	7: return string(STR_REFIT_CC); 
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_purchase, current_year) {
+	0..2001: spriteset_eh500_1_purchase;
+	2018..9999: spriteset_eh500_3_purchase;
+	spriteset_eh500_2_purchase;
+	}
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh500_articulated_part, extra_callback_info1) {
+	1: return eh500_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, eh500, 67) {
+
+property {
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text: string(STR_DESC_EH500);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh500_subtype_text;
+  default: switch_eh500_front_livery;
+  purchase: switch_eh500_purchase;
+  articulated_part: switch_eh500_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh500_rear, 1067) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_JNR_eh500);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh500_rear_livery;
+	}
+}

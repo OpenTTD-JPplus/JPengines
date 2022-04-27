@@ -1,0 +1,114 @@
+spriteset(spriteset_torpedo_front, "gfx/steelwagons.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_torpedo_rear, "gfx/steelwagons.png") {
+	template_2cc_std(1, 32)
+}
+
+
+spriteset(spriteset_torpedo_empty, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_torpedo_half, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_torpedo_full, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 128)
+}
+
+
+
+spriteset(spriteset_torpedo_purchase, "gfx/steelwagons.png") {
+	template_purchase(1, 256)
+}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_torpedo_articulated_part, extra_callback_info1) {
+	1: return torpedo_car_middle;
+    2: return torpedo_car_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
+	0..19: spriteset_torpedo_empty;
+	20..39: spriteset_torpedo_half;
+	40..60: spriteset_torpedo_full;
+	CB_FAILED;
+}
+
+item (FEAT_TRAINS, torpedo_car_middle, 1422) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: NO_CLIMATE;
+		cargo_capacity: 59; 
+		refit_cost: 0;
+		default_cargo_type: IRON;
+		loading_speed: 40;
+//		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
+//		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [IRON]; 
+		introduction_date: date(1920,1,1);
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+	}
+	graphics {
+		cargo_capacity: return 59;
+		default: switch_torpedo_loading;
+	}
+}
+
+item (FEAT_TRAINS, torpedo_car_rear, 1423) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1920,1,1);
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+	}
+	graphics {
+		default: spriteset_torpedo_rear;
+	}
+}
+
+
+
+item (FEAT_TRAINS, torpedo_car, 1421) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1920,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		default_cargo_type: IRON;
+		loading_speed: 40;
+//		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
+//		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [IRON]; 
+//		cargo_disallow_refit: [WDPR, WOOL];
+		weight: 120;
+		cost_factor: 73;
+		length: 3;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 1;
+		default: spriteset_torpedo_front;
+		purchase: spriteset_torpedo_purchase;
+		articulated_part: switch_torpedo_articulated_part;
+	}
+}

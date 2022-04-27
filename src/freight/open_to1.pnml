@@ -1,0 +1,223 @@
+spriteset(spriteset_to_1_a_empty, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_to_1_a_bulk_quarter, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_to_1_a_bulk_half, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_to_1_a_bulk_full, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_to_1_a_piece_half, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 128)
+}
+
+spriteset(spriteset_to_1_a_piece_full, "gfx/freight/to_1.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_to_1_a_crates_full, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_to_1_a_tarpa, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_to_1_a_tarpb, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_to_1_a_tarpc, "gfx/freight/to_1.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+spriteset(spriteset_to_1_purchase, "gfx/freight/to_1.png") {
+	template_purchase(1, 320)
+}
+
+
+
+
+spritegroup spritegroup_to_1_a_bulk {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_a {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpa];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_b {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpb];
+}
+
+spritegroup spritegroup_to_1_a_bulk_covered_c {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_bulk_quarter, spriteset_to_1_a_bulk_half, spriteset_to_1_a_bulk_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpc];
+}
+
+spritegroup spritegroup_to_1_a_piece {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_a {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpa];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_b {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpb];
+}
+
+spritegroup spritegroup_to_1_a_piece_covered_c {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_piece_half, spriteset_to_1_a_piece_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_tarpc];
+}
+
+
+spritegroup spritegroup_to_1_a_crates {
+    loading: [spriteset_to_1_a_empty, spriteset_to_1_a_crates_full];
+    loaded:  [spriteset_to_1_a_empty, spriteset_to_1_a_crates_full];
+}
+
+
+
+//b 
+
+
+//random switches
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_metal) {
+ 4: spritegroup_to_1_a_piece;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_supplies) {
+ 1: spritegroup_to_1_a_piece;
+ 4: spritegroup_to_1_a_crates;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_piece) {
+ 4: spritegroup_to_1_a_piece;
+ 2: spritegroup_to_1_a_crates;
+ 1: spritegroup_to_1_a_piece_covered_a;
+ 1: spritegroup_to_1_a_piece_covered_b;
+ 1: spritegroup_to_1_a_piece_covered_c;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_to_1_covered) {
+ 1: spritegroup_to_1_a_bulk_covered_a;
+ 1: spritegroup_to_1_a_bulk_covered_b;
+ 1: spritegroup_to_1_a_bulk_covered_c;
+}
+
+
+
+//todo fix
+
+
+switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
+	IRON: random_to_1_metal;
+	STEL: random_to_1_metal;
+	METL: random_to_1_metal;
+	ZINC: random_to_1_metal;
+	COPR: random_to_1_metal;
+	STST: random_to_1_metal;
+	STSH: random_to_1_metal;
+	STAL: random_to_1_metal;
+	STCB: random_to_1_metal;
+	
+	ENSP: random_to_1_supplies;
+	FMSP: random_to_1_supplies;
+	MNSP: random_to_1_supplies;
+	POWR: random_to_1_supplies;
+	VPTS: random_to_1_supplies;
+	MPTS: random_to_1_supplies;
+	GOOD: random_to_1_supplies;
+	
+	BDMT: random_to_1_piece;
+	WDPR: random_to_1_piece;
+	GLAS: random_to_1_piece;
+	BRCK: random_to_1_piece;
+	STWR: random_to_1_piece;
+	STSE: random_to_1_piece;
+	
+	PAPR: random_to_1_supplies;
+	TYRE: random_to_1_supplies;
+	WOOL: random_to_1_supplies;
+	TEXT: random_to_1_supplies;
+	
+	SCMT: spritegroup_to_1_a_bulk;
+	SULP: random_to_1_covered;
+	SEED: random_to_1_covered;
+	FERT: random_to_1_covered;
+	SASH: random_to_1_covered;
+	FRUT: random_to_1_covered;
+	FRVG: random_to_1_covered;
+	
+	FICR: spritegroup_to_1_a_crates;
+	
+	spritegroup_to_1_a_piece;
+}
+
+switch(FEAT_TRAINS, SELF, switch_to_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_to_1_a_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_to_1_covered;
+
+	switch_to_1_cargo_type;
+}
+
+
+item (FEAT_TRAINS, to_1, 1469) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1870,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_TO_1);
+	speed: 60 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 15; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+	weight: 9;
+	cost_factor: 6;
+	length: 4;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 30;
+	default: switch_to_1_cargo_class;
+	purchase: spriteset_to_1_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}

@@ -1,0 +1,62 @@
+//TODO GRAPHICS-LOADING STAGES FOR THESE
+
+spriteset(spriteset_waki_10000_full_blue, "gfx/freight/waki_5000_full.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_waki_10000_full_green, "gfx/freight/waki_5000_full.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_waki_10000_full_brown, "gfx/freight/waki_5000_full.png") {
+	template_2cc_std(1, 64)
+}
+
+
+spriteset(spriteset_waki_10000_purchase, "gfx/freight/waki_5000_full.png") {
+	template_purchase(1, 384)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_waki_10000) {
+	1: spriteset_waki_10000_full_brown;
+	1: spriteset_waki_10000_full_blue;
+	2: spriteset_waki_10000_full_green;
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_10000_livery, cargo_subtype) {
+	1: spriteset_waki_10000_full_blue;
+	2: spriteset_waki_10000_full_green;
+	3: spriteset_waki_10000_full_brown;
+	random_waki_10000;
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_10000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_REFIT_FBLUE);
+	2: return string(STR_REFIT_FGREEN);
+	3: return string(STR_REFIT_FBROWN);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, waki_10000, 1288) {
+
+property {
+	name: string(STR_NAME_WAKI_10000);
+	introduction_date: date(1967,1,1);
+	default_cargo_type: GOOD;
+	cargo_capacity: 60; 
+	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+	cargo_allow_refit: [BEER];
+	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	cargo_capacity: return 60;
+	default: switch_waki_10000_livery;
+	purchase: spriteset_waki_10000_purchase;
+	cargo_subtype_text: switch_waki_10000_subtype_text;
+	}
+}

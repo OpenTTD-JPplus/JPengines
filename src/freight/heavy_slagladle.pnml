@@ -1,0 +1,50 @@
+spriteset(spriteset_slag_ladle_empty, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 160)
+}
+
+spriteset(spriteset_slag_ladle_half, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 192)
+}
+
+spriteset(spriteset_slag_ladle_full, "gfx/steelwagons.png") {
+	template_2cc_anim(1, 224)
+}
+
+
+spriteset(spriteset_slag_ladle_purchase, "gfx/steelwagons.png") {
+	template_purchase(1, 288)
+}
+
+spritegroup spritegroup_slag_ladle {
+    loading: [spriteset_slag_ladle_empty, spriteset_slag_ladle_half, spriteset_slag_ladle_full];
+    loaded:  [spriteset_slag_ladle_empty, spriteset_slag_ladle_half, spriteset_slag_ladle_full];
+}
+
+
+item (FEAT_TRAINS, slag_ladle, 1420) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SLAG_LADLE);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1900,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 24; 
+		refit_cost: 0;
+		default_cargo_type: SLAG;
+		loading_speed: 40;
+		cargo_allow_refit: [SLAG, IRON]; 
+		weight: 30;
+		cost_factor: 10;
+		length: 4;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 24;
+		default: spritegroup_slag_ladle;
+		purchase: spriteset_slag_ladle_purchase;
+	}
+}

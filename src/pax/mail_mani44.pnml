@@ -1,0 +1,66 @@
+spriteset(spriteset_mani_44, "gfx/paxmail/mani44.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_mani_44_euroliner, "gfx/paxmail/mani44.png") {
+	template_2cc_std(1, 32)
+}
+
+
+spriteset(spriteset_mani_44_jnr_purchase, "gfx/paxmail/mani44.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_mani_44_jr_purchase, "gfx/paxmail/mani44.png") {
+	template_purchase(89, 160)
+}
+
+switch(FEAT_TRAINS, SELF, switch_mani_44_purchase_yeardep, current_year) {
+    0..1987: spriteset_mani_44_jnr_purchase;
+    spriteset_mani_44_jr_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_mani_44_livery, cargo_subtype) {
+	1: spriteset_mani_44_euroliner;
+	spriteset_mani_44;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mani_44_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_BLUE);
+	1: return string(STR_REFIT_EUROLINER);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, mail_mani_44, 1390) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1970,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 24;
+		cost_factor: 12;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: switch_mani_44_livery;
+		purchase: switch_mani_44_purchase_yeardep;
+		cargo_subtype_text: switch_mani_44_subtype_text;
+		
+	}
+}

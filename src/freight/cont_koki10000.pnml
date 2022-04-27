@@ -1,0 +1,693 @@
+spriteset(spriteset_koki_10000_purchase, "gfx/koki_10000_1.png") {
+	template_purchase(1, 352)
+}
+
+//Light blue
+
+spriteset(spriteset_koki_10000_empty_1, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_10000_goods_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_10000_goods_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_10000_mail_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_10000_mail_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_10000_mixed_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_10000_mixed_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_10000_food_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_10000_food_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_10000_oil_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_10000_oil_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_std(1, 320)
+}
+
+//cabeese 
+
+
+spriteset(spriteset_koki_10000_empty_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_10000_goods_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_10000_food_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_10000_mixed_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_10000_oil_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+
+
+//
+
+spriteset(spriteset_koki_10000_empty_2, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_10000_goods_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_10000_goods_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_10000_mail_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_10000_mail_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_koki_10000_mixed_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_10000_mixed_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_koki_10000_food_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_10000_food_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_koki_10000_oil_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_10000_oil_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_std(1, 320)
+}
+
+//cabesse
+
+spriteset(spriteset_koki_10000_empty_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_10000_goods_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_10000_food_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_10000_mixed_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_10000_oil_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_std(1, 128)
+}
+
+
+
+
+
+//KOKI 10000 spritegroups
+
+spritegroup spritegroup_koki_10000_goods_1 {
+    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_goods_1_half, spriteset_koki_10000_goods_1_full];
+    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_goods_1_half, spriteset_koki_10000_goods_1_full];
+}
+
+spritegroup spritegroup_koki_10000_mail_1 {
+    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mail_1_half, spriteset_koki_10000_mail_1_full];
+    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mail_1_half, spriteset_koki_10000_mail_1_full];
+}
+
+spritegroup spritegroup_koki_10000_mixed_1 {
+    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mixed_1_half, spriteset_koki_10000_mixed_1_full];
+    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mixed_1_half, spriteset_koki_10000_mixed_1_full];
+}
+
+spritegroup spritegroup_koki_10000_food_1 {
+    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_food_1_half, spriteset_koki_10000_food_1_full];
+    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_food_1_half, spriteset_koki_10000_food_1_full];
+}
+
+spritegroup spritegroup_koki_10000_oil_1 {
+    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_oil_1_half, spriteset_koki_10000_oil_1_full];
+    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_oil_1_half, spriteset_koki_10000_oil_1_full];
+}
+
+
+spritegroup spritegroup_koki_10000_goods_caboose_1 {
+    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_goods_caboose_1];
+    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_goods_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_food_caboose_1 {
+    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_food_caboose_1];
+    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_food_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_mixed_caboose_1 {
+    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_mixed_caboose_1];
+    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_mixed_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_oil_caboose_1 {
+    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_oil_caboose_1];
+    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_oil_caboose_1];
+}
+
+
+
+
+
+spritegroup spritegroup_koki_10000_goods_2 {
+    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_goods_2_half, spriteset_koki_10000_goods_2_full];
+    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_goods_2_half, spriteset_koki_10000_goods_2_full];
+}
+
+spritegroup spritegroup_koki_10000_mail_2 {
+    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mail_2_half, spriteset_koki_10000_mail_2_full];
+    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mail_2_half, spriteset_koki_10000_mail_2_full];
+}
+
+spritegroup spritegroup_koki_10000_mixed_2 {
+    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mixed_2_half, spriteset_koki_10000_mixed_2_full];
+    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mixed_2_half, spriteset_koki_10000_mixed_2_full];
+}
+
+spritegroup spritegroup_koki_10000_food_2 {
+    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_food_2_half, spriteset_koki_10000_food_2_full];
+    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_food_2_half, spriteset_koki_10000_food_2_full];
+}
+
+spritegroup spritegroup_koki_10000_oil_2 {
+    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_oil_2_half, spriteset_koki_10000_oil_2_full];
+    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_oil_2_half, spriteset_koki_10000_oil_2_full];
+}
+
+
+
+spritegroup spritegroup_koki_10000_goods_caboose_2 {
+    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_goods_caboose_2];
+    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_goods_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_food_caboose_2 {
+    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_food_caboose_2];
+    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_food_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_mixed_caboose_2 {
+    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_mixed_caboose_2];
+    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_mixed_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_oil_caboose_2 {
+    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_oil_caboose_2];
+    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_oil_caboose_2];
+}
+
+
+
+
+
+//insert flip here
+spriteset(spriteset_koki_10000_flip_empty_1, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_koki_10000_flip_mail_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_koki_10000_flip_mail_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_koki_10000_flip_food_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_koki_10000_flip_food_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_1_half, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 288)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_1_full, "gfx/koki_10000_1.png") {
+	template_2cc_flip(1, 320)
+}
+
+//cabeese
+
+spriteset(spriteset_koki_10000_flip_empty_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_koki_10000_flip_food_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_caboose_1, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 288)
+}
+
+
+//
+
+spriteset(spriteset_koki_10000_flip_empty_2, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_koki_10000_flip_mail_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_koki_10000_flip_mail_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_koki_10000_flip_food_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_koki_10000_flip_food_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_2_half, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 288)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_2_full, "gfx/koki_10000_2.png") {
+	template_2cc_flip(1, 320)
+}
+
+//cabeese
+
+spriteset(spriteset_koki_10000_flip_empty_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_koki_10000_flip_goods_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_koki_10000_flip_food_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_koki_10000_flip_mixed_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 256)
+}
+
+spriteset(spriteset_koki_10000_flip_oil_caboose_2, "gfx/koki_10000_caboose.png") {
+	template_2cc_flip(1, 288)
+}
+
+
+
+
+//KOKI 10000 spritegroups
+
+spritegroup spritegroup_koki_10000_flip_goods_1 {
+    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_goods_1_half, spriteset_koki_10000_flip_goods_1_full];
+    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_goods_1_half, spriteset_koki_10000_flip_goods_1_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_mail_1 {
+    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mail_1_half, spriteset_koki_10000_flip_mail_1_full];
+    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mail_1_half, spriteset_koki_10000_flip_mail_1_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_mixed_1 {
+    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mixed_1_half, spriteset_koki_10000_flip_mixed_1_full];
+    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mixed_1_half, spriteset_koki_10000_flip_mixed_1_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_food_1 {
+    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_food_1_half, spriteset_koki_10000_flip_food_1_full];
+    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_food_1_half, spriteset_koki_10000_flip_food_1_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_oil_1 {
+    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_oil_1_half, spriteset_koki_10000_flip_oil_1_full];
+    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_oil_1_half, spriteset_koki_10000_flip_oil_1_full];
+}
+
+
+spritegroup spritegroup_koki_10000_flip_goods_caboose_1 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_goods_caboose_1];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_goods_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_flip_food_caboose_1 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_food_caboose_1];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_food_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_flip_mixed_caboose_1 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_mixed_caboose_1];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_mixed_caboose_1];
+}
+
+spritegroup spritegroup_koki_10000_flip_oil_caboose_1 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_oil_caboose_1];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_oil_caboose_1];
+}
+
+
+
+
+spritegroup spritegroup_koki_10000_flip_goods_2 {
+    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_goods_2_half, spriteset_koki_10000_flip_goods_2_full];
+    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_goods_2_half, spriteset_koki_10000_flip_goods_2_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_mail_2 {
+    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mail_2_half, spriteset_koki_10000_flip_mail_2_full];
+    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mail_2_half, spriteset_koki_10000_flip_mail_2_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_mixed_2 {
+    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mixed_2_half, spriteset_koki_10000_flip_mixed_2_full];
+    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mixed_2_half, spriteset_koki_10000_flip_mixed_2_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_food_2 {
+    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_food_2_half, spriteset_koki_10000_flip_food_2_full];
+    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_food_2_half, spriteset_koki_10000_flip_food_2_full];
+}
+
+spritegroup spritegroup_koki_10000_flip_oil_2 {
+    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_oil_2_half, spriteset_koki_10000_flip_oil_2_full];
+    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_oil_2_half, spriteset_koki_10000_flip_oil_2_full];
+}
+
+
+spritegroup spritegroup_koki_10000_flip_goods_caboose_2 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_goods_caboose_2];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_goods_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_flip_food_caboose_2 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_food_caboose_2];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_food_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_flip_mixed_caboose_2 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_mixed_caboose_2];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_mixed_caboose_2];
+}
+
+spritegroup spritegroup_koki_10000_flip_oil_caboose_2 {
+    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_oil_caboose_2];
+    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_oil_caboose_2];
+}
+
+
+
+
+//randoms
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_mail) {
+	1: spritegroup_koki_10000_mail_1;
+    1: spritegroup_koki_10000_mail_2;
+	1: spritegroup_koki_10000_flip_mail_1;
+	1: spritegroup_koki_10000_flip_mail_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_goods) {
+	1: spritegroup_koki_10000_goods_1;
+    1: spritegroup_koki_10000_goods_2;
+	1: spritegroup_koki_10000_flip_goods_1;
+	1: spritegroup_koki_10000_flip_goods_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_food) {
+	1: spritegroup_koki_10000_food_1;
+    1: spritegroup_koki_10000_food_2;
+	1: spritegroup_koki_10000_flip_food_1;
+	1: spritegroup_koki_10000_flip_food_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_oil) {
+	1: spritegroup_koki_10000_oil_1;
+    1: spritegroup_koki_10000_oil_2;
+	1: spritegroup_koki_10000_flip_oil_1;
+	1: spritegroup_koki_10000_flip_oil_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_alcohol) {
+	1: spritegroup_koki_10000_oil_1;
+    1: spritegroup_koki_10000_oil_2;
+	1: spritegroup_koki_10000_flip_oil_1;
+	1: spritegroup_koki_10000_flip_oil_2;
+	1: spritegroup_koki_10000_mixed_1;
+    1: spritegroup_koki_10000_mixed_2;
+	1: spritegroup_koki_10000_flip_mixed_1;
+	1: spritegroup_koki_10000_flip_mixed_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_dry) {
+	1: spritegroup_koki_10000_mail_1;
+    1: spritegroup_koki_10000_mail_2;
+	1: spritegroup_koki_10000_flip_mail_1;
+	1: spritegroup_koki_10000_flip_mail_2;
+	1: spritegroup_koki_10000_goods_1;
+    1: spritegroup_koki_10000_goods_2;
+	1: spritegroup_koki_10000_flip_goods_1;
+	1: spritegroup_koki_10000_flip_goods_2;
+	1: spritegroup_koki_10000_mixed_1;
+    1: spritegroup_koki_10000_mixed_2;
+	1: spritegroup_koki_10000_flip_mixed_1;
+	1: spritegroup_koki_10000_flip_mixed_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_fluid) {
+	1: spritegroup_koki_10000_oil_1;
+    1: spritegroup_koki_10000_oil_2;
+	1: spritegroup_koki_10000_flip_oil_1;
+	1: spritegroup_koki_10000_flip_oil_2;
+	1: spritegroup_koki_10000_goods_1;
+    1: spritegroup_koki_10000_goods_2;
+	1: spritegroup_koki_10000_flip_goods_1;
+	1: spritegroup_koki_10000_flip_goods_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_edible_fluid) {
+	1: spritegroup_koki_10000_oil_1;
+    1: spritegroup_koki_10000_oil_2;
+	1: spritegroup_koki_10000_flip_oil_1;
+	1: spritegroup_koki_10000_flip_oil_2;
+	1: spritegroup_koki_10000_food_1;
+    1: spritegroup_koki_10000_food_2;
+	1: spritegroup_koki_10000_flip_food_1;
+	1: spritegroup_koki_10000_flip_food_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_refrigerated) {
+	1: spritegroup_koki_10000_food_1;
+    1: spritegroup_koki_10000_food_2;
+	1: spritegroup_koki_10000_flip_food_1;
+	1: spritegroup_koki_10000_flip_food_2;
+	1: spritegroup_koki_10000_mixed_1;
+    1: spritegroup_koki_10000_mixed_2;
+	1: spritegroup_koki_10000_flip_mixed_1;
+	1: spritegroup_koki_10000_flip_mixed_2;
+}
+
+//cabooseses
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_goods_caboose) {
+	1: spritegroup_koki_10000_goods_caboose_1;
+    1: spritegroup_koki_10000_goods_caboose_2;
+	1: spritegroup_koki_10000_flip_goods_caboose_1;
+	1: spritegroup_koki_10000_flip_goods_caboose_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_food_caboose) {
+	1: spritegroup_koki_10000_food_caboose_1;
+    1: spritegroup_koki_10000_food_caboose_2;
+	1: spritegroup_koki_10000_flip_food_caboose_1;
+	1: spritegroup_koki_10000_flip_food_caboose_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_mixed_caboose) {
+	1: spritegroup_koki_10000_mixed_caboose_1;
+    1: spritegroup_koki_10000_mixed_caboose_2;
+	1: spritegroup_koki_10000_flip_mixed_caboose_1;
+	1: spritegroup_koki_10000_flip_mixed_caboose_2;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_10000_oil_caboose) {
+	1: spritegroup_koki_10000_oil_caboose_1;
+    1: spritegroup_koki_10000_oil_caboose_2;
+	1: spritegroup_koki_10000_flip_oil_caboose_1;
+	1: spritegroup_koki_10000_flip_oil_caboose_2;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_class, cargo_classes) {
+	bitmask(CC_LIQUID): switch_koki_10000_cargo_general_fluid;
+	bitmask(CC_REFRIGERATED): switch_koki_10000_cargo_general_refrigerated;
+	bitmask(CC_EXPRESS): switch_koki_10000_cargo_goods;
+	
+	switch_koki_10000_cargo_general_dry;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_selection, cargo_type_in_veh) {
+	MAIL: switch_koki_10000_cargo_mail;
+	GOOD: switch_koki_10000_cargo_goods;
+	FOOD: switch_koki_10000_cargo_food;
+	OIL_: switch_koki_10000_cargo_oil;
+	BEER: switch_koki_10000_cargo_alcohol;
+	VEHI: switch_koki_10000_cargo_goods;
+	
+	MILK: switch_koki_10000_cargo_edible_fluid;
+	EOIL: switch_koki_10000_cargo_edible_fluid;
+	
+	ACID: switch_koki_10000_cargo_general_fluid;
+	SULP: switch_koki_10000_cargo_general_fluid;
+	CHLO: switch_koki_10000_cargo_general_fluid;
+	
+	FRUT: switch_koki_10000_cargo_general_refrigerated;
+	FISH: switch_koki_10000_cargo_general_refrigerated;
+	
+	switch_koki_10000_cargo_class;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose_cargo_class, cargo_classes) {
+	bitmask(CC_LIQUID): switch_koki_10000_oil_caboose;
+	bitmask(CC_REFRIGERATED): switch_koki_10000_food_caboose;
+	bitmask(CC_EXPRESS): switch_koki_10000_goods_caboose;
+	
+	switch_koki_10000_mixed_caboose;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose, position_in_vehid_chain_from_end) {
+	0: switch_koki_10000_caboose_cargo_class;
+	switch_koki_10000_cargo_selection;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose_front, position_in_vehid_chain) {
+	0: switch_koki_10000_caboose_cargo_class;
+	switch_koki_10000_caboose;
+	}
+
+
+item (FEAT_TRAINS, koki_10000, 1413) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_10000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 9;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 70;
+		default: switch_koki_10000_caboose_front;
+		purchase: spriteset_koki_10000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}

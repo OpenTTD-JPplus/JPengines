@@ -1,0 +1,110 @@
+spriteset(spriteset_eh10_black_front, "gfx/eh10.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh10_black_rear, "gfx/eh10.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh10_brown_front, "gfx/eh10.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh10_brown_rear, "gfx/eh10.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_eh10_cc_front, "gfx/eh10.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_eh10_cc_rear, "gfx/eh10.png") {
+	template_2cc_std(1, 160)
+}
+
+
+spriteset(spriteset_eh10_purchase, "gfx/eh10.png") {
+	template_purchase(1, 192)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh10_livery, cargo_subtype) {
+	1: spriteset_eh10_brown_front;
+	2: spriteset_eh10_cc_front;
+	spriteset_eh10_black_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh10_livery_rear, cargo_subtype) {
+	1: spriteset_eh10_brown_rear;
+	2: spriteset_eh10_cc_rear;
+	spriteset_eh10_black_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh10_speed, cargo_subtype) {
+	1: return 110;
+	2: return 110;
+	return 85;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh10_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_EH10);
+	1: return string(STR_REFIT_EH10_HS);
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh10_articulated_part, extra_callback_info1) {
+	1: return eh10_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+
+item (FEAT_TRAINS, eh10, 18) {
+
+property {
+//	sprite_id: SPRITE_ID_NEW_TRAIN;
+//	track_type: NAAN;
+//	name: string(STR_NAME_OPEN_HOPPER);
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  speed: switch_eh10_speed;
+  cargo_subtype_text: switch_eh10_subtype_text;
+  default: switch_eh10_livery;
+  purchase: spriteset_eh10_purchase;
+  articulated_part: switch_eh10_articulated_part;
+  }
+}
+
+item (FEAT_TRAINS, eh10_rear, 1018) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_JNR_EH10);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh10_livery_rear;
+	}
+}

@@ -1,0 +1,141 @@
+spriteset(spriteset_koki_71_empty, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_71_closed, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_koki_71_purchase, "gfx/freight/koki_71_cars.png") {
+	template_purchase(1, 352)
+}
+
+
+
+spriteset(spriteset_koki_71_cars_a_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_71_cars_a_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_71_cars_b_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_71_cars_b_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_koki_71_cars_c_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_koki_71_cars_c_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 192)
+}
+
+
+spriteset(spriteset_koki_71_cars_d_half, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_koki_71_cars_d_full, "gfx/freight/koki_71_cars.png") {
+	template_2cc_std(1, 256)
+}
+
+
+
+
+spriteset(spriteset_koki_71_conts_a_half, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_koki_71_conts_a_full, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_koki_71_conts_b_half, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_koki_71_conts_b_full, "gfx/freight/koki_71_conts.png") {
+	template_2cc_std(1, 128)
+}
+
+
+
+spritegroup spritegroup_koki_71_cars_a {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_a_half, spriteset_koki_71_cars_a_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_a_half, spriteset_koki_71_cars_a_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_b {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_b_half, spriteset_koki_71_cars_b_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_b_half, spriteset_koki_71_cars_b_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_c {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_c_half, spriteset_koki_71_cars_c_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_c_half, spriteset_koki_71_cars_c_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_cars_d {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_cars_d_half, spriteset_koki_71_cars_d_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_cars_d_half, spriteset_koki_71_cars_d_full, spriteset_koki_71_closed];
+}
+
+
+spritegroup spritegroup_koki_71_conts_a {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_conts_a_half, spriteset_koki_71_conts_a_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_conts_a_half, spriteset_koki_71_conts_a_full, spriteset_koki_71_closed];
+}
+
+spritegroup spritegroup_koki_71_conts_b {
+    loading: [spriteset_koki_71_empty, spriteset_koki_71_conts_b_half, spriteset_koki_71_conts_b_full, spriteset_koki_71_closed];
+    loaded: [spriteset_koki_71_empty, spriteset_koki_71_conts_b_half, spriteset_koki_71_conts_b_full, spriteset_koki_71_closed];
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_71_cars_random) {
+	1: spritegroup_koki_71_cars_a;
+	1: spritegroup_koki_71_cars_b;
+	1: spritegroup_koki_71_cars_c;
+	1: spritegroup_koki_71_cars_d;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_koki_71_conts_random) {
+	1: spritegroup_koki_71_conts_a;
+	1: spritegroup_koki_71_conts_b;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
+	VEHI: switch_koki_71_cars_random;
+	switch_koki_71_conts_random;
+	}
+	
+	switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_capacity, cargo_type_in_veh) {
+	VEHI: return 50;
+	return 75;
+	}
+
+
+
+item (FEAT_TRAINS, koki_71, 43) {
+
+property {
+	name: string(STR_NAME_KOKI_71);
+	default_cargo_type: VEHI;
+	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
+	non_refittable_cargo_classes: 0; 
+	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+graphics {
+	default: switch_koki_71_cargo_type;
+	purchase: spriteset_koki_71_purchase;
+	cargo_capacity: switch_koki_71_cargo_capacity;
+	}
+}

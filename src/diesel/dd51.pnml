@@ -1,0 +1,134 @@
+spriteset(spriteset_dd51_brown, "gfx/dd51.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_dd51_red, "gfx/dd51.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dd51_hokkaido_blue, "gfx/dd51.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_dd51_hokkaido_red, "gfx/dd51.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_dd51_freight_blue, "gfx/dd51.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_dd51_freight_red, "gfx/dd51.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_dd51_euroliner, "gfx/dd51.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_dd51_testred, "gfx/dd51.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_dd51_testwhite, "gfx/dd51.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_dd51_testblue, "gfx/dd51.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_dd51_cc, "gfx/dd51.png") {
+	template_2cc_std(1, 224)
+}
+
+
+
+
+spriteset(spriteset_dd51_brown_purchase, "gfx/dd51.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_dd51_red_purchase, "gfx/dd51.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_dd51_jrf_purchase, "gfx/dd51.png") {
+	template_purchase(1, 320)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd51_yeardep_livery, build_year) {
+	1000..1965: spriteset_dd51_brown;
+	1965..1999: spriteset_dd51_red;
+	1999..9999: spriteset_dd51_freight_red;
+    CB_FAILED;
+}
+
+switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
+	1: spriteset_dd51_brown;
+	2: spriteset_dd51_red;
+	3: spriteset_dd51_hokkaido_blue;
+	4: spriteset_dd51_hokkaido_red;
+	5: spriteset_dd51_freight_blue;
+	6: spriteset_dd51_freight_red;
+	7: spriteset_dd51_euroliner;
+	8: spriteset_dd51_testred;
+	9: spriteset_dd51_testwhite;
+	10: spriteset_dd51_testblue;
+	11: spriteset_dd51_cc;	
+	switch_dd51_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JNR_BROWN);
+	2: return string(STR_REFIT_RED);
+	3: return string(STR_REFIT_HOKBLUE);
+	4: return string(STR_REFIT_HOKRED);
+	5: return string(STR_REFIT_JRF_BLUE);
+	6: return string(STR_REFIT_JRF_RED);
+	7: return string(STR_REFIT_EUROLINER);
+	8: return string(STR_REFIT_DD51_EXP1);
+	9: return string(STR_REFIT_DD51_EXP2);
+	10: return string(STR_REFIT_DD51_EXP3);
+	11: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd51_yeardep_purchase, current_year) {
+	0..1965: spriteset_dd51_brown_purchase;
+    1990..9999: spriteset_dd51_jrf_purchase;
+	spriteset_dd51_red_purchase;
+}
+
+
+
+item (FEAT_TRAINS, dd51, 20) {
+
+property {
+//	sprite_id: SPRITE_ID_NEW_TRAIN;
+//	track_type: NAAN;
+//	name: string(STR_NAME_OPEN_HOPPER);
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	
+	running_cost_factor: 115;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_TEXT_JNR_DD51);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd51_subtype_text;
+  default: switch_dd51_livery;
+  purchase: switch_dd51_yeardep_purchase;
+  }
+}

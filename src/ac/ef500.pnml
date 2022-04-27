@@ -1,0 +1,56 @@
+spriteset(spriteset_ef500_jrf, "gfx/ef500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef500_cc, "gfx/ef500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef500_purchase, "gfx/ef500.png") {
+	template_purchase(1, 96)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef500_livery, cargo_subtype) {
+	1: spriteset_ef500_cc;
+	spriteset_ef500_jrf;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef500_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_EXP);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+}
+
+
+item (FEAT_TRAINS, ef500, 1085) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JR_EF500);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1990,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 6000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 90;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 78;
+  length: 8;
+  running_cost_factor: 80;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_TEXT_DEKI_400);
+  cargo_capacity: return 0;
+  default: switch_ef500_livery;
+  cargo_subtype_text: switch_ef500_subtype_text;
+  purchase: spriteset_ef500_purchase;
+  }
+}
