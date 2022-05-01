@@ -1,0 +1,305 @@
+spriteset(spriteset_pax_1880_hcc_clerestory, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_1880_hcc_flat, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_1880_jgr_3rd_flat, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_1880_jgr_3rd_clerestory, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_1880_jgr_2nd_clerestory, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_1880_jgr_1st_clerestory, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_1880_jgr_3rdclass_end, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_1880_brown_clerestory, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_1880_brown_flat, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_1880_hcc_combine, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_pax_1880_hcc_mail, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_pax_1880_brown_combine, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_pax_1880_jgr_combine, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_pax_1880_jgr_mail, "gfx/paxmail/paxmail-1880.png") {
+	template_2cc_std(1, 416)
+}
+
+
+//purchase sprites
+spriteset(spriteset_pax_1880_hcc_purchase, "gfx/paxmail/paxmail-1880.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_mail_1880_hcc_purchase, "gfx/paxmail/paxmail-1880.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_pax_1880_jgr_purchase, "gfx/paxmail/paxmail-1880.png") {
+	template_purchase(89, 448)
+}
+
+spriteset(spriteset_mail_1880_jgr_purchase, "gfx/paxmail/paxmail-1880.png") {
+	template_purchase(89, 480)
+}
+
+//purchase switches
+switch(FEAT_TRAINS, SELF, switch_pax_1880_yeardep_purchase, current_year) {
+	0..1906: spriteset_pax_1880_hcc_purchase;
+	spriteset_pax_1880_jgr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_mail_1880_yeardep_purchase, current_year) {
+	0..1906: spriteset_mail_1880_hcc_purchase;
+	spriteset_mail_1880_jgr_purchase;
+}
+
+
+
+
+//hcc auto formation
+random_switch (FEAT_TRAINS, SELF, random_pax_1880_hcc_auto_middle) {
+	1: spriteset_pax_1880_hcc_flat;
+	2: spriteset_pax_1880_hcc_clerestory;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_hcc_auto_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_1880_hcc_combine;
+	random_pax_1880_hcc_auto_middle;
+	}
+	
+	
+//brown auto formation
+random_switch (FEAT_TRAINS, SELF, random_pax_1880_brown_auto_middle) {
+	1: spriteset_pax_1880_brown_flat;
+	1: spriteset_pax_1880_brown_clerestory;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_brown_auto_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_1880_brown_combine;
+	random_pax_1880_brown_auto_middle;
+	}
+	
+	
+//jgr auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_auto_middle) {
+	1: spriteset_pax_1880_jgr_3rd_clerestory;
+	2: spriteset_pax_1880_jgr_3rd_flat;
+	1: spriteset_pax_1880_jgr_2nd_clerestory;
+}
+
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_auto_end) {
+	1: spriteset_pax_1880_jgr_3rdclass_end;
+	2: spriteset_pax_1880_jgr_combine;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_auto_beginning) {
+	1: spriteset_pax_1880_jgr_2nd_clerestory;
+	1: spriteset_pax_1880_jgr_1st_clerestory;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_auto_end, position_in_vehid_chain_from_end) {
+	0: random_pax_1880_jgr_auto_end;
+	random_pax_1880_jgr_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_auto_beginning, position_in_vehid_chain) {
+	0: random_pax_1880_jgr_auto_beginning;
+	switch_pax_1880_jgr_auto_end;
+	}
+
+
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_yeardep, build_year) {
+	0..1906: switch_pax_1880_hcc_auto_end;
+	switch_pax_1880_jgr_auto_beginning;
+	}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_livery, cargo_subtype) {
+	1: switch_pax_1880_hcc_auto_end;
+	2: switch_pax_1880_jgr_auto_beginning;
+	3: switch_pax_1880_brown_auto_end;
+	4: spriteset_pax_1880_hcc_clerestory;
+	5: spriteset_pax_1880_hcc_flat;
+	6: spriteset_pax_1880_hcc_combine;
+	7: spriteset_pax_1880_jgr_1st_clerestory;
+	8: spriteset_pax_1880_jgr_2nd_clerestory;
+	9: spriteset_pax_1880_jgr_3rd_clerestory;
+	10: spriteset_pax_1880_jgr_3rd_flat;
+	11: spriteset_pax_1880_jgr_combine;
+	12: spriteset_pax_1880_brown_clerestory;
+	13: spriteset_pax_1880_brown_flat;
+	14: spriteset_pax_1880_brown_combine;
+	switch_pax_1880_yeardep;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARFORM);
+	1: return string(STR_REFIT_AUTOFORM_HCC);
+	2: return string(STR_REFIT_AUTOFORM_JGR);
+	3: return string(STR_REFIT_AUTOFORM_BROWN);
+	4: return string(STR_REFIT_PAX_FKI5670_HCC);
+	5: return string(STR_REFIT_PAX_FKH7925_HCC);
+	6: return string(STR_REFIT_PAXMAIL_FKHY_8050_HCC);
+	7: return string(STR_REFIT_PAX_FKI5670_JGR);
+	8: return string(STR_REFIT_PAX_FKR5675_JGR);
+	9: return string(STR_REFIT_PAX_FKH7945_JGR);
+	10: return string(STR_REFIT_PAX_FKH7925_JGR);
+	11: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
+	12: return string(STR_REFIT_PAX_FKI5670_BROWN);
+	13: return string(STR_REFIT_PAX_FKH7925_BROWN);
+	14: return string(STR_REFIT_PAXMAIL_FKHY_8050_BROWN);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+item (FEAT_TRAINS, pax_1880, 1537) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+//		name: string(STR_NAME_PASSENGER_1880);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1880,1,1);
+//		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+		length: 6;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 50;
+		default: switch_pax_1880_livery;
+		purchase: switch_pax_1880_yeardep_purchase;
+		cargo_subtype_text: switch_pax_1880_subtype_text;
+	}
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_mail_1880_yeardep, build_year) {
+	0..1906: spriteset_pax_1880_hcc_mail;
+	spriteset_pax_1880_jgr_mail;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_mail_1880_length, cargo_subtype) {
+	1: return 5;
+	2: return 6;
+	3: return 5;
+	4: return 6;
+	5: return 6;
+	return 5;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mail_1880_livery, cargo_subtype) {
+	1: spriteset_pax_1880_hcc_mail;
+	2: spriteset_pax_1880_hcc_combine;
+	3: spriteset_pax_1880_jgr_mail;
+	4: spriteset_pax_1880_jgr_combine;
+	5: spriteset_pax_1880_brown_combine;
+	switch_mail_1880_yeardep;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_MAIL_KN8890_HCC);
+	2: return string(STR_REFIT_PAXMAIL_FKHY_8050_HCC);
+	3: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
+	4: return string(STR_REFIT_MAIL_KN8890_JGR);
+	5: return string(STR_REFIT_PAXMAIL_FKHY_8050_BROWN);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+item (FEAT_TRAINS, mail_1880, 1665) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+//		name: string(STR_NAME_PASSENGER_1880);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1880,1,1);
+//		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+//		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+		length: 5;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 50;
+		default: switch_mail_1880_livery;
+		purchase: switch_mail_1880_yeardep_purchase;
+		cargo_subtype_text: switch_mail_1880_subtype_text;
+		length: switch_mail_1880_length;
+	}
+}
