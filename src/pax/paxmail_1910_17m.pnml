@@ -74,13 +74,13 @@ spriteset(spriteset_mail_1910_17m_jnr_purchase, "gfx/paxmail/paxmail-1910-17m.pn
 
 //purchase switches
 switch(FEAT_TRAINS, SELF, switch_pax_1910_yeardep_purchase, current_year) {
-	0..1949: spriteset_pax_1910_17m_purchase;
-	spriteset_pax_1910_17m_purchase;
+	0..1949: spriteset_pax_1910_17m_jgr_purchase;
+	spriteset_pax_1910_17m_jnr_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_mail_1910_yeardep_purchase, current_year) {
-	0..1949: spriteset_mail_1910_17m_purchase;
-	spriteset_mail_1910_17m_purchase;
+	0..1949: spriteset_mail_1910_17m_jgr_purchase;
+	spriteset_mail_1910_17m_jnr_purchase;
 }
 
 
@@ -244,7 +244,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 //		weight: 28;
 //		cost_factor: 18;
 //		running_cost_factor: 11;
-		length: 6;
+		length: 7;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
@@ -294,8 +294,8 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
 	1: return string(STR_REFIT_MAIL_HONI8900_JGR);
 	2: return string(STR_REFIT_MAIL_HOYUNI8725_JGR);
-	3: return string(STR_REFIT_PAXMAIL_NAHANO8430_JGR);
-	4: return string(STR_REFIT_PAXMAIL_NAHANO8430_JGR_FLIP);
+	3: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR);
+	4: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR_FLIP);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -323,7 +323,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 //		weight: 28;
 //		cost_factor: 18;
 //		running_cost_factor: 11;
-		length: 5;
+		length: 7;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
