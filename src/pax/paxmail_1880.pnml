@@ -262,8 +262,8 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_MAIL_KN8890_HCC);
 	2: return string(STR_REFIT_PAXMAIL_FKHY_8050_HCC);
-	3: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
-	4: return string(STR_REFIT_MAIL_KN8890_JGR);
+	3: return string(STR_REFIT_MAIL_KN8890_JGR);
+	4: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
 	5: return string(STR_REFIT_PAXMAIL_FKHY_8050_BROWN);
 	   return CB_RESULT_NO_TEXT;
 	}
