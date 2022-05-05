@@ -5712,8 +5712,8 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_MAIL_KN8890_HCC);
 	2: return string(STR_REFIT_PAXMAIL_FKHY_8050_HCC);
-	3: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
-	4: return string(STR_REFIT_MAIL_KN8890_JGR);
+	3: return string(STR_REFIT_MAIL_KN8890_JGR);
+	4: return string(STR_REFIT_PAXMAIL_FKHY_8050_JGR);
 	5: return string(STR_REFIT_PAXMAIL_FKHY_8050_BROWN);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -7663,62 +7663,169 @@ graphics {
 //TODO GRAPHICS-LOADING STAGES FOR THESE
 
 
-spriteset(spriteset_wamu_80000_full_brown1, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_brown1, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_wamu_80000_full_blue, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_blue, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_wamu_80000_full_white, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_white, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_wamu_80000_full_green, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_green, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_wamu_80000_full_brown2, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_brown2, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_wamu_80000_full_black, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_black, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_wamu_80000_full_brown3, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_brown3, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_wamu_80000_full_brown4, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_full_brown4, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_wamu_80000_purchase, "gfx/freight/wamu_80000_full.png") {
+spriteset(spriteset_wamu_80000_blank, "gfx/freight/wamu_80000.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_wamu_80000_empty, "gfx/freight/wamu_80000.png") {
+	template_2cc_std(1, 288)
+}
+
+/*
+spriteset(spriteset_wamu_80000_half, "gfx/freight/wamu_80000.png") {
+	template_2cc_std(1, 320)
+}
+
+*/
+spriteset(spriteset_wamu_80000_half, "gfx/freight/wamu_80000.png") {
+	template_2cc_std(1, 352)
+}
+
+//purchase
+
+spriteset(spriteset_wamu_80000_jnr_purchase, "gfx/freight/wamu_80000.png") {
 	template_purchase(1, 384)
 }
 
 
+spriteset(spriteset_wamu_80000_jrf_purchase, "gfx/freight/wamu_80000.png") {
+	template_purchase(89, 384)
+}
+
+//door overlay
+spritegroup spritegroup_wamu_80000_load {
+    loading: [spriteset_wamu_80000_empty, spriteset_wamu_80000_half, spriteset_wamu_80000_blank];
+    loaded:  [spriteset_wamu_80000_blank];
+}
+
+
+
+
+//stacked sprites
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_brown1_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_brown1;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_blue_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_blue;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_white_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_white;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_green_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_green;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_brown2_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_brown2;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_black_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_black;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_brown3_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_brown3;
+    1:  spritegroup_wamu_80000_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_brown4_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wamu_80000_full_brown4;
+    1:  spritegroup_wamu_80000_load;
+}
+
+
+
+
+
+
 random_switch (FEAT_TRAINS, SELF, random_wamu_80000) {
-	8: spriteset_wamu_80000_full_brown1;
-	4: spriteset_wamu_80000_full_blue;
-	1: spriteset_wamu_80000_full_white;
-	4: spriteset_wamu_80000_full_green;
-	2: spriteset_wamu_80000_full_brown2;
-	6: spriteset_wamu_80000_full_black;	
-	6: spriteset_wamu_80000_full_brown3;	
-	6: spriteset_wamu_80000_full_brown4;	
+	8: switch_wamu_80000_brown1_loadstack;
+	4: switch_wamu_80000_blue_loadstack;
+	1: switch_wamu_80000_white_loadstack;
+	4: switch_wamu_80000_green_loadstack;
+	2: switch_wamu_80000_brown2_loadstack;
+	6: switch_wamu_80000_black_loadstack;	
+	6: switch_wamu_80000_brown3_loadstack;	
+	6: switch_wamu_80000_brown4_loadstack;	
 }
 
 random_switch (FEAT_TRAINS, SELF, random_wamu_80000_brown) {
-	5: spriteset_wamu_80000_full_brown1;
-	1: spriteset_wamu_80000_full_brown2;
-	4: spriteset_wamu_80000_full_brown3;
-	4: spriteset_wamu_80000_full_brown4;
+	5: switch_wamu_80000_brown1_loadstack;
+	1: switch_wamu_80000_brown2_loadstack;
+	4: switch_wamu_80000_brown3_loadstack;
+	4: switch_wamu_80000_brown4_loadstack;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_yeardep, cargo_subtype) {
+	0..1990: random_wamu_80000_brown;
+	random_wamu_80000;
+}
 
 switch(FEAT_TRAINS, SELF, switch_wamu_80000_livery, cargo_subtype) {
 	1: random_wamu_80000_brown;
@@ -7729,7 +7836,7 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_wamu_80000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
+	0: return string(STR_REFIT_RANDYEAR);
 	1: return string(STR_REFIT_FBROWN);
 	2: return string(STR_REFIT_FBLUE);
 	3: return string(STR_REFIT_FGREEN);
@@ -7747,11 +7854,11 @@ property {
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	cargo_capacity: return 50;
-	default: switch_wamu_80000_livery;
+	default: switch_wamu_80000_yeardep;
 	purchase: spriteset_wamu_80000_purchase;
 	cargo_subtype_text: switch_wamu_80000_subtype_text;
 	}
