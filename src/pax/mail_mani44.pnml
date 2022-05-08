@@ -1,3 +1,24 @@
+//Universal door sprites for all 8/8 box vans
+
+spriteset(spriteset_boxvan8_doors_blank, "gfx/paxmail/mani44.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_boxvan8_doors_empty, "gfx/paxmail/mani44.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_boxvan8_doors_half, "gfx/paxmail/mani44.png") {
+	template_2cc_std(1, 128)
+}
+
+spritegroup spritegroup_boxvan8_doors_load {
+    loading: [spriteset_boxvan8_doors_empty, spriteset_boxvan8_doors_half, spriteset_boxvan8_doors_blank];
+    loaded:  [spriteset_boxvan8_doors_blank];
+}
+
+//MANI 44
+
 spriteset(spriteset_mani_44, "gfx/paxmail/mani44.png") {
 	template_2cc_std(1, 1)
 }
@@ -5,6 +26,7 @@ spriteset(spriteset_mani_44, "gfx/paxmail/mani44.png") {
 spriteset(spriteset_mani_44_euroliner, "gfx/paxmail/mani44.png") {
 	template_2cc_std(1, 32)
 }
+
 
 
 spriteset(spriteset_mani_44_jnr_purchase, "gfx/paxmail/mani44.png") {
@@ -33,6 +55,17 @@ switch(FEAT_TRAINS, SELF, switch_mani_44_subtype_text, cargo_subtype) {
 	}
 
 
+//stacked sprites
+
+switch(FEAT_TRAINS, SELF, switch_mani_44_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_mani_44_livery;
+    1:  spritegroup_boxvan8_doors_load;
+}
+
+
 item (FEAT_TRAINS, mail_mani_44, 1390) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -54,11 +87,11 @@ item (FEAT_TRAINS, mail_mani_44, 1390) {
 		cost_factor: 12;
 		running_cost_factor: 6;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 //		cargo_capacity: return 75;
-		default: switch_mani_44_livery;
+		default: switch_mani_44_loadstack;
 		purchase: switch_mani_44_purchase_yeardep;
 		cargo_subtype_text: switch_mani_44_subtype_text;
 		

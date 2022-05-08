@@ -1,33 +1,33 @@
 //TODO GRAPHICS-LOADING STAGES FOR THESE
 
-spriteset(spriteset_waki_10000_full_blue, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_10000_blue, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_waki_10000_full_green, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_10000_green, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_10000_full_brown, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_10000_brown, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 64)
 }
 
 
-spriteset(spriteset_waki_10000_purchase, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_10000_purchase, "gfx/freight/waki_5000.png") {
 	template_purchase(1, 384)
 }
 
 
 random_switch (FEAT_TRAINS, SELF, random_waki_10000) {
-	1: spriteset_waki_10000_full_brown;
-	1: spriteset_waki_10000_full_blue;
-	2: spriteset_waki_10000_full_green;
+	1: spriteset_waki_10000_brown;
+	1: spriteset_waki_10000_blue;
+	2: spriteset_waki_10000_green;
 }
 
 switch(FEAT_TRAINS, SELF, switch_waki_10000_livery, cargo_subtype) {
-	1: spriteset_waki_10000_full_blue;
-	2: spriteset_waki_10000_full_green;
-	3: spriteset_waki_10000_full_brown;
+	1: spriteset_waki_10000_blue;
+	2: spriteset_waki_10000_green;
+	3: spriteset_waki_10000_brown;
 	random_waki_10000;
 }
 
@@ -39,7 +39,13 @@ switch(FEAT_TRAINS, SELF, switch_waki_10000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+switch(FEAT_TRAINS, SELF, switch_waki_10000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_waki_10000_livery;
+    1:  spritegroup_boxvan8_doors_load;
+}
 
 item (FEAT_TRAINS, waki_10000, 1288) {
 
@@ -51,11 +57,11 @@ property {
 	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	cargo_capacity: return 60;
-	default: switch_waki_10000_livery;
+	default: switch_waki_10000_loadstack;
 	purchase: spriteset_waki_10000_purchase;
 	cargo_subtype_text: switch_waki_10000_subtype_text;
 	}

@@ -90,41 +90,39 @@ switch(FEAT_TRAINS, SELF, switch_jgr_7100_purchase, current_year) {
 	}
 
 item (FEAT_TRAINS, jgr_7100, 900) {
-
-property {
-  sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NAAN;
-  name: string(STR_NAME_JGR_7100);
-  climates_available: ALL_CLIMATES;
-  introduction_date: date(1880,1,1);
-  speed: 60 km/h;
-  air_drag_coefficient: 0;
-  tractive_effort_coefficient:    0.20;
-  power: 400 kW;
-  dual_headed: 0;
-  engine_class: ENGINE_CLASS_STEAM;
-  cargo_capacity: 1;
-  cargo_allow_refit: [PASS];
-  weight: 40;
-  reliability_decay: 80;
-  model_life: 40;
-  vehicle_life: 60;
-  cost_factor: 22;
-  length: 5;
-  running_cost_factor: 11;
-  running_cost_base: RUNNING_COST_STEAM;
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_JGR_7100);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1880,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 400 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 40;
+		reliability_decay: 80;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 22;
+		length: 5;
+		running_cost_factor: 11;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_jgr_7100_subtype_text;
+		default: switch_jgr_7100_livery;
+		purchase: switch_jgr_7100_purchase;
+		articulated_part: switch_jgr_7100_articulated_part;
+		additional_text: string(STR_DESC_JNR_7100);
+		}
 	}
-
-
-  graphics { // graphics for engine
-  cargo_capacity: return 0;
-  cargo_subtype_text: switch_jgr_7100_subtype_text;
-  default: switch_jgr_7100_livery;
-  purchase: switch_jgr_7100_purchase;
-  articulated_part: switch_jgr_7100_articulated_part;
-  additional_text: string(STR_DESC_JNR_7100);
-  }
-}
 
 
 item (FEAT_TRAINS, jgr_7100_rear, 901) {

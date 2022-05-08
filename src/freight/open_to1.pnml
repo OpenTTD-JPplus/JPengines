@@ -215,7 +215,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
-	cargo_capacity: return 30;
+	cargo_capacity: return 15;
 	default: switch_to_1_cargo_class;
 	purchase: spriteset_to_1_purchase;
 	colour_mapping: switch_generic_recolour;

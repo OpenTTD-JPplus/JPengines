@@ -1,22 +1,22 @@
 //TODO GRAPHICS-LOADING STAGES FOR THESE
 
-spriteset(spriteset_waki_5000_full_greenstripe, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_greenstripe, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_waki_5000_full_brown1, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_brown1, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_waki_5000_full_bluestripe, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_bluestripe, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_waki_5000_full_brown2, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_brown2, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_waki_5000_full_black, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_black, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 224)
 }
 
@@ -24,7 +24,7 @@ spriteset(spriteset_waki_5000_full_black, "gfx/freight/waki_5000_full.png") {
 
 
 
-spriteset(spriteset_waki_5000_purchase, "gfx/freight/waki_5000_full.png") {
+spriteset(spriteset_waki_5000_purchase, "gfx/freight/waki_5000.png") {
 	template_purchase(89, 384)
 }
 
@@ -32,25 +32,25 @@ spriteset(spriteset_waki_5000_purchase, "gfx/freight/waki_5000_full.png") {
 
 
 random_switch (FEAT_TRAINS, SELF, random_waki_5000) {
-	1: spriteset_waki_10000_full_brown;
-	1: spriteset_waki_5000_full_greenstripe;
-	4: spriteset_waki_5000_full_brown1;
-	5: spriteset_waki_5000_full_brown2;
-	2: spriteset_waki_5000_full_black;
+	1: spriteset_waki_10000_brown;
+	1: spriteset_waki_5000_greenstripe;
+	4: spriteset_waki_5000_brown1;
+	5: spriteset_waki_5000_brown2;
+	2: spriteset_waki_5000_black;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_waki_5000_brown) {
-	1: spriteset_waki_5000_full_brown1;
-	2: spriteset_waki_5000_full_brown2;
+	1: spriteset_waki_5000_brown1;
+	2: spriteset_waki_5000_brown2;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_waki_5000_livery, cargo_subtype) {
 	1: random_waki_5000_brown;
-	2: spriteset_waki_5000_full_greenstripe;
-	3: spriteset_waki_5000_full_black;
-	4: spriteset_waki_5000_full_bluestripe;
+	2: spriteset_waki_5000_greenstripe;
+	3: spriteset_waki_5000_black;
+	4: spriteset_waki_5000_bluestripe;
 	random_waki_5000;
 }
 
@@ -63,6 +63,13 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_waki_5000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_waki_5000_livery;
+    1:  spritegroup_boxvan8_doors_load;
+}
 
 item (FEAT_TRAINS, waki_5000, 53) {
 property {
@@ -74,11 +81,11 @@ property {
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	cargo_capacity: return 80;
-	default: switch_waki_5000_livery;
+	default: switch_waki_5000_loadstack;
 	purchase: spriteset_waki_5000_purchase;
 	cargo_subtype_text: switch_waki_5000_subtype_text;
 	}

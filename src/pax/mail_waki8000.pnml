@@ -88,7 +88,13 @@ switch(FEAT_TRAINS, SELF, switch_waki_8000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_waki_8000_livery;
+    1:  spritegroup_boxvan8_doors_load;
+}
 
 
 
@@ -113,11 +119,11 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		cost_factor: 10;
 		running_cost_factor: 6;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 //		cargo_capacity: return 75;
-		default: switch_waki_8000_livery;
+		default: switch_waki_8000_loadstack;
 		purchase: switch_waki_8000_purchase_yeardep;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
 	}

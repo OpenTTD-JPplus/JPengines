@@ -26,7 +26,7 @@ spritegroup spritegroup_tora_90000_bulk {
 }
 
 spritegroup spritegroup_tora_90000_covered {
-    loading: [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full, spriteset_tora_90000_tarp];
+    loading: [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full];
     loaded:  [spriteset_tora_90000_empty, spriteset_tora_90000_half, spriteset_tora_90000_full, spriteset_tora_90000_tarp];
 }
 
