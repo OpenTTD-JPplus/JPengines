@@ -61,6 +61,8 @@
 #include "src/pax/24_series.pnml"
 #include "src/pax/50_series.pnml"
 
+#include "src/pax/26_series.pnml"
+#include "src/pax/7stars.pnml"
 #include "src/pax/sleeper_10series.pnml"
 
 #include "src/pax/mail_mani30.pnml"
@@ -103,6 +105,7 @@
 
 #include "src/freight/heavy_slagladle.pnml"
 #include "src/freight/heavy_torpedo.pnml"
+#include "src/freight/heavy_carrier.pnml"
 
 #include "src/freight/open_to1.pnml"
 #include "src/freight/open_toki900.pnml"

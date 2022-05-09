@@ -59,6 +59,9 @@ STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
 
+STR_NAME_PAX_26			:E26 Series Sleeper Coach {GOLD}"Cassiopeia"{BLACK}
+STR_NAME_PAX_77			:77-7000 Series Sleeper Coach {GOLD}"Seven Stars"{BLACK}
+
 STR_NAME_SLEEPER_10		:10 Series Sleeper Coach
 
 
@@ -132,6 +135,7 @@ STR_NAME_OPEN_HOPPER	:Future Hopper
 STR_NAME_COIL_CARRIER	:Metal Coil Carrier
 STR_NAME_SLAG_LADLE		:Slag Ladle Wagon
 STR_NAME_TORPEDO		:Torpedo Wagon
+STR_NAME_SHIKI_800		:SHIKI 800 Superheavy Carrier
 
 STR_NAME_WA_1			:WA 1 Box Van
 STR_NAME_WAKI_1			:WAKI 1 Express Van

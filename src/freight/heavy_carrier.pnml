@@ -1,0 +1,150 @@
+spriteset(spriteset_shiki_800_black_front, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_shiki_800_black_rear, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_shiki_800_blue_front, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 54)
+}
+
+spriteset(spriteset_shiki_800_blue_rear, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_shiki_800_black_filler, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_shiki_800_blue_filler, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_shiki_800_load, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_shiki_800_blank, "gfx/freight/superheavy.png") {
+	template_2cc_std(1, 224)
+}
+
+
+spriteset(spriteset_shiki_800_jnr_purchase, "gfx/freight/superheavy.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_shiki_800_jrf_purchase, "gfx/freight/superheavy.png") {
+	template_purchase(89, 256)
+}
+
+spriteset(spriteset_shiki_800_nippon_purchase, "gfx/freight/superheavy.png") {
+	template_purchase(1, 288)
+}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_shiki_800_articulated_part, extra_callback_info1) {
+	1: return shiki_800_rear;
+    2: return shiki_800_rear;
+	3: return shiki_800_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+/*
+    The conventional way to get random_bits for a vehicle is getbits(random_bits, bits_offset, bits_count).
+    For articulated vehicles this is not useful when we want the same random result for all parts.
+    This provides an alternative to random_bits, which offsets to get the bits from the lead part of the articulated vehicle.
+        To use:
+        * switch_alternative_var_random_bits(bits_offset, bits_count)
+*/
+
+switch (FEAT_TRAINS, SELF, switch_alternative_var_random_bits, 
+                                            [STORE_TEMP(-1 * position_in_articulated_veh, 0x10F), var[0x61, 0, 0x0000FFFF, 0xBC]]) {
+//   <!--! return with nothing else will yield the computed value -->
+    return;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_1, switch_alternative_var_random_bits() ) {
+	0: spriteset_shiki_800_black_rear;
+	spriteset_shiki_800_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_2, switch_alternative_var_random_bits() ) {
+	0: spriteset_shiki_800_blank;
+	spriteset_shiki_800_black_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_3, switch_alternative_var_random_bits() ) {
+	0: spriteset_shiki_800_black_filler;
+	spriteset_shiki_800_blank; //todo add consist end switch
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_position, position_in_articulated_veh) {
+	1: switch_shiki_800_part_1;
+	2: switch_shiki_800_part_2;
+	3: switch_shiki_800_part_3;
+	spriteset_shiki_800_black_front;
+}
+
+
+
+
+
+
+
+
+item (FEAT_TRAINS, shiki_800_rear, 1651) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SHIKI_800);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1920,1,1);
+		cargo_capacity: 0; 
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+	}
+	graphics {
+		default: switch_shiki_800_position;
+	}
+}
+
+
+
+item (FEAT_TRAINS, shiki_800, 50) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SHIKI_800);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1973,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 155; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 40;
+//		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
+//		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST]; 
+//		cargo_disallow_refit: [WDPR, WOOL];
+		weight: 100;
+		cost_factor: 73;
+		length: 8;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 1;
+		default: spriteset_shiki_800_black_front;
+		purchase: spriteset_shiki_800_jnr_purchase;
+		articulated_part: switch_shiki_800_articulated_part;
+	}
+}
