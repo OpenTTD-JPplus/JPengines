@@ -7,7 +7,7 @@ spriteset(spriteset_shiki_800_black_rear, "gfx/freight/superheavy.png") {
 }
 
 spriteset(spriteset_shiki_800_blue_front, "gfx/freight/superheavy.png") {
-	template_2cc_std(1, 54)
+	template_2cc_std(1, 64)
 }
 
 spriteset(spriteset_shiki_800_blue_rear, "gfx/freight/superheavy.png") {
@@ -44,6 +44,13 @@ spriteset(spriteset_shiki_800_nippon_purchase, "gfx/freight/superheavy.png") {
 }
 
 
+spritegroup spritegroup_shiki_800_load {
+    loading: [spriteset_shiki_800_blank];
+    loaded:  [spriteset_shiki_800_load];
+}
+
+
+
 /* --- Articulated part callback  --- */
 switch(FEAT_TRAINS, SELF, switch_shiki_800_articulated_part, extra_callback_info1) {
 	1: return shiki_800_rear;
@@ -53,34 +60,90 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_articulated_part, extra_callback_info
 }
 
 
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_front_yeardep, build_year) {
+	1987..2008: spriteset_shiki_800_blue_front;
+	spriteset_shiki_800_black_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_front_livery, cargo_subtype) {
+	1: spriteset_shiki_800_black_front;
+	2: spriteset_shiki_800_blue_front;
+	switch_shiki_800_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_rear_yeardep, build_year) {
+	1987..2008: spriteset_shiki_800_blue_rear;
+	spriteset_shiki_800_black_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_rear_livery, cargo_subtype) {
+	1: spriteset_shiki_800_black_rear;
+	2: spriteset_shiki_800_blue_rear;
+	switch_shiki_800_rear_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_filler_yeardep, build_year) {
+	1987..2008: spriteset_shiki_800_blue_filler;
+	spriteset_shiki_800_black_filler;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_filler_livery, cargo_subtype) {
+	1: spriteset_shiki_800_black_filler;
+	2: spriteset_shiki_800_blue_filler;
+	switch_shiki_800_filler_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_shiki_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_FBLACK);
+	2: return string(STR_REFIT_FBLUE);
+	   return CB_RESULT_NO_TEXT;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_shiki_800_blank_end, position_in_consist_from_end) {
+	0: spriteset_shiki_800_blank;
+	switch_shiki_800_filler_livery;
+}
+
+
+
+
 /*
     The conventional way to get random_bits for a vehicle is getbits(random_bits, bits_offset, bits_count).
     For articulated vehicles this is not useful when we want the same random result for all parts.
     This provides an alternative to random_bits, which offsets to get the bits from the lead part of the articulated vehicle.
         To use:
-        * switch_alternative_var_random_bits(bits_offset, bits_count)
+        * switch_read_shiki_800_cargo_count(bits_offset, bits_count)
 */
 
-switch (FEAT_TRAINS, SELF, switch_alternative_var_random_bits, 
+switch (FEAT_TRAINS, SELF, switch_read_shiki_800_cargo_count, 
                                             [STORE_TEMP(-1 * position_in_articulated_veh, 0x10F), var[0x61, 0, 0x0000FFFF, 0xBC]]) {
 //   <!--! return with nothing else will yield the computed value -->
     return;
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_shiki_800_part_1, switch_alternative_var_random_bits() ) {
-	0: spriteset_shiki_800_black_rear;
-	spriteset_shiki_800_load;
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_1, switch_read_shiki_800_cargo_count() ) {
+	0: switch_shiki_800_rear_livery;
+	1..50: spritegroup_shiki_800_load;
+	spriteset_shiki_800_load; 
 }
 
-switch(FEAT_TRAINS, SELF, switch_shiki_800_part_2, switch_alternative_var_random_bits() ) {
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_2, switch_read_shiki_800_cargo_count() ) {
 	0: spriteset_shiki_800_blank;
-	spriteset_shiki_800_black_rear;
+	switch_shiki_800_rear_livery;
 }
 
-switch(FEAT_TRAINS, SELF, switch_shiki_800_part_3, switch_alternative_var_random_bits() ) {
-	0: spriteset_shiki_800_black_filler;
-	spriteset_shiki_800_blank; //todo add consist end switch
+switch(FEAT_TRAINS, SELF, switch_shiki_800_part_3, switch_read_shiki_800_cargo_count() ) {
+	0: switch_shiki_800_blank_end;
+	spriteset_shiki_800_blank; 
 }
 
 
@@ -89,11 +152,15 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_position, position_in_articulated_veh
 	1: switch_shiki_800_part_1;
 	2: switch_shiki_800_part_2;
 	3: switch_shiki_800_part_3;
-	spriteset_shiki_800_black_front;
+	switch_shiki_800_front_livery;
 }
 
 
-
+switch(FEAT_TRAINS, SELF, switch_shiki_800_purchase, current_year) {
+	0..1987: spriteset_shiki_800_jnr_purchase;
+	1987..2008: spriteset_shiki_800_jrf_purchase;
+	spriteset_shiki_800_nippon_purchase;
+	}
 
 
 
@@ -106,11 +173,14 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 		name: string(STR_NAME_SHIKI_800);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1920,1,1);
-		cargo_capacity: 0; 
+		cargo_capacity: 1; 
+		default_cargo_type: GOOD;
+		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST];
 		length: 4;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
+		cargo_capacity: return 0;
 		default: switch_shiki_800_position;
 	}
 }
@@ -131,20 +201,21 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		cargo_capacity: 155; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-		loading_speed: 40;
+//		loading_speed: 40;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST]; 
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 100;
-		cost_factor: 73;
+//		cost_factor: 73;
 		length: 8;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		cargo_capacity: return 1;
-		default: spriteset_shiki_800_black_front;
-		purchase: spriteset_shiki_800_jnr_purchase;
+		cargo_capacity: return 155;
+		default: switch_shiki_800_front_livery;
+		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
+		cargo_subtype_text: switch_shiki_8000_subtype_text;
 	}
 }
