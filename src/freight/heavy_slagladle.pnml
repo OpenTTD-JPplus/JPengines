@@ -1,25 +1,61 @@
-spriteset(spriteset_slag_ladle_empty, "gfx/steelwagons.png") {
+spriteset(spriteset_slag_ladle_old_empty, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 160)
 }
 
-spriteset(spriteset_slag_ladle_half, "gfx/steelwagons.png") {
+spriteset(spriteset_slag_ladle_old_half, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 192)
 }
 
-spriteset(spriteset_slag_ladle_full, "gfx/steelwagons.png") {
+spriteset(spriteset_slag_ladle_old_full, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 224)
 }
 
 
-spriteset(spriteset_slag_ladle_purchase, "gfx/steelwagons.png") {
+spriteset(spriteset_slag_ladle_new_empty, "gfx/freight/steel_wagons.png") {
+	template_2cc_anim(180, 160)
+}
+
+spriteset(spriteset_slag_ladle_new_half, "gfx/freight/steel_wagons.png") {
+	template_2cc_anim(180, 192)
+}
+
+spriteset(spriteset_slag_ladle_new_full, "gfx/freight/steel_wagons.png") {
+	template_2cc_anim(180, 224)
+}
+
+
+spriteset(spriteset_slag_ladle_yawata_old_purchase, "gfx/freight/steel_wagons.png") {
 	template_purchase(1, 288)
 }
 
-spritegroup spritegroup_slag_ladle {
-    loading: [spriteset_slag_ladle_empty, spriteset_slag_ladle_half, spriteset_slag_ladle_full];
-    loaded:  [spriteset_slag_ladle_empty, spriteset_slag_ladle_half, spriteset_slag_ladle_full];
+spriteset(spriteset_slag_ladle_yawata_new_purchase, "gfx/freight/steel_wagons.png") {
+	template_purchase(180, 288)
 }
 
+spriteset(spriteset_slag_ladle_nippon_purchase, "gfx/freight/steel_wagons.png") {
+	template_purchase(89, 288)
+}
+
+spritegroup spritegroup_slag_ladle_old {
+    loading: [spriteset_slag_ladle_old_empty, spriteset_slag_ladle_old_half, spriteset_slag_ladle_old_full];
+    loaded:  [spriteset_slag_ladle_old_empty, spriteset_slag_ladle_old_half, spriteset_slag_ladle_old_full];
+}
+
+spritegroup spritegroup_slag_ladle_new {
+    loading: [spriteset_slag_ladle_new_empty, spriteset_slag_ladle_new_half, spriteset_slag_ladle_new_full];
+    loaded:  [spriteset_slag_ladle_new_empty, spriteset_slag_ladle_new_half, spriteset_slag_ladle_new_full];
+}
+
+switch(FEAT_TRAINS, SELF, switch_slag_ladle_yeardep, build_year) {
+	0..1950: spritegroup_slag_ladle_old;
+	spritegroup_slag_ladle_new;
+}
+
+switch(FEAT_TRAINS, SELF, switch_slag_ladle_purchase, current_year) {
+	0..1950: spriteset_slag_ladle_yawata_old_purchase;
+	1950..1990: spriteset_slag_ladle_yawata_new_purchase;
+	spriteset_slag_ladle_nippon_purchase;
+	}
 
 item (FEAT_TRAINS, slag_ladle, 1420) {
 	property {
@@ -32,19 +68,19 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 24; 
+		cargo_capacity: 38; 
 		refit_cost: 0;
 		default_cargo_type: SLAG;
 		loading_speed: 40;
-		cargo_allow_refit: [SLAG, IRON]; 
+		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 10;
 		length: 4;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
-		cargo_capacity: return 24;
-		default: spritegroup_slag_ladle;
-		purchase: spriteset_slag_ladle_purchase;
+		cargo_capacity: return 38;
+		default: switch_slag_ladle_yeardep;
+		purchase: switch_slag_ladle_purchase;
 	}
 }

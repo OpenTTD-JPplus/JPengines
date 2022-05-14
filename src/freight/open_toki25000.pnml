@@ -3,25 +3,25 @@ spriteset(spriteset_toki_25000_brown_a, "gfx/freight/toki_25000.png") {
 }
 
 spriteset(spriteset_toki_25000_brown_b, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(1, 32)
+	template_2cc_std(1, 32)
 }
 
 spriteset(spriteset_toki_25000_green, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(1, 64)
+	template_2cc_std(1, 64)
 }
 
 spriteset(spriteset_toki_25000_black, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(1, 96)
+	template_2cc_std(1, 96)
 }
 
 //15000
 spriteset(spriteset_toki_15000_black, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(1, 128)
+	template_2cc_std(1, 128)
 }
 
 //loads
 spriteset(spriteset_toki_25000_tarp_brown, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(1, 160)
+	template_2cc_std(1, 160)
 }
 
 spriteset(spriteset_toki_25000_tarp_green, "gfx/freight/toki_25000.png") {
@@ -33,32 +33,32 @@ spriteset(spriteset_toki_25000_tarp_grey, "gfx/freight/toki_25000.png") {
 }
 
 spriteset(spriteset_toki_25000_bulk_quarter, "gfx/freight/toki_25000.png") {
-	template_2cc_std(1, 256)
+	template_2cc_anim(1, 256)
 }
 
 spriteset(spriteset_toki_25000_bulk_half, "gfx/freight/toki_25000.png") {
-	template_2cc_std(1, 288)
+	template_2cc_anim(1, 288)
 }
 
 spriteset(spriteset_toki_25000_bulk_full, "gfx/freight/toki_25000.png") {
-	template_2cc_std(1, 320)
+	template_2cc_anim(1, 320)
 }
 
 spriteset(spriteset_toki_25000_blank, "gfx/freight/toki_25000.png") {
 	template_2cc_std(180, 1)
 }
 
-/*
+/* for future loads
 spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(180, 32)
+	template_2cc_std(180, 32)
 }
 
 spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(180, 64)
+	template_2cc_std(180, 64)
 }
 
 spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(180, 96)
+	template_2cc_stdm(180, 96)
 }
 */
 
@@ -211,6 +211,10 @@ random_switch (FEAT_TRAINS, SELF, random_toki_25000_supplies) {
 }
 
 
+switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
+	0..1990: random_toki_25000_bulk_tarp;
+	spritegroup_toki_25000_bulk_tarp_green;
+}
 
 
 
@@ -248,19 +252,22 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	TEXT: random_toki_25000_conts;
 	
 	SCMT: spritegroup_toki_25000_bulk;
-	SULP: random_toki_25000_bulk_tarp;
-	SEED: random_toki_25000_bulk_tarp;
-	FERT: random_toki_25000_bulk_tarp;
-	SASH: random_toki_25000_bulk_tarp;
-	FRUT: random_toki_25000_bulk_tarp;
-	FRVG: random_toki_25000_bulk_tarp;
+	SULP: switch_toki_25000_tarp_yeardep;
+	SEED: switch_toki_25000_tarp_yeardep;
+	FERT: switch_toki_25000_tarp_yeardep;
+	SASH: switch_toki_25000_tarp_yeardep;
+	FRUT: switch_toki_25000_tarp_yeardep;
+	FRVG: switch_toki_25000_tarp_yeardep;
+	TATO: switch_toki_25000_tarp_yeardep;
 	
 	spritegroup_toki_25000_rods;
 }
 
+
+
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): spritegroup_toki_25000_bulk;
-	bitmask(CC_BULK, CC_COVERED): random_toki_25000_bulk_tarp;
+	bitmask(CC_BULK, CC_COVERED): switch_toki_25000_tarp_yeardep;
 
 	switch_toki_25000_cargo_type;
 }
@@ -285,8 +292,6 @@ random_switch (FEAT_TRAINS, SELF, random_toki_25000_brown) {
  2: spriteset_toki_25000_brown_a;
  1: spriteset_toki_25000_brown_b;
 }
-
-
 
 
 

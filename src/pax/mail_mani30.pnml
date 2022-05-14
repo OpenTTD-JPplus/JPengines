@@ -2,7 +2,7 @@ spriteset(spriteset_mani_30, "gfx/paxmail/mailvans.png") {
 	template_2cc_std(1, 64)
 }
 
-alternative_sprites(spriteset_mani_30, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/mailvans32.png") {
+alternative_sprites(spriteset_mani_30, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/mailvans.png") {
 	template_2cc_std(1, 64)
 }
 

@@ -573,6 +573,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 
     SGBT: return recolour_bulk +16;
 	CASS: return recolour_bulk +16;
+	TATO: return recolour_bulk +16;
 	
     SGCN: return recolour_bulk +17;
 	TWOD: return recolour_bulk +17;

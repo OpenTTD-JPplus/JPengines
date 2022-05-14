@@ -1,30 +1,51 @@
-spriteset(spriteset_torpedo_front, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_old_front, "gfx/freight/steel_wagons.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_torpedo_rear, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_old_rear, "gfx/freight/steel_wagons.png") {
 	template_2cc_std(1, 32)
 }
 
+spriteset(spriteset_torpedo_new_front, "gfx/freight/steel_wagons.png") {
+	template_2cc_std(180, 1)
+}
 
-spriteset(spriteset_torpedo_empty, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_new_rear, "gfx/freight/steel_wagons.png") {
+	template_2cc_std(180, 32)
+}
+
+
+spriteset(spriteset_torpedo_empty, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 64)
 }
 
-spriteset(spriteset_torpedo_half, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_half, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 96)
 }
 
-spriteset(spriteset_torpedo_full, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_full, "gfx/freight/steel_wagons.png") {
 	template_2cc_anim(1, 128)
 }
 
 
 
-spriteset(spriteset_torpedo_purchase, "gfx/steelwagons.png") {
+spriteset(spriteset_torpedo_yawata_old_purchase, "gfx/freight/steel_wagons.png") {
 	template_purchase(1, 256)
 }
 
+spriteset(spriteset_torpedo_yawata_new_purchase, "gfx/freight/steel_wagons.png") {
+	template_purchase(180, 256)
+}
+
+spriteset(spriteset_torpedo_nippon_purchase, "gfx/freight/steel_wagons.png") {
+	template_purchase(89, 256)
+}
+
+switch(FEAT_TRAINS, SELF, switch_torpedo_purchase, current_year) {
+	0..1950: spriteset_torpedo_yawata_old_purchase;
+	1950..1990: spriteset_torpedo_yawata_new_purchase;
+	spriteset_torpedo_nippon_purchase;
+	}
 
 /* --- Articulated part callback  --- */
 switch(FEAT_TRAINS, SELF, switch_torpedo_articulated_part, extra_callback_info1) {
@@ -32,6 +53,17 @@ switch(FEAT_TRAINS, SELF, switch_torpedo_articulated_part, extra_callback_info1)
     2: return torpedo_car_rear;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+
+switch(FEAT_TRAINS, SELF, switch_torpedo_front_yeardep, build_year) {
+	0..1950: spriteset_torpedo_old_front;
+	spriteset_torpedo_new_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_torpedo_rear_yeardep, build_year) {
+	0..1950: spriteset_torpedo_old_rear;
+	spriteset_torpedo_new_rear;
+}
+
 
 
 switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
@@ -53,7 +85,7 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		loading_speed: 40;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [IRON]; 
+		cargo_allow_refit: [IRON, METL]; 
 		introduction_date: date(1920,1,1);
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -75,7 +107,7 @@ item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
-		default: spriteset_torpedo_rear;
+		default: switch_torpedo_rear_yeardep;
 	}
 }
 
@@ -98,7 +130,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 		loading_speed: 40;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [IRON]; 
+		cargo_allow_refit: [IRON, METL]; 
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 120;
 		cost_factor: 73;
@@ -107,8 +139,8 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 	}
 	graphics {
 		cargo_capacity: return 1;
-		default: spriteset_torpedo_front;
-		purchase: spriteset_torpedo_purchase;
+		default: switch_torpedo_front_yeardep;
+		purchase: switch_torpedo_purchase;
 		articulated_part: switch_torpedo_articulated_part;
 	}
 }

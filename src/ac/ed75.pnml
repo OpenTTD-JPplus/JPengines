@@ -1,79 +1,79 @@
-spriteset(spriteset_ed75_red, "gfx/ed75.png") {
+spriteset(spriteset_ed75_red, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed75_akebono, "gfx/ed75.png") {
+spriteset(spriteset_ed75_akebono, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed75_newred, "gfx/ed75.png") {
+spriteset(spriteset_ed75_newred, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ed75_redstripe, "gfx/ed75.png") {
+spriteset(spriteset_ed75_redstripe, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ed75_rainbow, "gfx/ed75.png") {
+spriteset(spriteset_ed75_rainbow, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ed75_panda, "gfx/ed75.png") {
+spriteset(spriteset_ed75_panda, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ed75_refurb, "gfx/ed75.png") {
+spriteset(spriteset_ed75_refurb, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ed75_cc, "gfx/ed75.png") {
+spriteset(spriteset_ed75_cc, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_ed79_red, "gfx/ed75.png") {
+spriteset(spriteset_ed79_red, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed79_singlearm, "gfx/ed75.png") {
+spriteset(spriteset_ed79_singlearm, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed79_jrf, "gfx/ed75.png") {
+spriteset(spriteset_ed79_jrf, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_ed79_cc, "gfx/ed75.png") {
+spriteset(spriteset_ed79_cc, "gfx/electric/ed75.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_ed75_purchase, "gfx/ed75.png") {
+spriteset(spriteset_ed75_purchase, "gfx/electric/ed75.png") {
 	template_purchase(1, 320)
 }
 
-spriteset(spriteset_ed79_purchase, "gfx/ed75.png") {
+spriteset(spriteset_ed79_purchase, "gfx/electric/ed75.png") {
 	template_purchase(89, 320)
 }
 
 //32bpp
 
-alternative_sprites(spriteset_ed75_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+alternative_sprites(spriteset_ed75_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/electric/32bpp/ed79.png") {
 	template_2cc_std(1, 1)
 }
 
-alternative_sprites(spriteset_ed79_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+alternative_sprites(spriteset_ed79_red, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/electric/32bpp/ed79.png") {
 	template_2cc_std(1, 32)
 }
 
-alternative_sprites(spriteset_ed79_singlearm, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+alternative_sprites(spriteset_ed79_singlearm, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/electric/32bpp/ed79.png") {
 	template_2cc_std(1, 64)
 }
 
 
-alternative_sprites(spriteset_ed75_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+alternative_sprites(spriteset_ed75_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/electric/32bpp/ed79.png") {
 	template_purchase(1, 256)
 }
 
-alternative_sprites(spriteset_ed79_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/32bpp/ed79-32.png") {
+alternative_sprites(spriteset_ed79_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/electric/32bpp/ed79.png") {
 	template_purchase(89, 256)
 }
 

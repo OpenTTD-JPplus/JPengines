@@ -23,27 +23,27 @@ spriteset(spriteset_pax_24_rear_generator, "gfx/paxmail/24series.png") {
 }
 
 
-alternative_sprites(spriteset_pax_24_sleeper, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_sleeper, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 1)
 }
 
-alternative_sprites(spriteset_pax_24_standard, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_standard, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 32)
 }
 
-alternative_sprites(spriteset_pax_24_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 64)
 }
 
-alternative_sprites(spriteset_pax_24_front_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_front_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 96)
 }
 
-alternative_sprites(spriteset_pax_24_rear, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_rear, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 128)
 }
 
-alternative_sprites(spriteset_pax_24_rear_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_rear_generator, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_2cc_std(1, 160)
 }
 
@@ -59,11 +59,11 @@ spriteset(spriteset_pax_24_series_jr_purchase, "gfx/paxmail/24series.png") {
 }
 
 
-alternative_sprites(spriteset_pax_24_series_jnr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_series_jnr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_purchase(1, 256)
 }
 
-alternative_sprites(spriteset_pax_24_series_jr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp-24series.png") {
+alternative_sprites(spriteset_pax_24_series_jr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/paxmail/32bpp/24series.png") {
 	template_purchase(89, 256)
 }
 

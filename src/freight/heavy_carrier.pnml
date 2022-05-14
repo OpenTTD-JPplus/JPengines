@@ -59,11 +59,7 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_articulated_part, extra_callback_info
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-
-
-
-
-
+//livery and yeardep switches
 
 switch(FEAT_TRAINS, SELF, switch_shiki_800_front_yeardep, build_year) {
 	1987..2008: spriteset_shiki_800_blue_front;
@@ -105,7 +101,7 @@ switch(FEAT_TRAINS, SELF, switch_shiki_8000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 }
 
-
+//make brake van invisible if it's the last wagon
 
 switch(FEAT_TRAINS, SELF, switch_shiki_800_blank_end, position_in_consist_from_end) {
 	0: spriteset_shiki_800_blank;
@@ -113,22 +109,14 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_blank_end, position_in_consist_from_e
 }
 
 
-
-
-/*
-    The conventional way to get random_bits for a vehicle is getbits(random_bits, bits_offset, bits_count).
-    For articulated vehicles this is not useful when we want the same random result for all parts.
-    This provides an alternative to random_bits, which offsets to get the bits from the lead part of the articulated vehicle.
-        To use:
-        * switch_read_shiki_800_cargo_count(bits_offset, bits_count)
-*/
+//switch to read cargo count of lead vehicle
 
 switch (FEAT_TRAINS, SELF, switch_read_shiki_800_cargo_count, 
                                             [STORE_TEMP(-1 * position_in_articulated_veh, 0x10F), var[0x61, 0, 0x0000FFFF, 0xBC]]) {
-//   <!--! return with nothing else will yield the computed value -->
     return;
 }
 
+//shift graphics depending on cargo count
 
 switch(FEAT_TRAINS, SELF, switch_shiki_800_part_1, switch_read_shiki_800_cargo_count() ) {
 	0: switch_shiki_800_rear_livery;
@@ -146,7 +134,7 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_part_3, switch_read_shiki_800_cargo_c
 	spriteset_shiki_800_blank; 
 }
 
-
+//articulated vehicle parts
 
 switch(FEAT_TRAINS, SELF, switch_shiki_800_position, position_in_articulated_veh) {
 	1: switch_shiki_800_part_1;
@@ -155,16 +143,14 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_position, position_in_articulated_veh
 	switch_shiki_800_front_livery;
 }
 
-
+//purchase
 switch(FEAT_TRAINS, SELF, switch_shiki_800_purchase, current_year) {
 	0..1987: spriteset_shiki_800_jnr_purchase;
 	1987..2008: spriteset_shiki_800_jrf_purchase;
 	spriteset_shiki_800_nippon_purchase;
 	}
 
-
-
-
+//articulated part
 
 item (FEAT_TRAINS, shiki_800_rear, 1651) {
 	property {
@@ -185,7 +171,7 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 	}
 }
 
-
+//main item
 
 item (FEAT_TRAINS, shiki_800, 50) {
 	property {
