@@ -385,7 +385,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_15000_all_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  spriteset_toki_15000_black;
-    1:  switch_toki_25000_cargo_class;
+    1:  switch_toki_25000_cargo_class; //todo give its own class switch
 }
 
 

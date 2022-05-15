@@ -18,6 +18,17 @@ property {
 
 //tankers
 
+item (FEAT_TRAINS, tamu_500, 30) {
+
+property {
+	name: string(STR_NAME_TAMU_500);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	introduction_date: date(1930,1,1);
+	speed: 75 km/h;
+	}
+}
+
+
 item (FEAT_TRAINS, taki_3000, 45) {
 
 property {

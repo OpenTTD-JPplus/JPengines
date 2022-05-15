@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.10.7 modular
+STR_GRF_NAME :JP+ Engines & Wagons v0.10.8 modular
 STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
@@ -178,9 +178,20 @@ STR_NAME_HOKI_8300		:HOKI 8300 / 9300 Covered Hopper
 STR_NAME_HOKI_8500		:HOKI 8500 Hopper
 STR_NAME_HOKI_10000		:HOKI 10000 Hopper
 
+STR_NAME_TA_1			:TA 1 Tanker
+STR_NAME_TASA_500		:TASA 500 / Fua 27000 Tanker
+STR_NAME_TAMU_500		:TAMU 500 Tanker
+STR_NAME_TAKI_100		:TAKI 100 Oil Tanker
 STR_NAME_TAKI_3000		:TAKI 3000 Tanker
-STR_NAME_TAKI_1000		:TAKI 1000 Tanker
+STR_NAME_TAKI_5700		:TAKI 5700 Gas Tanker
+STR_NAME_TAKI_5450		:TAKI 5450 Chemical Tanker
+STR_NAME_TAKI_9900		:TAKI 9900 Fuel Tanker
+STR_NAME_TAKI_50000		:TAKI 50000 Oil Tanker
+STR_NAME_TAKI_64000		:TAKI 64000	Oil Tanker
+STR_NAME_TAKI_35000		:TAKI 35000 Tanker
 STR_NAME_TAKI_43000		:TAKI 43000 Tanker
+STR_NAME_TAKI_1000		:TAKI 1000 Tanker
+
 
 
 STR_NAME_YO_5000		:YO 5000 Brake Van

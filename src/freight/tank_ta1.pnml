@@ -1,0 +1,94 @@
+spriteset(spriteset_ta_1_a, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ta_1_b, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ta_1_c, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ta_1_overlay_blank, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ta_1_overlay_a, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ta_1_overlay_b, "gfx/freight/ta_1.png") {
+	template_2cc_std(1, 96)
+}
+
+//purchase
+spriteset(spriteset_ta_1_purchase, "gfx/freight/ta_1.png") {
+	template_purchase(1, 448)
+}
+
+//overlays
+
+alternative_sprites(spriteset_ta_1_overlay_blank, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_ta_1_overlay_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_ta_1_overlay_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+	template_2cc_std(1, 64)
+}
+
+//randoms
+random_switch(FEAT_TRAINS, SELF, random_ta_1_livery) {
+	1: spriteset_ta_1_a;
+	1: spriteset_ta_1_b;
+	1: spriteset_ta_1_c;
+}
+
+//wear overlay
+random_switch(FEAT_TRAINS, SELF, random_ta_1_wear) {
+	1: spriteset_ta_1_overlay_a;
+	1: spriteset_ta_1_overlay_b;
+	1: spriteset_ta_1_overlay_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_ta_1_livery;
+    1:  random_ta_1_wear;
+}
+
+item (FEAT_TRAINS, ta_1, 1480) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TA_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 15; 
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 50;
+		weight: 8;
+		cost_factor: 3;
+		running_cost_factor: 2;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+//		cargo_capacity: return 0;
+		default: switch_ta_1_wearstack;
+		purchase: spriteset_ta_1_purchase;
+//		cargo_subtype_text: switch_taki_1000_subtype_text;
+		
+	}
+}

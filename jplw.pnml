@@ -118,6 +118,8 @@
 #include "src/freight/reef_remu5000.pnml"
 #include "src/freight/reef_resa10000.pnml"
 
+#include "src/freight/tank_ta1.pnml"
+#include "src/freight/tank_tasa500.pnml"
 #include "src/freight/tank_taki1000.pnml"
 
 #include "src/freight/brake_yo5000.pnml"

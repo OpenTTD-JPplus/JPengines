@@ -98,6 +98,14 @@ spriteset(spriteset_taki_43000_jrf_purchase, "gfx/freight/taki_1000.png") {
 	template_purchase(89, 448)
 }
 
+alternative_sprites(spriteset_taki_1000_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_1000.png") {
+	template_purchase(89, 480)
+}
+
+alternative_sprites(spriteset_taki_43000_jrf_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_1000.png") {
+	template_purchase(89, 448)
+}
+
 //randoms
 random_switch(FEAT_TRAINS, SELF, random_taki_1000_green) {
 	1: spriteset_taki_1000_green_a;
@@ -117,9 +125,9 @@ random_switch(FEAT_TRAINS, SELF, random_taki_1000_black) {
 
 
 random_switch(FEAT_TRAINS, SELF, random_taki_1000) {
-	1: spriteset_taki_1000_green_a;
-	1: spriteset_taki_1000_green_b;
-	1: spriteset_taki_1000_blue_a;
+	2: spriteset_taki_1000_green_a;
+	2: spriteset_taki_1000_green_b;
+	3: spriteset_taki_1000_blue_a;
 	1: spriteset_taki_1000_blue_b;
 	1: spriteset_taki_1000_blue_c;
 }
@@ -199,8 +207,8 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_purchase, current_year) {
 random_switch(FEAT_TRAINS, SELF, random_taki_43000) {
 	1: spriteset_taki_1000_green_a;
 	1: spriteset_taki_1000_green_b;
-	1: spriteset_taki_1000_blue_a;
-	1: spriteset_taki_1000_silver;
+	2: spriteset_taki_1000_blue_a;
+	2: spriteset_taki_1000_silver;
 	1: spriteset_taki_1000_black_a;
 	1: spriteset_taki_1000_black_b;	
 }

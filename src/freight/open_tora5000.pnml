@@ -319,6 +319,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	SASH: random_tora_5000_covered;
 	FRUT: random_tora_5000_covered;
 	FRVG: random_tora_5000_covered;
+	TATO: random_tora_5000_covered;
 	
 	random_tora_5000_rods;
 }

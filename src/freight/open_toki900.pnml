@@ -308,6 +308,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	SASH: random_toki_900_covered;
 	FRUT: random_toki_900_covered;
 	FRVG: random_toki_900_covered;
+	TATO: random_toki_900_covered;
 	
 	random_toki_900_rods;
 }

@@ -176,6 +176,7 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	SASH: random_to_1_covered;
 	FRUT: random_to_1_covered;
 	FRVG: random_to_1_covered;
+	TATO: random_to_1_covered;
 	
 	FICR: spritegroup_to_1_a_crates;
 	

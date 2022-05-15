@@ -267,6 +267,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	SASH: random_toki_25000_bulk_tarp;
 	FRUT: random_toki_25000_bulk_tarp;
 	FRVG: random_toki_25000_bulk_tarp;
+	TATO: random_toki_25000_bulk_tarp;
 	
 	spritegroup_toki_25000_rods;
 }
