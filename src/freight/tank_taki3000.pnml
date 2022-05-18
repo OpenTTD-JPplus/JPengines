@@ -1,0 +1,145 @@
+spriteset(spriteset_taki_3000_a, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taki_3000_b, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_taki_3000_c, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_taki_3000_d, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_taki_3000_e, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_taki_3000_f, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_taki_3000_g, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_taki_3000_h, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_taki_3000_i, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_taki_3000_j, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 288)
+}
+
+
+
+
+spriteset(spriteset_taki_3000_overlay_blank, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_taki_3000_overlay_a, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_taki_3000_overlay_b, "gfx/freight/taki_3000.png") {
+	template_2cc_std(1, 416)
+}
+
+//purchase
+spriteset(spriteset_taki_3000_jgr_purchase, "gfx/freight/taki_3000.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_taki_3000_jnr_purchase, "gfx/freight/taki_3000.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_taki_3000_jrf_purchase, "gfx/freight/taki_3000.png") {
+	template_purchase(89, 480)
+}
+//overlays
+
+alternative_sprites(spriteset_taki_3000_overlay_blank, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_taki_3000_overlay_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_overlay.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_taki_3000_overlay_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_overlay.png") {
+	template_2cc_std(1, 64)
+}
+
+//randoms
+random_switch(FEAT_TRAINS, SELF, random_taki_3000_livery) {
+	1: spriteset_taki_3000_a;
+	1: spriteset_taki_3000_b;
+	1: spriteset_taki_3000_d;
+	1: spriteset_taki_3000_e;
+	1: spriteset_taki_3000_f;
+	1: spriteset_taki_3000_g;
+	1: spriteset_taki_3000_h;
+	1: spriteset_taki_3000_i;
+	1: spriteset_taki_3000_j;
+	
+}
+
+//wear overlay
+random_switch(FEAT_TRAINS, SELF, random_taki_3000_wear) {
+	1: spriteset_taki_3000_overlay_a;
+	1: spriteset_taki_3000_overlay_b;
+	1: spriteset_taki_3000_overlay_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_taki_3000_wearstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_taki_3000_livery;
+    1:  random_taki_3000_wear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
+	0..1949: spriteset_taki_3000_jgr_purchase;
+	1949..1987: spriteset_taki_3000_jnr_purchase;
+	spriteset_taki_3000_jrf_purchase;
+	}
+
+item (FEAT_TRAINS, taki_3000, 1489) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TAKI_3000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1947,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 48; 
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 50;
+		weight: 20;
+		cost_factor: 7;
+		running_cost_factor: 2;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+//		cargo_capacity: return 0;
+		default: switch_taki_3000_wearstack;
+		purchase: switch_taki_3000_purchase;
+//		cargo_subtype_text: switch_taki_1000_subtype_text;
+		
+	}
+}

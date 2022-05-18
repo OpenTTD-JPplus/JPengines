@@ -1,0 +1,149 @@
+spriteset(spriteset_taki_25000_silver_a, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taki_25000_silver_b, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_taki_25000_white_a, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_taki_25000_white_b, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_tasa_5700_silver_a, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_tasa_5700_silver_b, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_tasa_5700_white_a, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_tasa_5700_white_b, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 224)
+}
+
+//overlay dummies
+spriteset(spriteset_tasa_5700_overlay_blank, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_tasa_5700_overlay_a, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_tasa_5700_overlay_b, "gfx/freight/tasa_5700.png") {
+	template_2cc_std(1, 416)
+}
+
+//overlays
+alternative_sprites(spriteset_tasa_5700_overlay_blank, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_overlay.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_tasa_5700_overlay_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_overlay.png") {
+	template_2cc_std(1, 160)
+}
+
+alternative_sprites(spriteset_tasa_5700_overlay_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/taki_overlay.png") {
+	template_2cc_std(1, 192)
+}
+
+//purchase
+
+spriteset(spriteset_tasa_5700_jnr_purchase, "gfx/freight/tasa_5700.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_tasa_5700_jrf_purchase, "gfx/freight/tasa_5700.png") {
+	template_purchase(89, 480)
+}
+
+
+
+//forward
+
+random_switch(FEAT_TRAINS, SELF, random_tasa_5700_all_livery) {
+	2: spriteset_tasa_5700_white_a;
+	2: spriteset_tasa_5700_white_b;
+	6: spriteset_tasa_5700_silver_a;
+	6: spriteset_tasa_5700_silver_b;
+	1: spriteset_taki_25000_white_a;
+	1: spriteset_taki_25000_white_b;
+	2: spriteset_taki_25000_silver_a;
+	2: spriteset_taki_25000_silver_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_tasa_5700_white_livery) {
+	2: spriteset_tasa_5700_white_a;
+	2: spriteset_tasa_5700_white_b;
+	1: spriteset_taki_25000_white_a;
+	1: spriteset_taki_25000_white_b;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_tasa_5700_silver_livery) {
+	2: spriteset_tasa_5700_silver_a;
+	2: spriteset_tasa_5700_silver_b;
+	1: spriteset_taki_25000_silver_a;
+	1: spriteset_taki_25000_silver_b;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_livery, cargo_subtype) {
+	1: random_tasa_5700_white_livery;
+	2: random_tasa_5700_silver_livery;
+	random_tasa_5700_all_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_REFIT_FWHITE);
+	2: return string(STR_REFIT_FSILVER);
+	   return CB_RESULT_NO_TEXT;
+}
+
+//wear overlay
+random_switch(FEAT_TRAINS, SELF, random_tasa_5700_wear) {
+	1: spriteset_tasa_5700_overlay_a;
+	1: spriteset_tasa_5700_overlay_b;
+	1: spriteset_tasa_5700_overlay_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_wearstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_tasa_5700_livery;
+    1:  random_tasa_5700_wear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_purchase, current_year) {
+	0..1987: spriteset_tasa_5700_jnr_purchase;
+	spriteset_tasa_5700_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, tasa_5700, 45) {
+property {
+		name: string(STR_NAME_TASA_5700);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
+		introduction_date: date(1963,1,1);
+		speed: 85 km/h;
+	}
+	graphics {
+		cargo_capacity: return 50;
+		default: switch_tasa_5700_wearstack;
+		purchase: switch_tasa_5700_purchase;
+		cargo_subtype_text: switch_tasa_5700_subtype_text;
+		
+	}
+}

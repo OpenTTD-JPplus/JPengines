@@ -120,7 +120,11 @@
 
 #include "src/freight/tank_ta1.pnml"
 #include "src/freight/tank_tasa500.pnml"
+#include "src/freight/tank_tasa5700.pnml"
+#include "src/freight/tank_tamu500.pnml"
 #include "src/freight/tank_taki1000.pnml"
+#include "src/freight/tank_taki3000.pnml"
+#include "src/freight/tank_taki5450.pnml"
 
 #include "src/freight/brake_yo5000.pnml"
 #include "src/freight/brake_yo8000.pnml"
