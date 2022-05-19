@@ -478,6 +478,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	METL: return recolour_piece ;
 	COPR: return recolour_piece +4;
 	ZINC: return recolour_piece +5;
+	NICK: return recolour_piece +6;
 	ENSP: return recolour_piece +5;
 	FMSP: return recolour_piece +6;
 	MNSP: return recolour_piece +1;
@@ -540,7 +541,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
     AORE: return recolour_bulk +5;
 
 	CORE: return recolour_bulk +6;
-	NICK: return recolour_bulk +6;
+	NKOR: return recolour_bulk +6;
 
     FERT: return recolour_bulk +7;
 	MNO2: return recolour_bulk +7;

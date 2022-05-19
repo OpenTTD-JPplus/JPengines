@@ -20,3 +20,11 @@ property {
 
 
 
+//fix string bug in JP trains
+
+item (FEAT_TRAINS, jgr_7050, 0x87) {
+
+property {
+		name: string(STR_NAME_JGR_7050);
+	}
+}
