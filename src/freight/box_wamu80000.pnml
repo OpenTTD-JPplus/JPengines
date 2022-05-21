@@ -231,19 +231,19 @@ spriteset(spriteset_wamu_480000_jrf_purchase, "gfx/freight/wamu_80000.png") {
 }
 
 spriteset(spriteset_wamu_480000_empty, "gfx/freight/wamu_80000.png") {
-	template_2cc_std(180, 224)
+	template_2cc_anim(180, 224)
 }
 
 spriteset(spriteset_wamu_480000_half, "gfx/freight/wamu_80000.png") {
-	template_2cc_std(180, 256)
+	template_2cc_anim(180, 256)
 }
 
 spriteset(spriteset_wamu_480000_full, "gfx/freight/wamu_80000.png") {
-	template_2cc_std(180, 288)
+	template_2cc_anim(180, 288)
 }
 
 spriteset(spriteset_wamu_480000_tarp, "gfx/freight/wamu_80000.png") {
-	template_2cc_std(180, 320)
+	template_2cc_anim(180, 320)
 }
 
 

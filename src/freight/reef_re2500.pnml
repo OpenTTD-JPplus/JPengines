@@ -1,0 +1,57 @@
+spriteset(spriteset_re_2500_1, "gfx/freight/re_2500.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_re_2500_2, "gfx/freight/re_2500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_re_2500_3, "gfx/freight/re_2500.png") {
+	template_2cc_std(1, 64)
+}
+
+
+
+spriteset(spriteset_re_2500_purchase, "gfx/freight/re_2500.png") {
+	template_purchase(1, 192)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_re_2500) {
+ 1: spriteset_re_2500_1;
+ 1: spriteset_re_2500_2;
+ 1: spriteset_re_2500_3;
+}
+
+
+
+item (FEAT_TRAINS, re_2500, 1455) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_RE_2500);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);
+		speed: 74.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30; 
+		refit_cost: 0;
+		default_cargo_type: FOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+		weight: 10;
+		cost_factor: 5;
+		running_cost_factor: 4;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 30;
+		default: random_re_2500;
+		purchase: spriteset_re_2500_purchase;
+		
+	}
+}

@@ -1,25 +1,25 @@
 spriteset(spriteset_pax_24_sleeper, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 1)
+	template_2cc_anim(1, 1)
 }
 
 spriteset(spriteset_pax_24_standard, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 32)
+	template_2cc_anim(1, 32)
 }
 
 spriteset(spriteset_pax_24_front, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 64)
+	template_2cc_anim(1, 64)
 }
 
 spriteset(spriteset_pax_24_front_generator, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 96)
+	template_2cc_anim(1, 96)
 }
 
 spriteset(spriteset_pax_24_rear, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 128)
+	template_2cc_anim(1, 128)
 }
 
 spriteset(spriteset_pax_24_rear_generator, "gfx/paxmail/24series.png") {
-	template_2cc_std(1, 160)
+	template_2cc_anim(1, 160)
 }
 
 

@@ -139,8 +139,21 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_auto_beginning, position_in_vehid_
 	0: random_pax_1880_jgr_auto_beginning;
 	switch_pax_1880_jgr_auto_end;
 	}
+	
+random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_clerestory_auto_middle) {
+	3: spriteset_pax_1880_jgr_3rd_clerestory;
+	1: spriteset_pax_1880_jgr_2nd_clerestory;
+}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_clerestory_auto_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_1880_jgr_3rdclass_end;
+	random_pax_1880_jgr_clerestory_auto_middle;
+	}
 
-
+switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_clerestory_auto_beginning, position_in_vehid_chain) {
+	0: random_pax_1880_jgr_auto_beginning;
+	switch_pax_1880_jgr_clerestory_auto_end;
+	}
 
 
 
@@ -149,7 +162,8 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_auto_beginning, position_in_vehid_
 
 switch(FEAT_TRAINS, SELF, switch_pax_1880_yeardep, build_year) {
 	0..1906: switch_pax_1880_hcc_auto_end;
-	switch_pax_1880_jgr_auto_beginning;
+	1906..1910: switch_pax_1880_jgr_auto_beginning;
+	switch_pax_1880_jgr_clerestory_auto_beginning;
 	}
 
 
@@ -293,7 +307,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 //		cost_factor: 18;
 //		running_cost_factor: 11;
 		length: 5;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		cargo_capacity: return 50;

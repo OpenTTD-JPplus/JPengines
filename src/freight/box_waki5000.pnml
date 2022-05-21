@@ -21,14 +21,19 @@ spriteset(spriteset_waki_5000_black, "gfx/freight/waki_5000.png") {
 }
 
 
+//purchase
+spriteset(spriteset_waki_5000_jnr_purchase, "gfx/freight/waki_5000.png") {
+	template_purchase(1, 384)
+}
 
-
-
-spriteset(spriteset_waki_5000_purchase, "gfx/freight/waki_5000.png") {
+spriteset(spriteset_waki_5000_jrf_purchase, "gfx/freight/waki_5000.png") {
 	template_purchase(89, 384)
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_waki_5000_yeardep_purchase, current_year) {
+	0..1987: spriteset_waki_5000_jnr_purchase;
+	spriteset_waki_5000_jrf_purchase;
+}
 
 
 random_switch (FEAT_TRAINS, SELF, random_waki_5000) {
@@ -86,7 +91,7 @@ property {
 graphics {
 	cargo_capacity: return 80;
 	default: switch_waki_5000_loadstack;
-	purchase: spriteset_waki_5000_purchase;
+	purchase: switch_waki_5000_yeardep_purchase;
 	cargo_subtype_text: switch_waki_5000_subtype_text;
 	}
 }

@@ -115,6 +115,7 @@
 #include "src/freight/open_toki25000.pnml"
 
 #include "src/freight/reef_re1.pnml"
+#include "src/freight/reef_re2500.pnml"
 #include "src/freight/reef_remu5000.pnml"
 #include "src/freight/reef_resa10000.pnml"
 

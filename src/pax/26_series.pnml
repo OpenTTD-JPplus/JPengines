@@ -57,7 +57,7 @@ item (FEAT_TRAINS, pax_26_series, 1346) {
 		cost_factor: 20;
 		running_cost_factor: 15;
 		length: 8;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 //		cargo_capacity: return 100;

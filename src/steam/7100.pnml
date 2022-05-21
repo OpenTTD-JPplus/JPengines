@@ -5,27 +5,28 @@ spriteset(spriteset_jgr_7100_hcc_front, "gfx/steam/jgr_7100.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_jgr_7100_hcc_rear, "gfx/steam/jgr_7100.png") {
-	template_2cc_std(1, 96)
-}
-
 spriteset(spriteset_jgr_7100_black_front, "gfx/steam/jgr_7100.png") {
 	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_jgr_7100_cc_front, "gfx/steam/jgr_7100.png") {
+	template_2cc_std(1, 64)
+}
+
+
+spriteset(spriteset_jgr_7100_hcc_rear, "gfx/steam/jgr_7100.png") {
+	template_2cc_std(1, 96)
 }
 
 spriteset(spriteset_jgr_7100_black_rear, "gfx/steam/jgr_7100.png") {
 	template_2cc_std(1, 128)
 }
 
-//add cc
-spriteset(spriteset_jgr_7100_cc_front, "gfx/steam/jgr_7100.png") {
-	template_2cc_std(1, 64)
-}
-
 spriteset(spriteset_jgr_7100_cc_rear, "gfx/steam/jgr_7100.png") {
 	template_2cc_std(1, 160)
 }
 
+//purchase
 
 spriteset(spriteset_jgr_7100_hcc_purchase, "gfx/steam/jgr_7100.png") {
 	template_purchase(1, 192)
@@ -68,12 +69,11 @@ switch(FEAT_TRAINS, SELF, switch_jgr_7100_livery_rear, cargo_subtype) {
 
 
 
-
-
 switch(FEAT_TRAINS, SELF, switch_jgr_7100_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_HCC);
-	1: return string(STR_REFIT_JGR_BLACK);
-	2: return string(STR_REFIT_CC);
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_HCC);
+	2: return string(STR_REFIT_JGR_BLACK);
+	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 

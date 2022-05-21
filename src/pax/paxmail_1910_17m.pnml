@@ -324,7 +324,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 //		cost_factor: 18;
 //		running_cost_factor: 11;
 		length: 7;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		cargo_capacity: return 75;

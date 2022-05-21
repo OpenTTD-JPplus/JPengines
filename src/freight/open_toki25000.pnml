@@ -120,17 +120,17 @@ spritegroup spritegroup_toki_25000_bulk {
 
 spritegroup spritegroup_toki_25000_bulk_tarp_brown {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_tarp_brown];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_brown];
 }
 
 spritegroup spritegroup_toki_25000_bulk_tarp_green {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_tarp_green];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_green];
 }
 
 spritegroup spritegroup_toki_25000_bulk_tarp_grey {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_tarp_grey];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_grey];
 }
 
 
@@ -141,17 +141,17 @@ spritegroup spritegroup_toki_25000_rods {
 
 spritegroup spritegroup_toki_25000_rods_tarp_brown {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_tarp_brown];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_brown];
 }
 
 spritegroup spritegroup_toki_25000_rods_tarp_green {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_tarp_green];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_green];
 }
 
 spritegroup spritegroup_toki_25000_rods_tarp_grey {
     loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_tarp_grey];
+    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_grey];
 }
 
 

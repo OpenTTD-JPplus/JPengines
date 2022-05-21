@@ -519,6 +519,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	SEED: return recolour_bulk +9;
     FERT: return recolour_bulk +7;
 	SASH: return recolour_bulk +10;
+	TATO: return recolour_bulk +16;
 	
     FRUT: return recolour_bulk +14;
     FRVG: return recolour_bulk +14;
