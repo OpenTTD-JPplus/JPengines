@@ -129,8 +129,10 @@ sort(FEAT_TRAINS, [
 
 //wagons pax/mail
 1300, 1322, 1320, 1540, 1340, 1341, 1346, 1347, 1668, 1360, 1370, 1380, 1390, 1395, 
-//wagons box/cont
-32, 1282, 1435, 1445, 1450, 51, 53, 1288, 1281, 1455, 1456, 1286, 1460, 1412, 1413, 39, 1400, 1405, 1407, 44, 43, 
+//wagons box/reef
+32, 1282, 1435, 1445, 1450, 51, 53, 1288, 1281, 1455, 1456, 1286, 1460, 
+//wagons cont/car
+1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 39, 1400, 44, 43, 
 //wagons hoppers/open
 1439, 1440, 1441, 1442, 1443, 1444, 1285, 42, 1291, 1290, 52, 1410, 1411, 1280, 1462, 
 //wagosn open
@@ -194,6 +196,59 @@ template template_2cc_anim(x, y) {
     [x+120, y, 32, 16, -16, -12, ANIM]
     [x+153, y, 22, 20,  -6, -12, ANIM]
 }
+
+//container templates
+template template_container_1(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
+template template_container_2(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,   -8] //+0 +4
+    [x+9  , y, 22, 20, -18,  -10] //-4 +2
+    [x+32 , y, 32, 16, -23,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -10, -14] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -16] //+0 -4
+    [x+97 , y, 22, 20, -10,  -14] //+4 -2
+    [x+120, y, 32, 16, -9,   -12] //+7 +0
+    [x+153, y, 22, 20,  -2,  -10] //+4 +2
+}
+
+template template_container_3(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,   -4] //+0 +4
+    [x+9  , y, 22, 20, -22,   -8] //-4 +2
+    [x+32 , y, 32, 16, -30,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -14, -16] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -20] //+0 -4
+    [x+97 , y, 22, 20,  -6,  -16] //+4 -2
+    [x+120, y, 32, 16, -2,   -12] //+7 +0
+    [x+153, y, 22, 20,   2,  -8] //+4 +2
+}
+
+template template_container_4(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,    0] //+0 +4
+    [x+9  , y, 22, 20, -26,   -6] //-4 +2
+    [x+32 , y, 32, 16, -37,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -18, -18] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -24] //+0 -4
+    [x+97 , y, 22, 20,  -2,  -18] //+4 -2
+    [x+120, y, 32, 16,  5,   -12] //+7 +0
+    [x+153, y, 22, 20,   6,  -6] //+4 +2
+}
+
+
+
+
 
 //Purchase templates
 //Engines
@@ -824,6 +879,7 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
 	switch_piece_recolour;
 	
 }
+
 
 //7100
 	
@@ -5465,6 +5521,7 @@ property {
   }
 }
 
+
 spriteset(spriteset_pax_1880_hcc_clerestory, "gfx/paxmail/paxmail-1880.png") {
 	template_2cc_std(1, 1)
 }
@@ -8050,7 +8107,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_80000_green) {
 	3: spriteset_wamu_80000_green2;
 }
 
-
+/*
 random_switch (FEAT_TRAINS, BACKWARD_SELF(1), random_wamu_80000_roof) {
 	13: spriteset_wamu_80000_blank;
 	1: spriteset_wamu_80000_roof1;
@@ -8059,6 +8116,21 @@ random_switch (FEAT_TRAINS, BACKWARD_SELF(1), random_wamu_80000_roof) {
 }
 
 random_switch (FEAT_TRAINS, FORWARD_SELF(1), random_wamu_80000_stripe) {
+	1: spriteset_wamu_80000_stripe1;
+	1: spriteset_wamu_80000_stripe2;
+	14: spriteset_wamu_80000_blank;
+}
+*/
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_80000_roof) {
+	13: spriteset_wamu_80000_blank;
+	1: spriteset_wamu_80000_roof1;
+	2: spriteset_wamu_80000_roof2;
+
+}
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_80000_stripe) {
+	independent: random_wamu_80000_roof;
 	1: spriteset_wamu_80000_stripe1;
 	1: spriteset_wamu_80000_stripe2;
 	14: spriteset_wamu_80000_blank;
@@ -11579,6 +11651,199 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
+spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_test.png") {
+	template_purchase(1, 352)
+}
+
+//base
+spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_test.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_50000_empty_b, "gfx/freight/koki_test.png") {
+	template_2cc_std(1, 32)
+}
+
+//handrail
+
+spriteset(spriteset_koki_50000_handrail, "gfx/freight/koki_test.png") {
+	template_2cc_std(1, 320)
+}
+
+
+//conts
+
+spriteset(spriteset_koki_conts_1_a, "gfx/freight/koki_test.png") {
+	template_container_1(1, 64)
+}
+
+spriteset(spriteset_koki_conts_2_a, "gfx/freight/koki_test.png") {
+	template_container_2(1, 64)
+}
+
+spriteset(spriteset_koki_conts_3_a, "gfx/freight/koki_test.png") {
+	template_container_3(1, 64)
+}
+
+spriteset(spriteset_koki_conts_4_a, "gfx/freight/koki_test.png") {
+	template_container_4(1, 64)
+}
+
+
+spriteset(spriteset_koki_conts_1_b, "gfx/freight/koki_test.png") {
+	template_container_1(1, 128)
+}
+
+spriteset(spriteset_koki_conts_2_b, "gfx/freight/koki_test.png") {
+	template_container_2(1, 128)
+}
+
+spriteset(spriteset_koki_conts_3_b, "gfx/freight/koki_test.png") {
+	template_container_3(1, 128)
+}
+
+spriteset(spriteset_koki_conts_4_b, "gfx/freight/koki_test.png") {
+	template_container_4(1, 128)
+}
+
+spriteset(spriteset_koki_conts_1_c, "gfx/freight/koki_test.png") {
+	template_container_1(1, 160)
+}
+
+spriteset(spriteset_koki_conts_2_c, "gfx/freight/koki_test.png") {
+	template_container_2(1, 160)
+}
+
+spriteset(spriteset_koki_conts_3_c, "gfx/freight/koki_test.png") {
+	template_container_3(1, 160)
+}
+
+spriteset(spriteset_koki_conts_4_c, "gfx/freight/koki_test.png") {
+	template_container_4(1, 160)
+}
+
+spriteset(spriteset_koki_conts_1_d, "gfx/freight/koki_test.png") {
+	template_container_1(1, 96)
+}
+
+spriteset(spriteset_koki_conts_2_d, "gfx/freight/koki_test.png") {
+	template_container_2(1, 96)
+}
+
+spriteset(spriteset_koki_conts_3_d, "gfx/freight/koki_test.png") {
+	template_container_3(1, 96)
+}
+
+spriteset(spriteset_koki_conts_4_d, "gfx/freight/koki_test.png") {
+	template_container_4(1, 96)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
+	2: spriteset_koki_50000_empty_a;
+	1: spriteset_koki_50000_empty_b;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_1) {
+	1: spriteset_koki_conts_1_a;
+	1: spriteset_koki_conts_1_b;
+	1: spriteset_koki_conts_1_c;
+	1: spriteset_koki_conts_1_d;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_2) {
+	independent: random_koki_50000_conts_1;
+	1: spriteset_koki_conts_2_a;
+	1: spriteset_koki_conts_2_b;
+	1: spriteset_koki_conts_2_c;
+	1: spriteset_koki_conts_2_d;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_3) {
+	independent: random_koki_50000_conts_2;
+	independent: random_koki_50000_conts_1;
+	1: spriteset_koki_conts_3_a;
+	1: spriteset_koki_conts_3_b;
+	1: spriteset_koki_conts_3_c;
+	1: spriteset_koki_conts_3_d;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_4) {
+	independent: random_koki_50000_conts_3;
+	independent: random_koki_50000_conts_2;
+	independent: random_koki_50000_conts_1;
+	1: spriteset_koki_conts_4_a;
+	1: spriteset_koki_conts_4_b;
+	1: spriteset_koki_conts_4_c;
+	1: spriteset_koki_conts_4_d;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_koki_50000_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_50000_brown;
+    1:  random_koki_50000_conts_1;
+	2:	random_koki_50000_conts_2;
+	3:	random_koki_50000_conts_3;
+	4:	random_koki_50000_conts_4;
+	5:  spriteset_koki_50000_handrail;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_50000_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_50000_brown;
+    1:  random_koki_50000_conts_4;
+	2:	random_koki_50000_conts_3;
+	3:	random_koki_50000_conts_2;
+	4:	random_koki_50000_conts_1;
+	5:  spriteset_koki_50000_handrail;
+}
+
+switch(FEAT_TRAINS, SELF, switch_koki_50000_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_koki_50000_down_loadstack;
+	DIRECTION_SOUTH: switch_koki_50000_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_koki_50000_down_loadstack;
+	switch_koki_50000_up_loadstack;
+}
+
+
+item (FEAT_TRAINS, koki_50000, 1414) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_50000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 9;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 70;
+		default: switch_koki_50000_direction;
+		purchase: spriteset_koki_50000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
 spriteset(spriteset_koki_purchase, "gfx/cont_red.png") {
 	template_purchase(1, 352)
 }
@@ -13102,6 +13367,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
 	}
 }
+
 
 spriteset(spriteset_to_1_a_empty, "gfx/freight/to_1.png") {
 	template_2cc_std(1, 1)
@@ -14857,6 +15123,7 @@ graphics {
 	}
 }
 
+
 spriteset(spriteset_re_1_grey_closed, "gfx/freight/re_1.png") {
 	template_2cc_std(1, 1)
 }
@@ -15121,6 +15388,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		
 	}
 }
+
 
 spriteset(spriteset_ta_1_a, "gfx/freight/ta_1.png") {
 	template_2cc_std(1, 1)
@@ -16312,6 +16580,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		
 	}
 }
+
 
 spriteset(spriteset_yo_5000_black, "gfx/yo_5000.png") {
 	template_2cc_std(1, 1)

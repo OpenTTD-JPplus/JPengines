@@ -7,6 +7,7 @@
 #include "src/template.pnml"
 #include "src/recolour.pnml"
 
+
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
 #include "src/steam/860.pnml"
@@ -54,6 +55,7 @@
 #include "src/diesel/df200.pnml"
 #include "src/diesel/hd300.pnml"
 
+
 #include "src/pax/paxmail_1880.pnml"
 #include "src/pax/paxmail_1910_17m.pnml"
 
@@ -99,6 +101,7 @@
 #include "src/freight/cont_dmt.pnml"
 #include "src/freight/cont_koki5500.pnml"
 #include "src/freight/cont_koki10000.pnml"
+#include "src/freight/cont_koki50000.pnml"
 #include "src/freight/cont_old.pnml"
 
 #include "src/freight/flat_coilcarrier.pnml"
@@ -107,6 +110,7 @@
 #include "src/freight/heavy_torpedo.pnml"
 #include "src/freight/heavy_carrier.pnml"
 
+
 #include "src/freight/open_to1.pnml"
 #include "src/freight/open_toki900.pnml"
 #include "src/freight/open_tomu1.pnml"
@@ -114,10 +118,12 @@
 #include "src/freight/open_tora90000.pnml"
 #include "src/freight/open_toki25000.pnml"
 
+
 #include "src/freight/reef_re1.pnml"
 #include "src/freight/reef_re2500.pnml"
 #include "src/freight/reef_remu5000.pnml"
 #include "src/freight/reef_resa10000.pnml"
+
 
 #include "src/freight/tank_ta1.pnml"
 #include "src/freight/tank_tasa500.pnml"
@@ -126,6 +132,7 @@
 #include "src/freight/tank_taki1000.pnml"
 #include "src/freight/tank_taki3000.pnml"
 #include "src/freight/tank_taki5450.pnml"
+
 
 #include "src/freight/brake_yo5000.pnml"
 #include "src/freight/brake_yo8000.pnml"

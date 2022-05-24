@@ -49,6 +49,59 @@ template template_2cc_anim(x, y) {
     [x+153, y, 22, 20,  -6, -12, ANIM]
 }
 
+//container templates
+template template_container_1(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 20, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 20,  -6, -12]
+    [x+88 , y,  8, 24,  -3, -12]
+    [x+97 , y, 22, 20, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 20,  -6, -12]
+}
+
+template template_container_2(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,   -8] //+0 +4
+    [x+9  , y, 22, 20, -18,  -10] //-4 +2
+    [x+32 , y, 32, 16, -23,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -10, -14] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -16] //+0 -4
+    [x+97 , y, 22, 20, -10,  -14] //+4 -2
+    [x+120, y, 32, 16, -9,   -12] //+7 +0
+    [x+153, y, 22, 20,  -2,  -10] //+4 +2
+}
+
+template template_container_3(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,   -4] //+0 +4
+    [x+9  , y, 22, 20, -22,   -8] //-4 +2
+    [x+32 , y, 32, 16, -30,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -14, -16] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -20] //+0 -4
+    [x+97 , y, 22, 20,  -6,  -16] //+4 -2
+    [x+120, y, 32, 16, -2,   -12] //+7 +0
+    [x+153, y, 22, 20,   2,  -8] //+4 +2
+}
+
+template template_container_4(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3,    0] //+0 +4
+    [x+9  , y, 22, 20, -26,   -6] //-4 +2
+    [x+32 , y, 32, 16, -37,  -12] //-7 +0
+    [x+65 , y, 22, 20,  -18, -18] //-4 -2
+    [x+88 , y,  8, 24,  -3,  -24] //+0 -4
+    [x+97 , y, 22, 20,  -2,  -18] //+4 -2
+    [x+120, y, 32, 16,  5,   -12] //+7 +0
+    [x+153, y, 22, 20,   6,  -6] //+4 +2
+}
+
+
+
+
+
 //Purchase templates
 //Engines
 template template_purchase(x, y) {
