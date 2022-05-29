@@ -137,7 +137,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_80000_green) {
 
 
 random_switch (FEAT_TRAINS, SELF, random_wamu_80000_roof) {
-	independent: random_wamu_80000_all;
+//	independent: random_wamu_80000_all;
 	13: spriteset_wamu_80000_blank;
 	1: spriteset_wamu_80000_roof1;
 	2: spriteset_wamu_80000_roof2;
@@ -146,7 +146,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_80000_roof) {
 
 random_switch (FEAT_TRAINS, SELF, random_wamu_80000_stripe) {
 	independent: random_wamu_80000_roof;
-	independent: random_wamu_80000_all;
+//	independent: random_wamu_80000_all;
 	1: spriteset_wamu_80000_stripe1;
 	1: spriteset_wamu_80000_stripe2;
 	14: spriteset_wamu_80000_blank;

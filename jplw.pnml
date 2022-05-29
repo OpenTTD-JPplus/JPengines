@@ -98,6 +98,11 @@
 #include "src/freight/cars_koki71.pnml"
 #include "src/freight/cars_ku5000.pnml"
 
+#include "src/freight/cont_4.pnml"
+#include "src/freight/cont_3.pnml"
+#include "src/freight/cont_2.pnml"
+#include "src/freight/cont_1.pnml"
+
 #include "src/freight/cont_dmt.pnml"
 #include "src/freight/cont_koki5500.pnml"
 #include "src/freight/cont_koki10000.pnml"

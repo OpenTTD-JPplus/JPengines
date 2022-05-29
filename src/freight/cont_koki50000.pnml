@@ -92,64 +92,63 @@ random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 }
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_1) {
+//	independent: random_koki_50000_conts_1;
 	1: spriteset_koki_conts_1_a;
-	1: spriteset_koki_conts_1_b;
-	1: spriteset_koki_conts_1_c;
 	1: spriteset_koki_conts_1_d;
+	1: spriteset_koki_conts_1_c;
+	1: spriteset_koki_conts_1_c;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_2) {
-	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_2_a;
+//	independent: random_koki_50000_conts_1;
 	1: spriteset_koki_conts_2_b;
-	1: spriteset_koki_conts_2_c;
+	1: spriteset_koki_conts_2_b;
+	1: spriteset_koki_conts_2_a;
 	1: spriteset_koki_conts_2_d;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_3) {
-	independent: random_koki_50000_conts_2;
-	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_3_a;
+//	independent: random_koki_50000_conts_2;
+//	independent: random_koki_50000_conts_1;
+	1: spriteset_koki_conts_3_c;
 	1: spriteset_koki_conts_3_b;
 	1: spriteset_koki_conts_3_c;
-	1: spriteset_koki_conts_3_d;
+	1: spriteset_koki_conts_3_b;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_4) {
-	independent: random_koki_50000_conts_3;
-	independent: random_koki_50000_conts_2;
-	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_4_a;
-	1: spriteset_koki_conts_4_b;
-	1: spriteset_koki_conts_4_c;
+//	independent: random_koki_50000_conts_3;
+//	independent: random_koki_50000_conts_2;
+//	independent: random_koki_50000_conts_1;
 	1: spriteset_koki_conts_4_d;
+	1: spriteset_koki_conts_4_b;
+	1: spriteset_koki_conts_4_a;
+	1: spriteset_koki_conts_4_a;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_koki_50000_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0:  random_koki_50000_brown;
     1:  random_koki_50000_conts_1;
 	2:	random_koki_50000_conts_2;
 	3:	random_koki_50000_conts_3;
 	4:	random_koki_50000_conts_4;
-	5:  spriteset_koki_50000_handrail;
 }
 
 switch(FEAT_TRAINS, SELF, switch_koki_50000_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0:  random_koki_50000_brown;
     1:  random_koki_50000_conts_4;
 	2:	random_koki_50000_conts_3;
 	3:	random_koki_50000_conts_2;
 	4:	random_koki_50000_conts_1;
-	5:  spriteset_koki_50000_handrail;
 }
+
+
 
 switch(FEAT_TRAINS, SELF, switch_koki_50000_direction, direction) {
 	DIRECTION_SOUTHEAST: switch_koki_50000_down_loadstack;
@@ -158,6 +157,17 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_direction, direction) {
 	switch_koki_50000_up_loadstack;
 }
 
+switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_50000_brown;
+    1:  switch_koki_50000_direction;
+	2:  switch_koki_50000_direction;
+	3:  switch_koki_50000_direction;
+	4:  switch_koki_50000_direction;
+	5:  spriteset_koki_50000_handrail;
+}
 
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
@@ -165,7 +175,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		track_type: NAAN;
 		name: string(STR_NAME_KOKI_50000);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1966,1,1);
+		introduction_date: date(1971,1,1);
 		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
@@ -186,7 +196,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 	}
 	graphics {
 		cargo_capacity: return 70;
-		default: switch_koki_50000_direction;
+		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}

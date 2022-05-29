@@ -1,0 +1,242 @@
+spriteset(spriteset_conts_jgr_reefer_a_1, "gfx/containers/jnr_reefer.png") { //old
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_a_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_a_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+}
+
+//b
+
+spriteset(spriteset_conts_jgr_reefer_b_1, "gfx/containers/jnr_reefer.png") { //old 
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_b_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_b_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+}
+
+//c
+
+spriteset(spriteset_conts_jgr_reefer_c_1, "gfx/containers/jnr_reefer.png") {
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_c_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_c_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+}
+
+//d
+
+spriteset(spriteset_conts_jgr_reefer_d_1, "gfx/containers/jnr_reefer.png") {
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_d_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_d_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+}
+
+//e
+
+spriteset(spriteset_conts_jgr_reefer_e_1, "gfx/containers/jnr_reefer.png") { //red
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_e_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_e_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+}
+
+//f
+
+spriteset(spriteset_conts_jgr_reefer_f_1, "gfx/containers/jnr_reefer.png") { //white
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_f_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_f_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+}
+
+//g
+
+spriteset(spriteset_conts_jgr_reefer_g_1, "gfx/containers/jnr_reefer.png") { //blue
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_g_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_g_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+}
+
+//h
+
+spriteset(spriteset_conts_jgr_reefer_h_1, "gfx/containers/jnr_reefer.png") { //vent
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_h_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_h_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+}
+
+//i
+
+spriteset(spriteset_conts_jgr_reefer_i_1, "gfx/containers/jnr_reefer.png") { //hopper
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_i_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_i_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+}
+
+
+//j
+
+spriteset(spriteset_conts_jgr_reefer_j_1, "gfx/containers/jnr_reefer.png") { //tank a
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_j_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_j_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+}
+
+//k
+
+spriteset(spriteset_conts_jgr_reefer_k_1, "gfx/containers/jnr_reefer.png") { //tank b
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jgr_reefer_k_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+}
+
+spritegroup spritegroup_conts_jgr_reefer_k_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+}
+
+
+//randoms for loading stages
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_a_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_a_1;
+    1: spritegroup_conts_jgr_reefer_a_1_h;
+	1: spritegroup_conts_jgr_reefer_a_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_b_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_b_1;
+    1: spritegroup_conts_jgr_reefer_b_1_h;
+	1: spritegroup_conts_jgr_reefer_b_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_c_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_c_1;
+    1: spritegroup_conts_jgr_reefer_c_1_h;
+	1: spritegroup_conts_jgr_reefer_c_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_d_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_d_1;
+    1: spritegroup_conts_jgr_reefer_d_1_h;
+	1: spritegroup_conts_jgr_reefer_d_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_e_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_e_1;
+    1: spritegroup_conts_jgr_reefer_e_1_h;
+	1: spritegroup_conts_jgr_reefer_e_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_f_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_f_1;
+    1: spritegroup_conts_jgr_reefer_f_1_h;
+	1: spritegroup_conts_jgr_reefer_f_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_g_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_g_1;
+    1: spritegroup_conts_jgr_reefer_g_1_h;
+	1: spritegroup_conts_jgr_reefer_g_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_h_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_h_1;
+    1: spritegroup_conts_jgr_reefer_h_1_h;
+	1: spritegroup_conts_jgr_reefer_h_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_i_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_i_1;
+    1: spritegroup_conts_jgr_reefer_i_1_h;
+	1: spritegroup_conts_jgr_reefer_i_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_j_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_j_1;
+    1: spritegroup_conts_jgr_reefer_j_1_h;
+	1: spritegroup_conts_jgr_reefer_j_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_k_1_loadstage) {
+	1: spriteset_conts_jgr_reefer_k_1;
+    1: spritegroup_conts_jgr_reefer_k_1_h;
+	1: spritegroup_conts_jgr_reefer_k_1_f;
+}
