@@ -59,6 +59,7 @@ STR_NAME_SEIBU_E31	:E31 (electric)
 STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
+STR_NAME_PAX_50_5000	:50-5000 Series Passenger Coach {GOLD}"Rapid Kaikyō"{BLACK}
 
 STR_NAME_PAX_26			:E26 Series Sleeper Coach {GOLD}"Cassiopeia"{BLACK}
 STR_NAME_PAX_77			:77-7000 Series Sleeper Coach {GOLD}"Seven Stars"{BLACK}
@@ -204,8 +205,10 @@ STR_NAME_TAKI_35000		:TAKI 35000 Tanker
 STR_NAME_TAKI_43000		:TAKI 43000 Tanker
 STR_NAME_TAKI_1000		:TAKI 1000 Tanker
 
+STR_NAME_CHISA_1		:CHISA 1 Flat Wagon
+STR_NAME_CHIKI_1500		:CHIKI 1500 Flat Wagon
 
-
+STR_NAME_YO_3000		:YO 3000 Brake Van
 STR_NAME_YO_5000		:YO 5000 Brake Van
 STR_NAME_YO_8000		:YO 8000 Brake Van
 

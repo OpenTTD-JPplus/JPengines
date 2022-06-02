@@ -501,6 +501,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	STAL: return recolour_piece +5;
 	TYRE: return recolour_piece +2;
 	STCB: return recolour_piece +2;
+	CSTI: return recolour_piece +7;
 	
 	TWOD: return recolour_piece +8;
 	SESP: return recolour_piece +5;

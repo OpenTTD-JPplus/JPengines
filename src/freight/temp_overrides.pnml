@@ -7,14 +7,7 @@ property {
 	}
 }
 
-item (FEAT_TRAINS, jp_chiki_flatcar, 41) {
 
-property {
-	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS); 
-	cargo_disallow_refit: [LVST, BOOM];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	}
-}
 
 //tankers
 

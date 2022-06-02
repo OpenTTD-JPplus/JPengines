@@ -62,6 +62,7 @@
 #include "src/pax/12_series.pnml"
 #include "src/pax/24_series.pnml"
 #include "src/pax/50_series.pnml"
+#include "src/pax/50_5000_series.pnml"
 
 #include "src/pax/26_series.pnml"
 #include "src/pax/7stars.pnml"
@@ -77,11 +78,16 @@
 #include "src/freight/box_ka1.pnml"
 #include "src/freight/box_wa1.pnml"
 #include "src/freight/box_wa50000.pnml"
+#include "src/freight/box_wamu80000.pnml"
 #include "src/freight/box_waki1.pnml"
 #include "src/freight/box_waki1000.pnml"
 #include "src/freight/box_waki5000.pnml"
 #include "src/freight/box_waki10000.pnml"
-#include "src/freight/box_wamu80000.pnml"
+
+#include "src/freight/reef_re1.pnml"
+#include "src/freight/reef_re2500.pnml"
+#include "src/freight/reef_remu5000.pnml"
+#include "src/freight/reef_resa10000.pnml"
 
 #include "src/freight/bulk_hoki650.pnml"
 #include "src/freight/bulk_hoki1000.pnml"
@@ -102,6 +108,7 @@
 #include "src/freight/cont_3.pnml"
 #include "src/freight/cont_2.pnml"
 #include "src/freight/cont_1.pnml"
+#include "src/freight/cont_main.pnml"
 
 #include "src/freight/cont_dmt.pnml"
 #include "src/freight/cont_koki5500.pnml"
@@ -110,6 +117,7 @@
 #include "src/freight/cont_old.pnml"
 
 #include "src/freight/flat_coilcarrier.pnml"
+#include "src/freight/flat_chiki1500.pnml"
 
 #include "src/freight/heavy_slagladle.pnml"
 #include "src/freight/heavy_torpedo.pnml"
@@ -122,12 +130,6 @@
 #include "src/freight/open_tora5000.pnml"
 #include "src/freight/open_tora90000.pnml"
 #include "src/freight/open_toki25000.pnml"
-
-
-#include "src/freight/reef_re1.pnml"
-#include "src/freight/reef_re2500.pnml"
-#include "src/freight/reef_remu5000.pnml"
-#include "src/freight/reef_resa10000.pnml"
 
 
 #include "src/freight/tank_ta1.pnml"
