@@ -446,6 +446,8 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 70;
 		default: switch_koki_5500_cargo_selection;
 		purchase: spriteset_koki_5500_purchase;

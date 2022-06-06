@@ -173,6 +173,8 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
 		cargo_capacity: return 42;
 		default: switch_coilcarrier_cargo_selection;
 		purchase: spriteset_coilcarrier_purchase;

@@ -142,5 +142,6 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 		default: switch_torpedo_front_yeardep;
 		purchase: switch_torpedo_purchase;
 		articulated_part: switch_torpedo_articulated_part;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }

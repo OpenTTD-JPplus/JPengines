@@ -5671,7 +5671,7 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		default: switch_yo_5000_livery;
 		purchase: switch_yo_5000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_5000_subtype_text;
-		
+		additional_text: string(STR_DESC_BRAKE);
 	}
 }
 spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
@@ -9213,7 +9213,7 @@ property {
 	introduction_date: date(1966,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_2200);
-	speed: 100 km/h;
+	speed: 85 km/h;
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
@@ -9222,6 +9222,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 58;
 	default: switch_hoki_2200_livery;
 	cargo_subtype_text: switch_hoki_2200_subtype_text;
@@ -14806,6 +14808,8 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 70;
 		default: switch_koki_5500_cargo_selection;
 		purchase: spriteset_koki_5500_purchase;
@@ -16787,6 +16791,8 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
 		cargo_capacity: return 42;
 		default: switch_coilcarrier_cargo_selection;
 		purchase: spriteset_coilcarrier_purchase;
@@ -17233,6 +17239,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_capacity: return 38;
 		default: switch_slag_ladle_yeardep;
 		purchase: switch_slag_ladle_purchase;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 spriteset(spriteset_torpedo_old_front, "gfx/freight/steel_wagons.png") {
@@ -17379,6 +17386,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 		default: switch_torpedo_front_yeardep;
 		purchase: switch_torpedo_purchase;
 		articulated_part: switch_torpedo_articulated_part;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 spriteset(spriteset_shiki_800_black_front, "gfx/freight/superheavy.png") {
@@ -17586,6 +17594,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 

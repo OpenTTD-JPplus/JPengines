@@ -203,5 +203,6 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }

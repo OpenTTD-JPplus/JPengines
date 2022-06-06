@@ -82,5 +82,6 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_capacity: return 38;
 		default: switch_slag_ladle_yeardep;
 		purchase: switch_slag_ladle_purchase;
+		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }

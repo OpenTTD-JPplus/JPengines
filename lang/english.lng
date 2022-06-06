@@ -459,6 +459,7 @@ STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Ele
 
 STR_DESC_BRAKE		:{BLACK}Brake Van Speed Boost: {GREEN}Attach behind slower wagons to increase top speed
 
+STR_DESC_BRAKE_NA	:{BLACK}Brake Van Speed Boost: {RED}Not Available
 
 
 STR_TEXT_JGR_JNR	:Operators: {GOLD}JGR/JNR
