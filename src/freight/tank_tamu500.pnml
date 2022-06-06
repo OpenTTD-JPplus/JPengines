@@ -145,11 +145,13 @@ property {
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
 	}
-	graphics {
-		cargo_capacity: return 30;
-		default: switch_tamu_500_wearstack;
-		purchase: switch_tamu_500_purchase;
-		cargo_subtype_text: switch_tamu_500_subtype_text;
+graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
+	cargo_capacity: return 30;
+	default: switch_tamu_500_wearstack;
+	purchase: switch_tamu_500_purchase;
+	cargo_subtype_text: switch_tamu_500_subtype_text;
 		
 	}
 }

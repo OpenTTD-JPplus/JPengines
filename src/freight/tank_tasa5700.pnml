@@ -140,6 +140,8 @@ property {
 		speed: 85 km/h;
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 50;
 		default: switch_tasa_5700_wearstack;
 		purchase: switch_tasa_5700_purchase;

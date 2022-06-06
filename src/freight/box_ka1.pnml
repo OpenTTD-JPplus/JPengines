@@ -76,6 +76,8 @@ property {
 	cargo_age_period: 0;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 60;
 	cargo_capacity: return 20;
 	default: random_ka_1_livery;
 //	cargo_subtype_text: switch_ka_1_subtype_text;

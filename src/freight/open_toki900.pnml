@@ -334,6 +334,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 45;
 	default: switch_toki_900_cargo_class;
 	purchase: spriteset_toki_900_purchase;

@@ -64,6 +64,8 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 		cargo_capacity: return 30;
 		default: switch_wamu_50000_caboose;
 		purchase: spriteset_wamu_50000_purchase;

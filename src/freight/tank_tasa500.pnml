@@ -210,6 +210,8 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
 //		cargo_capacity: return 0;
 		default: random_tasa_500_flip;
 		purchase: switch_tasa_500_purchase;

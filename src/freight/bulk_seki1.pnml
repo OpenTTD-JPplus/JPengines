@@ -97,6 +97,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 35;
 	default: switch_seki_1_livery;
 	cargo_subtype_text: switch_seki_1_subtype_text;

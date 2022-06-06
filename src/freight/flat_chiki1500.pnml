@@ -341,11 +341,12 @@ property {
 	cargo_capacity: 45;
 	speed: 75 km/h;
 	non_refittable_cargo_classes: 0; 
-	cargo_disallow_refit: [LVST, BOOM];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-//	cargo_capacity: return 45;
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	default: switch_chiki_1500_loadstack;
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;

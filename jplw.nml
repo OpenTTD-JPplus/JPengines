@@ -142,7 +142,7 @@ sort(FEAT_TRAINS, [
 //wagons tankers
 1480, 1481, 30, 1487, 1488, 1489, 45, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1490, 
 //brake vans
-1600, 35,
+1601, 1600, 35,
 //wagons non JNR/JR
 1402, 1420, 1421
 ]);
@@ -5522,6 +5522,272 @@ property {
   }
 }
 
+spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_1_brown, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_1_stripe, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_1_cc, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_1_purchase, "gfx/brake/yo_1.png") {
+	template_purchase(1, 128)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_livery, cargo_subtype) {
+	0: spriteset_yo_1_black;
+	1: spriteset_yo_1_brown;
+	2: spriteset_yo_1_stripe;
+	3: spriteset_yo_1_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JGR_BLACK);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_BLACK);
+	3: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_1, 1601) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 8;
+		running_cost_factor: 4;
+		length: 4;
+		bitmask_vehicle_info: bitmask(3);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_yo_1_livery;
+		purchase: spriteset_yo_1_purchase;
+		cargo_subtype_text: switch_yo_1_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+spriteset(spriteset_yo_5000_black, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_5000_green, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_5000_blue, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_5000_cc, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_5000_jgr_purchase, "gfx/brake/yo_5000.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_yo_5000_jnr_purchase, "gfx/brake/yo_5000.png") {
+	template_purchase(89, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_purchase_yeardep, current_year) {
+    0..1949: spriteset_yo_5000_jgr_purchase;
+    spriteset_yo_5000_jnr_purchase;
+    }
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_livery, cargo_subtype) {
+	0: spriteset_yo_5000_black;
+	1: spriteset_yo_5000_green;
+	2: spriteset_yo_5000_blue;
+	3: spriteset_yo_5000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_BLACK);
+	1: return string(STR_REFIT_GREEN);
+	2: return string(STR_REFIT_BLUE);
+	3: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_5000, 1600) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1906,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 8;
+		running_cost_factor: 4;
+		length: 5;
+		bitmask_vehicle_info: bitmask(2);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_yo_5000_livery;
+		purchase: switch_yo_5000_purchase_yeardep;
+		cargo_subtype_text: switch_yo_5000_subtype_text;
+		
+	}
+}
+spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_8000_green, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_8000_blue, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_8000_redblue, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_yo_8000_whitered, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_yo_8000_cc, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 192)
+}
+
+
+
+
+spriteset(spriteset_yo_8000_jnr_purchase, "gfx/brake/yo_8000.png") {
+	template_purchase(1, 224)
+}
+
+spriteset(spriteset_yo_8000_jr_purchase, "gfx/brake/yo_8000.png") {
+	template_purchase(89, 224)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_purchase_yeardep, current_year) {
+    0..1987: spriteset_yo_8000_jnr_purchase;
+    spriteset_yo_8000_jr_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
+	0: spriteset_yo_8000_black;
+	1: spriteset_yo_8000_green;
+	2: spriteset_yo_8000_blue;
+	3: spriteset_yo_8000_redblue;
+	4: spriteset_yo_8000_whitered;
+	5: spriteset_yo_8000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_BLACK);
+	1: return string(STR_REFIT_GREEN);
+	2: return string(STR_REFIT_BLUE);
+	3: return string(STR_REFIT_JRF_REDBLUE);
+	4: return string(STR_REFIT_JNR_CREAM);
+	5: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_8000, 35) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1974,1,1);
+		speed: 95 km/h;
+//		air_drag_coefficient: 0;
+//		power: 0;
+//		dual_headed: 0;
+		cargo_capacity: 1; 
+//		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+//		loading_speed: 1;
+//		weight: 20;
+//		cost_factor: 8;
+//		running_cost_factor: 4;
+		length: 4;
+		bitmask_vehicle_info: bitmask(1);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_yo_8000_livery;
+		purchase: switch_yo_8000_purchase_yeardep;
+		cargo_subtype_text: switch_yo_8000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+
+//brake van super switch
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_3, hasbit(bitmask_consist_info, 3)) {
+	1: return 75;
+	CB_FAILED;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_2, hasbit(bitmask_consist_info, 2)) {
+	1: return 85;
+	switch_speedboost_3;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) {
+	1: return 95;
+	switch_speedboost_2;
+	}
+
+
+
 
 spriteset(spriteset_pax_1880_hcc_clerestory, "gfx/paxmail/paxmail-1880.png") {
 	template_2cc_std(1, 1)
@@ -7651,6 +7917,8 @@ property {
 	cargo_age_period: 0;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 60;
 	cargo_capacity: return 20;
 	default: random_ka_1_livery;
 //	cargo_subtype_text: switch_ka_1_subtype_text;
@@ -7766,6 +8034,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 20;
 	default: switch_wa_1_livery;
 	cargo_subtype_text: switch_wa_1_subtype_text;
@@ -7839,6 +8109,8 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 		cargo_capacity: return 30;
 		default: switch_wamu_50000_caboose;
 		purchase: spriteset_wamu_50000_purchase;
@@ -8067,6 +8339,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 50;
 	default: switch_wamu_80000_loadstack;
 	purchase: switch_wamu_80000_purchase;
@@ -8141,6 +8415,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 50;
 	default: switch_wamu_480000_loadstack;
 	purchase: spriteset_wamu_480000_jrf_purchase;
@@ -8193,7 +8469,8 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 45;
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 		default: random_waki_1;
 		purchase: spriteset_waki_1_purchase;
 		
@@ -8306,7 +8583,8 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 45;
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		default: switch_waki_1000_livery;
 		purchase: spriteset_waki_1000_purchase;
 		cargo_subtype_text: switch_waki_1000_subtype_text;
@@ -8404,6 +8682,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 80;
 	default: switch_waki_5000_loadstack;
 	purchase: switch_waki_5000_yeardep_purchase;
@@ -8595,6 +8875,8 @@ property {
 	cargo_age_period: 0;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 20;
 	default: switch_re_1_livery;
 	cargo_subtype_text: switch_re_1_subtype_text;
@@ -8630,6 +8912,9 @@ random_switch (FEAT_TRAINS, SELF, random_re_2500) {
 
 
 
+
+
+
 item (FEAT_TRAINS, re_2500, 1455) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -8653,6 +8938,8 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 		cargo_capacity: return 30;
 		default: random_re_2500;
 		purchase: spriteset_re_2500_purchase;
@@ -8695,6 +8982,8 @@ property {
 	cargo_age_period: 0;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	default: random_remu_5000;
 	purchase: spriteset_remu_5000_purchase;
 	}
@@ -8814,6 +9103,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 45;
 	default: switch_hoki_650_livery;
 	cargo_subtype_text: switch_hoki_650_subtype_text;
@@ -9011,13 +9302,15 @@ item (FEAT_TRAINS, hoki_2500, 42) {
 property {
 	introduction_date: date(1970,1,1);
 	name: string(STR_NAME_HOKI_2500);
-	speed: 100 km/h;
+	speed: 85 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 55;
 	default: switch_hoki_2500_livery;
 	purchase: switch_hoki_2500_purchase;
@@ -9163,13 +9456,15 @@ item (FEAT_TRAINS, hoki_8500, 1285) {
 property {
 	introduction_date: date(1967,1,1);
 	name: string(STR_NAME_HOKI_8500);
-	speed: 100 km/h;
+	speed: 85 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 60;
 	default: random_hoki_8500_livery;
 	purchase: switch_hoki_8500_purchase;
@@ -9379,6 +9674,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 60;
 	cargo_capacity: return 20;
 	default: switch_se_1_livery;
 	cargo_subtype_text: switch_se_1_subtype_text;
@@ -9485,6 +9782,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 35;
 	default: switch_seki_1_livery;
 	cargo_subtype_text: switch_seki_1_subtype_text;
@@ -9536,7 +9835,7 @@ property {
 	introduction_date: date(1951,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_SEKI_1000);
-	speed: 75 km/h;
+	speed: 65 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
@@ -9553,6 +9852,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 45;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;
@@ -9641,7 +9942,7 @@ property {
 	introduction_date: date(1951,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_SEKI_3000);
-	speed: 75 km/h;
+	speed: 65 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
@@ -9659,6 +9960,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 45;
 	default: switch_seki_3000_livery;
 	cargo_subtype_text: switch_seki_3000_subtype_text;
@@ -10594,8 +10897,11 @@ property {
 	non_refittable_cargo_classes: 0; 
 	cargo_allow_refit: [VEHI]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	speed: 95 km/h;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 40;
 	default: switch_ku_5000_livery;
 	purchase: switch_ku_5000_purchase;
@@ -16831,11 +17137,12 @@ property {
 	cargo_capacity: 45;
 	speed: 75 km/h;
 	non_refittable_cargo_classes: 0; 
-	cargo_disallow_refit: [LVST, BOOM];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-//	cargo_capacity: return 45;
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	default: switch_chiki_1500_loadstack;
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -17501,6 +17808,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 60;
 	cargo_capacity: return 15;
 	default: switch_to_1_cargo_class;
 	purchase: spriteset_to_1_purchase;
@@ -17843,6 +18152,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 45;
 	default: switch_toki_900_cargo_class;
 	purchase: spriteset_toki_900_purchase;
@@ -18195,6 +18506,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 30;
 	default: switch_tomu_1_cargo_class;
 	purchase: spriteset_tomu_1_purchase;
@@ -18547,6 +18860,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 40;
 	default: switch_tora_5000_cargo_class;
 	purchase: spriteset_tora_5000_purchase;
@@ -18609,6 +18924,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 35;
 	default: switch_tora_90000_cargo_class;
 	purchase: spriteset_tora_90000_purchase;
@@ -19029,6 +19346,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 60;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;
@@ -19125,6 +19444,8 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 60;
 //		cargo_capacity: return 0;
 		default: switch_ta_1_wearstack;
 		purchase: spriteset_ta_1_purchase;
@@ -19344,6 +19665,8 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
 //		cargo_capacity: return 0;
 		default: random_tasa_500_flip;
 		purchase: switch_tasa_500_purchase;
@@ -19493,6 +19816,8 @@ property {
 		speed: 85 km/h;
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 50;
 		default: switch_tasa_5700_wearstack;
 		purchase: switch_tasa_5700_purchase;
@@ -19647,11 +19972,13 @@ property {
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
 	}
-	graphics {
-		cargo_capacity: return 30;
-		default: switch_tamu_500_wearstack;
-		purchase: switch_tamu_500_purchase;
-		cargo_subtype_text: switch_tamu_500_subtype_text;
+graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
+	cargo_capacity: return 30;
+	default: switch_tamu_500_wearstack;
+	purchase: switch_tamu_500_purchase;
+	cargo_subtype_text: switch_tamu_500_subtype_text;
 		
 	}
 }
@@ -19920,6 +20247,8 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 //		cargo_capacity: return 0;
 		default: switch_taki_43000_wearstack;
 		purchase: switch_taki_43000_purchase;
@@ -20065,6 +20394,8 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 //		cargo_capacity: return 0;
 		default: switch_taki_3000_wearstack;
 		purchase: switch_taki_3000_purchase;
@@ -20221,6 +20552,8 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 //		cargo_capacity: return 0;
 		default: switch_taki_5450_wearstack;
 		purchase: switch_taki_5450_purchase;
@@ -20230,169 +20563,6 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 }
 
 
-spriteset(spriteset_yo_5000_black, "gfx/yo_5000.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_yo_5000_green, "gfx/yo_5000.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_yo_5000_blue, "gfx/yo_5000.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_yo_5000_cc, "gfx/yo_5000.png") {
-	template_2cc_std(1, 96)
-}
-
-
-
-spriteset(spriteset_yo_5000_purchase, "gfx/yo_5000.png") {
-	template_purchase(1, 128)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_5000_livery, cargo_subtype) {
-	0: spriteset_yo_5000_black;
-	1: spriteset_yo_5000_green;
-	2: spriteset_yo_5000_blue;
-	3: spriteset_yo_5000_cc;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_5000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BLACK);
-	1: return string(STR_REFIT_GREEN);
-	2: return string(STR_REFIT_BLUE);
-	3: return string(STR_REFIT_CC);
-	}
-
-
-
-item (FEAT_TRAINS, yo_5000, 1600) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_YO_5000);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1870,1,1);//1906
-		speed: 85 km/h;
-		air_drag_coefficient: 0;
-		power: 0;
-		dual_headed: 0;
-		cargo_capacity: 1; 
-		refit_cost: 0;
-		cargo_allow_refit: [PASS];
-		loading_speed: 1;
-		weight: 20;
-		cost_factor: 8;
-		running_cost_factor: 4;
-		length: 5;
-	}
-	graphics {
-		cargo_capacity: return 0;
-		default: switch_yo_5000_livery;
-		purchase: spriteset_yo_5000_purchase;
-		cargo_subtype_text: switch_yo_5000_subtype_text;
-		
-	}
-}
-spriteset(spriteset_yo_8000_black, "gfx/yo_8000.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_yo_8000_green, "gfx/yo_8000.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_yo_8000_blue, "gfx/yo_8000.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_yo_8000_redblue, "gfx/yo_8000.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_yo_8000_whitered, "gfx/yo_8000.png") {
-	template_2cc_std(1, 128)
-}
-
-
-spriteset(spriteset_yo_8000_cc, "gfx/yo_8000.png") {
-	template_2cc_std(1, 192)
-}
-
-
-
-
-spriteset(spriteset_yo_8000_jnr_purchase, "gfx/yo_8000.png") {
-	template_purchase(1, 224)
-}
-
-spriteset(spriteset_yo_8000_jr_purchase, "gfx/yo_8000.png") {
-	template_purchase(89, 224)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_purchase_yeardep, current_year) {
-    0..1987: spriteset_yo_8000_jnr_purchase;
-    spriteset_yo_8000_jr_purchase;
-    }
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
-	0: spriteset_yo_8000_black;
-	1: spriteset_yo_8000_green;
-	2: spriteset_yo_8000_blue;
-	3: spriteset_yo_8000_redblue;
-	4: spriteset_yo_8000_whitered;
-	5: spriteset_yo_8000_cc;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BLACK);
-	1: return string(STR_REFIT_GREEN);
-	2: return string(STR_REFIT_BLUE);
-	3: return string(STR_REFIT_JRF_REDBLUE);
-	4: return string(STR_REFIT_JNR_CREAM);
-	5: return string(STR_REFIT_CC);
-	}
-
-
-
-item (FEAT_TRAINS, yo_8000, 35) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_YO_8000);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1974,1,1);
-		speed: 85 km/h;
-//		air_drag_coefficient: 0;
-//		power: 0;
-//		dual_headed: 0;
-		cargo_capacity: 1; 
-//		refit_cost: 0;
-		cargo_allow_refit: [PASS];
-//		loading_speed: 1;
-//		weight: 20;
-//		cost_factor: 8;
-//		running_cost_factor: 4;
-		length: 4;
-	}
-	graphics {
-		cargo_capacity: return 0;
-		default: switch_yo_8000_livery;
-		purchase: switch_yo_8000_purchase_yeardep;
-		cargo_subtype_text: switch_yo_8000_subtype_text;
-		
-	}
-}
 
 item (FEAT_TRAINS, jp_chisa_flatcar, 34) {
 

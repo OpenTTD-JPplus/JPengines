@@ -42,7 +42,7 @@ property {
 	introduction_date: date(1951,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_SEKI_1000);
-	speed: 75 km/h;
+	speed: 65 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
@@ -59,6 +59,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 65;
 	cargo_capacity: return 45;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;

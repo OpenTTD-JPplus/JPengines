@@ -105,7 +105,8 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 45;
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		default: switch_waki_1000_livery;
 		purchase: spriteset_waki_1000_purchase;
 		cargo_subtype_text: switch_waki_1000_subtype_text;

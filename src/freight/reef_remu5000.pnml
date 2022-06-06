@@ -34,6 +34,8 @@ property {
 	cargo_age_period: 0;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	default: random_remu_5000;
 	purchase: spriteset_remu_5000_purchase;
 	}

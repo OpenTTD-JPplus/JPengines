@@ -69,13 +69,15 @@ item (FEAT_TRAINS, hoki_8500, 1285) {
 property {
 	introduction_date: date(1967,1,1);
 	name: string(STR_NAME_HOKI_8500);
-	speed: 100 km/h;
+	speed: 85 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 60;
 	default: random_hoki_8500_livery;
 	purchase: switch_hoki_8500_purchase;

@@ -784,8 +784,11 @@ property {
 	non_refittable_cargo_classes: 0; 
 	cargo_allow_refit: [VEHI]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	speed: 95 km/h;
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 40;
 	default: switch_ku_5000_livery;
 	purchase: switch_ku_5000_purchase;

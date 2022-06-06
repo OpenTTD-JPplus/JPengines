@@ -89,6 +89,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 85;
 	cargo_capacity: return 80;
 	default: switch_waki_5000_loadstack;
 	purchase: switch_waki_5000_yeardep_purchase;

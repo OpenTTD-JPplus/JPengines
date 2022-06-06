@@ -147,6 +147,8 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 //		cargo_capacity: return 0;
 		default: switch_taki_5450_wearstack;
 		purchase: switch_taki_5450_purchase;

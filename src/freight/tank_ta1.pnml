@@ -85,6 +85,8 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 60;
 //		cargo_capacity: return 0;
 		default: switch_ta_1_wearstack;
 		purchase: spriteset_ta_1_purchase;

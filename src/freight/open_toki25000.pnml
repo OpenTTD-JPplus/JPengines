@@ -412,6 +412,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 60;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;

@@ -60,6 +60,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 45;
 	default: switch_hoki_650_livery;
 	cargo_subtype_text: switch_hoki_650_subtype_text;

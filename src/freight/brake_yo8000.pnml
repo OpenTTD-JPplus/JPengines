@@ -1,37 +1,37 @@
-spriteset(spriteset_yo_8000_black, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_yo_8000_green, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_green, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_yo_8000_blue, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_blue, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_yo_8000_redblue, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_redblue, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_yo_8000_whitered, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_whitered, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 128)
 }
 
 
-spriteset(spriteset_yo_8000_cc, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_cc, "gfx/brake/yo_8000.png") {
 	template_2cc_std(1, 192)
 }
 
 
 
 
-spriteset(spriteset_yo_8000_jnr_purchase, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_jnr_purchase, "gfx/brake/yo_8000.png") {
 	template_purchase(1, 224)
 }
 
-spriteset(spriteset_yo_8000_jr_purchase, "gfx/yo_8000.png") {
+spriteset(spriteset_yo_8000_jr_purchase, "gfx/brake/yo_8000.png") {
 	template_purchase(89, 224)
 }
 
@@ -70,7 +70,7 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		name: string(STR_NAME_YO_8000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1974,1,1);
-		speed: 85 km/h;
+		speed: 95 km/h;
 //		air_drag_coefficient: 0;
 //		power: 0;
 //		dual_headed: 0;
@@ -82,12 +82,32 @@ item (FEAT_TRAINS, yo_8000, 35) {
 //		cost_factor: 8;
 //		running_cost_factor: 4;
 		length: 4;
+		bitmask_vehicle_info: bitmask(1);
 	}
 	graphics {
 		cargo_capacity: return 0;
 		default: switch_yo_8000_livery;
 		purchase: switch_yo_8000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_8000_subtype_text;
-		
+		additional_text: string(STR_DESC_BRAKE);
 	}
 }
+
+//brake van super switch
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_3, hasbit(bitmask_consist_info, 3)) {
+	1: return 75;
+	CB_FAILED;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_2, hasbit(bitmask_consist_info, 2)) {
+	1: return 85;
+	switch_speedboost_3;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) {
+	1: return 95;
+	switch_speedboost_2;
+	}
+
+

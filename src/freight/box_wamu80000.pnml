@@ -220,6 +220,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 50;
 	default: switch_wamu_80000_loadstack;
 	purchase: switch_wamu_80000_purchase;
@@ -294,6 +296,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	cargo_capacity: return 50;
 	default: switch_wamu_480000_loadstack;
 	purchase: spriteset_wamu_480000_jrf_purchase;

@@ -1,0 +1,71 @@
+spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_1_brown, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_1_stripe, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_1_cc, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_1_purchase, "gfx/brake/yo_1.png") {
+	template_purchase(1, 128)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_livery, cargo_subtype) {
+	0: spriteset_yo_1_black;
+	1: spriteset_yo_1_brown;
+	2: spriteset_yo_1_stripe;
+	3: spriteset_yo_1_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JGR_BLACK);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_BLACK);
+	3: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_1, 1601) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 8;
+		running_cost_factor: 4;
+		length: 4;
+		bitmask_vehicle_info: bitmask(3);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_yo_1_livery;
+		purchase: spriteset_yo_1_purchase;
+		cargo_subtype_text: switch_yo_1_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}

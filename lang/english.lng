@@ -208,7 +208,7 @@ STR_NAME_TAKI_1000		:TAKI 1000 Tanker
 STR_NAME_CHISA_1		:CHISA 1 Flat Wagon
 STR_NAME_CHIKI_1500		:CHIKI 1500 Flat Wagon
 
-STR_NAME_YO_3000		:YO 3000 Brake Van
+STR_NAME_YO_1			:YO 1 Brake Van
 STR_NAME_YO_5000		:YO 5000 Brake Van
 STR_NAME_YO_8000		:YO 8000 Brake Van
 
@@ -456,6 +456,8 @@ STR_DESC_JGR_EEP	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Ele
 STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
 
 STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
+
+STR_DESC_BRAKE		:{BLACK}Brake Van Speed Boost: {GREEN}Attach behind slower wagons to increase top speed
 
 
 

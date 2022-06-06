@@ -216,6 +216,8 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	speed: switch_speedboost_1;
+	purchase_speed: return 60;
 	cargo_capacity: return 15;
 	default: switch_to_1_cargo_class;
 	purchase: spriteset_to_1_purchase;
