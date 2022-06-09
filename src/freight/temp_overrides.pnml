@@ -1,18 +1,3 @@
-item (FEAT_TRAINS, jp_chisa_flatcar, 34) {
-
-property {
-	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
-	cargo_disallow_refit: [LVST, BOOM];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	}
-}
-
-
-
-//tankers
-
-
-
 //fix string bug in JP trains
 
 item (FEAT_TRAINS, jgr_7050, 0x87) {

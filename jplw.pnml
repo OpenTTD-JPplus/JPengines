@@ -121,6 +121,7 @@
 #include "src/freight/cont_old.pnml"
 
 #include "src/freight/flat_coilcarrier.pnml"
+#include "src/freight/flat_chisa1.pnml"
 #include "src/freight/flat_chiki1500.pnml"
 
 #include "src/freight/heavy_slagladle.pnml"

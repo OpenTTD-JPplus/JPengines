@@ -281,24 +281,136 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	random_flatbed_7_tarp;
 }
 
+//rungs spriteset
 
 
+spriteset(spriteset_flatbed_7_rungs_a_back, "gfx/freight/chiki_1500.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_flatbed_7_rungs_a_front, "gfx/freight/chiki_1500.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_flatbed_7_rungs_b_back, "gfx/freight/chiki_1500.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_flatbed_7_rungs_b_front, "gfx/freight/chiki_1500.png") {
+	template_2cc_std(1, 160)
+}
 
 
-//CHIKI main
+//rungs random
+random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_back) {
+	1: spriteset_flatbed_7_rungs_a_back;
+    1: spriteset_flatbed_7_rungs_b_back;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_front) {
+	1: spriteset_flatbed_7_rungs_a_front;
+    1: spriteset_flatbed_7_rungs_b_front;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_some_back) {
+	1: spriteset_flatbed_7_rungs_a_back;
+    1: spriteset_flatbed_7_rungs_b_back;
+	2: spriteset_flatbed_7_blank;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_some_front) {
+	1: spriteset_flatbed_7_rungs_a_front;
+    1: spriteset_flatbed_7_rungs_b_front;
+	2: spriteset_flatbed_7_blank;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_back, cargo_type_in_veh) {
+	IRON: random_flatbed_7_rungs_all_back;
+	STEL: random_flatbed_7_rungs_all_back;
+	METL: random_flatbed_7_rungs_all_back;
+	ZINC: random_flatbed_7_rungs_all_back;
+	COPR: random_flatbed_7_rungs_all_back;
+	CSTI: random_flatbed_7_rungs_all_back;
+	STST: random_flatbed_7_rungs_all_back;
+	STSH: random_flatbed_7_rungs_some_back;
+	STAL: random_flatbed_7_rungs_all_back;
+	STCB: random_flatbed_7_rungs_all_back;
+	STWR: random_flatbed_7_rungs_some_back;
+	STSE: random_flatbed_7_rungs_some_back;
+	
+	ENSP: spriteset_flatbed_7_blank;
+	FMSP: spriteset_flatbed_7_blank;
+	POWR: spriteset_flatbed_7_blank;
+	VPTS: spriteset_flatbed_7_blank;
+	MPTS: spriteset_flatbed_7_blank;
+	
+	BDMT: random_flatbed_7_rungs_all_back;
+	WDPR: random_flatbed_7_rungs_all_back;
+	GLAS: random_flatbed_7_rungs_all_back;
+	BRCK: random_flatbed_7_rungs_all_back;
+
+	
+	PAPR: spriteset_flatbed_7_blank;
+	TYRE: spriteset_flatbed_7_blank;
+	WOOL: random_flatbed_7_rungs_all_back;
+	TEXT: random_flatbed_7_rungs_all_back;
+	
+	WOOD: random_flatbed_7_rungs_all_back;
+	TWOD: random_flatbed_7_rungs_all_back;
+	
+	VEHI: spriteset_flatbed_7_blank;
+	
+	random_flatbed_7_rungs_some_back;
+}
+
+switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_front, cargo_type_in_veh) {
+	IRON: random_flatbed_7_rungs_all_front;
+	STEL: random_flatbed_7_rungs_all_front;
+	METL: random_flatbed_7_rungs_all_front;
+	ZINC: random_flatbed_7_rungs_all_front;
+	COPR: random_flatbed_7_rungs_all_front;
+	CSTI: random_flatbed_7_rungs_all_front;
+	STST: random_flatbed_7_rungs_all_front;
+	STSH: random_flatbed_7_rungs_some_front;
+	STAL: random_flatbed_7_rungs_all_front;
+	STCB: random_flatbed_7_rungs_all_front;
+	STWR: random_flatbed_7_rungs_some_front;
+	STSE: random_flatbed_7_rungs_some_front;
+	
+	ENSP: spriteset_flatbed_7_blank;
+	FMSP: spriteset_flatbed_7_blank;
+	POWR: spriteset_flatbed_7_blank;
+	VPTS: spriteset_flatbed_7_blank;
+	MPTS: spriteset_flatbed_7_blank;
+	
+	BDMT: random_flatbed_7_rungs_all_front;
+	WDPR: random_flatbed_7_rungs_all_front;
+	GLAS: random_flatbed_7_rungs_all_front;
+	BRCK: random_flatbed_7_rungs_all_front;
+
+	
+	PAPR: spriteset_flatbed_7_blank;
+	TYRE: spriteset_flatbed_7_blank;
+	WOOL: random_flatbed_7_rungs_all_front;
+	TEXT: random_flatbed_7_rungs_all_front;
+	
+	WOOD: random_flatbed_7_rungs_all_front;
+	TWOD: random_flatbed_7_rungs_all_front;
+	
+	VEHI: spriteset_flatbed_7_blank;
+	
+	random_flatbed_7_rungs_some_front;
+}
+
+
+//CHIKI 1500 main
 
 spriteset(spriteset_chiki_1500_a, "gfx/freight/chiki_1500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_chiki_1500_rungs_back, "gfx/freight/chiki_1500.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_chiki_1500_rungs_front, "gfx/freight/chiki_1500.png") {
-	template_2cc_std(1, 96)
-}
-//add randomised cargodep rungs?
 
 
 spriteset(spriteset_chiki_1500_jgr_purchase, "gfx/freight/chiki_1500.png") {
@@ -312,24 +424,24 @@ spriteset(spriteset_chiki_1500_jnr_purchase, "gfx/freight/chiki_1500.png") {
 switch(FEAT_TRAINS, SELF, switch_chiki_1500_purchase, current_year) {
 	0..1949: spriteset_chiki_1500_jgr_purchase;
 	spriteset_chiki_1500_jnr_purchase;
-	}
-
-
-switch(FEAT_TRAINS, SELF, switch_chiki_1500_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0:  spriteset_chiki_1500_a;
-    1:  spriteset_chiki_1500_rungs_back;
-	2:  switch_flatbed_7_cargo_type;
-	3:  spriteset_chiki_1500_rungs_front;
 }
 
 
 
 
+switch(FEAT_TRAINS, SELF, stack_chiki_1500, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_chiki_1500_a;
+    1:  switch_flatbed_7_rungs_back;
+	2:  switch_flatbed_7_cargo_type;
+	3:  switch_flatbed_7_rungs_front;
+}
 
 
+
+//main item
 item (FEAT_TRAINS, chiki_1500, 41) {
 
 property {
@@ -341,14 +453,85 @@ property {
 	cargo_capacity: 45;
 	speed: 75 km/h;
 	non_refittable_cargo_classes: 0; 
+	default_cargo_type: WOOD;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	default: switch_chiki_1500_loadstack;
+	default: stack_chiki_1500;
 	purchase: switch_chiki_1500_purchase;
+	colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+//CHIKI 7000 main
+
+spriteset(spriteset_chiki_7000_a, "gfx/freight/chiki_7000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+
+spriteset(spriteset_chiki_7000_jrf_purchase, "gfx/freight/chiki_7000.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_chiki_7000_jnr_purchase, "gfx/freight/chiki_7000.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_chiki_7000_purchase, current_year) {
+	0..1987: spriteset_chiki_7000_jnr_purchase;
+	spriteset_chiki_7000_jrf_purchase;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, stack_chiki_7000, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_chiki_7000_a;
+    1:  switch_flatbed_7_rungs_back;
+	2:  switch_flatbed_7_cargo_type;
+	3:  switch_flatbed_7_rungs_front;
+}
+
+
+
+//main item
+item (FEAT_TRAINS, chiki_7000, 1529) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_CHIKI_7000);
+	introduction_date: date(1975,1,1);
+	cargo_capacity: 60;
+	power: 0;
+	refit_cost: 0;
+	default_cargo_type: WOOD;
+	loading_speed: 30;
+	speed: 100 km/h;
+	weight: 16;
+	cost_factor: 6;
+	running_cost_factor: 10;
+	length: 7;
+	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
+	non_refittable_cargo_classes: 0; 
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+graphics {
+//	speed: switch_speedboost_1;
+//	purchase_speed: return 75;
+	default: stack_chiki_7000;
+	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
 }
