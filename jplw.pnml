@@ -59,9 +59,11 @@
 #include "src/freight/brake_yo5000.pnml"
 #include "src/freight/brake_yo8000.pnml"
 
+#include "src/wagons.pnml"
 
 #include "src/pax/paxmail_1880.pnml"
 #include "src/pax/paxmail_1910_17m.pnml"
+#include "src/pax/paxmail_suha32.pnml"
 
 #include "src/pax/12_series.pnml"
 #include "src/pax/24_series.pnml"

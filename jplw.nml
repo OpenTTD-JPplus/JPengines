@@ -5788,6 +5788,33 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) 
 
 
 
+//universal taillights 8/8
+
+spriteset(spriteset_blank, "gfx/blank.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_8, "gfx/taillights_8.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_8_flip, "gfx/taillights_8.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+//todo make universal end switches for all wagons
+
+switch(FEAT_TRAINS, SELF, switch_taillights_8_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_8_flip;
+	spriteset_taillights_8;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_8, position_in_consist_from_end) {
+	0: switch_taillights_8_flip;
+	spriteset_blank;
+	}
 
 spriteset(spriteset_pax_1880_hcc_clerestory, "gfx/paxmail/paxmail-1880.png") {
 	template_2cc_std(1, 1)
@@ -6441,6 +6468,398 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		default: switch_mail_1910_livery;
 		purchase: switch_mail_1910_yeardep_purchase;
 		cargo_subtype_text: switch_mail_1910_subtype_text;
+	}
+}
+spriteset(spriteset_pax_suha_32_3rd, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_suha_32_3rd_stripe, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_suha_32_2nd, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_suha_32_2nd_sleeper, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_suha_32_1st, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_suha_32_diner, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_suha_32_1st_diner, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_suha_32_1st_2nd, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_suha_32_1st_observation, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_mail_mani_31, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_pax_suha_32_combine, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_pax_suha_32_combine_stripe, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 352)
+}
+
+/*
+spriteset(spriteset_taillights, "gfx/paxmail/suha32.png") {
+	template_2cc_std(1, 384)
+}
+*/
+
+spriteset(spriteset_pax_suha_32_roof, "gfx/paxmail/suha32.png") {
+	template_2cc_flip(1, 416)
+}
+
+
+//purchase sprites
+spriteset(spriteset_suha_32_jgr_purchase, "gfx/paxmail/suha32.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_suha_32_jnr_purchase, "gfx/paxmail/suha32.png") {
+	template_purchase(89, 448)
+}
+
+
+spriteset(spriteset_mani_31_jgr_purchase, "gfx/paxmail/suha32.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_mani_31_jnr_purchase, "gfx/paxmail/suha32.png") {
+	template_purchase(89, 480)
+}
+
+//purchase switches
+switch(FEAT_TRAINS, SELF, switch_suha_32_yeardep_purchase, current_year) {
+	0..1949: spriteset_suha_32_jgr_purchase;
+	spriteset_suha_32_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_mani_31_yeardep_purchase, current_year) {
+	0..1949: spriteset_mani_31_jgr_purchase;
+	spriteset_mani_31_jnr_purchase;
+}
+
+//stripe yeardep
+//1940 end of red stripe
+
+switch(FEAT_TRAINS, SELF, switch_suha_32_3rd_stripe, current_year) {
+	0..1940: spriteset_pax_suha_32_3rd_stripe;
+	spriteset_pax_suha_32_3rd;
+}
+
+switch(FEAT_TRAINS, SELF, switch_suha_32_combine_stripe, current_year) {
+	0..1940: spriteset_pax_suha_32_combine_stripe;
+	spriteset_pax_suha_32_combine;
+}
+
+
+	
+//local auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_middle) {
+	4: spriteset_pax_suha_32_3rd;
+	1: spriteset_pax_suha_32_2nd;
+}
+
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_end) {
+	1: spriteset_pax_suha_32_3rd;
+	2: switch_suha_32_combine_stripe;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_beginning) {
+	1: spriteset_pax_suha_32_2nd;
+	1: spriteset_pax_suha_32_combine;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_diner) {
+	1: spriteset_pax_suha_32_2nd;
+	1: spriteset_pax_suha_32_diner;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_local_auto_end, position_in_consist_from_end) {
+	0: random_pax_suha_32_local_auto_end;
+	random_pax_suha_32_local_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_local_auto_beginning, position_in_vehid_chain) {
+	0: random_pax_suha_32_local_auto_beginning;
+	3: random_pax_suha_32_local_auto_diner;
+	switch_pax_suha_32_local_auto_end;
+	}
+
+
+// express auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_express_auto_middle) {
+	1: spriteset_pax_suha_32_2nd_sleeper;
+	2: spriteset_pax_suha_32_2nd;
+}
+
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_express_auto_beginning) {
+	1: spriteset_pax_suha_32_2nd;
+	1: spriteset_pax_suha_32_2nd_sleeper;
+	1: spriteset_pax_suha_32_1st;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_express_auto_end, position_in_consist_from_end) {
+	0: spriteset_pax_suha_32_1st_observation;
+	random_pax_suha_32_express_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_express_auto_beginning, position_in_vehid_chain) {
+	0..2: spriteset_pax_suha_32_1st;
+	3: spriteset_pax_suha_32_diner;
+	4: random_pax_suha_32_express_auto_beginning;
+	switch_pax_suha_32_express_auto_end;
+	}
+
+
+// sleeper auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_sleeper_auto_middle) {
+	3: spriteset_pax_suha_32_2nd_sleeper;
+	1: spriteset_pax_suha_32_1st;
+	1: spriteset_pax_suha_32_1st_2nd;
+}
+
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_sleeper_auto_beginning) {
+	1: spriteset_pax_suha_32_1st;
+	1: spriteset_pax_suha_32_1st_diner;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_sleeper_auto_end, position_in_consist_from_end) {
+	0: spriteset_pax_suha_32_1st_observation;
+	random_pax_suha_32_sleeper_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha_32_sleeper_auto_beginning, position_in_vehid_chain) {
+	0: random_pax_suha_32_sleeper_auto_beginning;
+	switch_pax_suha_32_sleeper_auto_end;
+	}
+
+//individual refits
+
+//todo add flip switches
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_2nd) {
+	1: spriteset_pax_suha_32_2nd_sleeper;
+	1: spriteset_pax_suha_32_2nd;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_1st) {
+	1: spriteset_pax_suha_32_1st_2nd;
+	1: spriteset_pax_suha_32_1st;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_diner) {
+	1: spriteset_pax_suha_32_1st_diner;
+	1: spriteset_pax_suha_32_diner;
+}
+
+
+switch (FEAT_TRAINS, SELF, switch_pax_suha_32_1st, vehicle_is_flipped) {
+	0: spriteset_pax_suha_32_1st;
+	spriteset_pax_suha_32_1st_2nd;
+}
+	
+switch (FEAT_TRAINS, SELF, switch_pax_suha_32_2nd, vehicle_is_flipped) {
+	0: spriteset_pax_suha_32_2nd;
+	spriteset_pax_suha_32_2nd_sleeper;
+}
+
+switch (FEAT_TRAINS, SELF, switch_pax_suha_32_3rd, vehicle_is_flipped) {
+	0: spriteset_pax_suha_32_3rd_stripe;
+	spriteset_pax_suha_32_3rd;
+}
+	
+
+switch (FEAT_TRAINS, SELF, switch_pax_suha_32_diner, vehicle_is_flipped) {
+	0: spriteset_pax_suha_32_diner;
+	spriteset_pax_suha_32_1st_diner;
+}
+
+//todo add prewar brown
+
+
+switch(FEAT_TRAINS, SELF, switch_suha_32_livery, cargo_subtype) {
+	1: switch_pax_suha_32_express_auto_beginning;
+	2: switch_pax_suha_32_sleeper_auto_beginning;
+	3: switch_pax_suha_32_3rd;
+	4: switch_pax_suha_32_2nd;
+	5: switch_pax_suha_32_1st;
+	6: switch_pax_suha_32_diner;
+	7: spriteset_pax_suha_32_combine;
+	switch_pax_suha_32_local_auto_beginning;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_suha_32_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOFORM_LOCAL);
+	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
+	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
+	3: return string(STR_REFIT_PAX_3CLASS);
+	4: return string(STR_REFIT_PAX_2CLASS);
+	5: return string(STR_REFIT_PAX_1CLASS);
+	6: return string(STR_REFIT_PAX_DINER);
+	7: return string(STR_REFIT_PAX_COMBINE);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+random_switch (FEAT_TRAINS, SELF, random_suha_32_roof_old) {
+	1: spriteset_pax_suha_32_roof;
+	2: spriteset_blank;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_suha_32_roof_new) {
+	2: spriteset_pax_suha_32_roof;
+	1: spriteset_blank;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suha_32_roof, build_year) {
+	0..1935: spriteset_blank; //all clerestory
+	1935..1942: random_suha_32_roof_old;
+	1942..1949: random_suha_32_roof_new; //mixed
+	spriteset_pax_suha_32_roof; //all round
+	}
+
+
+
+
+switch(FEAT_TRAINS, SELF, stack_suha_32, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_suha_32_livery;
+    1:  switch_suha_32_roof;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, pax_suha_32, 1539) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+		name: string(STR_NAME_PAX_SUHA32);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1929,1,1);
+//		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 88; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 88;
+		default: stack_suha_32;
+		purchase: switch_suha_32_yeardep_purchase;
+		cargo_subtype_text: switch_suha_32_subtype_text;
+	}
+}
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_mani_31) {
+	3: spriteset_mail_mani_31;
+	1: switch_suha_32_combine_stripe;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mani_31_livery, cargo_subtype) {
+	1: spriteset_mail_mani_31;
+	2: spriteset_pax_suha_32_combine_stripe;
+	3: spriteset_pax_suha_32_combine;
+	random_mani_31;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_mani_31_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_REFIT_MANI_31);
+	2: return string(STR_REFIT_SUHANE_31_JGR);
+	3: return string(STR_REFIT_SUHANE_31_JNR);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, stack_mani_31, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_mani_31_livery;
+    1:  switch_suha_32_roof;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, mani_31, 1667) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+		name: string(STR_NAME_MAIL_MANI_31);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1929,1,1);
+//		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90; 
+		refit_cost: 0;
+//		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 90;
+		default: stack_mani_31;
+		purchase: switch_mani_31_yeardep_purchase;
+		cargo_subtype_text: switch_mani_31_subtype_text;
 	}
 }
 
