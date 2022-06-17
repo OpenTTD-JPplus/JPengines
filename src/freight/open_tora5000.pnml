@@ -313,6 +313,8 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	TEXT: random_tora_5000_wool;
 	
 	SCMT: random_tora_5000_bulk;
+	WSTE: random_tora_5000_bulk;
+	RCYC: random_tora_5000_bulk;
 	SULP: random_tora_5000_covered;
 	SEED: random_tora_5000_covered;
 	FERT: random_tora_5000_covered;

@@ -55,9 +55,11 @@ STR_NAME_DEKI_400	:DeKi 400 (electric)
 STR_NAME_SEIBU_E851	:E851 (electric)
 STR_NAME_SEIBU_E31	:E31 (electric)
 
-STR_NAME_PAX_OHA31			:OHA 31 Series Passenger Coach
-STR_NAME_PAX_SUHA32			:SUHA 32 Series Passenger Coach
-
+STR_NAME_PAX_FUKOHA7945	:FUKOHA 7945 Passenger Coach
+STR_NAME_PAX_HOHA6810	:HOHA 6810 Passenger Coach
+STR_NAME_PAX_OHA31		:OHA 31 Passenger Coach
+STR_NAME_PAX_SUHA32		:SUHA 32 Passenger Coach
+STR_NAME_SLEEPER_10		:10 Series Sleeper Coach
 STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
@@ -66,7 +68,7 @@ STR_NAME_PAX_50_5000	:50-5000 Series Passenger Coach {GOLD}"Rapid Kaikyō"{BLACK
 STR_NAME_PAX_26			:E26 Series Sleeper Coach {GOLD}"Cassiopeia"{BLACK}
 STR_NAME_PAX_77			:77-7000 Series Sleeper Coach {GOLD}"Seven Stars"{BLACK}
 
-STR_NAME_SLEEPER_10		:10 Series Sleeper Coach
+
 
 
 STR_REFIT_PAX_FKI5670_HCC			: {SILVER}FUKOI 5670{BLACK} Clerestory Coach (Yellow)
@@ -96,11 +98,14 @@ STR_REFIT_PAXMAIL_NAHANI8430_JGR_FLIP		: {SILVER}NAHANO 8430{BLACK} III. Class C
 STR_REFIT_MAIL_HONI8900_JGR			: {SILVER}HONI 8900{BLACK} Luggage Van (Brown)
 STR_REFIT_MAIL_HOYUNI8725_JGR		: {SILVER}HOYUNI 8725{BLACK} Mail Van (Brown)
 
+
 STR_REFIT_PAX_3CLASS			: III. Class Coach 
 STR_REFIT_PAX_2CLASS			: II. Class Coach 
 STR_REFIT_PAX_1CLASS			: I. Class Coach
 STR_REFIT_PAX_DINER				: Dining Coach
 STR_REFIT_PAX_COMBINE			: III. Class Combine Coach 
+
+
 
 
 STR_REFIT_PAX_ORN10_BROWN		: {SILVER}ORONE 10{BLACK} II. Class Sleeper Coach (Brown)

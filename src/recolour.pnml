@@ -516,6 +516,9 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	FICR: return recolour_bulk +21;
 
 	SCMT: return recolour_bulk +15;
+	RCYC: return recolour_bulk +19;
+	WSTE: return recolour_bulk +19;
+	
     SULP: return recolour_bulk +3;
 	SEED: return recolour_bulk +9;
     FERT: return recolour_bulk +7;

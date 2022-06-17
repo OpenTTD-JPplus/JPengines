@@ -252,6 +252,8 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	TEXT: random_toki_25000_conts;
 	
 	SCMT: spritegroup_toki_25000_bulk;
+	RCYC: spritegroup_toki_25000_bulk;
+	WSTE: spritegroup_toki_25000_bulk;
 	SULP: switch_toki_25000_tarp_yeardep;
 	SEED: switch_toki_25000_tarp_yeardep;
 	FERT: switch_toki_25000_tarp_yeardep;
