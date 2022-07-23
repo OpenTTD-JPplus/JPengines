@@ -6,3 +6,26 @@ property {
 		name: string(STR_NAME_JGR_7050);
 	}
 }
+
+//override armoured wagons
+
+item (FEAT_TRAINS, armoured_van_1, 0x503) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
+
+item (FEAT_TRAINS, armoured_van_2, 0x507) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
+
+item (FEAT_TRAINS, armoured_van_3, 0x509) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}

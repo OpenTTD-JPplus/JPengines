@@ -265,7 +265,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	WDPR: random_flatbed_7_wdpr;
 	GLAS: random_flatbed_7_wdpr;
 	BRCK: random_flatbed_7_bdmt;
-
+	PIPE: spritegroup_flatbed_7_pipes;
 	
 	PAPR: random_flatbed_7_tarp;
 	TYRE: random_flatbed_7_tarp;

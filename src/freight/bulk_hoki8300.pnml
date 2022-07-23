@@ -54,8 +54,8 @@ property {
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
-	cargo_disallow_refit: [WOOL, GLAS, WDPR];
+	cargo_allow_refit: [GRAI, FICR, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_disallow_refit: [WOOL, WOOD, GLAS, WDPR, SCMT, RCYC];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
