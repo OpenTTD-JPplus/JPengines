@@ -104,19 +104,19 @@ switch(FEAT_TRAINS, SELF, switch_suha_32_combine_stripe, current_year) {
 //local auto formation
 
 random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_middle) {
-	4: spriteset_pax_suha_32_3rd;
+	4: switch_suha_32_3rd_stripe;
 	1: spriteset_pax_suha_32_2nd;
 }
 
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_end) {
-	1: spriteset_pax_suha_32_3rd;
+	1: switch_suha_32_3rd_stripe;
 	2: switch_suha_32_combine_stripe;
 }
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_beginning) {
 	1: spriteset_pax_suha_32_2nd;
-	1: spriteset_pax_suha_32_combine;
+	1: switch_suha_32_combine_stripe;
 }
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_diner) {
@@ -192,7 +192,6 @@ switch(FEAT_TRAINS, SELF, switch_pax_suha_32_sleeper_auto_beginning, position_in
 
 //individual refits
 
-//todo add flip switches
 
 random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_2nd) {
 	1: spriteset_pax_suha_32_2nd_sleeper;
@@ -210,26 +209,6 @@ random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_diner) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_1st, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_1st;
-	spriteset_pax_suha_32_1st_2nd;
-}
-	
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_2nd, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_2nd;
-	spriteset_pax_suha_32_2nd_sleeper;
-}
-
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_3rd, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_3rd_stripe;
-	spriteset_pax_suha_32_3rd;
-}
-	
-
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_diner, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_diner;
-	spriteset_pax_suha_32_1st_diner;
-}
 
 //todo add prewar brown
 
@@ -237,11 +216,17 @@ switch (FEAT_TRAINS, SELF, switch_pax_suha_32_diner, vehicle_is_flipped) {
 switch(FEAT_TRAINS, SELF, switch_suha_32_livery, cargo_subtype) {
 	1: switch_pax_suha_32_express_auto_beginning;
 	2: switch_pax_suha_32_sleeper_auto_beginning;
-	3: switch_pax_suha_32_3rd;
-	4: switch_pax_suha_32_2nd;
-	5: switch_pax_suha_32_1st;
-	6: switch_pax_suha_32_diner;
-	7: spriteset_pax_suha_32_combine;
+	3: spriteset_pax_suha_32_3rd_stripe;
+	4: spriteset_pax_suha_32_3rd;
+	5: spriteset_pax_suha_32_2nd;
+	6: spriteset_pax_suha_32_2nd_sleeper;
+	7: spriteset_pax_suha_32_1st;
+	8: spriteset_pax_suha_32_diner;
+	9: spriteset_pax_suha_32_1st_diner;
+	10: spriteset_pax_suha_32_1st_2nd;
+	11: spriteset_pax_suha_32_1st_observation;
+	12: spriteset_pax_suha_32_combine_stripe;
+	13: spriteset_pax_suha_32_combine;
 	switch_pax_suha_32_local_auto_beginning;
 }
 
@@ -251,11 +236,17 @@ switch(FEAT_TRAINS, SELF, switch_suha_32_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_AUTOFORM_LOCAL);
 	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
 	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_REFIT_PAX_3CLASS);
-	4: return string(STR_REFIT_PAX_2CLASS);
-	5: return string(STR_REFIT_PAX_1CLASS);
-	6: return string(STR_REFIT_PAX_DINER);
-	7: return string(STR_REFIT_PAX_COMBINE);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO30), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE37), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE37), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUSHI37), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAISHI37), string(STR_SUFFIX_DINER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAIRONEFU37), string(STR_SUFFIX_PAX_12CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SITE37), string(STR_SUFFIX_OBS_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
 	   return CB_RESULT_NO_TEXT;
 	}
 

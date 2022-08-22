@@ -181,16 +181,16 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_subtype_text, cargo_subtyp
 	0: return string(STR_REFIT_AUTOYEAR);
 	1: return string(STR_REFIT_YEARDEP_1ST);
 	2: return string(STR_REFIT_YEARDEP_2ND);
-	3: return string(STR_REFIT_PAX_ORN10_BROWN);
-	4: return string(STR_REFIT_PAX_OHN17_BROWN);
-	5: return string(STR_REFIT_PAX_ORN10_BROWN_BLUE);
-	6: return string(STR_REFIT_PAX_OHN17_BROWN_BLUE);
-	7: return string(STR_REFIT_PAX_ORN10_BROWN_GREEN);
-	8: return string(STR_REFIT_PAX_OHN17_BROWN_GREEN);
-	9: return string(STR_REFIT_PAX_ORN10_BLUE);
-	10: return string(STR_REFIT_PAX_OHN17_BLUE);
-	11: return string(STR_REFIT_PAX_ORN10_BLUE_GREEN);
-	12: return string(STR_REFIT_PAX_OHN17_BLUE_GREEN);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_STANDARD), string(STR_SUFFIX_BLUE));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_STANDARD), string(STR_SUFFIX_BLUE));
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE_GREEN));
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE_GREEN));
 	   return CB_RESULT_NO_TEXT;
 	}
 

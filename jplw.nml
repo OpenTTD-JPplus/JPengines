@@ -778,6 +778,9 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	FICR: return recolour_bulk +21;
 
 	SCMT: return recolour_bulk +15;
+	RCYC: return recolour_bulk +19;
+	WSTE: return recolour_bulk +19;
+	
     SULP: return recolour_bulk +3;
 	SEED: return recolour_bulk +9;
     FERT: return recolour_bulk +7;
@@ -4559,38 +4562,37 @@ switch(FEAT_TRAINS, SELF, switch_eh800_purchase, current_year) {
 item (FEAT_TRAINS, eh800, 1095) {
 
 property {
-  sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
-  name: string(STR_NAME_JR_EH800);
-  climates_available: ALL_CLIMATES;
-  introduction_date: date(2012,1,1);
-  speed: 140 km/h;
-  air_drag_coefficient: 0;
-  tractive_effort_coefficient:    0.25;
-  power: 4000 kW;
-  dual_headed: 0;
-  engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1;
-  cargo_allow_refit: [PASS];
-  weight: 134;
-  reliability_decay: 85;
-  model_life: 40;
-  vehicle_life: 60;
-  cost_factor: 100;
-  length: 6;
-  running_cost_factor: 66;
-  running_cost_base: RUNNING_COST_STEAM;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NABE;
+	name: string(STR_NAME_JR_EH800);
+	climates_available: ALL_CLIMATES;
+	introduction_date: date(2012,1,1);
+	speed: 140 km/h;
+	air_drag_coefficient: 0;
+	tractive_effort_coefficient:    0.25;
+	power: 4000 kW;
+	dual_headed: 0;
+	engine_class: ENGINE_CLASS_ELECTRIC;
+	cargo_capacity: 1;
+	cargo_allow_refit: [PASS];
+	weight: 134;
+	reliability_decay: 85;
+	model_life: 40;
+	vehicle_life: 60;
+	cost_factor: 100;
+	length: 6;
+	running_cost_factor: 66;
+	running_cost_base: RUNNING_COST_STEAM;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
-
-
-  graphics { // graphics for engine
-  additional_text: string(STR_DESC_EH800);
-  cargo_capacity: return 0;
-  cargo_subtype_text: switch_eh800_subtype_text;
-  default: switch_eh800_livery;
-  purchase: switch_eh800_purchase;
-  articulated_part: switch_eh800_articulated_part;
-  }
+graphics { // graphics for engine
+	additional_text: string(STR_DESC_EH800);
+	cargo_capacity: return 0;
+	cargo_subtype_text: switch_eh800_subtype_text;
+	default: switch_eh800_livery;
+	purchase: switch_eh800_purchase;
+	articulated_part: switch_eh800_articulated_part;
+	}
 }
 
 
@@ -4731,8 +4733,8 @@ item (FEAT_TRAINS, dd13, 1207) {
   reliability_decay: 85;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 2;
-  length: 5;
+  cost_factor: 21;
+  length: 6;
   running_cost_factor: 84;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -5297,7 +5299,7 @@ property {
 	cargo_allow_refit: [PASS];
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	
+//	length: 6;
 //	running_cost_factor: 115;
 	}
 
@@ -6578,19 +6580,19 @@ switch(FEAT_TRAINS, SELF, switch_suha_32_combine_stripe, current_year) {
 //local auto formation
 
 random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_middle) {
-	4: spriteset_pax_suha_32_3rd;
+	4: switch_suha_32_3rd_stripe;
 	1: spriteset_pax_suha_32_2nd;
 }
 
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_end) {
-	1: spriteset_pax_suha_32_3rd;
+	1: switch_suha_32_3rd_stripe;
 	2: switch_suha_32_combine_stripe;
 }
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_beginning) {
 	1: spriteset_pax_suha_32_2nd;
-	1: spriteset_pax_suha_32_combine;
+	1: switch_suha_32_combine_stripe;
 }
 
 	random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_local_auto_diner) {
@@ -6666,7 +6668,6 @@ switch(FEAT_TRAINS, SELF, switch_pax_suha_32_sleeper_auto_beginning, position_in
 
 //individual refits
 
-//todo add flip switches
 
 random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_2nd) {
 	1: spriteset_pax_suha_32_2nd_sleeper;
@@ -6684,26 +6685,6 @@ random_switch (FEAT_TRAINS, SELF, random_pax_suha_32_diner) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_1st, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_1st;
-	spriteset_pax_suha_32_1st_2nd;
-}
-	
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_2nd, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_2nd;
-	spriteset_pax_suha_32_2nd_sleeper;
-}
-
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_3rd, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_3rd_stripe;
-	spriteset_pax_suha_32_3rd;
-}
-	
-
-switch (FEAT_TRAINS, SELF, switch_pax_suha_32_diner, vehicle_is_flipped) {
-	0: spriteset_pax_suha_32_diner;
-	spriteset_pax_suha_32_1st_diner;
-}
 
 //todo add prewar brown
 
@@ -6711,11 +6692,17 @@ switch (FEAT_TRAINS, SELF, switch_pax_suha_32_diner, vehicle_is_flipped) {
 switch(FEAT_TRAINS, SELF, switch_suha_32_livery, cargo_subtype) {
 	1: switch_pax_suha_32_express_auto_beginning;
 	2: switch_pax_suha_32_sleeper_auto_beginning;
-	3: switch_pax_suha_32_3rd;
-	4: switch_pax_suha_32_2nd;
-	5: switch_pax_suha_32_1st;
-	6: switch_pax_suha_32_diner;
-	7: spriteset_pax_suha_32_combine;
+	3: spriteset_pax_suha_32_3rd_stripe;
+	4: spriteset_pax_suha_32_3rd;
+	5: spriteset_pax_suha_32_2nd;
+	6: spriteset_pax_suha_32_2nd_sleeper;
+	7: spriteset_pax_suha_32_1st;
+	8: spriteset_pax_suha_32_diner;
+	9: spriteset_pax_suha_32_1st_diner;
+	10: spriteset_pax_suha_32_1st_2nd;
+	11: spriteset_pax_suha_32_1st_observation;
+	12: spriteset_pax_suha_32_combine_stripe;
+	13: spriteset_pax_suha_32_combine;
 	switch_pax_suha_32_local_auto_beginning;
 }
 
@@ -6725,11 +6712,17 @@ switch(FEAT_TRAINS, SELF, switch_suha_32_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_AUTOFORM_LOCAL);
 	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
 	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_REFIT_PAX_3CLASS);
-	4: return string(STR_REFIT_PAX_2CLASS);
-	5: return string(STR_REFIT_PAX_1CLASS);
-	6: return string(STR_REFIT_PAX_DINER);
-	7: return string(STR_REFIT_PAX_COMBINE);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO30), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE37), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE37), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUSHI37), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAISHI37), string(STR_SUFFIX_DINER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAIRONEFU37), string(STR_SUFFIX_PAX_12CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SITE37), string(STR_SUFFIX_OBS_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -7759,16 +7752,16 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_sleeper_subtype_text, cargo_subtyp
 	0: return string(STR_REFIT_AUTOYEAR);
 	1: return string(STR_REFIT_YEARDEP_1ST);
 	2: return string(STR_REFIT_YEARDEP_2ND);
-	3: return string(STR_REFIT_PAX_ORN10_BROWN);
-	4: return string(STR_REFIT_PAX_OHN17_BROWN);
-	5: return string(STR_REFIT_PAX_ORN10_BROWN_BLUE);
-	6: return string(STR_REFIT_PAX_OHN17_BROWN_BLUE);
-	7: return string(STR_REFIT_PAX_ORN10_BROWN_GREEN);
-	8: return string(STR_REFIT_PAX_OHN17_BROWN_GREEN);
-	9: return string(STR_REFIT_PAX_ORN10_BLUE);
-	10: return string(STR_REFIT_PAX_OHN17_BLUE);
-	11: return string(STR_REFIT_PAX_ORN10_BLUE_GREEN);
-	12: return string(STR_REFIT_PAX_OHN17_BLUE_GREEN);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_STANDARD), string(STR_SUFFIX_BLUE));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_STANDARD), string(STR_SUFFIX_BLUE));
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE_GREEN));
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE_GREEN));
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -9797,8 +9790,8 @@ property {
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
-	cargo_disallow_refit: [WOOL, GLAS, WDPR];
+	cargo_allow_refit: [GRAI, FICR, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED];
+	cargo_disallow_refit: [WOOL, WOOD, GLAS, WDPR, SCMT, RCYC];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -18034,7 +18027,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	WDPR: random_flatbed_7_wdpr;
 	GLAS: random_flatbed_7_wdpr;
 	BRCK: random_flatbed_7_bdmt;
-
+	PIPE: spritegroup_flatbed_7_pipes;
 	
 	PAPR: random_flatbed_7_tarp;
 	TYRE: random_flatbed_7_tarp;
@@ -19279,6 +19272,8 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	TEXT: random_toki_900_wool;
 	
 	SCMT: random_toki_900_bulk;
+	RCYC: random_toki_900_bulk;
+	WSTE: random_toki_900_bulk;
 	SULP: random_toki_900_covered;
 	SEED: random_toki_900_covered;
 	FERT: random_toki_900_covered;
@@ -19634,6 +19629,8 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	TEXT: random_tomu_1_wool;
 	
 	SCMT: random_tomu_1_bulk;
+	RCYC: random_tomu_1_bulk;
+	WSTE: random_tomu_1_bulk;
 	SULP: random_tomu_1_covered;
 	SEED: random_tomu_1_covered;
 	FERT: random_tomu_1_covered;
@@ -19988,6 +19985,8 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	TEXT: random_tora_5000_wool;
 	
 	SCMT: random_tora_5000_bulk;
+	WSTE: random_tora_5000_bulk;
+	RCYC: random_tora_5000_bulk;
 	SULP: random_tora_5000_covered;
 	SEED: random_tora_5000_covered;
 	FERT: random_tora_5000_covered;
@@ -20345,6 +20344,8 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	TEXT: random_toki_25000_conts;
 	
 	SCMT: spritegroup_toki_25000_bulk;
+	RCYC: spritegroup_toki_25000_bulk;
+	WSTE: spritegroup_toki_25000_bulk;
 	SULP: switch_toki_25000_tarp_yeardep;
 	SEED: switch_toki_25000_tarp_yeardep;
 	FERT: switch_toki_25000_tarp_yeardep;
@@ -21729,6 +21730,29 @@ item (FEAT_TRAINS, jgr_7050, 0x87) {
 
 property {
 		name: string(STR_NAME_JGR_7050);
+	}
+}
+
+//override armoured wagons
+
+item (FEAT_TRAINS, armoured_van_1, 0x503) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
+
+item (FEAT_TRAINS, armoured_van_2, 0x507) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
+
+item (FEAT_TRAINS, armoured_van_3, 0x509) {
+
+property {
+		climates_available: NO_CLIMATE;
 	}
 }
 
