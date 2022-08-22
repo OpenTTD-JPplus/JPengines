@@ -416,7 +416,7 @@ property {
 	cargo_allow_refit: [PASS];
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	
+	length: 6;
 //	running_cost_factor: 115;
 	}
 

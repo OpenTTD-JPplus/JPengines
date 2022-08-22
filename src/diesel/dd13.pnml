@@ -116,8 +116,8 @@ item (FEAT_TRAINS, dd13, 1207) {
   reliability_decay: 85;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 2;
-  length: 5;
+  cost_factor: 21;
+  length: 6;
   running_cost_factor: 84;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
