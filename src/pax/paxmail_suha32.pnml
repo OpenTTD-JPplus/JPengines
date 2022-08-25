@@ -46,11 +46,11 @@ spriteset(spriteset_pax_suha_32_combine_stripe, "gfx/paxmail/suha32.png") {
 	template_2cc_std(1, 352)
 }
 
-/*
-spriteset(spriteset_taillights, "gfx/paxmail/suha32.png") {
+
+spriteset(spriteset_mail_mayu_33, "gfx/paxmail/suha32.png") {
 	template_2cc_std(1, 384)
 }
-*/
+
 
 spriteset(spriteset_pax_suha_32_roof, "gfx/paxmail/suha32.png") {
 	template_2cc_flip(1, 416)
@@ -319,27 +319,30 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 
 
 random_switch (FEAT_TRAINS, SELF, random_mani_31) {
+	2: spriteset_mail_mayu_33;
 	3: spriteset_mail_mani_31;
 	1: switch_suha_32_combine_stripe;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_mani_31_livery, cargo_subtype) {
-	1: spriteset_mail_mani_31;
-	2: spriteset_pax_suha_32_combine_stripe;
-	3: spriteset_pax_suha_32_combine;
+	1: spriteset_mail_mayu_33;
+	2: spriteset_mail_mani_31;
+	3: spriteset_pax_suha_32_combine_stripe;
+	4: spriteset_pax_suha_32_combine;
 	random_mani_31;
 }
 
 
-
 switch(FEAT_TRAINS, SELF, switch_mani_31_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
-	1: return string(STR_REFIT_MANI_31);
-	2: return string(STR_REFIT_SUHANE_31_JGR);
-	3: return string(STR_REFIT_SUHANE_31_JNR);
+	1: return string(STR_REFIT_MAYU_33);
+	2: return string(STR_REFIT_MANI_31);
+	3: return string(STR_REFIT_SUHANE_31_JGR);
+	4: return string(STR_REFIT_SUHANE_31_JNR);
 	   return CB_RESULT_NO_TEXT;
 	}
+
 
 switch(FEAT_TRAINS, SELF, stack_mani_31, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
