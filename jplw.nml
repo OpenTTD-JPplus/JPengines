@@ -117,7 +117,7 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //electrics DC
-1010, 1011, 02, 1050, 08, 103, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
+1010, 1011, 02, 1050, 08, 103, 1014, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
 //electrics AC
 1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
@@ -1966,6 +1966,92 @@ property {
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
   additional_text:	string(STR_DESC_JGR_EHF);
+  }
+}
+spriteset(spriteset_ef50_jgr, "gfx/electric/ef50.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef50_black, "gfx/electric/ef50.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef50_green, "gfx/electric/ef50.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef50_cc, "gfx/electric/ef50.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_ef50_black_purchase, "gfx/electric/ef50.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_ef50_jgr_purchase, "gfx/electric/ef50.png") {
+	template_purchase(1, 160)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef50_yeardep_livery, build_year) {
+	0..1928: spriteset_ef50_black;
+	spriteset_ef50_jgr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef50_yeardep_purchase, current_year) {
+	0..1928: spriteset_ef50_black_purchase;
+	spriteset_ef50_jgr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef50_livery, cargo_subtype) {
+	1: spriteset_ef50_jgr;
+	2: spriteset_ef50_black;
+	3: spriteset_ef50_green;
+	4: spriteset_ef50_cc;
+	switch_ef50_yeardep_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef50_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_JGR_BLACK);
+	3: return string(STR_REFIT_JGR_GREEN);
+	4: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef50, 1014) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JGR_EF50);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1925,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1230 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 97;
+  reliability_decay: 60;
+  model_life: 30;
+  vehicle_life: 32;
+  cost_factor: 35;
+  length: 8;
+  running_cost_factor: 55;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef50_subtype_text;
+  default: switch_ef50_livery;
+  purchase: switch_ef50_yeardep_purchase;
   }
 }
 spriteset(spriteset_ef53_jgr, "gfx/ef53.png") {
@@ -6038,7 +6124,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-//		name: string(STR_NAME_PASSENGER_1880);
+		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
 //		speed: 120 km/h;
@@ -6112,7 +6198,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-		name: string(STR_NAME_PAX_FUKOHA7945);
+		name: string(STR_NAME_MAIL_KONI_8890);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
 //		speed: 120 km/h;
@@ -6369,7 +6455,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-//		name: string(STR_NAME_PASSENGER_1910);
+		name: string(STR_NAME_PAX_HOHA6810);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
 //		speed: 120 km/h;
@@ -6448,7 +6534,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-		name: string(STR_NAME_PAX_HOHA6810);
+		name: string(STR_NAME_MAIL_HONI_8900);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
 //		speed: 120 km/h;
