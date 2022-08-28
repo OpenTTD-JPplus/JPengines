@@ -128,7 +128,7 @@ sort(FEAT_TRAINS, [
 1005, 1100, 1101, 
 
 //wagons pax
-1536, 1537, 1305, 1306, 1308, 1538, 1310, 1311, 1539, 1316, 1318, 1322, 1320, 1540, 1340, 1341, 1346, 1347, 
+1536, 1537, 1305, 1306, 1308, 1538, 1310, 1311, 1539, 1316, 1318, 1319, 1322, 1320, 1540, 1340, 1341, 1346, 1347, 
 //wagons mail
 1664, 1665, 1666, 1667, 1668, 1360, 1370, 1380, 1390, 1395, 
 //wagons box/reef
@@ -6112,7 +6112,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-//		name: string(STR_NAME_PASSENGER_1880);
+		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
 //		speed: 120 km/h;
@@ -6448,7 +6448,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-//		name: string(STR_NAME_PASSENGER_1910);
+		name: string(STR_NAME_PAX_HOHA6810);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
 //		speed: 120 km/h;
@@ -6861,6 +6861,256 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		cargo_subtype_text: switch_mani_31_subtype_text;
 	}
 }
+spriteset(spriteset_pax_suhani35_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_suha44_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_suhafu44_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_suro54_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_mashi35_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_oshi17_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_naro10_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_mai38_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_maite39_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_maite58_green, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(1, 288)
+}
+
+
+//cc
+spriteset(spriteset_pax_suhani35_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_pax_suha44_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_suhafu44_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_pax_suro54_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_mashi35_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_pax_oshi17_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_pax_naro10_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_pax_mai38_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_pax_maite39_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 256)
+}
+
+spriteset(spriteset_pax_maite58_cc, "gfx/paxmail/tokaido.png") {
+	template_2cc_std(180, 288)
+}
+
+
+spriteset(spriteset_pax_tokaido_jnr_purchase, "gfx/paxmail/tokaido.png") {
+	template_purchase(1, 448)
+}
+
+
+
+// Tsubame auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_tsubame_2nd) {
+	1: spriteset_pax_naro10_green;
+	1: spriteset_pax_suro54_green;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_tsubame_diner) {
+	1: spriteset_pax_oshi17_green;
+	1: spriteset_pax_mashi35_green;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_tsubame_obs) {
+	1: spriteset_pax_maite39_green;
+	1: spriteset_pax_maite58_green;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_tsubame_auto_end, position_in_consist_from_end) {
+	0: random_pax_tokaido_tsubame_obs;
+	1: spriteset_pax_mai38_green;
+	2..4: spriteset_pax_naro10_green;
+	5: random_pax_tokaido_tsubame_diner;
+	6..7: spriteset_pax_suro54_green;
+	spriteset_pax_suha44_green;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_tsubame_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_suhani35_green;
+	switch_pax_tokaido_tsubame_auto_end;
+	}
+	
+	
+// Hato auto formation
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_hato_auto_end, position_in_consist_from_end) {
+	0: random_pax_tokaido_tsubame_obs;
+	1: spriteset_pax_mai38_green;
+	2..3: spriteset_pax_suro54_green;
+	4: random_pax_tokaido_tsubame_diner;
+	5: spriteset_pax_suhafu44_green;
+	spriteset_pax_suha44_green;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_hato_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_suhani35_green;
+	switch_pax_tokaido_hato_auto_end;
+	}
+	
+
+
+// cc auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_cc_2nd) {
+	1: spriteset_pax_naro10_cc;
+	1: spriteset_pax_suro54_cc;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_cc_diner) {
+	1: spriteset_pax_oshi17_cc;
+	1: spriteset_pax_mashi35_cc;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_tokaido_cc_obs) {
+	1: spriteset_pax_maite39_cc;
+	1: spriteset_pax_maite58_cc;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_cc_auto_end, position_in_consist_from_end) {
+	0: random_pax_tokaido_cc_obs;
+	1: spriteset_pax_mai38_cc;
+	2..4: random_pax_tokaido_cc_2nd;
+	5: random_pax_tokaido_cc_diner;
+	6..7: random_pax_tokaido_cc_2nd;
+	spriteset_pax_suha44_cc;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_cc_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_suhani35_cc;
+	switch_pax_tokaido_cc_auto_end;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_livery, cargo_subtype) {
+	0: switch_pax_tokaido_tsubame_auto_beginning;
+	1: switch_pax_tokaido_hato_auto_beginning;
+	2: switch_pax_tokaido_cc_auto_beginning;
+
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOFORM_TSUBAME);
+	1: return string(STR_REFIT_AUTOFORM_HATO);
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+
+item (FEAT_TRAINS, pax_suha44, 1319) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_SUHA44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1954,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 0;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 28;
+		cost_factor: 16;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 70;
+		default: switch_pax_tokaido_livery;
+		purchase: spriteset_pax_tokaido_jnr_purchase;
+		cargo_subtype_text: switch_pax_tokaido_subtype_text;
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 spriteset(spriteset_pax_12_series_rear, "gfx/paxmail/12series.png") {
 	template_2cc_std(1, 1)
@@ -8111,11 +8361,11 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_subtype_text, cargo_subtype) {
 	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
 	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
 	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BROWN_BLUE));
 	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
 	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
 	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BROWN_GREEN));
 	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
 	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
 	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), string(STR_SUFFIX_SLEEPER_3CLASS), string(STR_SUFFIX_BROWN));
@@ -8123,11 +8373,11 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_subtype_text, cargo_subtype) {
 	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
 	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
 	17: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
+	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BLUE_GREEN));
 	19: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE));
 	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE));
 	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE));
-	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE));
+	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BLUE));
 	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
 	24: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
 	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), string(STR_SUFFIX_SLEEPER_3CLASS), string(STR_SUFFIX_BLUE));

@@ -290,7 +290,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
-//		name: string(STR_NAME_PASSENGER_1880);
+		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
 //		speed: 120 km/h;
