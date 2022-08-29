@@ -117,7 +117,7 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //electrics DC
-1010, 1011, 02, 1050, 08, 103, 1014, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
+1010, 1011, 02, 1050, 08, 103, 1054, 1014, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
 //electrics AC
 1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
@@ -1824,39 +1824,58 @@ item (FEAT_TRAINS, ed62, 1060) {
   purchase: switch_ed62_yeardep_purchase;
   }
 }
-spriteset(spriteset_ef10_brown, "gfx/ef10.png") {
+spriteset(spriteset_ef10_jgr_a, "gfx/electric/ef10.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef10_silver, "gfx/ef10.png") {
+spriteset(spriteset_ef10_jgr_b, "gfx/electric/ef10.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef10_cc, "gfx/ef10.png") {
+spriteset(spriteset_ef10_silver, "gfx/electric/ef10.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef10_jgr_purchase, "gfx/ef10.png") {
-	template_purchase(1, 96)
+spriteset(spriteset_ef10_cc_a, "gfx/electric/ef10.png") {
+	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef10_jnr_purchase, "gfx/ef10.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_ef10_cc_b, "gfx/electric/ef10.png") {
+	template_2cc_std(1, 128)
 }
 
+spriteset(spriteset_ef10_jgr_purchase, "gfx/electric/ef10.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_ef10_jnr_purchase, "gfx/electric/ef10.png") {
+	template_purchase(1, 192)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef10_yeardep, build_year) {
+    0..1940: spriteset_ef10_jgr_a;
+    spriteset_ef10_jgr_b;
+    }
 
 switch(FEAT_TRAINS, SELF, switch_ef10_livery, cargo_subtype) {
-	1: spriteset_ef10_silver;
-	2: spriteset_ef10_cc;
-	spriteset_ef10_brown;
+	0: switch_ef10_yeardep;
+	1: spriteset_ef10_jgr_a;
+	2: spriteset_ef10_jgr_b;
+	3: spriteset_ef10_silver;
+	4: spriteset_ef10_cc_a;
+	5: spriteset_ef10_cc_b;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_JNR_BROWN);
-	1: return string(STR_REFIT_STAINLESS);
-	2: return string(STR_REFIT_CC);
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_REFIT_BROWN_OLD);
+	2: return string(STR_REFIT_BROWN_NEW);
+	3: return string(STR_REFIT_STAINLESS);
+	4: return string(STR_REFIT_CC_OLD);
+	5: return string(STR_REFIT_CC_NEW);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -1875,8 +1894,8 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	length: 7;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -1888,29 +1907,29 @@ property {
   additional_text:	string(STR_DESC_JGR_EHF);
   }
 }
-spriteset(spriteset_ef13_croc_brown, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_brown, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef13_bloc_brown, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_brown, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef13_croc_cc, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_cc, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef13_bloc_cc, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_cc, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 96)
 }
 
 
 
-spriteset(spriteset_ef13_croc_purchase, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_purchase, "gfx/electric/ef13.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_ef13_bloc_purchase, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_purchase, "gfx/electric/ef13.png") {
 	template_purchase(1, 160)
 }
 
@@ -1955,8 +1974,8 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	length: 7;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -1966,6 +1985,106 @@ property {
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
   additional_text:	string(STR_DESC_JGR_EHF);
+  }
+}
+spriteset(spriteset_ef15_jnr_a, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef15_jnr_b, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef15_jnr_c, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef15_cc_a, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef15_cc_b, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef15_cc_c, "gfx/electric/ef15.png") {
+	template_2cc_std(1, 160)
+}
+
+
+spriteset(spriteset_ef15_jgr_purchase, "gfx/electric/ef15.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_ef15_jnr_purchase, "gfx/electric/ef15.png") {
+	template_purchase(1, 224)
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_ef15_jnr) {
+	1: spriteset_ef15_jnr_a;
+	1: spriteset_ef15_jnr_b;
+	1: spriteset_ef15_jnr_c;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_ef15_cc) {
+	1: spriteset_ef15_cc_a;
+	1: spriteset_ef15_cc_b;
+	1: spriteset_ef15_cc_c;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef15_yeardep_purchase, current_year) {
+	0..1949: spriteset_ef15_jgr_purchase;
+	spriteset_ef15_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef15_livery, cargo_subtype) {
+	0: random_ef15_jnr;
+	1: random_ef15_cc;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef15, 1054) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF15);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1947,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 102;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 39;
+  length: 7;
+  running_cost_factor: 56;
+  running_cost_base: RUNNING_COST_STEAM;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JNR_EHF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef15_subtype_text;
+  default: switch_ef15_livery;
+  purchase: switch_ef15_yeardep_purchase;
   }
 }
 spriteset(spriteset_ef50_jgr, "gfx/electric/ef50.png") {
@@ -2327,66 +2446,66 @@ item (FEAT_TRAINS, ef57, 1020) {
   purchase: switch_ef57_yeardep_purchase;
   }
 }
-spriteset(spriteset_ef58_brown, "gfx/ef58.png") {
+spriteset(spriteset_ef58_brown, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef58_imperial, "gfx/ef58.png") {
+spriteset(spriteset_ef58_imperial, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef58_blue, "gfx/ef58.png") {
+spriteset(spriteset_ef58_blue, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef58_x1, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x1, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef58_tokaido_green, "gfx/ef58.png") {
+spriteset(spriteset_ef58_tokaido_green, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef58_x3, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x3, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef58_x4, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x4, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ef58_old_brown, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_brown, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_ef58_old_cc, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 32)
 }
 
-spriteset(spriteset_ef58_large_logo, "gfx/ef58.png") {
+spriteset(spriteset_ef58_large_logo, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 64)
 }
 
-spriteset(spriteset_ef58_tokaido_blue, "gfx/ef58.png") {
+spriteset(spriteset_ef58_tokaido_blue, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 96)
 }
 
 
-spriteset(spriteset_ef58_cc, "gfx/ef58.png") {
+spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 224)
 }
 
 
 
-spriteset(spriteset_ef58_old_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ef58_brown_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_brown_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 288)
 }
 
-spriteset(spriteset_ef58_blue_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_blue_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 320)
 }
 

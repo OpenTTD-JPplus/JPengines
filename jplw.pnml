@@ -21,6 +21,7 @@
 #include "src/dc/ed62.pnml"
 #include "src/dc/ef10.pnml"
 #include "src/dc/ef13.pnml"
+#include "src/dc/ef15.pnml"
 #include "src/dc/ef50.pnml"
 #include "src/dc/ef53.pnml"
 #include "src/dc/ef55.pnml"

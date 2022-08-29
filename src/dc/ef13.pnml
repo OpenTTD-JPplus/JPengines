@@ -1,26 +1,26 @@
-spriteset(spriteset_ef13_croc_brown, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_brown, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef13_bloc_brown, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_brown, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef13_croc_cc, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_cc, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef13_bloc_cc, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_cc, "gfx/electric/ef13.png") {
 	template_2cc_std(1, 96)
 }
 
 
 
-spriteset(spriteset_ef13_croc_purchase, "gfx/ef13.png") {
+spriteset(spriteset_ef13_croc_purchase, "gfx/electric/ef13.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_ef13_bloc_purchase, "gfx/ef13.png") {
+spriteset(spriteset_ef13_bloc_purchase, "gfx/electric/ef13.png") {
 	template_purchase(1, 160)
 }
 
@@ -65,8 +65,8 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	length: 7;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 

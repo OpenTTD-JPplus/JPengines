@@ -1,63 +1,63 @@
-spriteset(spriteset_ef58_brown, "gfx/ef58.png") {
+spriteset(spriteset_ef58_brown, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef58_imperial, "gfx/ef58.png") {
+spriteset(spriteset_ef58_imperial, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef58_blue, "gfx/ef58.png") {
+spriteset(spriteset_ef58_blue, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef58_x1, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x1, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef58_tokaido_green, "gfx/ef58.png") {
+spriteset(spriteset_ef58_tokaido_green, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef58_x3, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x3, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef58_x4, "gfx/ef58.png") {
+spriteset(spriteset_ef58_x4, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ef58_old_brown, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_brown, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_ef58_old_cc, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 32)
 }
 
-spriteset(spriteset_ef58_large_logo, "gfx/ef58.png") {
+spriteset(spriteset_ef58_large_logo, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 64)
 }
 
-spriteset(spriteset_ef58_tokaido_blue, "gfx/ef58.png") {
+spriteset(spriteset_ef58_tokaido_blue, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 96)
 }
 
 
-spriteset(spriteset_ef58_cc, "gfx/ef58.png") {
+spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 224)
 }
 
 
 
-spriteset(spriteset_ef58_old_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_old_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ef58_brown_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_brown_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 288)
 }
 
-spriteset(spriteset_ef58_blue_purchase, "gfx/ef58.png") {
+spriteset(spriteset_ef58_blue_purchase, "gfx/electric/ef58.png") {
 	template_purchase(1, 320)
 }
 
