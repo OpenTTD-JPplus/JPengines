@@ -1,0 +1,575 @@
+spriteset(spriteset_pax_suha43_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_suhafu43_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_suha44_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_suhafu44_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_suro51_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_suro54_brown, "gfx/paxmail/suha43.png") { //dont use
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_mashi35_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_marone40_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_marone41_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_suhani35_brown, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 288)
+}
+
+
+spriteset(spriteset_pax_suha43_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_suhafu43_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_suha44_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_suhafu44_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_suro51_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_suro54_blue, "gfx/paxmail/suha43.png") { 
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_mashi35_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_marone40_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_marone41_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_suhani35_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 288)
+}
+
+
+//stripes
+spriteset(spriteset_pax_suha43_stripe_yellow, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_pax_suha43_stripe_blue, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_pax_suha43_stripe_green, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_pax_suha43_stripe_cream, "gfx/paxmail/suha43.png") {
+	template_2cc_std(1, 416)
+}
+
+
+//purchase sprites
+spriteset(spriteset_pax_suha43_jgr_brown_purchase, "gfx/paxmail/suha43.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_pax_suha43_jnr_brown_purchase, "gfx/paxmail/suha43.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_pax_suha43_jnr_blue_purchase, "gfx/paxmail/suha43.png") {
+	template_purchase(89, 480)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_purchase, current_year) {
+	0..1949: spriteset_pax_suha43_jgr_brown_purchase;
+	1949..1964: spriteset_pax_suha43_jnr_brown_purchase;
+	spriteset_pax_suha43_jnr_blue_purchase;	
+}
+
+
+//yeardep base livery
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_old) {
+	3: spriteset_pax_suha43_brown;
+	1: spriteset_pax_suha43_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_new) {
+	1: spriteset_pax_suha43_brown;
+	3: spriteset_pax_suha43_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_yeardep, current_year) {
+	0..1964: spriteset_pax_suha43_brown;
+	1964..1970: random_pax_suha43_old;
+	1970..1979: random_pax_suha43_new;
+	spriteset_pax_suha43_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhafu43_old) {
+	3: spriteset_pax_suhafu43_brown;
+	1: spriteset_pax_suhafu43_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhafu43_new) {
+	1: spriteset_pax_suhafu43_brown;
+	3: spriteset_pax_suhafu43_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suhafu43_yeardep, current_year) {
+	0..1964: spriteset_pax_suhafu43_brown;
+	1964..1970: random_pax_suhafu43_old;
+	1970..1979: random_pax_suhafu43_new;
+	spriteset_pax_suhafu43_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha44_old) {
+	3: spriteset_pax_suha44_brown;
+	1: spriteset_pax_suha44_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha44_new) {
+	1: spriteset_pax_suha44_brown;
+	3: spriteset_pax_suha44_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha44_yeardep, current_year) {
+	0..1964: spriteset_pax_suha44_brown;
+	1964..1970: random_pax_suha44_old;
+	1970..1979: random_pax_suha44_new;
+	spriteset_pax_suha44_blue;	
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhafu44_old) {
+	3: spriteset_pax_suhafu44_brown;
+	1: spriteset_pax_suhafu44_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhafu44_new) {
+	1: spriteset_pax_suhafu44_brown;
+	3: spriteset_pax_suhafu44_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suro51_old) {
+	3: spriteset_pax_suro51_brown;
+	1: spriteset_pax_suro51_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suro51_new) {
+	1: spriteset_pax_suro51_brown;
+	3: spriteset_pax_suro51_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suro51_yeardep, current_year) {
+	0..1964: spriteset_pax_suro51_brown;
+	1964..1970: random_pax_suro51_old;
+	1970..1979: random_pax_suro51_new;
+	spriteset_pax_suro51_blue;	
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suro54_yeardep, current_year) {
+	0..1964: spriteset_pax_marone40_brown;
+	spriteset_pax_suro51_blue;	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suhafu44_yeardep, current_year) {
+	0..1964: spriteset_pax_suhafu44_brown;
+	1964..1970: random_pax_suhafu44_old;
+	1970..1979: random_pax_suhafu44_new;
+	spriteset_pax_suhafu44_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_mashi35_old) {
+	3: spriteset_pax_mashi35_brown;
+	1: spriteset_pax_mashi35_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_mashi35_new) {
+	1: spriteset_pax_mashi35_brown;
+	3: spriteset_pax_mashi35_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_mashi35_yeardep, current_year) {
+	0..1964: spriteset_pax_mashi35_brown;
+	1964..1970: random_pax_mashi35_old;
+	1970..1979: random_pax_mashi35_new;
+	spriteset_pax_mashi35_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_marone40_old) {
+	3: spriteset_pax_marone40_brown;
+	1: spriteset_pax_marone40_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_marone40_new) {
+	1: spriteset_pax_marone40_brown;
+	3: spriteset_pax_marone40_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_marone40_yeardep, current_year) {
+	0..1964: spriteset_pax_marone40_brown;
+	1964..1970: random_pax_marone40_old;
+	1970..1979: random_pax_marone40_new;
+	spriteset_pax_marone40_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_marone41_old) {
+	3: spriteset_pax_marone41_brown;
+	1: spriteset_pax_marone41_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_marone41_new) {
+	1: spriteset_pax_marone41_brown;
+	3: spriteset_pax_marone41_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_marone41_yeardep, current_year) {
+	0..1964: spriteset_pax_marone41_brown;
+	1964..1970: random_pax_marone41_old;
+	1970..1979: random_pax_marone41_new;
+	spriteset_pax_marone41_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhani35_old) {
+	3: spriteset_pax_suhani35_brown;
+	1: spriteset_pax_suhani35_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suhani35_new) {
+	1: spriteset_pax_suhani35_brown;
+	3: spriteset_pax_suhani35_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suhani35_yeardep, current_year) {
+	0..1949: spriteset_pax_suhani35_brown;
+	1964..1970: random_pax_suhani35_old;
+	1970..1979: random_pax_suhani35_new;
+	spriteset_pax_suhani35_blue;	
+}
+
+//stripe switch
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_stripe_yeardep, current_year) {
+	0..1961: spriteset_pax_suha43_stripe_blue;
+	1961..1987: spriteset_pax_suha43_stripe_green;
+	spriteset_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_maine40_stripe_yeardep, current_year) {
+	0..1961: spriteset_pax_suha43_stripe_cream;
+	1961..1987: spriteset_pax_suha43_stripe_green;
+	spriteset_blank;
+}
+
+	
+//auto formations
+//local auto formation
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_local_auto_end, position_in_consist_from_end) {
+	0: switch_pax_suhafu43_yeardep;
+	switch_pax_suha43_yeardep;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_local_auto_beginning, position_in_vehid_chain) {
+	0: switch_pax_suhani35_yeardep;
+	switch_pax_suha43_local_auto_end;
+	}
+
+
+// express auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_express_auto_beginning) {
+	3: switch_pax_suro51_yeardep;
+	1: switch_pax_suro54_yeardep;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_express_auto_end, position_in_consist_from_end) {
+	0: switch_pax_suhafu44_yeardep;
+	switch_pax_suha44_yeardep;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_express_auto_beginning, position_in_vehid_chain) {
+	0..2: random_pax_suha43_express_auto_beginning;
+	3: switch_pax_mashi35_yeardep;
+	switch_pax_suha43_express_auto_end;
+	}
+
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_express_auto_stripe) {
+	dependent: random_pax_suha43_express_auto_beginning;
+	1: switch_pax_suha43_stripe_yeardep;
+	1: switch_pax_maine40_stripe_yeardep;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_express_auto_stripe, position_in_vehid_chain) {
+	0..2: random_pax_suha43_express_auto_stripe;
+	}
+
+
+// sleeper auto formation
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_sleeper_auto_beginning) {
+	1: switch_pax_marone40_yeardep;
+	1: switch_pax_suro54_yeardep;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_end, position_in_consist_from_end) {
+	0: switch_pax_suhafu44_yeardep;
+	switch_pax_suha44_yeardep;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_beginning, position_in_vehid_chain) {
+	0..3: random_pax_suha43_sleeper_auto_beginning;
+	4: switch_pax_mashi35_yeardep;
+	5..6: random_pax_suha43_sleeper_auto_beginning;
+	7..9: switch_pax_marone41_yeardep;
+	switch_pax_suha43_sleeper_auto_end;
+	}
+
+
+random_switch (FEAT_TRAINS, SELF, random_pax_suha43_sleeper_auto_stripe) {
+	dependent: random_pax_suha43_sleeper_auto_beginning;
+	1: switch_pax_suha43_stripe_yeardep;
+	1: switch_pax_maine40_stripe_yeardep;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_stripe, position_in_vehid_chain) {
+	0..3: random_pax_suha43_express_auto_stripe;
+	5..9: random_pax_suha43_express_auto_stripe;
+	}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_base_livery, cargo_subtype) {
+	0: switch_pax_suha43_local_auto_beginning;
+	1: switch_pax_suha43_express_auto_beginning;
+	2: switch_pax_suha43_sleeper_auto_beginning;
+	3: spriteset_pax_suha43_brown;
+	4: spriteset_pax_suhafu43_brown;
+	5: spriteset_pax_suha44_brown;
+	6: spriteset_pax_suhafu44_brown;
+	7: spriteset_pax_suro51_brown;
+	8: spriteset_pax_marone40_brown;
+	9: spriteset_pax_marone41_brown;
+	10: spriteset_pax_suro51_brown;
+	11: spriteset_pax_marone40_brown;
+	12: spriteset_pax_marone41_brown;
+	13: spriteset_pax_marone40_brown; //maine
+	14: spriteset_pax_suhani35_brown;
+	15: spriteset_pax_mashi35_brown;
+	16: spriteset_pax_suha43_blue;
+	17: spriteset_pax_suhafu43_blue;
+	18: spriteset_pax_suha44_blue;
+	19: spriteset_pax_suhafu44_blue;
+	20: spriteset_pax_suro51_blue;
+	21: spriteset_pax_suro54_blue;
+	22: spriteset_pax_marone40_blue;
+	23: spriteset_pax_marone41_blue;
+	24: spriteset_pax_suro51_blue;
+	25: spriteset_pax_suro54_blue;
+	26: spriteset_pax_marone40_blue;
+	27: spriteset_pax_marone41_blue;
+	28: spriteset_pax_suhani35_blue;
+	29: spriteset_pax_mashi35_blue;
+	30: spriteset_pax_marone40_blue;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_stripe_livery, cargo_subtype) {
+	0: spriteset_blank;
+	1: switch_pax_suha43_express_auto_stripe;
+	2: switch_pax_suha43_sleeper_auto_stripe;
+	3: spriteset_blank;
+	4: spriteset_blank;
+	5: spriteset_blank;
+	6: spriteset_blank;
+	7: spriteset_pax_suha43_stripe_blue;
+	8: spriteset_pax_suha43_stripe_blue;
+	9: spriteset_pax_suha43_stripe_blue;
+	10: spriteset_pax_suha43_stripe_green;
+	11: spriteset_pax_suha43_stripe_green;
+	12: spriteset_pax_suha43_stripe_green;
+	13: spriteset_pax_suha43_stripe_cream; //maine
+	14: spriteset_blank;
+	15: spriteset_blank;
+	16: spriteset_blank;
+	17: spriteset_blank;
+	18: spriteset_blank;
+	19: spriteset_blank;
+	20: spriteset_pax_suha43_stripe_green;
+	21: spriteset_pax_suha43_stripe_green;
+	22: spriteset_pax_suha43_stripe_green;
+	23: spriteset_pax_suha43_stripe_green;
+	24: spriteset_blank;
+	25: spriteset_blank;
+	26: spriteset_blank;
+	27: spriteset_blank;
+	28: spriteset_blank;
+	29: spriteset_blank;
+	30: spriteset_pax_suha43_stripe_yellow;
+}
+/*
+	3: suha 43 brown
+	4: suhafu 43 brown
+	5: suha 44 brown
+	6: suhafu 44 brown
+	7: suro 51 brown/blue
+	8: marone 40 brown/blue
+	9: marone 41 brown/blue
+	10: suro 51 brown/green
+	11: marone 40 brown/green
+	12: marone 41 brown/green
+	13: maine 40 brown/white
+	14: suhani 35 brown
+	15: mashi 35 brown
+	16: suha 43 blue
+	17: suhafu 43 blue
+	18: suha 44 blue
+	19: suhafu 44 blue
+	20: suro 51 blue/green
+	21: suro 54 blue/green
+	22: marone 40 blue/green
+	23: marone 41 blue/green
+	24: suro 51 blue
+	25: suro 54 blue
+	26: marone 40 blue
+	27: marone 41 blue
+	28: suhani 35 blue
+	29: mashi 35 blue
+	30: suya 42 blue/yellow
+*/
+
+switch(FEAT_TRAINS, SELF, switch_pax_suha43_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOFORM_LOCAL);
+	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
+	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	6: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE40), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
+	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
+	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
+	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
+	17: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
+	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
+	19: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
+	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
+	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO54), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
+	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
+	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
+	24: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_GREEN), string(STR_SUFFIX_BLUE));
+	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO54), string(STR_SUFFIX_PAX_GREEN), string(STR_SUFFIX_BLUE));
+	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE));
+	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE));
+	28: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BLUE));
+	29: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BLUE));	
+	30: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUYA42), string(STR_SUFFIX_INSPECTION), string(STR_SUFFIX_BLUE_YELLOW));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, stack_pax_suha43, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_pax_suha43_base_livery;
+	1: 	switch_pax_suha43_stripe_livery;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, pax_suha43, 1318) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_SUHA43);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1950,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 80; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 0;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 28;
+		cost_factor: 17;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 80;
+		default: stack_pax_suha43;
+		purchase: switch_pax_suha43_purchase;
+		cargo_subtype_text: switch_pax_suha43_subtype_text;
+		
+	}
+}

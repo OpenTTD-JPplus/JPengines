@@ -16,14 +16,23 @@ spriteset(spriteset_ef13_bloc_cc, "gfx/electric/ef13.png") {
 
 
 
-spriteset(spriteset_ef13_croc_purchase, "gfx/electric/ef13.png") {
+spriteset(spriteset_ef13_croc_jgr_purchase, "gfx/electric/ef13.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_ef13_bloc_purchase, "gfx/electric/ef13.png") {
-	template_purchase(1, 160)
+spriteset(spriteset_ef13_croc_jnr_purchase, "gfx/electric/ef13.png") {
+	template_purchase(89, 128)
 }
 
+spriteset(spriteset_ef13_bloc_jnr_purchase, "gfx/electric/ef13.png") {
+	template_purchase(89, 160)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef13_yeardep_purchase, current_year) {
+    0..1949: spriteset_ef13_croc_jgr_purchase;
+	1949..1957: spriteset_ef13_croc_jnr_purchase;
+    spriteset_ef13_bloc_jnr_purchase;
+   }
 
 switch(FEAT_TRAINS, SELF, switch_ef13_brown_buildyear, build_year) {
 	0..1957: spriteset_ef13_croc_brown;
@@ -50,10 +59,7 @@ switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-switch(FEAT_TRAINS, SELF, switch_ef13_yeardep_purchase, current_year) {
-    1957..9999: spriteset_ef13_bloc_purchase;
-    spriteset_ef13_croc_purchase;
-    }
+
 
 
 item (FEAT_TRAINS, ef13, 103) {
