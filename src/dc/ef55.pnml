@@ -1,26 +1,26 @@
-spriteset(spriteset_ef55_brown, "gfx/ef55.png") {
+spriteset(spriteset_ef55_brown, "gfx/electric/ef55.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef55_brown_flip, "gfx/ef55.png") {
+spriteset(spriteset_ef55_brown_flip, "gfx/electric/ef55.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_ef55_cc, "gfx/ef55.png") {
+spriteset(spriteset_ef55_cc, "gfx/electric/ef55.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef55_cc_flip, "gfx/ef55.png") {
+spriteset(spriteset_ef55_cc_flip, "gfx/electric/ef55.png") {
 	template_2cc_flip(1, 96)
 }
 
 
 
-spriteset(spriteset_ef55_jgr_purchase, "gfx/ef55.png") {
+spriteset(spriteset_ef55_jgr_purchase, "gfx/electric/ef55.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_ef55_jnr_purchase, "gfx/ef55.png") {
+spriteset(spriteset_ef55_jnr_purchase, "gfx/electric/ef55.png") {
 	template_purchase(1, 160)
 }
 
