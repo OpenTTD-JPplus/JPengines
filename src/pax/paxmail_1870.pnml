@@ -1,0 +1,211 @@
+spriteset(spriteset_pax_1870_3rd_compartment_brown, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_1870_3rd_combine_brown, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_1870_3rd_combine_brown_flip, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_1870_3rd_compartment_jgr, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_1870_3rd_combine_jgr, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_1870_3rd_combine_jgr_flip, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_1870_2nd_compartment, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_1870_mail_brown, "gfx/paxmail/paxmail-1870.png") {
+	template_2cc_std(1, 160)
+}
+
+
+
+//purchase sprites
+
+spriteset(spriteset_pax_1870_brown_purchase, "gfx/paxmail/paxmail-1870.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_pax_1870_jgr_purchase, "gfx/paxmail/paxmail-1870.png") {
+	template_purchase(1, 224)
+}
+
+spriteset(spriteset_mail_1870_jgr_purchase, "gfx/paxmail/paxmail-1870.png") {
+	template_purchase(89, 224)
+}
+
+
+//purchase switches
+switch(FEAT_TRAINS, SELF, switch_pax_1870_yeardep_purchase, current_year) {
+	0..1897: spriteset_pax_1870_brown_purchase;
+	spriteset_pax_1870_jgr_purchase;
+}
+
+
+
+
+//brown auto formation
+switch(FEAT_TRAINS, SELF, switch_pax_1870_brown_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_1870_3rd_combine_brown_flip;
+	spriteset_pax_1870_3rd_compartment_brown;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_pax_1870_brown_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_1870_3rd_combine_brown;
+	switch_pax_1870_brown_end;
+	}
+	
+	
+	
+//jgr auto formation
+switch(FEAT_TRAINS, SELF, switch_pax_1870_jgr_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_1870_2nd_compartment;
+	spriteset_pax_1870_3rd_compartment_jgr;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_pax_1870_jgr_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_1870_3rd_combine_jgr;
+	switch_pax_1870_jgr_end;
+	}
+	
+	
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1870_yeardep, build_year) {
+	0..1897: switch_pax_1870_brown_beginning;
+	switch_pax_1870_jgr_beginning;
+	}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1870_livery, cargo_subtype) {
+	0: switch_pax_1870_yeardep;
+	1: switch_pax_1870_brown_beginning;
+	2: switch_pax_1870_jgr_beginning;
+	3: spriteset_pax_1870_3rd_compartment_brown;
+	4: spriteset_pax_1870_3rd_combine_brown;
+	5: spriteset_pax_1870_3rd_combine_brown_flip;
+	6: spriteset_pax_1870_3rd_compartment_jgr;
+	7: spriteset_pax_1870_3rd_combine_jgr;
+	8: spriteset_pax_1870_3rd_combine_jgr_flip;
+	9: spriteset_pax_1870_2nd_compartment;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_1870_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARFORM);
+	1: return string(STR_REFIT_AUTOFORM_BROWN);
+	2: return string(STR_REFIT_AUTOFORM_JGR);
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN));
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_RO481), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+item (FEAT_TRAINS, pax_1870, 1536) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+		name: string(STR_NAME_PAX_HA4995);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 70 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 36; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+//		length: 6;
+//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 36;
+		default: switch_pax_1870_livery;
+		purchase: switch_pax_1870_yeardep_purchase;
+		cargo_subtype_text: switch_pax_1870_subtype_text;
+	}
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mail_1870_livery, cargo_subtype) {
+	0: spriteset_pax_1870_mail_brown;
+	1: spriteset_pax_1870_3rd_combine_brown;
+	2: spriteset_pax_1870_3rd_combine_brown_flip;
+	3: spriteset_pax_1870_3rd_combine_jgr;
+	4: spriteset_pax_1870_3rd_combine_jgr_flip;	
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mail_1870_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_HANI1), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
+	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN));
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, mail_1870, 1664) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+//		track_type: NAAN;
+		name: string(STR_NAME_MAIL_HANI1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 70 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 24; 
+		refit_cost: 0;
+//		default_cargo_type: PASS;
+//		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
+		non_refittable_cargo_classes: 0; 
+//		weight: 28;
+//		cost_factor: 18;
+//		running_cost_factor: 11;
+//		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		cargo_capacity: return 24;
+		default: switch_mail_1870_livery;
+		purchase: spriteset_mail_1870_jgr_purchase;
+		cargo_subtype_text: switch_mail_1870_subtype_text;
+	}
+}
