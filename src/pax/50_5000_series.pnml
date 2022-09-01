@@ -110,7 +110,46 @@ switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_beginning, position_in_vehid
 	0: random_pax_50_5000_front;
 	switch_pax_50_5000_series_end;
 	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_noac_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_50_5000_2ac_end_rear;
+	spriteset_pax_50_5000_noac;
+	}
 	
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_noac_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_50_5000_2ac_end;
+	switch_pax_50_5000_series_noac_end;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_ac_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_50_5000_4ac_end_rear;
+	spriteset_pax_50_5000_4ac;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_ac_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_50_5000_4ac_end;
+	switch_pax_50_5000_series_ac_end;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_livery, cargo_subtype) {
+	0: switch_pax_50_5000_series_beginning;
+	1: switch_pax_50_5000_series_noac_beginning;
+	2: switch_pax_50_5000_series_ac_beginning;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_RANDOM),string(STR_SUFFIX_BLUE_WHITE));
+	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_ORIGINAL),string(STR_SUFFIX_BLUE_WHITE));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_AIRCON),string(STR_SUFFIX_BLUE_WHITE));
+	   return CB_RESULT_NO_TEXT;
+	}
 	
 
 
@@ -139,9 +178,9 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 	}
 	graphics {
 		cargo_capacity: return 90;
-		default: switch_pax_50_5000_series_beginning;
+		default: switch_pax_50_5000_series_livery;
 		purchase: spriteset_pax_50_5000_jr_purchase;
-		// cargo_subtype_text: switch_pax_50_5000_series_subtype_text;
+		cargo_subtype_text: switch_pax_50_5000_series_subtype_text;
 		
 	}
 }
