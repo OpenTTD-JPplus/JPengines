@@ -126,8 +126,6 @@ switch(FEAT_TRAINS, SELF, switch_pax_1870_subtype_text, cargo_subtype) {
 
 
 
-
-
 item (FEAT_TRAINS, pax_1870, 1536) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;

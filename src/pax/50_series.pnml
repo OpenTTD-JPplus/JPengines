@@ -161,7 +161,7 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 		cost_factor: 12;
 		running_cost_factor: 9;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 		cargo_capacity: return 100;

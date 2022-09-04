@@ -1,26 +1,53 @@
-spriteset(spriteset_ed17_brown, "gfx/ed17.png") {
+spriteset(spriteset_ed17_brown, "gfx/electric/ed17.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed17_cc, "gfx/ed17.png") {
+spriteset(spriteset_ed17_black, "gfx/electric/ed17.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed17_purchase, "gfx/ed17.png") {
+spriteset(spriteset_ed17_cc, "gfx/electric/ed17.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ed17_jgr_brown_purchase, "gfx/electric/ed17.png") {
 	template_purchase(1, 96)
 }
 
+spriteset(spriteset_ed17_jgr_black_purchase, "gfx/electric/ed17.png") {
+	template_purchase(89, 96)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed17_yeardep_purchase, current_year) {
+	0..1928: spriteset_ed17_jgr_black_purchase;
+	spriteset_ed17_jgr_brown_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed17_yeardep_livery, build_year) {
+	0..1928: spriteset_ed17_black;
+	spriteset_ed17_brown;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed17_livery, cargo_subtype) {
-	0: spriteset_ed17_brown;
-	1: spriteset_ed17_cc;
+	0: switch_ed17_yeardep_livery;
+	1: spriteset_ed17_black;
+	2: spriteset_ed17_brown;
+	3: spriteset_ed17_brown;
+	4: spriteset_ed17_cc;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_JNR_BROWN);
-	1: return string(STR_REFIT_CC);
-	   return CB_RESULT_NO_TEXT;
-	}
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
+	3: return string(STR_CONCAT_4, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_85));
+	4: return string(STR_CONCAT_4, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC), string(STR_SUFFIX_85));
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed17_speed, cargo_subtype) {
+	3..4: return 85;
+	return 65;
+}
 
 item (FEAT_TRAINS, ed17, 02) {
 
@@ -32,13 +59,14 @@ property {
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 6;
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
 graphics { // graphics for engine
     default: switch_ed17_livery;
-    purchase: spriteset_ed17_purchase;
+    purchase: switch_ed17_yeardep_purchase;
+	speed: switch_ed17_speed;
     cargo_capacity: return 0;
     cargo_subtype_text: switch_ed17_subtype_text;
   }
