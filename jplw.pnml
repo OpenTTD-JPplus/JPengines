@@ -16,6 +16,7 @@
 #include "src/dc/e31.pnml"
 #include "src/dc/e851.pnml"
 #include "src/dc/eb10.pnml"
+#include "src/dc/ed16.pnml"
 #include "src/dc/ed17.pnml"
 #include "src/dc/ed53.pnml"
 #include "src/dc/ed62.pnml"

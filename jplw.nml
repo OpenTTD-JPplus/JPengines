@@ -117,7 +117,7 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //electrics DC
-1010, 1011, 02, 1050, 08, 103, 1054, 1014, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
+1010, 1011, 1004, 02, 1050, 08, 103, 1054, 1014, 1016, 10, 1020, 18, 14, 1060, 1030, 1040, 22, 24, 26, 60, 84, 88, 
 //electrics AC
 1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
@@ -1270,35 +1270,47 @@ property {
 spriteset(spriteset_deki_400_black, "gfx/private/deki401.png") {
 	template_2cc_std(1, 1)
 }
-
-spriteset(spriteset_deki_400_blue, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_yellow, "gfx/private/deki401.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_deki_400_cc, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_blue, "gfx/private/deki401.png") {
 	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_deki_400_cc, "gfx/private/deki401.png") {
+	template_2cc_std(1, 96)
 }
 
 spriteset(spriteset_deki_400_black_purchase, "gfx/private/deki401.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_deki_400_blue_purchase, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_yellow_purchase, "gfx/private/deki401.png") {
 	template_purchase(89, 128)
 }
 
+spriteset(spriteset_deki_400_blue_purchase, "gfx/private/deki401.png") {
+	template_purchase(1, 160)
+}
 
-
+switch(FEAT_TRAINS, SELF, switch_deki_400_purchase, current_year) {
+	0..1960: spriteset_deki_400_black_purchase;
+	1960..1993: spriteset_deki_400_yellow_purchase;
+	spriteset_deki_400_blue_purchase;
+}
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_yeardep_livery, build_year) {
-	0..1993: spriteset_deki_400_black;
+	0..1960: spriteset_deki_400_black;
+	1960..1993: spriteset_deki_400_yellow;
 	spriteset_deki_400_blue;
 }
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_livery, cargo_subtype) {
 	1: spriteset_deki_400_black;
-	2: spriteset_deki_400_blue;
-	3: spriteset_deki_400_cc;
+	2: spriteset_deki_400_yellow;
+	3: spriteset_deki_400_blue;
+	4: spriteset_deki_400_cc;
 	switch_deki_400_yeardep_livery;
 }
 
@@ -1306,17 +1318,15 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_MEITETSU_BLACK);
-	2: return string(STR_REFIT_MEITETSU_BLUE);
-	3: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_AICHI), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLACK_YELLOW));
+	3: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLUE_YELLOW));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_CC));
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_deki_400_purchase, current_year) {
-	0..1993: spriteset_deki_400_black_purchase;
-	spriteset_deki_400_blue_purchase;
-}
+
 
 //deki
 item (FEAT_TRAINS, deki_400, 1005) {
@@ -1593,6 +1603,73 @@ item (FEAT_TRAINS, eb10, 1011) {
   default: switch_eb10_livery;
   purchase: switch_eb10_purchase_yeardep;
   cargo_capacity: return 0;
+  }
+}
+spriteset(spriteset_ed16_brown, "gfx/electric/ed16.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed16_cc, "gfx/electric/ed16.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ed16_jgr_purchase, "gfx/electric/ed16.png") {
+	template_purchase(1, 96)
+}
+
+spriteset(spriteset_ed16_jnr_purchase, "gfx/electric/ed16.png") {
+	template_purchase(1, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed16_yeardep_purchase, current_year) {
+	0..1949: spriteset_ed16_jgr_purchase;
+	spriteset_ed16_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed16_livery, cargo_subtype) {
+	0: spriteset_ed16_brown;
+	1: spriteset_ed16_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed16_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, ed16, 1004) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED16);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1931,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 77;
+  reliability_decay: 85;
+  model_life: 65;
+  vehicle_life: 50;
+  cost_factor: 32;
+  length: 6;
+  running_cost_factor: 40;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed16_subtype_text;
+  default: switch_ed16_livery;
+  purchase: switch_ed16_yeardep_purchase;
   }
 }
 spriteset(spriteset_ed17_brown, "gfx/electric/ed17.png") {
@@ -7351,43 +7428,43 @@ spriteset(spriteset_pax_suhani35_brown, "gfx/paxmail/suha43.png") {
 
 
 spriteset(spriteset_pax_suha43_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 1)
+	template_2cc_std(180, 1)
 }
 
 spriteset(spriteset_pax_suhafu43_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 32)
+	template_2cc_std(180, 32)
 }
 
 spriteset(spriteset_pax_suha44_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 64)
+	template_2cc_std(180, 64)
 }
 
 spriteset(spriteset_pax_suhafu44_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 96)
+	template_2cc_std(180, 96)
 }
 
 spriteset(spriteset_pax_suro51_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 128)
+	template_2cc_std(180, 128)
 }
 
 spriteset(spriteset_pax_suro54_blue, "gfx/paxmail/suha43.png") { 
-	template_2cc_std(1, 160)
+	template_2cc_std(180, 160)
 }
 
 spriteset(spriteset_pax_mashi35_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 192)
+	template_2cc_std(180, 192)
 }
 
 spriteset(spriteset_pax_marone40_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 224)
+	template_2cc_std(180, 224)
 }
 
 spriteset(spriteset_pax_marone41_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 256)
+	template_2cc_std(180, 256)
 }
 
 spriteset(spriteset_pax_suhani35_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 288)
+	template_2cc_std(180, 288)
 }
 
 

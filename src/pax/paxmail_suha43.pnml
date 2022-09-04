@@ -40,43 +40,43 @@ spriteset(spriteset_pax_suhani35_brown, "gfx/paxmail/suha43.png") {
 
 
 spriteset(spriteset_pax_suha43_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 1)
+	template_2cc_std(180, 1)
 }
 
 spriteset(spriteset_pax_suhafu43_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 32)
+	template_2cc_std(180, 32)
 }
 
 spriteset(spriteset_pax_suha44_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 64)
+	template_2cc_std(180, 64)
 }
 
 spriteset(spriteset_pax_suhafu44_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 96)
+	template_2cc_std(180, 96)
 }
 
 spriteset(spriteset_pax_suro51_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 128)
+	template_2cc_std(180, 128)
 }
 
 spriteset(spriteset_pax_suro54_blue, "gfx/paxmail/suha43.png") { 
-	template_2cc_std(1, 160)
+	template_2cc_std(180, 160)
 }
 
 spriteset(spriteset_pax_mashi35_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 192)
+	template_2cc_std(180, 192)
 }
 
 spriteset(spriteset_pax_marone40_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 224)
+	template_2cc_std(180, 224)
 }
 
 spriteset(spriteset_pax_marone41_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 256)
+	template_2cc_std(180, 256)
 }
 
 spriteset(spriteset_pax_suhani35_blue, "gfx/paxmail/suha43.png") {
-	template_2cc_std(1, 288)
+	template_2cc_std(180, 288)
 }
 
 

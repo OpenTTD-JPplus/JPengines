@@ -1,0 +1,67 @@
+spriteset(spriteset_ed16_brown, "gfx/electric/ed16.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed16_cc, "gfx/electric/ed16.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ed16_jgr_purchase, "gfx/electric/ed16.png") {
+	template_purchase(1, 96)
+}
+
+spriteset(spriteset_ed16_jnr_purchase, "gfx/electric/ed16.png") {
+	template_purchase(1, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed16_yeardep_purchase, current_year) {
+	0..1949: spriteset_ed16_jgr_purchase;
+	spriteset_ed16_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed16_livery, cargo_subtype) {
+	0: spriteset_ed16_brown;
+	1: spriteset_ed16_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed16_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, ed16, 1004) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED16);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1931,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 77;
+  reliability_decay: 85;
+  model_life: 65;
+  vehicle_life: 50;
+  cost_factor: 32;
+  length: 6;
+  running_cost_factor: 40;
+  running_cost_base: RUNNING_COST_STEAM;
+  }
+  graphics { // graphics for engine
+//  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed16_subtype_text;
+  default: switch_ed16_livery;
+  purchase: switch_ed16_yeardep_purchase;
+  }
+}

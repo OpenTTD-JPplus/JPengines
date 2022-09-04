@@ -1,35 +1,47 @@
 spriteset(spriteset_deki_400_black, "gfx/private/deki401.png") {
 	template_2cc_std(1, 1)
 }
-
-spriteset(spriteset_deki_400_blue, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_yellow, "gfx/private/deki401.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_deki_400_cc, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_blue, "gfx/private/deki401.png") {
 	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_deki_400_cc, "gfx/private/deki401.png") {
+	template_2cc_std(1, 96)
 }
 
 spriteset(spriteset_deki_400_black_purchase, "gfx/private/deki401.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_deki_400_blue_purchase, "gfx/private/deki401.png") {
+spriteset(spriteset_deki_400_yellow_purchase, "gfx/private/deki401.png") {
 	template_purchase(89, 128)
 }
 
+spriteset(spriteset_deki_400_blue_purchase, "gfx/private/deki401.png") {
+	template_purchase(1, 160)
+}
 
-
+switch(FEAT_TRAINS, SELF, switch_deki_400_purchase, current_year) {
+	0..1960: spriteset_deki_400_black_purchase;
+	1960..1993: spriteset_deki_400_yellow_purchase;
+	spriteset_deki_400_blue_purchase;
+}
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_yeardep_livery, build_year) {
-	0..1993: spriteset_deki_400_black;
+	0..1960: spriteset_deki_400_black;
+	1960..1993: spriteset_deki_400_yellow;
 	spriteset_deki_400_blue;
 }
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_livery, cargo_subtype) {
 	1: spriteset_deki_400_black;
-	2: spriteset_deki_400_blue;
-	3: spriteset_deki_400_cc;
+	2: spriteset_deki_400_yellow;
+	3: spriteset_deki_400_blue;
+	4: spriteset_deki_400_cc;
 	switch_deki_400_yeardep_livery;
 }
 
@@ -37,17 +49,15 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_MEITETSU_BLACK);
-	2: return string(STR_REFIT_MEITETSU_BLUE);
-	3: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_AICHI), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLACK_YELLOW));
+	3: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLUE_YELLOW));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_CC));
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_deki_400_purchase, current_year) {
-	0..1993: spriteset_deki_400_black_purchase;
-	spriteset_deki_400_blue_purchase;
-}
+
 
 //deki
 item (FEAT_TRAINS, deki_400, 1005) {
