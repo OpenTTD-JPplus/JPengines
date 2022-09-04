@@ -1640,15 +1640,15 @@ graphics { // graphics for engine
     cargo_subtype_text: switch_ed17_subtype_text;
   }
 }
-spriteset(spriteset_ed53_brown, "gfx/ed53.png") {
+spriteset(spriteset_ed53_brown, "gfx/electric/ed53.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed53_cc, "gfx/ed53.png") {
+spriteset(spriteset_ed53_cc, "gfx/electric/ed53.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed53_purchase, "gfx/ed53.png") {
+spriteset(spriteset_ed53_purchase, "gfx/electric/ed53.png") {
 	template_purchase(1, 96)
 }
 
@@ -1687,7 +1687,7 @@ item (FEAT_TRAINS, ed53, 1050) {
   model_life: 55;
   vehicle_life: 50;
   cost_factor: 33;
-  length: 6;
+  length: 5;
   running_cost_factor: 44;
   running_cost_base: RUNNING_COST_STEAM;
   }
