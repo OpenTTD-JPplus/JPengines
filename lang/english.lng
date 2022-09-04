@@ -56,6 +56,7 @@ STR_NAME_JR_ED500	:ED500 (electric)
 STR_NAME_JR_EH800	:EH800 (electric)
 
 STR_NAME_DEKI_400	:DeKi 400 (electric)
+STR_NAME_EL120		:EL120 (electric)
 STR_NAME_SEIBU_E851	:E851 (electric)
 STR_NAME_SEIBU_E31	:E31 (electric)
 
@@ -578,7 +579,7 @@ STR_REFIT_EH500_4	: EH500 Late Version, No Logo
 
 
 STR_REFIT_DEKI_400	:{SILVER}DEKI 400
-
+STR_REFIT_EL120		:{SILVER}EL120
 
 STR_REFIT_WAKI_STRIPE	: Orange Stripe "Express Service"
 STR_REFIT_WAKI_GREENSTRIPE : Brown with Green Stripe

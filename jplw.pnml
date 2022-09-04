@@ -13,8 +13,10 @@
 #include "src/steam/860.pnml"
 
 #include "src/dc/deki_400.pnml"
+#include "src/dc/el120.pnml"
 #include "src/dc/e31.pnml"
 #include "src/dc/e851.pnml"
+
 #include "src/dc/eb10.pnml"
 #include "src/dc/ed16.pnml"
 #include "src/dc/ed17.pnml"

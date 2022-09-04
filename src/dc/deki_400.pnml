@@ -52,7 +52,7 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_AICHI), string(STR_SUFFIX_BLACK));
 	2: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLACK_YELLOW));
 	3: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLUE_YELLOW));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_CC));
+	4: return string(STR_CONCAT_2, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_CC));
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -67,7 +67,7 @@ item (FEAT_TRAINS, deki_400, 1005) {
   name: string(STR_NAME_DEKI_400);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1930,1,1);
-  speed: 60 km/h;
+  speed: 65 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
   power: 400 kW;
