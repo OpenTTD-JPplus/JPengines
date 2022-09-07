@@ -288,7 +288,7 @@ random_switch (FEAT_TRAINS, SELF, random_pax_suhani35_new) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_suhani35_yeardep, current_year) {
-	0..1949: spriteset_pax_suhani35_brown;
+	0..1964: spriteset_pax_suhani35_brown;
 	1964..1970: random_pax_suhani35_old;
 	1970..1979: random_pax_suhani35_new;
 	spriteset_pax_suhani35_blue;	

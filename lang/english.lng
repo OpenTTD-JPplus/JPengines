@@ -75,7 +75,7 @@ STR_NAME_PAX_50_5000	:50-5000 Series Passenger Coach {GOLD}"Rapid Kaikyō"{BLACK
 
 STR_NAME_PAX_26			:E26 Series Sleeper Coach {GOLD}"Cassiopeia"{BLACK}
 STR_NAME_PAX_77			:77-7000 Series Sleeper Coach {GOLD}"Seven Stars"{BLACK}
-
+STR_NAME_JOYFUL_12		:12 Series {GOLD}"Joyful Train"{BLACK}
 
 STR_NAME_MAIL_HANI1		:HANI 1 Luggage Van
 STR_NAME_MAIL_KONI_8890	:KONI 8890 Luggage Van
@@ -359,6 +359,11 @@ STR_SUFFIX_JRH			:{WHITE}JR Hokkaido
 
 STR_SUFFIX_AICHI		:{WHITE}Aichi Railway
 STR_SUFFIX_MEITETSU		:{WHITE}Meitetsu
+STR_SUFFIX_HCC			:{WHITE}Hokkaido Coal Company
+STR_SUFFIX_OIGAWA		:{WHITE}Ōigawa Railway
+STR_SUFFIX_SEIBU		:{WHITE}Seibu Railway
+STR_SUFFIX_SAKHALIN		:{WHITE}Sakhalin Railway
+STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators
 
 
 ##################
@@ -595,6 +600,38 @@ STR_REFIT_DMT_SEINO		: Seino
 STR_REFIT_DMT_FUKUYAMA	: Fukuyama
 STR_REFIT_DMT_FISH		: Reefer
 STR_REFIT_DMT_NITTSU	: Nittsu
+
+#####################
+#DESCRIPTION TEXT   #
+#####################
+
+STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}
+
+STR_DESC_USAGE_GP		:{BLACK}Usage: {SILVER}General Purpose{}
+STR_DESC_USAGE_LF		:{BLACK}Usage: {SILVER}Light Freight{}
+STR_DESC_USAGE_HF		:{BLACK}Usage: {SILVER}Heavy Freight{}
+STR_DESC_USAGE_P		:{BLACK}Usage: {SILVER}Passenger{}
+STR_DESC_USAGE_EP		:{BLACK}Usage: {SILVER}Express Passenger{}
+STR_DESC_USAGE_EF		:{BLACK}Usage: {SILVER}Express Passenger / Heavy Freight{}
+STR_DESC_USAGE_FF		:{BLACK}Usage: {SILVER}Express Passenger / Fast Freight{}
+
+
+
+STR_DESC_POWER_BATT		:{BLACK}Electric system:{GOLD} Battery{}
+STR_DESC_POWER_AC20		:{BLACK}Electric system:{RED} AC (20kV){}
+STR_DESC_POWER_DC15		:{BLACK}Electric system:{BLUE} DC (1500V){}
+STR_DESC_POWER_MS20		:{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}
+STR_DESC_POWER_MS25 	:{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV){}
+
+
+
+STR_DESC_OPS_JGR		:{BLACK}Operators: {WHITE}JGR{}
+STR_DESC_OPS_JGR_JNR	:{BLACK}Operators: {WHITE}JGR/JNR{}
+STR_DESC_OPS_JNR		:{BLACK}Operators: {WHITE}JNR{}
+STR_DESC_OPS_JNR_JR		:{BLACK}Operators: {WHITE}JNR/JR{}
+STR_DESC_OPS_JNR_JRF	:{BLACK}Operators: {WHITE}JNR/JR Freight{}
+STR_DESC_OPS_JRF		:{BLACK}Operators: {WHITE}JR Freight{}
+
 
 
 #additional text specific
