@@ -4201,26 +4201,30 @@ item (FEAT_TRAINS, ef30, 1015) {
   purchase: spriteset_ef30_purchase;
   }
 }
-spriteset(spriteset_ef70_old_red, "gfx/ef70.png") {
+spriteset(spriteset_ef70_old_red, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef70_new_red, "gfx/ef70.png") {
+spriteset(spriteset_ef70_new_red, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef70_express, "gfx/ef70.png") {
+spriteset(spriteset_ef70_ser, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef70_cc, "gfx/ef70.png") {
+spriteset(spriteset_ef70_express, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef70_cc, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 128)
 }
 
 
 
-spriteset(spriteset_ef70_purchase, "gfx/ef70.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_ef70_purchase, "gfx/electric/ef70.png") {
+	template_purchase(1, 160)
 }
 
 
@@ -4235,8 +4239,9 @@ switch(FEAT_TRAINS, SELF, switch_ef70_yeardep_livery, build_year) {
 switch(FEAT_TRAINS, SELF, switch_ef70_livery, cargo_subtype) {
 	1: spriteset_ef70_old_red;
 	2: spriteset_ef70_new_red;
-	3: spriteset_ef70_express; 
-	4: spriteset_ef70_cc;
+	3: spriteset_ef70_ser;
+	4: spriteset_ef70_express; 
+	5: spriteset_ef70_cc;
 	switch_ef70_yeardep_livery;
 }
 
@@ -4245,8 +4250,9 @@ switch(FEAT_TRAINS, SELF, switch_ef70_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_REFIT_RED_OLD);
 	2: return string(STR_REFIT_RED_NEW);
-	3: return string(STR_REFIT_JNR_CREAM);
-	4: return string(STR_REFIT_CC);
+  3: return string(STR_REFIT_RAINBOW);
+	4: return string(STR_REFIT_JNR_CREAM);
+	5: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -7662,7 +7668,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_suro51_yeardep, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_pax_suro54_yeardep, current_year) {
 	0..1964: spriteset_pax_marone40_brown;
-	spriteset_pax_suro51_blue;	
+	spriteset_pax_suro54_blue;	
 }
 
 
@@ -7805,7 +7811,6 @@ switch(FEAT_TRAINS, SELF, switch_pax_suha43_express_auto_stripe, position_in_veh
 	0..2: random_pax_suha43_express_auto_stripe;
 	}
 
-
 // sleeper auto formation
 
 random_switch (FEAT_TRAINS, SELF, random_pax_suha43_sleeper_auto_beginning) {
@@ -7820,10 +7825,9 @@ switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_end, position_in_consis
 	}
 
 switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_beginning, position_in_vehid_chain) {
-	0..3: random_pax_suha43_sleeper_auto_beginning;
-	4: switch_pax_mashi35_yeardep;
-	5..6: random_pax_suha43_sleeper_auto_beginning;
-	7..9: switch_pax_marone41_yeardep;
+	0..2: random_pax_suha43_sleeper_auto_beginning;
+	3: switch_pax_mashi35_yeardep;
+	4..6: switch_pax_marone41_yeardep;
 	switch_pax_suha43_sleeper_auto_end;
 	}
 
@@ -7835,8 +7839,8 @@ random_switch (FEAT_TRAINS, SELF, random_pax_suha43_sleeper_auto_stripe) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_pax_suha43_sleeper_auto_stripe, position_in_vehid_chain) {
-	0..3: random_pax_suha43_express_auto_stripe;
-	5..9: random_pax_suha43_express_auto_stripe;
+	0..2: random_pax_suha43_express_auto_stripe;
+	4..6: switch_pax_suha43_stripe_yeardep;
 	}
 
 
