@@ -8303,6 +8303,23 @@ spriteset(spriteset_joyful_12_series_set_cc, "gfx/paxmail/joyful-12series.png") 
 	template_2cc_std(180, 64)
 }
 
+spriteset(spriteset_joyful_12_series_euro_rear, "gfx/paxmail/joyful-12series.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_joyful_12_series_euro_front, "gfx/paxmail/joyful-12series.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_joyful_12_series_euro_pano, "gfx/paxmail/joyful-12series.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_joyful_12_series_euro, "gfx/paxmail/joyful-12series.png") {
+	template_2cc_std(1, 416)
+}
+
+
 /*
 
 spriteset(spriteset_joyful_12_series_blue_rear, "gfx/paxmail/joyful-12series.png") {
@@ -8349,6 +8366,20 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_beginning, position_in_veh
 	switch_joyful_12_series_set_end;
 	}
 
+
+switch(FEAT_TRAINS, SELF, switch_joyful_12_series_euro_end, position_in_vehid_chain_from_end) {
+	0: spriteset_joyful_12_series_euro_rear;
+	spriteset_joyful_12_series_euro_pano;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_joyful_12_series_euro_beginning, position_in_vehid_chain) {
+	0: spriteset_joyful_12_series_euro_front;
+	4: spriteset_joyful_12_series_euro;
+	switch_joyful_12_series_euro_end;
+	}
+
+
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_cc_end, position_in_vehid_chain_from_end) {
 	0: spriteset_joyful_12_series_set_cc_rear;
 	spriteset_joyful_12_series_set_cc;
@@ -8365,14 +8396,16 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_cc_beginning, position_in_
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_livery, cargo_subtype) {
 	0: switch_joyful_12_series_set_beginning;
-	1: switch_joyful_12_series_set_cc_beginning;
+	1: switch_joyful_12_series_euro_beginning;
+	2: switch_joyful_12_series_set_cc_beginning;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_BROWN_RED));
-	1: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_BLUE_WHITE));//white blue?
+	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_CC));
 	   return CB_RESULT_NO_TEXT;
 	}
 

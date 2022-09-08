@@ -1,41 +1,41 @@
-spriteset(spriteset_ed76_old_red, "gfx/ed76.png") {
+spriteset(spriteset_ed76_old_red, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed76_twotone_blue, "gfx/ed76.png") {
+spriteset(spriteset_ed76_twotone_blue, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed76_southerncross, "gfx/ed76.png") {
+spriteset(spriteset_ed76_southerncross, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ed76_0_refurbished, "gfx/ed76.png") {
+spriteset(spriteset_ed76_0_refurbished, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ed76_1000_refurbished, "gfx/ed76.png") {
+spriteset(spriteset_ed76_1000_refurbished, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ed76_500, "gfx/ed76.png") {
+spriteset(spriteset_ed76_500, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ed76_550, "gfx/ed76.png") {
+spriteset(spriteset_ed76_550, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ed76_cc, "gfx/ed76.png") {
+spriteset(spriteset_ed76_cc, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 224)
 }
 
 
-spriteset(spriteset_ed76_jnr_purchase, "gfx/ed76.png") {
+spriteset(spriteset_ed76_jnr_purchase, "gfx/electric/ed76.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ed76_jrf_purchase, "gfx/ed76.png") {
+spriteset(spriteset_ed76_jrf_purchase, "gfx/electric/ed76.png") {
 	template_purchase(1, 288)
 }
 
