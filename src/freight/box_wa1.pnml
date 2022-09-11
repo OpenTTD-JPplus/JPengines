@@ -68,25 +68,30 @@ random_switch(FEAT_TRAINS, SELF, random_wa_1_black) {
 	1: spritegroup_wa_1_stripe_load;
 	}
 	
-random_switch(FEAT_TRAINS, SELF, random_wa_1_all) {
+random_switch(FEAT_TRAINS, SELF, random_wa_1_brown) {
 	1: spritegroup_wa_1_black_load;
-	1: spritegroup_wa_1_stripe_load;
 	1: spritegroup_wa_1_brown_load;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_wa_1_yeardep, build_year) {
+	0..1928: random_wa_1_brown;
+	random_wa_1_black;
 	}
 
 
 
 switch(FEAT_TRAINS, SELF, switch_wa_1_livery, cargo_subtype) {
-	1: spritegroup_wa_1_stripe_load;
-	2: random_wa_1_black;
+	1: spritegroup_wa_1_black_load;
+	2: spritegroup_wa_1_stripe_load;
 	3: spritegroup_wa_1_brown_load;
-	random_wa_1_all;
+	switch_wa_1_yeardep;
 }
 
 switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_FRANDOM);
 	1: return string(STR_REFIT_FBLACK);
-	2: return string(STR_REFIT_FBROWN);
+	2: return string(STR_REFIT_FSTRIPE);
+	3: return string(STR_REFIT_FBROWN);
 	   return CB_RESULT_NO_TEXT;
 	}
 
