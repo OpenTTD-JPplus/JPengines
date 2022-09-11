@@ -56,7 +56,7 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		track_type: NAAN;
 		name: string(STR_NAME_YO_5000);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1906,1,1);
+		introduction_date: date(1928,1,1);//change to 1949 when yo 1500 added
 		speed: 85 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
