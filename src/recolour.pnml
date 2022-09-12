@@ -155,6 +155,15 @@ replace(recolour_bulk) {
         0xEC: 0x0C;
         0xED: 0x0D;
         0xEE: 0x0E;
+    //piece	
+        0x88: 0x07;
+        0x89: 0x08;
+        0x8A: 0x09;
+        0x8B: 0x0A;
+        0x8C: 0x0B;
+        0x8D: 0x0C;
+        0x8E: 0x0D;
+        0x8F: 0x0E;
     }
 //coal 13
     recolour_sprite {
@@ -527,6 +536,8 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	
     FRUT: return recolour_bulk +14;
     FRVG: return recolour_bulk +14;
+
+    CMNT: return recolour_bulk +12;
 }
 
 switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
