@@ -106,6 +106,7 @@
 
 #include "src/freight/bulk_hoki650.pnml"
 #include "src/freight/bulk_hoki1000.pnml"
+#include "src/freight/bulk_hoki800.pnml"
 #include "src/freight/bulk_hoki2200.pnml"
 #include "src/freight/bulk_hoki2500.pnml"
 #include "src/freight/bulk_hoki8300.pnml"

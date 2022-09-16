@@ -1,0 +1,100 @@
+spriteset(spriteset_hoki_800_cc_empty, "gfx/freight/hoki_800.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_800_cc_quarter, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_hoki_800_cc_half, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_hoki_800_cc_full, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_hoki_800_black_empty, "gfx/freight/hoki_800.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_800_black_quarter, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_hoki_800_black_half, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_hoki_800_black_full, "gfx/freight/hoki_800.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_hoki_800_jnr_purchase, "gfx/freight/hoki_800.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_hoki_800_jrf_purchase, "gfx/freight/hoki_800.png") {
+	template_purchase(1, 128)
+}
+
+
+spritegroup spritegroup_hoki_800_cc_bulk {
+    loading: [spriteset_hoki_800_cc_empty, spriteset_hoki_800_cc_quarter, spriteset_hoki_800_cc_half, spriteset_hoki_800_cc_full];
+    loaded:  [spriteset_hoki_800_cc_empty, spriteset_hoki_800_cc_quarter, spriteset_hoki_800_cc_half, spriteset_hoki_800_cc_full];
+}
+
+spritegroup spritegroup_hoki_800_black_bulk {
+    loading: [spriteset_hoki_800_black_empty, spriteset_hoki_800_black_quarter, spriteset_hoki_800_black_half, spriteset_hoki_800_black_full];
+    loaded:  [spriteset_hoki_800_black_empty, spriteset_hoki_800_black_quarter, spriteset_hoki_800_black_half, spriteset_hoki_800_black_full];
+}
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_800_livery) {
+	1: spritegroup_hoki_800_cc_bulk;
+	1: spritegroup_hoki_800_black_bulk;
+}	
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_800_purchase, current_year) {
+	0..1987: spriteset_hoki_800_jnr_purchase;
+	spriteset_hoki_800_jrf_purchase;
+	}
+
+
+item (FEAT_TRAINS, hoki_800, 1446) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_HOKI_800);
+	climates_available: ALL_CLIMATES;
+	introduction_date: date(1958,1,1);
+	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 60; 
+	refit_cost: 0;
+	default_cargo_type: COAL;
+	loading_speed: 35;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: 0; 
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	weight: 18;
+	cost_factor: 8;
+	running_cost_factor: 26;
+	length: 7;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+graphics {
+	cargo_capacity: return 60;
+	default: random_hoki_800_livery;
+	purchase: switch_hoki_800_purchase;
+//	cargo_subtype_text: switch_hoki_800_subtype_text;
+	colour_mapping: switch_generic_recolour;
+	}
+}
