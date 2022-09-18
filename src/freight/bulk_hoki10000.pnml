@@ -71,7 +71,7 @@ property {
 	name: string(STR_NAME_HOKI_10000);
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}

@@ -42,6 +42,7 @@ property {
 	speed: 85 km/h;
 	loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
+	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [FOOD, GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	cargo_disallow_refit: [WOOL, WOOD];

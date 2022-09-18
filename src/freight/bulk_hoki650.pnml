@@ -39,7 +39,7 @@ item (FEAT_TRAINS, hoki_650, 1444) {
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
 	track_type: NAAN;
-	introduction_date: date(1971,1,1);
+	introduction_date: date(1961,1,1); //1971
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_650);
 	speed: 75 km/h;
@@ -52,7 +52,6 @@ property {
 	loading_speed: 40;
 	refittable_cargo_classes: bitmask(CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SULP]; 
 	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	weight: 15;
 	cost_factor: 13;

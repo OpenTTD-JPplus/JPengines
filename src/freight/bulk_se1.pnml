@@ -106,7 +106,7 @@ property {
 //	default_cargo_type: COAL;
 	loading_speed: 40;
 	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 9;
