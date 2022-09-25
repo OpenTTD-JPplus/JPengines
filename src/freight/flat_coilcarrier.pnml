@@ -1,6 +1,4 @@
-spriteset(spriteset_coilcarrier_purchase, "gfx/freight/steel_coilcarrier_a.png") {
-	template_purchase(1, 256)
-}
+
 
 //a
 
@@ -62,6 +60,19 @@ spriteset(spriteset_coilcarrier_rods_b_half, "gfx/freight/steel_coilcarrier_b.pn
 spriteset(spriteset_coilcarrier_rods_b_full, "gfx/freight/steel_coilcarrier_b.png") {
 	template_2cc_std(1, 192)
 }
+
+spriteset(spriteset_coilcarrier_yawata_purchase, "gfx/freight/steel_coilcarrier_a.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_coilcarrier_nippon_purchase, "gfx/freight/steel_coilcarrier_a.png") {
+	template_purchase(89, 256)
+}
+
+switch(FEAT_TRAINS, SELF, switch_coilcarrier_purchase, current_year) {
+	0..1990: spriteset_coilcarrier_yawata_purchase;
+	spriteset_coilcarrier_nippon_purchase;
+	}
 
 //coilcarrier spritegroups
 
@@ -177,7 +188,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		purchase_speed: return 65;
 		cargo_capacity: return 42;
 		default: switch_coilcarrier_cargo_selection;
-		purchase: spriteset_coilcarrier_purchase;
+		purchase: switch_coilcarrier_purchase;
 		colour_mapping: switch_generic_recolour;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
