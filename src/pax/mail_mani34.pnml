@@ -71,10 +71,10 @@ switch(FEAT_TRAINS, SELF, switch_mani34_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_mani34_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_OLDSHAPE);
-	2: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_NEWSHAPE);
-    3: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_OLDSHAPE);
-	4: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_NEWSHAPE);
+	1: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_OLDSHAPE));
+	2: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_NEWSHAPE));
+    3: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_OLDSHAPE));
+	4: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_NEWSHAPE));
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -84,6 +84,13 @@ switch(FEAT_TRAINS, SELF, switch_mani34_purchase_yeardep, current_year) {
     spriteset_mani34_jnr_blue_purchase;
     }
 
+switch(FEAT_TRAINS, SELF, stack_mail_mani34, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_mani34_livery;
+	1:  switch_taillights_8;
+}
 
 item (FEAT_TRAINS, mail_mani34, 1357) {
 	property {
@@ -106,11 +113,11 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 		cost_factor: 16;
 		running_cost_factor: 6;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 //		cargo_capacity: return 75;
-		default: switch_mani34_livery;
+		default: stack_mail_mani34;
 		purchase: switch_mani34_purchase_yeardep;
 		cargo_subtype_text: switch_mani34_subtype_text;
 	}

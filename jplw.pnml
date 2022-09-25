@@ -89,6 +89,7 @@
 #include "src/pax/mail_mani50.pnml"
 #include "src/pax/mail_oyu10.pnml"
 #include "src/pax/mail_suyu15.pnml"
+#include "src/pax/mail_suyu42.pnml"
 #include "src/pax/mail_waki8000.pnml"
 
 #include "src/freight/box_ka1.pnml"

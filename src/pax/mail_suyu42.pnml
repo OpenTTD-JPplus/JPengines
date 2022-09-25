@@ -1,0 +1,160 @@
+spriteset(spriteset_mail_suhani35_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_mail_suyu42_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_mail_suyu43_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_mail_mani35_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_mail_mani36_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_mail_suhani35_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_mail_suyu42_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_mail_suyu43_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_mail_mani35_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_mail_mani36_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 128)
+}
+
+
+spriteset(spriteset_suyu42_brown_purchase, "gfx/paxmail/suyu42.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_suyu42_blue_purchase, "gfx/paxmail/suyu42.png") {
+	template_purchase(89, 448)
+}
+
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_suyu42_old) {
+	4: spriteset_mail_mani35_brown;
+	1: spriteset_mail_mani36_brown;
+    2: spriteset_mail_suyu42_brown;
+    1: spriteset_mail_suyu43_brown;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_suyu42_new) {
+	4: spriteset_mail_mani35_brown;
+	1: spriteset_mail_mani36_brown;
+    2: spriteset_mail_suyu42_brown;
+    1: spriteset_mail_suyu43_brown;
+	1: spriteset_mail_mani35_blue;
+	4: spriteset_mail_mani36_blue;
+    1: spriteset_mail_suyu42_blue;
+    2: spriteset_mail_suyu43_blue;
+
+}
+
+random_switch (FEAT_TRAINS, SELF, random_suyu42_blue) {
+	1: spriteset_mail_mani35_blue;
+	4: spriteset_mail_mani36_blue;
+    2: spriteset_mail_suyu42_blue;
+    2: spriteset_mail_suyu43_blue;
+}
+	
+
+switch(FEAT_TRAINS, SELF, switch_suyu42_yeardep_livery, current_year) {
+	0..1964: random_suyu42_old;
+	1964..1979: random_suyu42_new;
+	random_suyu42_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu42_livery, cargo_subtype) {
+	1: spriteset_mail_suhani35_brown;
+	2: spriteset_mail_suyu42_brown;
+    3: spriteset_mail_suyu43_brown;
+	4: spriteset_mail_mani35_brown;
+    5: spriteset_mail_mani36_brown;
+    6: spriteset_mail_suhani35_blue;
+    7: spriteset_mail_suyu42_blue;
+    8: spriteset_mail_suyu43_blue;
+    9: spriteset_mail_mani35_blue;
+    10: spriteset_mail_mani36_blue;
+	switch_suyu42_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu42_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BROWN));
+    3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BROWN));
+	4: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BROWN));
+    5: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BROWN));
+    6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BLUE));
+    7: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BLUE));
+    8: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BLUE));
+    9: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BLUE));
+    10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BLUE));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_suyu42_purchase_yeardep, current_year) {
+    0..1964: spriteset_suyu42_brown_purchase;
+    spriteset_suyu42_blue_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, stack_mail_suyu42, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_suyu42_livery;
+	1:  switch_taillights_8;
+}
+
+item (FEAT_TRAINS, mail_suyu42, 1359) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUYU42);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1953,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 29;
+		cost_factor: 16;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: stack_mail_suyu42;
+		purchase: switch_suyu42_purchase_yeardep;
+		cargo_subtype_text: switch_suyu42_subtype_text;
+	}
+}
