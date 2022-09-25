@@ -1,0 +1,117 @@
+spriteset(spriteset_mani34_old_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_mani34_new_brown, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(1, 192)
+}
+
+
+spriteset(spriteset_mani34_old_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 160)
+}
+
+
+spriteset(spriteset_mani34_new_blue, "gfx/paxmail/suyu42.png") {
+	template_2cc_std(180, 192)
+}
+
+
+
+spriteset(spriteset_mani34_jgr_purchase, "gfx/paxmail/suyu42.png") {
+	template_purchase(1, 480)
+}
+
+spriteset(spriteset_mani34_jnr_purchase, "gfx/paxmail/suyu42.png") {
+	template_purchase(89, 480)
+}
+
+spriteset(spriteset_mani34_jnr_blue_purchase, "gfx/paxmail/suyu42.png") {
+	template_purchase(180, 480)
+}
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_mani34_old) {
+	2: spriteset_mani34_old_brown;
+	1: spriteset_mani34_new_brown;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_mani34_new) {
+	1: spriteset_mani34_old_brown;
+	3: spriteset_mani34_new_brown;
+	2: spriteset_mani34_old_blue;
+	4: spriteset_mani34_new_blue;
+
+}
+
+random_switch (FEAT_TRAINS, SELF, random_mani34_blue) {
+	3: spriteset_mani34_new_blue;
+	1: spriteset_mani34_old_blue;
+}
+	
+
+switch(FEAT_TRAINS, SELF, switch_mani34_yeardep_livery, current_year) {
+	0..1955: spriteset_mani34_old_brown;
+	1955..1964: random_mani34_old;
+	1964..1979: random_mani34_new;
+	random_mani34_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mani34_livery, cargo_subtype) {
+	1: spriteset_mani34_old_brown;
+	2: spriteset_mani34_new_brown;
+    3: spriteset_mani34_old_blue;
+	4: spriteset_mani34_new_blue;
+	switch_mani34_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_mani34_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_OLDSHAPE);
+	2: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_NEWSHAPE);
+    3: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_OLDSHAPE);
+	4: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_NEWSHAPE);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_mani34_purchase_yeardep, current_year) {
+    0..1949: spriteset_mani34_jgr_purchase;
+	1949..1964: spriteset_mani34_jnr_purchase;
+    spriteset_mani34_jnr_blue_purchase;
+    }
+
+
+item (FEAT_TRAINS, mail_mani34, 1357) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_MANI_34);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1946,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: VALU;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
+		non_refittable_cargo_classes: 0; 
+		weight: 29;
+		cost_factor: 16;
+		running_cost_factor: 6;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+//		cargo_capacity: return 75;
+		default: switch_mani34_livery;
+		purchase: switch_mani34_purchase_yeardep;
+		cargo_subtype_text: switch_mani34_subtype_text;
+	}
+}

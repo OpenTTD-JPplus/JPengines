@@ -69,7 +69,7 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_OYU_10);
+		name: string(STR_NAME_MAIL_OYU_10);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1956,1,1);
 		speed: 100 km/h;
