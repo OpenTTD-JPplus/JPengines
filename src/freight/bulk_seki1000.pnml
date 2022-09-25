@@ -46,13 +46,14 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 45; 
+	cargo_capacity: 40; 
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -61,7 +62,7 @@ property {
 graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 45;
+	cargo_capacity: return 40;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;
 	purchase: spriteset_seki_1000_purchase;

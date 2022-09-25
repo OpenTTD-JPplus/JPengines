@@ -72,7 +72,7 @@ property {
 	name: string(STR_NAME_HOKI_800);
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(1958,1,1);
-	speed: 85 km/h;
+	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
@@ -85,8 +85,9 @@ property {
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 18;
-	cost_factor: 8;
-	running_cost_factor: 26;
+	cost_factor: 37;
+	running_cost_base: RUNNING_COST_STEAM;
+	running_cost_factor: 13;
 	length: 7;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

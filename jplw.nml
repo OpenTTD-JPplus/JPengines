@@ -136,9 +136,9 @@ sort(FEAT_TRAINS, [
 //wagons cont/car
 1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 39, 1400, 44, 43, 
 //wagons open hopper
-1439, 1440, 1441, 1443, 1446, 1447, 1285, 52, 
+1439, 1440, 1441, 1443, 1446, 1447, 1285, 42, 52, 
 //wagons covered hopper/dry tank
-1442, 1444, 42, 1291, 1290, 1410, 1411, 1465, 1466, 1467, 1468,
+1442, 1444, 1291, 1290, 1410, 1411, 1465, 1466, 1467, 1468,
 //wagosn open
 1469, 29, 33, 1284, 1470, 1471,
 //open bulk
@@ -11745,9 +11745,10 @@ property {
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -11806,11 +11807,11 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		dual_headed: 0;
 		cargo_capacity: 72; 
 		refit_cost: 0;
-		default_cargo_type: CMNT;
 		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_COVERED); 
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 		non_refittable_cargo_classes: 0;
-		cargo_disallow_refit: [GRAI, SGBT, WOOL, MAIZ, POWR, FURN, MPTS, PAPR, TEXT];
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 		weight: 15;
 		cost_factor: 11;
 		length: 7;
@@ -11897,7 +11898,7 @@ property {
 	name: string(STR_NAME_HOKI_800);
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(1958,1,1);
-	speed: 85 km/h;
+	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
@@ -11910,8 +11911,9 @@ property {
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 18;
-	cost_factor: 8;
-	running_cost_factor: 26;
+	cost_factor: 37;
+	running_cost_base: RUNNING_COST_STEAM;
+	running_cost_factor: 13;
 	length: 7;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -11969,7 +11971,7 @@ property {
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [FOOD, GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+	cargo_allow_refit: [FOOD, GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SALT, SASH, POTA];
 	cargo_disallow_refit: [WOOL, WOOD];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -12126,10 +12128,10 @@ property {
 	name: string(STR_NAME_HOKI_8300);
 	speed: 100 km/h;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
-	cargo_disallow_refit: [WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12593,13 +12595,14 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 45; 
+	cargo_capacity: 40; 
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -12608,7 +12611,7 @@ property {
 graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 45;
+	cargo_capacity: return 40;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;
 	purchase: spriteset_seki_1000_purchase;
@@ -20016,7 +20019,7 @@ property {
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
-	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
@@ -20624,7 +20627,7 @@ property {
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
-	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {

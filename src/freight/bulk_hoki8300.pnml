@@ -52,10 +52,10 @@ property {
 	name: string(STR_NAME_HOKI_8300);
 	speed: 100 km/h;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [GRAI, FICR, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
-	cargo_disallow_refit: [WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
