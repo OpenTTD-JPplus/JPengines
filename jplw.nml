@@ -12320,11 +12320,30 @@ random_switch(FEAT_TRAINS, SELF, random_hoki_2500_cover) {
 	}
 
 
+switch(FEAT_TRAINS, SELF, switch_hoki_2500_lid_cargoclass, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_hoki_2500_red_bulk;
+	spritegroup_hoki_2500_red_cover;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hoki_2500_lid_cargotype, cargo_type_in_veh) {
+	AORE: return random_hoki_2500_cover;
+	CORE: return random_hoki_2500_cover;
+	PORE: return random_hoki_2500_cover;
+	SAND: return random_hoki_2500_cover;
+	GRVL: return random_hoki_2500_cover;
+	LIME: return random_hoki_2500_cover;
+	CLAY: return random_hoki_2500_cover;
+	SLAG: return random_hoki_2500_cover;
+	switch_hoki_2500_lid_cargoclass;
+}
+
+
+
 
 switch(FEAT_TRAINS, SELF, switch_hoki_2500_livery, cargo_subtype) {
 	1: spritegroup_hoki_2500_red_bulk;
 	2: spritegroup_hoki_2500_red_cover;
-	random_hoki_2500_cover;
+	switch_hoki_2500_lid_cargoclass;
 }
 
 switch(FEAT_TRAINS, SELF, switch_hoki_2500_subtype_text, cargo_subtype) {
@@ -12591,7 +12610,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	cargo_capacity: return 70;

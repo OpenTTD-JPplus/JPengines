@@ -96,7 +96,7 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 8;
