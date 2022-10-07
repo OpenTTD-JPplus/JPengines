@@ -402,7 +402,7 @@ property {
 	name: string(STR_NAME_TOKI_15000);
 	refit_cost: 0;
 	power: 0;
-	cargo_capacity: 45;
+	cargo_capacity: 50;
 	loading_speed: 40;
 	length: 7;
 	weight: 16;
@@ -416,7 +416,7 @@ property {
 graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 60;
+	cargo_capacity: return 50;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;
 	cargo_subtype_text: switch_toki_25000_subtype_text;

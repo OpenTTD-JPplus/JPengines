@@ -208,9 +208,9 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
-		cost_factor: 18;
-		running_cost_factor: 11;
+		cost_factor: 84;
+		running_cost_base: RUNNING_COST_STEAM;
+		running_cost_factor: 17;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
