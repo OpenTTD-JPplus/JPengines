@@ -503,11 +503,11 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	PAPR: return recolour_piece +1;
 	WOOD: return recolour_piece +8;
 	
-	STST: return recolour_piece +1;
+	STST: return recolour_piece +3;
 	STSE: return recolour_piece ;
 	STSH: return recolour_piece ;
 	STWR: return recolour_piece +2;
-	STAL: return recolour_piece +5;
+	STAL: return recolour_piece +1;
 	TYRE: return recolour_piece +2;
 	STCB: return recolour_piece +2;
 	CSTI: return recolour_piece +7;
