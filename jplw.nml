@@ -67,7 +67,10 @@ cargotable {
 	METL, BEER, CLAY, COPR, ENSP, FMSP, GRVL, MILK, MNSP, PHOS, RCYC, SCMT, SGBT, SGCN, JAVA, CASS, NUTS, 
 	EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE, 
 	//FIRS 4, XIS2
-	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, //todo add chemistry cargos
+	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, 
+	C2H4, ENUM, HYAC, MEOH, NAPH, PHAC, C3H6, SUAC, TEXT, TIN_, TINP, UREA, 
+	//FIRS 5
+	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTP, SWRP, TYCO, WELD, 
 	//OTIS
 	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NKOR, OTI1, OTI2, OYST, PCL_, SEED, SESP, TEXT, TWOD, TATO, 
 	//MISC
@@ -86,12 +89,12 @@ if (ttd_platform != PLATFORM_OPENTTD) {
 
 //load order checks, thanks tin
 if (grf_order_behind("SZ\0D\00") == 0) {
-    error(FATAL, MUST_LOAD_AFTER);
+    error(FATAL, string(STR_GRF_NAME), MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
 }
 
 if (grf_future_status("SZ\0D\00") == 0) {
-//    error(WARNING, string(STR_ERROR_JAPANSETTRAINS));
-    error(FATAL, MUST_LOAD_AFTER);
+ //   error(WARNING, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
+    error(FATAL, string(STR_GRF_NAME), MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
 }
 
 
@@ -773,11 +776,11 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	PAPR: return recolour_piece +1;
 	WOOD: return recolour_piece +8;
 	
-	STST: return recolour_piece +1;
+	STST: return recolour_piece +3;
 	STSE: return recolour_piece ;
 	STSH: return recolour_piece ;
 	STWR: return recolour_piece +2;
-	STAL: return recolour_piece +5;
+	STAL: return recolour_piece +1;
 	TYRE: return recolour_piece +2;
 	STCB: return recolour_piece +2;
 	CSTI: return recolour_piece +7;
@@ -8881,9 +8884,9 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
-		cost_factor: 18;
-		running_cost_factor: 11;
+		cost_factor: 84;
+		running_cost_base: RUNNING_COST_STEAM;
+		running_cost_factor: 17;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -12037,7 +12040,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -12100,7 +12103,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 		weight: 15;
 		cost_factor: 11;
 		length: 7;
@@ -12439,7 +12442,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
@@ -12910,7 +12913,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA];
+	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 13;
 	length: 5;
@@ -23154,7 +23157,7 @@ property {
 	name: string(STR_NAME_TOKI_15000);
 	refit_cost: 0;
 	power: 0;
-	cargo_capacity: 45;
+	cargo_capacity: 50;
 	loading_speed: 40;
 	length: 7;
 	weight: 16;
@@ -23168,7 +23171,7 @@ property {
 graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 60;
+	cargo_capacity: return 50;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;
 	cargo_subtype_text: switch_toki_25000_subtype_text;
