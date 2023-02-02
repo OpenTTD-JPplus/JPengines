@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 90;
+ version: 100;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -89,12 +89,12 @@ if (ttd_platform != PLATFORM_OPENTTD) {
 
 //load order checks, thanks tin
 if (grf_order_behind("SZ\0D\00") == 0) {
-    error(FATAL, string(STR_GRF_NAME), MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
+    error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
 }
 
 if (grf_future_status("SZ\0D\00") == 0) {
  //   error(WARNING, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
-    error(FATAL, string(STR_GRF_NAME), MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
+    error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
 }
 
 
@@ -1881,6 +1881,7 @@ item (FEAT_TRAINS, ed53, 1050) {
   length: 5;
   running_cost_factor: 44;
   running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_EEP);
@@ -2361,6 +2362,7 @@ item (FEAT_TRAINS, ef50, 1014) {
   length: 8;
   running_cost_factor: 55;
   running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_EEP);
@@ -2617,7 +2619,7 @@ item (FEAT_TRAINS, ef57, 1020) {
   track_type: NABE;
   name: string(STR_NAME_JNR_EF57);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1937,1,1);
+  introduction_date: date(1940,1,1);
   speed: 100 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -7446,7 +7448,7 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		name: string(STR_NAME_PAX_SUHA32);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
-//		speed: 120 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -7517,7 +7519,7 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		name: string(STR_NAME_MAIL_MANI_31);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
-//		speed: 120 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

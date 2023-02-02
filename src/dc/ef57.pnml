@@ -80,7 +80,7 @@ item (FEAT_TRAINS, ef57, 1020) {
   track_type: NABE;
   name: string(STR_NAME_JNR_EF57);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1937,1,1);
+  introduction_date: date(1940,1,1);
   speed: 100 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;

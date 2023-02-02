@@ -291,7 +291,7 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		name: string(STR_NAME_PAX_SUHA32);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
-//		speed: 120 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -362,7 +362,7 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		name: string(STR_NAME_MAIL_MANI_31);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
-//		speed: 120 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
