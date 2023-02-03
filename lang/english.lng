@@ -586,8 +586,10 @@ STR_REFIT_EF510_300		: {SILVER}EF510-300 {WHITE}JR Freight {BLACK}Silver
 STR_REFIT_DF200_NEW		: {WHITE}JR Freight {GOLD}"Red Bear"
 STR_REFIT_DF200_SS		: {WHITE}JR Kyushu {GOLD}"Seven Stars"
 
-STR_REFIT_EH10		: EH10 JNR Black
-STR_REFIT_EH10_HS	: EH10 JNR Experimental Brown {GOLD}(110km/h)
+STR_REFIT_EH10		: EH10 JNR {BLACK}Black
+STR_REFIT_EH10_OLD	: EH10 JNR {BLACK}Black {GOLD}Early Version
+STR_REFIT_EH10_OBR	: EH10 JNR {BROWN}Brown {GOLD}Early Version
+STR_REFIT_EH10_HS	: EH10 JNR {BROWN}Brown {GOLD}Experimental (110km/h)
 
 STR_REFIT_EH500_1	: EH500 Early version (Low Headlights)
 STR_REFIT_EH500_2	: EH500 Early version "Kintaro Eco-Power"
