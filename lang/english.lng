@@ -299,6 +299,7 @@ STR_NAME_KA_1			:KA 1 Livestock Van
 
 STR_NAME_RE_1			:RE 1 Refrigerated Van
 STR_NAME_RE_2500		:RE 2500 Refrigerated Van
+STR_NAME_REKI_1 		:REKI 1 / RESA 900 Refrigerated Van
 STR_NAME_RESA_10000		:RESA 10000 Refrigerated Van
 STR_NAME_REMU_5000		:REMU 5000 Refrigerated Van
 
