@@ -156,7 +156,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_orone10_yeardep, current_year) {
 	spriteset_pax_orone10_blue;	
 }
 	
-	
+
 	
 random_switch (FEAT_TRAINS, SELF, random_pax_ohane17_old) {
 	3: spriteset_pax_ohane17_brown;
