@@ -3,12 +3,20 @@ spriteset(spriteset_seki_1000_stripe, "gfx/freight/seki_1000.png") {
 }
 
 spriteset(spriteset_seki_1000_black, "gfx/freight/seki_1000.png") {
-	template_2cc_std(1, 128)
+	template_2cc_std(1, 32)
 }
 
+spriteset(spriteset_seki_1000_jnr_purchase, "gfx/freight/seki_1000.png") {
+	template_purchase(1, 64)
+}
 
-spriteset(spriteset_seki_1000_purchase, "gfx/freight/seki_1000.png") {
-	template_purchase(1, 256)
+spriteset(spriteset_seki_1000_jgr_purchase, "gfx/freight/seki_1000.png") {
+	template_purchase(89,64)
+}
+
+switch(FEAT_TRAINS, SELF, switch_seki_1000_yeardep_purchase, current_year) {
+	0..1949: spriteset_seki_1000_jgr_purchase;
+	spriteset_seki_1000_jnr_purchase;
 }
 
 
@@ -65,7 +73,7 @@ graphics {
 	cargo_capacity: return 40;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;
-	purchase: spriteset_seki_1000_purchase;
+	purchase: switch_seki_1000_yeardep_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
 }

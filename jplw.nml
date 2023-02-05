@@ -145,7 +145,7 @@ sort(FEAT_TRAINS, [
 //wagons open hopper
 1439, 1440, 1441, 1443, 1446, 1447, 1285, 42, 52, 
 //wagons covered hopper/dry tank
-1442, 1444, 1291, 1290, 1410, 1411, 1465, 1466, 1467, 1468,
+1442, 1444, 1448, 1449, 1291, 1290, 1410, 1411, 1465, 1466, 1467, 1468,
 //wagosn open
 1469, 29, 33, 1284, 1470, 1471,
 //open bulk
@@ -12482,6 +12482,58 @@ graphics {
 	colour_mapping: switch_generic_recolour;
 	}
 }
+spriteset(spriteset_hoki_5700_a, "gfx/freight/hoki_5700.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_hoki_5700_b, "gfx/freight/hoki_5700.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+spriteset(spriteset_hoki_5700_purchase, "gfx/freight/hoki_5700.png") {
+	template_purchase(89, 64)
+}
+
+
+random_switch(FEAT_TRAINS, SELF, switch_hoki_5700_livery) {
+	3: spriteset_hoki_5700_a;
+    1: spriteset_hoki_5700_b;
+}
+
+
+
+item (FEAT_TRAINS, hoki_5700, 1448) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_5700);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1965,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
+		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		weight: 13;
+		cost_factor: 10;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 50;
+		default: switch_hoki_5700_livery;
+		purchase: spriteset_hoki_5700_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
 spriteset(spriteset_hoki_8300_black, "gfx/freight/hoki_covered.png") {
 	template_2cc_std(1, 128)
 }
@@ -12960,12 +13012,20 @@ spriteset(spriteset_seki_1000_stripe, "gfx/freight/seki_1000.png") {
 }
 
 spriteset(spriteset_seki_1000_black, "gfx/freight/seki_1000.png") {
-	template_2cc_std(1, 128)
+	template_2cc_std(1, 32)
 }
 
+spriteset(spriteset_seki_1000_jnr_purchase, "gfx/freight/seki_1000.png") {
+	template_purchase(1, 64)
+}
 
-spriteset(spriteset_seki_1000_purchase, "gfx/freight/seki_1000.png") {
-	template_purchase(1, 256)
+spriteset(spriteset_seki_1000_jgr_purchase, "gfx/freight/seki_1000.png") {
+	template_purchase(89,64)
+}
+
+switch(FEAT_TRAINS, SELF, switch_seki_1000_yeardep_purchase, current_year) {
+	0..1949: spriteset_seki_1000_jgr_purchase;
+	spriteset_seki_1000_jnr_purchase;
 }
 
 
@@ -13022,7 +13082,7 @@ graphics {
 	cargo_capacity: return 40;
 	default: switch_seki_1000_livery;
 	cargo_subtype_text: switch_seki_1000_subtype_text;
-	purchase: spriteset_seki_1000_purchase;
+	purchase: switch_seki_1000_yeardep_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
 }
