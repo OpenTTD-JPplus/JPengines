@@ -1668,7 +1668,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
     spriteset_eb10_jnr_purchase;
     }
 
-
+//todo add variant group
 item (FEAT_TRAINS, eb10, 1011) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -1692,6 +1692,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   length: 4;
   running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
+  variant_group: 1010;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_ELF);
@@ -8365,6 +8366,7 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		running_cost_factor: 11;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1318;
 	}
 	graphics {
 		cargo_capacity: return 70;
@@ -8551,6 +8553,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		running_cost_factor: 9;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_2CC);
+		variant_group: 1320;
 	}
 	graphics {
 		cargo_capacity: return 40;
@@ -9281,6 +9284,7 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		running_cost_factor: 9;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		variant_group: 1340;
 	}
 	graphics {
 		cargo_capacity: return 90;

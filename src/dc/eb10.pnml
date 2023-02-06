@@ -128,6 +128,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   length: 4;
   running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
+  variant_group: 1010;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_ELF);

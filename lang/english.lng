@@ -69,12 +69,12 @@ STR_NAME_PAX_OHA31		:OHA 31 Passenger Coach
 STR_NAME_PAX_SUHA32		:SUHA 32 Passenger Coach
 STR_NAME_PAX_OHA35		:OHA 35 Passenger Coach
 STR_NAME_PAX_SUHA43		:SUHA 43 Passenger Coach
-STR_NAME_PAX_SUHA44		:SUHA 44 Passenger Coach {GOLD}"Tokaidō"{BLACK}
+STR_NAME_PAX_SUHA44		:SUHA 43 {GOLD}"Tokaidō"{BLACK}
 STR_NAME_SLEEPER_10		:10 Series Passenger Coach
 STR_NAME_PASSENGER_12	:12 Series Passenger Coach
 STR_NAME_PASSENGER_24	:24 Series Passenger Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
-STR_NAME_PAX_50_5000	:50-5000 Series Passenger Coach {GOLD}"Rapid Kaikyō"{BLACK}
+STR_NAME_PAX_50_5000	:50-5000 Series {GOLD}"Rapid Kaikyō"{BLACK}
 
 STR_NAME_PAX_26			:E26 Series Sleeper Coach {GOLD}"Cassiopeia"{BLACK}
 STR_NAME_PAX_77			:77-7000 Series Sleeper Coach {GOLD}"Seven Stars"{BLACK}
