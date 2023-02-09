@@ -224,6 +224,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_25000_metal;
 	STEL: spritegroup_toki_25000_coils;
 	METL: spritegroup_toki_25000_coils;
+	ALUM: spritegroup_toki_25000_coils;
 	ZINC: random_toki_25000_metal;
 	COPR: random_toki_25000_metal;
 	STST: random_toki_25000_metal;

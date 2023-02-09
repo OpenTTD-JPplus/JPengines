@@ -142,6 +142,7 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_to_1_metal;
 	STEL: random_to_1_metal;
 	METL: random_to_1_metal;
+	ALUM: random_to_1_metal;
 	ZINC: random_to_1_metal;
 	COPR: random_to_1_metal;
 	STST: random_to_1_metal;

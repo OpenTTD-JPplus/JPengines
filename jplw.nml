@@ -67,12 +67,12 @@ cargotable {
 	METL, BEER, CLAY, COPR, ENSP, FMSP, GRVL, MILK, MNSP, PHOS, RCYC, SCMT, SGBT, SGCN, JAVA, CASS, NUTS, 
 	EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE, 
 	//FIRS 4, XIS2
-	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, 
+	ALUM, CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, 
 	C2H4, ENUM, HYAC, MEOH, NAPH, PHAC, C3H6, SUAC, TEXT, TIN_, TINP, UREA, 
 	//FIRS 5
 	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTP, SWRP, TYCO, WELD, 
 	//OTIS
-	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NKOR, OTI1, OTI2, OYST, PCL_, SEED, SESP, TEXT, TWOD, TATO, 
+	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NKOR, OTI1, OTI2, OYST, PCL_, SEED, SESP, TWOD, TATO, 
 	//MISC
 	NICK, NUKF, NUKW, OILI, OILD, CIGR, TBCO, WSTE, NWST, YETI, YETY
 	}
@@ -8145,6 +8145,322 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		default: stack_pax_suha43;
 		purchase: switch_pax_suha43_purchase;
 		cargo_subtype_text: switch_pax_suha43_subtype_text;
+		
+	}
+}
+spriteset(spriteset_pax_oha35_brown, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_ohafu33_brown, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_oro36_brown, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_oha35_blue, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_ohafu33_blue, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_oro36_blue, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_oha35_oigawa, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_ohafu33_oigawa, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 224)
+}
+
+//stripes
+
+spriteset(spriteset_pax_oha35_stripe_red, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_pax_oha35_stripe_blue, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_pax_oha35_stripe_lightblue, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_pax_oha35_stripe_green, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 352)
+}
+
+/*
+spriteset(spriteset_pax_oha35_roof_curved, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 320)
+}
+*/
+
+spriteset(spriteset_pax_oha35_roof, "gfx/paxmail/oha35.png") {
+	template_2cc_std(1, 416)
+}
+
+//purch
+
+
+spriteset(spriteset_pax_oha35_jgr_brown_purchase, "gfx/paxmail/oha35.png") {
+	template_purchase(1, 448)
+}
+
+spriteset(spriteset_pax_oha35_jnr_brown_purchase, "gfx/paxmail/oha35.png") {
+	template_purchase(89, 448)
+}
+
+spriteset(spriteset_pax_oha35_jnr_blue_purchase, "gfx/paxmail/oha35.png") {
+	template_purchase(89, 480)
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_purchase, current_year) {
+    0..1949: spriteset_pax_oha35_jgr_brown_purchase;
+	1949..1964: spriteset_pax_oha35_jnr_brown_purchase;
+	spriteset_pax_oha35_jnr_blue_purchase;	
+}
+
+
+//yeardep base livery
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_old) {
+	3: spriteset_pax_oha35_brown;
+	1: spriteset_pax_oha35_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_new) {
+	1: spriteset_pax_oha35_brown;
+	3: spriteset_pax_oha35_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_yeardep, current_year) {
+	0..1964: spriteset_pax_oha35_brown;
+	1964..1970: random_pax_oha35_old;
+	1970..1979: random_pax_oha35_new;
+	spriteset_pax_oha35_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_ohafu33_old) {
+	3: spriteset_pax_ohafu33_brown;
+	1: spriteset_pax_ohafu33_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_ohafu33_new) {
+	1: spriteset_pax_ohafu33_brown;
+	3: spriteset_pax_ohafu33_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_ohafu33_yeardep, current_year) {
+	0..1964: spriteset_pax_ohafu33_brown;
+	1964..1970: random_pax_ohafu33_old;
+	1970..1979: random_pax_ohafu33_new;
+	spriteset_pax_ohafu33_blue;	
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oro36_old) {
+	3: spriteset_pax_oro36_brown;
+	1: spriteset_pax_oro36_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oro36_new) {
+	1: spriteset_pax_oro36_brown;
+	3: spriteset_pax_oro36_blue;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oro36_yeardep, current_year) {
+	0..1964: spriteset_pax_oro36_brown;
+	1964..1970: random_pax_oro36_old;
+	1970..1979: random_pax_oro36_new;
+	spriteset_pax_oro36_blue;	
+}
+
+
+
+
+//local auto formation jnr
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_local_auto_middle) {
+	4: switch_pax_oha35_yeardep;
+	1: switch_pax_ohafu33_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_end, position_in_consist_from_end) {
+	0: switch_pax_ohafu33_yeardep;
+	random_pax_oha35_local_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_beginning, position_in_vehid_chain) {
+	0: switch_pax_ohafu33_yeardep;
+	switch_pax_oha35_local_auto_end;
+	}
+
+
+//express auto formation jnr
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_middle) {
+	4: switch_pax_oha35_yeardep;
+	1: switch_pax_ohafu33_yeardep;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_beginning) {
+	1: switch_pax_oha35_yeardep;
+	1: switch_pax_oro36_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_end, position_in_consist_from_end) {
+	0: switch_pax_ohafu33_yeardep;
+	random_pax_oha35_express_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_beginning, position_in_vehid_chain) {
+	0..3: random_pax_oha35_express_auto_beginning;
+	switch_pax_oha35_express_auto_end;
+	}
+
+//local auto formation oigawa
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_oigawa_auto_middle) {
+	4: spriteset_pax_oha35_oigawa;
+	1: spriteset_pax_ohafu33_oigawa;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_oigawa_auto_end, position_in_consist_from_end) {
+	0: spriteset_pax_ohafu33_oigawa;
+	random_pax_oha35_oigawa_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_oigawa_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_ohafu33_oigawa;
+	switch_pax_oha35_oigawa_auto_end;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_stripe, current_year) {
+	0..1940: spriteset_pax_oha35_stripe_red;
+	spriteset_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oro36_auto_stripe_yeardep, current_year) {
+	0..1949: spriteset_pax_oha35_stripe_blue;
+    1949..1961: spriteset_pax_oha35_stripe_lightblue;
+	1961..1987: spriteset_pax_oha35_stripe_green;
+	spriteset_blank;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_stripe_beginning) {
+	1: switch_pax_oha35_local_auto_stripe;
+	1: switch_pax_oro36_auto_stripe_yeardep;
+    dependent: random_pax_oha35_express_auto_beginning;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_stripe_end, position_in_consist_from_end) {
+	0: switch_pax_oha35_local_auto_stripe;
+	switch_pax_oha35_local_auto_stripe;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_stripe, position_in_vehid_chain) {
+	0..3: random_pax_oha35_express_auto_stripe_beginning;
+	switch_pax_oha35_express_auto_stripe_end;
+	}
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_oha35_roof_old) {
+	1: spriteset_pax_oha35_roof;
+	2: spriteset_blank;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_oha35_roof_new) {
+	2: spriteset_pax_oha35_roof;
+	1: spriteset_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_roof, build_year) {
+	0..1940: spriteset_blank; //old style
+	1940..1945: random_oha35_roof_old;
+	1945..1950: random_oha35_roof_new; //mixed
+	spriteset_pax_oha35_roof; //all round
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_base_livery, cargo_subtype) {
+	0: switch_pax_oha35_local_auto_beginning;
+	1: switch_pax_oha35_express_auto_beginning;
+	2: switch_pax_oha35_oigawa_auto_beginning;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_stripe_livery, cargo_subtype) {
+	0: switch_pax_oha35_local_auto_stripe;
+	1: switch_pax_oha35_express_auto_stripe;
+	2: spriteset_blank;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_AUTOFORM_LOCAL);
+	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
+	2: return string(STR_REFIT_OIGAWA);
+    //todo individual refits
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, stack_pax_oha35, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_pax_oha35_base_livery;
+	1: 	switch_pax_oha35_stripe_livery;
+    2:  switch_pax_oha35_roof;
+	3:  switch_taillights_8;
+}
+
+item (FEAT_TRAINS, pax_oha35, 1316) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_OHA35);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1939,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 85; 
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 0;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 28;
+		cost_factor: 16;
+		running_cost_factor: 11;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 80;
+		default: stack_pax_oha35;
+		purchase: switch_pax_oha35_purchase;
+		cargo_subtype_text: switch_pax_oha35_subtype_text;
 		
 	}
 }
@@ -19998,6 +20314,7 @@ random_switch(FEAT_TRAINS, SELF, random_coilcarrier_all) {
 
 switch(FEAT_TRAINS, SELF, switch_coilcarrier_cargo_selection, cargo_type_in_veh) {
 	STEL: random_coilcarrier_coils_livery;
+	ALUM: random_coilcarrier_coils_livery;
 	METL: random_coilcarrier_metals;
 	ZINC: random_coilcarrier_metals;
 	COPR: random_coilcarrier_metals;
@@ -20031,7 +20348,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		loading_speed: 20;
 		refittable_cargo_classes: 0; 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [STEL, METL, COPR, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
+		cargo_allow_refit: [STEL, METL, COPR, ALUM, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
 		weight: 10;
 		cost_factor: 6;
@@ -20293,6 +20610,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_cargo_type, cargo_type_in_veh) {
 	IRON: random_flatbed_5_metal;
 	STEL: spritegroup_flatbed_5_coils;
 	METL: spritegroup_flatbed_5_coils;
+	ALUM: spritegroup_flatbed_5_coils;
 	ZINC: random_flatbed_5_metal;
 	COPR: random_flatbed_5_metal;
 	CSTI: spritegroup_flatbed_5_slabs;
@@ -20380,6 +20698,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_rungs_back, cargo_type_in_veh) {
 	IRON: random_flatbed_5_rungs_all_back;
 	STEL: random_flatbed_5_rungs_all_back;
 	METL: random_flatbed_5_rungs_all_back;
+	ALUM: random_flatbed_5_rungs_all_back;
 	ZINC: random_flatbed_5_rungs_all_back;
 	COPR: random_flatbed_5_rungs_all_back;
 	CSTI: random_flatbed_5_rungs_all_back;
@@ -20926,6 +21245,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_back, cargo_type_in_veh) {
 	IRON: random_flatbed_7_rungs_all_back;
 	STEL: random_flatbed_7_rungs_all_back;
 	METL: random_flatbed_7_rungs_all_back;
+	ALUM: random_flatbed_7_rungs_all_back;
 	ZINC: random_flatbed_7_rungs_all_back;
 	COPR: random_flatbed_7_rungs_all_back;
 	CSTI: random_flatbed_7_rungs_all_back;
@@ -20965,6 +21285,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_front, cargo_type_in_veh) {
 	IRON: random_flatbed_7_rungs_all_front;
 	STEL: random_flatbed_7_rungs_all_front;
 	METL: random_flatbed_7_rungs_all_front;
+	ALUM: random_flatbed_7_rungs_all_front;
 	ZINC: random_flatbed_7_rungs_all_front;
 	COPR: random_flatbed_7_rungs_all_front;
 	CSTI: random_flatbed_7_rungs_all_front;
@@ -21720,6 +22041,7 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_to_1_metal;
 	STEL: random_to_1_metal;
 	METL: random_to_1_metal;
+	ALUM: random_to_1_metal;
 	ZINC: random_to_1_metal;
 	COPR: random_to_1_metal;
 	STST: random_to_1_metal;
@@ -22078,6 +22400,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_900_metal;
 	STEL: random_toki_900_metal;
 	METL: random_toki_900_metal;
+	ALUM: random_toki_900_metal;
 	ZINC: random_toki_900_metal;
 	COPR: random_toki_900_metal;
 	STST: random_toki_900_metal;
@@ -22435,6 +22758,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_tomu_1_metal;
 	STEL: random_tomu_1_metal;
 	METL: random_tomu_1_metal;
+	ALUM: random_tomu_1_metal;
 	ZINC: random_tomu_1_metal;
 	COPR: random_tomu_1_metal;
 	STST: random_tomu_1_metal;
@@ -22791,6 +23115,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	IRON: random_tora_5000_metal;
 	STEL: random_tora_5000_metal;
 	METL: random_tora_5000_metal;
+	ALUM: random_tora_5000_metal;
 	ZINC: random_tora_5000_metal;
 	COPR: random_tora_5000_metal;
 	STST: random_tora_5000_metal;
@@ -23150,6 +23475,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_25000_metal;
 	STEL: spritegroup_toki_25000_coils;
 	METL: spritegroup_toki_25000_coils;
+	ALUM: spritegroup_toki_25000_coils;
 	ZINC: random_toki_25000_metal;
 	COPR: random_toki_25000_metal;
 	STST: random_toki_25000_metal;

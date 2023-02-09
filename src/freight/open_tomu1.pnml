@@ -285,6 +285,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_tomu_1_metal;
 	STEL: random_tomu_1_metal;
 	METL: random_tomu_1_metal;
+	ALUM: random_tomu_1_metal;
 	ZINC: random_tomu_1_metal;
 	COPR: random_tomu_1_metal;
 	STST: random_tomu_1_metal;

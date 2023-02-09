@@ -143,6 +143,7 @@ random_switch(FEAT_TRAINS, SELF, random_coilcarrier_all) {
 
 switch(FEAT_TRAINS, SELF, switch_coilcarrier_cargo_selection, cargo_type_in_veh) {
 	STEL: random_coilcarrier_coils_livery;
+	ALUM: random_coilcarrier_coils_livery;
 	METL: random_coilcarrier_metals;
 	ZINC: random_coilcarrier_metals;
 	COPR: random_coilcarrier_metals;
@@ -176,7 +177,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		loading_speed: 20;
 		refittable_cargo_classes: 0; 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [STEL, METL, COPR, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
+		cargo_allow_refit: [STEL, METL, COPR, ALUM, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
 		weight: 10;
 		cost_factor: 6;

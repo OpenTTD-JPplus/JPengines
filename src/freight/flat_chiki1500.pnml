@@ -330,6 +330,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_back, cargo_type_in_veh) {
 	IRON: random_flatbed_7_rungs_all_back;
 	STEL: random_flatbed_7_rungs_all_back;
 	METL: random_flatbed_7_rungs_all_back;
+	ALUM: random_flatbed_7_rungs_all_back;
 	ZINC: random_flatbed_7_rungs_all_back;
 	COPR: random_flatbed_7_rungs_all_back;
 	CSTI: random_flatbed_7_rungs_all_back;
@@ -369,6 +370,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_rungs_front, cargo_type_in_veh) {
 	IRON: random_flatbed_7_rungs_all_front;
 	STEL: random_flatbed_7_rungs_all_front;
 	METL: random_flatbed_7_rungs_all_front;
+	ALUM: random_flatbed_7_rungs_all_front;
 	ZINC: random_flatbed_7_rungs_all_front;
 	COPR: random_flatbed_7_rungs_all_front;
 	CSTI: random_flatbed_7_rungs_all_front;

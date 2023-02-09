@@ -285,6 +285,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	IRON: random_tora_5000_metal;
 	STEL: random_tora_5000_metal;
 	METL: random_tora_5000_metal;
+	ALUM: random_tora_5000_metal;
 	ZINC: random_tora_5000_metal;
 	COPR: random_tora_5000_metal;
 	STST: random_tora_5000_metal;
