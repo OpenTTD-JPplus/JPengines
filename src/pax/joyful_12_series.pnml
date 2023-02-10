@@ -152,6 +152,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		running_cost_factor: 9;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_2CC);
+		variant_group: 1320;
 	}
 	graphics {
 		cargo_capacity: return 40;

@@ -1,26 +1,31 @@
-spriteset(spriteset_ab10, "gfx/eb10.png") {
+spriteset(spriteset_ab10_brown, "gfx/electric/eb10.png") {
 	template_2cc_std(1, 32)
 }
 
-
-spriteset(spriteset_ab10_cc, "gfx/eb10.png") {
+spriteset(spriteset_ab10_black, "gfx/electric/eb10.png") {
 	template_2cc_std(1, 96)
 }
 
+spriteset(spriteset_ab10_cc, "gfx/electric/eb10.png") {
+	template_2cc_std(1, 160)
+}
 
-spriteset(spriteset_ab10_purchase, "gfx/eb10.png") {
-	template_purchase(1, 128)
+
+spriteset(spriteset_ab10_purchase, "gfx/electric/eb10.png") {
+	template_purchase(1, 192)
 }
 
 switch(FEAT_TRAINS, SELF, switch_ab10_livery, cargo_subtype) {
-	1: spriteset_ab10_cc;
-	spriteset_ab10;
+	1: spriteset_ab10_brown;
+   2: spriteset_ab10_cc;
+	spriteset_ab10_black;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_JNR_BROWN);
-	1: return string(STR_REFIT_CC);
+	0: return string(STR_REFIT_JGR_BLACK);
+	1: return string(STR_REFIT_JGR);
+   2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -61,26 +66,31 @@ item (FEAT_TRAINS, ab10, 1010) {
 
 
 
-spriteset(spriteset_eb10, "gfx/eb10.png") {
+spriteset(spriteset_eb10_brown, "gfx/electric/eb10.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_eb10_cc, "gfx/eb10.png") {
+spriteset(spriteset_eb10_black, "gfx/electric/eb10.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_eb10_jgr_purchase, "gfx/eb10.png") {
-	template_purchase(1, 160)
+spriteset(spriteset_eb10_cc, "gfx/electric/eb10.png") {
+	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_eb10_jnr_purchase, "gfx/eb10.png") {
-	template_purchase(89, 160)
+spriteset(spriteset_eb10_jgr_purchase, "gfx/electric/eb10.png") {
+	template_purchase(89, 192)
+}
+
+spriteset(spriteset_eb10_jnr_purchase, "gfx/electric/eb10.png") {
+	template_purchase(89, 224)
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
-	1: spriteset_eb10_cc;
-	spriteset_eb10;
+	1: spriteset_eb10_brown;
+   2: spriteset_eb10_cc;
+	spriteset_eb10_black;
 }
 
 switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
@@ -94,7 +104,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
     spriteset_eb10_jnr_purchase;
     }
 
-
+//todo add variant group
 item (FEAT_TRAINS, eb10, 1011) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -118,6 +128,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   length: 4;
   running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
+  variant_group: 1010;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_ELF);

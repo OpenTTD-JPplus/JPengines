@@ -274,6 +274,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_900_metal;
 	STEL: random_toki_900_metal;
 	METL: random_toki_900_metal;
+	ALUM: random_toki_900_metal;
 	ZINC: random_toki_900_metal;
 	COPR: random_toki_900_metal;
 	STST: random_toki_900_metal;

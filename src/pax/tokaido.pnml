@@ -216,6 +216,7 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		running_cost_factor: 11;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1318;
 	}
 	graphics {
 		cargo_capacity: return 70;

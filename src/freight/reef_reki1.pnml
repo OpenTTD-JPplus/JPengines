@@ -1,0 +1,73 @@
+spriteset(spriteset_reki_1_1, "gfx/freight/reki_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_reki_1_2, "gfx/freight/reki_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_reki_1_3, "gfx/freight/reki_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_reki_1_4, "gfx/freight/reki_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_reki_1_5, "gfx/freight/reki_1.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_reki_1_jgr_purchase, "gfx/freight/reki_1.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_reki_1_jnr_purchase, "gfx/freight/reki_1.png") {
+	template_purchase(1, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_reki_1_yeardep_purchase, current_year) {
+	0..1949: spriteset_reki_1_jgr_purchase;
+	spriteset_reki_1_jnr_purchase;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_reki_1) {
+    5: spriteset_reki_1_1;
+    1: spriteset_reki_1_2;
+    3: spriteset_reki_1_3;
+    2: spriteset_reki_1_4;
+    1: spriteset_reki_1_5;
+}
+
+
+
+item (FEAT_TRAINS, reki_1, 1456) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_REKI_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1946,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		default_cargo_type: FOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+		weight: 20;
+		cost_factor: 8;
+		running_cost_factor: 5;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		default: random_reki_1;
+		purchase: switch_reki_1_yeardep_purchase;
+		
+	}
+}
