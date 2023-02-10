@@ -220,6 +220,14 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
 
 //cargo type switches
 
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_toki_25000_bulk;
+	bitmask(CC_BULK, CC_COVERED): switch_toki_25000_tarp_yeardep;
+	bitmask(CC_COVERED): switch_toki_25000_tarp_yeardep;
+	bitmask(CC_PIECE_GOODS): random_toki_25000_conts;
+	random_toki_25000_rods_covered;
+}
+
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_25000_metal;
 	STEL: spritegroup_toki_25000_coils;
@@ -262,18 +270,17 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	FRUT: switch_toki_25000_tarp_yeardep;
 	FRVG: switch_toki_25000_tarp_yeardep;
 	TATO: switch_toki_25000_tarp_yeardep;
+	GRAI: switch_toki_25000_tarp_yeardep;
+	CMNT: switch_toki_25000_tarp_yeardep;
+	COCO: switch_toki_25000_tarp_yeardep;
+	SALT: switch_toki_25000_tarp_yeardep;
+	NHNO: switch_toki_25000_tarp_yeardep;
+	FECR: switch_toki_25000_tarp_yeardep;
+	QLME: switch_toki_25000_tarp_yeardep;
 	
-	spritegroup_toki_25000_rods;
+	switch_toki_25000_cargo_class;
 }
 
-
-
-switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): spritegroup_toki_25000_bulk;
-	bitmask(CC_BULK, CC_COVERED): switch_toki_25000_tarp_yeardep;
-
-	switch_toki_25000_cargo_type;
-}
 
 //random livery
 

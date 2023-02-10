@@ -278,8 +278,13 @@ random_switch (FEAT_TRAINS, SELF, random_tora_5000_covered) {
 
 
 
-//todo fix
-
+switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_tora_5000_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_tora_5000_covered;
+	bitmask(CC_COVERED): random_tora_5000_covered;
+	bitmask(CC_PIECE_GOODS): random_tora_5000_piece;
+	random_tora_5000_rods;
+}
 
 switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	IRON: random_tora_5000_metal;
@@ -323,16 +328,18 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	FRUT: random_tora_5000_covered;
 	FRVG: random_tora_5000_covered;
 	TATO: random_tora_5000_covered;
+	GRAI: random_tora_5000_covered;
+	CMNT: random_tora_5000_covered;
+	COCO: random_tora_5000_covered;
+	SALT: random_tora_5000_covered;
+	NHNO: random_tora_5000_covered;
+	FECR: random_tora_5000_covered;
+	QLME: random_tora_5000_covered;
 	
-	random_tora_5000_rods;
+	switch_tora_5000_cargo_class;
 }
 
-switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): random_tora_5000_bulk;
-	bitmask(CC_BULK, CC_COVERED): random_tora_5000_covered;
 
-	switch_tora_5000_cargo_type;
-}
 
 
 item (FEAT_TRAINS, tora_5000, 33) {
@@ -350,7 +357,7 @@ graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 40;
-	default: switch_tora_5000_cargo_class;
+	default: switch_tora_5000_cargo_type;
 	purchase: spriteset_tora_5000_purchase;
 	colour_mapping: switch_generic_recolour;
 	}

@@ -135,8 +135,13 @@ random_switch (FEAT_TRAINS, SELF, random_to_1_covered) {
 
 
 
-//todo fix
-
+switch(FEAT_TRAINS, SELF, switch_to_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): spritegroup_to_1_a_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_to_1_covered;
+	bitmask(CC_COVERED): random_to_1_covered;
+	bitmask(CC_PIECE_GOODS): random_to_1_piece;
+	random_to_1_covered;
+}
 
 switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_to_1_metal;
@@ -178,17 +183,17 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	FRUT: random_to_1_covered;
 	FRVG: random_to_1_covered;
 	TATO: random_to_1_covered;
-	
+	GRAI: random_to_1_covered;
+	CMNT: random_to_1_covered;
+	COCO: random_to_1_covered;
+	SALT: random_to_1_covered;
+	NHNO: random_to_1_covered;
+	FECR: random_to_1_covered;
+	QLME: random_to_1_covered;
+
 	FICR: spritegroup_to_1_a_crates;
 	
-	spritegroup_to_1_a_piece;
-}
-
-switch(FEAT_TRAINS, SELF, switch_to_1_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): spritegroup_to_1_a_bulk;
-	bitmask(CC_BULK, CC_COVERED): random_to_1_covered;
-
-	switch_to_1_cargo_type;
+	switch_to_1_cargo_class;
 }
 
 

@@ -267,8 +267,13 @@ random_switch (FEAT_TRAINS, SELF, random_toki_900_covered) {
 
 
 
-//todo fix
-
+switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_toki_900_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_toki_900_covered;
+	bitmask(CC_COVERED): random_toki_900_covered;
+	bitmask(CC_PIECE_GOODS): random_toki_900_piece;
+	random_toki_900_covered;
+}
 
 switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_900_metal;
@@ -312,16 +317,18 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	FRUT: random_toki_900_covered;
 	FRVG: random_toki_900_covered;
 	TATO: random_toki_900_covered;
+	GRAI: random_toki_900_covered;
+	CMNT: random_toki_900_covered;
+	COCO: random_toki_900_covered;
+	SALT: random_toki_900_covered;
+	NHNO: random_toki_900_covered;
+	FECR: random_toki_900_covered;
+	QLME: random_toki_900_covered;
 	
-	random_toki_900_rods;
+	switch_toki_900_cargo_class;
 }
 
-switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): random_toki_900_bulk;
-	bitmask(CC_BULK, CC_COVERED): random_toki_900_covered;
 
-	switch_toki_900_cargo_type;
-}
 
 
 item (FEAT_TRAINS, toki_900, 1284) {

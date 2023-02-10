@@ -485,6 +485,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	STEL: return recolour_piece +3;
 	IRON: return recolour_piece +7;
 	METL: return recolour_piece ;
+    ALUM: return recolour_piece ;
 	COPR: return recolour_piece +4;
 	ZINC: return recolour_piece +5;
 	NICK: return recolour_piece +6;

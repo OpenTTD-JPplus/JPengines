@@ -277,9 +277,13 @@ random_switch (FEAT_TRAINS, SELF, random_tomu_1_covered) {
 }
 
 
-
-//todo fix
-
+switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): random_tomu_1_bulk;
+	bitmask(CC_BULK, CC_COVERED): random_tomu_1_covered;
+	bitmask(CC_COVERED): random_tomu_1_covered;
+	bitmask(CC_PIECE_GOODS): random_tomu_1_piece;
+	random_tomu_1_covered;
+}
 
 switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	IRON: random_tomu_1_metal;
@@ -323,15 +327,15 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	FRUT: random_tomu_1_covered;
 	FRVG: random_tomu_1_covered;
 	TATO: random_tomu_1_covered;
+	GRAI: random_tomu_1_covered;
+	CMNT: random_tomu_1_covered;
+	COCO: random_tomu_1_covered;
+	SALT: random_tomu_1_covered;
+	NHNO: random_tomu_1_covered;
+	FECR: random_tomu_1_covered;
+	QLME: random_tomu_1_covered;
 	
-	random_tomu_1_rods;
-}
-
-switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_class, cargo_classes) {
-	bitmask(CC_BULK): random_tomu_1_bulk;
-	bitmask(CC_BULK, CC_COVERED): random_tomu_1_covered;
-
-	switch_tomu_1_cargo_type;
+	switch_tomu_1_cargo_class;
 }
 
 
