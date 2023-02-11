@@ -45,7 +45,7 @@ spriteset(spriteset_pax_oha35_stripe_lightblue, "gfx/paxmail/oha35.png") {
 }
 
 spriteset(spriteset_pax_oha35_stripe_green, "gfx/paxmail/oha35.png") {
-	template_2cc_std(1, 354)
+	template_2cc_std(1, 352)
 }
 
 /*
@@ -138,15 +138,93 @@ switch(FEAT_TRAINS, SELF, switch_pax_oro36_yeardep, current_year) {
 
 
 
-switch(FEAT_TRAINS, SELF, switch_pax_oro36_stripe_yeardep, current_year) {
+
+//local auto formation jnr
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_local_auto_middle) {
+	4: switch_pax_oha35_yeardep;
+	1: switch_pax_ohafu33_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_end, position_in_consist_from_end) {
+	0: switch_pax_ohafu33_yeardep;
+	random_pax_oha35_local_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_beginning, position_in_vehid_chain) {
+	0: switch_pax_ohafu33_yeardep;
+	switch_pax_oha35_local_auto_end;
+	}
+
+
+//express auto formation jnr
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_middle) {
+	4: switch_pax_oha35_yeardep;
+	1: switch_pax_ohafu33_yeardep;
+}
+
+	random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_beginning) {
+	1: switch_pax_oha35_yeardep;
+	1: switch_pax_oro36_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_end, position_in_consist_from_end) {
+	0: switch_pax_ohafu33_yeardep;
+	random_pax_oha35_express_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_beginning, position_in_vehid_chain) {
+	0..3: random_pax_oha35_express_auto_beginning;
+	switch_pax_oha35_express_auto_end;
+	}
+
+//local auto formation oigawa
+
+random_switch (FEAT_TRAINS, SELF, random_pax_oha35_oigawa_auto_middle) {
+	4: spriteset_pax_oha35_oigawa;
+	1: spriteset_pax_ohafu33_oigawa;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_oigawa_auto_end, position_in_consist_from_end) {
+	0: spriteset_pax_ohafu33_oigawa;
+	random_pax_oha35_oigawa_auto_middle;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_oigawa_auto_beginning, position_in_vehid_chain) {
+	0: spriteset_pax_ohafu33_oigawa;
+	switch_pax_oha35_oigawa_auto_end;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_local_auto_stripe, current_year) {
+	0..1940: spriteset_pax_oha35_stripe_red;
+	spriteset_blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_pax_oro36_auto_stripe_yeardep, current_year) {
 	0..1949: spriteset_pax_oha35_stripe_blue;
     1949..1961: spriteset_pax_oha35_stripe_lightblue;
 	1961..1987: spriteset_pax_oha35_stripe_green;
 	spriteset_blank;
 }
 
+	random_switch (FEAT_TRAINS, SELF, random_pax_oha35_express_auto_stripe_beginning) {
+	1: switch_pax_oha35_local_auto_stripe;
+	1: switch_pax_oro36_auto_stripe_yeardep;
+    dependent: random_pax_oha35_express_auto_beginning;
+}
 
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_stripe_end, position_in_consist_from_end) {
+	0: switch_pax_oha35_local_auto_stripe;
+	switch_pax_oha35_local_auto_stripe;
+	}
 
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_express_auto_stripe, position_in_vehid_chain) {
+	0..3: random_pax_oha35_express_auto_stripe_beginning;
+	switch_pax_oha35_express_auto_stripe_end;
+	}
 
 
 
@@ -155,12 +233,12 @@ random_switch (FEAT_TRAINS, SELF, random_oha35_roof_old) {
 	2: spriteset_blank;
 }
 
-random_switch (FEAT_TRAINS, SELF, random_oha35_32_roof_new) {
+random_switch (FEAT_TRAINS, SELF, random_oha35_roof_new) {
 	2: spriteset_pax_oha35_roof;
 	1: spriteset_blank;
 }
 
-switch(FEAT_TRAINS, SELF, switch_oha35_roof, build_year) {
+switch(FEAT_TRAINS, SELF, switch_pax_oha35_roof, build_year) {
 	0..1940: spriteset_blank; //old style
 	1940..1945: random_oha35_roof_old;
 	1945..1950: random_oha35_roof_new; //mixed
@@ -171,7 +249,7 @@ switch(FEAT_TRAINS, SELF, switch_oha35_roof, build_year) {
 switch(FEAT_TRAINS, SELF, switch_pax_oha35_base_livery, cargo_subtype) {
 	0: switch_pax_oha35_local_auto_beginning;
 	1: switch_pax_oha35_express_auto_beginning;
-	2: switch_pax_oha35_sleeper_auto_beginning;
+	2: switch_pax_oha35_oigawa_auto_beginning;
 }
 
 

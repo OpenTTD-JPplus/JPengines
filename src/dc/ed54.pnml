@@ -1,0 +1,93 @@
+spriteset(spriteset_ed54_brown, "gfx/electric/ed54.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ed54_brown_flip, "gfx/electric/ed54.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_ed54_cc, "gfx/electric/ed54.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ed54_cc_flip, "gfx/electric/ed54.png") {
+	template_2cc_flip(1, 96)
+}
+
+
+
+spriteset(spriteset_ed54_jgr_purchase, "gfx/electric/ed54.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_ed54_jnr_purchase, "gfx/electric/ed54.png") {
+	template_purchase(1, 160)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed54_brown_flip, vehicle_is_flipped) {
+	0: spriteset_ed54_brown;
+	1: spriteset_ed54_brown_flip;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed54_cc_flip, vehicle_is_flipped) {
+	0: spriteset_ed54_cc;
+	1: spriteset_ed54_cc_flip;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed54_livery, cargo_subtype) {
+	0: switch_ed54_brown_flip;
+	1: switch_ed54_cc_flip;	
+	switch_ed54_brown_flip;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed54_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ed54_yeardep_purchase, current_year) {
+    0..1949: spriteset_ed54_jgr_purchase;
+    spriteset_ed54_jnr_purchase;
+    }
+
+
+item (FEAT_TRAINS, ed54, 1051) {
+
+property {
+    sprite_id: SPRITE_ID_NEW_TRAIN;
+    track_type: NABE;
+    name: string(STR_NAME_JNR_ED54);
+    climates_available: ALL_CLIMATES;
+    introduction_date: date(1926,1,1);
+    speed: 100 km/h;
+    air_drag_coefficient: 0;
+    tractive_effort_coefficient:    0.20;
+    power: 1540 kW;
+    dual_headed: 0;
+    engine_class: ENGINE_CLASS_ELECTRIC;
+    cargo_capacity: 1;
+    cargo_allow_refit: [PASS];
+    weight: 78;
+    reliability_decay: 85;
+    model_life: 60;
+    vehicle_life: 50;
+    cost_factor: 45;
+    length: 6;
+    running_cost_factor: 53;
+    running_cost_base: RUNNING_COST_STEAM;
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed54_subtype_text;
+  default: switch_ed54_livery;
+  purchase: switch_ed54_yeardep_purchase;
+  }
+}

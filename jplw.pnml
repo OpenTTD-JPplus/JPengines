@@ -18,9 +18,11 @@
 #include "src/dc/e851.pnml"
 
 #include "src/dc/eb10.pnml"
+#include "src/dc/ed12.pnml"
 #include "src/dc/ed16.pnml"
 #include "src/dc/ed17.pnml"
 #include "src/dc/ed53.pnml"
+#include "src/dc/ed54.pnml"
 #include "src/dc/ed62.pnml"
 #include "src/dc/ef10.pnml"
 #include "src/dc/ef13.pnml"
@@ -71,6 +73,7 @@
 #include "src/pax/paxmail_1910_17m.pnml"
 #include "src/pax/paxmail_suha32.pnml"
 #include "src/pax/paxmail_suha43.pnml"
+#include "src/pax/pax_oha35.pnml"
 #include "src/pax/tokaido.pnml"
 #include "src/pax/joyful_12_series.pnml"
 
