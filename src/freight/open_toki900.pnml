@@ -324,6 +324,10 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	NHNO: random_toki_900_covered;
 	FECR: random_toki_900_covered;
 	QLME: random_toki_900_covered;
+	CBLK: random_toki_900_covered;
+
+	WOOD: random_toki_900_rods;
+	PIPE: random_toki_900_rods;
 	
 	switch_toki_900_cargo_class;
 }
@@ -347,7 +351,7 @@ graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 45;
-	default: switch_toki_900_cargo_class;
+	default: switch_toki_900_cargo_type;
 	purchase: spriteset_toki_900_purchase;
 	colour_mapping: switch_generic_recolour;
 	}

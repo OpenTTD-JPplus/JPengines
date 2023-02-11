@@ -190,6 +190,7 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	NHNO: random_to_1_covered;
 	FECR: random_to_1_covered;
 	QLME: random_to_1_covered;
+	CBLK: random_to_1_covered;
 
 	FICR: spritegroup_to_1_a_crates;
 	
@@ -225,7 +226,7 @@ graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
 	cargo_capacity: return 15;
-	default: switch_to_1_cargo_class;
+	default: switch_to_1_cargo_type;
 	purchase: spriteset_to_1_purchase;
 	colour_mapping: switch_generic_recolour;
 	}

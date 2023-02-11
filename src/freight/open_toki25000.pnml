@@ -277,6 +277,10 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	NHNO: switch_toki_25000_tarp_yeardep;
 	FECR: switch_toki_25000_tarp_yeardep;
 	QLME: switch_toki_25000_tarp_yeardep;
+	CBLK: switch_toki_25000_tarp_yeardep;
+
+	WOOD: spritegroup_toki_25000_rods;
+	PIPE: spritegroup_toki_25000_rods;
 	
 	switch_toki_25000_cargo_class;
 }
@@ -346,7 +350,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_all_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  switch_toki_25000_livery;
-    1:  switch_toki_25000_cargo_class;
+    1:  switch_toki_25000_cargo_type;
 }
 
 
@@ -395,7 +399,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_15000_all_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  spriteset_toki_15000_black;
-    1:  switch_toki_25000_cargo_class; //todo give its own class switch
+    1:  switch_toki_25000_cargo_type; //todo give its own class switch
 }
 
 

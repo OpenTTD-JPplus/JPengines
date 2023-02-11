@@ -539,6 +539,10 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
     FRVG: return recolour_bulk +14;
 
     CMNT: return recolour_bulk +12;
+    CBLK: return recolour_bulk +13;
+
+//FALLBACK
+    recolour_bulk;    
 }
 
 switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
@@ -582,7 +586,6 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 
     COAL: return recolour_bulk +13;
 	COKE: return recolour_bulk +13;
-	CBLK: return recolour_bulk +13;
 	
     FRUT: return recolour_bulk +14;
     FRVG: return recolour_bulk +14;

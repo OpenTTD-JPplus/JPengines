@@ -283,7 +283,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_class, cargo_classes) {
 	bitmask(CC_BULK, CC_COVERED): random_tora_5000_covered;
 	bitmask(CC_COVERED): random_tora_5000_covered;
 	bitmask(CC_PIECE_GOODS): random_tora_5000_piece;
-	random_tora_5000_rods;
+	random_tora_5000_covered;
 }
 
 switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
@@ -321,6 +321,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	SCMT: random_tora_5000_bulk;
 	WSTE: random_tora_5000_bulk;
 	RCYC: random_tora_5000_bulk;
+
 	SULP: random_tora_5000_covered;
 	SEED: random_tora_5000_covered;
 	FERT: random_tora_5000_covered;
@@ -335,7 +336,11 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	NHNO: random_tora_5000_covered;
 	FECR: random_tora_5000_covered;
 	QLME: random_tora_5000_covered;
-	
+	CBLK: random_tora_5000_covered;
+
+	WOOD: random_tora_5000_rods;
+	PIPE: random_tora_5000_rods;
+
 	switch_tora_5000_cargo_class;
 }
 
