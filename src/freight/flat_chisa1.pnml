@@ -311,6 +311,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_all_back) {
 random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_all_front) {
 	1: spriteset_flatbed_5_rungs_a_front;
     1: spriteset_flatbed_5_rungs_b_front;
+	dependent: random_flatbed_5_rungs_all_back;
 }
 
 
@@ -324,6 +325,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_some_front) {
 	1: spriteset_flatbed_5_rungs_a_front;
     1: spriteset_flatbed_5_rungs_b_front;
 	2: spriteset_flatbed_5_blank;
+	dependent: random_flatbed_5_rungs_some_back;
 }
 
 
@@ -371,6 +373,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_rungs_front, cargo_type_in_veh) {
 	IRON: random_flatbed_5_rungs_all_front;
 	STEL: random_flatbed_5_rungs_all_front;
 	METL: random_flatbed_5_rungs_all_front;
+	ALUM: random_flatbed_5_rungs_all_front;
 	ZINC: random_flatbed_5_rungs_all_front;
 	COPR: random_flatbed_5_rungs_all_front;
 	CSTI: random_flatbed_5_rungs_all_front;

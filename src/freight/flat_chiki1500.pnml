@@ -200,7 +200,7 @@ random_switch (FEAT_TRAINS, SELF, random_flatbed_7_metal) {
 
 random_switch (FEAT_TRAINS, SELF, random_flatbed_7_metal_prod) {
 	3: spritegroup_flatbed_7_rods;
-	1: spritegroup_flatbed_7_pipes;
+	1: spritegroup_flatbed_7_pipes; 
 	2: spritegroup_flatbed_7_slabs;
 }
 
@@ -310,6 +310,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_back) {
 random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_front) {
 	1: spriteset_flatbed_7_rungs_a_front;
     1: spriteset_flatbed_7_rungs_b_front;
+	dependent: random_flatbed_7_rungs_all_back;
 }
 
 
@@ -323,6 +324,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_some_front) {
 	1: spriteset_flatbed_7_rungs_a_front;
     1: spriteset_flatbed_7_rungs_b_front;
 	2: spriteset_flatbed_7_blank;
+	dependent: random_flatbed_7_rungs_some_back;
 }
 
 
@@ -456,7 +458,7 @@ property {
 	speed: 75 km/h;
 	non_refittable_cargo_classes: 0; 
 	default_cargo_type: WOOD;
-	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
