@@ -1926,22 +1926,16 @@ switch(FEAT_TRAINS, SELF, switch_ed17_livery, cargo_subtype) {
 	0: switch_ed17_yeardep_livery;
 	1: spriteset_ed17_black;
 	2: spriteset_ed17_brown;
-	3: spriteset_ed17_brown;
-	4: spriteset_ed17_cc;
+	3: spriteset_ed17_cc;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
 	2: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
-	3: return string(STR_CONCAT_4, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_85));
-	4: return string(STR_CONCAT_4, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC), string(STR_SUFFIX_85));
+	3: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC));
 }
 
-switch(FEAT_TRAINS, SELF, switch_ed17_speed, cargo_subtype) {
-	3..4: return 85;
-	return 65;
-}
 
 item (FEAT_TRAINS, ed17, 02) {
 
@@ -1949,7 +1943,15 @@ property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
 //	name: string(STR_NAME_OPEN_HOPPER);
-
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.26;
+  power: 925 kW;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 31;
+  length: 6;
+  running_cost_factor: 37;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 6;
@@ -1960,9 +1962,60 @@ property {
 graphics { // graphics for engine
     default: switch_ed17_livery;
     purchase: switch_ed17_yeardep_purchase;
-	speed: switch_ed17_speed;
     cargo_capacity: return 0;
     cargo_subtype_text: switch_ed17_subtype_text;
+    additional_text:	string(STR_DESC_JGR_ELF);
+  }
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ed50_livery, cargo_subtype) {
+	0: switch_ed17_yeardep_livery;
+	1: spriteset_ed17_black;
+	2: spriteset_ed17_brown;
+	3: spriteset_ed17_cc;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
+	3: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC));
+}
+
+item (FEAT_TRAINS, ed50, 1012) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED50);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1923,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.21;
+  power: 925 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 60;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 31;
+  length: 6;
+  running_cost_factor: 40;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 02;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed50_subtype_text;
+  default: switch_ed50_livery;
+  purchase: switch_ed17_yeardep_purchase;
   }
 }
 spriteset(spriteset_ed53_brown, "gfx/electric/ed53.png") {
@@ -1992,14 +2045,14 @@ switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed53, 1050) {
+item (FEAT_TRAINS, ed19, 1013) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_ED53);
+  name: string(STR_NAME_JNR_ED19);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1926,1,1);
-  speed: 95 km/h;
+  introduction_date: date(1937,1,1);
+  speed: 65 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
   power: 840 kW;
@@ -2011,11 +2064,47 @@ item (FEAT_TRAINS, ed53, 1050) {
   reliability_decay: 85;
   model_life: 55;
   vehicle_life: 50;
-  cost_factor: 33;
+  cost_factor: 30;
   length: 5;
-  running_cost_factor: 44;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 36;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1050;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_ELF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed53_subtype_text;
+  default: switch_ed53_livery;
+  purchase: spriteset_ed53_purchase;
+  }
+}
+
+item (FEAT_TRAINS, ed53, 1050) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_ED53);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1926,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.20;
+  power: 840 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 68;
+  reliability_decay: 85;
+  model_life: 55;
+  vehicle_life: 50;
+  cost_factor: 30;
+  length: 5;
+  running_cost_factor: 40;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_EEP);
@@ -2271,38 +2360,41 @@ spriteset(spriteset_ef10_jnr_purchase, "gfx/electric/ef10.png") {
 	template_purchase(1, 192)
 }
 
+spriteset(spriteset_ef10_2_jgr_purchase, "gfx/electric/ef10.png") {
+	template_purchase(89, 160)
+}
+
+spriteset(spriteset_ef10_2_jnr_purchase, "gfx/electric/ef10.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef10_yeardep_purchase, current_year) {
+    0..1949: spriteset_ef10_jgr_purchase;
+    spriteset_ef10_jnr_purchase;
+    }
 
 switch(FEAT_TRAINS, SELF, switch_ef10_yeardep, build_year) {
-    0..1940: spriteset_ef10_jgr_a;
+    0..1949: spriteset_ef10_jgr_a;
     spriteset_ef10_jgr_b;
     }
 
 switch(FEAT_TRAINS, SELF, switch_ef10_livery, cargo_subtype) {
 	0: switch_ef10_yeardep;
 	1: spriteset_ef10_jgr_a;
-	2: spriteset_ef10_jgr_b;
-	3: spriteset_ef10_silver;
-	4: spriteset_ef10_cc_a;
-	5: spriteset_ef10_cc_b;
+	2: spriteset_ef10_cc_a;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN_OLD);
-	2: return string(STR_REFIT_BROWN_NEW);
-	3: return string(STR_REFIT_STAINLESS);
-	4: return string(STR_REFIT_CC_OLD);
-	5: return string(STR_REFIT_CC_NEW);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_ef10_yeardep_purchase, current_year) {
-    0..1949: spriteset_ef10_jgr_purchase;
-    spriteset_ef10_jnr_purchase;
-    }
+
 
 item (FEAT_TRAINS, ef10, 08) {
 
@@ -2310,7 +2402,14 @@ property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
 //	name: string(STR_NAME_OPEN_HOPPER); 
-
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.26;
+  power: 1350 kW;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 39;
+  running_cost_factor: 56;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 7;
@@ -2324,6 +2423,77 @@ property {
   default: switch_ef10_livery;
   purchase: switch_ef10_yeardep_purchase;
   additional_text:	string(STR_DESC_JGR_EHF);
+  }
+}
+
+//EF10 updated variant
+
+switch(FEAT_TRAINS, SELF, switch_ef10_2_yeardep_purchase, current_year) {
+    0..1949: spriteset_ef10_2_jgr_purchase;
+    spriteset_ef10_2_jnr_purchase;
+    }
+
+random_switch(FEAT_TRAINS, SELF, random_ef10_2_silver) {
+	1: spriteset_ef10_jgr_b;
+	1: spriteset_ef10_silver;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef10_2_yeardep, build_year) {
+    0..1940: random_ef10_2_silver;
+    spriteset_ef10_jgr_b;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_ef10_2_livery, cargo_subtype) {
+	0: switch_ef10_2_yeardep;
+	1: spriteset_ef10_jgr_b;
+	2: spriteset_ef10_silver;
+	3: spriteset_ef10_cc_b;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef10_2_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDYEAR);
+	1: return string(STR_REFIT_JGR);
+	2: return string(STR_REFIT_STAINLESS);
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef10_2, 1052) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF10_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1937,1,1);
+  speed: 75 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.26;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 98;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 39;
+  length: 7;
+  running_cost_factor: 56;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 08;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EHF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef10_2_subtype_text;
+  default: switch_ef10_2_livery;
+  purchase: switch_ef10_2_yeardep_purchase;
   }
 }
 spriteset(spriteset_ef13_croc_brown, "gfx/electric/ef13.png") {
@@ -2358,45 +2528,38 @@ spriteset(spriteset_ef13_bloc_jnr_purchase, "gfx/electric/ef13.png") {
 
 switch(FEAT_TRAINS, SELF, switch_ef13_yeardep_purchase, current_year) {
     0..1949: spriteset_ef13_croc_jgr_purchase;
-	1949..1957: spriteset_ef13_croc_jnr_purchase;
-    spriteset_ef13_bloc_jnr_purchase;
-   }
-
-switch(FEAT_TRAINS, SELF, switch_ef13_brown_buildyear, build_year) {
-	0..1957: spriteset_ef13_croc_brown;
-	spriteset_ef13_bloc_brown;
-}
-
+    spriteset_ef13_croc_jnr_purchase;
+    }
 
 switch(FEAT_TRAINS, SELF, switch_ef13_livery, cargo_subtype) {
-	1: spriteset_ef13_croc_brown;
-	2: spriteset_ef13_bloc_brown;
-	3: spriteset_ef13_croc_cc;
-	4: spriteset_ef13_bloc_cc;
-	switch_ef13_brown_buildyear;
+	0: spriteset_ef13_croc_brown;
+	1: spriteset_ef13_croc_cc;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JGR);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN_OLD);
-	2: return string(STR_REFIT_BROWN_NEW);
-	3: return string(STR_REFIT_CC_OLD);
-	4: return string(STR_REFIT_CC_NEW);
-	   return CB_RESULT_NO_TEXT;
-	}
-
-
-
-
-item (FEAT_TRAINS, ef13, 103) {
+item (FEAT_TRAINS, ef13_1, 103) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
 //	name: string(STR_NAME_OPEN_HOPPER);
-
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.26;
+  power: 1600 kW;
+  weight: 99;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 38;
+  length: 7;
+  running_cost_factor: 57;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 7;
@@ -2410,6 +2573,54 @@ property {
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
   additional_text:	string(STR_DESC_JGR_EHF);
+  }
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef13_2_livery, cargo_subtype) {
+	0: spriteset_ef13_bloc_brown;
+	1: spriteset_ef13_bloc_cc;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef13_2_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+}
+
+item (FEAT_TRAINS, ef13_2, 1053) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF13_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1957,1,1);
+  speed: 75 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.26;
+  power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 99;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 38;
+  length: 7;
+  running_cost_factor: 57;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 103;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EHF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef13_2_subtype_text;
+  default: switch_ef13_2_livery;
+  purchase: spriteset_ef13_bloc_jnr_purchase;
   }
 }
 spriteset(spriteset_ef15_jnr_a, "gfx/electric/ef15.png") {
@@ -20894,6 +21105,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_all_back) {
 random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_all_front) {
 	1: spriteset_flatbed_5_rungs_a_front;
     1: spriteset_flatbed_5_rungs_b_front;
+	dependent: random_flatbed_5_rungs_all_back;
 }
 
 
@@ -20907,6 +21119,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_5_rungs_some_front) {
 	1: spriteset_flatbed_5_rungs_a_front;
     1: spriteset_flatbed_5_rungs_b_front;
 	2: spriteset_flatbed_5_blank;
+	dependent: random_flatbed_5_rungs_some_back;
 }
 
 
@@ -20954,6 +21167,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_rungs_front, cargo_type_in_veh) {
 	IRON: random_flatbed_5_rungs_all_front;
 	STEL: random_flatbed_5_rungs_all_front;
 	METL: random_flatbed_5_rungs_all_front;
+	ALUM: random_flatbed_5_rungs_all_front;
 	ZINC: random_flatbed_5_rungs_all_front;
 	COPR: random_flatbed_5_rungs_all_front;
 	CSTI: random_flatbed_5_rungs_all_front;
@@ -21331,7 +21545,7 @@ random_switch (FEAT_TRAINS, SELF, random_flatbed_7_metal) {
 
 random_switch (FEAT_TRAINS, SELF, random_flatbed_7_metal_prod) {
 	3: spritegroup_flatbed_7_rods;
-	1: spritegroup_flatbed_7_pipes;
+	1: spritegroup_flatbed_7_pipes; 
 	2: spritegroup_flatbed_7_slabs;
 }
 
@@ -21441,6 +21655,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_back) {
 random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_all_front) {
 	1: spriteset_flatbed_7_rungs_a_front;
     1: spriteset_flatbed_7_rungs_b_front;
+	dependent: random_flatbed_7_rungs_all_back;
 }
 
 
@@ -21454,6 +21669,7 @@ random_switch(FEAT_TRAINS, SELF, random_flatbed_7_rungs_some_front) {
 	1: spriteset_flatbed_7_rungs_a_front;
     1: spriteset_flatbed_7_rungs_b_front;
 	2: spriteset_flatbed_7_blank;
+	dependent: random_flatbed_7_rungs_some_back;
 }
 
 
@@ -21587,7 +21803,7 @@ property {
 	speed: 75 km/h;
 	non_refittable_cargo_classes: 0; 
 	default_cargo_type: WOOD;
-	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
