@@ -1,77 +1,69 @@
-spriteset(spriteset_ef57_new, "gfx/ef57.png") {
+spriteset(spriteset_ef57_1_jgr, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef57_old, "gfx/ef57.png") {
+spriteset(spriteset_ef57_2_jgr, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef57_logo, "gfx/ef57.png") {
+spriteset(spriteset_ef57_2_jnr, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef57_banker, "gfx/ef57.png") {
+/* no such thing
+spriteset(spriteset_ef57_banker, "gfx/electric/ef57.png") {
+	template_2cc_std(1, 96)
+}
+*/
+
+spriteset(spriteset_ef57_1_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef57_cc_new, "gfx/ef57.png") {
+spriteset(spriteset_ef57_2_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef57_cc_old, "gfx/ef57.png") {
-	template_2cc_std(1, 160)
-}
 
 
-
-spriteset(spriteset_ef57_old_purchase, "gfx/ef57.png") {
-	template_purchase(89, 192)
-}
-
-spriteset(spriteset_ef57_new_purchase, "gfx/ef57.png") {
+spriteset(spriteset_ef57_1_jgr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(1, 192)
 }
 
-spriteset(spriteset_ef57_jnr_purchase, "gfx/ef57.png") {
+spriteset(spriteset_ef57_1_jnr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(1, 224)
 }
 
+spriteset(spriteset_ef57_2_jgr_purchase, "gfx/electric/ef57.png") {
+	template_purchase(89, 192)
+}
 
+spriteset(spriteset_ef57_2_jnr_purchase, "gfx/electric/ef57.png") {
+	template_purchase(89, 224)
+}
 
+/*
 switch(FEAT_TRAINS, SELF, switch_ef57_yeardep_livery, build_year) {
 	0..1937: spriteset_ef57_old;
 	spriteset_ef57_new;
 }
+*/
 
-switch(FEAT_TRAINS, SELF, switch_ef57_yeardep_purchase, current_year) {
-	0..1940: spriteset_ef57_old_purchase;
-    1940..1949: spriteset_ef57_new_purchase;
-	spriteset_ef57_jnr_purchase;
+switch(FEAT_TRAINS, SELF, switch_ef57_1_yeardep_purchase, current_year) {
+	0..1949: spriteset_ef57_1_jgr_purchase;
+	spriteset_ef57_1_jnr_purchase;
 }
 
-switch(FEAT_TRAINS, SELF, switch_ef57_livery, cargo_subtype) {
-	1: spriteset_ef57_new;
-	2: spriteset_ef57_old;
-	3: spriteset_ef57_logo;
-	4: spriteset_ef57_banker;
-	5: spriteset_ef57_cc_new;
-	6: spriteset_ef57_cc_old;
-	switch_ef57_yeardep_livery;
+switch(FEAT_TRAINS, SELF, switch_ef57_1_livery, cargo_subtype) {
+	1: spriteset_ef57_1_cc;
+	spriteset_ef57_1_jgr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_ef57_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BROWN_NEW);
-	2: return string(STR_REFIT_BROWN_OLD);
-	3: return string(STR_REFIT_JNR_LOGO);
-	4: return string(STR_REFIT_EF59);
-	5: return string(STR_REFIT_CC_NEW);
-	6: return string(STR_REFIT_CC_OLD);
+switch(FEAT_TRAINS, SELF, switch_ef57_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JGR);
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
-
-
-
 
 
 item (FEAT_TRAINS, ef57, 1020) {
@@ -101,8 +93,63 @@ item (FEAT_TRAINS, ef57, 1020) {
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_EEP);
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef57_subtype_text;
-  default: switch_ef57_livery;
-  purchase: switch_ef57_yeardep_purchase;
+  cargo_subtype_text: switch_ef57_1_subtype_text;
+  default: switch_ef57_1_livery;
+  purchase: switch_ef57_1_yeardep_purchase;
+  }
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef57_2_yeardep_purchase, current_year) {
+	0..1949: spriteset_ef57_2_jgr_purchase;
+	spriteset_ef57_2_jnr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef57_2_livery, cargo_subtype) {
+	1: spriteset_ef57_2_jnr;
+  2: spriteset_ef57_2_cc;
+	spriteset_ef57_2_jgr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef57_2_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JGR);
+  1: return string(STR_REFIT_JNR_LOGO);
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef57_2, 1920) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF57_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1938,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 110;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 45;
+  cost_factor: 38;
+  length: 8;
+  running_cost_factor: 55;
+  running_cost_base: RUNNING_COST_STEAM;
+  variant_group: 1020;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JGR_EEP);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef57_2_subtype_text;
+  default: switch_ef57_2_livery;
+  purchase: switch_ef57_2_yeardep_purchase;
   }
 }

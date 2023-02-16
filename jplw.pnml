@@ -30,6 +30,7 @@
 #include "src/dc/ef50.pnml"
 #include "src/dc/ef53.pnml"
 #include "src/dc/ef55.pnml"
+#include "src/dc/ef56.pnml"
 #include "src/dc/ef57.pnml"
 #include "src/dc/ef58.pnml"
 #include "src/dc/ef60.pnml"

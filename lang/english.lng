@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.10.11
+STR_GRF_NAME :JP+ Engines & Wagons v0.11.0
 STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
@@ -35,8 +35,8 @@ STR_NAME_JNR_DD16	:DD16 (diesel)
 STR_NAME_JNR_DD54	:DD54 (diesel)
 STR_NAME_JNR_AB10	:AB10 (battery)
 STR_NAME_JNR_EB10	:EB10 (electric)
-STR_NAME_JNR_EF10_2	:EF10 Late series (electric)
-STR_NAME_JNR_EF13_2	:EF13 Rebuild (electric)
+STR_NAME_JNR_EF10_2	:EF10 Early form (electric)
+STR_NAME_JNR_EF13_2	:EF13 Early form (electric)
 STR_NAME_JNR_EF15	:EF15 (electric)
 STR_NAME_JNR_EF30	:EF30 (electric)
 STR_NAME_JNR_EF60	:EF60 (electric)
@@ -55,7 +55,10 @@ STR_NAME_JNR_ED75	:ED75 / ED79 (electric)
 STR_NAME_JNR_ED76	:ED76 (electric)
 STR_NAME_JGR_EF50	:EF50 (electric)
 STR_NAME_JNR_EF53	:EF53 (electric)
+STR_NAME_JNR_EF56	:EF56 (electric)
 STR_NAME_JNR_EF57	:EF57 (electric)
+STR_NAME_JNR_EF57_2	:EF57 Prototype (electric)
+STR_NAME_JNR_EF59	:EF59 Banker (electric)
 STR_NAME_JNR_EH10	:EH10 (electric)
 
 STR_NAME_JR_DF200	:DF200 (diesel)
@@ -469,6 +472,7 @@ STR_REFIT_OIGAWA    : {WHITE}Oigawa Railway{GREEN} Green
 STR_REFIT_JGR		: {WHITE}JGR{BLACK} Brown
 STR_REFIT_JGR_BLACK	: {WHITE}JGR{BLACK} Black
 STR_REFIT_JGR_GREEN	: {WHITE}JGR{BLACK} Green
+STR_REFIT_JGR_IMPERIAL  : {WHITE}JGR{BLACK} Imperial Train{GOLD} Brown/Gold
 
 STR_REFIT_JNR_BROWN	    : {WHITE}JNR{BLACK} Brown
 STR_REFIT_JNR_YELLOW	: {WHITE}JNR{BLACK} Brown/Yellow
@@ -696,6 +700,8 @@ STR_DESC_JGR_EEP	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Ele
 STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
 
 STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
+
+STR_DESC_JNR_BANKER	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Banker{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
 
 STR_DESC_BRAKE		:{BLACK}Brake Van Speed Boost: {GREEN}Attach behind slower wagons to increase top speed
 
