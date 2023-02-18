@@ -294,6 +294,7 @@ property {
 	cost_factor: 8;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	variant_group: 51;
 	}
 graphics {
 	speed: switch_speedboost_1;

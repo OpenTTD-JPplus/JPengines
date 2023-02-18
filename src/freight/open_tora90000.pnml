@@ -52,6 +52,7 @@ property {
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	variant_group: 29;
 	}
 graphics {
 	speed: switch_speedboost_1;
