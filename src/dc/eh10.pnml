@@ -1,81 +1,114 @@
+//front
+
 spriteset(spriteset_eh10_black_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_eh10_black_rear, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh10_cc_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_eh10_brown_front, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh10_proto_black_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_eh10_brown_rear, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh10_proto_brown_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_eh10_proto_black_front, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh10_proto_cc_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_eh10_proto_black_rear, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh50_brown_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_eh10_proto_brown_front, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh50_blue_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_eh10_proto_brown_rear, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh50_jrf_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_eh10_cc_front, "gfx/electric/eh10.png") {
+spriteset(spriteset_eh50_cc_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_eh10_cc_rear, "gfx/electric/eh10.png") {
-	template_2cc_std(1, 288)
+//rear
+
+spriteset(spriteset_eh10_black_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 1)
 }
 
-//fake jrf livery?
+spriteset(spriteset_eh10_cc_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_eh10_proto_black_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_eh10_proto_brown_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_eh10_proto_cc_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_eh50_brown_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_eh50_blue_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_eh50_jrf_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_eh50_cc_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 256)
+}
+
+//purchase
 
 spriteset(spriteset_eh10_purchase, "gfx/electric/eh10.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_eh10_proto_purchase, "gfx/electric/eh10.png") {
+	template_purchase(89, 288)
+}
+
+spriteset(spriteset_eh50_purchase, "gfx/electric/eh10.png") {
 	template_purchase(1, 320)
 }
+
+spriteset(spriteset_eh10_jrf_purchase, "gfx/electric/eh10.png") {
+	template_purchase(89, 320)
+}
+
+
 
 
 switch(FEAT_TRAINS, SELF, switch_eh10_livery, cargo_subtype) {
 	0: spriteset_eh10_black_front;
-	1: spriteset_eh10_proto_black_front;
-	2: spriteset_eh10_proto_brown_front;
-	3: spriteset_eh10_brown_front;
-	4: spriteset_eh10_cc_front;
+	1: spriteset_eh10_cc_front;
 }
 
 switch(FEAT_TRAINS, SELF, switch_eh10_livery_rear, cargo_subtype) {
 	0: spriteset_eh10_black_rear;
-	1: spriteset_eh10_proto_black_rear;
-	2: spriteset_eh10_proto_brown_rear;
-	3: spriteset_eh10_brown_rear;
-	4: spriteset_eh10_cc_rear;
+	1: spriteset_eh10_cc_rear;
 }
-
-
-switch(FEAT_TRAINS, SELF, switch_eh10_speed, cargo_subtype) {
-	3: return 110;
-	4: return 110;
-	return 85;
-}
-
 
 
 switch(FEAT_TRAINS, SELF, switch_eh10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_EH10);
-	1: return string(STR_REFIT_EH10_OLD);
-	2: return string(STR_REFIT_EH10_OBR);
-	3: return string(STR_REFIT_EH10_HS);
-	4: return string(STR_REFIT_CC);
+	0: return string(STR_REFIT_BLACK);
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -91,20 +124,31 @@ switch(FEAT_TRAINS, SELF, switch_eh10_articulated_part, extra_callback_info1) {
 item (FEAT_TRAINS, eh10, 18) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-//	name: string(STR_NAME_OPEN_HOPPER);
-
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	}
-
-
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EH10);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1955,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 116;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 50;
+  length: 6;
+  running_cost_factor: 58;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
   graphics { // graphics for engine
   cargo_capacity: return 0;
-  speed: switch_eh10_speed;
   cargo_subtype_text: switch_eh10_subtype_text;
   default: switch_eh10_livery;
   purchase: spriteset_eh10_purchase;
@@ -128,5 +172,179 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 	graphics {
 		cargo_capacity: return 0;
 		default: switch_eh10_livery_rear;
+	}
+}
+
+
+//eh10 prototype
+
+switch(FEAT_TRAINS, SELF, switch_eh10_2_livery, cargo_subtype) {
+	0: spriteset_eh10_proto_black_front;
+	1: spriteset_eh10_proto_brown_front;
+	2: spriteset_eh10_proto_cc_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh10_2_livery_rear, cargo_subtype) {
+	0: spriteset_eh10_proto_black_rear;
+	1: spriteset_eh10_proto_brown_rear;
+	2: spriteset_eh10_proto_cc_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh10_2_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_BLACK);
+	1: return string(STR_REFIT_JNR_BROWN);
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh10_2_articulated_part, extra_callback_info1) {
+	1: return eh10_2_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, eh10_2, 1081) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EH10_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1954,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 118;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 50;
+  length: 6;
+  running_cost_factor: 58;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 18;
+  }
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh10_2_subtype_text;
+  default: switch_eh10_2_livery;
+  purchase: spriteset_eh10_proto_purchase;
+  articulated_part: switch_eh10_2_articulated_part;
+  }
+}
+
+item (FEAT_TRAINS, eh10_2_rear, 1981) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_JNR_EH10);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh10_2_livery_rear;
+	}
+}
+
+//eh50
+
+switch(FEAT_TRAINS, SELF, switch_eh50_livery, cargo_subtype) {
+	0: spriteset_eh50_brown_front;
+	1: spriteset_eh50_blue_front;
+	2: spriteset_eh50_jrf_front;
+	3: spriteset_eh50_cc_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh50_livery_rear, cargo_subtype) {
+	0: spriteset_eh50_brown_rear;
+	1: spriteset_eh50_blue_rear;
+	2: spriteset_eh50_jrf_rear;
+	3: spriteset_eh50_cc_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh50_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_JNR_BROWN);
+	1: return string(STR_REFIT_BLUE);
+	2: return string(STR_REFIT_JRF_REFIT);
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh50_articulated_part, extra_callback_info1) {
+	1: return eh50_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, eh50, 1082) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EH50);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1956,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 116;
+  reliability_decay: 55;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 54;
+  length: 6;
+  running_cost_factor: 62;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 18;
+  }
+  graphics { // graphics for engine
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh50_subtype_text;
+  default: switch_eh50_livery;
+  purchase: spriteset_eh50_purchase;
+  articulated_part: switch_eh50_articulated_part;
+  }
+}
+
+item (FEAT_TRAINS, eh50_rear, 1982) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_JNR_EH50);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_eh50_livery_rear;
 	}
 }

@@ -88,7 +88,7 @@ item (FEAT_TRAINS, ef57, 1020) {
   cost_factor: 38;
   length: 8;
   running_cost_factor: 55;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_JGR_EEP);
@@ -142,7 +142,7 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   cost_factor: 38;
   length: 8;
   running_cost_factor: 55;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1020;
   }
   graphics { // graphics for engine
