@@ -1,12 +1,12 @@
-spriteset(spriteset_ed70_red, "gfx/ed70.png") {
+spriteset(spriteset_ed70_red, "gfx/electric/ed70.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed70_cc, "gfx/ed70.png") {
+spriteset(spriteset_ed70_cc, "gfx/electric/ed70.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed70_purchase, "gfx/ed70.png") {
+spriteset(spriteset_ed70_purchase, "gfx/electric/ed70.png") {
 	template_purchase(1, 96)
 }
 
@@ -46,7 +46,7 @@ item (FEAT_TRAINS, ed70, 1065) {
   model_life: 40;
   vehicle_life: 60;
   cost_factor: 29;
-  length: 7;
+  length: 6;
   running_cost_factor: 43;
   running_cost_base: RUNNING_COST_STEAM;
   }
