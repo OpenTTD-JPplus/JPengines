@@ -1,52 +1,100 @@
-spriteset(spriteset_ef66_blue, "gfx/ef66.png") {
+spriteset(spriteset_ef66_old_blue, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef66_jrf, "gfx/ef66.png") {
+spriteset(spriteset_ef66_old_jrf, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef66_100, "gfx/ef66.png") {
+spriteset(spriteset_ef66_old_experimental, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef66_refit, "gfx/ef66.png") {
+spriteset(spriteset_ef66_new_blue, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef66_experimental, "gfx/ef66.png") {
+spriteset(spriteset_ef66_new_jrf, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef66_cc, "gfx/ef66.png") {
+spriteset(spriteset_ef66_new_refit, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 160)
 }
 
+spriteset(spriteset_ef66_new_experimental, "gfx/electric/ef66.png") {
+	template_2cc_std(1, 192)
+}
 
+spriteset(spriteset_ef66_old_cc, "gfx/electric/ef66.png") {
+	template_2cc_std(1, 224)
+}
 
-spriteset(spriteset_ef66_0_purchase, "gfx/ef66.png") {
+//-100
+spriteset(spriteset_ef66_100_jrf, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef66_100_2tone, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef66_100_cc, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 224)
+}
+
+//purch
+spriteset(spriteset_ef66_old_jnr_purchase, "gfx/electric/ef66.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ef66_1_purchase, "gfx/ef66.png") {
+spriteset(spriteset_ef66_old_jrf_purchase, "gfx/electric/ef66.png") {
+	template_purchase(89, 256)
+}
+
+spriteset(spriteset_ef66_new_jrf_purchase, "gfx/electric/ef66.png") {
 	template_purchase(1, 288)
+}
+
+//purch 100
+spriteset(spriteset_ef66_100_jrf_purchase, "gfx/electric/ef66.png") {
+	template_purchase(180, 256)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_purchase, current_year) {
+	0..1987: spriteset_ef66_old_jnr_purchase;
+	1987..2004: spriteset_ef66_old_jrf_purchase;
+    spriteset_ef66_new_jrf_purchase;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_ef66_blue) {
+	2: spriteset_ef66_old_blue;
+	1: spriteset_ef66_new_blue;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_ef66_jrf) {
+	2: spriteset_ef66_old_jrf;
+	1: spriteset_ef66_new_jrf;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_livery, build_year) {
-	1000..1986: spriteset_ef66_blue;
-	1986..1989: spriteset_ef66_jrf;
-	1989..9999: spriteset_ef66_100;
-    CB_FAILED;
+	0..1980: spriteset_ef66_old_blue;
+	1980..1987: random_ef66_blue;
+	1987..2004: random_ef66_jrf;
+	spriteset_ef66_new_refit;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
-	1: spriteset_ef66_blue;
-	2: spriteset_ef66_jrf;
-	3: spriteset_ef66_100;
-	4: spriteset_ef66_refit;
-	5: spriteset_ef66_experimental;
-	6: spriteset_ef66_cc;
+	1: spriteset_ef66_old_blue;
+	2: spriteset_ef66_old_jrf;
+	3: spriteset_ef66_old_experimental;
+	4: spriteset_ef66_new_blue;
+	5: spriteset_ef66_new_jrf;
+	6: spriteset_ef66_new_refit;
+	7: spriteset_ef66_new_experimental;
+	8: spriteset_ef66_old_cc;
 	switch_ef66_yeardep_livery;
 }
 
@@ -54,38 +102,109 @@ switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BLUE);
-	2: return string(STR_REFIT_JRF_BLUE);
-	3: return string(STR_REFIT_EF66_100);
-	4: return string(STR_REFIT_JRF_REFIT);
-	5: return string(STR_REFIT_EXP);
-	6: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_EXP));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_PANTOS));
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_PANTOS));
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_LOGO));
+	8: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_purchase, current_year) {
-	1990..9999: spriteset_ef66_1_purchase;
-    spriteset_ef66_0_purchase;
-}
+
 
 
 
 item (FEAT_TRAINS, ef66, 26) {
 
 property {
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+//  track_type: NABE;
+  name: string(STR_NAME_JNR_EF66_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1966,1,1);
+//  speed: 110 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 3900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 55;
+  model_life: 55;
+  vehicle_life: 45;
+  cost_factor: 100;
+  length: 8;
+  running_cost_factor: 100;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_DESC_JNR_EHF);
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_subtype_text;
   default: switch_ef66_livery;
   purchase: switch_ef66_yeardep_purchase;
+  }
+}
+
+//-100
+
+
+switch(FEAT_TRAINS, SELF, switch_ef66_2_livery, cargo_subtype) {
+	1: spriteset_ef66_100_2tone;
+	2: spriteset_ef66_100_cc;
+	spriteset_ef66_100_jrf;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_2TONE));
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+item (FEAT_TRAINS, ef66_2, 1926) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF66_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1989,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 3900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 55;
+  model_life: 55;
+  vehicle_life: 45;
+  cost_factor: 100;
+  length: 8;
+  running_cost_factor: 100;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 26;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JNR_EHF);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef66_2_subtype_text;
+  default: switch_ef66_2_livery;
+  purchase: spriteset_ef66_100_jrf_purchase;
   }
 }

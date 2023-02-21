@@ -1,86 +1,133 @@
-spriteset(spriteset_ef60_blue, "gfx/ef60.png") {
+//ef60 old type
+
+spriteset(spriteset_ef60_1_blue, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef60_new, "gfx/ef60.png") {
+spriteset(spriteset_ef60_1_tokkyu, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef60_tokkyu, "gfx/ef60.png") {
+spriteset(spriteset_ef60_1_brown, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef60_brown, "gfx/ef60.png") {
+spriteset(spriteset_ef60_1_cc, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef60_american, "gfx/ef60.png") {
+spriteset(spriteset_ef60_american, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef60_yasuragi, "gfx/ef60.png") {
+spriteset(spriteset_ef60_yasuragi, "gfx/electric/ef60.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef60_cc, "gfx/ef60.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_ef60_banker, "gfx/ef60.png") {
-	template_2cc_std(1, 224)
-}
-
-
-spriteset(spriteset_ef60_purchase, "gfx/ef60.png") {
+spriteset(spriteset_ef60_1_brown_purchase, "gfx/electric/ef60.png") {
 	template_purchase(1, 256)
 }
 
-
-
-switch(FEAT_TRAINS, SELF, switch_ef60_yeardep_livery, build_year) {
-	0..1965: spriteset_ef60_brown;
-	1965..1970: spriteset_ef60_blue;
-    spriteset_ef60_new;
+spriteset(spriteset_ef60_1_blue_purchase, "gfx/electric/ef60.png") {
+	template_purchase(1, 320)
 }
 
-//maybe add switch to make tokkyu livery if pax are attached (also ef65)
+//prototype
 
-switch(FEAT_TRAINS, SELF, switch_ef60_livery, cargo_subtype) {
-	1: spriteset_ef60_blue;
-	2: spriteset_ef60_new;
-	3: spriteset_ef60_tokkyu; 
-	4: spriteset_ef60_brown;
-	5: spriteset_ef60_american;
-	6: spriteset_ef60_yasuragi;
-	7: spriteset_ef60_cc;
-	8: spriteset_ef60_banker;
-	switch_ef60_yeardep_livery;
+spriteset(spriteset_ef60_0_cc, "gfx/electric/ef60.png") {
+	template_2cc_std(1, 192)
+}
+
+//ef60 new type
+
+spriteset(spriteset_ef60_2_blue, "gfx/electric/ef60.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef60_2_tokkyu, "gfx/electric/ef60.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef60_2_brown, "gfx/electric/ef60.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef60_2_cc, "gfx/electric/ef60.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_ef60_2_brown_purchase, "gfx/electric/ef60.png") {
+	template_purchase(180, 288)
+}
+
+spriteset(spriteset_ef60_2_blue_purchase, "gfx/electric/ef60.png") {
+	template_purchase(180, 320)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_ef60_subtype_text, cargo_subtype) {
+//ef67 banker
+
+spriteset(spriteset_ef67_1_banker, "gfx/electric/ef60.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_ef67_1_cc, "gfx/electric/ef60.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_ef67_1_jnr_purchase, "gfx/electric/ef60.png") {
+	template_purchase(89, 288)
+}
+
+spriteset(spriteset_ef67_1_jrf_purchase, "gfx/electric/ef60.png") {
+	template_purchase(89, 320)
+}
+
+
+//ef60 standard
+
+switch(FEAT_TRAINS, SELF, switch_ef60_1_yeardep_purchase, current_year) {
+	0..1965: spriteset_ef60_1_brown_purchase;
+	spriteset_ef60_1_blue_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef60_1_yeardep_livery, build_year) {
+	0..1965: spriteset_ef60_1_brown;
+	spriteset_ef60_1_blue;
+	//maybe add switch to make tokkyu livery if pax are attached (also ef65)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef60_1_livery, cargo_subtype) {
+	1: spriteset_ef60_1_brown;
+	2: spriteset_ef60_1_blue;
+	3: spriteset_ef60_1_tokkyu; 
+	4: spriteset_ef60_american;
+	5: spriteset_ef60_yasuragi;
+	6: spriteset_ef60_1_cc;
+	switch_ef60_1_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef60_1_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_BLUE);
-	2: return string(STR_REFIT_EF60_NEW);
-	3: return string(STR_REFIT_TOKKYU);
-	4: return string(STR_REFIT_JNR_BROWN);
-	5: return string(STR_REFIT_EF60_AMERICAN);
-	6: return string(STR_REFIT_EF60_YASURAGI);
-	7: return string(STR_REFIT_CC);
-	8: return string(STR_REFIT_EF67);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE_CREAM));
+	4: return string(STR_REFIT_EF60_AMERICAN);
+	5: return string(STR_REFIT_EF60_YASURAGI);
+	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
 
-
-item (FEAT_TRAINS, ef60, 1030) {
+item (FEAT_TRAINS, ef60_1, 1030) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF60);
+  name: string(STR_NAME_JNR_EF60_1);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1960,1,1);
+  introduction_date: date(1962,1,1);
   speed: 100 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -93,17 +140,202 @@ item (FEAT_TRAINS, ef60, 1030) {
   reliability_decay: 85;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 55;
+  cost_factor: 82;
   length: 7;
-  running_cost_factor: 85;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 78;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_DESC_OPS_JNR);
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef60_subtype_text;
-  default: switch_ef60_livery;
-  purchase: spriteset_ef60_purchase;
+  cargo_subtype_text: switch_ef60_1_subtype_text;
+  default: switch_ef60_1_livery;
+  purchase: switch_ef60_1_yeardep_purchase;
+  }
+}
+
+//ef60 new
+
+
+switch(FEAT_TRAINS, SELF, switch_ef60_2_yeardep_purchase, current_year) {
+	0..1965: spriteset_ef60_2_brown_purchase;
+	spriteset_ef60_2_blue_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef60_2_yeardep_livery, build_year) {
+	0..1965: spriteset_ef60_2_brown;
+	spriteset_ef60_2_blue;
+	//maybe add switch to make tokkyu livery if pax are attached (also ef65)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef60_2_livery, cargo_subtype) {
+	1: spriteset_ef60_2_brown;
+	2: spriteset_ef60_2_blue;
+	3: spriteset_ef60_2_tokkyu; 
+	4: spriteset_ef60_2_cc;
+	switch_ef60_2_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef60_2_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE_CREAM));
+	4: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef60_2, 1031) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF60_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1965,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 2550 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 82;
+  length: 7;
+  running_cost_factor: 78;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1030;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_OPS_JNR);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef60_2_subtype_text;
+  default: switch_ef60_2_livery;
+  purchase: switch_ef60_2_yeardep_purchase;
+  }
+}
+
+//ef60 proto
+
+
+switch(FEAT_TRAINS, SELF, switch_ef60_0_livery, cargo_subtype) {
+	1: spriteset_ef60_1_brown;
+	2: spriteset_ef60_1_blue;
+	3: spriteset_ef60_0_cc;
+	switch_ef60_1_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef60_0_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef60_0, 1930) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF60_0);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1960,1,1);
+  speed: 90 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.24;
+  power: 2340 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 78;
+  length: 7;
+  running_cost_factor: 71;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1030;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_OPS_JNR);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef60_0_subtype_text;
+  default: switch_ef60_0_livery;
+  purchase: switch_ef60_1_yeardep_purchase;
+  }
+}
+
+
+
+//ef67 1
+
+
+switch(FEAT_TRAINS, SELF, switch_ef67_1_yeardep_purchase, current_year) {
+	0..1987: spriteset_ef67_1_jnr_purchase;
+	spriteset_ef67_1_jrf_purchase;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef67_1_livery, cargo_subtype) {
+	1: spriteset_ef67_1_cc;
+	spriteset_ef67_1_banker;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef67_1_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED));
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, ef67_1, 1931) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_JNR_EF67_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1982,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 2550 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 82;
+  length: 7;
+  running_cost_factor: 78;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1030;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_DESC_JNR_BANKER);
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef67_1_subtype_text;
+  default: switch_ef67_1_livery;
+  purchase: switch_ef67_1_yeardep_purchase;
   }
 }
