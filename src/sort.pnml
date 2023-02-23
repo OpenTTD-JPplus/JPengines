@@ -1,10 +1,15 @@
 //sort in depot //could change to item names instead of ID numbers
+
+//variants should be sorted in order too so they show up correctly in replace window
+
 sort(FEAT_TRAINS, [
 
 //steam
 900, 902, 920,
-//electrics DC
-1010, 1011, 990, 1004, 02, 1050, 1051, 08, 103, 1054, 1014, 1016, 10, 1019, 1020, 18, 14, 1060, 1930, 1030, 1040, 22, 24, 1042, 1942, 1924, 26, 60, 84, 88, 
+//electrics DC old
+1010, 1011, 990, 1004, 02, 1012, 1050, 1013, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 14, 
+//electrics DC new
+1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 88, 
 //electrics AC
 1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
