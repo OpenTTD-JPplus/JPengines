@@ -1,90 +1,31 @@
-spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_50000.png") {
 	template_purchase(1, 352)
 }
 
 //base
-spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_50000_empty_b, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_empty_b, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 32)
 }
 
 //handrail
 
-spriteset(spriteset_koki_50000_handrail, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_handrail, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 320)
 }
 
+//brake van
 
-//conts
-
-spriteset(spriteset_koki_conts_1_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_brakevan_front, "gfx/freight/koki_50000.png") {
 	template_container_1(1, 64)
 }
 
-spriteset(spriteset_koki_conts_2_a, "gfx/freight/koki_test.png") {
-	template_container_2(1, 64)
-}
-
-spriteset(spriteset_koki_conts_3_a, "gfx/freight/koki_test.png") {
-	template_container_3(1, 64)
-}
-
-spriteset(spriteset_koki_conts_4_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_brakevan_rear, "gfx/freight/koki_50000.png") {
 	template_container_4(1, 64)
 }
-
-
-spriteset(spriteset_koki_conts_1_b, "gfx/freight/koki_test.png") {
-	template_container_1(1, 128)
-}
-
-spriteset(spriteset_koki_conts_2_b, "gfx/freight/koki_test.png") {
-	template_container_2(1, 128)
-}
-
-spriteset(spriteset_koki_conts_3_b, "gfx/freight/koki_test.png") {
-	template_container_3(1, 128)
-}
-
-spriteset(spriteset_koki_conts_4_b, "gfx/freight/koki_test.png") {
-	template_container_4(1, 128)
-}
-
-spriteset(spriteset_koki_conts_1_c, "gfx/freight/koki_test.png") {
-	template_container_1(1, 160)
-}
-
-spriteset(spriteset_koki_conts_2_c, "gfx/freight/koki_test.png") {
-	template_container_2(1, 160)
-}
-
-spriteset(spriteset_koki_conts_3_c, "gfx/freight/koki_test.png") {
-	template_container_3(1, 160)
-}
-
-spriteset(spriteset_koki_conts_4_c, "gfx/freight/koki_test.png") {
-	template_container_4(1, 160)
-}
-
-spriteset(spriteset_koki_conts_1_d, "gfx/freight/koki_test.png") {
-	template_container_1(1, 96)
-}
-
-spriteset(spriteset_koki_conts_2_d, "gfx/freight/koki_test.png") {
-	template_container_2(1, 96)
-}
-
-spriteset(spriteset_koki_conts_3_d, "gfx/freight/koki_test.png") {
-	template_container_3(1, 96)
-}
-
-spriteset(spriteset_koki_conts_4_d, "gfx/freight/koki_test.png") {
-	template_container_4(1, 96)
-}
-
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 	2: spriteset_koki_50000_empty_a;
@@ -92,76 +33,49 @@ random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 }
 
 
-/*
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_1) {
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_1_a;
-	1: spriteset_koki_conts_1_d;
-	1: spriteset_koki_conts_1_c;
-	1: spriteset_koki_conts_1_c;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_2) {
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_2_b;
-	1: spriteset_koki_conts_2_b;
-	1: spriteset_koki_conts_2_a;
-	1: spriteset_koki_conts_2_d;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_3) {
-//	independent: random_koki_50000_conts_2;
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_3_c;
-	1: spriteset_koki_conts_3_b;
-	1: spriteset_koki_conts_3_c;
-	1: spriteset_koki_conts_3_b;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_4) {
-//	independent: random_koki_50000_conts_3;
-//	independent: random_koki_50000_conts_2;
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_4_d;
-	1: spriteset_koki_conts_4_b;
-	1: spriteset_koki_conts_4_a;
-	1: spriteset_koki_conts_4_a;
-}
+//brakevan test
 
 
-
-switch(FEAT_TRAINS, SELF, switch_koki_50000_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    1:  random_koki_50000_conts_1;
-	2:	random_koki_50000_conts_2;
-	3:	random_koki_50000_conts_3;
-	4:	random_koki_50000_conts_4;
+    0:  random_koki_50000_brown;
+    1:  switch_conts_cargo_selection;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	spriteset_koki_50000_brakevan_rear;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
 }
 
-switch(FEAT_TRAINS, SELF, switch_koki_50000_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    1:  random_koki_50000_conts_4;
-	2:	random_koki_50000_conts_3;
-	3:	random_koki_50000_conts_2;
-	4:	random_koki_50000_conts_1;
+    0:  random_koki_50000_brown;
+    1:  spriteset_koki_50000_brakevan_rear;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	switch_conts_cargo_selection;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
+}
+
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_kokifu_50000_down_loadstack;
+	DIRECTION_SOUTH: switch_kokifu_50000_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_kokifu_50000_down_loadstack;
+	switch_kokifu_50000_up_loadstack;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_koki_50000_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_koki_50000_down_loadstack;
-	DIRECTION_SOUTH: switch_koki_50000_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_koki_50000_down_loadstack;
-	switch_koki_50000_up_loadstack;
-}
-*/
+
+
 
 switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  random_koki_50000_brown;
@@ -170,7 +84,13 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 	3:  switch_conts_cargo_selection;
 	4:  switch_conts_cargo_selection;
 	5:  spriteset_koki_50000_handrail;
+	6:  switch_taillights_8;
 }
+
+switch(FEAT_TRAINS, SELF, switch_koki_50000_caboose, position_in_consist_from_end) {
+	0: switch_kokifu_50000_direction;
+	switch_koki_50000_base_loadstack;
+	}
 
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
@@ -199,7 +119,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 	}
 	graphics {
 		cargo_capacity: return 70;
-		default: switch_koki_50000_base_loadstack;
+		default: switch_koki_50000_caboose;
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}

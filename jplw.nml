@@ -117,6 +117,9 @@ railtypetable {
 	
 	//todo more, once JP tracks is a thing
 //sort in depot //could change to item names instead of ID numbers
+
+//variants should be sorted in order too so they show up correctly in replace window
+
 sort(FEAT_TRAINS, [
 
 //steam
@@ -19159,7 +19162,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_general_direction, direction) {
 
 
 //stack food
-
+/*
 switch(FEAT_TRAINS, SELF, switch_conts_food_up_loadstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -19186,6 +19189,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_food_direction, direction) {
 	DIRECTION_SOUTHWEST: switch_conts_food_down_loadstack;
 	switch_conts_food_up_loadstack;
 }
+*/
 
 //stack liquid
 
@@ -19692,425 +19696,46 @@ item (FEAT_TRAINS, dmt, 1407) {
 		cargo_subtype_text: switch_dmt_subtype_text;
 	}
 }
-spriteset(spriteset_koki_5500_purchase, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_purchase, "gfx/freight/koki_test.png") {
 	template_purchase(1, 352)
 }
 
-//Light brown
-
-spriteset(spriteset_koki_5500_empty_1, "gfx/koki_5500_1.png") {
+//base
+spriteset(spriteset_koki_5500_empty_a, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_5500_goods_1_half, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_empty_b, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_5500_goods_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 64)
-}
+//handrail
 
-spriteset(spriteset_koki_5500_mail_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_5500_mail_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_5500_mixed_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_5500_mixed_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_5500_food_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_5500_food_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_5500_oil_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_5500_oil_1_full, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_handrail, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 320)
 }
 
-//
-
-spriteset(spriteset_koki_5500_empty_2, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_koki_5500_goods_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_koki_5500_goods_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_koki_5500_mail_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_5500_mail_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_5500_mixed_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_5500_mixed_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_5500_food_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_5500_food_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_5500_oil_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_5500_oil_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 320)
-}
-
-//KOKI 5500 spritegroups
-
-spritegroup spritegroup_koki_5500_goods_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_goods_1_half, spriteset_koki_5500_goods_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_goods_1_half, spriteset_koki_5500_goods_1_full];
-}
-
-spritegroup spritegroup_koki_5500_mail_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mail_1_half, spriteset_koki_5500_mail_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mail_1_half, spriteset_koki_5500_mail_1_full];
-}
-
-spritegroup spritegroup_koki_5500_mixed_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mixed_1_half, spriteset_koki_5500_mixed_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mixed_1_half, spriteset_koki_5500_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_5500_food_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_food_1_half, spriteset_koki_5500_food_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_food_1_half, spriteset_koki_5500_food_1_full];
-}
-
-spritegroup spritegroup_koki_5500_oil_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_oil_1_half, spriteset_koki_5500_oil_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_oil_1_half, spriteset_koki_5500_oil_1_full];
-}
 
 
-
-spritegroup spritegroup_koki_5500_goods_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_goods_2_half, spriteset_koki_5500_goods_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_goods_2_half, spriteset_koki_5500_goods_2_full];
-}
-
-spritegroup spritegroup_koki_5500_mail_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mail_2_half, spriteset_koki_5500_mail_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mail_2_half, spriteset_koki_5500_mail_2_full];
-}
-
-spritegroup spritegroup_koki_5500_mixed_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mixed_2_half, spriteset_koki_5500_mixed_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mixed_2_half, spriteset_koki_5500_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_5500_food_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_food_2_half, spriteset_koki_5500_food_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_food_2_half, spriteset_koki_5500_food_2_full];
-}
-
-spritegroup spritegroup_koki_5500_oil_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_oil_2_half, spriteset_koki_5500_oil_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_oil_2_half, spriteset_koki_5500_oil_2_full];
-}
-
-
-//insert flip here
-spriteset(spriteset_koki_5500_flip_empty_1, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_5500_flip_food_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_5500_flip_food_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 320)
-}
-
-//
-
-spriteset(spriteset_koki_5500_flip_empty_2, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_5500_flip_food_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_5500_flip_food_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 320)
-}
-
-//KOKI 5500 spritegroups
-
-spritegroup spritegroup_koki_5500_flip_goods_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_goods_1_half, spriteset_koki_5500_flip_goods_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_goods_1_half, spriteset_koki_5500_flip_goods_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mail_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mail_1_half, spriteset_koki_5500_flip_mail_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mail_1_half, spriteset_koki_5500_flip_mail_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mixed_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mixed_1_half, spriteset_koki_5500_flip_mixed_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mixed_1_half, spriteset_koki_5500_flip_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_food_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_food_1_half, spriteset_koki_5500_flip_food_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_food_1_half, spriteset_koki_5500_flip_food_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_oil_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_oil_1_half, spriteset_koki_5500_flip_oil_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_oil_1_half, spriteset_koki_5500_flip_oil_1_full];
-}
-
-
-
-spritegroup spritegroup_koki_5500_flip_goods_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_goods_2_half, spriteset_koki_5500_flip_goods_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_goods_2_half, spriteset_koki_5500_flip_goods_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mail_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mail_2_half, spriteset_koki_5500_flip_mail_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mail_2_half, spriteset_koki_5500_flip_mail_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mixed_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mixed_2_half, spriteset_koki_5500_flip_mixed_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mixed_2_half, spriteset_koki_5500_flip_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_food_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_food_2_half, spriteset_koki_5500_flip_food_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_food_2_half, spriteset_koki_5500_flip_food_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_oil_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_oil_2_half, spriteset_koki_5500_flip_oil_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_oil_2_half, spriteset_koki_5500_flip_oil_2_full];
+random_switch (FEAT_TRAINS, SELF, random_koki_5500_brown) {
+	2: spriteset_koki_5500_empty_a;
+	1: spriteset_koki_5500_empty_b;
 }
 
 
 
 
-
-
-//randoms
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_mail) {
-	1: spritegroup_koki_5500_mail_1;
-    1: spritegroup_koki_5500_mail_2;
-	1: spritegroup_koki_5500_flip_mail_1;
-	1: spritegroup_koki_5500_flip_mail_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_goods) {
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_food) {
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_oil) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_alcohol) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_dry) {
-	1: spritegroup_koki_5500_mail_1;
-    1: spritegroup_koki_5500_mail_2;
-	1: spritegroup_koki_5500_flip_mail_1;
-	1: spritegroup_koki_5500_flip_mail_2;
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_fluid) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_edible_fluid) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_refrigerated) {
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-
-
-
-switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_koki_5500_cargo_general_fluid;
-	bitmask(CC_REFRIGERATED): switch_koki_5500_cargo_general_refrigerated;
-	bitmask(CC_EXPRESS): switch_koki_5500_cargo_goods;
-	
-	switch_koki_5500_cargo_general_dry;
-}
-
-switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_selection, cargo_type_in_veh) {
-	MAIL: switch_koki_5500_cargo_mail;
-	GOOD: switch_koki_5500_cargo_goods;
-	FOOD: switch_koki_5500_cargo_food;
-	OIL_: switch_koki_5500_cargo_oil;
-	BEER: switch_koki_5500_cargo_alcohol;
-	VEHI: switch_koki_5500_cargo_goods;
-	
-	MILK: switch_koki_5500_cargo_edible_fluid;
-	EOIL: switch_koki_5500_cargo_edible_fluid;
-	
-	ACID: switch_koki_5500_cargo_general_fluid;
-	SULP: switch_koki_5500_cargo_general_fluid;
-	CHLO: switch_koki_5500_cargo_general_fluid;
-	
-	FRUT: switch_koki_5500_cargo_general_refrigerated;
-	FISH: switch_koki_5500_cargo_general_refrigerated;
-	
-	switch_koki_5500_cargo_class;
+switch(FEAT_TRAINS, SELF, switch_koki_5500_base_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_5500_brown;
+    1:  switch_conts_cargo_selection;
+	2:  switch_conts_cargo_selection;
+	3:  switch_conts_cargo_selection;
+	4:  switch_conts_cargo_selection;
+	5:  spriteset_koki_5500_handrail;
+	6:  switch_taillights_8;
 }
 
 
@@ -20125,689 +19750,120 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-		loading_speed: 50;
+		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
-		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
-		cost_factor: 8;
-		running_cost_factor: 9;
+		cost_factor: 9;
+		running_cost_factor: 11;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		speed: switch_speedboost_1;
-		purchase_speed: return 85;
-		cargo_capacity: return 70;
-		default: switch_koki_5500_cargo_selection;
+		cargo_capacity: return 60;
+		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
-spriteset(spriteset_koki_10000_purchase, "gfx/koki_10000_1.png") {
+spriteset(spriteset_koki_10000_purchase, "gfx/freight/koki_10000.png") {
 	template_purchase(1, 352)
 }
 
-//Light blue
-
-spriteset(spriteset_koki_10000_empty_1, "gfx/koki_10000_1.png") {
+//base
+spriteset(spriteset_koki_10000_empty_a, "gfx/freight/koki_10000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_10000_goods_1_half, "gfx/koki_10000_1.png") {
+spriteset(spriteset_koki_10000_empty_b, "gfx/freight/koki_10000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_10000_goods_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 64)
-}
+//handrail
 
-spriteset(spriteset_koki_10000_mail_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_10000_mail_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_10000_mixed_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_10000_mixed_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_10000_food_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_10000_food_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_10000_oil_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_10000_oil_1_full, "gfx/koki_10000_1.png") {
+spriteset(spriteset_koki_10000_handrail, "gfx/freight/koki_10000.png") {
 	template_2cc_std(1, 320)
 }
 
-//cabeese 
+//brake van
 
-
-spriteset(spriteset_koki_10000_empty_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_10000_goods_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_10000_food_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_10000_mixed_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_10000_oil_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 288)
-}
-
-
-
-
-
-//
-
-spriteset(spriteset_koki_10000_empty_2, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_koki_10000_goods_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_koki_10000_goods_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_koki_10000_mail_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_10000_mail_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_10000_mixed_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_10000_mixed_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_10000_food_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_10000_food_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_10000_oil_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_10000_oil_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_std(1, 320)
-}
-
-//cabesse
-
-spriteset(spriteset_koki_10000_empty_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_koki_10000_goods_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_koki_10000_food_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_koki_10000_mixed_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_10000_oil_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_std(1, 128)
-}
-
-
-
-
-
-//KOKI 10000 spritegroups
-
-spritegroup spritegroup_koki_10000_goods_1 {
-    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_goods_1_half, spriteset_koki_10000_goods_1_full];
-    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_goods_1_half, spriteset_koki_10000_goods_1_full];
-}
-
-spritegroup spritegroup_koki_10000_mail_1 {
-    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mail_1_half, spriteset_koki_10000_mail_1_full];
-    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mail_1_half, spriteset_koki_10000_mail_1_full];
-}
-
-spritegroup spritegroup_koki_10000_mixed_1 {
-    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mixed_1_half, spriteset_koki_10000_mixed_1_full];
-    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_mixed_1_half, spriteset_koki_10000_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_10000_food_1 {
-    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_food_1_half, spriteset_koki_10000_food_1_full];
-    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_food_1_half, spriteset_koki_10000_food_1_full];
-}
-
-spritegroup spritegroup_koki_10000_oil_1 {
-    loading: [spriteset_koki_10000_empty_1, spriteset_koki_10000_oil_1_half, spriteset_koki_10000_oil_1_full];
-    loaded: [spriteset_koki_10000_empty_1, spriteset_koki_10000_oil_1_half, spriteset_koki_10000_oil_1_full];
-}
-
-
-spritegroup spritegroup_koki_10000_goods_caboose_1 {
-    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_goods_caboose_1];
-    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_goods_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_food_caboose_1 {
-    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_food_caboose_1];
-    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_food_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_mixed_caboose_1 {
-    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_mixed_caboose_1];
-    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_mixed_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_oil_caboose_1 {
-    loading: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_oil_caboose_1];
-    loaded: [spriteset_koki_10000_empty_caboose_1, spriteset_koki_10000_oil_caboose_1];
-}
-
-
-
-
-
-spritegroup spritegroup_koki_10000_goods_2 {
-    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_goods_2_half, spriteset_koki_10000_goods_2_full];
-    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_goods_2_half, spriteset_koki_10000_goods_2_full];
-}
-
-spritegroup spritegroup_koki_10000_mail_2 {
-    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mail_2_half, spriteset_koki_10000_mail_2_full];
-    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mail_2_half, spriteset_koki_10000_mail_2_full];
-}
-
-spritegroup spritegroup_koki_10000_mixed_2 {
-    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mixed_2_half, spriteset_koki_10000_mixed_2_full];
-    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_mixed_2_half, spriteset_koki_10000_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_10000_food_2 {
-    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_food_2_half, spriteset_koki_10000_food_2_full];
-    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_food_2_half, spriteset_koki_10000_food_2_full];
-}
-
-spritegroup spritegroup_koki_10000_oil_2 {
-    loading: [spriteset_koki_10000_empty_2, spriteset_koki_10000_oil_2_half, spriteset_koki_10000_oil_2_full];
-    loaded: [spriteset_koki_10000_empty_2, spriteset_koki_10000_oil_2_half, spriteset_koki_10000_oil_2_full];
-}
-
-
-
-spritegroup spritegroup_koki_10000_goods_caboose_2 {
-    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_goods_caboose_2];
-    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_goods_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_food_caboose_2 {
-    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_food_caboose_2];
-    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_food_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_mixed_caboose_2 {
-    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_mixed_caboose_2];
-    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_mixed_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_oil_caboose_2 {
-    loading: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_oil_caboose_2];
-    loaded: [spriteset_koki_10000_empty_caboose_2, spriteset_koki_10000_oil_caboose_2];
-}
-
-
-
-
-
-//insert flip here
-spriteset(spriteset_koki_10000_flip_empty_1, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_10000_flip_mail_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_10000_flip_mail_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_10000_flip_food_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_10000_flip_food_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_1_half, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_1_full, "gfx/koki_10000_1.png") {
-	template_2cc_flip(1, 320)
-}
-
-//cabeese
-
-spriteset(spriteset_koki_10000_flip_empty_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_10000_flip_food_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_caboose_1, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 288)
-}
-
-
-//
-
-spriteset(spriteset_koki_10000_flip_empty_2, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_10000_flip_mail_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_10000_flip_mail_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_10000_flip_food_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_10000_flip_food_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_2_half, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_2_full, "gfx/koki_10000_2.png") {
-	template_2cc_flip(1, 320)
-}
-
-//cabeese
-
-spriteset(spriteset_koki_10000_flip_empty_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_10000_flip_goods_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_10000_flip_food_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_10000_flip_mixed_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_10000_flip_oil_caboose_2, "gfx/koki_10000_caboose.png") {
-	template_2cc_flip(1, 288)
-}
-
-
-
-
-//KOKI 10000 spritegroups
-
-spritegroup spritegroup_koki_10000_flip_goods_1 {
-    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_goods_1_half, spriteset_koki_10000_flip_goods_1_full];
-    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_goods_1_half, spriteset_koki_10000_flip_goods_1_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_mail_1 {
-    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mail_1_half, spriteset_koki_10000_flip_mail_1_full];
-    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mail_1_half, spriteset_koki_10000_flip_mail_1_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_mixed_1 {
-    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mixed_1_half, spriteset_koki_10000_flip_mixed_1_full];
-    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_mixed_1_half, spriteset_koki_10000_flip_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_food_1 {
-    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_food_1_half, spriteset_koki_10000_flip_food_1_full];
-    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_food_1_half, spriteset_koki_10000_flip_food_1_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_oil_1 {
-    loading: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_oil_1_half, spriteset_koki_10000_flip_oil_1_full];
-    loaded: [spriteset_koki_10000_flip_empty_1, spriteset_koki_10000_flip_oil_1_half, spriteset_koki_10000_flip_oil_1_full];
-}
-
-
-spritegroup spritegroup_koki_10000_flip_goods_caboose_1 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_goods_caboose_1];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_goods_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_flip_food_caboose_1 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_food_caboose_1];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_food_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_flip_mixed_caboose_1 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_mixed_caboose_1];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_mixed_caboose_1];
-}
-
-spritegroup spritegroup_koki_10000_flip_oil_caboose_1 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_oil_caboose_1];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_1, spriteset_koki_10000_flip_oil_caboose_1];
-}
-
-
-
-
-spritegroup spritegroup_koki_10000_flip_goods_2 {
-    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_goods_2_half, spriteset_koki_10000_flip_goods_2_full];
-    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_goods_2_half, spriteset_koki_10000_flip_goods_2_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_mail_2 {
-    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mail_2_half, spriteset_koki_10000_flip_mail_2_full];
-    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mail_2_half, spriteset_koki_10000_flip_mail_2_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_mixed_2 {
-    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mixed_2_half, spriteset_koki_10000_flip_mixed_2_full];
-    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_mixed_2_half, spriteset_koki_10000_flip_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_food_2 {
-    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_food_2_half, spriteset_koki_10000_flip_food_2_full];
-    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_food_2_half, spriteset_koki_10000_flip_food_2_full];
-}
-
-spritegroup spritegroup_koki_10000_flip_oil_2 {
-    loading: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_oil_2_half, spriteset_koki_10000_flip_oil_2_full];
-    loaded: [spriteset_koki_10000_flip_empty_2, spriteset_koki_10000_flip_oil_2_half, spriteset_koki_10000_flip_oil_2_full];
+spriteset(spriteset_koki_10000_brakevan_front, "gfx/freight/koki_10000.png") {
+	template_container_1(1, 64)
 }
 
-
-spritegroup spritegroup_koki_10000_flip_goods_caboose_2 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_goods_caboose_2];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_goods_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_flip_food_caboose_2 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_food_caboose_2];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_food_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_flip_mixed_caboose_2 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_mixed_caboose_2];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_mixed_caboose_2];
-}
-
-spritegroup spritegroup_koki_10000_flip_oil_caboose_2 {
-    loading: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_oil_caboose_2];
-    loaded: [spriteset_koki_10000_flip_empty_caboose_2, spriteset_koki_10000_flip_oil_caboose_2];
-}
-
-
-
-
-//randoms
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_mail) {
-	1: spritegroup_koki_10000_mail_1;
-    1: spritegroup_koki_10000_mail_2;
-	1: spritegroup_koki_10000_flip_mail_1;
-	1: spritegroup_koki_10000_flip_mail_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_goods) {
-	1: spritegroup_koki_10000_goods_1;
-    1: spritegroup_koki_10000_goods_2;
-	1: spritegroup_koki_10000_flip_goods_1;
-	1: spritegroup_koki_10000_flip_goods_2;
+spriteset(spriteset_koki_10000_brakevan_rear, "gfx/freight/koki_10000.png") {
+	template_container_4(1, 64)
 }
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_food) {
-	1: spritegroup_koki_10000_food_1;
-    1: spritegroup_koki_10000_food_2;
-	1: spritegroup_koki_10000_flip_food_1;
-	1: spritegroup_koki_10000_flip_food_2;
+random_switch (FEAT_TRAINS, SELF, random_koki_10000_blue) {
+	2: spriteset_koki_10000_empty_a;
+	1: spriteset_koki_10000_empty_b;
 }
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_oil) {
-	1: spritegroup_koki_10000_oil_1;
-    1: spritegroup_koki_10000_oil_2;
-	1: spritegroup_koki_10000_flip_oil_1;
-	1: spritegroup_koki_10000_flip_oil_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_alcohol) {
-	1: spritegroup_koki_10000_oil_1;
-    1: spritegroup_koki_10000_oil_2;
-	1: spritegroup_koki_10000_flip_oil_1;
-	1: spritegroup_koki_10000_flip_oil_2;
-	1: spritegroup_koki_10000_mixed_1;
-    1: spritegroup_koki_10000_mixed_2;
-	1: spritegroup_koki_10000_flip_mixed_1;
-	1: spritegroup_koki_10000_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_dry) {
-	1: spritegroup_koki_10000_mail_1;
-    1: spritegroup_koki_10000_mail_2;
-	1: spritegroup_koki_10000_flip_mail_1;
-	1: spritegroup_koki_10000_flip_mail_2;
-	1: spritegroup_koki_10000_goods_1;
-    1: spritegroup_koki_10000_goods_2;
-	1: spritegroup_koki_10000_flip_goods_1;
-	1: spritegroup_koki_10000_flip_goods_2;
-	1: spritegroup_koki_10000_mixed_1;
-    1: spritegroup_koki_10000_mixed_2;
-	1: spritegroup_koki_10000_flip_mixed_1;
-	1: spritegroup_koki_10000_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_fluid) {
-	1: spritegroup_koki_10000_oil_1;
-    1: spritegroup_koki_10000_oil_2;
-	1: spritegroup_koki_10000_flip_oil_1;
-	1: spritegroup_koki_10000_flip_oil_2;
-	1: spritegroup_koki_10000_goods_1;
-    1: spritegroup_koki_10000_goods_2;
-	1: spritegroup_koki_10000_flip_goods_1;
-	1: spritegroup_koki_10000_flip_goods_2;
-}
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_edible_fluid) {
-	1: spritegroup_koki_10000_oil_1;
-    1: spritegroup_koki_10000_oil_2;
-	1: spritegroup_koki_10000_flip_oil_1;
-	1: spritegroup_koki_10000_flip_oil_2;
-	1: spritegroup_koki_10000_food_1;
-    1: spritegroup_koki_10000_food_2;
-	1: spritegroup_koki_10000_flip_food_1;
-	1: spritegroup_koki_10000_flip_food_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_general_refrigerated) {
-	1: spritegroup_koki_10000_food_1;
-    1: spritegroup_koki_10000_food_2;
-	1: spritegroup_koki_10000_flip_food_1;
-	1: spritegroup_koki_10000_flip_food_2;
-	1: spritegroup_koki_10000_mixed_1;
-    1: spritegroup_koki_10000_mixed_2;
-	1: spritegroup_koki_10000_flip_mixed_1;
-	1: spritegroup_koki_10000_flip_mixed_2;
-}
-
-//cabooseses
+//brakevan test
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_goods_caboose) {
-	1: spritegroup_koki_10000_goods_caboose_1;
-    1: spritegroup_koki_10000_goods_caboose_2;
-	1: spritegroup_koki_10000_flip_goods_caboose_1;
-	1: spritegroup_koki_10000_flip_goods_caboose_2;
-}
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_food_caboose) {
-	1: spritegroup_koki_10000_food_caboose_1;
-    1: spritegroup_koki_10000_food_caboose_2;
-	1: spritegroup_koki_10000_flip_food_caboose_1;
-	1: spritegroup_koki_10000_flip_food_caboose_2;
+switch(FEAT_TRAINS, SELF, switch_kokifu_10000_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_10000_blue;
+    1:  switch_conts_cargo_selection;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	spriteset_koki_10000_brakevan_rear;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
 }
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_mixed_caboose) {
-	1: spritegroup_koki_10000_mixed_caboose_1;
-    1: spritegroup_koki_10000_mixed_caboose_2;
-	1: spritegroup_koki_10000_flip_mixed_caboose_1;
-	1: spritegroup_koki_10000_flip_mixed_caboose_2;
+switch(FEAT_TRAINS, SELF, switch_kokifu_10000_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_10000_blue;
+    1:  spriteset_koki_10000_brakevan_rear;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	switch_conts_cargo_selection;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
 }
 
-random_switch(FEAT_TRAINS, SELF, switch_koki_10000_oil_caboose) {
-	1: spritegroup_koki_10000_oil_caboose_1;
-    1: spritegroup_koki_10000_oil_caboose_2;
-	1: spritegroup_koki_10000_flip_oil_caboose_1;
-	1: spritegroup_koki_10000_flip_oil_caboose_2;
+switch(FEAT_TRAINS, SELF, switch_kokifu_10000_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_kokifu_10000_down_loadstack;
+	DIRECTION_SOUTH: switch_kokifu_10000_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_kokifu_10000_down_loadstack;
+	switch_kokifu_10000_up_loadstack;
 }
-
 
 
-switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_koki_10000_cargo_general_fluid;
-	bitmask(CC_REFRIGERATED): switch_koki_10000_cargo_general_refrigerated;
-	bitmask(CC_EXPRESS): switch_koki_10000_cargo_goods;
-	
-	switch_koki_10000_cargo_general_dry;
-}
 
-switch(FEAT_TRAINS, SELF, switch_koki_10000_cargo_selection, cargo_type_in_veh) {
-	MAIL: switch_koki_10000_cargo_mail;
-	GOOD: switch_koki_10000_cargo_goods;
-	FOOD: switch_koki_10000_cargo_food;
-	OIL_: switch_koki_10000_cargo_oil;
-	BEER: switch_koki_10000_cargo_alcohol;
-	VEHI: switch_koki_10000_cargo_goods;
-	
-	MILK: switch_koki_10000_cargo_edible_fluid;
-	EOIL: switch_koki_10000_cargo_edible_fluid;
-	
-	ACID: switch_koki_10000_cargo_general_fluid;
-	SULP: switch_koki_10000_cargo_general_fluid;
-	CHLO: switch_koki_10000_cargo_general_fluid;
-	
-	FRUT: switch_koki_10000_cargo_general_refrigerated;
-	FISH: switch_koki_10000_cargo_general_refrigerated;
-	
-	switch_koki_10000_cargo_class;
-}
 
 
 
-switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_koki_10000_oil_caboose;
-	bitmask(CC_REFRIGERATED): switch_koki_10000_food_caboose;
-	bitmask(CC_EXPRESS): switch_koki_10000_goods_caboose;
-	
-	switch_koki_10000_mixed_caboose;
+switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_10000_blue;
+    1:  switch_conts_cargo_selection;
+	2:  switch_conts_cargo_selection;
+	3:  switch_conts_cargo_selection;
+	4:  switch_conts_cargo_selection;
+	5:  spriteset_koki_10000_handrail;
+	6:  switch_taillights_8;
 }
 
-switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose, position_in_vehid_chain_from_end) {
-	0: switch_koki_10000_caboose_cargo_class;
-	switch_koki_10000_cargo_selection;
+switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose, position_in_consist_from_end) {
+	0: switch_kokifu_10000_direction;
+	switch_koki_10000_base_loadstack;
 	}
-	
-switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose_front, position_in_vehid_chain) {
-	0: switch_koki_10000_caboose_cargo_class;
-	switch_koki_10000_caboose;
-	}
-
 
 item (FEAT_TRAINS, koki_10000, 1413) {
 	property {
@@ -20820,7 +19876,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 35;
@@ -20835,99 +19891,40 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		cargo_capacity: return 70;
-		default: switch_koki_10000_caboose_front;
+		cargo_capacity: return 60;
+		default: switch_koki_10000_caboose;
 		purchase: spriteset_koki_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
-spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_50000.png") {
 	template_purchase(1, 352)
 }
 
 //base
-spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_50000_empty_b, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_empty_b, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 32)
 }
 
 //handrail
 
-spriteset(spriteset_koki_50000_handrail, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_handrail, "gfx/freight/koki_50000.png") {
 	template_2cc_std(1, 320)
 }
 
+//brake van
 
-//conts
-
-spriteset(spriteset_koki_conts_1_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_brakevan_front, "gfx/freight/koki_50000.png") {
 	template_container_1(1, 64)
 }
 
-spriteset(spriteset_koki_conts_2_a, "gfx/freight/koki_test.png") {
-	template_container_2(1, 64)
-}
-
-spriteset(spriteset_koki_conts_3_a, "gfx/freight/koki_test.png") {
-	template_container_3(1, 64)
-}
-
-spriteset(spriteset_koki_conts_4_a, "gfx/freight/koki_test.png") {
+spriteset(spriteset_koki_50000_brakevan_rear, "gfx/freight/koki_50000.png") {
 	template_container_4(1, 64)
 }
-
-
-spriteset(spriteset_koki_conts_1_b, "gfx/freight/koki_test.png") {
-	template_container_1(1, 128)
-}
-
-spriteset(spriteset_koki_conts_2_b, "gfx/freight/koki_test.png") {
-	template_container_2(1, 128)
-}
-
-spriteset(spriteset_koki_conts_3_b, "gfx/freight/koki_test.png") {
-	template_container_3(1, 128)
-}
-
-spriteset(spriteset_koki_conts_4_b, "gfx/freight/koki_test.png") {
-	template_container_4(1, 128)
-}
-
-spriteset(spriteset_koki_conts_1_c, "gfx/freight/koki_test.png") {
-	template_container_1(1, 160)
-}
-
-spriteset(spriteset_koki_conts_2_c, "gfx/freight/koki_test.png") {
-	template_container_2(1, 160)
-}
-
-spriteset(spriteset_koki_conts_3_c, "gfx/freight/koki_test.png") {
-	template_container_3(1, 160)
-}
-
-spriteset(spriteset_koki_conts_4_c, "gfx/freight/koki_test.png") {
-	template_container_4(1, 160)
-}
-
-spriteset(spriteset_koki_conts_1_d, "gfx/freight/koki_test.png") {
-	template_container_1(1, 96)
-}
-
-spriteset(spriteset_koki_conts_2_d, "gfx/freight/koki_test.png") {
-	template_container_2(1, 96)
-}
-
-spriteset(spriteset_koki_conts_3_d, "gfx/freight/koki_test.png") {
-	template_container_3(1, 96)
-}
-
-spriteset(spriteset_koki_conts_4_d, "gfx/freight/koki_test.png") {
-	template_container_4(1, 96)
-}
-
 
 random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 	2: spriteset_koki_50000_empty_a;
@@ -20935,76 +19932,49 @@ random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 }
 
 
-/*
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_1) {
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_1_a;
-	1: spriteset_koki_conts_1_d;
-	1: spriteset_koki_conts_1_c;
-	1: spriteset_koki_conts_1_c;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_2) {
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_2_b;
-	1: spriteset_koki_conts_2_b;
-	1: spriteset_koki_conts_2_a;
-	1: spriteset_koki_conts_2_d;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_3) {
-//	independent: random_koki_50000_conts_2;
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_3_c;
-	1: spriteset_koki_conts_3_b;
-	1: spriteset_koki_conts_3_c;
-	1: spriteset_koki_conts_3_b;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_koki_50000_conts_4) {
-//	independent: random_koki_50000_conts_3;
-//	independent: random_koki_50000_conts_2;
-//	independent: random_koki_50000_conts_1;
-	1: spriteset_koki_conts_4_d;
-	1: spriteset_koki_conts_4_b;
-	1: spriteset_koki_conts_4_a;
-	1: spriteset_koki_conts_4_a;
-}
+//brakevan test
 
 
-
-switch(FEAT_TRAINS, SELF, switch_koki_50000_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    1:  random_koki_50000_conts_1;
-	2:	random_koki_50000_conts_2;
-	3:	random_koki_50000_conts_3;
-	4:	random_koki_50000_conts_4;
+    0:  random_koki_50000_brown;
+    1:  switch_conts_cargo_selection;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	spriteset_koki_50000_brakevan_rear;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
 }
 
-switch(FEAT_TRAINS, SELF, switch_koki_50000_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    1:  random_koki_50000_conts_4;
-	2:	random_koki_50000_conts_3;
-	3:	random_koki_50000_conts_2;
-	4:	random_koki_50000_conts_1;
+    0:  random_koki_50000_brown;
+    1:  spriteset_koki_50000_brakevan_rear;
+	2:	switch_conts_cargo_selection;
+	3:	switch_conts_cargo_selection;
+	4:	switch_conts_cargo_selection;
+	5:  spriteset_blank;
+	6:  switch_taillights_8;
+}
+
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_kokifu_50000_down_loadstack;
+	DIRECTION_SOUTH: switch_kokifu_50000_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_kokifu_50000_down_loadstack;
+	switch_kokifu_50000_up_loadstack;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_koki_50000_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_koki_50000_down_loadstack;
-	DIRECTION_SOUTH: switch_koki_50000_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_koki_50000_down_loadstack;
-	switch_koki_50000_up_loadstack;
-}
-*/
+
+
 
 switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  random_koki_50000_brown;
@@ -21013,7 +19983,13 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 	3:  switch_conts_cargo_selection;
 	4:  switch_conts_cargo_selection;
 	5:  spriteset_koki_50000_handrail;
+	6:  switch_taillights_8;
 }
+
+switch(FEAT_TRAINS, SELF, switch_koki_50000_caboose, position_in_consist_from_end) {
+	0: switch_kokifu_50000_direction;
+	switch_koki_50000_base_loadstack;
+	}
 
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
@@ -21042,7 +20018,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 	}
 	graphics {
 		cargo_capacity: return 70;
-		default: switch_koki_50000_base_loadstack;
+		default: switch_koki_50000_caboose;
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}

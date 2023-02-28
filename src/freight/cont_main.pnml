@@ -92,7 +92,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_general_direction, direction) {
 
 
 //stack food
-
+/*
 switch(FEAT_TRAINS, SELF, switch_conts_food_up_loadstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -119,6 +119,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_food_direction, direction) {
 	DIRECTION_SOUTHWEST: switch_conts_food_down_loadstack;
 	switch_conts_food_up_loadstack;
 }
+*/
 
 //stack liquid
 

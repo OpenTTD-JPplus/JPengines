@@ -1,422 +1,43 @@
-spriteset(spriteset_koki_5500_purchase, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_purchase, "gfx/freight/koki_test.png") {
 	template_purchase(1, 352)
 }
 
-//Light brown
-
-spriteset(spriteset_koki_5500_empty_1, "gfx/koki_5500_1.png") {
+//base
+spriteset(spriteset_koki_5500_empty_a, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_5500_goods_1_half, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_empty_b, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_5500_goods_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 64)
-}
+//handrail
 
-spriteset(spriteset_koki_5500_mail_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_5500_mail_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_5500_mixed_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_5500_mixed_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_5500_food_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_5500_food_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_5500_oil_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_5500_oil_1_full, "gfx/koki_5500_1.png") {
+spriteset(spriteset_koki_5500_handrail, "gfx/freight/koki_test.png") {
 	template_2cc_std(1, 320)
 }
 
-//
-
-spriteset(spriteset_koki_5500_empty_2, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 1)
-}
-
-spriteset(spriteset_koki_5500_goods_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_koki_5500_goods_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_koki_5500_mail_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_koki_5500_mail_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_koki_5500_mixed_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_koki_5500_mixed_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_koki_5500_food_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_koki_5500_food_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 256)
-}
-
-spriteset(spriteset_koki_5500_oil_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 288)
-}
-
-spriteset(spriteset_koki_5500_oil_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_std(1, 320)
-}
-
-//KOKI 5500 spritegroups
-
-spritegroup spritegroup_koki_5500_goods_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_goods_1_half, spriteset_koki_5500_goods_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_goods_1_half, spriteset_koki_5500_goods_1_full];
-}
-
-spritegroup spritegroup_koki_5500_mail_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mail_1_half, spriteset_koki_5500_mail_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mail_1_half, spriteset_koki_5500_mail_1_full];
-}
-
-spritegroup spritegroup_koki_5500_mixed_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mixed_1_half, spriteset_koki_5500_mixed_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_mixed_1_half, spriteset_koki_5500_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_5500_food_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_food_1_half, spriteset_koki_5500_food_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_food_1_half, spriteset_koki_5500_food_1_full];
-}
-
-spritegroup spritegroup_koki_5500_oil_1 {
-    loading: [spriteset_koki_5500_empty_1, spriteset_koki_5500_oil_1_half, spriteset_koki_5500_oil_1_full];
-    loaded: [spriteset_koki_5500_empty_1, spriteset_koki_5500_oil_1_half, spriteset_koki_5500_oil_1_full];
-}
 
 
-
-spritegroup spritegroup_koki_5500_goods_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_goods_2_half, spriteset_koki_5500_goods_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_goods_2_half, spriteset_koki_5500_goods_2_full];
-}
-
-spritegroup spritegroup_koki_5500_mail_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mail_2_half, spriteset_koki_5500_mail_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mail_2_half, spriteset_koki_5500_mail_2_full];
-}
-
-spritegroup spritegroup_koki_5500_mixed_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mixed_2_half, spriteset_koki_5500_mixed_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_mixed_2_half, spriteset_koki_5500_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_5500_food_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_food_2_half, spriteset_koki_5500_food_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_food_2_half, spriteset_koki_5500_food_2_full];
-}
-
-spritegroup spritegroup_koki_5500_oil_2 {
-    loading: [spriteset_koki_5500_empty_2, spriteset_koki_5500_oil_2_half, spriteset_koki_5500_oil_2_full];
-    loaded: [spriteset_koki_5500_empty_2, spriteset_koki_5500_oil_2_half, spriteset_koki_5500_oil_2_full];
-}
-
-
-//insert flip here
-spriteset(spriteset_koki_5500_flip_empty_1, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_5500_flip_food_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_5500_flip_food_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_1_half, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_1_full, "gfx/koki_5500_1.png") {
-	template_2cc_flip(1, 320)
-}
-
-//
-
-spriteset(spriteset_koki_5500_flip_empty_2, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 1)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 32)
-}
-
-spriteset(spriteset_koki_5500_flip_goods_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 96)
-}
-
-spriteset(spriteset_koki_5500_flip_mail_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 128)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 160)
-}
-
-spriteset(spriteset_koki_5500_flip_mixed_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 192)
-}
-
-spriteset(spriteset_koki_5500_flip_food_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 224)
-}
-
-spriteset(spriteset_koki_5500_flip_food_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 256)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_2_half, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 288)
-}
-
-spriteset(spriteset_koki_5500_flip_oil_2_full, "gfx/koki_5500_2.png") {
-	template_2cc_flip(1, 320)
-}
-
-//KOKI 5500 spritegroups
-
-spritegroup spritegroup_koki_5500_flip_goods_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_goods_1_half, spriteset_koki_5500_flip_goods_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_goods_1_half, spriteset_koki_5500_flip_goods_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mail_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mail_1_half, spriteset_koki_5500_flip_mail_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mail_1_half, spriteset_koki_5500_flip_mail_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mixed_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mixed_1_half, spriteset_koki_5500_flip_mixed_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_mixed_1_half, spriteset_koki_5500_flip_mixed_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_food_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_food_1_half, spriteset_koki_5500_flip_food_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_food_1_half, spriteset_koki_5500_flip_food_1_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_oil_1 {
-    loading: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_oil_1_half, spriteset_koki_5500_flip_oil_1_full];
-    loaded: [spriteset_koki_5500_flip_empty_1, spriteset_koki_5500_flip_oil_1_half, spriteset_koki_5500_flip_oil_1_full];
-}
-
-
-
-spritegroup spritegroup_koki_5500_flip_goods_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_goods_2_half, spriteset_koki_5500_flip_goods_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_goods_2_half, spriteset_koki_5500_flip_goods_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mail_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mail_2_half, spriteset_koki_5500_flip_mail_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mail_2_half, spriteset_koki_5500_flip_mail_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_mixed_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mixed_2_half, spriteset_koki_5500_flip_mixed_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_mixed_2_half, spriteset_koki_5500_flip_mixed_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_food_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_food_2_half, spriteset_koki_5500_flip_food_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_food_2_half, spriteset_koki_5500_flip_food_2_full];
-}
-
-spritegroup spritegroup_koki_5500_flip_oil_2 {
-    loading: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_oil_2_half, spriteset_koki_5500_flip_oil_2_full];
-    loaded: [spriteset_koki_5500_flip_empty_2, spriteset_koki_5500_flip_oil_2_half, spriteset_koki_5500_flip_oil_2_full];
+random_switch (FEAT_TRAINS, SELF, random_koki_5500_brown) {
+	2: spriteset_koki_5500_empty_a;
+	1: spriteset_koki_5500_empty_b;
 }
 
 
 
 
-
-
-//randoms
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_mail) {
-	1: spritegroup_koki_5500_mail_1;
-    1: spritegroup_koki_5500_mail_2;
-	1: spritegroup_koki_5500_flip_mail_1;
-	1: spritegroup_koki_5500_flip_mail_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_goods) {
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_food) {
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_oil) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_alcohol) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_dry) {
-	1: spritegroup_koki_5500_mail_1;
-    1: spritegroup_koki_5500_mail_2;
-	1: spritegroup_koki_5500_flip_mail_1;
-	1: spritegroup_koki_5500_flip_mail_2;
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_fluid) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_goods_1;
-    1: spritegroup_koki_5500_goods_2;
-	1: spritegroup_koki_5500_flip_goods_1;
-	1: spritegroup_koki_5500_flip_goods_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_edible_fluid) {
-	1: spritegroup_koki_5500_oil_1;
-    1: spritegroup_koki_5500_oil_2;
-	1: spritegroup_koki_5500_flip_oil_1;
-	1: spritegroup_koki_5500_flip_oil_2;
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-}
-
-random_switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_general_refrigerated) {
-	1: spritegroup_koki_5500_food_1;
-    1: spritegroup_koki_5500_food_2;
-	1: spritegroup_koki_5500_flip_food_1;
-	1: spritegroup_koki_5500_flip_food_2;
-	1: spritegroup_koki_5500_mixed_1;
-    1: spritegroup_koki_5500_mixed_2;
-	1: spritegroup_koki_5500_flip_mixed_1;
-	1: spritegroup_koki_5500_flip_mixed_2;
-}
-
-
-
-
-switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_koki_5500_cargo_general_fluid;
-	bitmask(CC_REFRIGERATED): switch_koki_5500_cargo_general_refrigerated;
-	bitmask(CC_EXPRESS): switch_koki_5500_cargo_goods;
-	
-	switch_koki_5500_cargo_general_dry;
-}
-
-switch(FEAT_TRAINS, SELF, switch_koki_5500_cargo_selection, cargo_type_in_veh) {
-	MAIL: switch_koki_5500_cargo_mail;
-	GOOD: switch_koki_5500_cargo_goods;
-	FOOD: switch_koki_5500_cargo_food;
-	OIL_: switch_koki_5500_cargo_oil;
-	BEER: switch_koki_5500_cargo_alcohol;
-	VEHI: switch_koki_5500_cargo_goods;
-	
-	MILK: switch_koki_5500_cargo_edible_fluid;
-	EOIL: switch_koki_5500_cargo_edible_fluid;
-	
-	ACID: switch_koki_5500_cargo_general_fluid;
-	SULP: switch_koki_5500_cargo_general_fluid;
-	CHLO: switch_koki_5500_cargo_general_fluid;
-	
-	FRUT: switch_koki_5500_cargo_general_refrigerated;
-	FISH: switch_koki_5500_cargo_general_refrigerated;
-	
-	switch_koki_5500_cargo_class;
+switch(FEAT_TRAINS, SELF, switch_koki_5500_base_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_5500_brown;
+    1:  switch_conts_cargo_selection;
+	2:  switch_conts_cargo_selection;
+	3:  switch_conts_cargo_selection;
+	4:  switch_conts_cargo_selection;
+	5:  spriteset_koki_5500_handrail;
+	6:  switch_taillights_8;
 }
 
 
@@ -431,25 +52,23 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-		loading_speed: 50;
+		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
-		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
-		cost_factor: 8;
-		running_cost_factor: 9;
+		cost_factor: 9;
+		running_cost_factor: 11;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		speed: switch_speedboost_1;
-		purchase_speed: return 85;
-		cargo_capacity: return 70;
-		default: switch_koki_5500_cargo_selection;
+		cargo_capacity: return 60;
+		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
