@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.11.1
+STR_GRF_NAME :JP+ Engines & Wagons v0.11.2
 STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
@@ -83,6 +83,7 @@ STR_NAME_JR_DF200	:DF200 (diesel)
 STR_NAME_JR_EF500	:EF500 (electric)
 STR_NAME_JR_ED500	:ED500 (electric)
 STR_NAME_JR_EH800	:EH800 (electric)
+STR_NAME_JR_M250	:M250 Cargo EMU (electric)
 
 STR_NAME_DEKI_400	:DeKi 400 (electric)
 STR_NAME_EL120		:EL120 (electric)
@@ -320,7 +321,8 @@ STR_NAME_KOKI_5500		:KOKI 5500 Container Carrier
 STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
 STR_NAME_KOKI_50000		:KOKI 50000 Container Carrier
 STR_NAME_KOKI_100		:KOKI 100 Container Carrier
-STR_NAME_CONTAINER		:DEPRECATED Container Carrier
+STR_NAME_CONTAINER		:KOKI 101 Container Carrier
+STR_NAME_M250_TRAILER   :T260 Cargo EMU Trailer
 STR_NAME_ROADRAILER		:WA 100 Dual Mode Transport
 
 STR_NAME_TO_1			:TO 1 Open Wagon
