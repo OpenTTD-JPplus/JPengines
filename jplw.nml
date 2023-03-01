@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 120;
+ version: 130;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -19888,7 +19888,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		cost_factor: 9;
 		running_cost_factor: 11;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 		cargo_capacity: return 60;
