@@ -76,10 +76,10 @@ property {
 	reliability_decay: 85;
 	model_life: 40;
 	vehicle_life: 60;
-	cost_factor: 100;
+	cost_factor: 105;
 	length: 6;
-	running_cost_factor: 66;
-	running_cost_base: RUNNING_COST_STEAM;
+	running_cost_factor: 115;
+	running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 graphics { // graphics for engine

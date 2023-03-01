@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 130;
+ version: 140;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -124,6 +124,8 @@ sort(FEAT_TRAINS, [
 
 //steam
 900, 902, 920,
+//diesels
+71, 1207, 25, 20, 1209, 63, 111,
 //electrics DC old
 1010, 1011, 990, 1004, 02, 1012, 1050, 1013, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 14, 
 //electrics DC new
@@ -132,10 +134,11 @@ sort(FEAT_TRAINS, [
 1065, 1070, 1071, 1075, 1045, 
 //electrics MS 
 1015, 1080, 55, 1085, 1090, 105, 67, 1095, 
-//diesels
-71, 1207, 25, 20, 1209, 63, 111,
+//cargo MU
+// 77,
+
 //non JNR/JR
-991, 1106, 1100, 1101, 
+1005, 1106, 991, 1100, 1101, 
 
 //wagons pax
 1536, 1537, 1305, 1306, 1308, 1538, 1310, 1311, 1539, 1316, 1318, 1319, 1321, 1322, 1320, 1540, 1340, 1341, 1346, 1347, 
@@ -146,7 +149,7 @@ sort(FEAT_TRAINS, [
 //wagons box/reef
 32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1455, 1456, 1286, 1460, 
 //wagons cont/car
-1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 39, 1400, 44, 43, 
+1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 1400, 39, 44, 43, 
 //wagons lvst
 1282, 1431, 1432, 
 //wagons open hopper
@@ -1384,7 +1387,7 @@ item (FEAT_TRAINS, deki_400, 1005) {
   cost_factor: 22;
   length: 5;
   running_cost_factor: 32;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -1447,7 +1450,7 @@ item (FEAT_TRAINS, el120, 1106) {
   cost_factor: 29;
   length: 5;
   running_cost_factor: 39;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -1505,7 +1508,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   cost_factor: 13;
   length: 4;
   running_cost_factor: 9;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_SEIBU_E31);
@@ -1559,10 +1562,10 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
   reliability_decay: 80;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 38;
+  cost_factor: 88;
   length: 7;
-  running_cost_factor: 61;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 85;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_SEIBU_E851);
@@ -1628,7 +1631,7 @@ item (FEAT_TRAINS, ab10, 1010) {
   cost_factor: 20;
   length: 4;
   running_cost_factor: 32;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_DIESEL;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_AB10);
@@ -1702,7 +1705,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   cost_factor: 19;
   length: 4;
   running_cost_factor: 30;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1010;
   }
   graphics { // graphics for engine
@@ -1772,7 +1775,7 @@ item (FEAT_TRAINS, ed12, 990) {
   cost_factor: 31;
   length: 5;
   running_cost_factor: 38;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
 //  additional_text:	string(STR_DESC_JGR_EEP);
@@ -1887,7 +1890,7 @@ item (FEAT_TRAINS, ed16, 1004) {
   cost_factor: 32;
   length: 6;
   running_cost_factor: 40;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
 //  additional_text:	string(STR_DESC_JGR_EEP);
@@ -2196,10 +2199,10 @@ property {
     reliability_decay: 85;
     model_life: 60;
     vehicle_life: 50;
-    cost_factor: 45;
+    cost_factor: 49;
     length: 6;
-    running_cost_factor: 53;
-    running_cost_base: RUNNING_COST_STEAM;
+    running_cost_factor: 76;
+    running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
 
@@ -2308,9 +2311,9 @@ item (FEAT_TRAINS, ed61, 1060) {
   reliability_decay: 85;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 44;
+  cost_factor: 36;
   length: 7;
-  running_cost_factor: 56;
+  running_cost_factor: 53;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -2379,9 +2382,9 @@ item (FEAT_TRAINS, ed62, 1960) {
   reliability_decay: 85;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 44;
+  cost_factor: 36;
   length: 7;
-  running_cost_factor: 56;
+  running_cost_factor: 53;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1060;
   }
@@ -2773,7 +2776,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   cost_factor: 39;
   length: 7;
   running_cost_factor: 56;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -2857,10 +2860,10 @@ item (FEAT_TRAINS, ef50, 1014) {
   reliability_decay: 60;
   model_life: 30;
   vehicle_life: 32;
-  cost_factor: 35;
+  cost_factor: 45;
   length: 8;
-  running_cost_factor: 55;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 71;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -2957,9 +2960,9 @@ item (FEAT_TRAINS, ef53, 1016) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 37;
+  cost_factor: 45;
   length: 8;
-  running_cost_factor: 54;
+  running_cost_factor: 70;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -3002,9 +3005,9 @@ item (FEAT_TRAINS, ef59_1, 1916) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 37;
+  cost_factor: 45;
   length: 8;
-  running_cost_factor: 54;
+  running_cost_factor: 70;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1016;
   }
@@ -3082,7 +3085,9 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-
+  cost_factor: 46;
+  length: 8;
+  running_cost_factor: 74;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
 
@@ -3175,9 +3180,9 @@ item (FEAT_TRAINS, ef56, 1019) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 37;
+  cost_factor: 42;
   length: 8;
-  running_cost_factor: 54;
+  running_cost_factor: 69;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -3219,9 +3224,9 @@ item (FEAT_TRAINS, ef59_2, 1919) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 37;
+  cost_factor: 42;
   length: 8;
-  running_cost_factor: 54;
+  running_cost_factor: 69;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1019;
   }
@@ -3320,9 +3325,9 @@ item (FEAT_TRAINS, ef57, 1020) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 38;
+  cost_factor: 46;
   length: 8;
-  running_cost_factor: 55;
+  running_cost_factor: 73;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -3374,9 +3379,9 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 38;
+  cost_factor: 46;
   length: 8;
-  running_cost_factor: 55;
+  running_cost_factor: 73;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1020;
   }
@@ -3573,9 +3578,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 42;
+  cost_factor: 68;
   length: 8;
-  running_cost_factor: 58;
+  running_cost_factor: 80;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -3621,9 +3626,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 41;
+  cost_factor: 66;
   length: 8;
-  running_cost_factor: 57;
+  running_cost_factor: 72;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 14;
   }
@@ -3670,9 +3675,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 40;
+  cost_factor: 66;
   length: 8;
-  running_cost_factor: 56;
+  running_cost_factor: 69;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1021;
   }
@@ -4094,10 +4099,10 @@ item (FEAT_TRAINS, ef63, 1040) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 40;
+  cost_factor: 82;
   length: 8;
-  running_cost_factor: 65;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 77;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -5645,10 +5650,10 @@ item (FEAT_TRAINS, ed70, 1065) {
   reliability_decay: 85;
   model_life: 40;
   vehicle_life: 60;
-  cost_factor: 29;
+  cost_factor: 37;
   length: 6;
-  running_cost_factor: 43;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 54;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_TEXT_JNR);
@@ -5850,10 +5855,10 @@ item (FEAT_TRAINS, ed75, 1070) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 30;
+  cost_factor: 41;
   length: 6;
   running_cost_factor: 48;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_TEXT_JNR_ED75);
@@ -5966,8 +5971,8 @@ item (FEAT_TRAINS, ed76, 1071) {
   vehicle_life: 40;
   cost_factor: 54;
   length: 8;
-  running_cost_factor: 84;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 55;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -6022,10 +6027,10 @@ item (FEAT_TRAINS, ed500, 1090) {
   reliability_decay: 90;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
-  cost_factor: 44;
+  cost_factor: 99;
   length: 8;
-  running_cost_factor: 49;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 95;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -6088,10 +6093,10 @@ item (FEAT_TRAINS, ef30, 1015) {
   reliability_decay: 85;
   model_life: 40;
   vehicle_life: 30;
-  cost_factor: 32;
+  cost_factor: 40;
   length: 7;
-  running_cost_factor: 45;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 64;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
 //  additional_text:	string(STR_TEXT_DEKI_400);
@@ -6181,7 +6186,7 @@ item (FEAT_TRAINS, ef70, 1045) {
   cost_factor: 56;
   length: 7;
   running_cost_factor: 88;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -6260,7 +6265,7 @@ item (FEAT_TRAINS, ef80, 1080) {
   cost_factor: 52;
   length: 7;
   running_cost_factor: 85;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -6486,10 +6491,10 @@ item (FEAT_TRAINS, ef500, 1085) {
   reliability_decay: 90;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
-  cost_factor: 78;
+  cost_factor: 110;
   length: 8;
-  running_cost_factor: 80;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 110;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
 //  additional_text:	string(STR_TEXT_DEKI_400);
@@ -6865,10 +6870,10 @@ property {
 	reliability_decay: 85;
 	model_life: 40;
 	vehicle_life: 60;
-	cost_factor: 100;
+	cost_factor: 105;
 	length: 6;
-	running_cost_factor: 66;
-	running_cost_base: RUNNING_COST_STEAM;
+	running_cost_factor: 115;
+	running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 graphics { // graphics for engine
@@ -7019,10 +7024,10 @@ item (FEAT_TRAINS, dd13, 1207) {
   reliability_decay: 85;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 21;
+  cost_factor: 18;
   length: 6;
-  running_cost_factor: 84;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 80;
+  running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
@@ -7155,7 +7160,7 @@ property {
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	
-	running_cost_factor: 115;
+	running_cost_factor: 85;
 	}
 
 
@@ -7586,7 +7591,7 @@ property {
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 //	length: 6;
-//	running_cost_factor: 115;
+	running_cost_factor: 90;
 	}
 
 
@@ -7653,7 +7658,9 @@ property {
 	cargo_allow_refit: [PASS];
 
 //	misc_flags: bitmask(TRAIN_FLAG_2CC);	
-//	running_cost_factor: 115;
+	cost_factor: 40;
+	running_cost_factor: 82;
+
 	}
 
 
@@ -7726,7 +7733,7 @@ property {
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	
-//	running_cost_factor: 115;
+	running_cost_factor: 100;
 	}
 
 
@@ -20898,12 +20905,12 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		track_type: NAAN;
 		name: string(STR_NAME_CONTAINER);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1985,1,1);
+		introduction_date: date(1988,1,1);
 		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 90; 
+		cargo_capacity: 75; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
@@ -20917,7 +20924,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		cargo_capacity: return 90;
+		cargo_capacity: return 75;
 		default: switch_koki_cargo_selection;
 		purchase: spriteset_koki_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -25726,6 +25733,55 @@ property {
 		climates_available: NO_CLIMATE;
 	}
 }
+
+spriteset(spriteset_m250_trailer_empty, "gfx/freight/m250.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_m250_trailer_half, "gfx/freight/m250.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_m250_trailer_full, "gfx/freight/m250.png") {
+	template_2cc_std(1, 320)
+}
+
+spritegroup spritegroup_m250_trailer {
+    loading: [spriteset_m250_trailer_empty, spriteset_m250_trailer_half, spriteset_m250_trailer_full];
+    loaded: [spriteset_m250_trailer_empty, spriteset_m250_trailer_half, spriteset_m250_trailer_full];
+}
+
+spriteset(spriteset_m250_trailer_purchase, "gfx/freight/m250.png") {
+	template_purchase(89, 352)
+}
+
+item (FEAT_TRAINS, m250_trailer, 39) {
+
+property {
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_M250_TRAILER);
+		introduction_date: date(2003,1,1);
+		speed: 130 km/h;
+	}
+graphics {
+		cargo_capacity: return 70;
+		default: spritegroup_m250_trailer;
+		purchase: spriteset_m250_trailer_purchase;
+	}
+}
+
+/*
+item (FEAT_TRAINS, m250, 77) {
+
+property {
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_JR_M250);
+		introduction_date: date(2003,1,1);
+		cargo_capacity: 70;
+	//	speed: 130 km/h;
+	}
+}
+*/
 
 
 

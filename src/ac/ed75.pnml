@@ -190,10 +190,10 @@ item (FEAT_TRAINS, ed75, 1070) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 30;
+  cost_factor: 41;
   length: 6;
   running_cost_factor: 48;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_TEXT_JNR_ED75);

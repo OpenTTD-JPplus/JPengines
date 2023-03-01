@@ -67,10 +67,10 @@ item (FEAT_TRAINS, ef63, 1040) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 40;
+  cost_factor: 82;
   length: 8;
-  running_cost_factor: 65;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 77;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine

@@ -100,8 +100,8 @@ item (FEAT_TRAINS, ed76, 1071) {
   vehicle_life: 40;
   cost_factor: 54;
   length: 8;
-  running_cost_factor: 84;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 55;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine

@@ -29,3 +29,52 @@ property {
 		climates_available: NO_CLIMATE;
 	}
 }
+
+spriteset(spriteset_m250_trailer_empty, "gfx/freight/m250.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_m250_trailer_half, "gfx/freight/m250.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_m250_trailer_full, "gfx/freight/m250.png") {
+	template_2cc_std(1, 320)
+}
+
+spritegroup spritegroup_m250_trailer {
+    loading: [spriteset_m250_trailer_empty, spriteset_m250_trailer_half, spriteset_m250_trailer_full];
+    loaded: [spriteset_m250_trailer_empty, spriteset_m250_trailer_half, spriteset_m250_trailer_full];
+}
+
+spriteset(spriteset_m250_trailer_purchase, "gfx/freight/m250.png") {
+	template_purchase(89, 352)
+}
+
+item (FEAT_TRAINS, m250_trailer, 39) {
+
+property {
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_M250_TRAILER);
+		introduction_date: date(2003,1,1);
+		speed: 130 km/h;
+	}
+graphics {
+		cargo_capacity: return 70;
+		default: spritegroup_m250_trailer;
+		purchase: spriteset_m250_trailer_purchase;
+	}
+}
+
+/*
+item (FEAT_TRAINS, m250, 77) {
+
+property {
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_JR_M250);
+		introduction_date: date(2003,1,1);
+		cargo_capacity: 70;
+	//	speed: 130 km/h;
+	}
+}
+*/

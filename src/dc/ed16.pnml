@@ -55,7 +55,7 @@ item (FEAT_TRAINS, ed16, 1004) {
   cost_factor: 32;
   length: 6;
   running_cost_factor: 40;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
 //  additional_text:	string(STR_DESC_JGR_EEP);

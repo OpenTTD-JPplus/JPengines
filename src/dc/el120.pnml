@@ -50,7 +50,7 @@ item (FEAT_TRAINS, el120, 1106) {
   cost_factor: 29;
   length: 5;
   running_cost_factor: 39;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine

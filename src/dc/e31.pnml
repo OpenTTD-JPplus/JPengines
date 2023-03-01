@@ -45,7 +45,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   cost_factor: 13;
   length: 4;
   running_cost_factor: 9;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_SEIBU_E31);

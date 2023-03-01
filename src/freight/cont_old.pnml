@@ -873,12 +873,12 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		track_type: NAAN;
 		name: string(STR_NAME_CONTAINER);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1985,1,1);
+		introduction_date: date(1988,1,1);
 		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 90; 
+		cargo_capacity: 75; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
@@ -892,7 +892,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		cargo_capacity: return 90;
+		cargo_capacity: return 75;
 		default: switch_koki_cargo_selection;
 		purchase: spriteset_koki_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;

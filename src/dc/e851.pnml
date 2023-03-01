@@ -42,10 +42,10 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
   reliability_decay: 80;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 38;
+  cost_factor: 88;
   length: 7;
-  running_cost_factor: 61;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 85;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_SEIBU_E851);

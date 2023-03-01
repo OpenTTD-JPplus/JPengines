@@ -85,9 +85,9 @@ item (FEAT_TRAINS, ef57, 1020) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 38;
+  cost_factor: 46;
   length: 8;
-  running_cost_factor: 55;
+  running_cost_factor: 73;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -139,9 +139,9 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 38;
+  cost_factor: 46;
   length: 8;
-  running_cost_factor: 55;
+  running_cost_factor: 73;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1020;
   }

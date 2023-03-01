@@ -183,9 +183,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 42;
+  cost_factor: 68;
   length: 8;
-  running_cost_factor: 58;
+  running_cost_factor: 80;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -231,9 +231,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 41;
+  cost_factor: 66;
   length: 8;
-  running_cost_factor: 57;
+  running_cost_factor: 72;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 14;
   }
@@ -280,9 +280,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 40;
+  cost_factor: 66;
   length: 8;
-  running_cost_factor: 56;
+  running_cost_factor: 69;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1021;
   }

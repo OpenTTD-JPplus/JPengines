@@ -42,10 +42,10 @@ item (FEAT_TRAINS, ed500, 1090) {
   reliability_decay: 90;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
-  cost_factor: 44;
+  cost_factor: 99;
   length: 8;
-  running_cost_factor: 49;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_factor: 95;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine

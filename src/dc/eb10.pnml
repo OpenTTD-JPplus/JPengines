@@ -53,7 +53,7 @@ item (FEAT_TRAINS, ab10, 1010) {
   cost_factor: 20;
   length: 4;
   running_cost_factor: 32;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_DIESEL;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_DESC_AB10);
@@ -127,7 +127,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   cost_factor: 19;
   length: 4;
   running_cost_factor: 30;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1010;
   }
   graphics { // graphics for engine

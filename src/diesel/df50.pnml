@@ -53,7 +53,9 @@ property {
 	cargo_allow_refit: [PASS];
 
 //	misc_flags: bitmask(TRAIN_FLAG_2CC);	
-//	running_cost_factor: 115;
+	cost_factor: 40;
+	running_cost_factor: 82;
+
 	}
 
 

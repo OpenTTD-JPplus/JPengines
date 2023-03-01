@@ -78,7 +78,7 @@ item (FEAT_TRAINS, ef70, 1045) {
   cost_factor: 56;
   length: 7;
   running_cost_factor: 88;
-  running_cost_base: RUNNING_COST_STEAM;
+  running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
