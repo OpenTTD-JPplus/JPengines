@@ -58,8 +58,9 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 20;
-		cost_factor: 8;
-		running_cost_factor: 5;
+		cost_factor: 30;
+	running_cost_factor: 10;
+	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}

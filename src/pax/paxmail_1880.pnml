@@ -230,8 +230,9 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
-//		cost_factor: 18;
-//		running_cost_factor: 11;
+		cost_factor: 55;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -304,8 +305,9 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
-//		cost_factor: 18;
-//		running_cost_factor: 11;
+		cost_factor: 30;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}

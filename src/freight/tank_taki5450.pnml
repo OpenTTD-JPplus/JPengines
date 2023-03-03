@@ -141,8 +141,9 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
 		loading_speed: 50;
 		weight: 17;
-		cost_factor: 4;
-		running_cost_factor: 2;
+		cost_factor: 22;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

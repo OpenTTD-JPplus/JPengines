@@ -218,6 +218,9 @@ property {
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	cost_factor: 22;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	speed: switch_speedboost_1;
@@ -291,7 +294,9 @@ property {
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
 	weight: 15;
-	cost_factor: 8;
+	cost_factor: 22;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	variant_group: 51;

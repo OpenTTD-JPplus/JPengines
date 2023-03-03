@@ -87,6 +87,9 @@ property {
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	cost_factor: 40;
+	running_cost_factor: 12;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	speed: switch_speedboost_1;

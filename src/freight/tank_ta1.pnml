@@ -79,8 +79,9 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 50;
 		weight: 8;
-		cost_factor: 3;
-		running_cost_factor: 2;
+		cost_factor: 14;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

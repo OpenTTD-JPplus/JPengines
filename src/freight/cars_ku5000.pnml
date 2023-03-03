@@ -785,6 +785,9 @@ property {
 	cargo_allow_refit: [VEHI]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	speed: 95 km/h;
+	cost_factor: 30;
+	running_cost_factor: 10;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	speed: switch_speedboost_1;

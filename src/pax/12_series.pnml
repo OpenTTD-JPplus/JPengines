@@ -134,8 +134,9 @@ item (FEAT_TRAINS, pax_12_series, 1320) {
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
-		cost_factor: 15;
-		running_cost_factor: 9;
+		cost_factor: 76;
+		running_cost_factor: 17;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}

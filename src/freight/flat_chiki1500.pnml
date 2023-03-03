@@ -461,6 +461,9 @@ property {
 	default_cargo_type: WOOD;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	cost_factor: 30;
+	running_cost_factor: 10;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	speed: switch_speedboost_1;
@@ -524,8 +527,9 @@ property {
 	loading_speed: 30;
 	speed: 100 km/h;
 	weight: 16;
-	cost_factor: 6;
-	running_cost_factor: 10;
+	cost_factor: 50;
+	running_cost_factor: 15;
+	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 

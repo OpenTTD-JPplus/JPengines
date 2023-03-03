@@ -558,8 +558,9 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 28;
-		cost_factor: 17;
-		running_cost_factor: 11;
+		cost_factor: 75;
+		running_cost_factor: 18;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}

@@ -295,20 +295,22 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 88; 
+		cargo_capacity: 80; 
+//		cargo_age_period: 0;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
-//		cost_factor: 18;
-//		running_cost_factor: 11;
+		cost_factor: 76;
+		running_cost_factor: 19;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		cargo_capacity: return 88;
+		cargo_capacity: return 80;
 		default: stack_suha_32;
 		purchase: switch_suha_32_yeardep_purchase;
 		cargo_subtype_text: switch_suha_32_subtype_text;
@@ -373,8 +375,9 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
-//		cost_factor: 18;
-//		running_cost_factor: 11;
+		cost_factor: 45;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}

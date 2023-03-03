@@ -141,21 +141,23 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 40; 
+		cargo_capacity: 70; 
+		cargo_age_period: 0;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
-		cost_factor: 16;
-		running_cost_factor: 9;
+		cost_factor: 77;
+		running_cost_factor: 18;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_2CC);
 		variant_group: 1320;
 	}
 	graphics {
-		cargo_capacity: return 40;
+		cargo_capacity: return 70;
 		default: switch_joyful_12_series_livery;
 		purchase: spriteset_joyful_12_series_set_purchase;
 		cargo_subtype_text: switch_joyful_12_series_subtype_text;

@@ -462,8 +462,9 @@ property {
 	loading_speed: 30;
 	speed: 65 km/h;
 	weight: 12;
-	cost_factor: 6;
-	running_cost_factor: 10;
+	cost_factor: 18;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 

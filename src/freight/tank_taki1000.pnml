@@ -179,8 +179,9 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 50;
 		weight: 20;
-		cost_factor: 22;
-		running_cost_factor: 14;
+		cost_factor: 50;
+	running_cost_factor: 15;
+	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -257,8 +258,9 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 50;
 		weight: 20;
-		cost_factor: 21;
-		running_cost_factor: 13;
+		cost_factor: 40;
+	running_cost_factor: 12;
+	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

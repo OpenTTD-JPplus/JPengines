@@ -32,6 +32,9 @@ property {
 	non_refittable_cargo_classes: 0; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
+	cost_factor: 22;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	speed: switch_speedboost_1;

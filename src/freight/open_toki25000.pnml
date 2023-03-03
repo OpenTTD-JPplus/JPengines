@@ -369,8 +369,9 @@ property {
 	loading_speed: 40;
 	length: 7;
 	weight: 17;
-	cost_factor: 22;
-	running_cost_factor: 11;
+	cost_factor: 40;
+	running_cost_factor: 12;
+	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
@@ -418,8 +419,9 @@ property {
 	loading_speed: 40;
 	length: 7;
 	weight: 16;
-	cost_factor: 21;
-	running_cost_factor: 11;
+	cost_factor: 30;
+	running_cost_factor: 10;
+	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];

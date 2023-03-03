@@ -30,8 +30,9 @@ item (FEAT_TRAINS, mail_mani_30, 1380) {
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
-		cost_factor: 16;
-		running_cost_factor: 6;
+		cost_factor: 52;
+		running_cost_factor: 16;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
