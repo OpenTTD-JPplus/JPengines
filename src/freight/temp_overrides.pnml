@@ -30,6 +30,10 @@ property {
 	}
 }
 
+//override KOKI with M250 trailer
+
+//remove pending recode of M250
+
 spriteset(spriteset_m250_trailer_empty, "gfx/freight/m250.png") {
 	template_2cc_std(1, 256)
 }
@@ -58,6 +62,9 @@ property {
 		name: string(STR_NAME_M250_TRAILER);
 		introduction_date: date(2003,1,1);
 		speed: 130 km/h;
+		cost_factor: 50;
+		running_cost_factor: 17;
+		running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 		cargo_capacity: return 70;

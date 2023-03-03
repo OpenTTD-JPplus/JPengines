@@ -132,7 +132,9 @@ property {
 	non_refittable_cargo_classes: 0; 
 	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	
+	cost_factor: 50;
+	running_cost_factor: 15;
+	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
 	default: switch_koki_71_cargo_type;
