@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 140;
+ version: 150;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -130,7 +130,7 @@ sort(FEAT_TRAINS, [
 //electrics DC old
 1010, 1011, 990, 1004, 02, 1012, 1050, 1013, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 14, 
 //electrics DC new
-1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 88, 
+1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
 1065, 1070, 1970, 1075, 1071, 1045, 
 //electrics MS 
@@ -3510,7 +3510,7 @@ switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
 	0..1965: spriteset_ef58_jnr_brown_purchase;
-    1988..2000: 	spriteset_ef58_jrf_purchase;
+  //  1988..2000: 	spriteset_ef58_jrf_purchase;
 	//add jr?
 	spriteset_ef58_jnr_blue_purchase;
 }
