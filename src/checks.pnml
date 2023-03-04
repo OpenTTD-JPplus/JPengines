@@ -2,20 +2,21 @@
 if (ttd_platform != PLATFORM_OPENTTD) {
     error(FATAL, USED_WITH, "OpenTTD");
 } else {
+//needs update to 13.0 but doesn't work anyway
     if (openttd_version < version_openttd(1, 2, 0, 23971)) {
         error(FATAL, REQUIRES_OPENTTD, "1.2.0-RC1 / r23971");
     }
 }
 
 
-//load order checks, thanks tin
+//load order checks for JapanSet3
 if (grf_order_behind("SZ\0D\00") == 0) {
     error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
 }
 
 if (grf_future_status("SZ\0D\00") == 0) {
  //   error(WARNING, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
-    error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
+    error(FATAL, USED_WITH, string(STR_ERROR_JAPANSETTRAINS));
 }
 
 
