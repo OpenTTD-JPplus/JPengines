@@ -208,7 +208,7 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED));
 	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_REFURB));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_WHISKERS));
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PANDA), string(STR_SUFFIX_RED_BLACK));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_CREAM), string(STR_SUFFIX_REFURB));
 	7: return string(STR_REFIT_CC);

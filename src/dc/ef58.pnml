@@ -114,7 +114,7 @@ switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
 	0..1965: spriteset_ef58_jnr_brown_purchase;
-    1988..2000: 	spriteset_ef58_jrf_purchase;
+  //  1988..2000: 	spriteset_ef58_jrf_purchase;
 	//add jr?
 	spriteset_ef58_jnr_blue_purchase;
 }
