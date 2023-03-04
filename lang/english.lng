@@ -2,8 +2,8 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.11.2
-STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Doorslammer, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
+STR_GRF_NAME :JP+ Engines & Wagons v0.12.0
+STR_GRF_DESCRIPTION :An addon for Japan Set Trains, focused on locomotives and wagons. Includes many new locos and livery refits. Drawn by Emperor Jake, Voyager One, Davo Hunter, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team. Coded by Emperor Jake, 2022 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
 STR_PARAM_DESC_BASECOSTMODBUY	:Adjust vehicle purchase costs, to match Japan Set
@@ -85,7 +85,7 @@ STR_NAME_JNR_EH10_2	:EH10 Prototype (electric)
 STR_NAME_JNR_EH50	:EH50 (electric)
 
 STR_NAME_JR_DF200	:DF200 (diesel)
-STR_NAME_JR_EF210	:EF210 (electric)
+STR_NAME_JR_EF210	:EF210-0 (electric)
 STR_NAME_JR_EF210_1	:EF210-100 (electric)
 STR_NAME_JR_EF210_2	:EF210-300 Banker (electric)
 STR_NAME_JR_EF500	:EF500 (electric)
