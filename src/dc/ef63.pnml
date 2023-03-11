@@ -21,7 +21,7 @@ spriteset(spriteset_ef63_blue_purchase, "gfx/ef63.png") {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef63_yeardep_livery, build_year) {
-	0..1968: spriteset_ef63_brown;
+	0..1964: spriteset_ef63_brown;
 	spriteset_ef63_blue;
 }
 
@@ -43,7 +43,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_subtype_text, cargo_subtype) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
-    0..1970: spriteset_ef63_brown_purchase;
+    0..1964: spriteset_ef63_brown_purchase;
     spriteset_ef63_blue_purchase;
     }
 
@@ -74,7 +74,16 @@ item (FEAT_TRAINS, ef63, 1040) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_EF63);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef63_subtype_text;
   default: switch_ef63_livery;

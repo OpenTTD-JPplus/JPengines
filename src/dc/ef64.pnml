@@ -158,7 +158,18 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef64_0_subtype_text;
   default: switch_ef64_0_livery;
@@ -251,7 +262,18 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef64_1000_subtype_text;
   default: switch_ef64_1000_livery;

@@ -25,7 +25,7 @@ spriteset(spriteset_ef60_yasuragi, "gfx/electric/ef60.png") {
 }
 
 spriteset(spriteset_ef60_1_brown_purchase, "gfx/electric/ef60.png") {
-	template_purchase(1, 256)
+	template_purchase(1, 288)
 }
 
 spriteset(spriteset_ef60_1_blue_purchase, "gfx/electric/ef60.png") {
@@ -147,7 +147,16 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_1_subtype_text;
   default: switch_ef60_1_livery;
@@ -216,7 +225,14 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_2_subtype_text;
   default: switch_ef60_2_livery;
@@ -272,7 +288,14 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_0_subtype_text;
   default: switch_ef60_0_livery;
@@ -332,7 +355,15 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_BANKER);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef67_1_subtype_text;
   default: switch_ef67_1_livery;

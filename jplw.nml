@@ -1041,12 +1041,20 @@ item (FEAT_TRAINS, jgr_7100, 900) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
 	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
 		cargo_capacity: return 0;
 		cargo_subtype_text: switch_jgr_7100_subtype_text;
 		default: switch_jgr_7100_livery;
 		purchase: switch_jgr_7100_purchase;
 		articulated_part: switch_jgr_7100_articulated_part;
-		additional_text: string(STR_DESC_JNR_7100);
 		}
 	}
 
@@ -1185,12 +1193,20 @@ item (FEAT_TRAINS, jgr_7200, 902) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
 		cargo_capacity: return 0;
 		cargo_subtype_text: switch_jgr_7200_subtype_text;
 		default: switch_jgr_7200_livery;
 		purchase: switch_jgr_7200_purchase;
 		articulated_part: switch_jgr_7200_articulated_part;
-		additional_text: string(STR_DESC_JNR_7100);
 	}
 }
 
@@ -1296,7 +1312,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_860);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_SAKHALIN)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_jgr_860_subtype_text;
   default: switch_jgr_860_livery;
@@ -1392,7 +1416,16 @@ item (FEAT_TRAINS, deki_400, 1005) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_AICHI),
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_deki_400_subtype_text;
   default: switch_deki_400_livery;
@@ -1455,7 +1488,14 @@ item (FEAT_TRAINS, el120, 1106) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_DESC_EL120);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_el120_subtype_text;
   default: switch_el120_livery;
@@ -1512,7 +1552,16 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_SEIBU_E31);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_SEIBU),
+                           string(STR_SUFFIX_OIGAWA)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_seibu_e31_subtype_text;
   default: switch_seibu_e31_livery;
@@ -1569,7 +1618,15 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_SEIBU_E851);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_SEIBU)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_seibu_e851_subtype_text;
   default: switch_seibu_e851_livery;
@@ -1635,7 +1692,15 @@ item (FEAT_TRAINS, ab10, 1010) {
   running_cost_base: RUNNING_COST_DIESEL;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_AB10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_BATT),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
+
   cargo_subtype_text: switch_ab10_subtype_text;
   default: switch_ab10_livery;
   purchase: spriteset_ab10_purchase;
@@ -1710,7 +1775,16 @@ item (FEAT_TRAINS, eb10, 1011) {
   variant_group: 1010;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_ELF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+
   cargo_subtype_text: switch_eb10_subtype_text;
   default: switch_eb10_livery;
   purchase: switch_eb10_purchase_yeardep;
@@ -1779,7 +1853,14 @@ item (FEAT_TRAINS, ed12, 990) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed12_subtype_text;
   default: switch_ed12_livery;
@@ -1827,7 +1908,14 @@ item (FEAT_TRAINS, e51, 991) {
   variant_group: 990;
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_SEIBU)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_e51_subtype_text;
   default: switch_e51_livery;
@@ -1894,7 +1982,15 @@ item (FEAT_TRAINS, ed16, 1004) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed16_subtype_text;
   default: switch_ed16_livery;
@@ -1969,11 +2065,19 @@ property {
 
 
 graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
     default: switch_ed17_livery;
     purchase: switch_ed17_yeardep_purchase;
     cargo_capacity: return 0;
     cargo_subtype_text: switch_ed17_subtype_text;
-    additional_text:	string(STR_DESC_JGR_ELF);
   }
 }
 
@@ -2020,7 +2124,15 @@ item (FEAT_TRAINS, ed50, 1012) {
 	variant_group: 02;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_P),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed50_subtype_text;
   default: switch_ed50_livery;
@@ -2081,7 +2193,15 @@ item (FEAT_TRAINS, ed19, 1013) {
   variant_group: 1050;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_ELF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed53_subtype_text;
   default: switch_ed53_livery;
@@ -2116,7 +2236,15 @@ item (FEAT_TRAINS, ed53, 1050) {
 
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed53_subtype_text;
   default: switch_ed53_livery;
@@ -2209,7 +2337,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed54_subtype_text;
   default: switch_ed54_livery;
@@ -2318,7 +2454,14 @@ item (FEAT_TRAINS, ed61, 1060) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed61_subtype_text;
   default: switch_ed61_livery;
@@ -2390,7 +2533,15 @@ item (FEAT_TRAINS, ed62, 1960) {
   variant_group: 1060;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_JRF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed62_subtype_text;
   default: switch_ed62_livery;
@@ -2483,11 +2634,19 @@ property {
 
 
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef10_subtype_text;
   default: switch_ef10_livery;
   purchase: switch_ef10_yeardep_purchase;
-  additional_text:	string(STR_DESC_JGR_EHF);
   }
 }
 
@@ -2554,7 +2713,15 @@ item (FEAT_TRAINS, ef10_2, 1052) {
 	variant_group: 08;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef10_2_subtype_text;
   default: switch_ef10_2_livery;
@@ -2633,11 +2800,19 @@ property {
 
 
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef13_subtype_text;
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
-  additional_text:	string(STR_DESC_JGR_EHF);
   }
 }
 
@@ -2681,7 +2856,15 @@ item (FEAT_TRAINS, ef13_2, 1053) {
 	variant_group: 103;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef13_2_subtype_text;
   default: switch_ef13_2_livery;
@@ -2762,7 +2945,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   name: string(STR_NAME_JNR_EF15);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1947,1,1);
-  speed: 100 km/h;
+  speed: 75 km/h; //not 100
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
   power: 1900 kW;
@@ -2781,7 +2964,15 @@ item (FEAT_TRAINS, ef15, 1054) {
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef15_subtype_text;
   default: switch_ef15_livery;
@@ -2868,7 +3059,14 @@ item (FEAT_TRAINS, ef50, 1014) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef50_subtype_text;
   default: switch_ef50_livery;
@@ -2967,7 +3165,15 @@ item (FEAT_TRAINS, ef53, 1016) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef53_subtype_text;
   default: switch_ef53_livery;
@@ -3013,7 +3219,14 @@ item (FEAT_TRAINS, ef59_1, 1916) {
   variant_group: 1016;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_BANKER);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef59_1_subtype_text;
   default: switch_ef59_1_livery;
@@ -3094,7 +3307,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef55_subtype_text;
   default: switch_ef55_livery;
@@ -3187,7 +3408,15 @@ item (FEAT_TRAINS, ef56, 1019) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef56_subtype_text;
   default: switch_ef56_livery;
@@ -3232,7 +3461,14 @@ item (FEAT_TRAINS, ef59_2, 1919) {
   variant_group: 1019;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_BANKER);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef59_2_subtype_text;
   default: switch_ef59_2_livery;
@@ -3332,7 +3568,15 @@ item (FEAT_TRAINS, ef57, 1020) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef57_1_subtype_text;
   default: switch_ef57_1_livery;
@@ -3387,7 +3631,15 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   variant_group: 1020;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef57_2_subtype_text;
   default: switch_ef57_2_livery;
@@ -3545,7 +3797,7 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_IMPERIAL), string(STR_SUFFIX_BROWN_SILVER));
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXPRESS), string(STR_SUFFIX_BLUE));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE));
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_GREEN));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXP), string(STR_SUFFIX_ORANGE));
 	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXP), string(STR_SUFFIX_GREEN));
@@ -3585,7 +3837,18 @@ property {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef58_subtype_text;
   default: switch_ef58_livery;
@@ -3634,7 +3897,15 @@ property {
   variant_group: 14;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef58_old_subtype_text;
   default: switch_ef58_old_livery;
@@ -3680,10 +3951,17 @@ property {
   length: 8;
   running_cost_factor: 69;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  variant_group: 1021;
+  variant_group: 14;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef18_subtype_text;
   default: switch_ef18_livery;
@@ -3717,7 +3995,7 @@ spriteset(spriteset_ef60_yasuragi, "gfx/electric/ef60.png") {
 }
 
 spriteset(spriteset_ef60_1_brown_purchase, "gfx/electric/ef60.png") {
-	template_purchase(1, 256)
+	template_purchase(1, 288)
 }
 
 spriteset(spriteset_ef60_1_blue_purchase, "gfx/electric/ef60.png") {
@@ -3839,7 +4117,16 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_1_subtype_text;
   default: switch_ef60_1_livery;
@@ -3908,7 +4195,14 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_2_subtype_text;
   default: switch_ef60_2_livery;
@@ -3964,7 +4258,14 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_OPS_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef60_0_subtype_text;
   default: switch_ef60_0_livery;
@@ -4024,7 +4325,15 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   variant_group: 1030;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_BANKER);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef67_1_subtype_text;
   default: switch_ef67_1_livery;
@@ -4054,7 +4363,7 @@ spriteset(spriteset_ef63_blue_purchase, "gfx/ef63.png") {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef63_yeardep_livery, build_year) {
-	0..1968: spriteset_ef63_brown;
+	0..1964: spriteset_ef63_brown;
 	spriteset_ef63_blue;
 }
 
@@ -4076,7 +4385,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_subtype_text, cargo_subtype) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
-    0..1970: spriteset_ef63_brown_purchase;
+    0..1964: spriteset_ef63_brown_purchase;
     spriteset_ef63_blue_purchase;
     }
 
@@ -4107,7 +4416,16 @@ item (FEAT_TRAINS, ef63, 1040) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_EF63);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef63_subtype_text;
   default: switch_ef63_livery;
@@ -4274,7 +4592,18 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef64_0_subtype_text;
   default: switch_ef64_0_livery;
@@ -4367,7 +4696,18 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef64_1000_subtype_text;
   default: switch_ef64_1000_livery;
@@ -4582,7 +4922,15 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_0_subtype_text;
   default: switch_ef65_0_livery;
@@ -4617,7 +4965,7 @@ switch(FEAT_TRAINS, SELF, switch_ef65_500_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE_CREAM));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_GREEN));
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	8: return string(STR_REFIT_CC);
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -4656,7 +5004,16 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_500_subtype_text;
   default: switch_ef65_500_livery;
@@ -4736,7 +5093,17 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_4C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRW),
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_1000_subtype_text;
   default: switch_ef65_1000_livery;
@@ -4962,7 +5329,16 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_subtype_text;
   default: switch_ef66_livery;
@@ -5016,7 +5392,14 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_2_subtype_text;
   default: switch_ef66_2_livery;
@@ -5079,7 +5462,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef200_subtype_text;
   default: switch_ef200_livery;
@@ -5215,7 +5605,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef210_0_subtype_text;
   default: switch_ef210_0_livery;
@@ -5288,7 +5685,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef210_100_subtype_text;
   default: switch_ef210_100_livery;
@@ -5349,7 +5753,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef210_300_subtype_text;
   default: switch_ef210_300_livery;
@@ -5506,6 +5917,14 @@ property {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh10_subtype_text;
   default: switch_eh10_livery;
@@ -5592,6 +6011,14 @@ property {
   variant_group: 18;
   }
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh10_2_subtype_text;
   default: switch_eh10_2_livery;
@@ -5680,6 +6107,15 @@ property {
   variant_group: 18;
   }
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+						   string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh50_subtype_text;
   default: switch_eh50_livery;
@@ -5769,6 +6205,14 @@ property {
 
 
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh200_subtype_text;
   default: switch_eh200_livery;
@@ -5851,8 +6295,15 @@ item (FEAT_TRAINS, ed70, 1065) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_AC20),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+							string(STR_SUFFIX_JNR)
+							)
+						);  
+   cargo_capacity: return 0;
   default: switch_ed70_livery;
   cargo_subtype_text: switch_ed70_subtype_text;
   purchase: spriteset_ed70_purchase;
@@ -6067,7 +6518,7 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED));
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
 	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_WHISKERS));
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PANDA), string(STR_SUFFIX_RED_BLACK));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_CREAM), string(STR_SUFFIX_REFURB));
@@ -6101,8 +6552,17 @@ item (FEAT_TRAINS, ed75, 1070) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED75);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_GP),
+						string(STR_CONCAT_3C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRE),
+							string(STR_SUFFIX_JRF)
+							)
+						);  
+	cargo_capacity: return 0;
   cargo_subtype_text: switch_ed75_subtype_text;
   default: switch_ed75_livery;
   purchase: switch_ed75_yeardep_purchase;
@@ -6167,7 +6627,16 @@ item (FEAT_TRAINS, ed79, 1075) {
   variant_group: 1070;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED79);
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EF),
+						string(STR_CONCAT_3C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRF),
+							string(STR_SUFFIX_JRH)
+							)
+						);
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed79_subtype_text;
   default: switch_ed79_livery;
@@ -6224,8 +6693,16 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   variant_group: 1070;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED75);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_GP),
+						string(STR_CONCAT_2C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRE)
+							)
+						);  
+	cargo_capacity: return 0;
   cargo_subtype_text: switch_ed75_700_subtype_text;
   default: switch_ed75_700_livery;
   purchase: switch_ed75_700_yeardep_purchase;
@@ -6338,7 +6815,18 @@ item (FEAT_TRAINS, ed76, 1071) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EF),
+						string(STR_CONCAT_4C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRF),
+							string(STR_SUFFIX_JRK),
+							string(STR_SUFFIX_JRH)
+							)
+						);
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed76_subtype_text;
   default: switch_ed76_livery;
@@ -6396,7 +6884,15 @@ item (FEAT_TRAINS, ed500, 1090) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_PROTO),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   default: switch_ed500_livery;
   cargo_subtype_text: switch_ed500_subtype_text;
@@ -6461,7 +6957,15 @@ item (FEAT_TRAINS, ef30, 1015) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_GP),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JNR)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef30_subtype_text;
   default: switch_ef30_livery;
@@ -6552,7 +7056,15 @@ item (FEAT_TRAINS, ef70, 1045) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_AC20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JNR)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef70_subtype_text;
   default: switch_ef70_livery;
@@ -6631,7 +7143,15 @@ item (FEAT_TRAINS, ef80, 1080) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_EF),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JNR)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef80_subtype_text;
   default: switch_ef80_livery;
@@ -6826,7 +7346,19 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_EF),
+                      string(STR_CONCAT_5C, 
+						string(STR_SUFFIX_JNR),
+						string(STR_SUFFIX_JRF),
+						string(STR_SUFFIX_JRE),
+						string(STR_SUFFIX_JRW),
+						string(STR_SUFFIX_JRK)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef81_subtype_text;
   default: switch_ef81_livery;
@@ -6905,7 +7437,16 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_EF),
+                      string(STR_CONCAT_2C, 
+                    	string(STR_SUFFIX_JNR),
+						string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef81_300_subtype_text;
   default: switch_ef81_300_livery;
@@ -6960,7 +7501,15 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                    	string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef81_450_subtype_text;
   default: switch_ef81_450_livery;
@@ -7016,7 +7565,15 @@ item (FEAT_TRAINS, ef500, 1085) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_PROTO),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   default: switch_ef500_livery;
   cargo_subtype_text: switch_ef500_subtype_text;
@@ -7125,7 +7682,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_EF510);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef510_subtype_text;
   default: switch_ef510_livery;
@@ -7283,7 +7848,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text: string(STR_DESC_EH500);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh500_subtype_text;
   default: switch_eh500_front_livery;
@@ -7396,7 +7969,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 graphics { // graphics for engine
-	additional_text: string(STR_DESC_EH800);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS25),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_EF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
 	cargo_capacity: return 0;
 	cargo_subtype_text: switch_eh800_subtype_text;
 	default: switch_eh800_livery;
@@ -7550,7 +8131,15 @@ item (FEAT_TRAINS, dd13, 1207) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+						   string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_dd13_subtype_text;
   default: switch_dd13_livery;
@@ -7678,13 +8267,21 @@ property {
 	cargo_allow_refit: [PASS];
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	
+	engine_class: ENGINE_CLASS_DIESEL;
 	running_cost_factor: 85;
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_DD51);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_dd51_subtype_text;
   default: switch_dd51_livery;
@@ -8110,12 +8707,22 @@ property {
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 //	length: 6;
+	engine_class: ENGINE_CLASS_DIESEL;
 	running_cost_factor: 90;
 	}
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_DE10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SHG),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR),
+						   string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_de10_subtype_text;
   default: switch_de10_livery;
@@ -8179,12 +8786,20 @@ property {
 //	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	cost_factor: 40;
 	running_cost_factor: 82;
+	engine_class: ENGINE_CLASS_DIESEL;
 
 	}
 
 
   graphics { // graphics for engine
-
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_df50_subtype_text;
   default: switch_df50_livery;
@@ -8251,13 +8866,20 @@ property {
 	cargo_allow_refit: [PASS];
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	
+	engine_class: ENGINE_CLASS_DIESEL;
 	running_cost_factor: 100;
 	}
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_DE10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_df200_subtype_text;
   default: switch_df200_livery;
@@ -8324,13 +8946,20 @@ property {
 	cargo_allow_refit: [PASS];
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	
+	engine_class: ENGINE_CLASS_DIESEL;
 //	running_cost_factor: 115;
 	}
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_HD300);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_HYBRID),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_hd300_subtype_text;
   default: switch_hd300_livery;
@@ -15242,6 +15871,8 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 	}
 }
 spriteset(spriteset_hoki_8300_black, "gfx/freight/hoki_covered.png") {
@@ -16852,7 +17483,7 @@ property {
 	non_refittable_cargo_classes: 0; 
 	cargo_allow_refit: [VEHI]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	speed: 95 km/h;
+	speed: 85 km/h;
 	cost_factor: 30;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -22929,7 +23560,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		cargo_capacity: return 38;

@@ -72,7 +72,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   name: string(STR_NAME_JNR_EF15);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1947,1,1);
-  speed: 100 km/h;
+  speed: 75 km/h; //not 100
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
   power: 1900 kW;
@@ -91,7 +91,15 @@ item (FEAT_TRAINS, ef15, 1054) {
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef15_subtype_text;
   default: switch_ef15_livery;

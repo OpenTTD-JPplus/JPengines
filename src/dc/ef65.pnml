@@ -206,7 +206,15 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_0_subtype_text;
   default: switch_ef65_0_livery;
@@ -241,7 +249,7 @@ switch(FEAT_TRAINS, SELF, switch_ef65_500_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE_CREAM));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_GREEN));
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	8: return string(STR_REFIT_CC);
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -280,7 +288,16 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE)
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_500_subtype_text;
   default: switch_ef65_500_livery;
@@ -360,7 +377,17 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_JNR_EF66);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_4C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRW),
+                    )
+                  );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef65_1000_subtype_text;
   default: switch_ef65_1000_livery;
