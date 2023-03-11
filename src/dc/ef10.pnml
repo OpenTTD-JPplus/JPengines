@@ -84,11 +84,19 @@ property {
 
 
   graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef10_subtype_text;
   default: switch_ef10_livery;
   purchase: switch_ef10_yeardep_purchase;
-  additional_text:	string(STR_DESC_JGR_EHF);
   }
 }
 
@@ -155,7 +163,15 @@ item (FEAT_TRAINS, ef10_2, 1052) {
 	variant_group: 08;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EHF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef10_2_subtype_text;
   default: switch_ef10_2_livery;

@@ -423,7 +423,16 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_DE10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SHG),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR),
+						   string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_de10_subtype_text;
   default: switch_de10_livery;

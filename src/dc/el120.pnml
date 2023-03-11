@@ -54,7 +54,14 @@ item (FEAT_TRAINS, el120, 1106) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_DESC_EL120);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_el120_subtype_text;
   default: switch_el120_livery;

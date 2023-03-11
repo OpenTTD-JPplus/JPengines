@@ -64,7 +64,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_HD300);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_HYBRID),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_hd300_subtype_text;
   default: switch_hd300_livery;

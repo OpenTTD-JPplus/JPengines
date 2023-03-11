@@ -52,7 +52,15 @@ item (FEAT_TRAINS, ed19, 1013) {
   variant_group: 1050;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_ELF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed53_subtype_text;
   default: switch_ed53_livery;
@@ -87,7 +95,15 @@ item (FEAT_TRAINS, ed53, 1050) {
 
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_EEP);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed53_subtype_text;
   default: switch_ed53_livery;

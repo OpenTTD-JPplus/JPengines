@@ -56,7 +56,15 @@ item (FEAT_TRAINS, ab10, 1010) {
   running_cost_base: RUNNING_COST_DIESEL;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_AB10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_BATT),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
+
   cargo_subtype_text: switch_ab10_subtype_text;
   default: switch_ab10_livery;
   purchase: spriteset_ab10_purchase;
@@ -131,7 +139,16 @@ item (FEAT_TRAINS, eb10, 1011) {
   variant_group: 1010;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JGR_ELF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+
   cargo_subtype_text: switch_eb10_subtype_text;
   default: switch_eb10_livery;
   purchase: switch_eb10_purchase_yeardep;

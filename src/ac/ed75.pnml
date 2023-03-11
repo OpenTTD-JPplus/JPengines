@@ -207,7 +207,7 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED));
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
 	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_WHISKERS));
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PANDA), string(STR_SUFFIX_RED_BLACK));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_CREAM), string(STR_SUFFIX_REFURB));
@@ -241,8 +241,17 @@ item (FEAT_TRAINS, ed75, 1070) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED75);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_GP),
+						string(STR_CONCAT_3C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRE),
+							string(STR_SUFFIX_JRF)
+							)
+						);  
+	cargo_capacity: return 0;
   cargo_subtype_text: switch_ed75_subtype_text;
   default: switch_ed75_livery;
   purchase: switch_ed75_yeardep_purchase;
@@ -307,7 +316,16 @@ item (FEAT_TRAINS, ed79, 1075) {
   variant_group: 1070;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED79);
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EF),
+						string(STR_CONCAT_3C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRF),
+							string(STR_SUFFIX_JRH)
+							)
+						);
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed79_subtype_text;
   default: switch_ed79_livery;
@@ -364,8 +382,16 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   variant_group: 1070;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_ED75);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_GP),
+						string(STR_CONCAT_2C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRE)
+							)
+						);  
+	cargo_capacity: return 0;
   cargo_subtype_text: switch_ed75_700_subtype_text;
   default: switch_ed75_700_livery;
   purchase: switch_ed75_700_yeardep_purchase;

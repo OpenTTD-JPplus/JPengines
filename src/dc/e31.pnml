@@ -48,7 +48,16 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_SEIBU_E31);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_SEIBU),
+                           string(STR_SUFFIX_OIGAWA)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_seibu_e31_subtype_text;
   default: switch_seibu_e31_livery;

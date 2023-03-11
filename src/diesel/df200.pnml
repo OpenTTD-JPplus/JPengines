@@ -64,7 +64,14 @@ property {
 
 
   graphics { // graphics for engine
-//  additional_text:	string(STR_NAME_JNR_DE10);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_df200_subtype_text;
   default: switch_df200_livery;

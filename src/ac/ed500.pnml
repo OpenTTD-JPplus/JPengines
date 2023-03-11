@@ -49,7 +49,15 @@ item (FEAT_TRAINS, ed500, 1090) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_PROTO),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JRF)
+                    )
+                  );
+
   cargo_capacity: return 0;
   default: switch_ed500_livery;
   cargo_subtype_text: switch_ed500_subtype_text;

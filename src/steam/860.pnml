@@ -81,7 +81,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_860);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_SAKHALIN)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_jgr_860_subtype_text;
   default: switch_jgr_860_livery;

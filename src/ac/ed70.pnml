@@ -51,8 +51,15 @@ item (FEAT_TRAINS, ed70, 1065) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR);
-  cargo_capacity: return 0;
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_AC20),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+							string(STR_SUFFIX_JNR)
+							)
+						);  
+   cargo_capacity: return 0;
   default: switch_ed70_livery;
   cargo_subtype_text: switch_ed70_subtype_text;
   purchase: spriteset_ed70_purchase;

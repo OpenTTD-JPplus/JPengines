@@ -105,7 +105,18 @@ item (FEAT_TRAINS, ed76, 1071) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-//  additional_text:	string(STR_TEXT_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EF),
+						string(STR_CONCAT_4C, 
+							string(STR_SUFFIX_JNR),
+							string(STR_SUFFIX_JRF),
+							string(STR_SUFFIX_JRK),
+							string(STR_SUFFIX_JRH)
+							)
+						);
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed76_subtype_text;
   default: switch_ed76_livery;

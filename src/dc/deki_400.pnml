@@ -86,7 +86,16 @@ item (FEAT_TRAINS, deki_400, 1005) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_DEKI_400);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_AICHI),
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
+
   cargo_capacity: return 0;
   cargo_subtype_text: switch_deki_400_subtype_text;
   default: switch_deki_400_livery;

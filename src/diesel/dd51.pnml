@@ -125,7 +125,15 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_DD51);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_dd51_subtype_text;
   default: switch_dd51_livery;

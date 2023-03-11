@@ -100,7 +100,14 @@ item (FEAT_TRAINS, ed61, 1060) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed61_subtype_text;
   default: switch_ed61_livery;
@@ -172,7 +179,15 @@ item (FEAT_TRAINS, ed62, 1960) {
   variant_group: 1060;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_TEXT_JNR_JRF);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed62_subtype_text;
   default: switch_ed62_livery;
