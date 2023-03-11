@@ -46,6 +46,7 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, jr_ef200, 60) {
 
 property {
+	name: string(STR_NAME_EF200);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 

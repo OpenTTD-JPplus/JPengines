@@ -126,7 +126,7 @@ item (FEAT_TRAINS, eh10, 18) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EH10);
+  name: string(STR_NAME_EH10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1955,1,1);
   speed: 85 km/h;
@@ -168,7 +168,7 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_JNR_EH10);
+		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 
@@ -219,7 +219,7 @@ item (FEAT_TRAINS, eh10_2, 1081) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EH10_2);
+  name: string(STR_NAME_EH10_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1954,1,1);
   speed: 85 km/h;
@@ -262,7 +262,7 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_JNR_EH10);
+		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 
@@ -315,7 +315,7 @@ item (FEAT_TRAINS, eh50, 1082) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EH50);
+  name: string(STR_NAME_EH50);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1956,1,1);
   speed: 120 km/h;
@@ -359,7 +359,7 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_JNR_EH50);
+		name: string(STR_NAME_EH50);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 

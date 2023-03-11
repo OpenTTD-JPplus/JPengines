@@ -92,6 +92,7 @@ switch(FEAT_TRAINS, SELF, switch_ef510_purchase, current_year) {
 item (FEAT_TRAINS, jr_ef510, 105) {
 
 property {
+	name: string(STR_NAME_EF510);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 

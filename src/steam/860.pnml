@@ -57,7 +57,7 @@ item (FEAT_TRAINS, jgr_860, 920) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NAAN;
-  name: string(STR_NAME_JGR_860);
+  name: string(STR_NAME_860);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1893,1,1);
   speed: 70 km/h;

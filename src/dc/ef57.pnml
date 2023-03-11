@@ -70,7 +70,7 @@ item (FEAT_TRAINS, ef57, 1020) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF57);
+  name: string(STR_NAME_EF57);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1940,1,1);
   speed: 100 km/h;
@@ -132,7 +132,7 @@ item (FEAT_TRAINS, ef57_2, 1920) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF57_2);
+  name: string(STR_NAME_EF57_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1938,1,1);
   speed: 100 km/h;

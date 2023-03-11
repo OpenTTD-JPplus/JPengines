@@ -140,7 +140,7 @@ switch(FEAT_TRAINS, SELF, switch_eh500_articulated_part, extra_callback_info1) {
 item (FEAT_TRAINS, eh500, 67) {
 
 property {
-
+	name: string(STR_NAME_EH500);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 6;
@@ -171,7 +171,7 @@ item (FEAT_TRAINS, eh500_rear, 1067) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-//		name: string(STR_NAME_JNR_eh500);
+//		name: string(STR_NAME_eh500);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 

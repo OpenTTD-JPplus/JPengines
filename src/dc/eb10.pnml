@@ -35,7 +35,7 @@ item (FEAT_TRAINS, ab10, 1010) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NAAN;
-  name: string(STR_NAME_JNR_AB10);
+  name: string(STR_NAME_AB10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1927,1,1);
   speed: 40 km/h;
@@ -117,7 +117,7 @@ item (FEAT_TRAINS, eb10, 1011) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EB10);
+  name: string(STR_NAME_EB10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1931,1,1);
   speed: 40 km/h;

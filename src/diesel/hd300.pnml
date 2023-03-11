@@ -54,6 +54,7 @@ switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, hd300, 111) {
 
 property {
+	name: string(STR_NAME_HD300);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 

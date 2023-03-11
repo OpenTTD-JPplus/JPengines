@@ -27,7 +27,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_SEIBU_E31);
+  name: string(STR_NAME_E31);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1986,1,1);
   speed: 70 km/h;

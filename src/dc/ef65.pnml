@@ -182,7 +182,7 @@ item (FEAT_TRAINS, ef65_0, 24) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF65_1);
+  name: string(STR_NAME_EF65_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
   speed: 100 km/h;
@@ -263,7 +263,7 @@ item (FEAT_TRAINS, ef65_500, 1042) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF65_2);
+  name: string(STR_NAME_EF65_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
   speed: 115 km/h;
@@ -352,7 +352,7 @@ item (FEAT_TRAINS, ef65_1000, 1942) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF65_3);
+  name: string(STR_NAME_EF65_3);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
   speed: 115 km/h;
@@ -432,7 +432,7 @@ item (FEAT_TRAINS, ef67_100, 1924) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF67_2);
+  name: string(STR_NAME_EF67_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1990,1,1);
   speed: 100 km/h;

@@ -52,7 +52,7 @@ switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
 item (FEAT_TRAINS, eh200, 88) {
 
 property {
-
+	name: string(STR_NAME_EH200);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 
@@ -82,7 +82,7 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-//		name: string(STR_NAME_JNR_EH200);
+		name: string(STR_NAME_EH200);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 

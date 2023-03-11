@@ -51,7 +51,7 @@ item (FEAT_TRAINS, ef13_1, 103) {
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-//	name: string(STR_NAME_OPEN_HOPPER);
+	name: string(STR_NAME_EF13);
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
@@ -103,7 +103,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_JNR_EF13_2);
+  name: string(STR_NAME_EF13_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1957,1,1);
   speed: 75 km/h;
