@@ -24,80 +24,80 @@ STR_ERROR_JAPANSETTRAINS	:JapanSet 3 Trains
 STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
 
-STR_NAME_JGR_7100	:7100 1-C (steam)
-STR_NAME_JGR_7200	:7200 1-C (steam)
-STR_NAME_JGR_860	:860 1-B-1 (steam)
-STR_NAME_JGR_7050	:7050 C-1 (steam)
+STR_NAME_JGR_7100	:7100 1-C 
+STR_NAME_JGR_7200	:7200 1-C 
+STR_NAME_JGR_860	:860 1-B-1 
+STR_NAME_JGR_7050	:7050 C-1 
 
 
-STR_NAME_JNR_DD13	:DD13 (diesel)
-STR_NAME_JNR_DD16	:DD16 (diesel)
-STR_NAME_JNR_DD54	:DD54 (diesel)
-STR_NAME_JNR_AB10	:AB10 (battery)
-STR_NAME_JNR_EB10	:EB10 (electric)
-STR_NAME_JNR_EF10_2	:EF10 New type (electric)
-STR_NAME_JNR_EF13_2	:EF13 New type (electric)
-STR_NAME_JNR_EF15	:EF15 (electric)
-STR_NAME_JNR_EF30	:EF30 (electric)
+STR_NAME_JNR_DD13	:DD13 
+STR_NAME_JNR_DD16	:DD16 
+STR_NAME_JNR_DD54	:DD54 
+STR_NAME_JNR_AB10	:AB10 
+STR_NAME_JNR_EB10	:EB10 
+STR_NAME_JNR_EF10_2	:EF10 New type 
+STR_NAME_JNR_EF13_2	:EF13 New type 
+STR_NAME_JNR_EF15	:EF15 
+STR_NAME_JNR_EF30	:EF30 
 
-STR_NAME_JNR_EF70	:EF70 (electric)
-STR_NAME_JNR_EF80	:EF80 (electric)
-STR_NAME_JNR_ED12	:ED12 (electric)
-STR_NAME_JNR_ED16	:ED16 (electric)
-STR_NAME_JNR_ED19	:ED19 (electric)
-STR_NAME_JNR_ED50	:ED50 (electric)
-STR_NAME_JNR_ED53	:ED53 (electric)
-STR_NAME_JNR_ED54	:ED54 (electric)
-STR_NAME_JNR_ED60	:ED60 (electric)
-STR_NAME_JNR_ED61	:ED61 (electric)
-STR_NAME_JNR_ED62	:ED62 (electric)
-STR_NAME_JNR_ED70	:ED70 (electric)
-STR_NAME_JNR_ED75	:ED75 (electric)
-STR_NAME_JNR_ED75_2	:ED75-700 (electric)
-STR_NAME_JNR_ED76	:ED76 (electric)
-STR_NAME_JNR_ED79	:ED79 (electric)
-STR_NAME_JGR_EF50	:EF50 (electric)
-STR_NAME_JNR_EF53	:EF53 (electric)
-STR_NAME_JNR_EF56	:EF56 (electric)
-STR_NAME_JNR_EF57	:EF57 (electric)
-STR_NAME_JNR_EF57_2	:EF57 Prototype (electric)
-STR_NAME_JNR_EF58_2	:EF58 Old type (electric)
-STR_NAME_JNR_EF18	:EF18 (electric)
-STR_NAME_JNR_EF59	:EF59 Banker (electric)
-STR_NAME_JNR_EF60_0	:EF60 Protoype (electric)
-STR_NAME_JNR_EF60_1	:EF60 (electric)
-STR_NAME_JNR_EF60_2	:EF60 New type (electric)
-STR_NAME_JNR_EF63	:EF63 (electric)
-STR_NAME_JNR_EF64_1	:EF64-0 (electric)
-STR_NAME_JNR_EF64_2	:EF64-1000 (electric)
-STR_NAME_JNR_EF65_1	:EF65-0 (electric)
-STR_NAME_JNR_EF65_2	:EF65-500 (electric)
-STR_NAME_JNR_EF65_3	:EF65-1000 (electric)
-STR_NAME_JNR_EF66_1	:EF66-0 (electric)
-STR_NAME_JNR_EF66_2	:EF66-100 (electric)
-STR_NAME_JNR_EF67_1	:EF67-0 Banker (electric)
-STR_NAME_JNR_EF67_2	:EF67-100 Banker (electric)
-STR_NAME_JNR_EF81	:EF81 (electric)
-STR_NAME_JNR_EF81_1	:EF81-300 (electric)
-STR_NAME_JNR_EF81_2	:EF81-450 (electric)
-STR_NAME_JNR_EH10	:EH10 (electric)
-STR_NAME_JNR_EH10_2	:EH10 Prototype (electric)
-STR_NAME_JNR_EH50	:EH50 (electric)
+STR_NAME_JNR_EF70	:EF70 
+STR_NAME_JNR_EF80	:EF80 
+STR_NAME_JNR_ED12	:ED12 
+STR_NAME_JNR_ED16	:ED16 
+STR_NAME_JNR_ED19	:ED19 
+STR_NAME_JNR_ED50	:ED50 
+STR_NAME_JNR_ED53	:ED53 
+STR_NAME_JNR_ED54	:ED54 
+STR_NAME_JNR_ED60	:ED60 
+STR_NAME_JNR_ED61	:ED61 
+STR_NAME_JNR_ED62	:ED62 
+STR_NAME_JNR_ED70	:ED70 
+STR_NAME_JNR_ED75	:ED75 
+STR_NAME_JNR_ED75_2	:ED75-700 
+STR_NAME_JNR_ED76	:ED76 
+STR_NAME_JNR_ED79	:ED79 
+STR_NAME_JGR_EF50	:EF50 
+STR_NAME_JNR_EF53	:EF53 
+STR_NAME_JNR_EF56	:EF56 
+STR_NAME_JNR_EF57	:EF57 
+STR_NAME_JNR_EF57_2	:EF57 Prototype 
+STR_NAME_JNR_EF58_2	:EF58 Old type 
+STR_NAME_JNR_EF18	:EF18 
+STR_NAME_JNR_EF59	:EF59 Banker 
+STR_NAME_JNR_EF60_0	:EF60 Protoype 
+STR_NAME_JNR_EF60_1	:EF60 
+STR_NAME_JNR_EF60_2	:EF60 New type 
+STR_NAME_JNR_EF63	:EF63 
+STR_NAME_JNR_EF64_1	:EF64-0 
+STR_NAME_JNR_EF64_2	:EF64-1000 
+STR_NAME_JNR_EF65_1	:EF65-0 
+STR_NAME_JNR_EF65_2	:EF65-500 
+STR_NAME_JNR_EF65_3	:EF65-1000 
+STR_NAME_JNR_EF66_1	:EF66-0 
+STR_NAME_JNR_EF66_2	:EF66-100 
+STR_NAME_JNR_EF67_1	:EF67-0 Banker 
+STR_NAME_JNR_EF67_2	:EF67-100 Banker 
+STR_NAME_JNR_EF81	:EF81 
+STR_NAME_JNR_EF81_1	:EF81-300 
+STR_NAME_JNR_EF81_2	:EF81-450 
+STR_NAME_JNR_EH10	:EH10 
+STR_NAME_JNR_EH10_2	:EH10 Prototype 
+STR_NAME_JNR_EH50	:EH50 
 
-STR_NAME_JR_DF200	:DF200 (diesel)
-STR_NAME_JR_EF210	:EF210-0 (electric)
-STR_NAME_JR_EF210_1	:EF210-100 (electric)
-STR_NAME_JR_EF210_2	:EF210-300 Banker (electric)
-STR_NAME_JR_EF500	:EF500 (electric)
-STR_NAME_JR_ED500	:ED500 (electric)
-STR_NAME_JR_EH800	:EH800 (electric)
-STR_NAME_JR_M250	:M250 Cargo EMU (electric)
+STR_NAME_JR_DF200	:DF200 
+STR_NAME_JR_EF210	:EF210-0 
+STR_NAME_JR_EF210_1	:EF210-100 
+STR_NAME_JR_EF210_2	:EF210-300 Banker 
+STR_NAME_JR_EF500	:EF500 
+STR_NAME_JR_ED500	:ED500 
+STR_NAME_JR_EH800	:EH800 
+STR_NAME_JR_M250	:M250 Cargo EMU 
 
-STR_NAME_DEKI_400	:DeKi 400 (electric)
-STR_NAME_EL120		:EL120 (electric)
-STR_NAME_SEIBU_E851	:E851 (electric)
-STR_NAME_SEIBU_E31	:E31 (electric)
-STR_NAME_SEIBU_E51	:E51 (electric)
+STR_NAME_DEKI_400	:DeKi 400 
+STR_NAME_EL120		:EL120 
+STR_NAME_SEIBU_E851	:E851 
+STR_NAME_SEIBU_E31	:E31 
+STR_NAME_SEIBU_E51	:E51 
 
 STR_NAME_PAX_HA4995		:HA 4995 Passenger Coach
 STR_NAME_PAX_FUKOHA7945	:FUKOHA 7945 Passenger Coach
@@ -723,89 +723,8 @@ STR_DESC_USAGE_PROTO	:{BLACK}Usage: {SILVER}Prototype{}
 
 
 
-
-
-
-# delete all below v
-
-
-
-
-STR_DESC_OPS_JGR		:{BLACK}Operators: {WHITE}JGR{}
-STR_DESC_OPS_JGR_JNR	:{BLACK}Operators: {WHITE}JGR / JNR{}
-STR_DESC_OPS_JNR		:{BLACK}Operators: {WHITE}JNR{}
-STR_DESC_OPS_JNR_JRF	:{BLACK}Operators: {WHITE}JNR / JR Freight{}
-STR_DESC_OPS_JNR_JRE	:{BLACK}Operators: {WHITE}JNR / JR East{}
-STR_DESC_OPS_JNR_JRF_JRE	:{BLACK}Operators: {WHITE}JNR / JR Freight / JR East {}
-STR_DESC_OPS_JNR_JRF_JRH	:{BLACK}Operators: {WHITE}JNR / JR Freight / JR Hokkaido{}
-
-STR_DESC_OPS_JRF		:{BLACK}Operators: {WHITE}JR Freight{}
-STR_DESC_OPS_JRE_JRF		:{BLACK}Operators: {WHITE}JR East / JR Freight{}
-
-STR_DESC_OPS_SEIBU		:{BLACK}Operators: {WHITE}Seibu Railway{}
-STR_DESC_OPS_SEIBU_O    :{BLACK}Operators: {WHITE}Seibu Railway / Ōigawa Railway{}
-STR_DESC_OPS_AICHI_M	:{BLACK}Operators: {WHITE}Aichi Railway / Meitetsu{}
-STR_DESC_OPS_HCC		:{BLACK}Operators: {WHITE}Hokkaido Coal Company / JGR{}
-STR_DESC_OPS_JGR_S		:{BLACK}Operators: {WHITE}JGR / Sakhalin Railway{}
-STR_DESC_OPS_YAWATA		:{BLACK}Operators: {WHITE}Yawata Works / Nippon Steel{}
-
-
-
-# additional text specific
-
-STR_DESC_JNR_7100  :{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Usage: {SILVER}General Purpose{}{}{BLACK}Operators: {WHITE}Hokkaido Coal Company / JGR{}
-
-STR_DESC_JNR_860  :{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Usage: {SILVER}Light Passengers{}{}{BLACK}Operators: {WHITE}JGR / Sakhalin Railway{}
-
-STR_DESC_AB10		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{GOLD} Battery{}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
-
-
-
-
-STR_DESC_EF510		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}{BLACK}Usage: {SILVER}Express Passengers / Heavy Freight{}{}{BLACK}Operators: {WHITE}JR East / JR Freight{}
-
-STR_DESC_EH500		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JR Freight{}
-
-STR_DESC_EH800		:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV) {WHITE}{}{BLACK}Usage: {SILVER}Express Passengers / Heavy Freight{}{}{BLACK}Operators: {WHITE}JR Freight{}
-
-
-
-
-
-STR_DESC_DEKI_400	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Aichi Railway / Meitetsu{}
-
-STR_DESC_SEIBU_E851	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway{}
-
-STR_DESC_SEIBU_E31	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}Seibu Railway / Ōigawa Railway{}
-
-
-#additional text generic OLD
-
-STR_DESC_JGR_ELF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Light Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
-
-STR_DESC_JGR_EEP	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Express Passengers{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
-
-STR_DESC_JGR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JGR / JNR{}
-
-STR_DESC_JNR_EHF	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Heavy Freight{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
-
-STR_DESC_JNR_BANKER	:{BLACK}Gauge:{GOLD} Narrow/Kyōki (3ft6in/1,067mm){}{BLACK}Electric system:{BLUE} DC (1500V){}{BLACK}Usage: {SILVER}Banker{}{}{BLACK}Operators: {WHITE}JNR / JR Freight{}
-
 STR_DESC_BRAKE		:{BLACK}Brake Van Speed Boost: {GREEN}Attach behind slower wagons to increase top speed
 
 STR_DESC_BRAKE_NA	:{BLACK}Brake Van Speed Boost: {RED}Not Available
-
-
-STR_TEXT_JGR_JNR	:Operators: {GOLD}JGR/JNR
-STR_TEXT_JNR		:Operators: {GOLD}JNR
-STR_TEXT_JNR_JRF	:Operators: {GOLD}JNR, JR Freight
-STR_TEXT_JNR_DD51	:Operators: {GOLD}JNR, JR East/West/Freight/Hokkaido
-STR_TEXT_JNR_EF63	:Operators: {GOLD}JNR/JR East/JR Freight
-STR_TEXT_JNR_ED75	:Operators: {GOLD}JNR/JR East/JR Freight
-STR_TEXT_JNR_ED79	:Operators: {GOLD}JR Freight/JR Hokkaido
-
-
-
-
 
 

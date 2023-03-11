@@ -3223,7 +3223,7 @@ item (FEAT_TRAINS, ef59_1, 1916) {
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JNR)
                     )
                   );
@@ -3465,7 +3465,7 @@ item (FEAT_TRAINS, ef59_2, 1919) {
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JNR)
                     )
                   );
@@ -5173,7 +5173,14 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_DESC_JNR_BANKER);
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  ); 
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef67_100_subtype_text;
   default: switch_ef67_100_livery;

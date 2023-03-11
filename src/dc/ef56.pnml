@@ -141,7 +141,7 @@ item (FEAT_TRAINS, ef59_2, 1919) {
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JNR)
                     )
                   );
