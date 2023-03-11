@@ -50,5 +50,7 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
 	}
 }

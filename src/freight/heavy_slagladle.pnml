@@ -78,7 +78,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		cargo_capacity: return 38;

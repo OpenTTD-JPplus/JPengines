@@ -417,6 +417,7 @@ property {
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 //	length: 6;
+	engine_class: ENGINE_CLASS_DIESEL;
 	running_cost_factor: 90;
 	}
 
