@@ -568,8 +568,7 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		additional_text:	string(STR_CONCAT_3S, 
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_EXP),
-								string(STR_CONCAT_2C, 
-									string(STR_SUFFIX_JGR),
+								string(STR_CONCAT_1C, 
 									string(STR_SUFFIX_JNR)
 								)
 							);
