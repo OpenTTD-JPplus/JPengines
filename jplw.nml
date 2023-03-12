@@ -9427,6 +9427,15 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LOC),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 36;
 		default: switch_pax_1870_livery;
 		purchase: switch_pax_1870_yeardep_purchase;
@@ -9479,6 +9488,15 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 36;
 		default: switch_mail_1870_livery;
 		purchase: spriteset_mail_1870_jgr_purchase;
@@ -9724,6 +9742,16 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 50;
 		default: switch_pax_1880_livery;
 		purchase: switch_pax_1880_yeardep_purchase;
@@ -9799,6 +9827,16 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 50;
 		default: switch_mail_1880_livery;
 		purchase: switch_mail_1880_yeardep_purchase;
@@ -9880,7 +9918,9 @@ spriteset(spriteset_mail_1910_17m_jnr_purchase, "gfx/paxmail/paxmail-1910-17m.pn
 	template_purchase(89, 480)
 }
 
-//purchase switches
+//don't need jnr
+
+/* 
 switch(FEAT_TRAINS, SELF, switch_pax_1910_yeardep_purchase, current_year) {
 	0..1949: spriteset_pax_1910_17m_jgr_purchase;
 	spriteset_pax_1910_17m_jnr_purchase;
@@ -9890,7 +9930,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_yeardep_purchase, current_year) {
 	0..1949: spriteset_mail_1910_17m_jgr_purchase;
 	spriteset_mail_1910_17m_jnr_purchase;
 }
-
+*/
 
 
 	
@@ -10057,9 +10097,17 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+
 		cargo_capacity: return 75;
 		default: switch_pax_1910_livery;
-		purchase: switch_pax_1910_yeardep_purchase;
+		purchase: spriteset_pax_1910_17m_jgr_purchase;
 		cargo_subtype_text: switch_pax_1910_subtype_text;
 	}
 }
@@ -10137,9 +10185,17 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+
 		cargo_capacity: return 75;
 		default: switch_mail_1910_livery;
-		purchase: switch_mail_1910_yeardep_purchase;
+		purchase: spriteset_mail_1910_17m_jgr_purchase;
 		cargo_subtype_text: switch_mail_1910_subtype_text;
 	}
 }
@@ -10455,6 +10511,15 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_suha_32;
 		purchase: switch_suha_32_yeardep_purchase;
@@ -10527,6 +10592,15 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 90;
 		default: stack_mani_31;
 		purchase: switch_mani_31_yeardep_purchase;
@@ -11100,6 +11174,14 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_suha43;
 		purchase: switch_pax_suha43_purchase;
@@ -11417,6 +11499,15 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LOC),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_oha35;
 		purchase: switch_pax_oha35_purchase;
@@ -11646,6 +11737,14 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		variant_group: 1318;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LEX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 70;
 		default: switch_pax_tokaido_livery;
 		purchase: spriteset_pax_tokaido_jnr_purchase;
@@ -11835,6 +11934,18 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		variant_group: 1320;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_JOY),
+								string(STR_CONCAT_5C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRC),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		cargo_capacity: return 70;
 		default: switch_joyful_12_series_livery;
 		purchase: spriteset_joyful_12_series_set_purchase;
@@ -11985,6 +12096,19 @@ item (FEAT_TRAINS, pax_12_series, 1320) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_6C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRC),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRS),
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		cargo_capacity: return 85;
 		default: switch_pax_12_series_livery;
 		purchase: switch_pax_12_series_purchase;
@@ -12209,6 +12333,18 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_5C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRH),
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		cargo_capacity: return 70;
 		default: switch_pax_24_series_livery;
 		purchase: switch_pax_24_series_yeardep_purchase;
@@ -12382,6 +12518,19 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LOC),
+								string(STR_CONCAT_6C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRS),
+									string(STR_SUFFIX_JRK),
+									string(STR_SUFFIX_PRIVATE),
+								)
+							);
+
 		cargo_capacity: return 100;
 		default: stack_pax_50_series;
 		purchase: switch_pax_50_series_purchase;
@@ -12570,6 +12719,15 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		variant_group: 1340;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRH)
+								)
+							);
+
 		cargo_capacity: return 90;
 		default: switch_pax_50_5000_series_livery;
 		purchase: spriteset_pax_50_5000_jr_purchase;
@@ -12641,7 +12799,14 @@ item (FEAT_TRAINS, pax_26_series, 1346) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 100;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRE)
+								)
+							);
+
 		default: switch_pax_26_series_end;
 		purchase: spriteset_pax_26_series_purchase;
 
@@ -12732,7 +12897,14 @@ item (FEAT_TRAINS, pax_77_series, 1347) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 100;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		default: switch_pax_77_series_end;
 		purchase: spriteset_pax_77_series_purchase;
 
@@ -13345,6 +13517,15 @@ item (FEAT_TRAINS, pax_10series, 1322) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_10series;
 		purchase: switch_pax_10series_purchase;
@@ -13392,7 +13573,14 @@ item (FEAT_TRAINS, mail_mani_30, 1380) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_VAL),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: spriteset_mani_30;
 		purchase: spriteset_mani_30_purchase;
 		
@@ -13517,7 +13705,14 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_VAL),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: stack_mail_mani34;
 		purchase: switch_mani34_purchase_yeardep;
 		cargo_subtype_text: switch_mani34_subtype_text;
@@ -13616,7 +13811,15 @@ item (FEAT_TRAINS, mail_mani_44, 1390) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRC)
+								)
+							);
+
 		default: switch_mani_44_loadstack;
 		purchase: switch_mani_44_purchase_yeardep;
 		cargo_subtype_text: switch_mani_44_subtype_text;
@@ -13664,7 +13867,15 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JR)
+								)
+							);
+
 		default: spriteset_mani_50;
 		purchase: spriteset_mani_50_purchase;
 		
@@ -13762,7 +13973,14 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: switch_oyu10_livery;
 		purchase: switch_oyu10_purchase_yeardep;
 		cargo_subtype_text: switch_oyu10_subtype_text;
@@ -13810,7 +14028,14 @@ item (FEAT_TRAINS, mail_suyu_15, 1360) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: spriteset_suyu_15;
 		purchase: spriteset_suyu_15_purchase;
 		
@@ -13971,7 +14196,14 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: stack_mail_suyu42;
 		purchase: switch_suyu42_purchase_yeardep;
 		cargo_subtype_text: switch_suyu42_subtype_text;
@@ -14102,7 +14334,15 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
 		default: switch_waki_8000_loadstack;
 		purchase: switch_waki_8000_purchase_yeardep;
 		cargo_subtype_text: switch_waki_8000_subtype_text;

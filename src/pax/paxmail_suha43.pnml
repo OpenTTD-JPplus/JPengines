@@ -565,6 +565,14 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_suha43;
 		purchase: switch_pax_suha43_purchase;

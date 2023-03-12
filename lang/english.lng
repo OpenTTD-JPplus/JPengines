@@ -171,6 +171,7 @@ STR_CONCAT_2C	:{BLACK}Operators: {STRING} /{STRING}
 STR_CONCAT_3C	:{BLACK}Operators: {STRING} /{STRING} /{STRING}
 STR_CONCAT_4C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING}
 STR_CONCAT_5C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING}
+STR_CONCAT_6C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING} /{STRING}
 
 #################
 #PAXMAIL  REFITS#
@@ -427,6 +428,7 @@ STR_SUFFIX_JRF			:{WHITE} JR Freight
 STR_SUFFIX_JRE			:{WHITE} JR East
 STR_SUFFIX_JRC			:{WHITE} JR Central
 STR_SUFFIX_JRW			:{WHITE} JR West
+STR_SUFFIX_JRS			:{WHITE} JR Shikoku
 STR_SUFFIX_JRK			:{WHITE} JR Kyushu
 STR_SUFFIX_JRH			:{WHITE} JR Hokkaido
 STR_SUFFIX_JR			:{WHITE} JR Group
@@ -743,6 +745,19 @@ STR_DESC_USAGE_EF		:{BLACK}Usage: {SILVER}Express Passenger / Heavy Freight{}
 STR_DESC_USAGE_FF		:{BLACK}Usage: {SILVER}Express Passenger / Fast Freight{}
 STR_DESC_USAGE_BANK		:{BLACK}Usage: {SILVER}Banker / Pusher{}
 STR_DESC_USAGE_PROTO	:{BLACK}Usage: {SILVER}Prototype{}
+
+STR_DESC_USAGE_PAX_LOC	:{BLACK}Usage: {SILVER}Local Trains{}
+STR_DESC_USAGE_PAX_EXP	:{BLACK}Usage: {SILVER}Local / Express Trains{}
+STR_DESC_USAGE_PAX_SLP	:{BLACK}Usage: {SILVER}Express / Night Trains{}
+STR_DESC_USAGE_PAX_LEX	:{BLACK}Usage: {SILVER}Luxury Express{}
+STR_DESC_USAGE_PAX_LUX	:{BLACK}Usage: {SILVER}Luxury Sleeper{}
+STR_DESC_USAGE_PAX_JOY	:{BLACK}Usage: {SILVER}Luxury Charters / Excursions{}
+
+STR_DESC_USAGE_MAIL_LUG	:{BLACK}Usage: {SILVER}Luggage / Mail{}
+STR_DESC_USAGE_MAIL_RPO	:{BLACK}Usage: {SILVER}Travelling Post Office{}
+STR_DESC_USAGE_MAIL_EXP	:{BLACK}Usage: {SILVER}Luggage / Mail /  Express Cargo{}
+STR_DESC_USAGE_MAIL_EXF	:{BLACK}Usage: {SILVER}Mail / Express Cargo{}
+STR_DESC_USAGE_MAIL_VAL	:{BLACK}Usage: {SILVER}Valuables / Express Cargo{}
 
 
 

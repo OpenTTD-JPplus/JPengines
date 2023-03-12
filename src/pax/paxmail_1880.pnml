@@ -237,6 +237,16 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 50;
 		default: switch_pax_1880_livery;
 		purchase: switch_pax_1880_yeardep_purchase;
@@ -312,6 +322,16 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_HCC),
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		cargo_capacity: return 50;
 		default: switch_mail_1880_livery;
 		purchase: switch_mail_1880_yeardep_purchase;

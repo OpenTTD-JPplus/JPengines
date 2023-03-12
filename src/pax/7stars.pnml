@@ -83,7 +83,14 @@ item (FEAT_TRAINS, pax_77_series, 1347) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 100;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		default: switch_pax_77_series_end;
 		purchase: spriteset_pax_77_series_purchase;
 

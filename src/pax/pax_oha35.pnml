@@ -308,6 +308,15 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LOC),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_oha35;
 		purchase: switch_pax_oha35_purchase;

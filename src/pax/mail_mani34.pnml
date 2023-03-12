@@ -117,7 +117,14 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_VAL),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: stack_mail_mani34;
 		purchase: switch_mani34_purchase_yeardep;
 		cargo_subtype_text: switch_mani34_subtype_text;

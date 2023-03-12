@@ -605,6 +605,15 @@ item (FEAT_TRAINS, pax_10series, 1322) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_pax_10series;
 		purchase: switch_pax_10series_purchase;

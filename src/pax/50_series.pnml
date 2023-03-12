@@ -165,6 +165,19 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LOC),
+								string(STR_CONCAT_6C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRS),
+									string(STR_SUFFIX_JRK),
+									string(STR_SUFFIX_PRIVATE),
+								)
+							);
+
 		cargo_capacity: return 100;
 		default: stack_pax_50_series;
 		purchase: switch_pax_50_series_purchase;
