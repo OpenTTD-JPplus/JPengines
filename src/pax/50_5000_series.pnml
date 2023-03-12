@@ -179,6 +179,15 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		variant_group: 1340;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRH)
+								)
+							);
+
 		cargo_capacity: return 90;
 		default: switch_pax_50_5000_series_livery;
 		purchase: spriteset_pax_50_5000_jr_purchase;

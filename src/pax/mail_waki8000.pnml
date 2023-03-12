@@ -123,7 +123,15 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
 		default: switch_waki_8000_loadstack;
 		purchase: switch_waki_8000_purchase_yeardep;
 		cargo_subtype_text: switch_waki_8000_subtype_text;

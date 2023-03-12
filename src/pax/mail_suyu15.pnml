@@ -39,7 +39,14 @@ item (FEAT_TRAINS, mail_suyu_15, 1360) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: spriteset_suyu_15;
 		purchase: spriteset_suyu_15_purchase;
 		

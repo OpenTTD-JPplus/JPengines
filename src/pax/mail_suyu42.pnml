@@ -153,7 +153,14 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-//		cargo_capacity: return 75;
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		default: stack_mail_suyu42;
 		purchase: switch_suyu42_purchase_yeardep;
 		cargo_subtype_text: switch_suyu42_subtype_text;

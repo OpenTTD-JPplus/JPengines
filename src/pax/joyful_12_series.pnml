@@ -157,6 +157,18 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		variant_group: 1320;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_JOY),
+								string(STR_CONCAT_5C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRC),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		cargo_capacity: return 70;
 		default: switch_joyful_12_series_livery;
 		purchase: spriteset_joyful_12_series_set_purchase;

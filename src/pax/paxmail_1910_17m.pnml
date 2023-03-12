@@ -251,6 +251,14 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+
 		cargo_capacity: return 75;
 		default: switch_pax_1910_livery;
 		purchase: spriteset_pax_1910_17m_jgr_purchase;
@@ -331,6 +339,14 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+
 		cargo_capacity: return 75;
 		default: switch_mail_1910_livery;
 		purchase: spriteset_mail_1910_17m_jgr_purchase;

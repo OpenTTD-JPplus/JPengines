@@ -310,6 +310,15 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 80;
 		default: stack_suha_32;
 		purchase: switch_suha_32_yeardep_purchase;
@@ -382,6 +391,15 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_RPO),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		cargo_capacity: return 90;
 		default: stack_mani_31;
 		purchase: switch_mani_31_yeardep_purchase;

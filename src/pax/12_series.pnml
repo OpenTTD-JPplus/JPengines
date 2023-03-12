@@ -141,6 +141,19 @@ item (FEAT_TRAINS, pax_12_series, 1320) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_6C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRC),
+									string(STR_SUFFIX_JRW),
+									string(STR_SUFFIX_JRS),
+									string(STR_SUFFIX_JRK)
+								)
+							);
+
 		cargo_capacity: return 85;
 		default: switch_pax_12_series_livery;
 		purchase: switch_pax_12_series_purchase;
