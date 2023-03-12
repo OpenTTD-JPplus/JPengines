@@ -72,7 +72,9 @@ spriteset(spriteset_mail_1910_17m_jnr_purchase, "gfx/paxmail/paxmail-1910-17m.pn
 	template_purchase(89, 480)
 }
 
-//purchase switches
+//don't need jnr
+
+/* 
 switch(FEAT_TRAINS, SELF, switch_pax_1910_yeardep_purchase, current_year) {
 	0..1949: spriteset_pax_1910_17m_jgr_purchase;
 	spriteset_pax_1910_17m_jnr_purchase;
@@ -82,7 +84,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_yeardep_purchase, current_year) {
 	0..1949: spriteset_mail_1910_17m_jgr_purchase;
 	spriteset_mail_1910_17m_jnr_purchase;
 }
-
+*/
 
 
 	
@@ -251,7 +253,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 	graphics {
 		cargo_capacity: return 75;
 		default: switch_pax_1910_livery;
-		purchase: switch_pax_1910_yeardep_purchase;
+		purchase: spriteset_pax_1910_17m_jgr_purchase;
 		cargo_subtype_text: switch_pax_1910_subtype_text;
 	}
 }
@@ -331,7 +333,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	graphics {
 		cargo_capacity: return 75;
 		default: switch_mail_1910_livery;
-		purchase: switch_mail_1910_yeardep_purchase;
+		purchase: spriteset_mail_1910_17m_jgr_purchase;
 		cargo_subtype_text: switch_mail_1910_subtype_text;
 	}
 }
