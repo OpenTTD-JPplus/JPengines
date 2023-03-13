@@ -81,9 +81,18 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+
 		cargo_capacity: return 38;
 		default: switch_slag_ladle_yeardep;
 		purchase: switch_slag_ladle_purchase;
-		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }

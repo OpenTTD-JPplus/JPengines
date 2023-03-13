@@ -22622,6 +22622,15 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
 		cargo_capacity: return 42;
@@ -23813,10 +23822,19 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+
 		cargo_capacity: return 38;
 		default: switch_slag_ladle_yeardep;
 		purchase: switch_slag_ladle_purchase;
-		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 spriteset(spriteset_torpedo_old_front, "gfx/freight/steel_wagons.png") {
@@ -23961,11 +23979,20 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+
 		cargo_capacity: return 1;
 		default: switch_torpedo_front_yeardep;
 		purchase: switch_torpedo_purchase;
 		articulated_part: switch_torpedo_articulated_part;
-		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 spriteset(spriteset_shiki_800_black_front, "gfx/freight/superheavy.png") {
@@ -24170,12 +24197,21 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_HVY),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_NIPPON),
+									string(STR_SUFFIX_TOSHIBA)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+
 		cargo_capacity: return 155;
 		default: switch_shiki_800_front_livery;
 		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }
 

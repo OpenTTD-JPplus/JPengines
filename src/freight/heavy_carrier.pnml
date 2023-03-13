@@ -200,11 +200,20 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_HVY),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_NIPPON),
+									string(STR_SUFFIX_TOSHIBA)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+
 		cargo_capacity: return 155;
 		default: switch_shiki_800_front_livery;
 		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE_NA);
 	}
 }

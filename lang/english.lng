@@ -166,12 +166,12 @@ STR_CONCAT_4	:{STRING} {STRING} {STRING} {STRING}
 STR_CONCAT_3S	:{STRING}{STRING}{STRING}
 STR_CONCAT_4S	:{STRING}{STRING}{STRING}{STRING}
 
-STR_CONCAT_1C	:{BLACK}Operators: {STRING}
-STR_CONCAT_2C	:{BLACK}Operators: {STRING} /{STRING}
-STR_CONCAT_3C	:{BLACK}Operators: {STRING} /{STRING} /{STRING}
-STR_CONCAT_4C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING}
-STR_CONCAT_5C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING}
-STR_CONCAT_6C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING} /{STRING}
+STR_CONCAT_1C	:{BLACK}Operators: {STRING}{}
+STR_CONCAT_2C	:{BLACK}Operators: {STRING} /{STRING}{}
+STR_CONCAT_3C	:{BLACK}Operators: {STRING} /{STRING} /{STRING}{}
+STR_CONCAT_4C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING}{}
+STR_CONCAT_5C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING}{}
+STR_CONCAT_6C	:{BLACK}Operators: {STRING} /{STRING} /{STRING} /{STRING} /{STRING} /{STRING}{}
 
 #################
 #PAXMAIL  REFITS#
@@ -441,7 +441,9 @@ STR_SUFFIX_SEIBU		:{WHITE} Seibu Railway
 STR_SUFFIX_SAKHALIN		:{WHITE} Sakhalin Railway
 STR_SUFFIX_PRIVATE		:{WHITE} Various Private Operators
 
-
+STR_SUFFIX_NIPPON       :{WHITE} Nippon Express
+STR_SUFFIX_TOSHIBA      :{WHITE} Toshiba Logistics
+STR_SUFFIX_YAWATA       :{WHITE} Yawata Works / Nippon Steel
 
 #####################
 #NEW MODULAR STRINGS#
@@ -759,10 +761,11 @@ STR_DESC_USAGE_MAIL_EXP	:{BLACK}Usage: {SILVER}Luggage / Mail /  Express Cargo{}
 STR_DESC_USAGE_MAIL_EXF	:{BLACK}Usage: {SILVER}Mail / Express Cargo{}
 STR_DESC_USAGE_MAIL_VAL	:{BLACK}Usage: {SILVER}Valuables / Express Cargo{}
 
+STR_DESC_USAGE_FRT_STEL	:{BLACK}Usage: {SILVER}Steelworks Transport{}
+STR_DESC_USAGE_FRT_HVY	:{BLACK}Usage: {SILVER}Oversized Heavy Cargo{}
 
+STR_DESC_BRAKE		:{BLACK}Usage: {SILVER}Brake Van - {GREEN}Attach behind slower freight wagons to increase speed limit{}
 
-STR_DESC_BRAKE		:{BLACK}Brake Van Speed Boost: {GREEN}Attach behind slower wagons to increase top speed
-
-STR_DESC_BRAKE_NA	:{BLACK}Brake Van Speed Boost: {RED}Not Available
+STR_DESC_BRAKE_NA	:{BLACK}Brake Van Speed Boost: {RED}Not Available{}
 
 
