@@ -132,9 +132,9 @@ sort(FEAT_TRAINS, [
 //electrics DC new
 1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
-1065, 1070, 1970, 1075, 1071, 1045, 
+1065, 1070, 1970, 1075, 1071, 1072, 1972, 1946, 1045, 
 //electrics MS 
-1015, 1080, 55, 1083, 1983, 1090, 1085, 105, 67, 1095, 
+1915, 1015, 1080, 55, 1083, 1983, 1090, 1085, 105, 1098, 67, 1097, 1095, 
 //cargo MU
 // 77,
 
@@ -4550,12 +4550,12 @@ switch(FEAT_TRAINS, SELF, switch_ef64_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef64_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_REFIT_JRF_REFIT), string(STR_SUFFIX_BLUE));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_REFIT_EUROLINER), string(STR_SUFFIX_BLUE_WHITE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC), string(STR_SUFFIX_EUROLINER), string(STR_SUFFIX_BLUE_WHITE));
+	6: return string(STR_REFIT_CC);
 	return CB_RESULT_NO_TEXT;
 	}
 
@@ -4655,13 +4655,13 @@ switch(FEAT_TRAINS, SELF, switch_ef64_1000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef64_1000_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JR_LOGO), string(STR_SUFFIX_BLUE_YELLOW));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JRF_REFIT), string(STR_SUFFIX_BLUE_WHITE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JRF_NLOGO), string(STR_SUFFIX_BLUE_WHITE));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_LOGO), string(STR_SUFFIX_BLUE_YELLOW));
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_NOLOGO));
+	7: return string(STR_REFIT_CC);
 	return CB_RESULT_NO_TEXT;
 	}
 
@@ -5575,9 +5575,9 @@ switch(FEAT_TRAINS, SELF, switch_ef210_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef210_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRE), string(STR_SUFFIX_BLUE_GREY));
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_MOMOTARO), string(STR_SUFFIX_BLUE_GREY));
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_REFURB));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_GREY));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_MOMOTARO), string(STR_SUFFIX_BLUE_GREY));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_REFURB));
 	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -5654,9 +5654,9 @@ switch(FEAT_TRAINS, SELF, switch_ef210_100_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef210_100_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRE), string(STR_SUFFIX_BLUE_GREY));
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_MOMOTARO), string(STR_SUFFIX_BLUE_GREY));
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_REFURB));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_GREY));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_MOMOTARO), string(STR_SUFFIX_BLUE_GREY));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_REFURB));
 	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -5948,6 +5948,8 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -5956,6 +5958,7 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh10_livery_rear;
 	}
 }
@@ -6042,6 +6045,8 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -6050,6 +6055,7 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh10_2_livery_rear;
 	}
 }
@@ -6139,6 +6145,8 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 		name: string(STR_NAME_EH50);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+    engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -6147,6 +6155,7 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh50_livery_rear;
 	}
 }
@@ -6238,6 +6247,8 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -6245,6 +6256,7 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+		power: return 0;
 		default: switch_eh200_livery_rear;
 	}
 }
@@ -6716,88 +6728,105 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   purchase: switch_ed75_700_yeardep_purchase;
   }
 }
-spriteset(spriteset_ed76_old_red, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_red, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed76_twotone_blue, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_jrf_stripe, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed76_southerncross, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_jrf_whiskers, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ed76_0_refurbished, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_jrf_2tone, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ed76_1000_refurbished, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_southerncross, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ed76_500, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_0_cc, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ed76_550, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_500_red, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ed76_cc, "gfx/electric/ed76.png") {
+spriteset(spriteset_ed76_500_cc, "gfx/electric/ed76.png") {
 	template_2cc_std(1, 224)
 }
 
-
-spriteset(spriteset_ed76_jnr_purchase, "gfx/electric/ed76.png") {
-	template_purchase(1, 256)
+spriteset(spriteset_ed76_550_red, "gfx/electric/ed76.png") {
+	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_ed76_jrf_purchase, "gfx/electric/ed76.png") {
-	template_purchase(1, 288)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_ed76_yeardep_livery, build_year) {
-	0..1987: spriteset_ed76_old_red;
-    spriteset_ed76_1000_refurbished;
+spriteset(spriteset_ed76_550_cc, "gfx/electric/ed76.png") {
+	template_2cc_std(1, 288)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_ed76_livery, cargo_subtype) {
-	1: spriteset_ed76_old_red;
-	2: spriteset_ed76_twotone_blue;
-	3: spriteset_ed76_southerncross;
-	4: spriteset_ed76_0_refurbished;
-	5: spriteset_ed76_1000_refurbished;
-	6: spriteset_ed76_500;
-	7: spriteset_ed76_550;
-	8: spriteset_ed76_cc;
-	switch_ed76_yeardep_livery;
+spriteset(spriteset_ed76_0_jnr_purchase, "gfx/electric/ed76.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_ed76_0_jrf_purchase, "gfx/electric/ed76.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_ed76_500_jnr_purchase, "gfx/electric/ed76.png") {
+	template_purchase(89, 320)
+}
+
+spriteset(spriteset_ed76_500_jr_purchase, "gfx/electric/ed76.png") {
+	template_purchase(89, 352)
+}
+
+spriteset(spriteset_ed76_550_jr_purchase, "gfx/electric/ed76.png") {
+	template_purchase(89, 384)
+}
+
+//ed76_0
+
+switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_livery, build_year) {
+	0..1990: spriteset_ed76_0_red; //guess
+    1990..2000: spriteset_ed76_0_jrf_whiskers;
+	spriteset_ed76_0_jrf_stripe;
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_ed76_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_ed76_0_livery, cargo_subtype) {
+	1: spriteset_ed76_0_red;
+	2: spriteset_ed76_0_jrf_stripe;
+	3: spriteset_ed76_0_jrf_whiskers;
+	4: spriteset_ed76_0_jrf_2tone;
+	5: spriteset_ed76_0_southerncross;
+	6: spriteset_ed76_0_cc;
+	switch_ed76_0_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_RED);
-	2: return string(STR_REFIT_JRF_2TONE);
-	3: return string(STR_REFIT_SOUTHERNCROSS);
-	4: return string(STR_REFIT_JRF_REFIT);
-	5: return string(STR_REFIT_ED76_1000);
-	6: return string(STR_REFIT_ED76_500);
-	7: return string(STR_REFIT_ED76_550);
-	8: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_STRIPE), string(STR_SUFFIX_RED_WHITE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_WHISKERS), string(STR_SUFFIX_RED_WHITE));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_2TONE), string(STR_SUFFIX_BLUE));
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), string(STR_SUFFIX_SOUTHERNCROSS), string(STR_SUFFIX_RED_WHITE));
+	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
-switch(FEAT_TRAINS, SELF, switch_ed76_yeardep_purchase, current_year) {
-	0..1987: spriteset_ed76_jnr_purchase;
-    spriteset_ed76_jrf_purchase;
+switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase, current_year) {
+	0..1987: spriteset_ed76_0_jnr_purchase;
+    spriteset_ed76_0_jrf_purchase;
 }
 
 
-item (FEAT_TRAINS, ed76, 1071) {
+item (FEAT_TRAINS, ed76_0, 1071) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -6827,18 +6856,140 @@ item (FEAT_TRAINS, ed76, 1071) {
 						string(STR_DESC_POWER_AC20),
 						string(STR_DESC_NARROWGAUGE),
 						string(STR_DESC_USAGE_EF),
-						string(STR_CONCAT_4C, 
+						string(STR_CONCAT_3C, 
 							string(STR_SUFFIX_JNR),
 							string(STR_SUFFIX_JRF),
-							string(STR_SUFFIX_JRK),
+							string(STR_SUFFIX_JRK)
+							)
+						);
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed76_0_subtype_text;
+  default: switch_ed76_0_livery;
+  purchase: switch_ed76_0_yeardep_purchase;
+  }
+}
+
+
+//ed76_500
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_livery, cargo_subtype) {
+	1: spriteset_ed76_500_cc;
+	spriteset_ed76_500_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase, current_year) {
+	0..1987: spriteset_ed76_500_jnr_purchase;
+    spriteset_ed76_500_jr_purchase;
+}
+
+
+item (FEAT_TRAINS, ed76_500, 1072) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_ED76_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1968,1,1);
+  speed: 100 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 87;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 54;
+  length: 8;
+  running_cost_factor: 55;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1071;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EP),
+						string(STR_CONCAT_2C, 
+							string(STR_SUFFIX_JNR),
 							string(STR_SUFFIX_JRH)
 							)
 						);
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ed76_subtype_text;
-  default: switch_ed76_livery;
-  purchase: switch_ed76_yeardep_purchase;
+  cargo_subtype_text: switch_ed76_500_subtype_text;
+  default: switch_ed76_500_livery;
+  purchase: switch_ed76_500_yeardep_purchase;
+  }
+}
+
+//ed76_550
+
+switch(FEAT_TRAINS, SELF, switch_ed76_550_livery, cargo_subtype) {
+	1: spriteset_ed76_550_cc;
+	spriteset_ed76_550_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), string(STR_SUFFIX_RED_GREY));
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, ed76_550, 1972) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_ED76_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1991,1,1);
+  speed: 110 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 84;
+  reliability_decay: 85;
+  model_life: 45;
+  vehicle_life: 40;
+  cost_factor: 56;
+  length: 8;
+  running_cost_factor: 57;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1071;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+						string(STR_DESC_POWER_AC20),
+						string(STR_DESC_NARROWGAUGE),
+						string(STR_DESC_USAGE_EP),
+						string(STR_CONCAT_1C, 
+							string(STR_SUFFIX_JRH)
+							)
+						);
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed76_550_subtype_text;
+  default: switch_ed76_550_livery;
+  purchase: spriteset_ed76_550_jr_purchase;
   }
 }
 spriteset(spriteset_ed500_jrf, "gfx/ed500.png") {
@@ -6907,37 +7058,44 @@ item (FEAT_TRAINS, ed500, 1090) {
   purchase: spriteset_ed500_purchase;
   }
 }
-spriteset(spriteset_ef30_silver, "gfx/ef30.png") {
+spriteset(spriteset_ef30_proto_stripe, "gfx/electric/ef30.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef30_stripe, "gfx/ef30.png") {
+spriteset(spriteset_ef30_proto_silver, "gfx/electric/ef30.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef30_cc, "gfx/ef30.png") {
+spriteset(spriteset_ef30_proto_cc, "gfx/electric/ef30.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef30_purchase, "gfx/ef30.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_ef30_silver, "gfx/electric/ef30.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef30_cc, "gfx/electric/ef30.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef30_proto_purchase, "gfx/electric/ef30.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_ef30_purchase, "gfx/electric/ef30.png") {
+	template_purchase(89, 192)
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef30_livery, cargo_subtype) {
-	1: spriteset_ef30_stripe;
-	2: spriteset_ef30_cc;
+	1: spriteset_ef30_cc;
 	spriteset_ef30_silver;
 }
 
-
 switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_STAINLESS);
-	1: return string(STR_REFIT_EF30_STRIPE);
-	2: return string(STR_REFIT_CC);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_SILVER));
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
-
-
 
 
 item (FEAT_TRAINS, ef30, 1015) {
@@ -6946,7 +7104,7 @@ item (FEAT_TRAINS, ef30, 1015) {
   track_type: NABE;
   name: string(STR_NAME_EF30);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1960,1,1);
+  introduction_date: date(1961,1,1);
   speed: 85 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -6980,71 +7138,123 @@ item (FEAT_TRAINS, ef30, 1015) {
   purchase: spriteset_ef30_purchase;
   }
 }
-spriteset(spriteset_ef70_old_red, "gfx/electric/ef70.png") {
-	template_2cc_std(1, 1)
+
+//prototype
+
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_livery, cargo_subtype) {
+	1: spriteset_ef30_proto_silver;
+  2: spriteset_ef30_proto_cc;
+	spriteset_ef30_proto_stripe;
 }
 
-spriteset(spriteset_ef70_new_red, "gfx/electric/ef70.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_ef70_ser, "gfx/electric/ef70.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_ef70_express, "gfx/electric/ef70.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_ef70_cc, "gfx/electric/ef70.png") {
-	template_2cc_std(1, 128)
-}
-
-
-
-spriteset(spriteset_ef70_purchase, "gfx/electric/ef70.png") {
-	template_purchase(1, 160)
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_ef70_yeardep_livery, build_year) {
-	0..1964: spriteset_ef70_old_red;
-    spriteset_ef70_new_red;
-}
-
-//maybe add switch to make tokkyu livery if pax are attached (also ef65)
-
-switch(FEAT_TRAINS, SELF, switch_ef70_livery, cargo_subtype) {
-	1: spriteset_ef70_old_red;
-	2: spriteset_ef70_new_red;
-	3: spriteset_ef70_ser;
-	4: spriteset_ef70_express; 
-	5: spriteset_ef70_cc;
-	switch_ef70_yeardep_livery;
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_ef70_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_RED_OLD);
-	2: return string(STR_REFIT_RED_NEW);
-  3: return string(STR_REFIT_RAINBOW);
-	4: return string(STR_REFIT_JNR_CREAM);
-	5: return string(STR_REFIT_CC);
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED_SILVER));
+  1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_SILVER));
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
+item (FEAT_TRAINS, ef30_proto, 1915) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF30_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1960,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1800 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 30;
+  cost_factor: 40;
+  length: 7;
+  running_cost_factor: 64;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  variant_group: 1015;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_PROTO),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JNR)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef30_proto_subtype_text;
+  default: switch_ef30_proto_livery;
+  purchase: spriteset_ef30_proto_purchase;
+  }
+}
+spriteset(spriteset_ef70_old_red, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef70_old_cc, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef70_new_red, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef70_new_rainbow, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_ef70_new_express, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ef70_new_cc, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 160)
+}
 
 
-item (FEAT_TRAINS, ef70, 1045) {
+
+spriteset(spriteset_ef70_old_purchase, "gfx/electric/ef70.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_ef70_new_purchase, "gfx/electric/ef70.png") {
+	template_purchase(89, 192)
+}
+
+//ef70 new
+
+switch(FEAT_TRAINS, SELF, switch_ef70_new_livery, cargo_subtype) {
+	1: spriteset_ef70_new_express;
+	2: spriteset_ef70_new_rainbow;
+	3: spriteset_ef70_new_cc;
+	spriteset_ef70_new_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXPRESS), string(STR_SUFFIX_RED_CREAM));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
+  3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+item (FEAT_TRAINS, ef70_new, 1045) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
   name: string(STR_NAME_EF70);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1961,1,1);
+  introduction_date: date(1964,1,1);
   speed: 105 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -7067,6 +7277,63 @@ item (FEAT_TRAINS, ef70, 1045) {
   additional_text:	string(STR_CONCAT_4S, 
                       string(STR_DESC_POWER_AC20),
                       string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_EF),
+                      string(STR_CONCAT_1C, 
+                    string(STR_SUFFIX_JNR)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef70_new_subtype_text;
+  default: switch_ef70_new_livery;
+  purchase: spriteset_ef70_new_purchase;
+  }
+}
+
+//ef70 old
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_livery, cargo_subtype) {
+	1: spriteset_ef70_old_cc;
+	spriteset_ef70_old_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+  1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+item (FEAT_TRAINS, ef70_old, 1946) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF70_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1961,1,1);
+  speed: 105 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 2250 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 85;
+  model_life: 40;
+  vehicle_life: 40;
+  cost_factor: 54;
+  length: 7;
+  running_cost_factor: 87;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1045;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_AC20),
+                      string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
                       string(STR_CONCAT_1C, 
                     string(STR_SUFFIX_JNR)
@@ -7074,9 +7341,9 @@ item (FEAT_TRAINS, ef70, 1045) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef70_subtype_text;
-  default: switch_ef70_livery;
-  purchase: spriteset_ef70_purchase;
+  cargo_subtype_text: switch_ef70_old_subtype_text;
+  default: switch_ef70_old_livery;
+  purchase: spriteset_ef70_old_purchase;
   }
 }
 spriteset(spriteset_ef80_old_red, "gfx/ef80.png") {
@@ -7299,8 +7566,7 @@ switch(FEAT_TRAINS, SELF, switch_ef81_livery, cargo_subtype) {
 	9: spriteset_ef81_jrf_red;
 	10: spriteset_ef81_jrf_twotone;
 	11: spriteset_ef81_jrf_blue;
-	12: spriteset_ef81_jrf_bluestripe;
-	13: spriteset_ef81_cc;
+	12: spriteset_ef81_cc;
 	
 	switch_ef81_yeardep_livery;
 	}
@@ -7314,12 +7580,11 @@ switch(FEAT_TRAINS, SELF, switch_ef81_subtype_text, cargo_subtype) {
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_BLUE_WHITE));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_RED));
 	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_STRIPE));
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_REFURB));
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_WHISKERS));
 	9: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_GREY));
 	10: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_2TONE));	
 	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_STRIPE));
-	13: return string(STR_REFIT_CC);
+	12: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -7468,12 +7733,14 @@ property {
 
 switch(FEAT_TRAINS, SELF, switch_ef81_450_livery, cargo_subtype) {
 	0: spriteset_ef81_450;
-	1: spriteset_ef81_450_cc;
+  1: spriteset_ef81_jrf_bluestripe;
+	2: spriteset_ef81_450_cc;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_ef81_450_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	1: return string(STR_REFIT_CC);
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_LIGHTS));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -7588,105 +7855,144 @@ item (FEAT_TRAINS, ef500, 1085) {
   purchase: spriteset_ef500_purchase;
   }
 }
-spriteset(spriteset_ef510_prototype, "gfx/ef510.png") {
+//ef510 0
+
+spriteset(spriteset_ef510_0_proto, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef510_jrf_red, "gfx/ef510.png") {
+spriteset(spriteset_ef510_0_red, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef510_cassiopeia, "gfx/ef510.png") {
+spriteset(spriteset_ef510_0_nologo, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef510_hokutosei, "gfx/ef510.png") {
+spriteset(spriteset_ef510_0_cc, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_ef510_silver, "gfx/ef510.png") {
+
+spriteset(spriteset_ef510_0_proto_purchase, "gfx/electric/ef510.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_ef510_0_jrf_purchase, "gfx/electric/ef510.png") {
+	template_purchase(1, 384)
+}
+
+spriteset(spriteset_ef510_0_jr_purchase, "gfx/electric/ef510.png") {
+	template_purchase(89, 384)
+}
+
+//ef510 500
+
+spriteset(spriteset_ef510_500_hokutosei, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef510_blue, "gfx/ef510.png") {
+spriteset(spriteset_ef510_500_cassiopeia, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef510_red_thunder, "gfx/ef510.png") {
+spriteset(spriteset_ef510_500_blue, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_ef510_300, "gfx/ef510.png") {
+spriteset(spriteset_ef510_500_silver, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_ef510_cc, "gfx/ef510.png") {
+spriteset(spriteset_ef510_500_cc, "gfx/electric/ef510.png") {
 	template_2cc_std(1, 256)
 }
 
-
-
-spriteset(spriteset_ef510_jrf_purchase, "gfx/ef510.png") {
-	template_purchase(1, 288)
+spriteset(spriteset_ef510_500_jre_purchase, "gfx/electric/ef510.png") {
+	template_purchase(89, 352)
 }
 
-spriteset(spriteset_ef510_jr_purchase, "gfx/ef510.png") {
-	template_purchase(89, 288)
+spriteset(spriteset_ef510_500_jr_purchase, "gfx/electric/ef510.png") {
+	template_purchase(180, 352)
+}
+
+//ef510 300
+
+spriteset(spriteset_ef510_300_silver, "gfx/electric/ef510.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_ef510_300_cc, "gfx/electric/ef510.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_ef510_300_jr_purchase, "gfx/electric/ef510.png") {
+	template_purchase(180, 384)
+}
+
+//ef510 0
+
+switch(FEAT_TRAINS, SELF, switch_ef510_0_purchase, current_year) {
+	0..2002: spriteset_ef510_0_proto_purchase;
+	2002..2018: spriteset_ef510_0_jrf_purchase;
+	spriteset_ef510_0_jr_purchase;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef510_0_yeardep_livery, build_year) {
+	0..2004: spriteset_ef510_0_proto;
+	2004..2018: spriteset_ef510_0_red;
+	spriteset_ef510_0_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef510_0_livery, cargo_subtype) {
+	1: spriteset_ef510_0_proto;
+	2: spriteset_ef510_0_red;
+	3: spriteset_ef510_0_nologo;	
+	4: spriteset_ef510_0_cc;
+	switch_ef510_0_yeardep_livery;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_ef510_yeardep_livery, build_year) {
-	0..2004: spriteset_ef510_prototype;
-	2019..9999: spriteset_ef510_red_thunder;
-    spriteset_ef510_jrf_red;
-}
-
-switch(FEAT_TRAINS, SELF, switch_ef510_livery, cargo_subtype) {
-	1: spriteset_ef510_prototype;
-	2: spriteset_ef510_jrf_red;
-	3: spriteset_ef510_cassiopeia;	
-	4: spriteset_ef510_hokutosei;
-	5: spriteset_ef510_silver;
-	6: spriteset_ef510_blue;
-	7: spriteset_ef510_red_thunder;	
-	8: spriteset_ef510_300;
-	9: spriteset_ef510_cc;
-	switch_ef510_yeardep_livery;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_ef510_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_ef510_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_PROTOTYPE);
-	2: return string(STR_REFIT_JRF_RED);
-	3: return string(STR_REFIT_CASSIOPEIA);
-	4: return string(STR_REFIT_HOKUTOSEI);
-	5: return string(STR_REFIT_SILVER);
-	6: return string(STR_REFIT_JRF_BLUE);
-	7: return string(STR_REFIT_EF510_RED);
-	8: return string(STR_REFIT_EF510_300);
-	9: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_PROTO));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_REDTHUNDER), string(STR_SUFFIX_RED_WHITE));
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), string(STR_SUFFIX_REDTHUNDER), string(STR_SUFFIX_RED_WHITE), string(STR_SUFFIX_NOLOGO));
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_ef510_purchase, current_year) {
-	2018..9999: spriteset_ef510_jr_purchase;
-	spriteset_ef510_jrf_purchase;
-	}
 
 
 
-item (FEAT_TRAINS, jr_ef510, 105) {
+item (FEAT_TRAINS, ef510_0, 105) {
 
 property {
-	name: string(STR_NAME_EF510);
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF510);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2001,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 3390 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 90;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 8;
+  cost_factor: 97;
+  running_cost_factor: 94;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -7701,157 +8007,348 @@ property {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef510_subtype_text;
-  default: switch_ef510_livery;
-  purchase: switch_ef510_purchase;
+  cargo_subtype_text: switch_ef510_0_subtype_text;
+  default: switch_ef510_0_livery;
+  purchase: switch_ef510_0_purchase;
   }
 }
-spriteset(spriteset_eh500_prototype_front, "gfx/eh500.png") {
-	template_2cc_std(1, 1)
+
+
+//ef510 500
+
+switch(FEAT_TRAINS, SELF, switch_ef510_500_purchase, current_year) {
+	0..2018: spriteset_ef510_500_jre_purchase;
+	spriteset_ef510_500_jr_purchase;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef510_500_yeardep_livery, build_year) {
+	0..2018: spriteset_ef510_500_hokutosei;
+	spriteset_ef510_500_blue;
 }
 
-spriteset(spriteset_eh500_prototype_rear, "gfx/eh500.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_eh500_1_front, "gfx/eh500.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_eh500_1_rear, "gfx/eh500.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_eh500_2_front, "gfx/eh500.png") {
-	template_2cc_std(1, 128)
-}
-
-spriteset(spriteset_eh500_2_rear, "gfx/eh500.png") {
-	template_2cc_std(1, 160)
-}
-
-spriteset(spriteset_eh500_3_front, "gfx/eh500.png") {
-	template_2cc_std(1, 192)
-}
-
-spriteset(spriteset_eh500_3_rear, "gfx/eh500.png") {
-	template_2cc_std(1, 224)
-}
-
-spriteset(spriteset_eh500_4_front, "gfx/eh500.png") {
-	template_2cc_std(180, 192)
-}
-
-spriteset(spriteset_eh500_4_rear, "gfx/eh500.png") {
-	template_2cc_std(180, 224)
-}
-
-spriteset(spriteset_eh500_cc_front, "gfx/eh500.png") {
-	template_2cc_std(180, 1)
-}
-
-spriteset(spriteset_eh500_cc_rear, "gfx/eh500.png") {
-	template_2cc_std(180, 32)
-}
-
-spriteset(spriteset_eh500_cc_prototype_front, "gfx/eh500.png") {
-	template_2cc_std(180, 64)
-}
-
-spriteset(spriteset_eh500_cc_prototype_rear, "gfx/eh500.png") {
-	template_2cc_std(180, 96)
-}
-
-
-spriteset(spriteset_eh500_1_purchase, "gfx/eh500.png") {
-	template_purchase(1, 256)
-}
-
-spriteset(spriteset_eh500_2_purchase, "gfx/eh500.png") {
-	template_purchase(89, 256)
-}
-
-spriteset(spriteset_eh500_3_purchase, "gfx/eh500.png") {
-	template_purchase(180, 256)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_eh500_front_yeardep, build_year) {
-	0..2000: spriteset_eh500_prototype_front;
-	2000..2001: spriteset_eh500_1_front;
-	2018..9999: spriteset_eh500_4_front;
-	spriteset_eh500_3_front;
-}
-
-switch(FEAT_TRAINS, SELF, switch_eh500_rear_yeardep, build_year) {
-	0..2000: spriteset_eh500_prototype_rear;
-	2000..2001: spriteset_eh500_1_rear;
-	2018..9999: spriteset_eh500_4_rear;
-	spriteset_eh500_3_rear;
+switch(FEAT_TRAINS, SELF, switch_ef510_500_livery, cargo_subtype) {
+	1: spriteset_ef510_500_hokutosei;
+	2: spriteset_ef510_500_cassiopeia;
+	3: spriteset_ef510_500_blue;	
+	4: spriteset_ef510_500_silver;	
+	5: spriteset_ef510_500_cc;
+	switch_ef510_500_yeardep_livery;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_eh500_front_livery, cargo_subtype) {
-	1: spriteset_eh500_prototype_front;
-	2: spriteset_eh500_1_front;
-	3: spriteset_eh500_2_front;
-	4: spriteset_eh500_3_front; 
-	5: spriteset_eh500_4_front; 
-	6: spriteset_eh500_cc_prototype_front;
-	7: spriteset_eh500_cc_front;
-	switch_eh500_front_yeardep;
-}
-
-switch(FEAT_TRAINS, SELF, switch_eh500_rear_livery, cargo_subtype) {
-	1: spriteset_eh500_prototype_rear;
-	2: spriteset_eh500_1_rear;
-	3: spriteset_eh500_2_rear;
-	4: spriteset_eh500_3_rear; 
-	5: spriteset_eh500_4_rear; 
-	6: spriteset_eh500_cc_prototype_rear;
-	7: spriteset_eh500_cc_rear;
-	switch_eh500_rear_yeardep;
-}
-
-
-
-
-switch(FEAT_TRAINS, SELF, switch_eh500_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_ef510_500_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_PROTOTYPE);
-	2: return string(STR_REFIT_EH500_1);
-	3: return string(STR_REFIT_EH500_2);
-	4: return string(STR_REFIT_EH500_3);
-	5: return string(STR_REFIT_EH500_4);
-	6: return string(STR_REFIT_CC_PROTOTYPE);
-	7: return string(STR_REFIT_CC); 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_BLUE_GOLD));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_SILVER));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_GOLD));
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_SILVER));
+	5: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_eh500_purchase, current_year) {
-	0..2001: spriteset_eh500_1_purchase;
-	2018..9999: spriteset_eh500_3_purchase;
-	spriteset_eh500_2_purchase;
+
+
+
+item (FEAT_TRAINS, ef510_500, 1986) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF510_5);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2009,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 3390 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 90;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 8;
+  cost_factor: 97;
+  running_cost_factor: 94;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 105;
 	}
 
 
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef510_500_subtype_text;
+  default: switch_ef510_500_livery;
+  purchase: switch_ef510_500_purchase;
+  }
+}
+
+
+
+//ef510 300
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef510_300_livery, cargo_subtype) {
+	1: spriteset_ef510_300_cc;
+	spriteset_ef510_300_silver;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef510_300_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_SILVER));
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, ef510_300, 1086) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF510_3);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2021,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 3390 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 90;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 8;
+  cost_factor: 97;
+  running_cost_factor: 94;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 105;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef510_300_subtype_text;
+  default: switch_ef510_300_livery;
+  purchase: spriteset_ef510_300_jr_purchase;
+  }
+}
+//proto
+
+spriteset(spriteset_eh500_proto_front, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_eh500_proto_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_eh500_proto_kintaro_front, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_eh500_proto_kintaro_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_eh500_proto_cc_front, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_eh500_proto_cc_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_eh500_proto_purchase, "gfx/electric/eh500.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_eh500_proto_kintaro_purchase, "gfx/electric/eh500.png") {
+	template_purchase(1, 352)
+}
+
+//old
+
+spriteset(spriteset_eh500_old_low_front, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_eh500_old_low_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_eh500_old_low_kintaro_front, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_eh500_old_low_kintaro_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_eh500_old_high_kintaro_front, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_eh500_old_high_kintaro_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_eh500_old_cc_front, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 256)
+}
+
+spriteset(spriteset_eh500_old_cc_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 288)
+}
+
+spriteset(spriteset_eh500_old_purchase, "gfx/electric/eh500.png") {
+	template_purchase(89, 320)
+}
+
+spriteset(spriteset_eh500_old_kintaro_purchase, "gfx/electric/eh500.png") {
+	template_purchase(89, 352)
+}
+
+//new
+
+spriteset(spriteset_eh500_new_front, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_eh500_new_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_eh500_new_nologo_front, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_eh500_new_nologo_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_eh500_new_cc_front, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_eh500_new_cc_rear, "gfx/electric/eh500.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_eh500_new_jrf_purchase, "gfx/electric/eh500.png") {
+	template_purchase(180, 320)
+}
+
+spriteset(spriteset_eh500_new_jr_purchase, "gfx/electric/eh500.png") {
+	template_purchase(180, 352)
+}
+
+
+//new type
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_front_yeardep, build_year) {
+	0..2018: spriteset_eh500_new_front;
+	spriteset_eh500_new_nologo_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_rear_yeardep, build_year) {
+	0..2018: spriteset_eh500_new_rear;
+	spriteset_eh500_new_nologo_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_front_livery, cargo_subtype) {
+	1: spriteset_eh500_new_front;
+	2: spriteset_eh500_new_nologo_front;
+	3: spriteset_eh500_new_cc_front;
+	switch_eh500_new_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_rear_livery, cargo_subtype) {
+	1: spriteset_eh500_new_rear;
+	2: spriteset_eh500_new_nologo_rear;
+	3: spriteset_eh500_new_cc_rear;
+	switch_eh500_new_rear_yeardep;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_RED_GREY));
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_RED_GREY), string(STR_SUFFIX_NOLOGO));
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_new_purchase, current_year) {
+	0..2018: spriteset_eh500_new_jrf_purchase;
+	spriteset_eh500_new_jr_purchase;
+	}
+
 
 /* --- Articulated part callback  --- */
-switch(FEAT_TRAINS, SELF, switch_eh500_articulated_part, extra_callback_info1) {
-	1: return eh500_rear;
+switch(FEAT_TRAINS, SELF, switch_eh500_new_articulated_part, extra_callback_info1) {
+	1: return eh500_new_rear;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
 
-item (FEAT_TRAINS, eh500, 67) {
+item (FEAT_TRAINS, eh500_new, 1098) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NABE;
 	name: string(STR_NAME_EH500);
+	climates_available: ALL_CLIMATES;
+	introduction_date: date(2002,1,1);
+	speed: 120 km/h;
+	air_drag_coefficient: 0;
+	tractive_effort_coefficient:    0.25;
+	power: 4000 kW;
+	dual_headed: 0;
+	engine_class: ENGINE_CLASS_ELECTRIC;
+	cargo_capacity: 1;
+	cargo_allow_refit: [PASS];
+	weight: 134;
+	reliability_decay: 85;
+	model_life: 40;
+	vehicle_life: 50;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	length: 6;
+	cost_factor: 103;
+	running_cost_factor: 106;
+	running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -7867,21 +8364,23 @@ property {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_eh500_subtype_text;
-  default: switch_eh500_front_livery;
-  purchase: switch_eh500_purchase;
-  articulated_part: switch_eh500_articulated_part;
+  cargo_subtype_text: switch_eh500_new_subtype_text;
+  default: switch_eh500_new_front_livery;
+  purchase: switch_eh500_new_purchase;
+  articulated_part: switch_eh500_new_articulated_part;
   }
 }
 
 
-item (FEAT_TRAINS, eh500_rear, 1067) {
+item (FEAT_TRAINS, eh500_new_rear, 1998) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-//		name: string(STR_NAME_eh500);
+//		name: string(STR_NAME_EH500_P);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -7889,8 +8388,259 @@ item (FEAT_TRAINS, eh500_rear, 1067) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 	graphics {
+		power: return 0;
 		cargo_capacity: return 0;
-		default: switch_eh500_rear_livery;
+		default: switch_eh500_new_rear_livery;
+	}
+}
+
+
+//old type 
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_front_yeardep, build_year) {
+	0..2002: spriteset_eh500_old_low_front;
+	spriteset_eh500_old_high_kintaro_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_rear_yeardep, build_year) {
+	0..2002: spriteset_eh500_old_low_rear;
+	spriteset_eh500_old_high_kintaro_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_front_livery, cargo_subtype) {
+	1: spriteset_eh500_old_low_front;
+	2: spriteset_eh500_old_low_kintaro_front;
+	3: spriteset_eh500_old_high_kintaro_front;
+	4: spriteset_eh500_old_cc_front;
+	switch_eh500_old_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_rear_livery, cargo_subtype) {
+	1: spriteset_eh500_old_low_rear;
+	2: spriteset_eh500_old_low_kintaro_rear;
+	3: spriteset_eh500_old_high_kintaro_rear;
+	4: spriteset_eh500_old_cc_rear;
+	switch_eh500_old_rear_yeardep;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_GREY));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_RED_GREY));
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_RED_GREY), string(STR_SUFFIX_LIGHTS));
+	4: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_old_purchase, current_year) {
+	0..2002: spriteset_eh500_old_purchase;
+	spriteset_eh500_old_kintaro_purchase;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh500_old_articulated_part, extra_callback_info1) {
+	1: return eh500_old_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, eh500_old, 67) {
+
+property {
+//  sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NABE;
+	name: string(STR_NAME_EH500_1);
+	climates_available: ALL_CLIMATES;
+	introduction_date: date(2000,1,1);
+	speed: 120 km/h;
+	air_drag_coefficient: 0;
+	tractive_effort_coefficient:    0.25;
+	power: 4000 kW;
+	dual_headed: 0;
+	engine_class: ENGINE_CLASS_ELECTRIC;
+	cargo_capacity: 1;
+	cargo_allow_refit: [PASS];
+	weight: 134;
+	reliability_decay: 85;
+	model_life: 40;
+	vehicle_life: 50;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	length: 6;
+	cost_factor: 103;
+	running_cost_factor: 106;
+	running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 1098;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh500_old_subtype_text;
+  default: switch_eh500_old_front_livery;
+  purchase: switch_eh500_old_purchase;
+  articulated_part: switch_eh500_old_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh500_old_rear, 1067) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_EH500_P);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		power: return 0;
+		cargo_capacity: return 0;
+		default: switch_eh500_old_rear_livery;
+	}
+}
+
+//prototype
+
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_front_yeardep, build_year) {
+	0..2002: spriteset_eh500_proto_front;
+	spriteset_eh500_proto_kintaro_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_rear_yeardep, build_year) {
+	0..2002: spriteset_eh500_proto_rear;
+	spriteset_eh500_proto_kintaro_rear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_front_livery, cargo_subtype) {
+	1: spriteset_eh500_proto_front;
+	2: spriteset_eh500_proto_kintaro_front;
+	3: spriteset_eh500_proto_cc_front;
+	switch_eh500_proto_front_yeardep;
+}
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_rear_livery, cargo_subtype) {
+	1: spriteset_eh500_proto_rear;
+	2: spriteset_eh500_proto_kintaro_rear;
+	3: spriteset_eh500_proto_cc_rear;
+	switch_eh500_proto_rear_yeardep;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_GREY));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_RED_GREY));
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_purchase, current_year) {
+	0..2002: spriteset_eh500_proto_purchase;
+	spriteset_eh500_proto_kintaro_purchase;
+	}
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_eh500_proto_articulated_part, extra_callback_info1) {
+	1: return eh500_proto_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, eh500_proto, 1097) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NABE;
+	name: string(STR_NAME_EH500_P);
+	climates_available: ALL_CLIMATES;
+	introduction_date: date(1997,1,1);
+	speed: 120 km/h;
+	air_drag_coefficient: 0;
+	tractive_effort_coefficient:    0.25;
+	power: 4000 kW;
+	dual_headed: 0;
+	engine_class: ENGINE_CLASS_ELECTRIC;
+	cargo_capacity: 1;
+	cargo_allow_refit: [PASS];
+	weight: 134;
+	reliability_decay: 85;
+	model_life: 40;
+	vehicle_life: 50;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	length: 6;
+	cost_factor: 103;
+	running_cost_factor: 106;
+	running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 1098;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                      string(STR_DESC_POWER_MS20),
+                      string(STR_DESC_NARROWGAUGE),
+                      string(STR_DESC_USAGE_HF),
+                      string(STR_CONCAT_1C, 
+                        string(STR_SUFFIX_JRF)
+                    )
+                  );
+
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_eh500_proto_subtype_text;
+  default: switch_eh500_proto_front_livery;
+  purchase: switch_eh500_proto_purchase;
+  articulated_part: switch_eh500_proto_articulated_part;
+  }
+}
+
+
+item (FEAT_TRAINS, eh500_proto_rear, 1997) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_EH500_P);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		power: return 0;
+		cargo_capacity: return 0;
+		default: switch_eh500_proto_rear_livery;
 	}
 }
 spriteset(spriteset_eh800_red_front, "gfx/eh800.png") {
@@ -8003,6 +8753,8 @@ item (FEAT_TRAINS, eh800_rear, 1096) {
 //		name: string(STR_NAME_eh800);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -8010,6 +8762,7 @@ item (FEAT_TRAINS, eh800_rear, 1096) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 	graphics {
+		power: return 0;
 		cargo_capacity: return 0;
 		default: switch_eh800_livery_rear;
 	}
@@ -8086,7 +8839,7 @@ switch(FEAT_TRAINS, SELF, switch_dd13_livery, cargo_subtype) {
 	8: spriteset_dd13_kosaka;
 	9: spriteset_dd13_kamioka;
 	10: spriteset_dd13_kashima;
-	11: spriteset_ed76_cc;
+	11: spriteset_dd13_cc;
 	switch_dd13_yeardep_livery;
 }
 

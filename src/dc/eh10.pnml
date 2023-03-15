@@ -171,6 +171,8 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -179,6 +181,7 @@ item (FEAT_TRAINS, eh10_rear, 1018) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh10_livery_rear;
 	}
 }
@@ -265,6 +268,8 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 		name: string(STR_NAME_EH10);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -273,6 +278,7 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh10_2_livery_rear;
 	}
 }
@@ -362,6 +368,8 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 		name: string(STR_NAME_EH50);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
+    engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 6;
@@ -370,6 +378,7 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+    power: return 0;
 		default: switch_eh50_livery_rear;
 	}
 }

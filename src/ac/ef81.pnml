@@ -131,8 +131,7 @@ switch(FEAT_TRAINS, SELF, switch_ef81_livery, cargo_subtype) {
 	9: spriteset_ef81_jrf_red;
 	10: spriteset_ef81_jrf_twotone;
 	11: spriteset_ef81_jrf_blue;
-	12: spriteset_ef81_jrf_bluestripe;
-	13: spriteset_ef81_cc;
+	12: spriteset_ef81_cc;
 	
 	switch_ef81_yeardep_livery;
 	}
@@ -146,12 +145,11 @@ switch(FEAT_TRAINS, SELF, switch_ef81_subtype_text, cargo_subtype) {
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_BLUE_WHITE));
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_RED));
 	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_STRIPE));
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_REFURB));
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_PINK), string(STR_SUFFIX_WHISKERS));
 	9: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_RED_GREY));
 	10: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_2TONE));	
 	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_STRIPE));
-	13: return string(STR_REFIT_CC);
+	12: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -300,12 +298,14 @@ property {
 
 switch(FEAT_TRAINS, SELF, switch_ef81_450_livery, cargo_subtype) {
 	0: spriteset_ef81_450;
-	1: spriteset_ef81_450_cc;
+  1: spriteset_ef81_jrf_bluestripe;
+	2: spriteset_ef81_450_cc;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_ef81_450_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	1: return string(STR_REFIT_CC);
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_LIGHTS));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 

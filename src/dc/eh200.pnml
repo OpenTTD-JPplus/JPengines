@@ -86,6 +86,8 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
 		cargo_capacity: 1; 
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -93,6 +95,7 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 	}
 	graphics {
 		cargo_capacity: return 0;
+		power: return 0;
 		default: switch_eh200_livery_rear;
 	}
 }

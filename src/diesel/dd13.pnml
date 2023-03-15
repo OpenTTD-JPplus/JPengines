@@ -69,7 +69,7 @@ switch(FEAT_TRAINS, SELF, switch_dd13_livery, cargo_subtype) {
 	8: spriteset_dd13_kosaka;
 	9: spriteset_dd13_kamioka;
 	10: spriteset_dd13_kashima;
-	11: spriteset_ed76_cc;
+	11: spriteset_dd13_cc;
 	switch_dd13_yeardep_livery;
 }
 

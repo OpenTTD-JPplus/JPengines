@@ -116,12 +116,12 @@ switch(FEAT_TRAINS, SELF, switch_ef64_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef64_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_REFIT_JRF_REFIT), string(STR_SUFFIX_BLUE));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_REFIT_EUROLINER), string(STR_SUFFIX_BLUE_WHITE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_EF64_0), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC), string(STR_SUFFIX_EUROLINER), string(STR_SUFFIX_BLUE_WHITE));
+	6: return string(STR_REFIT_CC);
 	return CB_RESULT_NO_TEXT;
 	}
 
@@ -221,13 +221,13 @@ switch(FEAT_TRAINS, SELF, switch_ef64_1000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef64_1000_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JR_LOGO), string(STR_SUFFIX_BLUE_YELLOW));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JRF_REFIT), string(STR_SUFFIX_BLUE_WHITE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_REFIT_JRF_NLOGO), string(STR_SUFFIX_BLUE_WHITE));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_EF64_1000), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_LOGO), string(STR_SUFFIX_BLUE_YELLOW));
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_NOLOGO));
+	7: return string(STR_REFIT_CC);
 	return CB_RESULT_NO_TEXT;
 	}
 
