@@ -70,9 +70,8 @@ graphics { // graphics for engine
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_2C, 
-                           string(STR_SUFFIX_JGR),
-                           string(STR_SUFFIX_JNR)
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
                     )
                   );
     default: switch_ed17_livery;
@@ -129,9 +128,8 @@ item (FEAT_TRAINS, ed50, 1012) {
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_P),
-                        string(STR_CONCAT_2C, 
-                           string(STR_SUFFIX_JGR),
-                           string(STR_SUFFIX_JNR)
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
                     )
                   );
   cargo_capacity: return 0;

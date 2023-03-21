@@ -229,8 +229,9 @@ property {
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
-                        string(STR_SUFFIX_JRF)
+                      string(STR_CONCAT_2C, 
+                        string(STR_SUFFIX_JRF),
+						string(STR_SUFFIX_JRE)
                     )
                   );
 
