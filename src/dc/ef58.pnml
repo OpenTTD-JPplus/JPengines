@@ -299,9 +299,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 66;
+  cost_factor: 44;
   length: 8;
-  running_cost_factor: 69;
+  running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 14;
   }

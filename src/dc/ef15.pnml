@@ -84,7 +84,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 39;
+  cost_factor: 42;
   length: 7;
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;

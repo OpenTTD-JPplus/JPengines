@@ -1,27 +1,27 @@
-spriteset(spriteset_ef63_brown, "gfx/ef63.png") {
+spriteset(spriteset_ef63_brown, "gfx/electric/ef63.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef63_blue, "gfx/ef63.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_ef63_cc, "gfx/ef63.png") {
+spriteset(spriteset_ef63_blue, "gfx/electric/ef63.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef63_brown_purchase, "gfx/ef63.png") {
-	template_purchase(1, 96)
+spriteset(spriteset_ef63_cc, "gfx/electric/ef63.png") {
+	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef63_blue_purchase, "gfx/ef63.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_ef63_brown_purchase, "gfx/electric/ef63.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_ef63_blue_purchase, "gfx/electric/ef63.png") {
+	template_purchase(89, 192)
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_ef63_yeardep_livery, build_year) {
-	0..1964: spriteset_ef63_brown;
+	0..1965: spriteset_ef63_brown;
 	spriteset_ef63_blue;
 }
 

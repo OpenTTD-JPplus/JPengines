@@ -1980,6 +1980,7 @@ item (FEAT_TRAINS, ed16, 1004) {
   length: 6;
   running_cost_factor: 40;
   running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -2069,9 +2070,8 @@ graphics { // graphics for engine
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_2C, 
-                           string(STR_SUFFIX_JGR),
-                           string(STR_SUFFIX_JNR)
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
                     )
                   );
     default: switch_ed17_livery;
@@ -2128,9 +2128,8 @@ item (FEAT_TRAINS, ed50, 1012) {
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_P),
-                        string(STR_CONCAT_2C, 
-                           string(STR_SUFFIX_JGR),
-                           string(STR_SUFFIX_JNR)
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
                     )
                   );
   cargo_capacity: return 0;
@@ -4340,24 +4339,24 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   purchase: switch_ef67_1_yeardep_purchase;
   }
 }
-spriteset(spriteset_ef63_brown, "gfx/ef63.png") {
+spriteset(spriteset_ef63_brown, "gfx/electric/ef63.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef63_blue, "gfx/ef63.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_ef63_cc, "gfx/ef63.png") {
+spriteset(spriteset_ef63_blue, "gfx/electric/ef63.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef63_brown_purchase, "gfx/ef63.png") {
-	template_purchase(1, 96)
+spriteset(spriteset_ef63_cc, "gfx/electric/ef63.png") {
+	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef63_blue_purchase, "gfx/ef63.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_ef63_brown_purchase, "gfx/electric/ef63.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_ef63_blue_purchase, "gfx/electric/ef63.png") {
+	template_purchase(89, 192)
 }
 
 
@@ -8086,8 +8085,9 @@ property {
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
-                        string(STR_SUFFIX_JRF)
+                      string(STR_CONCAT_2C, 
+                        string(STR_SUFFIX_JRF),
+						string(STR_SUFFIX_JRE)
                     )
                   );
 
@@ -9622,7 +9622,7 @@ item (FEAT_TRAINS, df200, 63) {
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_DF50);
+	name: string(STR_NAME_DF200);
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];

@@ -336,9 +336,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 54;
+  cost_factor: 88;
   length: 6;
-  running_cost_factor: 62;
+  running_cost_factor: 82;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 18;
