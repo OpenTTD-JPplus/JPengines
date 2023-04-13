@@ -289,7 +289,7 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		name: string(STR_NAME_PAX_OHA35);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1939,1,1);
-		speed: 110 km/h;
+		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

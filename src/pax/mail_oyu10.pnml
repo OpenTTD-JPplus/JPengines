@@ -72,7 +72,7 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		name: string(STR_NAME_MAIL_OYU_10);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1956,1,1);
-		speed: 100 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

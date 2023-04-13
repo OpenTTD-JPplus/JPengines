@@ -128,7 +128,7 @@ sort(FEAT_TRAINS, [
 //diesels
 1203, 1205, 1207, 1209, 1210, 20, 1211, 1212, 1215, 25, 1220, 1221, 71, 63, 111,
 //electrics DC old
-1010, 1011, 990, 1004, 02, 1012, 1050, 1013, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 14, 
+1010, 1011, 990, 1004, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1921, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 
 //electrics DC new
 1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
@@ -2956,7 +2956,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 39;
+  cost_factor: 42;
   length: 7;
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
@@ -3946,9 +3946,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 45;
-  cost_factor: 66;
+  cost_factor: 44;
   length: 8;
-  running_cost_factor: 69;
+  running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 14;
   }
@@ -4362,7 +4362,7 @@ spriteset(spriteset_ef63_blue_purchase, "gfx/electric/ef63.png") {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef63_yeardep_livery, build_year) {
-	0..1964: spriteset_ef63_brown;
+	0..1965: spriteset_ef63_brown;
 	spriteset_ef63_blue;
 }
 
@@ -6112,9 +6112,9 @@ property {
   reliability_decay: 55;
   model_life: 45;
   vehicle_life: 40;
-  cost_factor: 54;
+  cost_factor: 88;
   length: 6;
-  running_cost_factor: 62;
+  running_cost_factor: 82;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 18;
@@ -12233,7 +12233,7 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		name: string(STR_NAME_PAX_OHA35);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1939,1,1);
-		speed: 110 km/h;
+		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -14708,7 +14708,7 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		name: string(STR_NAME_MAIL_OYU_10);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1956,1,1);
-		speed: 100 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -14931,7 +14931,7 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		name: string(STR_NAME_MAIL_SUYU42);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1953,1,1);
-		speed: 100 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

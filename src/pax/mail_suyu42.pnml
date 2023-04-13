@@ -135,7 +135,7 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		name: string(STR_NAME_MAIL_SUYU42);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1953,1,1);
-		speed: 100 km/h;
+		speed: 110 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
