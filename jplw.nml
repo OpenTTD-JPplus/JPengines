@@ -130,7 +130,7 @@ sort(FEAT_TRAINS, [
 //electrics DC old
 1010, 1011, 990, 1004, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1921, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 
 //electrics DC new
-1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1041, 24, 1042, 1942, 1924, 26, 1945, 60, 84, 1084, 1984, 88, 
+1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1922, 1041, 24, 1042, 1942, 1924, 26, 1926, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
 1065, 1070, 1970, 1075, 1071, 1072, 1972, 1946, 1045, 
 //electrics MS 
@@ -4887,12 +4887,17 @@ switch(FEAT_TRAINS, SELF, switch_ef65_0_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+/* removed pending fix
 
-switch (FEAT_TRAINS, SELF, switch_ef65_0_name, getbits(extra_callback_info1, 8, 8)) { 
-  1: return string(STR_NAME_EF65_1); 
-  return string(STR_NAME_EF65); 
+switch (FEAT_TRAINS, SELF, switch_ef65_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF65);
   } 
-
+switch (FEAT_TRAINS, SELF, switch_ef65_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef65_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+*/
 
 item (FEAT_TRAINS, ef65_0, 24) {
 
@@ -4936,7 +4941,7 @@ property {
   cargo_subtype_text: switch_ef65_0_subtype_text;
   default: switch_ef65_0_livery;
   purchase: switch_ef65_0_yeardep_purchase;
-  name: switch_ef65_0_name;
+//  name: switch_ef65_0_name;
   }
 }
 
@@ -4972,11 +4977,12 @@ switch(FEAT_TRAINS, SELF, switch_ef65_500_subtype_text, cargo_subtype) {
 	}
 
 
+/*
 switch (FEAT_TRAINS, SELF, switch_ef65_500_name, getbits(extra_callback_info1, 8, 8)) { 
   1: return string(STR_NAME_EF65_2); 
   return string(STR_NAME_EF65); 
   } 
-
+*/
 
 
 
@@ -5024,7 +5030,7 @@ property {
   cargo_subtype_text: switch_ef65_500_subtype_text;
   default: switch_ef65_500_livery;
   purchase: switch_ef65_500_yeardep_purchase;
-  name: switch_ef65_500_name;
+//  name: switch_ef65_500_name;
   }
 }
 
@@ -5070,12 +5076,12 @@ switch(FEAT_TRAINS, SELF, switch_ef65_1000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+/*
 switch (FEAT_TRAINS, SELF, switch_ef65_1000_name, getbits(extra_callback_info1, 8, 8)) { 
   1: return string(STR_NAME_EF65_3); 
   return string(STR_NAME_EF65); 
   } 
-
+*/
 
 item (FEAT_TRAINS, ef65_1000, 1942) {
 
@@ -5122,7 +5128,7 @@ property {
   cargo_subtype_text: switch_ef65_1000_subtype_text;
   default: switch_ef65_1000_livery;
   purchase: switch_ef65_1000_yeardep_purchase;
-  name: switch_ef65_1000_name;
+//  name: switch_ef65_1000_name;
   }
 }
 
@@ -5156,12 +5162,12 @@ switch(FEAT_TRAINS, SELF, switch_ef67_100_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+/*
 switch (FEAT_TRAINS, SELF, switch_ef67_100_name, getbits(extra_callback_info1, 8, 8)) { 
   1: return string(STR_NAME_EF67_2); 
   return string(STR_NAME_EF65); 
   } 
-
+*/
 
 item (FEAT_TRAINS, ef67_100, 1924) {
 
@@ -5205,7 +5211,7 @@ property {
   cargo_subtype_text: switch_ef67_100_subtype_text;
   default: switch_ef67_100_livery;
   purchase: switch_ef67_100_yeardep_purchase;
-  name: switch_ef67_100_name;
+//  name: switch_ef67_100_name;
   }
 }
 spriteset(spriteset_ef66_old_blue, "gfx/electric/ef66.png") {
@@ -5323,9 +5329,16 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
-
-
+/*
+switch (FEAT_TRAINS, SELF, switch_ef66_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF66);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef66_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef66_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+*/
 
 
 item (FEAT_TRAINS, ef66, 26) {
@@ -5371,6 +5384,7 @@ property {
   cargo_subtype_text: switch_ef66_subtype_text;
   default: switch_ef66_livery;
   purchase: switch_ef66_yeardep_purchase;
+//  name: switch_ef66_0_name;
   }
 }
 
@@ -5389,6 +5403,17 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+/*
+switch (FEAT_TRAINS, SELF, switch_ef66_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF66);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef66_100_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef66_100_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+*/
 
 item (FEAT_TRAINS, ef66_2, 1926) {
 
@@ -5432,6 +5457,7 @@ property {
   cargo_subtype_text: switch_ef66_2_subtype_text;
   default: switch_ef66_2_livery;
   purchase: spriteset_ef66_100_jrf_purchase;
+//  name: switch_ef66_100_name;
   }
 }
 spriteset(spriteset_ef200_original, "gfx/ef200.png") {
