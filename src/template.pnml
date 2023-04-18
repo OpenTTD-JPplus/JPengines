@@ -106,7 +106,7 @@ template template_container_4(x, y) {
 //Engines
 template template_purchase(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
-    [x, y,  87, 12, -25, -6]
+    [x, y,  87, 12, -25, -7]
 }
  
  
