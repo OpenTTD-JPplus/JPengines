@@ -97,6 +97,15 @@ switch(FEAT_TRAINS, SELF, switch_ef210_0_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef210_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef210_0, 84) {
 
@@ -139,6 +148,7 @@ property {
   cargo_subtype_text: switch_ef210_0_subtype_text;
   default: switch_ef210_0_livery;
   purchase: switch_ef210_0_yeardep_purchase;
+  name: switch_ef210_0_name;
   }
 }
 
@@ -175,6 +185,15 @@ switch(FEAT_TRAINS, SELF, switch_ef210_100_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef210_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_100_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_100_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef210_100, 1084) {
@@ -219,6 +238,7 @@ property {
   cargo_subtype_text: switch_ef210_100_subtype_text;
   default: switch_ef210_100_livery;
   purchase: switch_ef210_100_yeardep_purchase;
+  name: switch_ef210_100_name;
   }
 }
 
@@ -243,6 +263,15 @@ switch(FEAT_TRAINS, SELF, switch_ef210_300_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef210_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_300_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_300_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef210_300, 1984) {
@@ -287,5 +316,6 @@ property {
   cargo_subtype_text: switch_ef210_300_subtype_text;
   default: switch_ef210_300_livery;
   purchase: switch_ef210_300_yeardep_purchase;
+  name: switch_ef210_300_name;
   }
 }

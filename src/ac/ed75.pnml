@@ -216,11 +216,21 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ed75_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED75);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed75_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed75_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed75, 1070) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_ED75);
+  name: string(STR_NAME_ED75_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
   speed: 100 km/h;
@@ -255,6 +265,7 @@ item (FEAT_TRAINS, ed75, 1070) {
   cargo_subtype_text: switch_ed75_subtype_text;
   default: switch_ed75_livery;
   purchase: switch_ed75_yeardep_purchase;
+  name: switch_ed75_0_name;
   }
 }
 
@@ -356,6 +367,16 @@ switch(FEAT_TRAINS, SELF, switch_ed75_700_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ed75_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED75);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed75_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed75_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed75_700, 1970) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -395,5 +416,6 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   cargo_subtype_text: switch_ed75_700_subtype_text;
   default: switch_ed75_700_livery;
   purchase: switch_ed75_700_yeardep_purchase;
+  name: switch_ed75_2_name;
   }
 }

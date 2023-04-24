@@ -111,11 +111,22 @@ switch(FEAT_TRAINS, SELF, switch_ef59_2_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef59_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF59);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef59_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef59_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ef59_2, 1919) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF59);
+  name: string(STR_NAME_EF59_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
   speed: 95 km/h;
@@ -149,5 +160,6 @@ item (FEAT_TRAINS, ef59_2, 1919) {
   cargo_subtype_text: switch_ef59_2_subtype_text;
   default: switch_ef59_2_livery;
   purchase: spriteset_ef59_2_purchase;
+  name: switch_ef59_2_name;
   }
 }

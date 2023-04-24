@@ -127,6 +127,15 @@ switch(FEAT_TRAINS, SELF, switch_ef57_2_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef57_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF57);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef57_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef57_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef57_2, 1920) {
  property {
@@ -167,5 +176,6 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   cargo_subtype_text: switch_ef57_2_subtype_text;
   default: switch_ef57_2_livery;
   purchase: switch_ef57_2_yeardep_purchase;
+  name: switch_ef57_2_name;
   }
 }

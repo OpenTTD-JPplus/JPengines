@@ -108,6 +108,14 @@ switch(FEAT_TRAINS, SELF, switch_ef510_0_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -116,7 +124,7 @@ item (FEAT_TRAINS, ef510_0, 105) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF510);
+  name: string(STR_NAME_EF510_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2001,1,1);
   speed: 120 km/h;
@@ -153,6 +161,7 @@ property {
   cargo_subtype_text: switch_ef510_0_subtype_text;
   default: switch_ef510_0_livery;
   purchase: switch_ef510_0_purchase;
+  name: switch_ef510_0_name;
   }
 }
 
@@ -192,6 +201,14 @@ switch(FEAT_TRAINS, SELF, switch_ef510_500_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_500_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -239,6 +256,7 @@ property {
   cargo_subtype_text: switch_ef510_500_subtype_text;
   default: switch_ef510_500_livery;
   purchase: switch_ef510_500_purchase;
+  name: switch_ef510_500_name;
   }
 }
 
@@ -259,6 +277,17 @@ switch(FEAT_TRAINS, SELF, switch_ef510_300_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_300_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ef510_300, 1086) {
@@ -304,5 +333,6 @@ property {
   cargo_subtype_text: switch_ef510_300_subtype_text;
   default: switch_ef510_300_livery;
   purchase: spriteset_ef510_300_jr_purchase;
+  name: switch_ef510_300_name;
   }
 }

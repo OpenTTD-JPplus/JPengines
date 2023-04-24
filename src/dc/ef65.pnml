@@ -455,7 +455,7 @@ switch(FEAT_TRAINS, SELF, switch_ef67_100_subtype_text, cargo_subtype) {
 
 switch (FEAT_TRAINS, SELF, switch_ef67_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
-  return string(STR_NAME_EF65);
+  return string(STR_NAME_EF67);
   } 
 switch (FEAT_TRAINS, SELF, switch_ef67_100_name, getbits(extra_callback_info1, 0, 8)) { 
   0x20: switch_ef67_100_name_purchase; 

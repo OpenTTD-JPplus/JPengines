@@ -45,13 +45,23 @@ switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_ef13_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef13_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 
 item (FEAT_TRAINS, ef13_1, 103) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_EF13);
+	name: string(STR_NAME_EF13_1);
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
@@ -83,6 +93,7 @@ property {
   cargo_subtype_text: switch_ef13_subtype_text;
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
+  name: switch_ef13_name;
   }
 }
 
@@ -98,6 +109,18 @@ switch(FEAT_TRAINS, SELF, switch_ef13_2_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 }
+
+
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef13_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 
 item (FEAT_TRAINS, ef13_2, 1053) {
  property {
@@ -139,5 +162,6 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   cargo_subtype_text: switch_ef13_2_subtype_text;
   default: switch_ef13_2_livery;
   purchase: spriteset_ef13_bloc_jnr_purchase;
+  name: switch_ef13_2_name;
   }
 }

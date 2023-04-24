@@ -119,6 +119,14 @@ switch(FEAT_TRAINS, SELF, switch_ef60_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef60_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_1, 1030) {
@@ -161,6 +169,7 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   cargo_subtype_text: switch_ef60_1_subtype_text;
   default: switch_ef60_1_livery;
   purchase: switch_ef60_1_yeardep_purchase;
+  name: switch_ef60_1_name;
   }
 }
 
@@ -196,6 +205,15 @@ switch(FEAT_TRAINS, SELF, switch_ef60_2_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef60_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_2, 1031) {
@@ -237,6 +255,7 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   cargo_subtype_text: switch_ef60_2_subtype_text;
   default: switch_ef60_2_livery;
   purchase: switch_ef60_2_yeardep_purchase;
+  name: switch_ef60_2_name;
   }
 }
 
@@ -259,6 +278,14 @@ switch(FEAT_TRAINS, SELF, switch_ef60_0_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef60_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_0, 1930) {
@@ -300,6 +327,7 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   cargo_subtype_text: switch_ef60_0_subtype_text;
   default: switch_ef60_0_livery;
   purchase: switch_ef60_1_yeardep_purchase;
+  name: switch_ef60_0_name;
   }
 }
 
@@ -326,6 +354,14 @@ switch(FEAT_TRAINS, SELF, switch_ef67_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef67_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF67);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef67_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef67_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef67_1, 1931) {
@@ -368,5 +404,6 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   cargo_subtype_text: switch_ef67_1_subtype_text;
   default: switch_ef67_1_livery;
   purchase: switch_ef67_1_yeardep_purchase;
+  name: switch_ef67_1_name;
   }
 }

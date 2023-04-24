@@ -217,6 +217,16 @@ switch(FEAT_TRAINS, SELF, switch_eh10_2_articulated_part, extra_callback_info1) 
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_eh10_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EH10);
+  } 
+switch (FEAT_TRAINS, SELF, switch_eh10_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_eh10_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, eh10_2, 1081) {
 
 property {
@@ -258,6 +268,7 @@ property {
   default: switch_eh10_2_livery;
   purchase: spriteset_eh10_proto_purchase;
   articulated_part: switch_eh10_2_articulated_part;
+  name: switch_eh10_2_name;
   }
 }
 

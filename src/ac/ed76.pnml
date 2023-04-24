@@ -96,11 +96,21 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase, current_year) {
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed76_0, 1071) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_ED76);
+  name: string(STR_NAME_ED76_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
   speed: 100 km/h;
@@ -137,6 +147,7 @@ item (FEAT_TRAINS, ed76_0, 1071) {
   cargo_subtype_text: switch_ed76_0_subtype_text;
   default: switch_ed76_0_livery;
   purchase: switch_ed76_0_yeardep_purchase;
+  name: switch_ed76_0_name;
   }
 }
 
@@ -159,6 +170,17 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase, current_year) {
 	0..1987: spriteset_ed76_500_jnr_purchase;
     spriteset_ed76_500_jr_purchase;
 }
+
+
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_500_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ed76_500, 1072) {
@@ -202,6 +224,7 @@ item (FEAT_TRAINS, ed76_500, 1072) {
   cargo_subtype_text: switch_ed76_500_subtype_text;
   default: switch_ed76_500_livery;
   purchase: switch_ed76_500_yeardep_purchase;
+  name: switch_ed76_500_name;
   }
 }
 
@@ -218,6 +241,17 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_550_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ed76_550, 1972) {
@@ -260,5 +294,6 @@ item (FEAT_TRAINS, ed76_550, 1972) {
   cargo_subtype_text: switch_ed76_550_subtype_text;
   default: switch_ed76_550_livery;
   purchase: spriteset_ed76_550_jr_purchase;
+  name: switch_ed76_550_name;
   }
 }
