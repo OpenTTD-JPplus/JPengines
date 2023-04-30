@@ -30,7 +30,21 @@ property {
 	}
 }
 
-//todo override vanilla pax wagons
+//override vanilla pax wagons
+
+item (FEAT_TRAINS, combined_pax, 0x6b) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
+
+item (FEAT_TRAINS, combined_mail, 0x6c) {
+
+property {
+		climates_available: NO_CLIMATE;
+	}
+}
 
 //override KOKI with M250 trailer
 
