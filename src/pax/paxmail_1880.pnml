@@ -219,7 +219,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
-//		speed: 120 km/h;
+		speed: 80 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -304,7 +304,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		name: string(STR_NAME_MAIL_KONI_8890);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
-//		speed: 120 km/h;
+		speed: 80 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
