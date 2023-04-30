@@ -84,7 +84,7 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		non_refittable_cargo_classes: 0; 
 		weight: 20;
 		cost_factor: 45;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

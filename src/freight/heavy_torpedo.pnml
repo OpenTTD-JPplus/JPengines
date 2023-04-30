@@ -134,7 +134,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 120;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 3;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);

@@ -75,7 +75,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {

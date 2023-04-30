@@ -528,7 +528,7 @@ property {
 	speed: 100 km/h;
 	weight: 16;
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);

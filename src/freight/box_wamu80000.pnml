@@ -295,7 +295,7 @@ property {
 	non_refittable_cargo_classes: 0;
 	weight: 15;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);

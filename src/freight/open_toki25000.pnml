@@ -370,7 +370,7 @@ property {
 	length: 7;
 	weight: 17;
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;

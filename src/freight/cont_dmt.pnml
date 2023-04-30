@@ -353,7 +353,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 15;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 15;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);

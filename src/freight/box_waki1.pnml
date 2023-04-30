@@ -39,7 +39,7 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 20;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

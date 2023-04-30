@@ -205,7 +205,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		loading_speed: 50;
 		weight: 11;
 		cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);

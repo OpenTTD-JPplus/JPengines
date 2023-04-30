@@ -194,7 +194,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 100;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 15;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

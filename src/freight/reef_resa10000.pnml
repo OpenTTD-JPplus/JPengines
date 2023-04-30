@@ -38,7 +38,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		non_refittable_cargo_classes: 0; 
 		weight: 25;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

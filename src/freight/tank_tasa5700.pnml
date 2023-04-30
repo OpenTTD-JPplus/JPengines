@@ -139,7 +139,7 @@ property {
 		introduction_date: date(1963,1,1);
 		speed: 85 km/h;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 	graphics {

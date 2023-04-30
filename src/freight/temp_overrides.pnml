@@ -30,6 +30,8 @@ property {
 	}
 }
 
+//todo override vanilla pax wagons
+
 //override KOKI with M250 trailer
 
 //remove pending recode of M250

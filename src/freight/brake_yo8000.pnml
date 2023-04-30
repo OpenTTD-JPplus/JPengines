@@ -80,7 +80,7 @@ item (FEAT_TRAINS, yo_8000, 35) {
 //		loading_speed: 1;
 //		weight: 20;
 		cost_factor: 40;
-		running_cost_factor: 48;
+		running_cost_factor: 12;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		bitmask_vehicle_info: bitmask(1);

@@ -150,7 +150,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
 		cost_factor: 77;
-		running_cost_factor: 18;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_2CC);

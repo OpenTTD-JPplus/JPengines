@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 150;
+ version: 160;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -128,7 +128,7 @@ sort(FEAT_TRAINS, [
 //diesels
 1203, 1205, 1207, 1209, 1210, 20, 1211, 1212, 1215, 25, 1220, 1221, 71, 63, 111,
 //electrics DC old
-1010, 1011, 990, 1004, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1921, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 
+1010, 1011, 990, 1004, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 1921, 
 //electrics DC new
 1059, 1060, 1960, 1930, 1030, 1031, 1931, 1040, 22, 1922, 1041, 24, 1042, 1942, 1924, 26, 1926, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
@@ -278,7 +278,7 @@ template template_container_4(x, y) {
 //Engines
 template template_purchase(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
-    [x, y,  87, 12, -25, -6]
+    [x, y,  87, 12, -25, -7]
 }
  
  
@@ -2609,6 +2609,14 @@ switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef10_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF10);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef10_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef10_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef10, 08) {
@@ -2616,7 +2624,7 @@ item (FEAT_TRAINS, ef10, 08) {
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_EF10);
+	name: string(STR_NAME_EF10_1);
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1350 kW;
@@ -2646,6 +2654,7 @@ property {
   cargo_subtype_text: switch_ef10_subtype_text;
   default: switch_ef10_livery;
   purchase: switch_ef10_yeardep_purchase;
+  name: switch_ef10_name;
   }
 }
 
@@ -2682,6 +2691,16 @@ switch(FEAT_TRAINS, SELF, switch_ef10_2_subtype_text, cargo_subtype) {
 	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ef10_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF10);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef10_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef10_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -2725,6 +2744,7 @@ item (FEAT_TRAINS, ef10_2, 1052) {
   cargo_subtype_text: switch_ef10_2_subtype_text;
   default: switch_ef10_2_livery;
   purchase: switch_ef10_2_yeardep_purchase;
+  name: switch_ef10_2_name;
   }
 }
 spriteset(spriteset_ef13_croc_brown, "gfx/electric/ef13.png") {
@@ -2774,13 +2794,23 @@ switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_ef13_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef13_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 
 item (FEAT_TRAINS, ef13_1, 103) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_EF13);
+	name: string(STR_NAME_EF13_1);
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
@@ -2812,6 +2842,7 @@ property {
   cargo_subtype_text: switch_ef13_subtype_text;
   default: switch_ef13_livery;
   purchase: switch_ef13_yeardep_purchase;
+  name: switch_ef13_name;
   }
 }
 
@@ -2827,6 +2858,18 @@ switch(FEAT_TRAINS, SELF, switch_ef13_2_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 }
+
+
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef13_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 
 item (FEAT_TRAINS, ef13_2, 1053) {
  property {
@@ -2868,6 +2911,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   cargo_subtype_text: switch_ef13_2_subtype_text;
   default: switch_ef13_2_livery;
   purchase: spriteset_ef13_bloc_jnr_purchase;
+  name: switch_ef13_2_name;
   }
 }
 spriteset(spriteset_ef15_jnr_a, "gfx/electric/ef15.png") {
@@ -3139,6 +3183,7 @@ switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
 	}
 
 
+
 item (FEAT_TRAINS, ef53, 1016) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -3192,11 +3237,21 @@ switch(FEAT_TRAINS, SELF, switch_ef59_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef59_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF59);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef59_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ef59_1, 1916) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF59);
+  name: string(STR_NAME_EF59_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
   speed: 95 km/h;
@@ -3230,6 +3285,7 @@ item (FEAT_TRAINS, ef59_1, 1916) {
   cargo_subtype_text: switch_ef59_1_subtype_text;
   default: switch_ef59_1_livery;
   purchase: spriteset_ef59_1_purchase;
+  name: switch_ef59_1_name;
   }
 }
 spriteset(spriteset_ef55_brown, "gfx/electric/ef55.png") {
@@ -3434,11 +3490,22 @@ switch(FEAT_TRAINS, SELF, switch_ef59_2_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef59_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF59);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef59_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef59_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ef59_2, 1919) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF59);
+  name: string(STR_NAME_EF59_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
   speed: 95 km/h;
@@ -3472,6 +3539,7 @@ item (FEAT_TRAINS, ef59_2, 1919) {
   cargo_subtype_text: switch_ef59_2_subtype_text;
   default: switch_ef59_2_livery;
   purchase: spriteset_ef59_2_purchase;
+  name: switch_ef59_2_name;
   }
 }
 spriteset(spriteset_ef57_1_jgr, "gfx/electric/ef57.png") {
@@ -3603,6 +3671,15 @@ switch(FEAT_TRAINS, SELF, switch_ef57_2_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef57_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF57);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef57_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef57_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef57_2, 1920) {
  property {
@@ -3643,6 +3720,7 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   cargo_subtype_text: switch_ef57_2_subtype_text;
   default: switch_ef57_2_livery;
   purchase: switch_ef57_2_yeardep_purchase;
+  name: switch_ef57_2_name;
   }
 }
 spriteset(spriteset_ef58_brown, "gfx/electric/ef58.png") {
@@ -3809,13 +3887,22 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef58_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF58);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef58_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef58_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef58, 14) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
 //  track_type: NABE;
-	name: string(STR_NAME_EF58);
+	name: string(STR_NAME_EF58_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1952,1,1);
   speed: 110 km/h;
@@ -3852,6 +3939,7 @@ property {
   cargo_subtype_text: switch_ef58_subtype_text;
   default: switch_ef58_livery;
   purchase: switch_ef58_yeardep_purchase;
+  name: switch_ef58_1_name;
   }
 }
 
@@ -3868,6 +3956,16 @@ switch(FEAT_TRAINS, SELF, switch_ef58_old_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
+
+switch (FEAT_TRAINS, SELF, switch_ef58_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF58);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef58_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef58_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef58_2, 1021) {
 
@@ -3909,6 +4007,7 @@ property {
   cargo_subtype_text: switch_ef58_old_subtype_text;
   default: switch_ef58_old_livery;
   purchase: switch_ef58_old_yeardep_purchase;
+  name: switch_ef58_2_name;
   }
 }
 
@@ -4088,6 +4187,14 @@ switch(FEAT_TRAINS, SELF, switch_ef60_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef60_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_1, 1030) {
@@ -4130,6 +4237,7 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   cargo_subtype_text: switch_ef60_1_subtype_text;
   default: switch_ef60_1_livery;
   purchase: switch_ef60_1_yeardep_purchase;
+  name: switch_ef60_1_name;
   }
 }
 
@@ -4165,6 +4273,15 @@ switch(FEAT_TRAINS, SELF, switch_ef60_2_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef60_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_2, 1031) {
@@ -4206,6 +4323,7 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   cargo_subtype_text: switch_ef60_2_subtype_text;
   default: switch_ef60_2_livery;
   purchase: switch_ef60_2_yeardep_purchase;
+  name: switch_ef60_2_name;
   }
 }
 
@@ -4228,6 +4346,14 @@ switch(FEAT_TRAINS, SELF, switch_ef60_0_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef60_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF60);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef60_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef60_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef60_0, 1930) {
@@ -4269,6 +4395,7 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   cargo_subtype_text: switch_ef60_0_subtype_text;
   default: switch_ef60_0_livery;
   purchase: switch_ef60_1_yeardep_purchase;
+  name: switch_ef60_0_name;
   }
 }
 
@@ -4295,6 +4422,14 @@ switch(FEAT_TRAINS, SELF, switch_ef67_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch (FEAT_TRAINS, SELF, switch_ef67_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF67);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef67_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef67_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef67_1, 1931) {
@@ -4337,6 +4472,7 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   cargo_subtype_text: switch_ef67_1_subtype_text;
   default: switch_ef67_1_livery;
   purchase: switch_ef67_1_yeardep_purchase;
+  name: switch_ef67_1_name;
   }
 }
 spriteset(spriteset_ef63_brown, "gfx/electric/ef63.png") {
@@ -4559,6 +4695,14 @@ switch(FEAT_TRAINS, SELF, switch_ef64_0_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef64_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF64);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef64_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef64_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -4607,6 +4751,7 @@ property {
   cargo_subtype_text: switch_ef64_0_subtype_text;
   default: switch_ef64_0_livery;
   purchase: switch_ef64_0_yeardep_purchase;
+  name: switch_ef64_0_name;
   }
 }
 
@@ -4665,6 +4810,17 @@ switch(FEAT_TRAINS, SELF, switch_ef64_1000_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef64_1000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF64);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef64_1000_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef64_1000_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+
 item (FEAT_TRAINS, ef64_1000, 1922) {
 
 property {
@@ -4711,6 +4867,7 @@ property {
   cargo_subtype_text: switch_ef64_1000_subtype_text;
   default: switch_ef64_1000_livery;
   purchase: switch_ef64_1000_yeardep_purchase;
+  name: switch_ef64_1000_name;
   }
 }
 //ef65 0
@@ -4887,7 +5044,6 @@ switch(FEAT_TRAINS, SELF, switch_ef65_0_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-/* removed pending fix
 
 switch (FEAT_TRAINS, SELF, switch_ef65_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -4897,7 +5053,7 @@ switch (FEAT_TRAINS, SELF, switch_ef65_0_name, getbits(extra_callback_info1, 0, 
   0x20: switch_ef65_0_name_purchase; 
   return CB_RESULT_NO_TEXT;
   }
-*/
+
 
 item (FEAT_TRAINS, ef65_0, 24) {
 
@@ -4941,7 +5097,7 @@ property {
   cargo_subtype_text: switch_ef65_0_subtype_text;
   default: switch_ef65_0_livery;
   purchase: switch_ef65_0_yeardep_purchase;
-//  name: switch_ef65_0_name;
+  name: switch_ef65_0_name;
   }
 }
 
@@ -4977,13 +5133,15 @@ switch(FEAT_TRAINS, SELF, switch_ef65_500_subtype_text, cargo_subtype) {
 	}
 
 
-/*
-switch (FEAT_TRAINS, SELF, switch_ef65_500_name, getbits(extra_callback_info1, 8, 8)) { 
-  1: return string(STR_NAME_EF65_2); 
-  return string(STR_NAME_EF65); 
-  } 
-*/
 
+switch (FEAT_TRAINS, SELF, switch_ef65_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF65);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef65_500_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef65_500_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef65_500, 1042) {
@@ -5030,7 +5188,7 @@ property {
   cargo_subtype_text: switch_ef65_500_subtype_text;
   default: switch_ef65_500_livery;
   purchase: switch_ef65_500_yeardep_purchase;
-//  name: switch_ef65_500_name;
+  name: switch_ef65_500_name;
   }
 }
 
@@ -5076,12 +5234,16 @@ switch(FEAT_TRAINS, SELF, switch_ef65_1000_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-/*
-switch (FEAT_TRAINS, SELF, switch_ef65_1000_name, getbits(extra_callback_info1, 8, 8)) { 
-  1: return string(STR_NAME_EF65_3); 
-  return string(STR_NAME_EF65); 
+
+switch (FEAT_TRAINS, SELF, switch_ef65_1000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF65);
   } 
-*/
+switch (FEAT_TRAINS, SELF, switch_ef65_1000_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef65_1000_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef65_1000, 1942) {
 
@@ -5128,7 +5290,7 @@ property {
   cargo_subtype_text: switch_ef65_1000_subtype_text;
   default: switch_ef65_1000_livery;
   purchase: switch_ef65_1000_yeardep_purchase;
-//  name: switch_ef65_1000_name;
+  name: switch_ef65_1000_name;
   }
 }
 
@@ -5162,12 +5324,16 @@ switch(FEAT_TRAINS, SELF, switch_ef67_100_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-/*
-switch (FEAT_TRAINS, SELF, switch_ef67_100_name, getbits(extra_callback_info1, 8, 8)) { 
-  1: return string(STR_NAME_EF67_2); 
-  return string(STR_NAME_EF65); 
+
+switch (FEAT_TRAINS, SELF, switch_ef67_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF67);
   } 
-*/
+switch (FEAT_TRAINS, SELF, switch_ef67_100_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef67_100_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef67_100, 1924) {
 
@@ -5211,7 +5377,7 @@ property {
   cargo_subtype_text: switch_ef67_100_subtype_text;
   default: switch_ef67_100_livery;
   purchase: switch_ef67_100_yeardep_purchase;
-//  name: switch_ef67_100_name;
+  name: switch_ef67_100_name;
   }
 }
 spriteset(spriteset_ef66_old_blue, "gfx/electric/ef66.png") {
@@ -5329,7 +5495,7 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-/*
+
 switch (FEAT_TRAINS, SELF, switch_ef66_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
   return string(STR_NAME_EF66);
@@ -5338,7 +5504,7 @@ switch (FEAT_TRAINS, SELF, switch_ef66_0_name, getbits(extra_callback_info1, 0, 
   0x20: switch_ef66_0_name_purchase; 
   return CB_RESULT_NO_TEXT;
   }
-*/
+
 
 
 item (FEAT_TRAINS, ef66, 26) {
@@ -5384,7 +5550,7 @@ property {
   cargo_subtype_text: switch_ef66_subtype_text;
   default: switch_ef66_livery;
   purchase: switch_ef66_yeardep_purchase;
-//  name: switch_ef66_0_name;
+  name: switch_ef66_0_name;
   }
 }
 
@@ -5404,7 +5570,7 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-/*
+
 switch (FEAT_TRAINS, SELF, switch_ef66_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
   return string(STR_NAME_EF66);
@@ -5413,7 +5579,7 @@ switch (FEAT_TRAINS, SELF, switch_ef66_100_name, getbits(extra_callback_info1, 0
   0x20: switch_ef66_100_name_purchase; 
   return CB_RESULT_NO_TEXT;
   }
-*/
+
 
 item (FEAT_TRAINS, ef66_2, 1926) {
 
@@ -5457,7 +5623,7 @@ property {
   cargo_subtype_text: switch_ef66_2_subtype_text;
   default: switch_ef66_2_livery;
   purchase: spriteset_ef66_100_jrf_purchase;
-//  name: switch_ef66_100_name;
+  name: switch_ef66_100_name;
   }
 }
 spriteset(spriteset_ef200_original, "gfx/ef200.png") {
@@ -5630,13 +5796,22 @@ switch(FEAT_TRAINS, SELF, switch_ef210_0_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef210_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef210_0, 84) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF210);
+  name: string(STR_NAME_EF210_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1996,1,1);
   speed: 120 km/h;
@@ -5672,6 +5847,7 @@ property {
   cargo_subtype_text: switch_ef210_0_subtype_text;
   default: switch_ef210_0_livery;
   purchase: switch_ef210_0_yeardep_purchase;
+  name: switch_ef210_0_name;
   }
 }
 
@@ -5708,6 +5884,15 @@ switch(FEAT_TRAINS, SELF, switch_ef210_100_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef210_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_100_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_100_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef210_100, 1084) {
@@ -5752,6 +5937,7 @@ property {
   cargo_subtype_text: switch_ef210_100_subtype_text;
   default: switch_ef210_100_livery;
   purchase: switch_ef210_100_yeardep_purchase;
+  name: switch_ef210_100_name;
   }
 }
 
@@ -5776,6 +5962,15 @@ switch(FEAT_TRAINS, SELF, switch_ef210_300_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef210_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF210);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef210_300_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef210_300_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef210_300, 1984) {
@@ -5820,6 +6015,7 @@ property {
   cargo_subtype_text: switch_ef210_300_subtype_text;
   default: switch_ef210_300_livery;
   purchase: switch_ef210_300_yeardep_purchase;
+  name: switch_ef210_300_name;
   }
 }
 //front
@@ -6041,6 +6237,16 @@ switch(FEAT_TRAINS, SELF, switch_eh10_2_articulated_part, extra_callback_info1) 
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_eh10_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EH10);
+  } 
+switch (FEAT_TRAINS, SELF, switch_eh10_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_eh10_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, eh10_2, 1081) {
 
 property {
@@ -6082,6 +6288,7 @@ property {
   default: switch_eh10_2_livery;
   purchase: spriteset_eh10_proto_purchase;
   articulated_part: switch_eh10_2_articulated_part;
+  name: switch_eh10_2_name;
   }
 }
 
@@ -6594,11 +6801,21 @@ switch(FEAT_TRAINS, SELF, switch_ed75_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ed75_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED75);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed75_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed75_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed75, 1070) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_ED75);
+  name: string(STR_NAME_ED75_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
   speed: 100 km/h;
@@ -6633,6 +6850,7 @@ item (FEAT_TRAINS, ed75, 1070) {
   cargo_subtype_text: switch_ed75_subtype_text;
   default: switch_ed75_livery;
   purchase: switch_ed75_yeardep_purchase;
+  name: switch_ed75_0_name;
   }
 }
 
@@ -6734,6 +6952,16 @@ switch(FEAT_TRAINS, SELF, switch_ed75_700_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ed75_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED75);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed75_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed75_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed75_700, 1970) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -6773,6 +7001,7 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   cargo_subtype_text: switch_ed75_700_subtype_text;
   default: switch_ed75_700_livery;
   purchase: switch_ed75_700_yeardep_purchase;
+  name: switch_ed75_2_name;
   }
 }
 spriteset(spriteset_ed76_0_red, "gfx/electric/ed76.png") {
@@ -6873,11 +7102,21 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase, current_year) {
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ed76_0, 1071) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_ED76);
+  name: string(STR_NAME_ED76_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
   speed: 100 km/h;
@@ -6914,6 +7153,7 @@ item (FEAT_TRAINS, ed76_0, 1071) {
   cargo_subtype_text: switch_ed76_0_subtype_text;
   default: switch_ed76_0_livery;
   purchase: switch_ed76_0_yeardep_purchase;
+  name: switch_ed76_0_name;
   }
 }
 
@@ -6936,6 +7176,17 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase, current_year) {
 	0..1987: spriteset_ed76_500_jnr_purchase;
     spriteset_ed76_500_jr_purchase;
 }
+
+
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_500_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ed76_500, 1072) {
@@ -6979,6 +7230,7 @@ item (FEAT_TRAINS, ed76_500, 1072) {
   cargo_subtype_text: switch_ed76_500_subtype_text;
   default: switch_ed76_500_livery;
   purchase: switch_ed76_500_yeardep_purchase;
+  name: switch_ed76_500_name;
   }
 }
 
@@ -6995,6 +7247,17 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_ED76);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ed76_550_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ed76_550, 1972) {
@@ -7037,6 +7300,7 @@ item (FEAT_TRAINS, ed76_550, 1972) {
   cargo_subtype_text: switch_ed76_550_subtype_text;
   default: switch_ed76_550_livery;
   purchase: spriteset_ed76_550_jr_purchase;
+  name: switch_ed76_550_name;
   }
 }
 spriteset(spriteset_ed500_jrf, "gfx/ed500.png") {
@@ -7202,6 +7466,16 @@ switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef30_p_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF30);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef30_p_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef30_p_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ef30_proto, 1915) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -7241,6 +7515,7 @@ item (FEAT_TRAINS, ef30_proto, 1915) {
   cargo_subtype_text: switch_ef30_proto_subtype_text;
   default: switch_ef30_proto_livery;
   purchase: spriteset_ef30_proto_purchase;
+  name: switch_ef30_p_name;
   }
 }
 spriteset(spriteset_ef70_old_red, "gfx/electric/ef70.png") {
@@ -7295,11 +7570,22 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef70_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF70);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef70_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef70_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, ef70_new, 1045) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF70);
+  name: string(STR_NAME_EF70_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1964,1,1);
   speed: 105 km/h;
@@ -7334,6 +7620,7 @@ item (FEAT_TRAINS, ef70_new, 1045) {
   cargo_subtype_text: switch_ef70_new_subtype_text;
   default: switch_ef70_new_livery;
   purchase: spriteset_ef70_new_purchase;
+  name: switch_ef70_2_name;
   }
 }
 
@@ -7350,6 +7637,16 @@ switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text, cargo_subtype) {
   1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+switch (FEAT_TRAINS, SELF, switch_ef70_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF70);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef70_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef70_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef70_old, 1946) {
  property {
@@ -7391,6 +7688,7 @@ item (FEAT_TRAINS, ef70_old, 1946) {
   cargo_subtype_text: switch_ef70_old_subtype_text;
   default: switch_ef70_old_livery;
   purchase: spriteset_ef70_old_purchase;
+  name: switch_ef70_1_name;
   }
 }
 spriteset(spriteset_ef80_old_red, "gfx/ef80.png") {
@@ -7636,13 +7934,22 @@ switch(FEAT_TRAINS, SELF, switch_ef81_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef81_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF81);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef81_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef81_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 item (FEAT_TRAINS, ef81, 55) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF81);
+  name: string(STR_NAME_EF81_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1968,1,1);
   speed: 110 km/h;
@@ -7683,6 +7990,7 @@ property {
   cargo_subtype_text: switch_ef81_subtype_text;
   default: switch_ef81_livery;
   purchase: switch_ef81_yeardep_purchase;
+  name: switch_ef81_0_name;
   }
 }
 
@@ -7725,6 +8033,15 @@ switch(FEAT_TRAINS, SELF, switch_ef81_300_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef81_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF81);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef81_300_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef81_300_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef81_300, 1083) {
@@ -7771,6 +8088,7 @@ property {
   cargo_subtype_text: switch_ef81_300_subtype_text;
   default: switch_ef81_300_livery;
   purchase: switch_ef81_300_yeardep_purchase;
+  name: switch_ef81_300_name;
   }
 }
 
@@ -7791,6 +8109,15 @@ switch(FEAT_TRAINS, SELF, switch_ef81_450_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+switch (FEAT_TRAINS, SELF, switch_ef81_450_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF81);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef81_450_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef81_450_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 item (FEAT_TRAINS, ef81_450, 1983) {
@@ -7836,6 +8163,7 @@ property {
   cargo_subtype_text: switch_ef81_450_subtype_text;
   default: switch_ef81_450_livery;
   purchase: spriteset_ef81_450_jrf_purchase;
+  name: switch_ef81_450_name;
   }
 }
 spriteset(spriteset_ef500_jrf, "gfx/ef500.png") {
@@ -8012,6 +8340,14 @@ switch(FEAT_TRAINS, SELF, switch_ef510_0_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -8020,7 +8356,7 @@ item (FEAT_TRAINS, ef510_0, 105) {
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
-  name: string(STR_NAME_EF510);
+  name: string(STR_NAME_EF510_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2001,1,1);
   speed: 120 km/h;
@@ -8057,6 +8393,7 @@ property {
   cargo_subtype_text: switch_ef510_0_subtype_text;
   default: switch_ef510_0_livery;
   purchase: switch_ef510_0_purchase;
+  name: switch_ef510_0_name;
   }
 }
 
@@ -8096,6 +8433,14 @@ switch(FEAT_TRAINS, SELF, switch_ef510_500_subtype_text, cargo_subtype) {
 	}
 
 
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_500_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
 
 
 
@@ -8143,6 +8488,7 @@ property {
   cargo_subtype_text: switch_ef510_500_subtype_text;
   default: switch_ef510_500_livery;
   purchase: switch_ef510_500_purchase;
+  name: switch_ef510_500_name;
   }
 }
 
@@ -8163,6 +8509,17 @@ switch(FEAT_TRAINS, SELF, switch_ef510_300_subtype_text, cargo_subtype) {
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF510);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef510_300_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
 
 
 item (FEAT_TRAINS, ef510_300, 1086) {
@@ -8208,6 +8565,7 @@ property {
   cargo_subtype_text: switch_ef510_300_subtype_text;
   default: switch_ef510_300_livery;
   purchase: spriteset_ef510_300_jr_purchase;
+  name: switch_ef510_300_name;
   }
 }
 //proto
@@ -8371,12 +8729,23 @@ switch(FEAT_TRAINS, SELF, switch_eh500_new_articulated_part, extra_callback_info
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_eh500_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EH500);
+  } 
+switch (FEAT_TRAINS, SELF, switch_eh500_2_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_eh500_2_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+
 item (FEAT_TRAINS, eh500_new, 1098) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
 	track_type: NABE;
-	name: string(STR_NAME_EH500);
+	name: string(STR_NAME_EH500_2);
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(2002,1,1);
 	speed: 120 km/h;
@@ -8416,6 +8785,7 @@ property {
   default: switch_eh500_new_front_livery;
   purchase: switch_eh500_new_purchase;
   articulated_part: switch_eh500_new_articulated_part;
+  name: switch_eh500_2_name;
   }
 }
 
@@ -8496,6 +8866,16 @@ switch(FEAT_TRAINS, SELF, switch_eh500_old_articulated_part, extra_callback_info
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_eh500_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EH500);
+  } 
+switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_eh500_1_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
 item (FEAT_TRAINS, eh500_old, 67) {
 
 property {
@@ -8542,6 +8922,7 @@ property {
   default: switch_eh500_old_front_livery;
   purchase: switch_eh500_old_purchase;
   articulated_part: switch_eh500_old_articulated_part;
+  name: switch_eh500_1_name;
   }
 }
 
@@ -8620,6 +9001,17 @@ switch(FEAT_TRAINS, SELF, switch_eh500_proto_articulated_part, extra_callback_in
 }
 
 
+switch (FEAT_TRAINS, SELF, switch_eh500_p_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EH500);
+  } 
+switch (FEAT_TRAINS, SELF, switch_eh500_p_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_eh500_p_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+
 item (FEAT_TRAINS, eh500_proto, 1097) {
 
 property {
@@ -8666,6 +9058,7 @@ property {
   default: switch_eh500_proto_front_livery;
   purchase: switch_eh500_proto_purchase;
   articulated_part: switch_eh500_proto_articulated_part;
+  name: switch_eh500_p_name;
   }
 }
 
@@ -9837,7 +10230,7 @@ item (FEAT_TRAINS, yo_1, 1601) {
 		loading_speed: 1;
 		weight: 20;
 		cost_factor: 14;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		bitmask_vehicle_info: bitmask(3);
@@ -9919,7 +10312,7 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		loading_speed: 1;
 		weight: 20;
 		cost_factor: 22;
-		running_cost_factor: 32;
+		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		bitmask_vehicle_info: bitmask(2);
@@ -10014,7 +10407,7 @@ item (FEAT_TRAINS, yo_8000, 35) {
 //		loading_speed: 1;
 //		weight: 20;
 		cost_factor: 40;
-		running_cost_factor: 48;
+		running_cost_factor: 12;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		bitmask_vehicle_info: bitmask(1);
@@ -10222,7 +10615,7 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 50;
-		running_cost_factor: 10;
+		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
 //		length: 6;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -10283,7 +10676,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 25;
-		running_cost_factor: 8;
+		running_cost_factor: 4;
 		running_cost_base: RUNNING_COST_STEAM;
 //		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -10537,7 +10930,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 55;
-		running_cost_factor: 12;
+		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -10622,7 +11015,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 30;
-		running_cost_factor: 10;
+		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -10892,7 +11285,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 65;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -10980,7 +11373,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 35;
-		running_cost_factor: 12;
+		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -11306,7 +11699,7 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 76;
-		running_cost_factor: 19;
+		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -11387,7 +11780,7 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 45;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -11969,7 +12362,7 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		non_refittable_cargo_classes: 0; 
 		weight: 28;
 		cost_factor: 75;
-		running_cost_factor: 18;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -12294,7 +12687,7 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		non_refittable_cargo_classes: 0; 
 		weight: 28;
 		cost_factor: 70;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -12531,7 +12924,7 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		non_refittable_cargo_classes: 0; 
 		weight: 28;
 		cost_factor: 75;
-		running_cost_factor: 18;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -12728,7 +13121,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
 		cost_factor: 77;
-		running_cost_factor: 18;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_2CC);
@@ -12891,7 +13284,7 @@ item (FEAT_TRAINS, pax_12_series, 1320) {
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
 		cost_factor: 76;
-		running_cost_factor: 17;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -13128,7 +13521,7 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		cost_factor: 82;
-		running_cost_factor: 20;
+		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -13313,7 +13706,7 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
 		cost_factor: 72;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -13513,7 +13906,7 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
 		cost_factor: 74;
-		running_cost_factor: 17;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -13594,7 +13987,7 @@ item (FEAT_TRAINS, pax_26_series, 1346) {
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
 		cost_factor: 83;
-		running_cost_factor: 21;
+		running_cost_factor: 11;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -13692,7 +14085,7 @@ item (FEAT_TRAINS, pax_77_series, 1347) {
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
 		cost_factor: 83;
-		running_cost_factor: 21;
+		running_cost_factor: 11;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -14312,7 +14705,7 @@ item (FEAT_TRAINS, pax_10series, 1322) {
 		non_refittable_cargo_classes: 0; 
 		weight: 28;
 		cost_factor: 80;
-		running_cost_factor: 18;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -14368,7 +14761,7 @@ item (FEAT_TRAINS, mail_mani_30, 1380) {
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
 		cost_factor: 52;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -14500,7 +14893,7 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
 		cost_factor: 45;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -14606,7 +14999,7 @@ item (FEAT_TRAINS, mail_mani_44, 1390) {
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
 		cost_factor: 52;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -14662,7 +15055,7 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 		non_refittable_cargo_classes: 0; 
 		weight: 20;
 		cost_factor: 52;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -14768,7 +15161,7 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		non_refittable_cargo_classes: 0; 
 		weight: 20;
 		cost_factor: 45;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -14823,7 +15216,7 @@ item (FEAT_TRAINS, mail_suyu_15, 1360) {
 		non_refittable_cargo_classes: 0; 
 		weight: 20;
 		cost_factor: 52;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -14991,7 +15384,7 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		non_refittable_cargo_classes: 0; 
 		weight: 29;
 		cost_factor: 45;
-		running_cost_factor: 15;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -15129,7 +15522,7 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		non_refittable_cargo_classes: 0; 
 		weight: 21;
 		cost_factor: 52;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
@@ -15227,7 +15620,7 @@ property {
 	cargo_capacity: 20;
 	cargo_age_period: 0;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -15351,7 +15744,7 @@ property {
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -15426,7 +15819,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
 		cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -15737,7 +16130,7 @@ property {
 	non_refittable_cargo_classes: 0;
 	weight: 15;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -15793,7 +16186,7 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 20;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -15908,7 +16301,7 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -16012,7 +16405,7 @@ property {
 	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -16092,7 +16485,7 @@ property {
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -16211,7 +16604,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -16273,7 +16666,7 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 10;
 		cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -16348,7 +16741,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 20;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -16396,7 +16789,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -16446,7 +16839,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		non_refittable_cargo_classes: 0; 
 		weight: 25;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -16518,7 +16911,7 @@ property {
 	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -16583,7 +16976,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 		weight: 15;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
@@ -16683,7 +17076,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 18;
 	cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -16746,7 +17139,7 @@ property {
 	cargo_disallow_refit: [WOOL, WOOD];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -16857,7 +17250,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -16912,7 +17305,7 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 		weight: 13;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
@@ -16986,7 +17379,7 @@ property {
 	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -17073,7 +17466,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -17163,7 +17556,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -17287,7 +17680,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 9;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 4;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -17397,7 +17790,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 13;
 	cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -17478,7 +17871,7 @@ property {
 	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -17588,7 +17981,7 @@ property {
 	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 14;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -17739,7 +18132,7 @@ property {
 	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -18536,7 +18929,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	speed: 85 km/h;
 	cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -21986,7 +22379,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 15;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 15;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
@@ -22065,7 +22458,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -22192,7 +22585,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -22319,7 +22712,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -23221,7 +23614,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -23417,7 +23810,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
 		weight: 10;
 		cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
@@ -23906,7 +24299,7 @@ property {
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
@@ -23978,7 +24371,7 @@ property {
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 6;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
@@ -24523,7 +24916,7 @@ property {
 	speed: 100 km/h;
 	weight: 16;
 	cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
@@ -24617,7 +25010,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -24774,7 +25167,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 120;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 3;
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
@@ -24992,7 +25385,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 //		cargo_disallow_refit: [WDPR, WOOL];
 		weight: 100;
 		cost_factor: 100;
-	running_cost_factor: 30;
+	running_cost_factor: 15;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -25238,7 +25631,7 @@ property {
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	weight: 9;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 4;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -25601,7 +25994,7 @@ property {
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -25970,7 +26363,7 @@ property {
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -26342,7 +26735,7 @@ property {
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -26409,7 +26802,7 @@ property {
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	variant_group: 29;
 	}
@@ -26794,7 +27187,7 @@ property {
 	length: 7;
 	weight: 17;
 	cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
@@ -26945,7 +27338,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		loading_speed: 50;
 		weight: 8;
 		cost_factor: 14;
-		running_cost_factor: 4;
+		running_cost_factor: 2;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -27167,7 +27560,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		loading_speed: 50;
 		weight: 11;
 		cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -27323,7 +27716,7 @@ property {
 		introduction_date: date(1963,1,1);
 		speed: 85 km/h;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 	graphics {
@@ -27483,7 +27876,7 @@ property {
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
@@ -27757,7 +28150,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		loading_speed: 50;
 		weight: 20;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -27905,7 +28298,7 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		loading_speed: 50;
 		weight: 20;
 		cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -28064,7 +28457,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		loading_speed: 50;
 		weight: 17;
 		cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -28113,6 +28506,8 @@ property {
 		climates_available: NO_CLIMATE;
 	}
 }
+
+//todo override vanilla pax wagons
 
 //override KOKI with M250 trailer
 

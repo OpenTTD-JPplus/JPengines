@@ -100,7 +100,7 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

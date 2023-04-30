@@ -172,7 +172,7 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
 		cost_factor: 74;
-		running_cost_factor: 17;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

@@ -57,7 +57,7 @@ item (FEAT_TRAINS, yo_1, 1601) {
 		loading_speed: 1;
 		weight: 20;
 		cost_factor: 14;
-		running_cost_factor: 16;
+		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		bitmask_vehicle_info: bitmask(3);

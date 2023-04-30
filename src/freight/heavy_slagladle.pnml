@@ -75,7 +75,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

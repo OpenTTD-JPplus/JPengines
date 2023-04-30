@@ -59,7 +59,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
 		cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

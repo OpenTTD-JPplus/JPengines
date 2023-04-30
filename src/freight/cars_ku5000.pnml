@@ -786,7 +786,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	speed: 85 km/h;
 	cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {

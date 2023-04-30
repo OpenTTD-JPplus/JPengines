@@ -105,7 +105,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {

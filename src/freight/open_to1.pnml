@@ -219,7 +219,7 @@ property {
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	weight: 9;
 	cost_factor: 14;
-	running_cost_factor: 4;
+	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 4;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);

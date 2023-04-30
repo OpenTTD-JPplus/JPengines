@@ -259,7 +259,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		loading_speed: 50;
 		weight: 20;
 		cost_factor: 40;
-	running_cost_factor: 12;
+	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);

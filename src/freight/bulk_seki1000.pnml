@@ -64,7 +64,7 @@ property {
 	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 18;
-		running_cost_factor: 6;
+		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
