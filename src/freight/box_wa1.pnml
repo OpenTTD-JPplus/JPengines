@@ -107,7 +107,7 @@ property {
 	speed: 65 km/h;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
