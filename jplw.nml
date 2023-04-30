@@ -11019,7 +11019,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		refit_cost: 0;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 30;
@@ -15003,7 +15003,7 @@ item (FEAT_TRAINS, mail_mani_44, 1390) {
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
 		cost_factor: 52;
@@ -15823,7 +15823,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
 		cost_factor: 18;
@@ -16305,7 +16305,7 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 40;

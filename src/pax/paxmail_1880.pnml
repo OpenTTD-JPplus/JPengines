@@ -312,7 +312,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		refit_cost: 0;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 //		weight: 28;
 		cost_factor: 30;
