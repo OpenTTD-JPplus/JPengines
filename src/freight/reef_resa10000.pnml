@@ -33,6 +33,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
+		cargo_age_period: 0;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
@@ -42,7 +43,6 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-		cargo_age_period: 0;
 	}
 	graphics {
 //		cargo_capacity: return 75;
