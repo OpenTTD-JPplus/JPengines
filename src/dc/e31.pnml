@@ -39,7 +39,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 40;
-  reliability_decay: 80;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 40;
   cost_factor: 13;

@@ -41,7 +41,7 @@ item (FEAT_TRAINS, ed19, 1013) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 68;
-  reliability_decay: 85;
+  reliability_decay: 20;
   model_life: 55;
   vehicle_life: 50;
   cost_factor: 30;
@@ -84,7 +84,7 @@ item (FEAT_TRAINS, ed53, 1050) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 68;
-  reliability_decay: 85;
+  reliability_decay: 20;
   model_life: 55;
   vehicle_life: 50;
   cost_factor: 30;

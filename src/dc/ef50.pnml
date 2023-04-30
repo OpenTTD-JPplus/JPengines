@@ -68,7 +68,7 @@ item (FEAT_TRAINS, ef50, 1014) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 97;
-  reliability_decay: 60;
+  reliability_decay: 20;
   model_life: 30;
   vehicle_life: 32;
   cost_factor: 45;

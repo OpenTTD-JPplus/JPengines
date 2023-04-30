@@ -64,6 +64,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
+	reliability_decay: 20;
   cost_factor: 46;
   length: 8;
   running_cost_factor: 74;

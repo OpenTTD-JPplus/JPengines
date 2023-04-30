@@ -54,7 +54,7 @@ item (FEAT_TRAINS, ef30, 1015) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 85;
+  reliability_decay: 20;
   model_life: 40;
   vehicle_life: 30;
   cost_factor: 40;
@@ -121,7 +121,7 @@ item (FEAT_TRAINS, ef30_proto, 1915) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 85;
+  reliability_decay: 20;
   model_life: 40;
   vehicle_life: 30;
   cost_factor: 40;

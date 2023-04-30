@@ -44,7 +44,7 @@ item (FEAT_TRAINS, el120, 1106) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 40;
-  reliability_decay: 85;
+  reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
   cost_factor: 29;

@@ -104,7 +104,7 @@ item (FEAT_TRAINS, jgr_7200, 902) {
 		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		weight: 45;
-		reliability_decay: 80;
+		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
 		cost_factor: 12;

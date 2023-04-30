@@ -52,7 +52,7 @@ property {
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 925 kW;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 31;
@@ -113,7 +113,7 @@ item (FEAT_TRAINS, ed50, 1012) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 60;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 31;

@@ -47,7 +47,7 @@ item (FEAT_TRAINS, ab10, 1010) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 30;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 10;
   vehicle_life: 10;
   cost_factor: 20;
@@ -129,7 +129,7 @@ item (FEAT_TRAINS, eb10, 1011) {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 22;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 40;
   cost_factor: 19;

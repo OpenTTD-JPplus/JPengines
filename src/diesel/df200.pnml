@@ -56,6 +56,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
+	reliability_decay: 20;
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	engine_class: ENGINE_CLASS_DIESEL;

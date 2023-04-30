@@ -242,7 +242,7 @@ item (FEAT_TRAINS, ed75, 1070) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 68;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 41;
@@ -317,7 +317,7 @@ item (FEAT_TRAINS, ed79, 1075) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 68;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 41;
@@ -393,7 +393,7 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 68;
-  reliability_decay: 55;
+  reliability_decay: 20;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 41;

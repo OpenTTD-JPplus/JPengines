@@ -72,7 +72,7 @@ property {
     cargo_capacity: 1;
     cargo_allow_refit: [PASS];
     weight: 78;
-    reliability_decay: 85;
+    reliability_decay: 20;
     model_life: 60;
     vehicle_life: 50;
     cost_factor: 49;
