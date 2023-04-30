@@ -108,7 +108,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 9;
 	cost_factor: 14;
 	running_cost_factor: 2;

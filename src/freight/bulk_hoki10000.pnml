@@ -72,7 +72,7 @@ property {
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	cost_factor: 50;
 	running_cost_factor: 8;

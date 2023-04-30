@@ -16670,6 +16670,7 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		cargo_capacity: 30; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
+		cargo_age_period: 0;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 10;
@@ -16745,6 +16746,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		cargo_capacity: 50; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
+		cargo_age_period: 0;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 20;
@@ -16842,6 +16844,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
+		cargo_age_period: 0;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
@@ -16851,7 +16854,6 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-		cargo_age_period: 0;
 	}
 	graphics {
 //		cargo_capacity: return 75;
@@ -16916,7 +16918,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 22;
 	running_cost_factor: 4;
@@ -16981,7 +16983,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 		weight: 15;
 		cost_factor: 50;
 	running_cost_factor: 8;
@@ -17081,7 +17083,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 18;
 	cost_factor: 30;
 	running_cost_factor: 5;
@@ -17143,7 +17145,7 @@ property {
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
-	cargo_allow_refit: [FOOD, GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SALT, SASH, POTA];
+	cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SALT, SASH, POTA];
 	cargo_disallow_refit: [WOOL, WOOD];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
@@ -17255,7 +17257,7 @@ property {
 	speed: 85 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [GRAI, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
 	running_cost_factor: 6;
@@ -17310,7 +17312,7 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-		cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 		weight: 13;
 		cost_factor: 30;
 	running_cost_factor: 5;
@@ -17384,7 +17386,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
 	running_cost_factor: 8;
@@ -17471,7 +17473,7 @@ property {
 	speed: 85 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
 	running_cost_factor: 6;
@@ -17561,7 +17563,7 @@ property {
 	speed: 100 km/h;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	cost_factor: 50;
 	running_cost_factor: 8;
@@ -17685,7 +17687,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 9;
 	cost_factor: 14;
 	running_cost_factor: 2;
@@ -17795,7 +17797,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 13;
 	cost_factor: 18;
 		running_cost_factor: 3;
@@ -17876,7 +17878,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP];
-	cargo_allow_refit: [GRAI, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
 	weight: 15;
 	cost_factor: 18;
 		running_cost_factor: 3;
@@ -17986,7 +17988,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
-	cargo_disallow_refit: [GRAI, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR];
 	weight: 14;
 	cost_factor: 22;
 	running_cost_factor: 4;
