@@ -37,6 +37,14 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	default: random_remu_5000;

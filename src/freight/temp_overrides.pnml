@@ -79,10 +79,18 @@ property {
 		introduction_date: date(2003,1,1);
 		speed: 130 km/h;
 		cost_factor: 50;
-		running_cost_factor: 17;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_T260),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 70;
 		default: spritegroup_m250_trailer;
 		purchase: spriteset_m250_trailer_purchase;

@@ -219,10 +219,20 @@ property {
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;
@@ -302,6 +312,14 @@ property {
 	variant_group: 51;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHIP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;

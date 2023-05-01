@@ -106,6 +106,14 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		default: switch_waki_1000_livery;

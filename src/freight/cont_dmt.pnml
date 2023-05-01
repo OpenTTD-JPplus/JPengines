@@ -359,6 +359,14 @@ item (FEAT_TRAINS, dmt, 1407) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_DMT),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;

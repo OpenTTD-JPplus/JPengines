@@ -149,6 +149,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 30;

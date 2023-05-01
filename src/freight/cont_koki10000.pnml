@@ -119,6 +119,15 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 60;
 		default: switch_koki_10000_caboose;
 		purchase: spriteset_koki_10000_purchase;

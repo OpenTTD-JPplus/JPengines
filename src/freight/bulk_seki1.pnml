@@ -99,6 +99,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 35;

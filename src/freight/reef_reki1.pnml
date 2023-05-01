@@ -66,6 +66,15 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		default: random_reki_1;

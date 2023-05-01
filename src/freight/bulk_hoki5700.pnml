@@ -46,6 +46,15 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CMNT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		cargo_capacity: return 50;
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;

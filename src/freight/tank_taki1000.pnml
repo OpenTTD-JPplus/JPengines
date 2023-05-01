@@ -180,12 +180,20 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		loading_speed: 50;
 		weight: 20;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //		cargo_capacity: return 0;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
@@ -265,6 +273,15 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 //		cargo_capacity: return 0;

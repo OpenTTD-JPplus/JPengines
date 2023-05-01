@@ -6280,7 +6280,7 @@ property {
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_HF),
+                        string(STR_DESC_USAGE_PROTO),
                         string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JNR)
                     )
@@ -6380,10 +6380,10 @@ property {
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_FF),
+                        string(STR_DESC_USAGE_PROTO),
                         string(STR_CONCAT_2C, 
                            string(STR_SUFFIX_JNR),
-						   string(STR_SUFFIX_JRF)
+						               string(STR_SUFFIX_JRF)
                     )
                   );  
   cargo_capacity: return 0;
@@ -8480,7 +8480,7 @@ property {
   additional_text:	string(STR_CONCAT_4S, 
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
-                      string(STR_DESC_USAGE_HF),
+                      string(STR_DESC_USAGE_EF),
                       string(STR_CONCAT_2C, 
                         string(STR_SUFFIX_JRF),
 						string(STR_SUFFIX_JRE)
@@ -12941,7 +12941,7 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
 								string(STR_DESC_NARROWGAUGE),
-								string(STR_DESC_USAGE_PAX_LEX),
+								string(STR_DESC_USAGE_PAX_TOKAIDO),
 								string(STR_CONCAT_1C, 
 									string(STR_SUFFIX_JNR)
 								)
@@ -15632,6 +15632,16 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_LVST),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
 	cargo_capacity: return 20;
@@ -15757,6 +15767,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 20;
@@ -15833,6 +15853,16 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 		cargo_capacity: return 30;
@@ -16062,10 +16092,20 @@ property {
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	cost_factor: 22;
-	running_cost_factor: 8;
+	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;
@@ -16145,6 +16185,14 @@ property {
 	variant_group: 51;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHIP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;
@@ -16200,6 +16248,15 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+	
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 		default: random_waki_1;
@@ -16315,6 +16372,14 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		default: switch_waki_1000_livery;
@@ -16417,6 +16482,16 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
 	cargo_capacity: return 80;
@@ -16498,6 +16573,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	cargo_capacity: return 60;
 	default: switch_waki_10000_loadstack;
 	purchase: switch_waki_10000_yeardep_purchase;
@@ -16616,6 +16700,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 20;
@@ -16681,6 +16774,15 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 		cargo_capacity: return 30;
@@ -16757,6 +16859,15 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		default: random_reki_1;
@@ -16803,6 +16914,14 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	default: random_remu_5000;
@@ -16856,6 +16975,14 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 //		cargo_capacity: return 75;
 		default: switch_resa_10000_caboose;
 		purchase: spriteset_resa_10000_purchase;
@@ -16927,6 +17054,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_QLME),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 45;
@@ -16992,6 +17128,14 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COV),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;
@@ -17092,6 +17236,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_STON),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	cargo_capacity: return 60;
 	default: random_hoki_800_livery;
 	purchase: switch_hoki_800_purchase;
@@ -17153,6 +17306,14 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_GRAI),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
 	cargo_capacity: return 58;
@@ -17264,6 +17425,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_LMST),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
 	cargo_capacity: return 55;
@@ -17321,6 +17491,15 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CMNT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		cargo_capacity: return 50;
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;
@@ -17393,6 +17572,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_GRAI),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	cargo_capacity: return 65;
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;
@@ -17480,6 +17668,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_LMST),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
 	cargo_capacity: return 60;
@@ -17570,6 +17767,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	cargo_capacity: return 70;
 	default: random_hoki_10000_livery;
 	purchase: switch_hoki_10000_purchase;
@@ -17696,6 +17902,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BULK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
 	cargo_capacity: return 20;
@@ -17806,6 +18021,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 35;
@@ -17887,6 +18112,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_QLME),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 40;
@@ -17997,6 +18231,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 45;
@@ -18146,6 +18389,14 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CARR),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
@@ -18943,6 +19194,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CAR),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
 	cargo_capacity: return 40;
@@ -22395,6 +22655,14 @@ item (FEAT_TRAINS, dmt, 1407) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_DMT),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
@@ -22474,6 +22742,15 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 60;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
@@ -22601,6 +22878,15 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 60;
 		default: switch_koki_10000_caboose;
 		purchase: spriteset_koki_10000_purchase;
@@ -22728,6 +23014,15 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 70;
 		default: switch_koki_50000_caboose;
 		purchase: spriteset_koki_50000_purchase;
@@ -23630,6 +23925,14 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 75;
 		default: switch_koki_cargo_selection;
 		purchase: spriteset_koki_purchase;
@@ -24318,6 +24621,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	default: stack_chisa_1;
@@ -24389,6 +24701,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	default: stack_chisa_1600;
@@ -24864,6 +25185,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	default: stack_chiki_1500;
@@ -24935,6 +25265,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //	speed: switch_speedboost_1;
 //	purchase_speed: return 75;
 	default: stack_chiki_7000;
@@ -25647,6 +25986,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
 	cargo_capacity: return 15;
@@ -26008,6 +26356,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 45;
@@ -26377,6 +26734,16 @@ property {
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
 	cargo_capacity: return 30;
@@ -26749,6 +27116,16 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 40;
@@ -26817,6 +27194,15 @@ property {
 	variant_group: 29;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHIP),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 35;
@@ -27205,6 +27591,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	cargo_capacity: return 60;
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
@@ -27247,7 +27643,7 @@ property {
 	length: 7;
 	weight: 16;
 	cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
@@ -27255,6 +27651,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;
@@ -27354,6 +27760,15 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 60;
 //		cargo_capacity: return 0;
@@ -27576,6 +27991,15 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_TANK),
+								string(STR_CONCAT_2C, 									
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
 //		cargo_capacity: return 0;
@@ -27730,6 +28154,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_GAS),
+								string(STR_CONCAT_2C, 									
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 50;
@@ -27890,6 +28323,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 30;
@@ -28081,12 +28523,20 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		loading_speed: 50;
 		weight: 20;
 		cost_factor: 50;
-	running_cost_factor: 15;
+	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //		cargo_capacity: return 0;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
@@ -28166,6 +28616,15 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 //		cargo_capacity: return 0;
@@ -28314,6 +28773,15 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 //		cargo_capacity: return 0;
@@ -28473,6 +28941,16 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHEM),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 //		cargo_capacity: return 0;
@@ -28566,10 +29044,18 @@ property {
 		introduction_date: date(2003,1,1);
 		speed: 130 km/h;
 		cost_factor: 50;
-		running_cost_factor: 17;
+		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_T260),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 70;
 		default: spritegroup_m250_trailer;
 		purchase: spriteset_m250_trailer_purchase;

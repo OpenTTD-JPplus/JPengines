@@ -45,6 +45,14 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 //		cargo_capacity: return 75;
 		default: switch_resa_10000_caboose;
 		purchase: spriteset_resa_10000_purchase;

@@ -258,7 +258,7 @@ property {
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_HF),
+                        string(STR_DESC_USAGE_PROTO),
                         string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JNR)
                     )
@@ -358,10 +358,10 @@ property {
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_FF),
+                        string(STR_DESC_USAGE_PROTO),
                         string(STR_CONCAT_2C, 
                            string(STR_SUFFIX_JNR),
-						   string(STR_SUFFIX_JRF)
+						               string(STR_SUFFIX_JRF)
                     )
                   );  
   cargo_capacity: return 0;

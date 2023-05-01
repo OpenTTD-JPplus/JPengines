@@ -378,6 +378,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	cargo_capacity: return 60;
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
@@ -420,7 +430,7 @@ property {
 	length: 7;
 	weight: 16;
 	cost_factor: 30;
-	running_cost_factor: 10;
+	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
@@ -428,6 +438,16 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	cargo_capacity: return 50;

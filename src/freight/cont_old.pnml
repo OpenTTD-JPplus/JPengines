@@ -894,6 +894,14 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 		cargo_capacity: return 75;
 		default: switch_koki_cargo_selection;
 		purchase: spriteset_koki_purchase;

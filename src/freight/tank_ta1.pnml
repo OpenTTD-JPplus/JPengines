@@ -86,6 +86,15 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 60;
 //		cargo_capacity: return 0;

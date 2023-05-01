@@ -466,6 +466,15 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	default: stack_chiki_1500;
@@ -537,6 +546,15 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
 //	speed: switch_speedboost_1;
 //	purchase_speed: return 75;
 	default: stack_chiki_7000;
