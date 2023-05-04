@@ -103,10 +103,13 @@ template template_container_4(x, y) {
 
 
 //Purchase templates
-//Engines
-template template_purchase(x, y) {
-    //[left_x, upper_y, width, height, offset_x, offset_y]
-    [x, y,  87, 12, -25, -7]
-}
- 
- 
+
+    template template_purchase_nologo(x, y) {
+        //[left_x, upper_y, width, height, offset_x, offset_y]
+        [x, y,  54, 12, -25, -7]
+    }
+
+    template template_purchase(x, y) {
+        //[left_x, upper_y, width, height, offset_x, offset_y]
+        [x, y,  87, 12, -25, -7]
+    }

@@ -40,6 +40,16 @@ grf {
 						};
 				}
 		}
+		/*
+		param 2 {
+			param_purchaselogo {
+				type: bool;
+				name: string(STR_PARAM_NAME_PURCHASELOGO);
+				desc: string(STR_PARAM_DESC_PURCHASELOGO);
+				
+			}
+		}
+		*/
 }
 
 //disable_item(FEAT_TRAINS);

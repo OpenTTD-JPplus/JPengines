@@ -81,8 +81,9 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_5S, 
                         string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_1B1),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
                         string(STR_CONCAT_2C, 

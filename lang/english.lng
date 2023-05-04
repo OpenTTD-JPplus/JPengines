@@ -3,13 +3,16 @@
 lang: 7F
 
 STR_GRF_NAME :JP+ Engines & Wagons v0.12.2 
-STR_GRF_DESCRIPTION :{RED}ATTENTION!{SILVER} Must be loaded AFTER JapanSet3: Trains to work!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Part of the {WHITE}JP{RED}+{BLACK} series, focused on locomotives, passenger coaches and freight wagons from JGR, JNR, JR and various private operators. Includes many new vehicles and livery refits. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo Hunter, wicket-303, *SaYa*, Azusa257, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
+STR_GRF_DESCRIPTION :{RED}ATTENTION!{SILVER} Must be loaded AFTER JapanSet3: Trains to work!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Part of the {WHITE}JP{RED}+{BLACK} series, focused on locomotives, passenger coaches and freight wagons from JGR, JNR, JR and various private operators. Includes many new vehicles and livery refits. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
 STR_PARAM_DESC_BASECOSTMODBUY	:Adjust vehicle purchase costs, to match Japan Set
 
 STR_PARAM_NAME_BASECOSTMODRUN	:Running costs
 STR_PARAM_DESC_BASECOSTMODRUN	:Adjust vehicle running costs, to match Japan Set
+
+STR_PARAM_NAME_PURCHASELOGO     :Purchase Menu Logos
+STR_PARAM_DESC_PURCHASELOGO     :Enable or disable the railway company logos in the vehicle purchase menu
 
 STR_PARAM_VLOW		:Very Low
 STR_PARAM_LOW		:Low
@@ -24,9 +27,9 @@ STR_ERROR_JAPANSETTRAINS	:JapanSet 3 Trains
 STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
 
-STR_NAME_7100	    :7100 1-C 
-STR_NAME_7200	    :7200 1-C 
-STR_NAME_860	    :860 1-B-1 
+STR_NAME_7100	    :7100
+STR_NAME_7200	    :7200
+STR_NAME_860	    :860
 STR_NAME_7050	    :7050 C-1 
 
 STR_NAME_DF50	    :DF50
@@ -193,6 +196,7 @@ STR_CONCAT_4	:{STRING} {STRING} {STRING} {STRING}
 
 STR_CONCAT_3S	:{STRING}{STRING}{STRING}
 STR_CONCAT_4S	:{STRING}{STRING}{STRING}{STRING}
+STR_CONCAT_5S	:{STRING}{STRING}{STRING}{STRING}{STRING}
 
 STR_CONCAT_1C	:{BLACK}Operators: {STRING}{}
 STR_CONCAT_2C	:{BLACK}Operators: {STRING} /{STRING}{}
@@ -772,6 +776,9 @@ STR_DESC_POWER_MS25 	:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV) {WHIT
 
 STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow {SILVER}(3ft6in/1,067mm){}
 STR_DESC_STDGAUGE	    :{BLACK}Gauge:{GOLD} Standard (4ft8.5in/1,435mm){}
+
+STR_DESC_WHEELS_1B1     :{BLACK}Wheel Arrangement:{GOLD} 1-B-1 / 2-4-2{}
+STR_DESC_WHEELS_1C      :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
 
 STR_DESC_USAGE_GP		:{BLACK}Usage: {SILVER}General Purpose{}
 STR_DESC_USAGE_LF		:{BLACK}Usage: {SILVER}Light Freight{}

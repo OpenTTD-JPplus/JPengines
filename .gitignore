@@ -16,3 +16,6 @@ jplw.nml
 jakesdevland alias
 *.cacheindex
 *.cache
+.nmlcache/gfx/ed500.png.cache
+*.cacheindex
+*.cache
