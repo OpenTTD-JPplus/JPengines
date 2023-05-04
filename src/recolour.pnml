@@ -608,6 +608,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 	
 	BDMT: return recolour_bulk +20;
 	WOOD: return recolour_bulk +20;
+    WDCH: return recolour_bulk +20;
 	
 	FICR: return recolour_bulk +21;
 	
