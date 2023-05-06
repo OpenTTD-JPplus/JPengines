@@ -177,7 +177,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 		loading_speed: 20;
 		refittable_cargo_classes: 0; 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [STEL, METL, COPR, ALUM, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR]; 
+		cargo_allow_refit: [STEL, METL, COPR, ALUM, ZINC, IRON, NICK, STAL, STCB, STSE, STSH, STST, STWR, COBL]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA, MAIL, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, FICR, BDMT, CERA, CMNT, DYES, FERT, FISH, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, EOIL, ACID, CHLO];
 		weight: 10;
 		cost_factor: 22;

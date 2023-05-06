@@ -253,6 +253,8 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_cargo_type, cargo_type_in_veh) {
 	STCB: spritegroup_flatbed_5_coils;
 	STWR: random_flatbed_5_metal_prod;
 	STSE: random_flatbed_5_metal_prod;
+	NICK: random_flatbed_5_metal;
+	COBL: random_flatbed_5_metal;
 	
 	ENSP: random_flatbed_5_ensp;
 	FMSP: random_flatbed_5_fmsp;
@@ -468,7 +470,7 @@ property {
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
-	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, COBL, NICK, JAVA];
+	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {

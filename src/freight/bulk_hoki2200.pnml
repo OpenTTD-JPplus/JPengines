@@ -45,7 +45,7 @@ property {
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SUGR, SALT, SASH, POTA];
-	cargo_disallow_refit: [WOOL, WOOD];
+	cargo_disallow_refit: [WOOL, WOOD, SGCN, TBCO];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
 	running_cost_factor: 6;

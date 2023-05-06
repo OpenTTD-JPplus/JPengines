@@ -520,6 +520,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	POWR: return recolour_piece +2;
 	TEXT: return recolour_piece +9;
 	URAN: return recolour_piece +6;
+    COBL: return recolour_piece +5;
 
 //FAKE BULK
 	BDMT: return recolour_bulk +20;

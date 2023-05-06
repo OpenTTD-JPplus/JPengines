@@ -153,6 +153,7 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   running_cost_factor: 78;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1930;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -240,7 +241,7 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   running_cost_factor: 78;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 1030;
+  variant_group: 1930;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -312,7 +313,7 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   running_cost_factor: 71;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 1030;
+//  variant_group: 1930;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -388,7 +389,7 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   running_cost_factor: 78;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 1030;
+  variant_group: 1930;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
