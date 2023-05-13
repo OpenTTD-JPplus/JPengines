@@ -10,13 +10,24 @@ spriteset(spriteset_ed70_purchase, "gfx/electric/ed70.png") {
 	template_purchase(1, 96)
 }
 
+spriteset(spriteset_ed70_purchase_nologo, "gfx/electric/ed70.png") {
+	template_purchase_nologo(1, 96)
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed70_purchase, param_purchaselogo) {
+	1: spriteset_ed70_purchase;
+	spriteset_ed70_purchase_nologo;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed70_livery, cargo_subtype) {
 	1: spriteset_ed70_cc;
 	spriteset_ed70_red;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_ed70_livery_cc, cargo_subtype) {
+	1: spriteset_ed70_red;
+   spriteset_ed70_cc;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed70_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RED);
@@ -24,7 +35,21 @@ switch(FEAT_TRAINS, SELF, switch_ed70_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ed70_subtype_text_cc, cargo_subtype) {
+	1: return string(STR_REFIT_RED);
+	0: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
 
+switch(FEAT_TRAINS, SELF, switch_ed70_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ed70_subtype_text_cc;
+   switch_ed70_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed70_livery_cc_mode, param_ccmode) {
+	1: switch_ed70_livery_cc;
+   switch_ed70_livery;
+}
 
 item (FEAT_TRAINS, ed70, 1065) {
  property {
@@ -60,8 +85,8 @@ item (FEAT_TRAINS, ed70, 1065) {
 							)
 						);  
    cargo_capacity: return 0;
-  default: switch_ed70_livery;
-  cargo_subtype_text: switch_ed70_subtype_text;
-  purchase: spriteset_ed70_purchase;
+  default: switch_ed70_livery_cc_mode;
+  cargo_subtype_text: switch_ed70_subtype_text_cc_mode;
+  purchase: switch_ed70_purchase;
   }
 }

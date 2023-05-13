@@ -40,7 +40,7 @@ grf {
 						};
 				}
 		}
-		/*
+		
 		param 2 {
 			param_purchaselogo {
 				type: bool;
@@ -49,7 +49,16 @@ grf {
 				
 			}
 		}
-		*/
+
+		param 3 {
+			param_ccmode {
+				type: bool;
+				name: string(STR_PARAM_NAME_CCMODE);
+				desc: string(STR_PARAM_DESC_CCMODE);
+				
+			}
+		}
+		
 }
 
 //disable_item(FEAT_TRAINS);

@@ -43,20 +43,40 @@ spriteset(spriteset_ed76_0_jnr_purchase, "gfx/electric/ed76.png") {
 	template_purchase(1, 320)
 }
 
+spriteset(spriteset_ed76_0_jnr_purchase_nologo, "gfx/electric/ed76.png") {
+	template_purchase_nologo(1, 320)
+}
+
 spriteset(spriteset_ed76_0_jrf_purchase, "gfx/electric/ed76.png") {
 	template_purchase(1, 352)
+}
+
+spriteset(spriteset_ed76_0_jrf_purchase_nologo, "gfx/electric/ed76.png") {
+	template_purchase_nologo(1, 352)
 }
 
 spriteset(spriteset_ed76_500_jnr_purchase, "gfx/electric/ed76.png") {
 	template_purchase(89, 320)
 }
 
+spriteset(spriteset_ed76_500_jnr_purchase_nologo, "gfx/electric/ed76.png") {
+	template_purchase_nologo(89, 320)
+}
+
 spriteset(spriteset_ed76_500_jr_purchase, "gfx/electric/ed76.png") {
 	template_purchase(89, 352)
 }
 
+spriteset(spriteset_ed76_500_jr_purchase_nologo, "gfx/electric/ed76.png") {
+	template_purchase_nologo(89, 352)
+}
+
 spriteset(spriteset_ed76_550_jr_purchase, "gfx/electric/ed76.png") {
 	template_purchase(89, 384)
+}
+
+spriteset(spriteset_ed76_550_jr_purchase_nologo, "gfx/electric/ed76.png") {
+	template_purchase_nologo(89, 384)
 }
 
 //ed76_0
@@ -78,6 +98,15 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_livery, cargo_subtype) {
 	switch_ed76_0_yeardep_livery;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed76_0_livery_cc, cargo_subtype) {
+	1: spriteset_ed76_0_red;
+	2: spriteset_ed76_0_jrf_stripe;
+	3: spriteset_ed76_0_jrf_whiskers;
+	4: spriteset_ed76_0_jrf_2tone;
+	5: spriteset_ed76_0_southerncross;
+	6: switch_ed76_0_yeardep_livery;
+  spriteset_ed76_0_cc;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
@@ -90,11 +119,41 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text_cc, cargo_subtype) {
+	0: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_STRIPE), string(STR_SUFFIX_RED_WHITE));
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_WHISKERS), string(STR_SUFFIX_RED_WHITE));
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_2TONE), string(STR_SUFFIX_BLUE));
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), string(STR_SUFFIX_SOUTHERNCROSS), string(STR_SUFFIX_RED_WHITE));
+  6: return string(STR_REFIT_YEARDEP);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ed76_0_subtype_text_cc;
+   switch_ed76_0_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_0_livery_cc_mode, param_ccmode) {
+	1: switch_ed76_0_livery_cc;
+   switch_ed76_0_livery;
+}
+
 switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase, current_year) {
 	0..1987: spriteset_ed76_0_jnr_purchase;
     spriteset_ed76_0_jrf_purchase;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase_nologo, current_year) {
+	0..1987: spriteset_ed76_0_jnr_purchase_nologo;
+    spriteset_ed76_0_jrf_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase_nologo_mode, param_purchaselogo) {
+	1: switch_ed76_0_yeardep_purchase;
+	switch_ed76_0_yeardep_purchase_nologo;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ed76_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -144,9 +203,9 @@ item (FEAT_TRAINS, ed76_0, 1071) {
 						);
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ed76_0_subtype_text;
-  default: switch_ed76_0_livery;
-  purchase: switch_ed76_0_yeardep_purchase;
+  cargo_subtype_text: switch_ed76_0_subtype_text_cc_mode;
+  default: switch_ed76_0_livery_cc_mode;
+  purchase: switch_ed76_0_yeardep_purchase_nologo_mode;
   name: switch_ed76_0_name;
   }
 }
@@ -159,6 +218,10 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_livery, cargo_subtype) {
 	spriteset_ed76_500_red;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed76_500_livery_cc, cargo_subtype) {
+	1: spriteset_ed76_500_red;
+	spriteset_ed76_500_cc;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
@@ -166,11 +229,36 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text_cc, cargo_subtype) {
+  0: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ed76_500_subtype_text_cc;
+   switch_ed76_500_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_livery_cc_mode, param_ccmode) {
+	1: switch_ed76_500_livery_cc;
+   switch_ed76_500_livery;
+}
+
 switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase, current_year) {
 	0..1987: spriteset_ed76_500_jnr_purchase;
     spriteset_ed76_500_jr_purchase;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase_nologo, current_year) {
+	0..1987: spriteset_ed76_500_jnr_purchase_nologo;
+    spriteset_ed76_500_jr_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase_nologo_mode, param_purchaselogo) {
+	1: switch_ed76_500_yeardep_purchase;
+	switch_ed76_500_yeardep_purchase_nologo;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ed76_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -221,9 +309,9 @@ item (FEAT_TRAINS, ed76_500, 1072) {
 						);
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ed76_500_subtype_text;
-  default: switch_ed76_500_livery;
-  purchase: switch_ed76_500_yeardep_purchase;
+  cargo_subtype_text: switch_ed76_500_subtype_text_cc_mode;
+  default: switch_ed76_500_livery_cc_mode;
+  purchase: switch_ed76_500_yeardep_purchase_nologo_mode;
   name: switch_ed76_500_name;
   }
 }
@@ -235,6 +323,10 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_livery, cargo_subtype) {
 	spriteset_ed76_550_red;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed76_550_livery_cc, cargo_subtype) {
+	1: spriteset_ed76_550_red;
+  spriteset_ed76_550_cc;
+}
 
 switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), string(STR_SUFFIX_RED_GREY));
@@ -242,6 +334,26 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text_cc, cargo_subtype) {
+  0: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), string(STR_SUFFIX_RED_GREY));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ed76_550_subtype_text_cc;
+   switch_ed76_550_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_550_livery_cc_mode, param_ccmode) {
+	1: switch_ed76_550_livery_cc;
+   switch_ed76_550_livery;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ed76_550_jr_purchase, param_purchaselogo) {
+	1: spriteset_ed76_550_jr_purchase;
+	spriteset_ed76_550_jr_purchase_nologo;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ed76_550_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -291,9 +403,9 @@ item (FEAT_TRAINS, ed76_550, 1972) {
 						);
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ed76_550_subtype_text;
-  default: switch_ed76_550_livery;
-  purchase: spriteset_ed76_550_jr_purchase;
+  cargo_subtype_text: switch_ed76_550_subtype_text_cc_mode;
+  default: switch_ed76_550_livery_cc_mode;
+  purchase: switch_ed76_550_jr_purchase;
   name: switch_ed76_550_name;
   }
 }

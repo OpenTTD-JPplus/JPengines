@@ -19,3 +19,5 @@ jakesdevland alias
 .nmlcache/gfx/ed500.png.cache
 *.cacheindex
 *.cache
+.nmlcache/
+.nmlcache/gfx/

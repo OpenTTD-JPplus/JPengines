@@ -14,6 +14,9 @@ STR_PARAM_DESC_BASECOSTMODRUN	:Adjust vehicle running costs, to match Japan Set
 STR_PARAM_NAME_PURCHASELOGO     :Purchase Menu Logos
 STR_PARAM_DESC_PURCHASELOGO     :Enable or disable the railway company logos in the vehicle purchase menu
 
+STR_PARAM_NAME_CCMODE           :Company Colour Mode
+STR_PARAM_DESC_CCMODE           :Enable or disable forced company colour mode.
+
 STR_PARAM_VLOW		:Very Low
 STR_PARAM_LOW		:Low
 STR_PARAM_NORMAL	:Normal
