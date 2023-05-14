@@ -16,7 +16,9 @@ spriteset(spriteset_ef80_purchase, "gfx/ef80.png") {
 	template_purchase(1, 128)
 }
 
-
+spriteset(spriteset_ef80_purchase_nologo, "gfx/ef80.png") {
+	template_purchase_nologo(1, 128)
+}
 
 switch(FEAT_TRAINS, SELF, switch_ef80_yeardep_livery, build_year) {
 	0..1980: spriteset_ef80_old_red;
@@ -32,6 +34,13 @@ switch(FEAT_TRAINS, SELF, switch_ef80_livery, cargo_subtype) {
 	switch_ef80_yeardep_livery;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ef80_livery_cc, cargo_subtype) {
+	1: spriteset_ef80_old_red;
+	2: spriteset_ef80_new_red;
+	3: switch_ef80_yeardep_livery;
+  spriteset_ef80_cc;
+	
+}
 
 switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
@@ -41,8 +50,28 @@ switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text_cc, cargo_subtype) {
+	0: return string(STR_REFIT_CC);
+	1: return string(STR_REFIT_PINK);
+	2: return string(STR_REFIT_RED);
+	3: return string(STR_REFIT_YEARDEP);
+	   return CB_RESULT_NO_TEXT;
+	}
 
+switch(FEAT_TRAINS, SELF, switch_ef80_purchase, param_purchaselogo) {
+	1: spriteset_ef80_purchase;
+	spriteset_ef80_purchase_nologo;
+}
 
+switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ef80_subtype_text_cc;
+   switch_ef80_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef80_livery_cc_mode, param_ccmode) {
+	1: switch_ef80_livery_cc;
+   switch_ef80_livery;
+}
 
 item (FEAT_TRAINS, ef80, 1080) {
  property {
@@ -80,8 +109,8 @@ item (FEAT_TRAINS, ef80, 1080) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef80_subtype_text;
-  default: switch_ef80_livery;
-  purchase: spriteset_ef80_purchase;
+  cargo_subtype_text: switch_ef80_subtype_text_cc_mode;
+  default: switch_ef80_livery_cc_mode;
+  purchase: switch_ef80_purchase;
   }
 }

@@ -28,8 +28,16 @@ spriteset(spriteset_ef70_old_purchase, "gfx/electric/ef70.png") {
 	template_purchase(1, 192)
 }
 
+spriteset(spriteset_ef70_old_purchase_nologo, "gfx/electric/ef70.png") {
+	template_purchase_nologo(1, 192)
+}
+
 spriteset(spriteset_ef70_new_purchase, "gfx/electric/ef70.png") {
 	template_purchase(89, 192)
+}
+
+spriteset(spriteset_ef70_new_purchase_nologo, "gfx/electric/ef70.png") {
+	template_purchase_nologo(89, 192)
 }
 
 //ef70 new
@@ -41,6 +49,13 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_livery, cargo_subtype) {
 	spriteset_ef70_new_red;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ef70_new_livery_cc, cargo_subtype) {
+	1: spriteset_ef70_new_express;
+	2: spriteset_ef70_new_rainbow;
+	3: spriteset_ef70_new_red;
+  spriteset_ef70_new_cc;
+	
+}
 
 switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
@@ -50,6 +65,28 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text_cc, cargo_subtype) {
+  0: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXPRESS), string(STR_SUFFIX_RED_CREAM));
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
+  3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_new_purchase, param_purchaselogo) {
+	1: spriteset_ef70_new_purchase;
+	spriteset_ef70_new_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ef70_new_subtype_text_cc;
+   switch_ef70_new_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_new_livery_cc_mode, param_ccmode) {
+	1: switch_ef70_new_livery_cc;
+   switch_ef70_new_livery;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ef70_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -97,9 +134,9 @@ item (FEAT_TRAINS, ef70_new, 1045) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef70_new_subtype_text;
-  default: switch_ef70_new_livery;
-  purchase: spriteset_ef70_new_purchase;
+  cargo_subtype_text: switch_ef70_new_subtype_text_cc_mode;
+  default: switch_ef70_new_livery_cc_mode;
+  purchase: switch_ef70_new_purchase;
   name: switch_ef70_2_name;
   }
 }
@@ -111,12 +148,38 @@ switch(FEAT_TRAINS, SELF, switch_ef70_old_livery, cargo_subtype) {
 	spriteset_ef70_old_red;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ef70_old_livery_cc, cargo_subtype) {
+	1: spriteset_ef70_old_red;
+  spriteset_ef70_old_cc;
+	
+}
 
 switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
   1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text_cc, cargo_subtype) {
+  0: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_purchase, param_purchaselogo) {
+	1: spriteset_ef70_old_purchase;
+	spriteset_ef70_old_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ef70_old_subtype_text_cc;
+   switch_ef70_old_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef70_old_livery_cc_mode, param_ccmode) {
+	1: switch_ef70_old_livery_cc;
+   switch_ef70_old_livery;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ef70_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -165,9 +228,9 @@ item (FEAT_TRAINS, ef70_old, 1946) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef70_old_subtype_text;
-  default: switch_ef70_old_livery;
-  purchase: spriteset_ef70_old_purchase;
+  cargo_subtype_text: switch_ef70_old_subtype_text_cc_mode;
+  default: switch_ef70_old_livery_cc_mode;
+  purchase: switch_ef70_old_purchase;
   name: switch_ef70_1_name;
   }
 }

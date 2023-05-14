@@ -22,13 +22,27 @@ spriteset(spriteset_ef30_proto_purchase, "gfx/electric/ef30.png") {
 	template_purchase(1, 192)
 }
 
+spriteset(spriteset_ef30_proto_purchase_nologo, "gfx/electric/ef30.png") {
+	template_purchase_nologo(1, 192)
+}
+
 spriteset(spriteset_ef30_purchase, "gfx/electric/ef30.png") {
 	template_purchase(89, 192)
+}
+
+spriteset(spriteset_ef30_purchase_nologo, "gfx/electric/ef30.png") {
+	template_purchase_nologo(89, 192)
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef30_livery, cargo_subtype) {
 	1: spriteset_ef30_cc;
 	spriteset_ef30_silver;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_livery_cc, cargo_subtype) {
+	1: spriteset_ef30_silver;
+  spriteset_ef30_cc;
+	
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
@@ -37,6 +51,26 @@ switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+  switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text_cc, cargo_subtype) {
+	0: return string(STR_REFIT_CC);
+  1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_SILVER));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_purchase, param_purchaselogo) {
+	1: spriteset_ef30_purchase;
+	spriteset_ef30_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ef30_subtype_text_cc;
+   switch_ef30_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_livery_cc_mode, param_ccmode) {
+	1: switch_ef30_livery_cc;
+   switch_ef30_livery;
+}
 
 item (FEAT_TRAINS, ef30, 1015) {
  property {
@@ -73,9 +107,9 @@ item (FEAT_TRAINS, ef30, 1015) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef30_subtype_text;
-  default: switch_ef30_livery;
-  purchase: spriteset_ef30_purchase;
+  cargo_subtype_text: switch_ef30_subtype_text_cc_mode;
+  default: switch_ef30_livery_cc_mode;
+  purchase: switch_ef30_purchase;
   }
 }
 
@@ -87,6 +121,13 @@ switch(FEAT_TRAINS, SELF, switch_ef30_proto_livery, cargo_subtype) {
 	spriteset_ef30_proto_stripe;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_livery_cc, cargo_subtype) {
+	1: spriteset_ef30_proto_silver;
+  2: spriteset_ef30_proto_stripe;
+  spriteset_ef30_proto_cc;
+	
+}
+
 switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED_SILVER));
   1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_SILVER));
@@ -94,6 +135,27 @@ switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text_cc, cargo_subtype) {
+	0: return string(STR_REFIT_CC);
+  1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_SILVER));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED_SILVER));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_purchase, param_purchaselogo) {
+	1: spriteset_ef30_proto_purchase;
+	spriteset_ef30_proto_purchase_nologo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text_cc_mode, param_ccmode) {
+	1: switch_ef30_proto_subtype_text_cc;
+   switch_ef30_proto_subtype_text;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef30_proto_livery_cc_mode, param_ccmode) {
+	1: switch_ef30_proto_livery_cc;
+   switch_ef30_proto_livery;
+}
 
 switch (FEAT_TRAINS, SELF, switch_ef30_p_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
   1: return CB_RESULT_NO_TEXT; 
@@ -141,9 +203,9 @@ item (FEAT_TRAINS, ef30_proto, 1915) {
                   );
 
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_ef30_proto_subtype_text;
-  default: switch_ef30_proto_livery;
-  purchase: spriteset_ef30_proto_purchase;
+  cargo_subtype_text: switch_ef30_proto_subtype_text_cc_mode;
+  default: switch_ef30_proto_livery_cc_mode;
+  purchase: switch_ef30_proto_purchase;
   name: switch_ef30_p_name;
   }
 }
