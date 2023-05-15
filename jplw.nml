@@ -24423,6 +24423,8 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_cargo_type, cargo_type_in_veh) {
 	STCB: spritegroup_flatbed_5_coils;
 	STWR: random_flatbed_5_metal_prod;
 	STSE: random_flatbed_5_metal_prod;
+	NICK: random_flatbed_5_metal;
+	COBL: random_flatbed_5_metal;
 	
 	ENSP: random_flatbed_5_ensp;
 	FMSP: random_flatbed_5_fmsp;
@@ -24993,6 +24995,8 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	STCB: spritegroup_flatbed_7_coils;
 	STWR: random_flatbed_7_metal_prod;
 	STSE: random_flatbed_7_metal_prod;
+	NICK: random_flatbed_7_metal;
+	COBL: random_flatbed_7_metal;
 	
 	ENSP: random_flatbed_7_ensp;
 	FMSP: random_flatbed_7_fmsp;
