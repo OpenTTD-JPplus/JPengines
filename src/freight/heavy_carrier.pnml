@@ -187,7 +187,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		cargo_capacity: 155; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-//		loading_speed: 40;
+		loading_speed: 10;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST]; 
