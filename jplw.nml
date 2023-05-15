@@ -15651,6 +15651,7 @@ property {
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -15786,6 +15787,7 @@ property {
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -15863,7 +15865,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		cargo_capacity: 30; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
@@ -16193,7 +16195,7 @@ property {
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 //	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
-	loading_speed: 40;
+	loading_speed: 20;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
@@ -16257,7 +16259,7 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		cargo_capacity: 90; 
 		refit_cost: 0;
 		default_cargo_type: MAIL;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0;  
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
@@ -16382,7 +16384,7 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		cargo_capacity: 90; 
 		refit_cost: 0;
 		default_cargo_type: MAIL;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
@@ -16501,6 +16503,7 @@ property {
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -16592,6 +16595,7 @@ property {
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -16715,6 +16719,7 @@ property {
 	non_refittable_cargo_classes: 0;
 //	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	loading_speed: 20;
 	cargo_age_period: 0;
 	cost_factor: 14;
 	running_cost_factor: 2;
@@ -16785,7 +16790,7 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		refit_cost: 0;
 		default_cargo_type: FOOD;
 		cargo_age_period: 0;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 10;
 		cost_factor: 18;
@@ -16870,7 +16875,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		refit_cost: 0;
 		default_cargo_type: FOOD;
 		cargo_age_period: 0;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 20;
 		cost_factor: 30;
@@ -16928,6 +16933,7 @@ property {
 	name: string(STR_NAME_REMU_5000);
 	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 	non_refittable_cargo_classes: 0; 
+	loading_speed: 20;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cargo_age_period: 0;
 	cost_factor: 22;
@@ -16985,7 +16991,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		refit_cost: 0;
 		default_cargo_type: FOOD;
 		cargo_age_period: 0;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 25;
@@ -17444,6 +17450,7 @@ property {
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 40;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -17687,6 +17694,7 @@ property {
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 40;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -17786,6 +17794,7 @@ property {
 	cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 40;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -18408,6 +18417,7 @@ property {
 	cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -19213,6 +19223,7 @@ property {
 	cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -22663,7 +22674,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 		cargo_capacity: 90; 
 		refit_cost: 0;
 		default_cargo_type: MAIL;
-		loading_speed: 60;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
@@ -24631,7 +24642,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 18;
@@ -24712,7 +24723,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 6;
@@ -25209,6 +25220,7 @@ property {
 	cost_factor: 30;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -25278,7 +25290,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 100 km/h;
 	weight: 16;
 	cost_factor: 50;
@@ -25381,7 +25393,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_capacity: 38; 
 		refit_cost: 0;
 		default_cargo_type: SLAG;
-		loading_speed: 40;
+		loading_speed: 20;
 		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 22;
@@ -25535,7 +25547,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 		cargo_capacity: 1; 
 		refit_cost: 0;
 		default_cargo_type: IRON;
-		loading_speed: 40;
+		loading_speed: 20;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [IRON, METL]; 
@@ -25753,7 +25765,7 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		cargo_capacity: 155; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-//		loading_speed: 40;
+		loading_speed: 10;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST]; 
@@ -26000,7 +26012,7 @@ property {
 	cargo_capacity: 15; 
 	refit_cost: 0;
 //	default_cargo_type: COAL;
-	loading_speed: 40;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
@@ -26375,6 +26387,7 @@ property {
 	name: string(STR_NAME_TOKI_900);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
+	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 22;
@@ -26753,6 +26766,7 @@ property {
 	name: string(STR_NAME_TOMU_1);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
+	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 18;
@@ -27135,6 +27149,7 @@ property {
 	name: string(STR_NAME_TORA_5000);
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
+	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 22;
@@ -27211,6 +27226,7 @@ property {
 	speed: 75 km/h;
 //	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
+	loading_speed: 10;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -27605,7 +27621,7 @@ property {
 	refit_cost: 0;
 	power: 0;
 	cargo_capacity: 60;
-	loading_speed: 40;
+	loading_speed: 10;
 	length: 7;
 	weight: 17;
 	cost_factor: 40;
@@ -27777,7 +27793,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		cargo_capacity: 15; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 8;
 		cost_factor: 14;
 		running_cost_factor: 2;
@@ -28008,7 +28024,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		cargo_capacity: 25; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 11;
 		cost_factor: 18;
 		running_cost_factor: 3;
@@ -28178,6 +28194,7 @@ property {
 		cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 30;
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -28347,6 +28364,7 @@ property {
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 30;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -28633,7 +28651,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		cargo_capacity: 50; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 20;
 		cost_factor: 40;
 	running_cost_factor: 6;
@@ -28790,7 +28808,7 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		cargo_capacity: 48; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 20;
 		cost_factor: 30;
 	running_cost_factor: 5;
@@ -28958,7 +28976,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 17;
 		cost_factor: 22;
 	running_cost_factor: 4;

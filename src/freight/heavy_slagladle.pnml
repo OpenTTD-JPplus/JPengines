@@ -71,7 +71,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_capacity: 38; 
 		refit_cost: 0;
 		default_cargo_type: SLAG;
-		loading_speed: 40;
+		loading_speed: 20;
 		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 22;

@@ -202,7 +202,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		cargo_capacity: 25; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 11;
 		cost_factor: 18;
 		running_cost_factor: 3;

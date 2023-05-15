@@ -346,7 +346,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 		cargo_capacity: 90; 
 		refit_cost: 0;
 		default_cargo_type: MAIL;
-		loading_speed: 60;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 

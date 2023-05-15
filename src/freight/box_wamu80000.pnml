@@ -299,7 +299,7 @@ property {
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 //	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
-	loading_speed: 40;
+	loading_speed: 20;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;

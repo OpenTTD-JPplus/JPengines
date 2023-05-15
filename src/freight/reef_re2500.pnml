@@ -44,7 +44,7 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		refit_cost: 0;
 		default_cargo_type: FOOD;
 		cargo_age_period: 0;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 10;
 		cost_factor: 18;

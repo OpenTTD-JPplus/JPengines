@@ -139,7 +139,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 17;
 		cost_factor: 22;
 	running_cost_factor: 4;

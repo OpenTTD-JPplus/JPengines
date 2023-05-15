@@ -128,7 +128,7 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		cargo_capacity: 48; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 20;
 		cost_factor: 30;
 	running_cost_factor: 5;

@@ -461,7 +461,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 18;
@@ -542,7 +542,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 65 km/h;
 	weight: 12;
 	cost_factor: 6;

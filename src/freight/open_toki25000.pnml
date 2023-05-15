@@ -366,7 +366,7 @@ property {
 	refit_cost: 0;
 	power: 0;
 	cargo_capacity: 60;
-	loading_speed: 40;
+	loading_speed: 10;
 	length: 7;
 	weight: 17;
 	cost_factor: 40;

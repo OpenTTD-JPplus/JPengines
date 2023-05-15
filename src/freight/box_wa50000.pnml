@@ -54,7 +54,7 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		cargo_capacity: 30; 
 		refit_cost: 0;
 		default_cargo_type: GOOD;
-		loading_speed: 50;
+		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;

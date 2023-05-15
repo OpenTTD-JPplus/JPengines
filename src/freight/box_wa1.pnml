@@ -112,6 +112,7 @@ property {
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

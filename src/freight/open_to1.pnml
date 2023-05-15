@@ -213,7 +213,7 @@ property {
 	cargo_capacity: 15; 
 	refit_cost: 0;
 //	default_cargo_type: COAL;
-	loading_speed: 40;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];

@@ -77,6 +77,7 @@ property {
 	cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 40;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

@@ -467,6 +467,7 @@ property {
 	cost_factor: 30;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -536,7 +537,7 @@ property {
 	power: 0;
 	refit_cost: 0;
 	default_cargo_type: WOOD;
-	loading_speed: 30;
+	loading_speed: 20;
 	speed: 100 km/h;
 	weight: 16;
 	cost_factor: 50;

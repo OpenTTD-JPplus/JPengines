@@ -77,7 +77,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		cargo_capacity: 15; 
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
-		loading_speed: 50;
+		loading_speed: 30;
 		weight: 8;
 		cost_factor: 14;
 		running_cost_factor: 2;
