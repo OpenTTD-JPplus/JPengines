@@ -883,6 +883,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
     GRVL: return recolour_bulk +12;
     FECR: return recolour_bulk +12;
 	CMNT: return recolour_bulk +12;
+    ALO_: return recolour_bulk +12;
 
     COAL: return recolour_bulk +13;
 	COKE: return recolour_bulk +13;
