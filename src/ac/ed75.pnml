@@ -324,6 +324,7 @@ item (FEAT_TRAINS, ed79, 1075) {
   length: 6;
   running_cost_factor: 50;
   running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 1070;
   }
   graphics { // graphics for engine
@@ -400,6 +401,7 @@ item (FEAT_TRAINS, ed75_700, 1970) {
   length: 6;
   running_cost_factor: 48;
   running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 1070;
   }
   graphics { // graphics for engine

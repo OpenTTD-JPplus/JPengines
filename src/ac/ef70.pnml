@@ -22,31 +22,37 @@ spriteset(spriteset_ef70_new_cc, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 160)
 }
 
+spriteset(spriteset_ef70_new_nyc, "gfx/electric/ef70.png") {
+	template_2cc_std(1, 192)
+}
+
 
 
 spriteset(spriteset_ef70_old_purchase, "gfx/electric/ef70.png") {
-	template_purchase(1, 192)
+	template_purchase(1, 224)
 }
 
 spriteset(spriteset_ef70_new_purchase, "gfx/electric/ef70.png") {
-	template_purchase(89, 192)
+	template_purchase(89, 224)
 }
 
 //ef70 new
 
 switch(FEAT_TRAINS, SELF, switch_ef70_new_livery, cargo_subtype) {
-	1: spriteset_ef70_new_express;
-	2: spriteset_ef70_new_rainbow;
-	3: spriteset_ef70_new_cc;
+	1: spriteset_ef70_new_rainbow;
+	2: spriteset_ef70_new_express;
+  3: spriteset_ef70_new_nyc;
+	4: spriteset_ef70_new_cc;
 	spriteset_ef70_new_red;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXPRESS), string(STR_SUFFIX_RED_CREAM));
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
-  3: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_RED_WHITE));
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), string(STR_SUFFIX_EXPRESS), string(STR_SUFFIX_RED_CREAM), string(STR_SUFFIX_SEMIFIC));
+  3: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), string(STR_SUFFIX_BLACK), string(STR_SUFFIX_FICTION));
+  4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 

@@ -113,8 +113,8 @@ switch(FEAT_TRAINS, SELF, switch_ef60_1_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BROWN));
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
 	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_BLUE_CREAM));
-	4: return string(STR_REFIT_EF60_AMERICAN);
-	5: return string(STR_REFIT_EF60_YASURAGI);
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRE), string(STR_SUFFIX_AMERICANTRAIN), string(STR_SUFFIX_RED_WHITE_BLUE));
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_JRE), string(STR_SUFFIX_YASURAGI), string(STR_SUFFIX_RED_WHITE_BLUE));
 	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
