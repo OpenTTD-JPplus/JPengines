@@ -37,9 +37,9 @@ switch(FEAT_TRAINS, SELF, switch_ed17_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_ED17), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
+	3: return string(STR_REFIT_CC);
 }
 
 
@@ -92,9 +92,9 @@ switch(FEAT_TRAINS, SELF, switch_ed50_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_ED50), string(STR_SUFFIX_JGR), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
+	3: return string(STR_REFIT_CC);
 }
 
 item (FEAT_TRAINS, ed50, 1012) {
