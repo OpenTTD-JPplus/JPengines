@@ -1,20 +1,20 @@
-spriteset(spriteset_df200_new, "gfx/df200.png") {
+spriteset(spriteset_df200_new, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_df200_old, "gfx/df200.png") {
+spriteset(spriteset_df200_old, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_df200_cc, "gfx/df200.png") {
+spriteset(spriteset_df200_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_df200_ss, "gfx/df200.png") {
+spriteset(spriteset_df200_ss, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_df200_purchase, "gfx/df200.png") {
+spriteset(spriteset_df200_purchase, "gfx/diesel/df200.png") {
 	template_purchase(1, 128)
 }
 

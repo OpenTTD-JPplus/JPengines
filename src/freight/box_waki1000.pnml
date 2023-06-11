@@ -1,42 +1,42 @@
-spriteset(spriteset_waki_1000_stripe_1, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_1, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_stripe_2, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_2, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_stripe_3, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_3, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_stripe_caboose, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_caboose, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_waki_1000_plain_1, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_1, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_plain_2, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_2, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_plain_3, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_3, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_plain_caboose, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_caboose, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 96)
 }
 
 
 
 
-spriteset(spriteset_waki_1000_purchase, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_purchase, "gfx/freight/waki_1000.png") {
 	template_purchase(1, 192)
 }
 

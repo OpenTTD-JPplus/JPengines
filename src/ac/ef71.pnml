@@ -63,7 +63,7 @@ item (FEAT_TRAINS, ef71, 1047) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 86;
+  cost_factor: 81;
   length: 7;
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
@@ -74,8 +74,9 @@ item (FEAT_TRAINS, ef71, 1047) {
                       string(STR_DESC_POWER_AC20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_1C, 
-                    string(STR_SUFFIX_JNR)
+                      string(STR_CONCAT_2C, 
+                    string(STR_SUFFIX_JNR),
+                    string(STR_SUFFIX_JRE)
                     )
                   );
 

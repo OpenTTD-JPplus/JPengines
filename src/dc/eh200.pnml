@@ -1,21 +1,21 @@
-spriteset(spriteset_eh200_blue_front, "gfx/eh200.png") {
+spriteset(spriteset_eh200_blue_front, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_eh200_blue_rear, "gfx/eh200.png") {
+spriteset(spriteset_eh200_blue_rear, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_eh200_cc_front, "gfx/eh200.png") {
+spriteset(spriteset_eh200_cc_front, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_eh200_cc_rear, "gfx/eh200.png") {
+spriteset(spriteset_eh200_cc_rear, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_eh200_purchase, "gfx/eh200.png") {
+spriteset(spriteset_eh200_purchase, "gfx/electric/eh200.png") {
 	template_purchase(1, 128)
 }
 

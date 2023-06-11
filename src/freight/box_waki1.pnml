@@ -1,13 +1,13 @@
-spriteset(spriteset_waki_1_1, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_1, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 128)
 }
 
 
-spriteset(spriteset_waki_1_2, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_2, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_waki_1_purchase, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_purchase, "gfx/freight/waki_1.png") {
 	template_purchase(1, 192)
 }
 

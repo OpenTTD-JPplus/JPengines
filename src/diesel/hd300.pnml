@@ -1,21 +1,21 @@
-spriteset(spriteset_hd300_red, "gfx/hd300.png") {
+spriteset(spriteset_hd300_red, "gfx/diesel/hd300.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_hd300_flip_red, "gfx/hd300.png") {
+spriteset(spriteset_hd300_flip_red, "gfx/diesel/hd300.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_hd300_cc, "gfx/hd300.png") {
+spriteset(spriteset_hd300_cc, "gfx/diesel/hd300.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_hd300_flip_cc, "gfx/hd300.png") {
+spriteset(spriteset_hd300_flip_cc, "gfx/diesel/hd300.png") {
 	template_2cc_flip(1, 96)
 }
 
 
-spriteset(spriteset_hd300_red_purchase, "gfx/hd300.png") {
+spriteset(spriteset_hd300_red_purchase, "gfx/diesel/hd300.png") {
 	template_purchase(1, 128)
 }
 

@@ -1,19 +1,19 @@
-spriteset(spriteset_ef200_original, "gfx/ef200.png") {
+spriteset(spriteset_ef200_original, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef200_blue, "gfx/ef200.png") {
+spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 32)
 }
 
 
-spriteset(spriteset_ef200_cc, "gfx/ef200.png") {
+spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 64)
 }
 
 
 
-spriteset(spriteset_ef200_purchase, "gfx/ef200.png") {
+spriteset(spriteset_ef200_purchase, "gfx/electric/ef200.png") {
 	template_purchase(1, 96)
 }
 

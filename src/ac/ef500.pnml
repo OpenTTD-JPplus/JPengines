@@ -1,12 +1,12 @@
-spriteset(spriteset_ef500_jrf, "gfx/ef500.png") {
+spriteset(spriteset_ef500_jrf, "gfx/electric/ef500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef500_cc, "gfx/ef500.png") {
+spriteset(spriteset_ef500_cc, "gfx/electric/ef500.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef500_purchase, "gfx/ef500.png") {
+spriteset(spriteset_ef500_purchase, "gfx/electric/ef500.png") {
 	template_purchase(1, 96)
 }
 

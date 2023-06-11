@@ -1,20 +1,20 @@
-spriteset(spriteset_tora_90000_empty, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_empty, "gfx/freight/tora_90000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_tora_90000_half, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_half, "gfx/freight/tora_90000.png") {
 	template_2cc_anim(1, 32)
 }
 
-spriteset(spriteset_tora_90000_full, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_full, "gfx/freight/tora_90000.png") {
 	template_2cc_anim(1, 64)
 }
 
-spriteset(spriteset_tora_90000_tarp, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_tarp, "gfx/freight/tora_90000.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_tora_90000_purchase, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_purchase, "gfx/freight/tora_90000.png") {
 	template_purchase(1, 128)
 }
 

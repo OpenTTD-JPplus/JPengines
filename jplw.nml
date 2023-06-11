@@ -5945,22 +5945,22 @@ property {
   name: switch_ef66_100_name;
   }
 }
-spriteset(spriteset_ef200_original, "gfx/ef200.png") {
+spriteset(spriteset_ef200_original, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef200_blue, "gfx/ef200.png") {
+spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 32)
 }
 
 
-spriteset(spriteset_ef200_cc, "gfx/ef200.png") {
+spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 64)
 }
 
 
 
-spriteset(spriteset_ef200_purchase, "gfx/ef200.png") {
+spriteset(spriteset_ef200_purchase, "gfx/electric/ef200.png") {
 	template_purchase(1, 96)
 }
 
@@ -6733,24 +6733,24 @@ item (FEAT_TRAINS, eh50_rear, 1982) {
 		default: switch_eh50_livery_rear;
 	}
 }
-spriteset(spriteset_eh200_blue_front, "gfx/eh200.png") {
+spriteset(spriteset_eh200_blue_front, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_eh200_blue_rear, "gfx/eh200.png") {
+spriteset(spriteset_eh200_blue_rear, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_eh200_cc_front, "gfx/eh200.png") {
+spriteset(spriteset_eh200_cc_front, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_eh200_cc_rear, "gfx/eh200.png") {
+spriteset(spriteset_eh200_cc_rear, "gfx/electric/eh200.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_eh200_purchase, "gfx/eh200.png") {
+spriteset(spriteset_eh200_purchase, "gfx/electric/eh200.png") {
 	template_purchase(1, 128)
 }
 
@@ -7697,15 +7697,15 @@ item (FEAT_TRAINS, ed76_550, 1972) {
   name: switch_ed76_550_name;
   }
 }
-spriteset(spriteset_ed500_jrf, "gfx/ed500.png") {
+spriteset(spriteset_ed500_jrf, "gfx/electric/ed500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ed500_cc, "gfx/ed500.png") {
+spriteset(spriteset_ed500_cc, "gfx/electric/ed500.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ed500_purchase, "gfx/ed500.png") {
+spriteset(spriteset_ed500_purchase, "gfx/electric/ed500.png") {
 	template_purchase(1, 96)
 }
 
@@ -8156,7 +8156,7 @@ item (FEAT_TRAINS, ef71, 1047) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 86;
+  cost_factor: 81;
   length: 7;
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
@@ -8167,8 +8167,9 @@ item (FEAT_TRAINS, ef71, 1047) {
                       string(STR_DESC_POWER_AC20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_1C, 
-                    string(STR_SUFFIX_JNR)
+                      string(STR_CONCAT_2C, 
+                    string(STR_SUFFIX_JNR),
+                    string(STR_SUFFIX_JRE)
                     )
                   );
 
@@ -8244,7 +8245,7 @@ item (FEAT_TRAINS, ef80, 1080) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 52;
+  cost_factor: 62;
   length: 7;
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
@@ -8453,7 +8454,7 @@ property {
   model_life: 40;
   vehicle_life: 40;
   length: 8;
-  cost_factor: 52;
+  cost_factor: 82;
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -8654,15 +8655,15 @@ property {
   name: switch_ef81_450_name;
   }
 }
-spriteset(spriteset_ef500_jrf, "gfx/ef500.png") {
+spriteset(spriteset_ef500_jrf, "gfx/electric/ef500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef500_cc, "gfx/ef500.png") {
+spriteset(spriteset_ef500_cc, "gfx/electric/ef500.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef500_purchase, "gfx/ef500.png") {
+spriteset(spriteset_ef500_purchase, "gfx/electric/ef500.png") {
 	template_purchase(1, 96)
 }
 
@@ -9572,28 +9573,28 @@ item (FEAT_TRAINS, eh500_proto_rear, 1997) {
 		default: switch_eh500_proto_rear_livery;
 	}
 }
-spriteset(spriteset_eh800_red_front, "gfx/eh800.png") {
+spriteset(spriteset_eh800_red_front, "gfx/electric/eh800.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_eh800_red_rear, "gfx/eh800.png") {
+spriteset(spriteset_eh800_red_rear, "gfx/electric/eh800.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_eh800_cc_front, "gfx/eh800.png") {
+spriteset(spriteset_eh800_cc_front, "gfx/electric/eh800.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_eh800_cc_rear, "gfx/eh800.png") {
+spriteset(spriteset_eh800_cc_rear, "gfx/electric/eh800.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_eh800_jrf_purchase, "gfx/eh800.png") {
+spriteset(spriteset_eh800_jrf_purchase, "gfx/electric/eh800.png") {
 	template_purchase(1, 128)
 }
 
-spriteset(spriteset_eh800_jr_purchase, "gfx/eh800.png") {
+spriteset(spriteset_eh800_jr_purchase, "gfx/electric/eh800.png") {
 	template_purchase(89, 128)
 }
 
@@ -9837,62 +9838,62 @@ item (FEAT_TRAINS, dd13, 1207) {
   purchase: switch_dd13_yeardep_purchase;
   }
 }
-spriteset(spriteset_dd51_brown, "gfx/dd51.png") {
+spriteset(spriteset_dd51_brown, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dd51_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dd51_hokkaido_blue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_hokkaido_blue, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dd51_hokkaido_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_hokkaido_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dd51_freight_blue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_freight_blue, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dd51_freight_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_freight_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dd51_euroliner, "gfx/dd51.png") {
+spriteset(spriteset_dd51_euroliner, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dd51_testred, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testred, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_dd51_testwhite, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testwhite, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 32)
 }
 
-spriteset(spriteset_dd51_testblue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testblue, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 64)
 }
 
-spriteset(spriteset_dd51_cc, "gfx/dd51.png") {
+spriteset(spriteset_dd51_cc, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 224)
 }
 
 
 
 
-spriteset(spriteset_dd51_brown_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_brown_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_dd51_red_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_red_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 288)
 }
 
-spriteset(spriteset_dd51_jrf_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_jrf_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 320)
 }
 
@@ -10422,19 +10423,19 @@ property {
   purchase: switch_de10_purchase;
   }
 }
-spriteset(spriteset_df50_red, "gfx/df50.png") {
+spriteset(spriteset_df50_red, "gfx/diesel/df50.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_df50_brown, "gfx/df50.png") {
+spriteset(spriteset_df50_brown, "gfx/diesel/df50.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_df50_cc, "gfx/df50.png") {
+spriteset(spriteset_df50_cc, "gfx/diesel/df50.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_df50_purchase, "gfx/df50.png") {
+spriteset(spriteset_df50_purchase, "gfx/diesel/df50.png") {
 	template_purchase(1, 96)
 }
 
@@ -10500,23 +10501,23 @@ property {
   purchase: spriteset_df50_purchase;
   }
 }
-spriteset(spriteset_df200_new, "gfx/df200.png") {
+spriteset(spriteset_df200_new, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_df200_old, "gfx/df200.png") {
+spriteset(spriteset_df200_old, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_df200_cc, "gfx/df200.png") {
+spriteset(spriteset_df200_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_df200_ss, "gfx/df200.png") {
+spriteset(spriteset_df200_ss, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_df200_purchase, "gfx/df200.png") {
+spriteset(spriteset_df200_purchase, "gfx/diesel/df200.png") {
 	template_purchase(1, 128)
 }
 
@@ -10581,24 +10582,24 @@ property {
   purchase: spriteset_df200_purchase;
   }
 }
-spriteset(spriteset_hd300_red, "gfx/hd300.png") {
+spriteset(spriteset_hd300_red, "gfx/diesel/hd300.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_hd300_flip_red, "gfx/hd300.png") {
+spriteset(spriteset_hd300_flip_red, "gfx/diesel/hd300.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_hd300_cc, "gfx/hd300.png") {
+spriteset(spriteset_hd300_cc, "gfx/diesel/hd300.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_hd300_flip_cc, "gfx/hd300.png") {
+spriteset(spriteset_hd300_flip_cc, "gfx/diesel/hd300.png") {
 	template_2cc_flip(1, 96)
 }
 
 
-spriteset(spriteset_hd300_red_purchase, "gfx/hd300.png") {
+spriteset(spriteset_hd300_red_purchase, "gfx/diesel/hd300.png") {
 	template_purchase(1, 128)
 }
 
@@ -16273,31 +16274,31 @@ graphics {
 //	colour_mapping: switch_generic_recolour;
 	}
 }
-spriteset(spriteset_wamu_50000_1, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_1, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_wamu_50000_2, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_2, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_wamu_50000_3, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_3, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 64)
 }
 
 
-spriteset(spriteset_wamu_50000_4, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_4, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_wamu_50000_caboose, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_caboose, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 160)
 }
 
 
-spriteset(spriteset_wamu_50000_purchase, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_purchase, "gfx/freight/wamu_50000.png") {
 	template_purchase(1, 192)
 }
 
@@ -16688,16 +16689,16 @@ graphics {
 	colour_mapping: switch_generic_recolour;
 	}
 }
-spriteset(spriteset_waki_1_1, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_1, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 128)
 }
 
 
-spriteset(spriteset_waki_1_2, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_2, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_waki_1_purchase, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1_purchase, "gfx/freight/waki_1.png") {
 	template_purchase(1, 192)
 }
 
@@ -16751,45 +16752,45 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		
 	}
 }
-spriteset(spriteset_waki_1000_stripe_1, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_1, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_stripe_2, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_2, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_stripe_3, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_3, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_stripe_caboose, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_stripe_caboose, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_waki_1000_plain_1, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_1, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_plain_2, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_2, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_plain_3, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_3, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_plain_caboose, "gfx/waki_1.png") {
+spriteset(spriteset_waki_1000_plain_caboose, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 96)
 }
 
 
 
 
-spriteset(spriteset_waki_1000_purchase, "gfx/waki_1000.png") {
+spriteset(spriteset_waki_1000_purchase, "gfx/freight/waki_1000.png") {
 	template_purchase(1, 192)
 }
 
@@ -17365,19 +17366,19 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		
 	}
 }
-spriteset(spriteset_remu_5000_1, "gfx/reefers.png") {
+spriteset(spriteset_remu_5000_1, "gfx/freight/reefers.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_remu_5000_2, "gfx/reefers.png") {
+spriteset(spriteset_remu_5000_2, "gfx/freight/reefers.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_remu_5000_3, "gfx/reefers.png") {
+spriteset(spriteset_remu_5000_3, "gfx/freight/reefers.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_remu_5000_purchase, "gfx/reefers.png") {
+spriteset(spriteset_remu_5000_purchase, "gfx/freight/reefers.png") {
 	template_purchase(1, 192)
 }
 
@@ -17419,16 +17420,16 @@ graphics {
 	purchase: spriteset_remu_5000_purchase;
 	}
 }
-spriteset(spriteset_resa_10000, "gfx/reefers.png") {
+spriteset(spriteset_resa_10000, "gfx/freight/reefers.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_resa_10000_caboose, "gfx/reefers.png") {
+spriteset(spriteset_resa_10000_caboose, "gfx/freight/reefers.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_resa_10000_purchase, "gfx/reefers.png") {
+spriteset(spriteset_resa_10000_purchase, "gfx/freight/reefers.png") {
 	template_purchase(1, 160)
 }
 
@@ -23525,221 +23526,221 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
-spriteset(spriteset_koki_purchase, "gfx/cont_red.png") {
+spriteset(spriteset_koki_purchase, "gfx/outdated/cont_red.png") {
 	template_purchase(1, 352)
 }
 
 //cc
-spriteset(spriteset_koki_cc_empty, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_empty, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_cc_tank_a_1, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_tank_a_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_cc_tank_a_2, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_tank_a_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_koki_cc_cont_a_1, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_a_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_koki_cc_cont_a_2, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_a_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_koki_cc_cont_a_3, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_a_3, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_koki_cc_cont_b_1, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_b_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_koki_cc_cont_b_2, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_b_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_koki_cc_cont_c_1, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_c_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_koki_cc_cont_c_2, "gfx/cont_cc.png") {
+spriteset(spriteset_koki_cc_cont_c_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_std(1, 288)
 }
 
 
 //red
-spriteset(spriteset_koki_red_empty, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_empty, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_red_tank_a_1, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_tank_a_1, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_red_tank_a_2, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_tank_a_2, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_koki_red_tank_b_1, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_tank_b_1, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_koki_red_tank_b_2, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_tank_b_2, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_koki_red_tank_b_3, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_tank_b_3, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_koki_red_cont_a_1, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_cont_a_1, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_koki_red_cont_a_2, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_cont_a_2, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_koki_red_cont_a_3, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_cont_a_3, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_koki_red_cont_b_1, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_cont_b_1, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_koki_red_cont_b_2, "gfx/cont_red.png") {
+spriteset(spriteset_koki_red_cont_b_2, "gfx/outdated/cont_red.png") {
 	template_2cc_std(1, 320)
 }
 
 
 //blue
-spriteset(spriteset_koki_blue_empty, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_empty, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_blue_cont_a_1, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_a_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_blue_cont_a_2, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_a_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_koki_blue_tank_a_1, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_tank_a_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_koki_blue_tank_a_2, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_tank_a_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_koki_blue_tank_b_1, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_tank_b_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_koki_blue_tank_b_2, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_tank_b_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_koki_blue_cont_b_1, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_b_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_koki_blue_cont_b_2, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_b_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_koki_blue_cont_c_1, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_c_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 288)
 }
 
-spriteset(spriteset_koki_blue_cont_c_2, "gfx/cont_blue.png") {
+spriteset(spriteset_koki_blue_cont_c_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_std(1, 320)
 }
 
 //grey
 
-spriteset(spriteset_koki_grey_empty, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_empty, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_grey_tank_a_1, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_tank_a_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_grey_tank_a_2, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_tank_a_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_koki_grey_tank_a_3, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_tank_a_3, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_koki_grey_cont_a_1, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_a_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_koki_grey_cont_a_2, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_a_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_koki_grey_cont_b_1, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_b_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_koki_grey_cont_b_2, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_b_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_koki_grey_cont_c_1, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_c_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_koki_grey_cont_c_2, "gfx/cont_grey.png") {
+spriteset(spriteset_koki_grey_cont_c_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_std(1, 288)
 }
 
 
 //brown
 
-spriteset(spriteset_koki_brown_empty, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_empty, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_koki_brown_tank_a_1, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_tank_a_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_koki_brown_tank_a_2, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_tank_a_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_koki_brown_tank_a_3, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_tank_a_3, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_koki_brown_cont_a_1, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_cont_a_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_koki_brown_cont_a_2, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_cont_a_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_koki_brown_cont_a_3, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_cont_a_3, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_koki_brown_cont_b_1, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_cont_b_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_koki_brown_cont_b_2, "gfx/cont_brown.png") {
+spriteset(spriteset_koki_brown_cont_b_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_std(1, 256)
 }
 
@@ -23747,216 +23748,216 @@ spriteset(spriteset_koki_brown_cont_b_2, "gfx/cont_brown.png") {
 //FLIPPED wagon spritesets
 
 //cc
-spriteset(spriteset_flip_cc_empty, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_empty, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 1)
 }
 
-spriteset(spriteset_flip_cc_tank_a_1, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_tank_a_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_flip_cc_tank_a_2, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_tank_a_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 64)
 }
 
-spriteset(spriteset_flip_cc_cont_a_1, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_a_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 96)
 }
 
-spriteset(spriteset_flip_cc_cont_a_2, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_a_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 128)
 }
 
-spriteset(spriteset_flip_cc_cont_a_3, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_a_3, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 160)
 }
 
-spriteset(spriteset_flip_cc_cont_b_1, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_b_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 192)
 }
 
-spriteset(spriteset_flip_cc_cont_b_2, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_b_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 224)
 }
 
-spriteset(spriteset_flip_cc_cont_c_1, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_c_1, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 256)
 }
 
-spriteset(spriteset_flip_cc_cont_c_2, "gfx/cont_cc.png") {
+spriteset(spriteset_flip_cc_cont_c_2, "gfx/outdated/cont_cc.png") {
 	template_2cc_flip(1, 288)
 }
 
 
 //red
-spriteset(spriteset_flip_red_empty, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_empty, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 1)
 }
 
-spriteset(spriteset_flip_red_tank_a_1, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_tank_a_1, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_flip_red_tank_a_2, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_tank_a_2, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 64)
 }
 
-spriteset(spriteset_flip_red_tank_b_1, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_tank_b_1, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 96)
 }
 
-spriteset(spriteset_flip_red_tank_b_2, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_tank_b_2, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 128)
 }
 
-spriteset(spriteset_flip_red_tank_b_3, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_tank_b_3, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 160)
 }
 
-spriteset(spriteset_flip_red_cont_a_1, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_cont_a_1, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 192)
 }
 
-spriteset(spriteset_flip_red_cont_a_2, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_cont_a_2, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 224)
 }
 
-spriteset(spriteset_flip_red_cont_a_3, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_cont_a_3, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 256)
 }
 
-spriteset(spriteset_flip_red_cont_b_1, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_cont_b_1, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 288)
 }
 
-spriteset(spriteset_flip_red_cont_b_2, "gfx/cont_red.png") {
+spriteset(spriteset_flip_red_cont_b_2, "gfx/outdated/cont_red.png") {
 	template_2cc_flip(1, 320)
 }
 
 
 //blue
-spriteset(spriteset_flip_blue_empty, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_empty, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 1)
 }
 
-spriteset(spriteset_flip_blue_cont_a_1, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_a_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_flip_blue_cont_a_2, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_a_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 64)
 }
 
-spriteset(spriteset_flip_blue_tank_a_1, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_tank_a_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 96)
 }
 
-spriteset(spriteset_flip_blue_tank_a_2, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_tank_a_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 128)
 }
 
-spriteset(spriteset_flip_blue_tank_b_1, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_tank_b_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 160)
 }
 
-spriteset(spriteset_flip_blue_tank_b_2, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_tank_b_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 192)
 }
 
-spriteset(spriteset_flip_blue_cont_b_1, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_b_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 224)
 }
 
-spriteset(spriteset_flip_blue_cont_b_2, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_b_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 256)
 }
 
-spriteset(spriteset_flip_blue_cont_c_1, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_c_1, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 288)
 }
 
-spriteset(spriteset_flip_blue_cont_c_2, "gfx/cont_blue.png") {
+spriteset(spriteset_flip_blue_cont_c_2, "gfx/outdated/cont_blue.png") {
 	template_2cc_flip(1, 320)
 }
 
 //grey
 
-spriteset(spriteset_flip_grey_empty, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_empty, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 1)
 }
 
-spriteset(spriteset_flip_grey_tank_a_1, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_tank_a_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_flip_grey_tank_a_2, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_tank_a_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 64)
 }
 
-spriteset(spriteset_flip_grey_tank_a_3, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_tank_a_3, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 96)
 }
 
-spriteset(spriteset_flip_grey_cont_a_1, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_a_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 128)
 }
 
-spriteset(spriteset_flip_grey_cont_a_2, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_a_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 160)
 }
 
-spriteset(spriteset_flip_grey_cont_b_1, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_b_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 192)
 }
 
-spriteset(spriteset_flip_grey_cont_b_2, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_b_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 224)
 }
 
-spriteset(spriteset_flip_grey_cont_c_1, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_c_1, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 256)
 }
 
-spriteset(spriteset_flip_grey_cont_c_2, "gfx/cont_grey.png") {
+spriteset(spriteset_flip_grey_cont_c_2, "gfx/outdated/cont_grey.png") {
 	template_2cc_flip(1, 288)
 }
 
 
 //brown
 
-spriteset(spriteset_flip_brown_empty, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_empty, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 1)
 }
 
-spriteset(spriteset_flip_brown_tank_a_1, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_tank_a_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_flip_brown_tank_a_2, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_tank_a_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 64)
 }
 
-spriteset(spriteset_flip_brown_tank_a_3, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_tank_a_3, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 96)
 }
 
-spriteset(spriteset_flip_brown_cont_a_1, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_cont_a_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 128)
 }
 
-spriteset(spriteset_flip_brown_cont_a_2, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_cont_a_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 160)
 }
 
-spriteset(spriteset_flip_brown_cont_a_3, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_cont_a_3, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 192)
 }
 
-spriteset(spriteset_flip_brown_cont_b_1, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_cont_b_1, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 224)
 }
 
-spriteset(spriteset_flip_brown_cont_b_2, "gfx/cont_brown.png") {
+spriteset(spriteset_flip_brown_cont_b_2, "gfx/outdated/cont_brown.png") {
 	template_2cc_flip(1, 256)
 }
 
@@ -27639,23 +27640,23 @@ graphics {
 	colour_mapping: switch_generic_recolour;
 	}
 }
-spriteset(spriteset_tora_90000_empty, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_empty, "gfx/freight/tora_90000.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_tora_90000_half, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_half, "gfx/freight/tora_90000.png") {
 	template_2cc_anim(1, 32)
 }
 
-spriteset(spriteset_tora_90000_full, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_full, "gfx/freight/tora_90000.png") {
 	template_2cc_anim(1, 64)
 }
 
-spriteset(spriteset_tora_90000_tarp, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_tarp, "gfx/freight/tora_90000.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_tora_90000_purchase, "gfx/tora_90000.png") {
+spriteset(spriteset_tora_90000_purchase, "gfx/freight/tora_90000.png") {
 	template_purchase(1, 128)
 }
 

@@ -1,59 +1,59 @@
-spriteset(spriteset_dd51_brown, "gfx/dd51.png") {
+spriteset(spriteset_dd51_brown, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dd51_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dd51_hokkaido_blue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_hokkaido_blue, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dd51_hokkaido_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_hokkaido_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dd51_freight_blue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_freight_blue, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dd51_freight_red, "gfx/dd51.png") {
+spriteset(spriteset_dd51_freight_red, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dd51_euroliner, "gfx/dd51.png") {
+spriteset(spriteset_dd51_euroliner, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dd51_testred, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testred, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_dd51_testwhite, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testwhite, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 32)
 }
 
-spriteset(spriteset_dd51_testblue, "gfx/dd51.png") {
+spriteset(spriteset_dd51_testblue, "gfx/diesel/dd51.png") {
 	template_2cc_std(180, 64)
 }
 
-spriteset(spriteset_dd51_cc, "gfx/dd51.png") {
+spriteset(spriteset_dd51_cc, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 224)
 }
 
 
 
 
-spriteset(spriteset_dd51_brown_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_brown_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 256)
 }
 
-spriteset(spriteset_dd51_red_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_red_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 288)
 }
 
-spriteset(spriteset_dd51_jrf_purchase, "gfx/dd51.png") {
+spriteset(spriteset_dd51_jrf_purchase, "gfx/diesel/dd51.png") {
 	template_purchase(1, 320)
 }
 

@@ -1,28 +1,28 @@
-spriteset(spriteset_wamu_50000_1, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_1, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_wamu_50000_2, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_2, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_wamu_50000_3, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_3, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 64)
 }
 
 
-spriteset(spriteset_wamu_50000_4, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_4, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_wamu_50000_caboose, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_caboose, "gfx/freight/wamu_50000.png") {
 	template_2cc_std(1, 160)
 }
 
 
-spriteset(spriteset_wamu_50000_purchase, "gfx/wamu_50000.png") {
+spriteset(spriteset_wamu_50000_purchase, "gfx/freight/wamu_50000.png") {
 	template_purchase(1, 192)
 }
 
