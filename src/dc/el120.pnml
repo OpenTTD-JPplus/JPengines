@@ -20,8 +20,8 @@ switch(FEAT_TRAINS, SELF, switch_el120_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_REFIT_EL120), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_RED));
-	1: return string(STR_CONCAT_2, string(STR_REFIT_EL120), string(STR_SUFFIX_CC));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_RED));
+	1: return string(STR_REFIT_CC);
 	}
 
 

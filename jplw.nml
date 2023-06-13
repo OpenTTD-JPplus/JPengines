@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 160;
+ version: 170;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -1400,10 +1400,20 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_AICHI), string(STR_SUFFIX_BLACK));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLACK_YELLOW));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_BLUE_YELLOW));
-	4: return string(STR_CONCAT_2, string(STR_REFIT_DEKI_400), string(STR_SUFFIX_CC));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AICHI), string(STR_SUFFIX_BLACK));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -1475,8 +1485,8 @@ switch(FEAT_TRAINS, SELF, switch_el120_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_REFIT_EL120), string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_RED));
-	1: return string(STR_CONCAT_2, string(STR_REFIT_EL120), string(STR_SUFFIX_CC));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), string(STR_SUFFIX_RED));
+	1: return string(STR_REFIT_CC);
 	}
 
 
@@ -2719,7 +2729,7 @@ switch(FEAT_TRAINS, SELF, switch_ef10_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_JGR);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -2802,8 +2812,8 @@ switch(FEAT_TRAINS, SELF, switch_ef10_2_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef10_2_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDYEAR);
-	1: return string(STR_REFIT_JGR);
-	2: return string(STR_REFIT_STAINLESS);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_SILVER));
 	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -9925,16 +9935,61 @@ switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_JNR_BROWN);
-	2: return string(STR_REFIT_RED);
-	3: return string(STR_REFIT_HOKBLUE);
-	4: return string(STR_REFIT_HOKRED);
-	5: return string(STR_REFIT_JRF_BLUE);
-	6: return string(STR_REFIT_JRF_RED);
-	7: return string(STR_REFIT_EUROLINER);
-	8: return string(STR_REFIT_DD51_EXP1);
-	9: return string(STR_REFIT_DD51_EXP2);
-	10: return string(STR_REFIT_DD51_EXP3);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                   string(STR_COLOUR_BROWN),
+								   string(STR_SUFFIX_PROTO),
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HOKUTOSEI)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
+									string(STR_COLOUR_RED)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_REFURB)
+                                 );
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_REFURB)
+                                 );
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_EUROLINER)
+                                 );
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_EXPERIMENT)
+                                 );
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_EXPERIMENT)
+                                 );
+	10: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_EXPERIMENT)
+                                 );
 	11: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -10354,29 +10409,138 @@ switch(FEAT_TRAINS, SELF, switch_de10_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_RED);
-	2: return string(STR_REFIT_JRF_BLUE);
-	3: return string(STR_REFIT_JRF_RED);
-	4: return string(STR_REFIT_JRF_THICK);
-	5: return string(STR_REFIT_JRF_PINK);
-	6: return string(STR_REFIT_JRF_YELLOW);
-	7: return string(STR_REFIT_JNR_BROWN);
-	8: return string(STR_REFIT_JNR_CREAM);
-	9: return string(STR_REFIT_KYUSHU_RED);
-	10: return string(STR_REFIT_KYUSHU_YELLOW);
-	11: return string(STR_REFIT_HOKKAIDO_BLACK);
-	12: return string(STR_REFIT_HOKKAIDO_HET);
-	13: return string(STR_REFIT_HOKUTOSEI);
-	14: return string(STR_REFIT_SOUTHERNCROSS);
-	15: return string(STR_REFIT_NOROKKO);
-	16: return string(STR_REFIT_ISLANDEXPRESS);
-	17: return string(STR_REFIT_NOSTALGICVIEW);
-	18: return string(STR_REFIT_OKUIZUMO);
-	19: return string(STR_REFIT_KINOKUNI);
-	20: return string(STR_REFIT_SAGANO);
-	21: return string(STR_REFIT_WATARASE);
-	22: return string(STR_REFIT_KANSAI_BROWN);
-	23: return string(STR_REFIT_KANSAI_BLUE);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE),
+									string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_PINK), 
+                                    string(STR_COLOUR_ORANGE)
+                                    )
+                                 );
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+                                   string(STR_COLOUR_BROWN), string(STR_SUFFIX_JNR_RETRO)
+                                 );
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_JNR_RETRO)
+                                 );
+	9: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
+	10: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
+                                   string(STR_COLOUR_BLACK)
+                                 );
+	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GREEN),
+									string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_NAEBO)
+                                 );
+	13: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HOKUTOSEI)
+                                 );
+	14: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+                                    string(STR_COLOUR_RED),
+									string(STR_SUFFIX_SOUTHERNCROSS)
+                                 );
+	15: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+	16: return string(STR_CONCAT_3, string(STR_SUFFIX_JRS),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_ISLANDEXPRESS)
+                                 );
+	17: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_YELLOW), 
+                                    string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_NOSTALGICVIEW)
+                                 );
+	18: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_OKUIZUMO)
+                                 );
+	19: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_KINOKUNI)
+                                 );
+	20: return string(STR_CONCAT_2, string(STR_SUFFIX_SAGANO), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
+	21: return string(STR_CONCAT_2, string(STR_SUFFIX_WATARASE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GOLD)
+                                    )
+                                 );
+	22: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
+	23: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
 	24: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -10874,11 +11038,21 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_BLACK);
-	1: return string(STR_REFIT_GREEN);
-	2: return string(STR_REFIT_BLUE);
-	3: return string(STR_REFIT_JRF_REDBLUE);
-	4: return string(STR_REFIT_JNR_CREAM);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_BLACK));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_GREEN));
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_BLUE));
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
 	5: return string(STR_REFIT_CC);
 	}
 
