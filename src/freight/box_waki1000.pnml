@@ -75,8 +75,8 @@ switch(FEAT_TRAINS, SELF, switch_waki_1000_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_waki_1000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_WAKI_STRIPE);
-	1: return string(STR_REFIT_BLACK);
+	0: return string(STR_REFIT_FSTRIPE);
+	1: return string(STR_REFIT_FBLACK);
 	   return CB_RESULT_NO_TEXT;
 	}
 

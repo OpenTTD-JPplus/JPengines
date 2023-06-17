@@ -62,9 +62,9 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_waki_5000_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
 	1: return string(STR_REFIT_FBROWN);
-	2: return string(STR_REFIT_WAKI_GREENSTRIPE);
+	2: return string(STR_REFIT_FGREEN);
 	3: return string(STR_REFIT_FBLACK);
-	4: return string(STR_REFIT_JRF_BLUE);
+	4: return string(STR_REFIT_FBLUE);
 	   return CB_RESULT_NO_TEXT;
 	}
 

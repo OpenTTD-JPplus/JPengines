@@ -137,7 +137,11 @@ switch(FEAT_TRAINS, SELF, switch_ef70_old_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef70_old_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_RED));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
   1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

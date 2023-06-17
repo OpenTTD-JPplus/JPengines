@@ -53,9 +53,21 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_BLACK));
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_GREEN));
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_COLOUR_BLUE));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 

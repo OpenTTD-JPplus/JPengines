@@ -52,9 +52,21 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_oyu10_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_JNR_BROWN);
-	2: return string(STR_REFIT_BLUE);
-    3: return string(STR_REFIT_BLUE_AC);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+    3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_AIRCON)
+                                 );
 	   return CB_RESULT_NO_TEXT;
 	}
 
