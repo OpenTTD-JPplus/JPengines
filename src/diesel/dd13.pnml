@@ -76,16 +76,63 @@ switch(FEAT_TRAINS, SELF, switch_dd13_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_RED);
-	2: return string(STR_REFIT_JNR_BROWN);
-	3: return string(STR_REFIT_JNR_YELLOW);
-	4: return string(STR_REFIT_ASAHIKAWA);
-	5: return string(STR_REFIT_AKITA_RINKAI);
-	6: return string(STR_REFIT_TOMAKOMAI);
-	7: return string(STR_REFIT_NAGOYA_RINKAI);
-	8: return string(STR_REFIT_KOSAKA);
-	9: return string(STR_REFIT_KAMIOKA);
-	10: return string(STR_REFIT_KASHIMA);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                    string(STR_COLOUR_BROWN)
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTGREEN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_AKITA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_TOMAKOMAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_PINK), 
+                                    string(STR_COLOUR_GREEN)
+                                    )
+                                 );
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	8: return string(STR_CONCAT_2, string(STR_SUFFIX_KOSAKA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	9: return string(STR_CONCAT_2, string(STR_SUFFIX_KAMIOKA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	10: return string(STR_CONCAT_2, string(STR_SUFFIX_KASHIMA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
 	11: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

@@ -481,6 +481,13 @@ STR_SUFFIX_SAKHALIN		:{WHITE} Sakhalin Railway
 STR_SUFFIX_SAGANO		:{WHITE} Sagano Scenic Railway
 STR_SUFFIX_WATARASE 	:{WHITE} Watarase Keikoku
 STR_SUFFIX_KANSAI		:{WHITE} Kansai Freight Railway
+STR_SUFFIX_ASAHIKAWA		: {WHITE}Asahikawa Express Railway
+STR_SUFFIX_AKITA_RINKAI	    : {WHITE}Akita Rinkai Railway
+STR_SUFFIX_TOMAKOMAI		: {WHITE}Tomakomai Port Development Line
+STR_SUFFIX_NAGOYA_RINKAI	: {WHITE}Nagoya Rinkai Railway
+STR_SUFFIX_KOSAKA		    : {WHITE}Kosaka Railway
+STR_SUFFIX_KAMIOKA		    : {WHITE}Kamioka Railway
+STR_SUFFIX_KASHIMA		    : {WHITE}Kashima Railway
 
 STR_SUFFIX_PRIVATE		:{WHITE} Various Private Operators
 
@@ -571,10 +578,11 @@ STR_COLOUR_BLACK			:{BLACK}Black
 STR_COLOUR_GOLD 			:{GOLD}Gold
 STR_COLOUR_SILVER			:{SILVER}Silver
 STR_COLOUR_GREY			    :{SILVER}Grey
-STR_COLOUR_GREEN			:{GREEN}Green
+STR_COLOUR_LTGREEN			:{GREEN}Green
+STR_COLOUR_GREEN			:{DKGREEN}Green
 STR_COLOUR_BROWN			:{BROWN}Brown
 STR_COLOUR_BLUE				:{BLUE}Blue
-STR_COLOUR_LTBLUE			:{LTBLUE}Light Blue
+STR_COLOUR_LTBLUE			:{LTBLUE}Blue
 STR_COLOUR_RED				:{RED}Red
 STR_COLOUR_ORANGE			:{ORANGE}Orange
 STR_COLOUR_PINK 			:{CREAM}Pink
@@ -709,25 +717,9 @@ STR_REFIT_BLUE_AC	: {WHITE}JNR{BLACK} Blue with A/C
 
 
 
-
-
-
-
-# DD13 liveries v
-
-STR_REFIT_ASAHIKAWA		: {WHITE}Asahikawa Express Railway{BLACK} Green/White
-STR_REFIT_AKITA_RINKAI	: {WHITE}Akita Rinkai Railway{BLACK} Blue/White
-STR_REFIT_TOMAKOMAI		: {WHITE}Tomakomai Port Development Line{BLACK} Pink/Green
-STR_REFIT_NAGOYA_RINKAI	: {WHITE}Nagoya Rinkai Railway{BLACK} Blue/White
-STR_REFIT_KOSAKA		: {WHITE}Kosaka Railway{BLACK} Red/Grey
-STR_REFIT_KAMIOKA		: {WHITE}Kamioka Railway{BLACK} Brown/Black
-STR_REFIT_KASHIMA		: {WHITE}Kashima Railway{BLACK} Black/White
-
-STR_REFIT_DD51_EXP1	: {WHITE}JR Freight {BLACK}Experimental Blue/Red
-STR_REFIT_DD51_EXP2	: {WHITE}JR Freight {BLACK}Experimental Blue/White
-STR_REFIT_DD51_EXP3	: {WHITE}JR Freight {BLACK}Experimental Blue/Cream
-
-
+# ####################
+# DMT LIVERIES       #
+# ####################
 
 
 STR_REFIT_DMT_PROTO		: DMT Prototype
@@ -753,8 +745,8 @@ STR_DESC_POWER_DC15		:{BLACK}Engine Type: {GOLD}Electric - {BLUE} DC (1500V){}
 STR_DESC_POWER_MS20		:{BLACK}Engine Type: {GOLD}Electric Multisystem - {RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}
 STR_DESC_POWER_MS25 	:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV){}
 
-STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow {SILVER}(3ft6in/1,067mm){}
-STR_DESC_STDGAUGE	    :{BLACK}Gauge:{GOLD} Standard (4ft8.5in/1,435mm){}
+STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow {SILVER}(1,067mm){}
+STR_DESC_STDGAUGE	    :{BLACK}Gauge:{GOLD} Standard (1,435mm){}
 
 STR_DESC_WHEELS_1B1     :{BLACK}Wheel Arrangement:{GOLD} 1-B-1 / 2-4-2{}
 STR_DESC_WHEELS_1C      :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}

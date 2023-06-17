@@ -435,7 +435,7 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
 	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_BLUE), 
-                                    string(STR_COLOUR_GREEN),
+                                    string(STR_COLOUR_LTGREEN),
 									string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_NAEBO)
                                  );
@@ -480,9 +480,10 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
                                     ), string(STR_SUFFIX_KINOKUNI)
                                  );
 	20: return string(STR_CONCAT_2, string(STR_SUFFIX_SAGANO), 
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_BLACK), 
-                                    string(STR_COLOUR_RED)
+                                    string(STR_COLOUR_RED),
+                                    string(STR_COLOUR_ORANGE),
                                     )
                                  );
 	21: return string(STR_CONCAT_2, string(STR_SUFFIX_WATARASE), 
