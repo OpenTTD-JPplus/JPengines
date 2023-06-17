@@ -140,7 +140,7 @@ sort(FEAT_TRAINS, [
 //diesels
 1203, 1205, 1207, 1209, 1210, 20, 1211, 1212, 1215, 25, 1220, 1221, 71, 63, 111,
 //electrics DC old
-1010, 1011, 990, 1004, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 1921, 
+1010, 1011, 990, 1004, 1904, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 1921, 
 //electrics DC new
 1059, 1060, 1960, 1930, 1030, 1031, 1931, 1039, 1939, 1040, 22, 1922, 1041, 24, 1042, 1942, 1924, 26, 1926, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
@@ -1988,7 +1988,7 @@ switch(FEAT_TRAINS, SELF, switch_ed16_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed16_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_JNR_BROWN);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN));
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -2031,6 +2031,57 @@ item (FEAT_TRAINS, ed16, 1004) {
                   );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed16_subtype_text;
+  default: switch_ed16_livery;
+  purchase: switch_ed16_yeardep_purchase;
+  }
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ed55_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_SEMIFIC));
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, ed55, 1904) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_ED55);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1941,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.23;
+  power: 900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 77;
+  reliability_decay: 20;
+  model_life: 65;
+  vehicle_life: 50;
+  cost_factor: 32;
+  length: 6;
+  running_cost_factor: 42;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1004;
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ed55_subtype_text;
   default: switch_ed16_livery;
   purchase: switch_ed16_yeardep_purchase;
   }
