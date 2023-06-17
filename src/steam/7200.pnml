@@ -70,8 +70,17 @@ switch(FEAT_TRAINS, SELF, switch_jgr_7200_livery_rear, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_jgr_7200_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_HCC);
-	2: return string(STR_REFIT_JGR_BLACK);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_HCC), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_GOLD)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    )
+                                 );
 	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

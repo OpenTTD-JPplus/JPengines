@@ -20,7 +20,12 @@ switch(FEAT_TRAINS, SELF, switch_ed46_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed46_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_PINK));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_PINK), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

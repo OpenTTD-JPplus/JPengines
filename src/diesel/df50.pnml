@@ -33,8 +33,18 @@ switch(FEAT_TRAINS, SELF, switch_df50_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_JNR_BROWN);
-	2: return string(STR_REFIT_RED);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
 	3: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}

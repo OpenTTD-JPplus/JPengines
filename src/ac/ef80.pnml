@@ -23,7 +23,6 @@ switch(FEAT_TRAINS, SELF, switch_ef80_yeardep_livery, build_year) {
     spriteset_ef80_new_red;
 }
 
-//maybe add switch to make tokkyu livery if pax are attached (also ef65)
 
 switch(FEAT_TRAINS, SELF, switch_ef80_livery, cargo_subtype) {
 	1: spriteset_ef80_old_red;
@@ -35,8 +34,16 @@ switch(FEAT_TRAINS, SELF, switch_ef80_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_PINK));
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW), string(STR_SUFFIX_RED), string(STR_SUFFIX_FICTION));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_PINK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRW), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
 	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

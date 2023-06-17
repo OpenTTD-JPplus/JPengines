@@ -83,7 +83,9 @@ switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
                                     )
                                  );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_COLOUR_BROWN)
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    )
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 

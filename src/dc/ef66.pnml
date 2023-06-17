@@ -102,13 +102,50 @@ switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE));
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_EXP));
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_PANTOS));
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE), string(STR_SUFFIX_PANTOS));
-	6: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE));
-	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_LOGO), string(STR_SUFFIX_FICTION));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_CREAM), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_EXPERIMENT)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_REFURB)
+                                 );
+	7: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_LARGELOGO), string(STR_SUFFIX_FICTION)
+                                 );
 	8: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -182,8 +219,19 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_WHITE));
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), string(STR_SUFFIX_BLUE_2TONE), string(STR_SUFFIX_FICTION));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

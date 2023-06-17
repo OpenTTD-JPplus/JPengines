@@ -38,9 +38,23 @@ switch(FEAT_TRAINS, SELF, switch_df200_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_df200_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_REFIT_JRF_RED);
-	2: return string(STR_REFIT_DF200_NEW);
-	3: return string(STR_REFIT_DF200_SS);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_REDBEAR)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), //todo make 7stars a variant?
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_7STARS)
+                                 );
 	4: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}

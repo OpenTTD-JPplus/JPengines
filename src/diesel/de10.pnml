@@ -409,7 +409,9 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
                                     )
                                  );
 	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
-                                   string(STR_COLOUR_BROWN), string(STR_SUFFIX_JNR_RETRO)
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_JNR_RETRO)
                                  );
 	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
                                    string(STR_CONCAT_2F, 
@@ -429,8 +431,10 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
-                                   string(STR_COLOUR_BLACK)
+	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    )
                                  );
 	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_3F, 
@@ -446,8 +450,10 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
 	14: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
-                                    string(STR_COLOUR_RED),
-									string(STR_SUFFIX_SOUTHERNCROSS)
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SOUTHERNCROSS)
                                  );
 	15: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_2F, 

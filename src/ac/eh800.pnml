@@ -37,7 +37,12 @@ switch(FEAT_TRAINS, SELF, switch_eh800_livery_rear, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_eh800_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_JRF_RED);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}

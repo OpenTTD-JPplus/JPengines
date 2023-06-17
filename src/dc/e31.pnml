@@ -16,7 +16,12 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e31_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_SEIBU);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_CREAM)
+                                    )
+                                 );
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
