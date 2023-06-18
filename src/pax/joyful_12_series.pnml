@@ -122,9 +122,22 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_BROWN_RED));
-	1: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_BLUE_WHITE));//white blue?
-	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_CC));
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_SALONEXP)
+                                 );
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_EUROLINER)
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_1F, 
+                                     							string(STR_SUFFIX_CC)
+                                    							)
+															);
 	   return CB_RESULT_NO_TEXT;
 	}
 

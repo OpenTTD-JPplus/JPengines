@@ -204,21 +204,93 @@ switch(FEAT_TRAINS, SELF, switch_pax_1910_livery, cargo_subtype) {
 }
 
 
-
 switch(FEAT_TRAINS, SELF, switch_pax_1910_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_LOCAL);
-	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
-	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_REFIT_PAX_HOHA6810_JGR);
-	4: return string(STR_REFIT_PAX_HOHAFU7570_JGR);
-	5: return string(STR_REFIT_PAX_HORO5535_JGR);
-	6: return string(STR_REFIT_PAX_HOROFU5615_JGR);
-	7: return string(STR_REFIT_PAX_HOYA5100_JGR);
-	8: return string(STR_REFIT_PAX_INERO5135_JGR);
-	9: return string(STR_REFIT_PAX_INAI5035_JGR);
-	10: return string(STR_REFIT_PAX_HOSHI5065_JGR);
-	11: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR);
-	12: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR_FLIP);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LOCAL)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LTDEXP)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_SLEEPER)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HOHA6810), 
+									string(STR_SUFFIX_PAX_3CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HOHAFU7570), 
+									string(STR_SUFFIX_PAX_3CLASS), 
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HORO5535), 
+									string(STR_SUFFIX_PAX_2CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	6: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HOROFU5615), 
+									string(STR_SUFFIX_PAX_2CLASS), 
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HOYA5100), 
+									string(STR_SUFFIX_PAX_1CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_INERO5135), 
+									string(STR_SUFFIX_SLEEPER_2CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_INAI5035), 
+									string(STR_SUFFIX_SLEEPER_1CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HOSHI5065), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_NAHANI8430), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	12: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_NAHANI8430), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -303,10 +375,32 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_mail_1910_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
-	1: return string(STR_REFIT_MAIL_HONI8900_JGR);
-	2: return string(STR_REFIT_MAIL_HOYUNI8725_JGR);
-	3: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR);
-	4: return string(STR_REFIT_PAXMAIL_NAHANI8430_JGR_FLIP);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_HONI8900), 
+									string(STR_SUFFIX_LUGGAGE),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_HOYUNI8725), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_NAHANI8430), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_NAHANI8430), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 

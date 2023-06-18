@@ -145,9 +145,21 @@ switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_RANDOM),string(STR_SUFFIX_BLUE_WHITE));
-	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_ORIGINAL),string(STR_SUFFIX_BLUE_WHITE));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM),string(STR_SUFFIX_AIRCON),string(STR_SUFFIX_BLUE_WHITE));
+	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_2F, 
+                                     							string(STR_COLOUR_BLUE), 
+                                     							string(STR_COLOUR_WHITE)
+                                    							), string(STR_SUFFIX_RANDOM)
+															);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_2F, 
+                                     							string(STR_COLOUR_BLUE), 
+                                     							string(STR_COLOUR_WHITE)
+                                    							), string(STR_SUFFIX_ORIGINAL)
+															);
+	2: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_2F, 
+                                     							string(STR_COLOUR_BLUE), 
+                                     							string(STR_COLOUR_WHITE)
+                                    							), string(STR_SUFFIX_AIRCON)
+															);
 	   return CB_RESULT_NO_TEXT;
 	}
 	
