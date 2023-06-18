@@ -12188,15 +12188,16 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
                                     )
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_RED), 
+									string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
 	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
-                                    string(STR_COLOUR_WHITE)
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_RED)
                                     )
                                  );
 	5: return string(STR_REFIT_CC);
@@ -12396,15 +12397,62 @@ switch(FEAT_TRAINS, SELF, switch_pax_1870_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_pax_1870_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARFORM);
-	1: return string(STR_REFIT_AUTOFORM_BROWN);
-	2: return string(STR_REFIT_AUTOFORM_JGR);
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_RO481), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BROWN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_JGR)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	5: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HA4995), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_RED)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_RED)
+									 )
+	                                );
+	8: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_RED)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_RO481), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -12462,11 +12510,38 @@ switch(FEAT_TRAINS, SELF, switch_mail_1870_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_mail_1870_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_HANI1), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN));
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), string(STR_SUFFIX_COMFLIP_3CLASS), string(STR_SUFFIX_BROWN_RED));
+	0: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_HANI1), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	2: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_RED)
+									 )
+	                                );
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_HABU3), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_RED)
+									 ), string(STR_SUFFIX_FLIPPED)
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -13640,20 +13715,97 @@ switch(FEAT_TRAINS, SELF, switch_suha_32_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_suha_32_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_LOCAL);
-	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
-	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO30), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE37), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE37), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
-	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUSHI37), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
-	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAISHI37), string(STR_SUFFIX_DINER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
-	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAIRONEFU37), string(STR_SUFFIX_PAX_12CLASS), string(STR_SUFFIX_BROWN_CREAM));
-	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SITE37), string(STR_SUFFIX_OBS_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
-	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN_RED));
-	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LOCAL)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LTDEXP)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_SLEEPER)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), 
+									string(STR_SUFFIX_PAX_3CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA32), 
+									string(STR_SUFFIX_PAX_3CLASS), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO30), 
+									string(STR_SUFFIX_PAX_2CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE37), 
+									string(STR_SUFFIX_SLEEPER_2CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE37), 
+									string(STR_SUFFIX_SLEEPER_1CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUSHI37), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAISHI37), 
+									string(STR_SUFFIX_DINER_1CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAIRONEFU37), 
+									string(STR_SUFFIX_PAX_12CLASS), 
+									string(STR_CONCAT_3F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_CREAM),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SITE37), 
+									string(STR_SUFFIX_OBS_1CLASS), 
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -13753,10 +13905,31 @@ switch(FEAT_TRAINS, SELF, switch_mani_31_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_mani_31_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
-	1: return string(STR_REFIT_MAYU_33);
-	2: return string(STR_REFIT_MANI_31);
-	3: return string(STR_REFIT_SUHANE_31_JGR);
-	4: return string(STR_REFIT_SUHANE_31_JNR);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MAYU33), 
+									string(STR_SUFFIX_MAIL), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI31), 
+									string(STR_SUFFIX_LUGGAGE), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN), 
+                                     string(STR_COLOUR_RED)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANE31), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -14302,43 +14475,207 @@ switch(FEAT_TRAINS, SELF, switch_pax_suha43_stripe_livery, cargo_subtype) {
 */
 
 switch(FEAT_TRAINS, SELF, switch_pax_suha43_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_LOCAL);
-	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
-	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	6: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE40), string(STR_SUFFIX_SLEEPER_1CLASS), string(STR_SUFFIX_BROWN_CREAM));
-	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
-	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
-	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
-	17: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
-	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
-	19: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
-	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO54), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	24: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), string(STR_SUFFIX_PAX_GREEN), string(STR_SUFFIX_BLUE));
-	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO54), string(STR_SUFFIX_PAX_GREEN), string(STR_SUFFIX_BLUE));
-	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE));
-	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), string(STR_SUFFIX_SLEEPER_GREEN), string(STR_SUFFIX_BLUE));
-	28: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BLUE));
-	29: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BLUE));	
-	30: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUYA42), string(STR_SUFFIX_INSPECTION), string(STR_SUFFIX_BLUE_YELLOW));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LOCAL)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LTDEXP)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_SLEEPER)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	6: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	12: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MAINE40), 
+									string(STR_SUFFIX_SLEEPER_1CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_CREAM)
+									 )
+	                                );
+	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA43), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	17: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU43), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHA44), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	19: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SUHAFU44), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	21: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SURO54), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 ), string(STR_SUFFIX_AIRCON)
+	                                );
+	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	24: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SURO51), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	25: return string(STR_CONCAT_4, string(STR_REFIT_PAX_SURO54), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 ), string(STR_SUFFIX_AIRCON)
+	                                );
+	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE40), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MARONE41), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	28: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	29: return string(STR_CONCAT_3, string(STR_REFIT_PAX_MASHI35), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	30: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUYA42), 
+									string(STR_SUFFIX_INSPECTION),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_YELLOW)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
-
-
-
-
 
 
 
@@ -14657,9 +14994,21 @@ switch(FEAT_TRAINS, SELF, switch_pax_oha35_stripe_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_oha35_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_LOCAL);
-	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
-	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_OIGAWA));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LOCAL)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LTDEXP)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_OIGAWA)
+                                    )
+                                 );
     //todo individual refits
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -14904,8 +15253,16 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_TSUBAME);
-	1: return string(STR_REFIT_AUTOFORM_HATO);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_TSUBAME)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_HATO)
+                                    )
+                                 );
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
@@ -15520,15 +15877,69 @@ switch(FEAT_TRAINS, SELF, switch_pax_24_series_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_24_series_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM);
-	1: return string(STR_REFIT_PAX_OHNF25);
-	2: return string(STR_REFIT_PAX_OHNF24);
-	3: return string(STR_REFIT_PAX_OHN25);
-	4: return string(STR_REFIT_PAX_OHN24);
-	5: return string(STR_REFIT_PAX_ORN25);
-	6: return string(STR_REFIT_PAX_ORN24);
-	7: return string(STR_REFIT_PAX_OS24);
-	8: return string(STR_REFIT_PAX_KN24);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_GINGA)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_4, string(STR_REFIT_PAX_OHNF25), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	2: return string(STR_CONCAT_4, string(STR_REFIT_PAX_OHNF24), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN25), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN24), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN25), 
+									string(STR_SUFFIX_SLEEPER_1CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN24), 
+									string(STR_SUFFIX_SLEEPER_1CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS24), 
+									string(STR_SUFFIX_DINER),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_KN24), 
+									string(STR_SUFFIX_GENERATOR),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -16696,40 +17107,188 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_roof, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_10series_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_LOCAL);
-	1: return string(STR_REFIT_AUTOFORM_EXPRESS);
-	2: return string(STR_REFIT_AUTOFORM_SLEEPER);
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BROWN_BLUE));
-	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BROWN_GREEN));
-	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BROWN));
-	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BROWN));
-	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), string(STR_SUFFIX_SLEEPER_3CLASS), string(STR_SUFFIX_BROWN));
-	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BROWN));
-	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	17: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BLUE_GREEN));
-	19: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), string(STR_SUFFIX_PAX_2CLASS), string(STR_SUFFIX_BLUE));
-	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE));
-	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE));
-	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), string(STR_SUFFIX_SLEEPER_23CLASS), string(STR_SUFFIX_BLUE));
-	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_BLUE));
-	24: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), string(STR_SUFFIX_PAX_3CLASS), string(STR_SUFFIX_CONDUCTOR), string(STR_SUFFIX_BLUE));
-	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), string(STR_SUFFIX_SLEEPER_3CLASS), string(STR_SUFFIX_BLUE));
-	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), string(STR_SUFFIX_DINER), string(STR_SUFFIX_BLUE));
-	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), string(STR_SUFFIX_SLEEPER_2CLASS), string(STR_SUFFIX_BLUE_WHITE));
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LOCAL)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_LTDEXP)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_SLEEPER)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BROWN),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	17: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	19: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	24: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), 
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), 
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), 
+									string(STR_SUFFIX_DINER), 
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+									string(STR_SUFFIX_SLEEPER_2CLASS),
+									string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_WHITE)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
-
-
-
-
 
 
 
@@ -16913,10 +17472,26 @@ switch(FEAT_TRAINS, SELF, switch_mani34_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_mani34_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_OLDSHAPE));
-	2: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BROWN), string(STR_SUFFIX_NEWSHAPE));
-    3: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_OLDSHAPE));
-	4: return string(STR_CONCAT_4, string(STR_REFIT_MAIL_MANI34), string(STR_SUFFIX_ARMOURED), string(STR_SUFFIX_BLUE), string(STR_SUFFIX_NEWSHAPE));
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_OLDSHAPE)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_NEWSHAPE)
+                                 );
+    3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_OLDSHAPE)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_NEWSHAPE)
+                                 );
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -17420,16 +17995,66 @@ switch(FEAT_TRAINS, SELF, switch_suyu42_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_suyu42_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BROWN));
-	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BROWN));
-    3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BROWN));
-	4: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BROWN));
-    5: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BROWN));
-    6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_COMBINE_3CLASS), string(STR_SUFFIX_BLUE));
-    7: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BLUE));
-    8: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), string(STR_SUFFIX_MAIL), string(STR_SUFFIX_BLUE));
-    9: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BLUE));
-    10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), string(STR_SUFFIX_LUGGAGE), string(STR_SUFFIX_BLUE));
+	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+    3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	4: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), 
+									string(STR_SUFFIX_LUGGAGE),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+    5: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), 
+									string(STR_SUFFIX_LUGGAGE),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+    6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+    7: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+    8: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), 
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+    9: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), 
+									string(STR_SUFFIX_LUGGAGE),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+    10: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), 
+									string(STR_SUFFIX_LUGGAGE),
+									string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
 	   return CB_RESULT_NO_TEXT;
 	}
 

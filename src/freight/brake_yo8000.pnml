@@ -69,15 +69,16 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
                                     )
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_RED), 
+									string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
 	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
-                                    string(STR_COLOUR_WHITE)
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_RED)
                                     )
                                  );
 	5: return string(STR_REFIT_CC);

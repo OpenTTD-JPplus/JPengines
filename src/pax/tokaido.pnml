@@ -182,8 +182,16 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_AUTOFORM_TSUBAME);
-	1: return string(STR_REFIT_AUTOFORM_HATO);
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_TSUBAME)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_SUFFIX_HATO)
+                                    )
+                                 );
 	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
