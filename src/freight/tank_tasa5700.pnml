@@ -105,8 +105,8 @@ switch(FEAT_TRAINS, SELF, switch_tasa_5700_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_tasa_5700_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_RANDOM);
-	1: return string(STR_REFIT_FWHITE);
-	2: return string(STR_REFIT_FSILVER);
+	1: return string(STR_CONCAT_1F, string(STR_COLOUR_WHITE));
+	2: return string(STR_CONCAT_1F, string(STR_COLOUR_SILVER));
 	   return CB_RESULT_NO_TEXT;
 }
 

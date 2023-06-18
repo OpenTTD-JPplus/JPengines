@@ -81,7 +81,7 @@ item (FEAT_TRAINS, ed16, 1004) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed55_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_PROPOSAL)

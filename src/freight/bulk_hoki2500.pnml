@@ -73,9 +73,9 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_hoki_2500_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_FRANDOM);
-	1: return string(STR_REFIT_FOPEN);
-	2: return string(STR_REFIT_FCOVER);
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_1F, string(STR_SUFFIX_FOPEN));
+	2: return string(STR_CONCAT_1F, string(STR_SUFFIX_FCOVER));
 	   return CB_RESULT_NO_TEXT;
 	}
 

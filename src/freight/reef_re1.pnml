@@ -83,9 +83,9 @@ switch(FEAT_TRAINS, SELF, switch_re_1_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_re_1_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_FRANDOM);
-	1: return string(STR_REFIT_FWHITE);
-	2: return string(STR_REFIT_FSTRIPE);
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_1F, string(STR_COLOUR_WHITE));
+	2: return string(STR_CONCAT_2F, string(STR_COLOUR_WHITE), string(STR_COLOUR_YELLOW));
 	   return CB_RESULT_NO_TEXT;
 	}
 
