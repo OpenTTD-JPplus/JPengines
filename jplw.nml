@@ -1666,8 +1666,8 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e851_subtype_text, cargo_subtype) {
                                  );
    1: return string(STR_CONCAT_3, string(STR_SUFFIX_AMTRAK), 
                                    string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_RED), 
-                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_GREY), 
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
