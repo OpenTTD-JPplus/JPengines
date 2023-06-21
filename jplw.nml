@@ -19959,6 +19959,7 @@ graphics {
 						);
 
 	cargo_capacity: return 60;
+	speed: switch_speedboost_1;
 	default: random_hoki_800_livery;
 	purchase: switch_hoki_800_purchase;
 //	cargo_subtype_text: switch_hoki_800_subtype_text;
