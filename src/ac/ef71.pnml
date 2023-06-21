@@ -68,7 +68,7 @@ item (FEAT_TRAINS, ef71, 1047) {
   model_life: 40;
   vehicle_life: 40;
   cost_factor: 81;
-  length: 7;
+  length: 8;
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
