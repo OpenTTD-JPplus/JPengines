@@ -38,16 +38,6 @@ switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef71_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
-  return string(STR_NAME_EF71);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef71_2_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef71_2_name_purchase; 
-  return CB_RESULT_NO_TEXT;
-  }
-
-
 item (FEAT_TRAINS, ef71, 1047) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;

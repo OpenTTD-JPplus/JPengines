@@ -6,19 +6,11 @@ spriteset(spriteset_ef57_2_jgr, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef57_2_jnr, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_2_largelogo, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef57_1_gnr, "gfx/electric/ef57.png") {
-	template_2cc_std(1, 160)
-}
 
-/* no such thing
-spriteset(spriteset_ef57_banker, "gfx/electric/ef57.png") {
-	template_2cc_std(1, 96)
-}
-*/
 
 spriteset(spriteset_ef57_1_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 96)
@@ -28,20 +20,57 @@ spriteset(spriteset_ef57_2_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef57_1_jgr_purchase, "gfx/electric/ef57.png") {
-	template_purchase(1, 192)
+
+
+
+spriteset(spriteset_ef57_1_gnr, "gfx/electric/ef57.png") {
+	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef57_1_jnr_purchase, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_1_camo, "gfx/electric/ef57.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef57_1_tokkyu, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef57_1_tokaido, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef57_1_rainbow, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef57_1_nyc, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_ef57_1_milw, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_ef57_1_prr, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 160)
+}
+
+
+
+spriteset(spriteset_ef57_1_jgr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(1, 224)
 }
 
-spriteset(spriteset_ef57_2_jgr_purchase, "gfx/electric/ef57.png") {
-	template_purchase(89, 192)
+spriteset(spriteset_ef57_1_jnr_purchase, "gfx/electric/ef57.png") {
+	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ef57_2_jnr_purchase, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_2_jgr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(89, 224)
+}
+
+spriteset(spriteset_ef57_2_largelogo_purchase, "gfx/electric/ef57.png") {
+	template_purchase(89, 256)
 }
 
 /*
@@ -57,8 +86,15 @@ switch(FEAT_TRAINS, SELF, switch_ef57_1_yeardep_purchase, current_year) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef57_1_livery, cargo_subtype) {
-	1: spriteset_ef57_1_gnr;
-  2: spriteset_ef57_1_cc;
+	1: spriteset_ef57_1_camo;
+  2: spriteset_ef57_1_tokkyu;
+  3: spriteset_ef57_1_tokaido;
+  4: spriteset_ef57_1_rainbow;
+  5: spriteset_ef57_1_gnr;
+  6: spriteset_ef57_1_nyc;
+  7: spriteset_ef57_1_milw;
+  8: spriteset_ef57_1_prr;
+  9: spriteset_ef57_1_cc;
 	spriteset_ef57_1_jgr;
 }
 
@@ -68,12 +104,53 @@ switch(FEAT_TRAINS, SELF, switch_ef57_1_subtype_text, cargo_subtype) {
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-  1: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
+  1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_GREEN),
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_CAMO)
+                                 );
+  2: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+                                     string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_FICTION)
+                                 );
+  3: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_LTGREEN),
+                                     string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_FICTION)
+                                 );
+  4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_RED),
+                                     string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+  5: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_GREEN)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	2: return string(STR_REFIT_CC);
+  6: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+                                     string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+  7: return string(STR_CONCAT_3, string(STR_SUFFIX_MILW), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+                                     string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+  8: return string(STR_CONCAT_3, string(STR_SUFFIX_PRR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	9: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -122,11 +199,11 @@ item (FEAT_TRAINS, ef57, 1020) {
 
 switch(FEAT_TRAINS, SELF, switch_ef57_2_yeardep_purchase, current_year) {
 	0..1949: spriteset_ef57_2_jgr_purchase;
-	spriteset_ef57_2_jnr_purchase;
+	spriteset_ef57_2_largelogo_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef57_2_livery, cargo_subtype) {
-	1: spriteset_ef57_2_jnr;
+	1: spriteset_ef57_2_largelogo;
   2: spriteset_ef57_2_cc;
 	spriteset_ef57_2_jgr;
 }

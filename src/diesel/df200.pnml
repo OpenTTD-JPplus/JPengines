@@ -66,7 +66,7 @@ item (FEAT_TRAINS, df200, 63) {
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_DF200);
+	name: string(STR_NAME_DF200_1);
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];

@@ -1,33 +1,69 @@
-spriteset(spriteset_ef200_original, "gfx/electric/ef200.png") {
+spriteset(spriteset_ef200_jrf_old, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
+spriteset(spriteset_ef200_jrf_new, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 32)
 }
 
-
-spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
+spriteset(spriteset_ef200_black, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 64)
 }
 
 
-
-spriteset(spriteset_ef200_purchase, "gfx/electric/ef200.png") {
-	template_purchase(1, 96)
+spriteset(spriteset_ef200_rainbow, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 96)
 }
 
 
+spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef200_proto, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef200_proto_cc, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 224)
+}
+
+
+spriteset(spriteset_ef200_proto_purchase, "gfx/electric/ef200.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ef200_old_purchase, "gfx/electric/ef200.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_ef200_new_purchase, "gfx/electric/ef200.png") {
+	template_purchase(89, 288)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef200_yeardep_purchase, current_year) {
+	0..2006: spriteset_ef200_old_purchase;
+    spriteset_ef200_new_purchase;
+}
+
 switch(FEAT_TRAINS, SELF, switch_ef200_yeardep_livery, build_year) {
-	1000..2006: spriteset_ef200_original;
-	2006..9999: spriteset_ef200_blue;
-    CB_FAILED;
+	0..2006: spriteset_ef200_jrf_old;
+	spriteset_ef200_jrf_new;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef200_livery, cargo_subtype) {
-	1: spriteset_ef200_original;
-	2: spriteset_ef200_blue;
-	3: spriteset_ef200_cc;
+	1: spriteset_ef200_jrf_old;
+	2: spriteset_ef200_jrf_new;
+	3: spriteset_ef200_blue;
+	4: spriteset_ef200_black;
+	5: spriteset_ef200_rainbow;
+	6: spriteset_ef200_cc;
 	switch_ef200_yeardep_livery;
 }
 
@@ -36,9 +72,10 @@ switch(FEAT_TRAINS, SELF, switch_ef200_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
-                                    string(STR_COLOUR_GREY)
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
                                     )
                                  );
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
@@ -47,7 +84,24 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REFURB)
                                  );
-	3: return string(STR_REFIT_CC);
+   3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+   4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+   5: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -56,13 +110,29 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, jr_ef200, 60) {
 
 property {
-	name: string(STR_NAME_EF200);
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	}
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF200);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1992,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 6000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 109;
+  length: 8;
+  running_cost_factor: 109;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+    misc_flags: bitmask(TRAIN_FLAG_2CC);
+	} 
 
 
   graphics { // graphics for engine
@@ -77,6 +147,97 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef200_subtype_text;
   default: switch_ef200_livery;
-  purchase: spriteset_ef200_purchase;
+  purchase: switch_ef200_yeardep_purchase;
+  }
+}
+
+//prototype
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_yeardep_livery, build_year) {
+	2006..2019: spriteset_ef200_jrf_new;
+	spriteset_ef200_proto;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_livery, cargo_subtype) {
+	1: spriteset_ef200_proto;
+	2: spriteset_ef200_jrf_new;
+	3: spriteset_ef200_proto_cc;
+	switch_ef200_proto_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_PROTO)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_REFURB)
+                                 );
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch (FEAT_TRAINS, SELF, switch_ef200_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef200_proto_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef200_proto_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, jr_ef200_proto, 1962) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF200_P);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1990,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 6000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 109;
+  length: 8;
+  running_cost_factor: 109;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 60;
+	} 
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PROTO),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef200_proto_subtype_text;
+  default: switch_ef200_proto_livery;
+  purchase: spriteset_ef200_proto_purchase;
+  name: switch_ef200_proto_name;
   }
 }

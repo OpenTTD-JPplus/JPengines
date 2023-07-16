@@ -26,6 +26,14 @@ spriteset(spriteset_ef70_new_nyc, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 192)
 }
 
+spriteset(spriteset_ef70_new_prr, "gfx/electric/ef70.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef70_new_gnr, "gfx/electric/ef70.png") {
+	template_2cc_std(180, 32)
+}
+
 
 
 spriteset(spriteset_ef70_old_purchase, "gfx/electric/ef70.png") {
@@ -42,7 +50,9 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_livery, cargo_subtype) {
 	1: spriteset_ef70_new_express;
 	2: spriteset_ef70_new_rainbow;
   3: spriteset_ef70_new_nyc;
-	4: spriteset_ef70_new_cc;
+  4: spriteset_ef70_new_gnr;
+  5: spriteset_ef70_new_prr;
+	6: spriteset_ef70_new_cc;
 	spriteset_ef70_new_red;
 }
 
@@ -63,12 +73,23 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_WHITE)
-                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION )
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
                                  );
   3: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_BLACK)
-                                    ), string(STR_SUFFIX_FICTION )
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN),
+									                  string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_PRR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    ), string(STR_SUFFIX_FICTION)
                                  );
   4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;

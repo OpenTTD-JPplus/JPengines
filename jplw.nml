@@ -3272,6 +3272,22 @@ spriteset(spriteset_ef15_cc_c, "gfx/electric/ef15.png") {
 	template_2cc_std(1, 160)
 }
 
+spriteset(spriteset_ef15_jrf_a, "gfx/electric/ef15.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef15_rainbow, "gfx/electric/ef15.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef15_jrf_b, "gfx/electric/ef15.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef15_nyc, "gfx/electric/ef15.png") {
+	template_2cc_std(180, 96)
+}
+
 
 spriteset(spriteset_ef15_jgr_purchase, "gfx/electric/ef15.png") {
 	template_purchase(1, 192)
@@ -3304,16 +3320,63 @@ switch(FEAT_TRAINS, SELF, switch_ef15_yeardep_purchase, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef15_livery, cargo_subtype) {
 	0: random_ef15_jnr;
-	1: random_ef15_cc;
+  1: spriteset_ef15_jnr_a;
+  2: spriteset_ef15_jnr_b;
+  3: spriteset_ef15_jnr_c;
+  4: spriteset_ef15_jrf_a;
+  5: spriteset_ef15_jrf_b;
+  6: spriteset_ef15_rainbow;
+  7: spriteset_ef15_nyc;
+	8: random_ef15_cc;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
-                                    )
+                                    ), string(STR_SUFFIX_RANDOM)
                                  );
-	1: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_2WINDOW)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_3WINDOW)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_5WINDOW)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_RED),
+                                     string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	8: return string(STR_CONCAT_2, string(STR_SUFFIX_CC), string(STR_REFIT_RANDOM)
+                                 );
+
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -3938,19 +4001,11 @@ spriteset(spriteset_ef57_2_jgr, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_ef57_2_jnr, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_2_largelogo, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_ef57_1_gnr, "gfx/electric/ef57.png") {
-	template_2cc_std(1, 160)
-}
 
-/* no such thing
-spriteset(spriteset_ef57_banker, "gfx/electric/ef57.png") {
-	template_2cc_std(1, 96)
-}
-*/
 
 spriteset(spriteset_ef57_1_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 96)
@@ -3960,20 +4015,57 @@ spriteset(spriteset_ef57_2_cc, "gfx/electric/ef57.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_ef57_1_jgr_purchase, "gfx/electric/ef57.png") {
-	template_purchase(1, 192)
+
+
+
+spriteset(spriteset_ef57_1_gnr, "gfx/electric/ef57.png") {
+	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef57_1_jnr_purchase, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_1_camo, "gfx/electric/ef57.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef57_1_tokkyu, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef57_1_tokaido, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_ef57_1_rainbow, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef57_1_nyc, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_ef57_1_milw, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_ef57_1_prr, "gfx/electric/ef57.png") {
+	template_2cc_std(180, 160)
+}
+
+
+
+spriteset(spriteset_ef57_1_jgr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(1, 224)
 }
 
-spriteset(spriteset_ef57_2_jgr_purchase, "gfx/electric/ef57.png") {
-	template_purchase(89, 192)
+spriteset(spriteset_ef57_1_jnr_purchase, "gfx/electric/ef57.png") {
+	template_purchase(1, 256)
 }
 
-spriteset(spriteset_ef57_2_jnr_purchase, "gfx/electric/ef57.png") {
+spriteset(spriteset_ef57_2_jgr_purchase, "gfx/electric/ef57.png") {
 	template_purchase(89, 224)
+}
+
+spriteset(spriteset_ef57_2_largelogo_purchase, "gfx/electric/ef57.png") {
+	template_purchase(89, 256)
 }
 
 /*
@@ -3989,8 +4081,15 @@ switch(FEAT_TRAINS, SELF, switch_ef57_1_yeardep_purchase, current_year) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef57_1_livery, cargo_subtype) {
-	1: spriteset_ef57_1_gnr;
-  2: spriteset_ef57_1_cc;
+	1: spriteset_ef57_1_camo;
+  2: spriteset_ef57_1_tokkyu;
+  3: spriteset_ef57_1_tokaido;
+  4: spriteset_ef57_1_rainbow;
+  5: spriteset_ef57_1_gnr;
+  6: spriteset_ef57_1_nyc;
+  7: spriteset_ef57_1_milw;
+  8: spriteset_ef57_1_prr;
+  9: spriteset_ef57_1_cc;
 	spriteset_ef57_1_jgr;
 }
 
@@ -4000,12 +4099,53 @@ switch(FEAT_TRAINS, SELF, switch_ef57_1_subtype_text, cargo_subtype) {
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-  1: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
+  1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_GREEN),
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_CAMO)
+                                 );
+  2: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLUE),
+                                     string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_FICTION)
+                                 );
+  3: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_LTGREEN),
+                                     string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_FICTION)
+                                 );
+  4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_RED),
+                                     string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+  5: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_GREEN)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	2: return string(STR_REFIT_CC);
+  6: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+                                     string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+  7: return string(STR_CONCAT_3, string(STR_SUFFIX_MILW), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+                                     string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+  8: return string(STR_CONCAT_3, string(STR_SUFFIX_PRR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	9: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -4054,11 +4194,11 @@ item (FEAT_TRAINS, ef57, 1020) {
 
 switch(FEAT_TRAINS, SELF, switch_ef57_2_yeardep_purchase, current_year) {
 	0..1949: spriteset_ef57_2_jgr_purchase;
-	spriteset_ef57_2_jnr_purchase;
+	spriteset_ef57_2_largelogo_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef57_2_livery, cargo_subtype) {
-	1: spriteset_ef57_2_jnr;
+	1: spriteset_ef57_2_largelogo;
   2: spriteset_ef57_2_cc;
 	spriteset_ef57_2_jgr;
 }
@@ -6316,6 +6456,10 @@ spriteset(spriteset_ef66_new_experimental, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 192)
 }
 
+spriteset(spriteset_ef66_rainbow, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 160)
+}
+
 spriteset(spriteset_ef66_old_cc, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 224)
 }
@@ -6329,7 +6473,25 @@ spriteset(spriteset_ef66_100_2tone, "gfx/electric/ef66.png") {
 	template_2cc_std(180, 32)
 }
 
+spriteset(spriteset_ef66_100_jnr, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_ef66_100_blue_white, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 96)
+}
+
 spriteset(spriteset_ef66_100_cc, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 128)
+}
+
+//2000 concept
+
+spriteset(spriteset_ef66_2000, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_ef66_2000_cc, "gfx/electric/ef66.png") {
 	template_2cc_std(180, 224)
 }
 
@@ -6349,6 +6511,11 @@ spriteset(spriteset_ef66_new_jrf_purchase, "gfx/electric/ef66.png") {
 //purch 100
 spriteset(spriteset_ef66_100_jrf_purchase, "gfx/electric/ef66.png") {
 	template_purchase(180, 256)
+}
+
+//purch 2000
+spriteset(spriteset_ef66_2000_purchase, "gfx/electric/ef66.png") {
+	template_purchase(180, 288)
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_purchase, current_year) {
@@ -6384,7 +6551,8 @@ switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
 	5: spriteset_ef66_new_jrf;
 	6: spriteset_ef66_new_refit;
 	7: spriteset_ef66_new_experimental;
-	8: spriteset_ef66_old_cc;
+  8: spriteset_ef66_rainbow;
+	9: spriteset_ef66_old_cc;
 	switch_ef66_yeardep_livery;
 }
 
@@ -6436,7 +6604,13 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_LARGELOGO), string(STR_SUFFIX_FICTION)
                                  );
-	8: return string(STR_REFIT_CC);
+	8: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	9: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6460,7 +6634,7 @@ property {
   name: string(STR_NAME_EF66_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1966,1,1);
-//  speed: 110 km/h;
+  speed: 110 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
   power: 3900 kW;
@@ -6503,8 +6677,10 @@ property {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef66_2_livery, cargo_subtype) {
-	1: spriteset_ef66_100_2tone;
-	2: spriteset_ef66_100_cc;
+	1: spriteset_ef66_100_jnr;
+  2: spriteset_ef66_100_2tone;
+  3: spriteset_ef66_100_blue_white;
+	4: spriteset_ef66_100_cc;
 	spriteset_ef66_100_jrf;
 }
 
@@ -6516,13 +6692,25 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	2: return string(STR_REFIT_CC);
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6582,36 +6770,145 @@ property {
   name: switch_ef66_100_name;
   }
 }
-spriteset(spriteset_ef200_original, "gfx/electric/ef200.png") {
+
+//-2000 concept
+
+
+switch(FEAT_TRAINS, SELF, switch_ef66_2000_livery, cargo_subtype) {
+	1: spriteset_ef66_2000_cc;
+	spriteset_ef66_2000;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef66_2000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_GREY), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_CONCEPT)
+                                 );
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch (FEAT_TRAINS, SELF, switch_ef66_2000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF66);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef66_2000_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef66_2000_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, ef66_2000, 1927) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF66_3);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2014,1,1);
+  speed: 130 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 3900 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: 55;
+  vehicle_life: 45;
+  cost_factor: 101;
+  length: 8;
+  running_cost_factor: 102;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 26;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_3S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_CONCEPT)
+                  );  
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef66_2000_subtype_text;
+  default: switch_ef66_2000_livery;
+  purchase: spriteset_ef66_2000_purchase;
+  name: switch_ef66_2000_name;
+  }
+}
+spriteset(spriteset_ef200_jrf_old, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
+spriteset(spriteset_ef200_jrf_new, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 32)
 }
 
-
-spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
+spriteset(spriteset_ef200_black, "gfx/electric/ef200.png") {
 	template_2cc_std(1, 64)
 }
 
 
-
-spriteset(spriteset_ef200_purchase, "gfx/electric/ef200.png") {
-	template_purchase(1, 96)
+spriteset(spriteset_ef200_rainbow, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 96)
 }
 
 
+spriteset(spriteset_ef200_blue, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 128)
+}
+
+
+spriteset(spriteset_ef200_cc, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_ef200_proto, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_ef200_proto_cc, "gfx/electric/ef200.png") {
+	template_2cc_std(1, 224)
+}
+
+
+spriteset(spriteset_ef200_proto_purchase, "gfx/electric/ef200.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_ef200_old_purchase, "gfx/electric/ef200.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_ef200_new_purchase, "gfx/electric/ef200.png") {
+	template_purchase(89, 288)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_ef200_yeardep_purchase, current_year) {
+	0..2006: spriteset_ef200_old_purchase;
+    spriteset_ef200_new_purchase;
+}
+
 switch(FEAT_TRAINS, SELF, switch_ef200_yeardep_livery, build_year) {
-	1000..2006: spriteset_ef200_original;
-	2006..9999: spriteset_ef200_blue;
-    CB_FAILED;
+	0..2006: spriteset_ef200_jrf_old;
+	spriteset_ef200_jrf_new;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef200_livery, cargo_subtype) {
-	1: spriteset_ef200_original;
-	2: spriteset_ef200_blue;
-	3: spriteset_ef200_cc;
+	1: spriteset_ef200_jrf_old;
+	2: spriteset_ef200_jrf_new;
+	3: spriteset_ef200_blue;
+	4: spriteset_ef200_black;
+	5: spriteset_ef200_rainbow;
+	6: spriteset_ef200_cc;
 	switch_ef200_yeardep_livery;
 }
 
@@ -6620,9 +6917,10 @@ switch(FEAT_TRAINS, SELF, switch_ef200_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
-                                    string(STR_COLOUR_GREY)
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
                                     )
                                  );
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
@@ -6631,7 +6929,24 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REFURB)
                                  );
-	3: return string(STR_REFIT_CC);
+   3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+   4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+   5: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6640,13 +6955,29 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, jr_ef200, 60) {
 
 property {
-	name: string(STR_NAME_EF200);
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	}
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF200);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1992,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 6000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 109;
+  length: 8;
+  running_cost_factor: 109;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+    misc_flags: bitmask(TRAIN_FLAG_2CC);
+	} 
 
 
   graphics { // graphics for engine
@@ -6661,7 +6992,98 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef200_subtype_text;
   default: switch_ef200_livery;
-  purchase: spriteset_ef200_purchase;
+  purchase: switch_ef200_yeardep_purchase;
+  }
+}
+
+//prototype
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_yeardep_livery, build_year) {
+	2006..2019: spriteset_ef200_jrf_new;
+	spriteset_ef200_proto;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_livery, cargo_subtype) {
+	1: spriteset_ef200_proto;
+	2: spriteset_ef200_jrf_new;
+	3: spriteset_ef200_proto_cc;
+	switch_ef200_proto_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_ef200_proto_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_PROTO)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_REFURB)
+                                 );
+	3: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch (FEAT_TRAINS, SELF, switch_ef200_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_EF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_ef200_proto_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_ef200_proto_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, jr_ef200_proto, 1962) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF200_P);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1990,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 6000 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 109;
+  length: 8;
+  running_cost_factor: 109;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 60;
+	} 
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PROTO),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );  
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef200_proto_subtype_text;
+  default: switch_ef200_proto_livery;
+  purchase: spriteset_ef200_proto_purchase;
+  name: switch_ef200_proto_name;
   }
 }
 spriteset(spriteset_ef210_0, "gfx/electric/ef210.png") {
@@ -8771,6 +9193,14 @@ spriteset(spriteset_ef70_new_nyc, "gfx/electric/ef70.png") {
 	template_2cc_std(1, 192)
 }
 
+spriteset(spriteset_ef70_new_prr, "gfx/electric/ef70.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_ef70_new_gnr, "gfx/electric/ef70.png") {
+	template_2cc_std(180, 32)
+}
+
 
 
 spriteset(spriteset_ef70_old_purchase, "gfx/electric/ef70.png") {
@@ -8787,7 +9217,9 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_livery, cargo_subtype) {
 	1: spriteset_ef70_new_express;
 	2: spriteset_ef70_new_rainbow;
   3: spriteset_ef70_new_nyc;
-	4: spriteset_ef70_new_cc;
+  4: spriteset_ef70_new_gnr;
+  5: spriteset_ef70_new_prr;
+	6: spriteset_ef70_new_cc;
 	spriteset_ef70_new_red;
 }
 
@@ -8808,12 +9240,23 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_WHITE)
-                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION )
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
                                  );
   3: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_BLACK)
-                                    ), string(STR_SUFFIX_FICTION )
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_GNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN),
+									                  string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_PRR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    ), string(STR_SUFFIX_FICTION)
                                  );
   4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
@@ -8982,16 +9425,6 @@ switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
   1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
-
-
-switch (FEAT_TRAINS, SELF, switch_ef71_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
-  return string(STR_NAME_EF71);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef71_2_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef71_2_name_purchase; 
-  return CB_RESULT_NO_TEXT;
-  }
 
 
 item (FEAT_TRAINS, ef71, 1047) {
@@ -11822,7 +12255,7 @@ item (FEAT_TRAINS, df200, 63) {
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
 //	track_type: NAAN;
-	name: string(STR_NAME_DF200);
+	name: string(STR_NAME_DF200_1);
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
@@ -16401,44 +16834,325 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 	}
 }
 
-spriteset(spriteset_pax_26_series_1, "gfx/paxmail/26series.png") {
+spriteset(spriteset_pax_26series_1, "gfx/paxmail/26series-cassiopeia.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_pax_26_series_2, "gfx/paxmail/26series.png") {
+spriteset(spriteset_pax_26series_2, "gfx/paxmail/26series-cassiopeia.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_pax_26_series_3, "gfx/paxmail/26series.png") {
+spriteset(spriteset_pax_26series_3, "gfx/paxmail/26series-cassiopeia.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_pax_26_series_4, "gfx/paxmail/26series.png") {
+spriteset(spriteset_pax_26series_4, "gfx/paxmail/26series-cassiopeia.png") {
 	template_2cc_std(1, 96)
 }
 
+spriteset(spriteset_pax_26series_5, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(1, 128)
+}
 
-spriteset(spriteset_pax_26_series_purchase, "gfx/paxmail/26series.png") {
-	template_purchase(1, 288)
+spriteset(spriteset_pax_26series_6, "gfx/paxmail/26series-cassiopeia.png") { //repeats
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_26series_lounge, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_26series_gen, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(1, 224)
+}
+
+//flipped
+spriteset(spriteset_pax_26series_flip_1, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_pax_26series_flip_2, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_pax_26series_flip_3, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_pax_26series_flip_4, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_pax_26series_flip_5, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_pax_26series_flip_6, "gfx/paxmail/26series-cassiopeia.png") { //repeats
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_pax_26series_flip_lounge, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_pax_26series_flip_gen, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(1, 224)
+}
+
+//cc
+
+spriteset(spriteset_pax_26series_cc_1, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_pax_26series_cc_2, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_26series_cc_3, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_pax_26series_cc_4, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_26series_cc_5, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_pax_26series_cc_6, "gfx/paxmail/26series-cassiopeia.png") { //repeats
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_pax_26series_cc_lounge, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_pax_26series_cc_gen, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_std(180, 224)
+}
+
+//flipped
+spriteset(spriteset_pax_26series_cc_flip_1, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_2, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 32)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_3, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 64)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_4, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 96)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_5, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 128)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_6, "gfx/paxmail/26series-cassiopeia.png") { //repeats
+	template_2cc_flip(180, 160)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_lounge, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 192)
+}
+
+spriteset(spriteset_pax_26series_cc_flip_gen, "gfx/paxmail/26series-cassiopeia.png") {
+	template_2cc_flip(180, 224)
 }
 
 
+//purch
 
-switch(FEAT_TRAINS, SELF, switch_pax_26_series_autoform, position_in_vehid_chain) {
-	0: spriteset_pax_26_series_1;
-	2: spriteset_pax_26_series_3;
-	spriteset_pax_26_series_2;
+spriteset(spriteset_pax_26series_purchase, "gfx/paxmail/26series-cassiopeia.png") {
+	template_purchase(1, 288)
+}
+
+//autoform forward
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_forward_autoform, position_in_vehid_chain) {
+	0: spriteset_pax_26series_1;
+	1: spriteset_pax_26series_2;
+	2: spriteset_pax_26series_3;
+	3: spriteset_pax_26series_4;
+	4: spriteset_pax_26series_5;
+	spriteset_pax_26series_6;
+	}
+
+	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_lounge;
+	switch_pax_26series_forward_autoform;
 	}
 	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_gen_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_gen;
+	switch_pax_26series_forward_autoform;
+	}
 	
-switch(FEAT_TRAINS, SELF, switch_pax_26_series_end, position_in_vehid_chain_from_end) {
-	0: spriteset_pax_26_series_4;
-	switch_pax_26_series_autoform;
+//autoform rev
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_front, position_in_vehid_chain) {
+	0: spriteset_pax_26series_flip_lounge;
+	spriteset_pax_26series_flip_6;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_flip_1;
+	1: spriteset_pax_26series_flip_2;
+	2: spriteset_pax_26series_flip_3;
+	3: spriteset_pax_26series_flip_4;
+	4: spriteset_pax_26series_flip_5;
+	switch_pax_26series_lounge_front;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_gen_front, position_in_vehid_chain) {
+	0: spriteset_pax_26series_flip_gen;
+	spriteset_pax_26series_flip_6;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_gen_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_flip_1;
+	1: spriteset_pax_26series_flip_2;
+	2: spriteset_pax_26series_flip_3;
+	3: spriteset_pax_26series_flip_4;
+	4: spriteset_pax_26series_flip_5;
+	switch_pax_26series_gen_front;
+	}
+	
+//autoform forward CC
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_forward_autoform, position_in_vehid_chain) {
+	0: spriteset_pax_26series_cc_1;
+	1: spriteset_pax_26series_cc_2;
+	2: spriteset_pax_26series_cc_3;
+	3: spriteset_pax_26series_cc_4;
+	4: spriteset_pax_26series_cc_5;
+	spriteset_pax_26series_cc_6;
+	}
+
+	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_cc_lounge;
+	switch_pax_26series_cc_forward_autoform;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_gen_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_cc_gen;
+	switch_pax_26series_cc_forward_autoform;
+	}
+	
+//autoform rev CC
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_front, position_in_vehid_chain) {
+	0: spriteset_pax_26series_cc_flip_lounge;
+	spriteset_pax_26series_cc_flip_6;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_cc_flip_1;
+	1: spriteset_pax_26series_cc_flip_2;
+	2: spriteset_pax_26series_cc_flip_3;
+	3: spriteset_pax_26series_cc_flip_4;
+	4: spriteset_pax_26series_cc_flip_5;
+	switch_pax_26series_cc_lounge_front;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_gen_front, position_in_vehid_chain) {
+	0: spriteset_pax_26series_cc_flip_gen;
+	spriteset_pax_26series_cc_flip_6;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_gen_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_26series_cc_flip_1;
+	1: spriteset_pax_26series_cc_flip_2;
+	2: spriteset_pax_26series_cc_flip_3;
+	3: spriteset_pax_26series_cc_flip_4;
+	4: spriteset_pax_26series_cc_flip_5;
+	switch_pax_26series_cc_gen_front;
 	}
 	
 
 
-item (FEAT_TRAINS, pax_26_series, 1346) {
+//refits
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_livery, cargo_subtype) {
+	0: switch_pax_26series_lounge_end;
+	1: switch_pax_26series_gen_end;
+	2: switch_pax_26series_lounge_backward_autoform;
+	3: switch_pax_26series_gen_backward_autoform;
+	4: switch_pax_26series_cc_lounge_end;
+	5: switch_pax_26series_cc_gen_end;
+	6: switch_pax_26series_cc_lounge_backward_autoform;
+	7: switch_pax_26series_cc_gen_backward_autoform;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_4F, 
+																string(STR_COLOUR_SILVER),
+																string(STR_COLOUR_PURPLE),
+																string(STR_COLOUR_RED),
+																string(STR_COLOUR_YELLOW)
+                                    							)
+															);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_4F, 
+																string(STR_COLOUR_SILVER),
+																string(STR_COLOUR_PURPLE),
+																string(STR_COLOUR_RED),
+																string(STR_COLOUR_YELLOW)
+                                    							)
+															);
+	2: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_4F, 
+																string(STR_COLOUR_SILVER),
+																string(STR_COLOUR_PURPLE),
+																string(STR_COLOUR_RED),
+																string(STR_COLOUR_YELLOW)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	3: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_4F, 
+																string(STR_COLOUR_SILVER),
+																string(STR_COLOUR_PURPLE),
+																string(STR_COLOUR_RED),
+																string(STR_COLOUR_YELLOW)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	4: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							)
+															);
+	5: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							)
+															);
+	6: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	7: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, pax_26series, 1346) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -16461,7 +17175,7 @@ item (FEAT_TRAINS, pax_26_series, 1346) {
 		running_cost_factor: 11;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -16472,8 +17186,9 @@ item (FEAT_TRAINS, pax_26_series, 1346) {
 								)
 							);
 
-		default: switch_pax_26_series_end;
-		purchase: spriteset_pax_26_series_purchase;
+		default: switch_pax_26series_livery;
+		purchase: spriteset_pax_26series_purchase;
+		cargo_subtype_text: switch_pax_26series_subtype_text;
 
 	}
 }
@@ -19960,6 +20675,7 @@ graphics {
 
 	cargo_capacity: return 60;
 	speed: switch_speedboost_1;
+	purchase_speed: return 75;
 	default: random_hoki_800_livery;
 	purchase: switch_hoki_800_purchase;
 //	cargo_subtype_text: switch_hoki_800_subtype_text;
