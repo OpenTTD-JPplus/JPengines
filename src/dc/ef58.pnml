@@ -206,13 +206,13 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
                                  );
-	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GOLD)

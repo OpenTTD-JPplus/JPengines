@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 170;
+ version: 180;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -4336,13 +4336,13 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
                                  );
-	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GOLD)
@@ -8032,10 +8032,10 @@ switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_RED)
-                                    ), string(STR_COLOUR_PANTOS)
+                                    ), string(STR_SUFFIX_PANTOS)
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
@@ -8810,7 +8810,7 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 									                  string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION )
                                  );
-  3: return string(STR_CONCAT_4, string(STR_SUFFIX_NYC), 
+  3: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_BLACK)
                                     ), string(STR_SUFFIX_FICTION )

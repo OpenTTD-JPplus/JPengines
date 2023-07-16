@@ -65,7 +65,7 @@ switch(FEAT_TRAINS, SELF, switch_ef70_new_subtype_text, cargo_subtype) {
 									                  string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION )
                                  );
-  3: return string(STR_CONCAT_4, string(STR_SUFFIX_NYC), 
+  3: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_BLACK)
                                     ), string(STR_SUFFIX_FICTION )
