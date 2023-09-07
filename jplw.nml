@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 180;
+ version: 190;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -12187,85 +12187,200 @@ property {
   purchase: spriteset_df50_purchase;
   }
 }
-spriteset(spriteset_df200_new, "gfx/diesel/df200.png") {
+spriteset(spriteset_df200_proto, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_df200_old, "gfx/diesel/df200.png") {
+spriteset(spriteset_df200_proto_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_df200_cc, "gfx/diesel/df200.png") {
+spriteset(spriteset_df200_0, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_df200_ss, "gfx/diesel/df200.png") {
+spriteset(spriteset_df200_0_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_df200_purchase, "gfx/diesel/df200.png") {
-	template_purchase(1, 128)
+spriteset(spriteset_df200_100, "gfx/diesel/df200.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_df200_100_cc, "gfx/diesel/df200.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_df200_aime, "gfx/diesel/df200.png") {
+	template_2cc_std(1, 192)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_df200_yeardep_livery, build_year) {
-	2002..9999: spriteset_df200_new;
-	spriteset_df200_old;
+spriteset(spriteset_df200_7000, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 1)
+}
 
+spriteset(spriteset_df200_7000_cc, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 32)
+}
+
+//fake
+
+spriteset(spriteset_df200_hokutosei, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_df200_cassiopeia, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_df200_twilight, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 256)
+}
+
+//logos 
+
+spriteset(spriteset_df200_logo_red, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_df200_logo_white, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_df200_logo_redbear, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_df200_nologo_redbear, "gfx/diesel/df200.png") {
+	template_2cc_std(180, 160)
+}
+
+//purchase
+
+spriteset(spriteset_df200_proto_purchase, "gfx/diesel/df200.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_df200_0_purchase, "gfx/diesel/df200.png") {
+	template_purchase(89, 288)
+}
+
+spriteset(spriteset_df200_100_jrf_purchase, "gfx/diesel/df200.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_df200_100_jr_purchase, "gfx/diesel/df200.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_df200_7000_purchase, "gfx/diesel/df200.png") {
+	template_purchase(180, 288)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_df200_livery, cargo_subtype) {
-	1: spriteset_df200_old;
-	2: spriteset_df200_new;
-	3: spriteset_df200_ss;
-	4: spriteset_df200_cc;
-	switch_df200_yeardep_livery;
+switch(FEAT_TRAINS, SELF, switch_df200_logo_yeardep, build_year) {
+   0..1996: spriteset_df200_logo_red;
+   1996..2002: spriteset_df200_logo_white;
+   2002..2018: spriteset_df200_logo_redbear;
+	spriteset_df200_nologo_redbear;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_0_logo_livery, cargo_subtype) {
+	0: switch_df200_logo_yeardep;
+   1: spriteset_df200_logo_red;
+   2: spriteset_df200_logo_white;
+   3: spriteset_df200_logo_redbear;
+	4: spriteset_df200_nologo_redbear;
+   spriteset_blank;
 }
 
 
 
-switch(FEAT_TRAINS, SELF, switch_df200_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_df200_0_livery, cargo_subtype) {
+	5: spriteset_df200_0_cc;
+	spriteset_df200_0;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_GREY)
-                                    )
+                                    ), string(STR_SUFFIX_REDLOGO)
                                  );
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_GREY)
-                                    ), string(STR_SUFFIX_REDBEAR)
+                                    ), string(STR_SUFFIX_WHITELOGO)
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), //todo make 7stars a variant?
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BROWN)
-                                    ), string(STR_SUFFIX_7STARS)
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	4: return string(STR_REFIT_CC);	
+	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
+                                 );
+	5: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
 
-item (FEAT_TRAINS, df200, 63) {
+switch(FEAT_TRAINS, SELF, stack_df200_0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_df200_0_livery;
+	 1:  switch_df200_0_logo_livery;
+}
+
+
+switch (FEAT_TRAINS, SELF, switch_df200_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_df200_0_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_df200_0_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+item (FEAT_TRAINS, df200_0, 63) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_DF200_1);
-
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	engine_class: ENGINE_CLASS_DIESEL;
-	running_cost_factor: 100;
-	}
-
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_DF200_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1994,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2500 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 96;
+  length: 8;
+  running_cost_factor: 100;
+  running_cost_base: RUNNING_COST_DIESEL;
+  misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+  } 
 
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -12277,11 +12392,229 @@ property {
                     )
                   );
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_df200_subtype_text;
-  default: switch_df200_livery;
-  purchase: spriteset_df200_purchase;
+  cargo_subtype_text: switch_df200_0_subtype_text;
+  default: stack_df200_0;
+  purchase: spriteset_df200_0_purchase;
+  name: switch_df200_0_name;
   }
 }
+
+
+
+//df200 100 
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_100_yeardep_purchase, current_year) {
+	0..2018: spriteset_df200_100_jrf_purchase;
+    spriteset_df200_100_jr_purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_df200_100_livery, cargo_subtype) {
+	3: spriteset_df200_aime;
+	4: spriteset_df200_hokutosei;
+	5: spriteset_df200_cassiopeia;
+	6: spriteset_df200_twilight;
+   7: spriteset_df200_100_cc;
+	spriteset_df200_100;
+}
+
+switch(FEAT_TRAINS, SELF, switch_df200_100_logo_livery, cargo_subtype) {
+	0: switch_df200_logo_yeardep;
+   1: spriteset_df200_logo_redbear;
+	2: spriteset_df200_nologo_redbear;
+   spriteset_blank;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_100_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+
+	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
+                                 );
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_AIME)
+                                 );
+	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
+                                 );
+	5: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_4F, 
+												string(STR_COLOUR_SILVER),
+												string(STR_COLOUR_PURPLE),
+												string(STR_COLOUR_RED),
+												string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_FICTION)
+                                 );
+	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN), 
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
+                                 );
+	7: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, stack_df200_100, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_df200_100_livery;
+	 1:  switch_df200_100_logo_livery;
+}
+
+switch (FEAT_TRAINS, SELF, switch_df200_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_df200_100_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_df200_100_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, df200_100, 1963) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_DF200_2);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2011,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2700 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 97;
+  length: 8;
+  running_cost_factor: 101;
+  running_cost_base: RUNNING_COST_DIESEL;
+  misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+  variant_group: 63;
+  } 
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_df200_100_subtype_text;
+  default: stack_df200_100;
+  purchase: switch_df200_100_yeardep_purchase;
+  name: switch_df200_100_name;
+  }
+}
+
+//7stars
+
+//df200 100 
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_7000_livery, cargo_subtype) {
+   1: spriteset_df200_7000_cc;
+	spriteset_df200_7000;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_7000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_4, string(STR_SUFFIX_JRK), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_DKRED), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_7STARS)
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch (FEAT_TRAINS, SELF, switch_df200_7000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_df200_7000_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_df200_7000_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, df200_7000, 1964) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_DF200_7);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2013,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2700 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 97;
+  length: 8;
+  running_cost_factor: 101;
+  running_cost_base: RUNNING_COST_DIESEL;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 63;
+  } 
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PAX_JOY),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRK)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_df200_7000_subtype_text;
+  default: switch_df200_7000_livery;
+  purchase: spriteset_df200_7000_purchase;
+  name: switch_df200_7000_name;
+  }
+}
+
 spriteset(spriteset_hd300_red, "gfx/diesel/hd300.png") {
 	template_2cc_std(1, 1)
 }
@@ -17192,63 +17525,77 @@ item (FEAT_TRAINS, pax_26series, 1346) {
 
 	}
 }
-spriteset(spriteset_pax_77_series_1, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_1, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_pax_77_series_2, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_2, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_pax_77_series_3, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_3, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_pax_77_series_4, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_4, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_pax_77_series_5, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_7, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_pax_77_series_6, "gfx/paxmail/7stars.png") {
-	template_2cc_std(1, 160)
+spriteset(spriteset_pax_77_series_cc_1, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_pax_77_series_7, "gfx/paxmail/7stars.png") {
-	template_2cc_std(1, 192)
+spriteset(spriteset_pax_77_series_cc_2, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_77_series_cc_3, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_pax_77_series_cc_4, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_77_series_cc_7, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 128)
 }
 
 
-spriteset(spriteset_pax_77_series_purchase, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_purchase, "gfx/paxmail/77series-7stars.png") {
 	template_purchase(1, 288)
 }
 
 
 
+switch(FEAT_TRAINS, SELF, switch_pax_77_series_middle, position_in_vehid_chain % 2) {
+	0: spriteset_pax_77_series_3;
+	spriteset_pax_77_series_4;
+	}
 
-random_switch (FEAT_TRAINS, SELF, random_pax_77_series) {
-	1: spriteset_pax_77_series_2;
-	3: spriteset_pax_77_series_6;
-}	
-
-switch(FEAT_TRAINS, SELF, switch_pax_77_series_autoform, position_in_vehid_chain) {
+switch(FEAT_TRAINS, SELF, switch_pax_77_series_start, position_in_vehid_chain) {
 	0: spriteset_pax_77_series_1;
 	1: spriteset_pax_77_series_2;
 	2: spriteset_pax_77_series_3;
 	3: spriteset_pax_77_series_4;
-	4: spriteset_pax_77_series_5;
-	5: spriteset_pax_77_series_6;
-	random_pax_77_series;
+	4: spriteset_pax_77_series_3;
+	5: spriteset_pax_77_series_4;
+	switch_pax_77_series_middle;
 	}
 	
 	
 switch(FEAT_TRAINS, SELF, switch_pax_77_series_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_77_series_7;
-	switch_pax_77_series_autoform;
+	switch_pax_77_series_start;
 	}
 	
+
+
+	//cc refit
 
 
 item (FEAT_TRAINS, pax_77_series, 1347) {
@@ -17258,7 +17605,7 @@ item (FEAT_TRAINS, pax_77_series, 1347) {
 		name: string(STR_NAME_PAX_77);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(2013,1,1);
-		speed: 110 km/h;
+		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

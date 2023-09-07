@@ -1,60 +1,74 @@
-spriteset(spriteset_pax_77_series_1, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_1, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_pax_77_series_2, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_2, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_pax_77_series_3, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_3, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_pax_77_series_4, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_4, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_pax_77_series_5, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_7, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_pax_77_series_6, "gfx/paxmail/7stars.png") {
-	template_2cc_std(1, 160)
+spriteset(spriteset_pax_77_series_cc_1, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 1)
 }
 
-spriteset(spriteset_pax_77_series_7, "gfx/paxmail/7stars.png") {
-	template_2cc_std(1, 192)
+spriteset(spriteset_pax_77_series_cc_2, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_77_series_cc_3, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_pax_77_series_cc_4, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_77_series_cc_7, "gfx/paxmail/77series-7stars.png") {
+	template_2cc_std(180, 128)
 }
 
 
-spriteset(spriteset_pax_77_series_purchase, "gfx/paxmail/7stars.png") {
+spriteset(spriteset_pax_77_series_purchase, "gfx/paxmail/77series-7stars.png") {
 	template_purchase(1, 288)
 }
 
 
 
+switch(FEAT_TRAINS, SELF, switch_pax_77_series_middle, position_in_vehid_chain % 2) {
+	0: spriteset_pax_77_series_3;
+	spriteset_pax_77_series_4;
+	}
 
-random_switch (FEAT_TRAINS, SELF, random_pax_77_series) {
-	1: spriteset_pax_77_series_2;
-	3: spriteset_pax_77_series_6;
-}	
-
-switch(FEAT_TRAINS, SELF, switch_pax_77_series_autoform, position_in_vehid_chain) {
+switch(FEAT_TRAINS, SELF, switch_pax_77_series_start, position_in_vehid_chain) {
 	0: spriteset_pax_77_series_1;
 	1: spriteset_pax_77_series_2;
 	2: spriteset_pax_77_series_3;
 	3: spriteset_pax_77_series_4;
-	4: spriteset_pax_77_series_5;
-	5: spriteset_pax_77_series_6;
-	random_pax_77_series;
+	4: spriteset_pax_77_series_3;
+	5: spriteset_pax_77_series_4;
+	switch_pax_77_series_middle;
 	}
 	
 	
 switch(FEAT_TRAINS, SELF, switch_pax_77_series_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_77_series_7;
-	switch_pax_77_series_autoform;
+	switch_pax_77_series_start;
 	}
 	
+
+
+	//cc refit
 
 
 item (FEAT_TRAINS, pax_77_series, 1347) {
@@ -64,7 +78,7 @@ item (FEAT_TRAINS, pax_77_series, 1347) {
 		name: string(STR_NAME_PAX_77);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(2013,1,1);
-		speed: 110 km/h;
+		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;

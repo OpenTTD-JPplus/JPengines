@@ -328,7 +328,7 @@ switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_PANTOS)

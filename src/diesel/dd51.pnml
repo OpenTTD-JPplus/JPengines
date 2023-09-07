@@ -102,8 +102,8 @@ switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
-									string(STR_COLOUR_RED)
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
+									         string(STR_COLOUR_RED)
                                  );
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
