@@ -130,7 +130,7 @@ property {
 	default_cargo_type: VEHI;
 	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
 	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
+	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
 	running_cost_factor: 8;

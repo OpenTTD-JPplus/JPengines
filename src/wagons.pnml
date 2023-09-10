@@ -1,8 +1,10 @@
-//universal taillights 8/8
+//all purpose blank sprite
 
 spriteset(spriteset_blank, "gfx/blank.png") {
 	template_2cc_std(1, 1)
 }
+
+//universal taillights 8/8
 
 spriteset(spriteset_taillights_8, "gfx/taillights_8.png") {
 	template_2cc_std(1, 1)
@@ -12,8 +14,6 @@ spriteset(spriteset_taillights_8_flip, "gfx/taillights_8.png") {
 	template_2cc_flip(1, 1)
 }
 
-
-//todo make universal end switches for all wagons
 
 switch(FEAT_TRAINS, SELF, switch_taillights_8_flip, vehicle_is_flipped) {
 	1: spriteset_taillights_8_flip;
@@ -25,3 +25,72 @@ switch(FEAT_TRAINS, SELF, switch_taillights_8, position_in_consist_from_end) {
 	0: switch_taillights_8_flip;
 	spriteset_blank;
 	}
+
+//universal taillights 7/8
+
+spriteset(spriteset_taillights_7, "gfx/taillights_7.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_7_flip, "gfx/taillights_7.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_7_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_7_flip;
+	spriteset_taillights_7;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_7, position_in_consist_from_end) {
+	0: switch_taillights_7_flip;
+	spriteset_blank;
+	}
+
+
+//universal taillights 6/8
+
+spriteset(spriteset_taillights_6, "gfx/taillights_6.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_6_flip, "gfx/taillights_6.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_6_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_6_flip;
+	spriteset_taillights_6;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_6, position_in_consist_from_end) {
+	0: switch_taillights_6_flip;
+	spriteset_blank;
+	}
+
+
+//universal taillights 5/8
+
+spriteset(spriteset_taillights_5, "gfx/taillights_5.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_5_flip, "gfx/taillights_5.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_5_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_5_flip;
+	spriteset_taillights_5;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_5, position_in_consist_from_end) {
+	0: switch_taillights_5_flip;
+	spriteset_blank;
+	}
+

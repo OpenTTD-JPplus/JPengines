@@ -103,11 +103,11 @@ if (ttd_platform != PLATFORM_OPENTTD) {
 
 
 //load order checks for JapanSet3
-if (grf_order_behind("SZ\0D\00") == 0) {
+if (grf_order_behind("\53\5A\0D\00") == 0) {
     error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
 }
 
-if (grf_future_status("SZ\0D\00") == 0) {
+if (grf_future_status("\53\5A\0D\00") == 0) {
  //   error(WARNING, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
     error(FATAL, USED_WITH, string(STR_ERROR_JAPANSETTRAINS));
 }
@@ -156,11 +156,15 @@ sort(FEAT_TRAINS, [
 //wagons pax
 1536, 1537, 1305, 1306, 1308, 1538, 1310, 1311, 1539, 1316, 1318, 1319, 1321, 1322, 1320, 1540, 1340, 1341, 1346, 1347, 
 //wagons luggage/mail
-1664, 1665, 1666, 1667, 1359, 1668, 1360, 1370, 1390, 1395, 
+1664, 1665, 1666, 1667, 1359, 1668, 1360, 1395, 1396, 1370, 1390, 
 //wagons armoured
 1357, 1380, 
-//wagons box/reef
-32, 1435, 1445, 1450, 51, 53, 1288, 1281, 1455, 1456, 1286, 1460, 
+//wagons box
+32, 1435, 1436, 1437, 51, 1461, 1462, 53, 
+//wagons express box
+1445, 1438, 1450, 1451, 1452, 1453, 1288, 
+//wagons reefer
+1281, 1455, 1456, 1286, 1460, 1461,
 //wagons cont/car
 1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 1400, 39, 44, 43, 
 //wagons lvst
@@ -8454,7 +8458,7 @@ switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_PANTOS)
@@ -11456,8 +11460,8 @@ switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
-									string(STR_COLOUR_RED)
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
+									         string(STR_COLOUR_RED)
                                  );
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
@@ -13021,11 +13025,13 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) 
 
 
 
-//universal taillights 8/8
+//all purpose blank sprite
 
 spriteset(spriteset_blank, "gfx/blank.png") {
 	template_2cc_std(1, 1)
 }
+
+//universal taillights 8/8
 
 spriteset(spriteset_taillights_8, "gfx/taillights_8.png") {
 	template_2cc_std(1, 1)
@@ -13035,8 +13041,6 @@ spriteset(spriteset_taillights_8_flip, "gfx/taillights_8.png") {
 	template_2cc_flip(1, 1)
 }
 
-
-//todo make universal end switches for all wagons
 
 switch(FEAT_TRAINS, SELF, switch_taillights_8_flip, vehicle_is_flipped) {
 	1: spriteset_taillights_8_flip;
@@ -13048,6 +13052,75 @@ switch(FEAT_TRAINS, SELF, switch_taillights_8, position_in_consist_from_end) {
 	0: switch_taillights_8_flip;
 	spriteset_blank;
 	}
+
+//universal taillights 7/8
+
+spriteset(spriteset_taillights_7, "gfx/taillights_7.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_7_flip, "gfx/taillights_7.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_7_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_7_flip;
+	spriteset_taillights_7;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_7, position_in_consist_from_end) {
+	0: switch_taillights_7_flip;
+	spriteset_blank;
+	}
+
+
+//universal taillights 6/8
+
+spriteset(spriteset_taillights_6, "gfx/taillights_6.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_6_flip, "gfx/taillights_6.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_6_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_6_flip;
+	spriteset_taillights_6;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_6, position_in_consist_from_end) {
+	0: switch_taillights_6_flip;
+	spriteset_blank;
+	}
+
+
+//universal taillights 5/8
+
+spriteset(spriteset_taillights_5, "gfx/taillights_5.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_taillights_5_flip, "gfx/taillights_5.png") {
+	template_2cc_flip(1, 1)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_5_flip, vehicle_is_flipped) {
+	1: spriteset_taillights_5_flip;
+	spriteset_taillights_5;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_taillights_5, position_in_consist_from_end) {
+	0: switch_taillights_5_flip;
+	spriteset_blank;
+	}
+
 
 spriteset(spriteset_pax_1870_3rd_compartment_brown, "gfx/paxmail/paxmail-1870.png") {
 	template_2cc_std(1, 1)
@@ -19171,111 +19244,77 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		cargo_subtype_text: switch_suyu42_subtype_text;
 	}
 }
-spriteset(spriteset_waki_8000, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suyu_44, "gfx/paxmail/suyu44.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_suni_41, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suni_41, "gfx/paxmail/suyu44.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_suni_41_flip, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suni_41_flip, "gfx/paxmail/suyu44.png") {
 	template_2cc_flip(1, 32)
 }
 
-spriteset(spriteset_wasafu_8000, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suyu_44_cc, "gfx/paxmail/suyu44.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_wasafu_8000_flip, "gfx/paxmail/waki8000.png") {
-	template_2cc_flip(1, 64)
-}
-
-spriteset(spriteset_wasafu_8000_blue, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suni_41_cc, "gfx/paxmail/suyu44.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_wasafu_8000_blue_flip, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suni_41_cc_flip, "gfx/paxmail/suyu44.png") {
 	template_2cc_flip(1, 96)
 }
 
 
 
-spriteset(spriteset_waki_8000_jnr_purchase, "gfx/paxmail/waki8000.png") {
-	template_purchase(1, 160)
-}
 
-spriteset(spriteset_waki_8000_jr_purchase, "gfx/paxmail/waki8000.png") {
+spriteset(spriteset_suyu_44_post_purchase, "gfx/paxmail/suyu44.png") {
 	template_purchase(89, 160)
 }
 
-switch(FEAT_TRAINS, SELF, switch_waki_8000_purchase_yeardep, current_year) {
-    0..1987: spriteset_waki_8000_jnr_purchase;
-    spriteset_waki_8000_jr_purchase;
-    }
-
-random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
- 1: spriteset_suni_41;
- 1: spriteset_suni_41_flip;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_wasafu_8000_flip) {
- 1: spriteset_wasafu_8000;
- 1: spriteset_wasafu_8000_flip;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_wasafu_8000_blue_flip) {
- 1: spriteset_wasafu_8000_blue;
- 1: spriteset_wasafu_8000_blue_flip;
+spriteset(spriteset_suni_41_post_purchase, "gfx/paxmail/suyu44.png") {
+	template_purchase(89, 192)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_suyu_44_caboose, position_in_consist_from_end) {
-	0: random_suni_41_flip;
-	spriteset_waki_8000;
-	}
 
-switch(FEAT_TRAINS, SELF, switch_waki_8000_caboose, position_in_consist_from_end) {
-	0: random_wasafu_8000_flip;
-	spriteset_waki_8000;
-	}
-
-
-switch(FEAT_TRAINS, SELF, switch_waki_8000_livery, cargo_subtype) {
-	1: switch_suyu_44_caboose;
-    2: switch_waki_8000_caboose;
-	3: random_suni_41_flip;
-	4: random_wasafu_8000_flip;
-	5: random_wasafu_8000_blue_flip;
-	spriteset_waki_8000;
+switch(FEAT_TRAINS, SELF, switch_suyu_44_livery, cargo_subtype) {
+	1: spriteset_suyu_44_cc;
+	spriteset_suyu_44;
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_waki_8000_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_SUNI_40);
-	1: return string(STR_REFIT_SUYU_44);
-	2: return string(STR_REFIT_WAKI_8000);
-    3: return string(STR_REFIT_SUNI_41);
-	4: return string(STR_REFIT_WASAFU_8000);
-	5: return string(STR_REFIT_WASAFU_BLUE);
+switch(FEAT_TRAINS, SELF, switch_suyu_44_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
-switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+
+switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0:  switch_waki_8000_livery;
+    0:  switch_suyu_44_livery;
     1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
 }
 
 
 
-item (FEAT_TRAINS, mail_waki_8000, 1395) {
+item (FEAT_TRAINS, suyu_44, 1395) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_MAIL_8000);
+		name: string(STR_NAME_MAIL_SUYU_44);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1968,1,1);
 		speed: 110 km/h;
@@ -19286,7 +19325,7 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
 		weight: 21;
 		cost_factor: 52;
@@ -19305,9 +19344,94 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 								)
 							);
 
-		default: switch_waki_8000_loadstack;
-		purchase: switch_waki_8000_purchase_yeardep;
-		cargo_subtype_text: switch_waki_8000_subtype_text;
+		default: switch_suyu_44_loadstack;
+		purchase: spriteset_suyu_44_post_purchase;
+		cargo_subtype_text: switch_suyu_44_subtype_text;
+	}
+}
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
+ 1: spriteset_suni_41;
+ 1: spriteset_suni_41_flip;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_suni_41_cc_flip) {
+ 1: spriteset_suni_41_cc;
+ 1: spriteset_suni_41_cc_flip;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_livery, cargo_subtype) {
+	1: random_suni_41_cc_flip;
+	random_suni_41_flip;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_suni_41_livery;
+    1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, suni_41, 1396) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUNI_41);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1395;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
+		default: switch_suni_41_loadstack;
+		purchase: spriteset_suni_41_post_purchase;
+		cargo_subtype_text: switch_suni_41_subtype_text;
 	}
 }
 
@@ -19548,56 +19672,75 @@ graphics {
 //	colour_mapping: switch_generic_recolour;
 	}
 }
-spriteset(spriteset_wamu_50000_1, "gfx/freight/wamu_50000.png") {
+spriteset(spriteset_wamu_21000_1, "gfx/freight/wamu_21000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_wamu_50000_2, "gfx/freight/wamu_50000.png") {
+spriteset(spriteset_wamu_21000_2, "gfx/freight/wamu_21000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_wamu_50000_3, "gfx/freight/wamu_50000.png") {
+spriteset(spriteset_wamu_21000_3, "gfx/freight/wamu_21000.png") {
 	template_2cc_std(1, 64)
 }
 
-
-spriteset(spriteset_wamu_50000_4, "gfx/freight/wamu_50000.png") {
+spriteset(spriteset_wamu_21000_4, "gfx/freight/wamu_21000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_wamu_50000_caboose, "gfx/freight/wamu_50000.png") {
+spriteset(spriteset_wamu_21000_5, "gfx/freight/wamu_21000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_wamu_21000_6, "gfx/freight/wamu_21000.png") {
 	template_2cc_std(1, 160)
 }
 
 
-spriteset(spriteset_wamu_50000_purchase, "gfx/freight/wamu_50000.png") {
-	template_purchase(1, 192)
+
+spriteset(spriteset_wafu_21000, "gfx/freight/wamu_21000.png") {
+	template_2cc_std(1, 192)
 }
 
 
-random_switch (FEAT_TRAINS, SELF, random_wamu_50000) {
- 1: spriteset_wamu_50000_1;
- 1: spriteset_wamu_50000_2;
- 1: spriteset_wamu_50000_3;
- 1: spriteset_wamu_50000_4;
+spriteset(spriteset_wamu_21000_jgr_purchase, "gfx/freight/wamu_21000.png") {
+	template_purchase(1, 224)
 }
 
-switch (FEAT_TRAINS, SELF, switch_wamu_50000_caboose, position_in_consist_from_end) {
-	0: spriteset_wamu_50000_caboose;
-	random_wamu_50000;
-	}
+spriteset(spriteset_wafu_21000_jgr_purchase, "gfx/freight/wamu_21000.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_wamu_21000_jnr_purchase, "gfx/freight/wamu_21000.png") {
+	template_purchase(89, 224)
+}
+
+spriteset(spriteset_wafu_21000_jnr_purchase, "gfx/freight/wamu_21000.png") {
+	template_purchase(89, 256)
+}
 
 
-item (FEAT_TRAINS, wamu_50000, 1435) {
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
+ 1: spriteset_wamu_21000_1;
+ 2: spriteset_wamu_21000_2;
+ 2: spriteset_wamu_21000_3;
+ 1: spriteset_wamu_21000_4;
+ 2: spriteset_wamu_21000_5;
+ 1: spriteset_wamu_21000_6;
+}
+
+
+item (FEAT_TRAINS, wamu_21000, 1435) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_WAMU_50000);
+		name: string(STR_NAME_WAMU_21000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1928,1,1);
-		speed: 74.5 km/h;
+		speed: 65 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -19605,7 +19748,8 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
 		cost_factor: 18;
@@ -19626,13 +19770,215 @@ item (FEAT_TRAINS, wamu_50000, 1435) {
 						);
 
 		speed: switch_speedboost_1;
-		purchase_speed: return 75;
+		purchase_speed: return 65;
 		cargo_capacity: return 30;
-		default: switch_wamu_50000_caboose;
-		purchase: spriteset_wamu_50000_purchase;
+		default: random_wamu_21000;
+		purchase: spriteset_wamu_21000_jgr_purchase;
 		
 	}
 }
+
+
+switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wafu_21000;
+	1:  switch_taillights_5;
+}
+
+item (FEAT_TRAINS, wafu_21000, 1436) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAFU_21000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 15; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		cargo_allow_refit: [GRAI, MAIZ, BEAN];
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+		weight: 10;
+		cost_factor: 18;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(3);
+		variant_group: 1435;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 15;
+		default: stack_wafu_21000;
+		purchase: spriteset_wafu_21000_jgr_purchase;
+		
+	}
+}
+spriteset(spriteset_wamu_90000_exp_1, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_wamu_90000_exp_2, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_wamu_90000_exp_3, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_wamu_90000_exp_4, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_wamu_90000_1, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_wamu_90000_2, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_wamu_90000_3, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 192)
+}
+
+
+
+spriteset(spriteset_wamu_90000_exp_purchase, "gfx/freight/wamu_90000.png") {
+	template_purchase(89, 224)
+}
+
+spriteset(spriteset_wamu_90000_jnr_purchase, "gfx/freight/wamu_90000.png") {
+	template_purchase(89, 256)
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_purchase_yeardep, current_year) {
+    0..1965: spriteset_wamu_90000_exp_purchase;
+    spriteset_wamu_90000_jnr_purchase;
+    }
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_90000_exp) {
+ 1: spriteset_wamu_90000_exp_1;
+ 1: spriteset_wamu_90000_exp_2;
+ 2: spriteset_wamu_90000_exp_3;
+ 3: spriteset_wamu_90000_exp_4;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_90000) {
+ 1: spriteset_wamu_90000_1;
+ 2: spriteset_wamu_90000_2;
+ 3: spriteset_wamu_90000_3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_yeardep, current_year) {
+    0..1965: random_wamu_90000_exp;
+    random_wamu_90000;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_livery, cargo_subtype) {
+	0: switch_wamu_90000_yeardep;
+	1: random_wamu_90000_exp;
+	2: random_wamu_90000;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
+
+
+
+
+item (FEAT_TRAINS, wamu_90000, 1437) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMU_90000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1953,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		cargo_allow_refit: [BEER, POWR, PAPR, VPTS, PPAR];
+		cargo_disallow_refit: [WOOL];
+		weight: 10;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		variant_group: 1435; //tentative, maybe group w express vans
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 30;
+		default: switch_wamu_90000_livery;
+		cargo_subtype_text: switch_wamu_90000_subtype_text;
+		purchase: switch_wamu_90000_purchase_yeardep;
+		
+	}
+}
+
+/*
+switch(FEAT_TRAINS, SELF, stack_wafu_90000, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wafu_90000;
+	1:  switch_taillights_5;
+}
+*/
 spriteset(spriteset_wamu_80000_brown1, "gfx/freight/wamu_80000.png") {
 	template_2cc_std(1, 1)
 }
@@ -19964,23 +20310,97 @@ graphics {
 	}
 }
 spriteset(spriteset_waki_1_1, "gfx/freight/waki_1.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_waki_1_2, "gfx/freight/waki_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_wamufu_1, "gfx/freight/waki_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_waki_1_exp_1, "gfx/freight/waki_1.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_waki_1_exp_2, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 128)
 }
 
-
-spriteset(spriteset_waki_1_2, "gfx/freight/waki_1.png") {
+spriteset(spriteset_wamufu_1_exp, "gfx/freight/waki_1.png") {
 	template_2cc_std(1, 160)
 }
+
 
 spriteset(spriteset_waki_1_purchase, "gfx/freight/waki_1.png") {
 	template_purchase(1, 192)
 }
+
+spriteset(spriteset_wamufu_1_purchase, "gfx/freight/waki_1.png") {
+	template_purchase(1, 224)
+}
+
+spriteset(spriteset_waki_1_exp_purchase, "gfx/freight/waki_1.png") {
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_wamufu_1_exp_purchase, "gfx/freight/waki_1.png") {
+	template_purchase(1, 288)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_1_yeardep_purchase, current_year) {
+    1937..1942: spriteset_waki_1_exp_purchase;
+    spriteset_waki_1_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_yeardep_purchase, current_year) {
+    1937..1942: spriteset_wamufu_1_exp_purchase;
+    spriteset_wamufu_1_purchase;
+    }
+
 
 
 random_switch (FEAT_TRAINS, SELF, random_waki_1) {
  3: spriteset_waki_1_1;
  1: spriteset_waki_1_2;
 }
+
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1_exp) {
+ 3: spriteset_waki_1_exp_1;
+ 1: spriteset_waki_1_exp_2;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_1_yeardep, build_year) {
+    1937..1942: random_waki_1_exp;
+    random_waki_1;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_1_livery, cargo_subtype) {
+	0: switch_waki_1_yeardep;
+	1: random_waki_1_exp;
+	2: random_waki_1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
 
 
 
@@ -19997,13 +20417,12 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		dual_headed: 0;
 		cargo_capacity: 90; 
 		refit_cost: 0;
-		default_cargo_type: MAIL;
+		default_cargo_type: GOOD;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
-		non_refittable_cargo_classes: 0;  
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 20;
-		cost_factor: 30;
+		cost_factor: 40;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
@@ -20021,101 +20440,191 @@ item (FEAT_TRAINS, waki_1, 1445) {
 	
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
-		default: random_waki_1;
-		purchase: spriteset_waki_1_purchase;
+		default: switch_waki_1_livery;
+		purchase: switch_waki_1_yeardep_purchase;
+		cargo_subtype_text: switch_waki_1_subtype_text;
 		
 	}
 }
-spriteset(spriteset_waki_1000_stripe_1, "gfx/freight/waki_1000.png") {
+
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_yeardep, build_year) {
+    1937..1942: spriteset_wamufu_1_exp;
+    spriteset_wamufu_1;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_livery, cargo_subtype) {
+	0: switch_wamufu_1_yeardep;
+	1: spriteset_wamufu_1_exp;
+	2: spriteset_wamufu_1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
+
+item (FEAT_TRAINS, wamufu_1, 1438) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMUFU_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1930,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1445;
+		bitmask_vehicle_info: bitmask(1);//95 boost?
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+	
+		speed: switch_speedboost_1;
+		purchase_speed: return 95;
+		default: switch_wamufu_1_livery;
+		cargo_subtype_text: switch_wamufu_1_subtype_text;
+		purchase: switch_wamufu_1_yeardep_purchase;
+		
+	}
+}
+spriteset(spriteset_waki_1000_1, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_stripe_2, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_waki_1000_2, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_stripe_3, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_waki_1000_3, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_stripe_caboose, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_wamufu_100, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_waki_1000_plain_1, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 1)
+spriteset(spriteset_waki_1000_exp_1, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 128)
 }
 
 
-spriteset(spriteset_waki_1000_plain_2, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 32)
+spriteset(spriteset_waki_1000_exp_2, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_waki_1000_plain_3, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 64)
+spriteset(spriteset_waki_1000_exp_3, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_waki_1000_plain_caboose, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 96)
+spriteset(spriteset_wamufu_100_exp, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 224)
 }
-
 
 
 
 spriteset(spriteset_waki_1000_purchase, "gfx/freight/waki_1000.png") {
-	template_purchase(1, 192)
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_waki_1000_exp_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_wamufu_100_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(89, 256)
+}
+
+spriteset(spriteset_wamufu_100_exp_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(89, 288)
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_1000_yeardep_purchase, current_year) {
+    0..1965: spriteset_waki_1000_exp_purchase;
+    spriteset_waki_1000_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_yeardep_purchase, current_year) {
+    0..1965: spriteset_wamufu_100_exp_purchase;
+    spriteset_wamufu_100_purchase;
+    }
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1000) {
+ 1: spriteset_waki_1000_1;
+ 1: spriteset_waki_1000_2;
+ 2: spriteset_waki_1000_3;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1000_exp) {
+ 1: spriteset_waki_1000_exp_1;
+ 1: spriteset_waki_1000_exp_2;
+ 2: spriteset_waki_1000_exp_3;
 }
 
 
-
-
-random_switch (FEAT_TRAINS, SELF, random_waki_1000_stripe) {
- 1: spriteset_waki_1000_stripe_1;
- 1: spriteset_waki_1000_stripe_2;
- 2: spriteset_waki_1000_stripe_3;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_waki_1000_plain) {
- 1: spriteset_waki_1000_plain_1;
- 1: spriteset_waki_1000_plain_2;
- 2: spriteset_waki_1000_plain_3;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_waki_1000_plain_caboose, position_in_consist_from_end) {
-	0: spriteset_waki_1000_plain_caboose;
-	random_waki_1000_plain;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_waki_1000_stripe_caboose, position_in_consist_from_end) {
-	0: spriteset_waki_1000_stripe_caboose;
-	random_waki_1000_stripe;
-	}
+switch(FEAT_TRAINS, SELF, switch_waki_1000_yeardep, build_year) {
+    0..1965: random_waki_1000_exp;
+    random_waki_1000;
+    }
 
 
 switch(FEAT_TRAINS, SELF, switch_waki_1000_livery, cargo_subtype) {
-	0: switch_waki_1000_stripe_caboose;
-	1: switch_waki_1000_plain_caboose;
-	switch_waki_1000_stripe_caboose;
+	0: switch_waki_1000_yeardep;
+	1: random_waki_1000_exp;
+	2: random_waki_1000;
 }
 
 switch(FEAT_TRAINS, SELF, switch_waki_1000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLACK),
-									 string(STR_COLOUR_ORANGE)
-                                    ), string(STR_SUFFIX_EXPRESS)
-                                 );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLACK)
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
                                     )
                                  );
-	   return CB_RESULT_NO_TEXT;
 	}
+
 
 
 item (FEAT_TRAINS, waki_1000, 1450) {
@@ -20125,20 +20634,20 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		name: string(STR_NAME_WAKI_1000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1949,1,1);
-		speed: 85 km/h;
+		speed: 75 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 90; 
 		refit_cost: 0;
-		default_cargo_type: MAIL;
+		default_cargo_type: GOOD;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 40;
-	running_cost_factor: 5;
-	running_cost_base: RUNNING_COST_STEAM;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -20152,10 +20661,82 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 						);
 
 		speed: switch_speedboost_1;
-		purchase_speed: return 85;
+		purchase_speed: return 75;
 		default: switch_waki_1000_livery;
-		purchase: spriteset_waki_1000_purchase;
+		purchase: switch_waki_1000_yeardep_purchase;
 		cargo_subtype_text: switch_waki_1000_subtype_text;
+		
+	}
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_yeardep, build_year) {
+    0..1965: spriteset_wamufu_100_exp;
+    spriteset_wamufu_100;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_livery, cargo_subtype) {
+	0: switch_wamufu_100_yeardep;
+	1: spriteset_wamufu_100_exp;
+	2: spriteset_wamufu_100;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
+
+item (FEAT_TRAINS, wamufu_100, 1451) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMUFU_100);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1949,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
+		non_refittable_cargo_classes: 0; 
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1450;
+		bitmask_vehicle_info: bitmask(2);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 	
+								string(STR_SUFFIX_JNR)
+							)
+						);
+	
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		default: switch_wamufu_100_livery;
+		cargo_subtype_text: switch_wamufu_100_subtype_text;
+		purchase: switch_wamufu_100_yeardep_purchase;
 		
 	}
 }
@@ -20270,6 +20851,184 @@ graphics {
 	default: switch_waki_5000_loadstack;
 	purchase: switch_waki_5000_yeardep_purchase;
 	cargo_subtype_text: switch_waki_5000_subtype_text;
+	}
+}
+spriteset(spriteset_waki_8000, "gfx/freight/waki_8000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_wasafu_8000, "gfx/freight/waki_8000.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_wasafu_8000_blue, "gfx/freight/waki_8000.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_waki_8000_cc, "gfx/freight/waki_8000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_wasafu_8000_cc, "gfx/freight/waki_8000.png") {
+	template_2cc_flip(1, 128)
+}
+
+
+
+spriteset(spriteset_waki_8000_jnr_purchase, "gfx/freight/waki_8000.png") {
+	template_purchase(1, 160)
+}
+
+spriteset(spriteset_wasafu_8000_jnr_purchase, "gfx/freight/waki_8000.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_livery, cargo_subtype) {
+	1: spriteset_waki_8000_cc;
+	spriteset_waki_8000;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_waki_8000_livery;
+    1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, waki_8000, 1452) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAKI_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
+		default: switch_waki_8000_loadstack;
+		purchase: spriteset_waki_8000_jnr_purchase;
+		cargo_subtype_text: switch_waki_8000_subtype_text;
+	}
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_wasafu_8000_livery, cargo_subtype) {
+	1: spriteset_wasafu_8000_blue;
+	2: spriteset_wasafu_8000_cc;
+	spriteset_wasafu_8000;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_wasafu_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	2: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_wasafu_8000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_wasafu_8000_livery;
+    1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, wasafu_8000, 1453) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WASAFU_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 60; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(1);
+		variant_group: 1452;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_BRAKE),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
+		default: switch_wasafu_8000_loadstack;
+		purchase: spriteset_wasafu_8000_jnr_purchase;
+		cargo_subtype_text: switch_wasafu_8000_subtype_text;
 	}
 }
 //TODO GRAPHICS-LOADING STAGES FOR THESE
@@ -22162,7 +22921,7 @@ property {
 	default_cargo_type: VEHI;
 	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
 	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR]; 
+	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG]; 
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
 	running_cost_factor: 8;

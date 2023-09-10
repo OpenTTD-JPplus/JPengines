@@ -1,0 +1,146 @@
+spriteset(spriteset_wamu_90000_exp_1, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_wamu_90000_exp_2, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_wamu_90000_exp_3, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_wamu_90000_exp_4, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+spriteset(spriteset_wamu_90000_1, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_wamu_90000_2, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_wamu_90000_3, "gfx/freight/wamu_90000.png") {
+	template_2cc_std(1, 192)
+}
+
+
+
+spriteset(spriteset_wamu_90000_exp_purchase, "gfx/freight/wamu_90000.png") {
+	template_purchase(89, 224)
+}
+
+spriteset(spriteset_wamu_90000_jnr_purchase, "gfx/freight/wamu_90000.png") {
+	template_purchase(89, 256)
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_purchase_yeardep, current_year) {
+    0..1965: spriteset_wamu_90000_exp_purchase;
+    spriteset_wamu_90000_jnr_purchase;
+    }
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_90000_exp) {
+ 1: spriteset_wamu_90000_exp_1;
+ 1: spriteset_wamu_90000_exp_2;
+ 2: spriteset_wamu_90000_exp_3;
+ 3: spriteset_wamu_90000_exp_4;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_wamu_90000) {
+ 1: spriteset_wamu_90000_1;
+ 2: spriteset_wamu_90000_2;
+ 3: spriteset_wamu_90000_3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_yeardep, current_year) {
+    0..1965: random_wamu_90000_exp;
+    random_wamu_90000;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_livery, cargo_subtype) {
+	0: switch_wamu_90000_yeardep;
+	1: random_wamu_90000_exp;
+	2: random_wamu_90000;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
+
+
+
+
+item (FEAT_TRAINS, wamu_90000, 1437) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMU_90000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1953,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		cargo_allow_refit: [BEER, POWR, PAPR, VPTS, PPAR];
+		cargo_disallow_refit: [WOOL];
+		weight: 10;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		variant_group: 1435; //tentative, maybe group w express vans
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 30;
+		default: switch_wamu_90000_livery;
+		cargo_subtype_text: switch_wamu_90000_subtype_text;
+		purchase: switch_wamu_90000_purchase_yeardep;
+		
+	}
+}
+
+/*
+switch(FEAT_TRAINS, SELF, stack_wafu_90000, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  spriteset_wafu_90000;
+	1:  switch_taillights_5;
+}
+*/

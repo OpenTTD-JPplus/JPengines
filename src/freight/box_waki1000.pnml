@@ -1,93 +1,108 @@
-spriteset(spriteset_waki_1000_stripe_1, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_waki_1000_1, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 1)
 }
 
 
-spriteset(spriteset_waki_1000_stripe_2, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_waki_1000_2, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_waki_1000_stripe_3, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_waki_1000_3, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_waki_1000_stripe_caboose, "gfx/freight/waki_1000.png") {
+spriteset(spriteset_wamufu_100, "gfx/freight/waki_1000.png") {
 	template_2cc_std(1, 96)
 }
 
 
-spriteset(spriteset_waki_1000_plain_1, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 1)
+spriteset(spriteset_waki_1000_exp_1, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 128)
 }
 
 
-spriteset(spriteset_waki_1000_plain_2, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 32)
+spriteset(spriteset_waki_1000_exp_2, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_waki_1000_plain_3, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 64)
+spriteset(spriteset_waki_1000_exp_3, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_waki_1000_plain_caboose, "gfx/freight/waki_1.png") {
-	template_2cc_std(1, 96)
+spriteset(spriteset_wamufu_100_exp, "gfx/freight/waki_1000.png") {
+	template_2cc_std(1, 224)
 }
-
 
 
 
 spriteset(spriteset_waki_1000_purchase, "gfx/freight/waki_1000.png") {
-	template_purchase(1, 192)
+	template_purchase(1, 256)
+}
+
+spriteset(spriteset_waki_1000_exp_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(1, 288)
+}
+
+spriteset(spriteset_wamufu_100_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(89, 256)
+}
+
+spriteset(spriteset_wamufu_100_exp_purchase, "gfx/freight/waki_1000.png") {
+	template_purchase(89, 288)
+}
+
+switch(FEAT_TRAINS, SELF, switch_waki_1000_yeardep_purchase, current_year) {
+    0..1965: spriteset_waki_1000_exp_purchase;
+    spriteset_waki_1000_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_yeardep_purchase, current_year) {
+    0..1965: spriteset_wamufu_100_exp_purchase;
+    spriteset_wamufu_100_purchase;
+    }
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1000) {
+ 1: spriteset_waki_1000_1;
+ 1: spriteset_waki_1000_2;
+ 2: spriteset_waki_1000_3;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_waki_1000_exp) {
+ 1: spriteset_waki_1000_exp_1;
+ 1: spriteset_waki_1000_exp_2;
+ 2: spriteset_waki_1000_exp_3;
 }
 
 
-
-
-random_switch (FEAT_TRAINS, SELF, random_waki_1000_stripe) {
- 1: spriteset_waki_1000_stripe_1;
- 1: spriteset_waki_1000_stripe_2;
- 2: spriteset_waki_1000_stripe_3;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_waki_1000_plain) {
- 1: spriteset_waki_1000_plain_1;
- 1: spriteset_waki_1000_plain_2;
- 2: spriteset_waki_1000_plain_3;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_waki_1000_plain_caboose, position_in_consist_from_end) {
-	0: spriteset_waki_1000_plain_caboose;
-	random_waki_1000_plain;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_waki_1000_stripe_caboose, position_in_consist_from_end) {
-	0: spriteset_waki_1000_stripe_caboose;
-	random_waki_1000_stripe;
-	}
+switch(FEAT_TRAINS, SELF, switch_waki_1000_yeardep, build_year) {
+    0..1965: random_waki_1000_exp;
+    random_waki_1000;
+    }
 
 
 switch(FEAT_TRAINS, SELF, switch_waki_1000_livery, cargo_subtype) {
-	0: switch_waki_1000_stripe_caboose;
-	1: switch_waki_1000_plain_caboose;
-	switch_waki_1000_stripe_caboose;
+	0: switch_waki_1000_yeardep;
+	1: random_waki_1000_exp;
+	2: random_waki_1000;
 }
 
 switch(FEAT_TRAINS, SELF, switch_waki_1000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLACK),
-									 string(STR_COLOUR_ORANGE)
-                                    ), string(STR_SUFFIX_EXPRESS)
-                                 );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLACK)
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
                                     )
                                  );
-	   return CB_RESULT_NO_TEXT;
 	}
+
 
 
 item (FEAT_TRAINS, waki_1000, 1450) {
@@ -97,20 +112,20 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 		name: string(STR_NAME_WAKI_1000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1949,1,1);
-		speed: 85 km/h;
+		speed: 75 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 90; 
 		refit_cost: 0;
-		default_cargo_type: MAIL;
+		default_cargo_type: GOOD;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
 		weight: 18;
 		cost_factor: 40;
-	running_cost_factor: 5;
-	running_cost_base: RUNNING_COST_STEAM;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
@@ -124,10 +139,82 @@ item (FEAT_TRAINS, waki_1000, 1450) {
 						);
 
 		speed: switch_speedboost_1;
-		purchase_speed: return 85;
+		purchase_speed: return 75;
 		default: switch_waki_1000_livery;
-		purchase: spriteset_waki_1000_purchase;
+		purchase: switch_waki_1000_yeardep_purchase;
 		cargo_subtype_text: switch_waki_1000_subtype_text;
+		
+	}
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_yeardep, build_year) {
+    0..1965: spriteset_wamufu_100_exp;
+    spriteset_wamufu_100;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_livery, cargo_subtype) {
+	0: switch_wamufu_100_yeardep;
+	1: spriteset_wamufu_100_exp;
+	2: spriteset_wamufu_100;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_PARCELS)
+                                 ); 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	}
+
+item (FEAT_TRAINS, wamufu_100, 1451) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMUFU_100);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1949,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED); 
+		non_refittable_cargo_classes: 0; 
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1450;
+		bitmask_vehicle_info: bitmask(2);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 	
+								string(STR_SUFFIX_JNR)
+							)
+						);
+	
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		default: switch_wamufu_100_livery;
+		cargo_subtype_text: switch_wamufu_100_subtype_text;
+		purchase: switch_wamufu_100_yeardep_purchase;
 		
 	}
 }

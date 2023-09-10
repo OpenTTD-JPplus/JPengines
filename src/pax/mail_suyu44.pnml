@@ -1,0 +1,190 @@
+spriteset(spriteset_suyu_44, "gfx/paxmail/suyu44.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_suni_41, "gfx/paxmail/suyu44.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_suni_41_flip, "gfx/paxmail/suyu44.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_suyu_44_cc, "gfx/paxmail/suyu44.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_suni_41_cc, "gfx/paxmail/suyu44.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_suni_41_cc_flip, "gfx/paxmail/suyu44.png") {
+	template_2cc_flip(1, 96)
+}
+
+
+
+
+spriteset(spriteset_suyu_44_post_purchase, "gfx/paxmail/suyu44.png") {
+	template_purchase(89, 160)
+}
+
+spriteset(spriteset_suni_41_post_purchase, "gfx/paxmail/suyu44.png") {
+	template_purchase(89, 192)
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_44_livery, cargo_subtype) {
+	1: spriteset_suyu_44_cc;
+	spriteset_suyu_44;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_44_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_suyu_44_livery;
+    1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, suyu_44, 1395) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUYU_44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
+		default: switch_suyu_44_loadstack;
+		purchase: spriteset_suyu_44_post_purchase;
+		cargo_subtype_text: switch_suyu_44_subtype_text;
+	}
+}
+
+
+
+
+random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
+ 1: spriteset_suni_41;
+ 1: spriteset_suni_41_flip;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_suni_41_cc_flip) {
+ 1: spriteset_suni_41_cc;
+ 1: spriteset_suni_41_cc_flip;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_livery, cargo_subtype) {
+	1: random_suni_41_cc_flip;
+	random_suni_41_flip;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_SILVER)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_suni_41_livery;
+    1:  spritegroup_boxvan8_doors_load;
+	2:  switch_taillights_8;
+}
+
+
+
+item (FEAT_TRAINS, suni_41, 1396) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUNI_41);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100; 
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL); 
+		non_refittable_cargo_classes: 0; 
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1395;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+
+		default: switch_suni_41_loadstack;
+		purchase: spriteset_suni_41_post_purchase;
+		cargo_subtype_text: switch_suni_41_subtype_text;
+	}
+}
