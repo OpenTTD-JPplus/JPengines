@@ -92,7 +92,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 									string(STR_SUFFIX_JRF)
 								)
 							);
-
+		speed: switch_speedboost_1;
 		default: switch_waki_8000_loadstack;
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
@@ -158,7 +158,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
-		bitmask_vehicle_info: bitmask(1);
+		bitmask_vehicle_info: bitmask(3);//95 boost
 		variant_group: 1452;
 	}
 	graphics {
@@ -170,7 +170,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 									string(STR_SUFFIX_JRF)
 								)
 							);
-
+		speed: switch_speedboost_1;
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;

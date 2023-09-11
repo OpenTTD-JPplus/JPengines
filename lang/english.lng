@@ -453,8 +453,11 @@ STR_NAME_CHIKI_1500		:CHIKI 1500 Flat Wagon
 STR_NAME_CHIKI_7000		:CHIKI 7000 Flat Wagon
 
 STR_NAME_YO_1			:YO 1 Brake Van
+STR_NAME_YO_1500		:YO 1500 Brake Van
 STR_NAME_YO_5000		:YO 5000 Brake Van
 STR_NAME_YO_8000		:YO 8000 Brake Van
+STR_NAME_YO_38000		:YO 38000 Brake Van
+STR_NAME_YO_9000		:YO 9000 Brake Van
 
 ##################
 #COMPANY SUFFIXES#
@@ -498,6 +501,7 @@ STR_SUFFIX_GNR          :{WHITE}Great Northern Railway
 STR_SUFFIX_NYC          :{WHITE}New York Central
 STR_SUFFIX_MILW          :{WHITE}Milwaukee Road
 STR_SUFFIX_PRR          :{WHITE}Pennsylvania Railroad
+STR_SUFFIX_MPL          :{WHITE}Missouri Pacific
 STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
 
 

@@ -144,10 +144,20 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
+	climates_available: ALL_CLIMATES;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 30; 
+	refit_cost: 0;
+	refittable_cargo_classes: bitmask (CC_LIQUID);
+	loading_speed: 30;
+	weight: 10;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 30;
+	length: 5;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

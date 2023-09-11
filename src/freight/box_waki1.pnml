@@ -189,7 +189,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		variant_group: 1445;
-		bitmask_vehicle_info: bitmask(1);//95 boost?
+		bitmask_vehicle_info: bitmask(3);//95 boost?
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 

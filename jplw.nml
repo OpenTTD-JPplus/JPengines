@@ -182,7 +182,7 @@ sort(FEAT_TRAINS, [
 //wagons tankers
 1480, 1481, 30, 1487, 1488, 1489, 45, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1490, 
 //brake vans
-1601, 1600, 35,
+1601, 1602, 1600, 35, 1603, 1604, 
 //wagons non JNR/JR
 1402, 1420, 1421
 ]);
@@ -12707,324 +12707,6 @@ property {
   }
 }
 
-spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_yo_1_brown, "gfx/brake/yo_1.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_yo_1_stripe, "gfx/brake/yo_1.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_yo_1_cc, "gfx/brake/yo_1.png") {
-	template_2cc_std(1, 96)
-}
-
-
-
-spriteset(spriteset_yo_1_purchase, "gfx/brake/yo_1.png") {
-	template_purchase(1, 128)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_1_livery, cargo_subtype) {
-	0: spriteset_yo_1_black;
-	1: spriteset_yo_1_brown;
-	2: spriteset_yo_1_stripe;
-	3: spriteset_yo_1_cc;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_1_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BLACK)
-                                    )
-                                 );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BROWN)
-                                    )
-                                 );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLACK),
-									string(STR_COLOUR_YELLOW)
-                                    )
-                                 );
-	3: return string(STR_REFIT_CC);
-	}
-
-
-
-item (FEAT_TRAINS, yo_1, 1601) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_YO_1);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1870,1,1);
-		speed: 75 km/h;
-		air_drag_coefficient: 0;
-		power: 0;
-		dual_headed: 0;
-		cargo_capacity: 1; 
-		refit_cost: 0;
-		cargo_allow_refit: [PASS];
-		loading_speed: 1;
-		weight: 20;
-		cost_factor: 14;
-		running_cost_factor: 8;
-		running_cost_base: RUNNING_COST_STEAM;
-		length: 4;
-		bitmask_vehicle_info: bitmask(3);
-	}
-	graphics {
-		cargo_capacity: return 0;
-		default: switch_yo_1_livery;
-		purchase: spriteset_yo_1_purchase;
-		cargo_subtype_text: switch_yo_1_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
-	}
-}
-spriteset(spriteset_yo_5000_black, "gfx/brake/yo_5000.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_yo_5000_green, "gfx/brake/yo_5000.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_yo_5000_blue, "gfx/brake/yo_5000.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_yo_5000_cc, "gfx/brake/yo_5000.png") {
-	template_2cc_std(1, 96)
-}
-
-
-
-spriteset(spriteset_yo_5000_jgr_purchase, "gfx/brake/yo_5000.png") {
-	template_purchase(1, 128)
-}
-
-spriteset(spriteset_yo_5000_jnr_purchase, "gfx/brake/yo_5000.png") {
-	template_purchase(89, 128)
-}
-
-switch(FEAT_TRAINS, SELF, switch_yo_5000_purchase_yeardep, current_year) {
-    0..1949: spriteset_yo_5000_jgr_purchase;
-    spriteset_yo_5000_jnr_purchase;
-    }
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_5000_livery, cargo_subtype) {
-	0: spriteset_yo_5000_black;
-	1: spriteset_yo_5000_green;
-	2: spriteset_yo_5000_blue;
-	3: spriteset_yo_5000_cc;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_5000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BLACK)
-                                    )
-                                 );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_GREEN)
-                                    )
-                                 );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE),
-									string(STR_COLOUR_YELLOW)
-                                    )
-                                 );
-	3: return string(STR_REFIT_CC);
-	}
-
-
-
-item (FEAT_TRAINS, yo_5000, 1600) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_YO_5000);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1928,1,1);//change to 1949 when yo 1500 added
-		speed: 85 km/h;
-		air_drag_coefficient: 0;
-		power: 0;
-		dual_headed: 0;
-		cargo_capacity: 1; 
-		refit_cost: 0;
-		cargo_allow_refit: [PASS];
-		loading_speed: 1;
-		weight: 20;
-		cost_factor: 22;
-		running_cost_factor: 10;
-		running_cost_base: RUNNING_COST_STEAM;
-		length: 5;
-		bitmask_vehicle_info: bitmask(2);
-	}
-	graphics {
-		cargo_capacity: return 0;
-		default: switch_yo_5000_livery;
-		purchase: switch_yo_5000_purchase_yeardep;
-		cargo_subtype_text: switch_yo_5000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
-	}
-}
-spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 1)
-}
-
-
-spriteset(spriteset_yo_8000_green, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 32)
-}
-
-spriteset(spriteset_yo_8000_blue, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 64)
-}
-
-spriteset(spriteset_yo_8000_redblue, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_yo_8000_whitered, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 128)
-}
-
-
-spriteset(spriteset_yo_8000_cc, "gfx/brake/yo_8000.png") {
-	template_2cc_std(1, 192)
-}
-
-
-
-
-spriteset(spriteset_yo_8000_jnr_purchase, "gfx/brake/yo_8000.png") {
-	template_purchase(1, 224)
-}
-
-spriteset(spriteset_yo_8000_jr_purchase, "gfx/brake/yo_8000.png") {
-	template_purchase(89, 224)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_purchase_yeardep, current_year) {
-    0..1987: spriteset_yo_8000_jnr_purchase;
-    spriteset_yo_8000_jr_purchase;
-    }
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
-	0: spriteset_yo_8000_black;
-	1: spriteset_yo_8000_green;
-	2: spriteset_yo_8000_blue;
-	3: spriteset_yo_8000_redblue;
-	4: spriteset_yo_8000_whitered;
-	5: spriteset_yo_8000_cc;
-}
-
-
-
-switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BLACK)
-                                    )
-                                 );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_GREEN)
-                                    )
-                                 );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_BLUE)
-                                    )
-                                 );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_RED), 
-									string(STR_COLOUR_WHITE),
-                                    string(STR_COLOUR_BLUE)
-                                    )
-                                 );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_WHITE), 
-                                    string(STR_COLOUR_RED)
-                                    )
-                                 );
-	5: return string(STR_REFIT_CC);
-	}
-
-
-
-item (FEAT_TRAINS, yo_8000, 35) {
-	property {
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
-		name: string(STR_NAME_YO_8000);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1974,1,1);
-		speed: 95 km/h;
-//		air_drag_coefficient: 0;
-//		power: 0;
-//		dual_headed: 0;
-		cargo_capacity: 1; 
-//		refit_cost: 0;
-		cargo_allow_refit: [PASS];
-//		loading_speed: 1;
-//		weight: 20;
-		cost_factor: 40;
-		running_cost_factor: 12;
-		running_cost_base: RUNNING_COST_STEAM;
-		length: 4;
-		bitmask_vehicle_info: bitmask(1);
-	}
-	graphics {
-		cargo_capacity: return 0;
-		default: switch_yo_8000_livery;
-		purchase: switch_yo_8000_purchase_yeardep;
-		cargo_subtype_text: switch_yo_8000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
-	}
-}
-
-//brake van super switch
-
-switch(FEAT_TRAINS, SELF, switch_speedboost_3, hasbit(bitmask_consist_info, 3)) {
-	1: return 75;
-	CB_FAILED;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_speedboost_2, hasbit(bitmask_consist_info, 2)) {
-	1: return 85;
-	switch_speedboost_3;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) {
-	1: return 95;
-	switch_speedboost_2;
-	}
-
-
-
 //all purpose blank sprite
 
 spriteset(spriteset_blank, "gfx/blank.png") {
@@ -13120,6 +12802,547 @@ switch(FEAT_TRAINS, SELF, switch_taillights_5, position_in_consist_from_end) {
 	0: switch_taillights_5_flip;
 	spriteset_blank;
 	}
+
+
+
+//brake van super switch
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_5, hasbit(bitmask_consist_info, 5)) {
+	1: return 75;
+	CB_FAILED;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_4, hasbit(bitmask_consist_info, 4)) {
+	1: return 85;
+	switch_speedboost_5;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_3, hasbit(bitmask_consist_info, 3)) {
+	1: return 95;
+	switch_speedboost_4;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_2, hasbit(bitmask_consist_info, 2)) {
+	1: return 100;
+	switch_speedboost_3;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) {
+	1: return 110;
+	switch_speedboost_2;
+	}
+
+spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_1_brown, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_1_stripe, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_1_cc, "gfx/brake/yo_1.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_1_purchase, "gfx/brake/yo_1.png") {
+	template_purchase(1, 128)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_livery, cargo_subtype) {
+	0: spriteset_yo_1_black;
+	1: spriteset_yo_1_brown;
+	2: spriteset_yo_1_stripe;
+	3: spriteset_yo_1_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_1_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BROWN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_1, 1601) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 14;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(5);//speed boost 75
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 0;
+		default: switch_yo_1_livery;
+		purchase: spriteset_yo_1_purchase;
+		cargo_subtype_text: switch_yo_1_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+spriteset(spriteset_yo_5000_black, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_5000_green, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_5000_blue, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_5000_cc, "gfx/brake/yo_5000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_5000_jgr_purchase, "gfx/brake/yo_5000.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_yo_5000_jnr_purchase, "gfx/brake/yo_5000.png") {
+	template_purchase(89, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_purchase_yeardep, current_year) {
+    0..1949: spriteset_yo_5000_jgr_purchase;
+    spriteset_yo_5000_jnr_purchase;
+    }
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_livery, cargo_subtype) {
+	0: spriteset_yo_5000_black;
+	1: spriteset_yo_5000_green;
+	2: spriteset_yo_5000_blue;
+	3: spriteset_yo_5000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_5000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_5000, 1600) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);//change to 1949 when yo 1500 added
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 22;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		bitmask_vehicle_info: bitmask(4);//speed boost 85
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 0;
+		default: switch_yo_5000_livery;
+		purchase: switch_yo_5000_purchase_yeardep;
+		cargo_subtype_text: switch_yo_5000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_8000_green, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_8000_blue, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_38000_redblue, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_yo_8000_whitered, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_yo_8000_pink, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_yo_8000_cc, "gfx/brake/yo_8000.png") {
+	template_2cc_std(1, 192)
+}
+
+
+
+
+spriteset(spriteset_yo_8000_purchase, "gfx/brake/yo_8000.png") {
+	template_purchase(1, 224)
+}
+
+spriteset(spriteset_yo_38000_purchase, "gfx/brake/yo_8000.png") {
+	template_purchase(89, 224)
+}
+
+/*
+switch(FEAT_TRAINS, SELF, switch_yo_8000_purchase_yeardep, current_year) {
+    0..1987: spriteset_yo_8000_jnr_purchase;
+    spriteset_yo_38000_jrf_purchase;
+    }
+*/
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_livery, cargo_subtype) {
+	0: spriteset_yo_8000_black;
+	1: spriteset_yo_8000_green;
+	2: spriteset_yo_8000_blue;
+	3: spriteset_yo_38000_redblue;
+	4: spriteset_yo_8000_whitered;
+	5: spriteset_yo_8000_pink;
+	6: spriteset_yo_8000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_RED), 
+									string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_MPL), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_PINK)
+                                    ), string(STR_SUFFIX_SEMIFIC)
+                                 );							 
+	6: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_8000, 35) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1974,1,1);
+		speed: 95 km/h;
+//		air_drag_coefficient: 0;
+//		power: 0;
+//		dual_headed: 0;
+		cargo_capacity: 1; 
+//		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+//		loading_speed: 1;
+//		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(3);//speed boost 95
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 95;
+		cargo_capacity: return 0;
+		default: switch_yo_8000_livery;
+		purchase: spriteset_yo_8000_purchase;
+		cargo_subtype_text: switch_yo_8000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_38000_livery, cargo_subtype) {
+	0: spriteset_yo_38000_redblue;
+	1: spriteset_yo_8000_black;
+	2: spriteset_yo_8000_blue;
+	3: spriteset_yo_8000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_38000_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_RED), 
+									string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	3: return string(STR_REFIT_CC);
+	}
+
+
+item (FEAT_TRAINS, yo_38000, 1603) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_38000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1994,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+//		loading_speed: 1;
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(1);//speed boost 110
+		variant_group: 35;
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 110;
+		cargo_capacity: return 0;
+		default: switch_yo_38000_livery;
+		purchase: spriteset_yo_38000_purchase;
+		cargo_subtype_text: switch_yo_38000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
+
+//brake van super switch
+
+/*
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_3, hasbit(bitmask_consist_info, 3)) {
+	1: return 75;
+	CB_FAILED;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_2, hasbit(bitmask_consist_info, 2)) {
+	1: return 85;
+	switch_speedboost_3;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) {
+	1: return 95;
+	switch_speedboost_2;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_speedboost_100, hasbit(bitmask_consist_info, 1)) {
+	1: return 100;
+	switch_speedboost_1;
+	}
+
+*/
+spriteset(spriteset_yo_9000_black, "gfx/brake/yo_9000.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_yo_9000_stripe, "gfx/brake/yo_9000.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_yo_9000_blue, "gfx/brake/yo_9000.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_yo_9000_cc, "gfx/brake/yo_9000.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_yo_9000_blue_purchase, "gfx/brake/yo_9000.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_yo_9000_stripe_purchase, "gfx/brake/yo_9000.png") {
+	template_purchase(89, 128)
+}
+
+switch(FEAT_TRAINS, SELF, switch_yo_9000_purchase_yeardep, current_year) {
+    0..1972: spriteset_yo_9000_blue_purchase;
+    spriteset_yo_9000_stripe_purchase;
+    }
+
+switch(FEAT_TRAINS, SELF, switch_yo_9000_yeardep, build_year) {
+    0..1972: spriteset_yo_9000_blue;
+    spriteset_yo_9000_stripe;
+    }
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_9000_livery, cargo_subtype) {
+	0: switch_yo_9000_yeardep;
+	1: spriteset_yo_9000_black;
+	2: spriteset_yo_9000_stripe;
+	3: spriteset_yo_9000_blue;
+	4: spriteset_yo_9000_cc;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
+	0: return string(STR_SUFFIX_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	4: return string(STR_REFIT_CC);
+	}
+
+
+
+item (FEAT_TRAINS, yo_9000, 1604) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_9000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1; 
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		bitmask_vehicle_info: bitmask(2);
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 100;
+		cargo_capacity: return 0;
+		default: switch_yo_9000_livery;
+		purchase: switch_yo_9000_purchase_yeardep;
+		cargo_subtype_text: switch_yo_9000_subtype_text;
+		additional_text: string(STR_DESC_BRAKE);
+	}
+}
 
 
 spriteset(spriteset_pax_1870_3rd_compartment_brown, "gfx/paxmail/paxmail-1870.png") {
@@ -19811,7 +20034,7 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-		bitmask_vehicle_info: bitmask(3);
+		bitmask_vehicle_info: bitmask(5);//speedboost 75
 		variant_group: 1435;
 	}
 	graphics {
@@ -20500,7 +20723,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		variant_group: 1445;
-		bitmask_vehicle_info: bitmask(1);//95 boost?
+		bitmask_vehicle_info: bitmask(3);//95 boost?
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -20721,7 +20944,7 @@ item (FEAT_TRAINS, wamufu_100, 1451) {
 		length: 7;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		variant_group: 1450;
-		bitmask_vehicle_info: bitmask(2);
+		bitmask_vehicle_info: bitmask(4);//85 boost
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -20947,7 +21170,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 									string(STR_SUFFIX_JRF)
 								)
 							);
-
+		speed: switch_speedboost_1;
 		default: switch_waki_8000_loadstack;
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
@@ -21013,7 +21236,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
-		bitmask_vehicle_info: bitmask(1);
+		bitmask_vehicle_info: bitmask(3);//95 boost
 		variant_group: 1452;
 	}
 	graphics {
@@ -21025,7 +21248,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 									string(STR_SUFFIX_JRF)
 								)
 							);
-
+		speed: switch_speedboost_1;
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
@@ -32893,10 +33116,20 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
+	climates_available: ALL_CLIMATES;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 30; 
+	refit_cost: 0;
+	refittable_cargo_classes: bitmask (CC_LIQUID);
+	loading_speed: 30;
+	weight: 10;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 30;
+	length: 5;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

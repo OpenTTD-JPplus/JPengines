@@ -83,9 +83,11 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
-		bitmask_vehicle_info: bitmask(2);
+		bitmask_vehicle_info: bitmask(4);//speed boost 85
 	}
 	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 0;
 		default: switch_yo_5000_livery;
 		purchase: switch_yo_5000_purchase_yeardep;

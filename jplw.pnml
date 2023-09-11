@@ -67,11 +67,12 @@
 #include "src/diesel/df200.pnml"
 #include "src/diesel/hd300.pnml"
 
+#include "src/wagons.pnml"
+
 #include "src/freight/brake_yo1.pnml"
 #include "src/freight/brake_yo5000.pnml"
 #include "src/freight/brake_yo8000.pnml"
-
-#include "src/wagons.pnml"
+#include "src/freight/brake_yo9000.pnml"
 
 #include "src/pax/paxmail_1870.pnml"
 #include "src/pax/paxmail_1880.pnml"

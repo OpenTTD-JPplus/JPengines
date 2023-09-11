@@ -137,7 +137,7 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-		bitmask_vehicle_info: bitmask(3);
+		bitmask_vehicle_info: bitmask(5);//speedboost 75
 		variant_group: 1435;
 	}
 	graphics {
