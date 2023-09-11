@@ -349,7 +349,6 @@ property {
 
 //7stars
 
-//df200 100 
 
 
 switch(FEAT_TRAINS, SELF, switch_df200_7000_livery, cargo_subtype) {
@@ -426,3 +425,117 @@ property {
   }
 }
 
+//proto
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_proto_logo_yeardep, build_year) {
+   0..2002: spriteset_df200_logo_white;
+   2002..2018: spriteset_df200_logo_redbear;
+	spriteset_df200_nologo_redbear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_df200_proto_logo_livery, cargo_subtype) {
+	0: switch_df200_proto_logo_yeardep;
+   1: spriteset_df200_logo_white;
+   2: spriteset_df200_logo_redbear;
+	3: spriteset_df200_nologo_redbear;
+   spriteset_blank;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_proto_livery, cargo_subtype) {
+	4: spriteset_df200_proto_cc;
+	spriteset_df200_proto;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_df200_proto_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_INVERTER)
+                                 );
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
+                                 );
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
+                                 );
+	4: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, stack_df200_proto, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_df200_proto_livery;
+	 1:  switch_df200_proto_logo_livery;
+}
+
+
+switch (FEAT_TRAINS, SELF, switch_df200_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DF200);
+  } 
+switch (FEAT_TRAINS, SELF, switch_df200_proto_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_df200_proto_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+item (FEAT_TRAINS, df200_proto, 1063) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_DF200_P);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1992,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 2500 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 96;
+  reliability_decay: 20;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 25;
+  cost_factor: 96;
+  length: 8;
+  running_cost_factor: 100;
+  running_cost_base: RUNNING_COST_DIESEL;
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+  variant_group: 63;
+  } 
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PROTO),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_df200_proto_subtype_text;
+  default: stack_df200_proto;
+  purchase: spriteset_df200_proto_purchase;
+  name: switch_df200_proto_name;
+  }
+}

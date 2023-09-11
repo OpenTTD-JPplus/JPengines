@@ -20,7 +20,7 @@ switch(FEAT_TRAINS, SELF, switch_ef500_subtype_text, cargo_subtype) {
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_WHITE),
 									                  string(STR_COLOUR_RED)
-                                    ), string(STR_SUFFIX_PROTO)
+                                    ), string(STR_SUFFIX_INVERTER)
                                  );
 	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;

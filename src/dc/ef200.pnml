@@ -71,12 +71,12 @@ switch(FEAT_TRAINS, SELF, switch_ef200_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
-                                    )
+                                    ), string(STR_SUFFIX_INVERTER)
                                  );
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
@@ -169,12 +169,12 @@ switch(FEAT_TRAINS, SELF, switch_ef200_proto_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef200_proto_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
-                                    ), string(STR_SUFFIX_PROTO)
+                                    ), string(STR_SUFFIX_INVERTER)
                                  );
 	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 

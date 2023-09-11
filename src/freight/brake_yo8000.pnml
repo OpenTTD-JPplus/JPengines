@@ -86,7 +86,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	5: return string(STR_CONCAT_2, string(STR_SUFFIX_MPL), 
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_MPL), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_PINK)
                                     ), string(STR_SUFFIX_SEMIFIC)
