@@ -359,7 +359,7 @@ switch(FEAT_TRAINS, SELF, switch_df200_7000_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_df200_7000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_4, string(STR_SUFFIX_JRK), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_DKRED), 
                                     string(STR_COLOUR_GOLD)
