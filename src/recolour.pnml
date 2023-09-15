@@ -286,13 +286,13 @@ replace(recolour_bulk) {
 //slag 22
     recolour_sprite {
         0xE5: 0x01;
-        0xE8: 0x01;
-        0xE9: 0xE9;
-        0xEA: 0x02;
-        0xEB: 0xED;
-        0xEC: 0x03;
-        0xED: 0x04;
-        0xEE: 0x05;
+        0xE8: 0x02;
+        0xE9: 0x02;
+        0xEA: 0x03;
+        0xEB: 0x03;
+        0xEC: 0x04;
+        0xED: 0xE9;
+        0xEE: 0xED;
     }
 //phosphate 23
     recolour_sprite {
@@ -541,6 +541,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 
     CMNT: return recolour_bulk +12;
     CBLK: return recolour_bulk +13;
+    ALO_: return recolour_bulk +12;
 
 //FALLBACK
     recolour_bulk;    
