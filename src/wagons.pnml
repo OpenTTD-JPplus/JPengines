@@ -10,13 +10,13 @@ spriteset(spriteset_taillights_8, "gfx/taillights_8.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_taillights_8_flip, "gfx/taillights_8.png") {
+spriteset(spriteset_taillights_flip, "gfx/taillights_8.png") {
 	template_2cc_flip(1, 1)
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_taillights_8_flip, vehicle_is_flipped) {
-	1: spriteset_taillights_8_flip;
+	1: spriteset_taillights_flip;
 	spriteset_taillights_8;
 	}
 
@@ -32,13 +32,11 @@ spriteset(spriteset_taillights_7, "gfx/taillights_7.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_taillights_7_flip, "gfx/taillights_7.png") {
-	template_2cc_flip(1, 1)
-}
+
 
 
 switch(FEAT_TRAINS, SELF, switch_taillights_7_flip, vehicle_is_flipped) {
-	1: spriteset_taillights_7_flip;
+	1: spriteset_taillights_flip;
 	spriteset_taillights_7;
 	}
 
@@ -55,13 +53,11 @@ spriteset(spriteset_taillights_6, "gfx/taillights_6.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_taillights_6_flip, "gfx/taillights_6.png") {
-	template_2cc_flip(1, 1)
-}
+
 
 
 switch(FEAT_TRAINS, SELF, switch_taillights_6_flip, vehicle_is_flipped) {
-	1: spriteset_taillights_6_flip;
+	1: spriteset_taillights_flip;
 	spriteset_taillights_6;
 	}
 
@@ -78,13 +74,11 @@ spriteset(spriteset_taillights_5, "gfx/taillights_5.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_taillights_5_flip, "gfx/taillights_5.png") {
-	template_2cc_flip(1, 1)
-}
+
 
 
 switch(FEAT_TRAINS, SELF, switch_taillights_5_flip, vehicle_is_flipped) {
-	1: spriteset_taillights_5_flip;
+	1: spriteset_taillights_flip;
 	spriteset_taillights_5;
 	}
 

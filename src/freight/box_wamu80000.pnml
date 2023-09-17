@@ -81,6 +81,10 @@ spriteset(spriteset_wamu_80000_jrf_purchase, "gfx/freight/wamu_80000.png") {
 	template_purchase(89, 384)
 }
 
+spriteset(spriteset_wamu_580000_jnr_purchase, "gfx/freight/wamu_80000.png") {
+	template_purchase(180, 384)
+}
+
 
 
 //door overlay
@@ -326,5 +330,62 @@ graphics {
 	default: switch_wamu_480000_loadstack;
 	purchase: spriteset_wamu_480000_jrf_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+}
+
+switch(FEAT_TRAINS, SELF, switch_wamu_580000_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_wamu_80000_white;
+	1:  random_wamu_80000_roof;
+    2:  spritegroup_wamu_80000_load;
+}
+
+
+item (FEAT_TRAINS, wamu_580000, 1463) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1967,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_WAMU_580000);
+	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 50; 
+	refit_cost: 0;
+	default_cargo_type: FOOD;
+	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+	loading_speed: 20;
+	cargo_age_period: 0;
+//	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
+//	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
+	non_refittable_cargo_classes: 0;
+	weight: 15;
+	cost_factor: 22;
+	running_cost_factor: 4;
+	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	variant_group: 51;
+	}
+graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
+	speed: switch_speedboost_1;
+	purchase_speed: return 75;
+	cargo_capacity: return 50;
+	default: switch_wamu_580000_loadstack;
+	purchase: spriteset_wamu_580000_jnr_purchase;
+//	colour_mapping: switch_generic_recolour;
 	}
 }
