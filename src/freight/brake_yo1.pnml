@@ -82,6 +82,15 @@ item (FEAT_TRAINS, yo_1, 1601) {
 		default: switch_yo_1_livery;
 		purchase: spriteset_yo_1_purchase;
 		cargo_subtype_text: switch_yo_1_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_3C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+
 	}
 }

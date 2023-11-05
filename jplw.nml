@@ -144,9 +144,9 @@ sort(FEAT_TRAINS, [
 //electrics DC new
 1059, 1060, 1960, 1930, 1030, 1031, 1931, 1039, 1939, 1040, 22, 1922, 1041, 24, 1042, 1942, 1924, 26, 1926, 1945, 60, 84, 1084, 1984, 88, 
 //electrics AC
-1065, 1070, 1970, 1075, 1071, 1072, 1972, 1946, 1045, 1047,
+1065, 1070, 1970, 1075, 1071, 1072, 1972, 1946, 1045, 1047, 1095,
 //electrics MS 
-1055, 1915, 1015, 1080, 55, 1083, 1983, 1090, 1085, 105, 1098, 67, 1097, 1095, 
+1055, 1915, 1015, 1080, 55, 1083, 1983, 1090, 1085, 105, 1098, 67, 1097, 
 //cargo MU
 // 77,
 
@@ -13024,7 +13024,15 @@ item (FEAT_TRAINS, yo_1, 1601) {
 		default: switch_yo_1_livery;
 		purchase: spriteset_yo_1_purchase;
 		cargo_subtype_text: switch_yo_1_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
 	}
 }
 spriteset(spriteset_yo_5000_black, "gfx/brake/yo_5000.png") {
@@ -13121,7 +13129,14 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		default: switch_yo_5000_livery;
 		purchase: switch_yo_5000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_5000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR)
+							)
+						);
 	}
 }
 spriteset(spriteset_yo_8000_black, "gfx/brake/yo_8000.png") {
@@ -13256,7 +13271,14 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		default: switch_yo_8000_livery;
 		purchase: spriteset_yo_8000_purchase;
 		cargo_subtype_text: switch_yo_8000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JNR),								
+								string(STR_SUFFIX_JR)
+							)
+						);
 	}
 }
 
@@ -13324,7 +13346,13 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 		default: switch_yo_38000_livery;
 		purchase: spriteset_yo_38000_purchase;
 		cargo_subtype_text: switch_yo_38000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
 	}
 }
 
@@ -13445,7 +13473,7 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
-		bitmask_vehicle_info: bitmask(2);
+		bitmask_vehicle_info: bitmask(2);//speed boost 100
 	}
 	graphics {
 		speed: switch_speedboost_1;
@@ -13454,7 +13482,13 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 		default: switch_yo_9000_livery;
 		purchase: switch_yo_9000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_9000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 	
+								string(STR_SUFFIX_JNR)
+							)
+						);
 	}
 }
 
@@ -21287,7 +21321,6 @@ item (FEAT_TRAINS, wamufu_100, 1451) {
 		
 	}
 }
-//TODO GRAPHICS-LOADING STAGES FOR THESE
 
 spriteset(spriteset_waki_5000_greenstripe, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 96)
@@ -21578,7 +21611,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
 	}
 }
-//TODO GRAPHICS-LOADING STAGES FOR THESE
+
 
 spriteset(spriteset_waki_10000_blue, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 1)

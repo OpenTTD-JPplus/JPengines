@@ -1,4 +1,3 @@
-//TODO GRAPHICS-LOADING STAGES FOR THESE
 
 spriteset(spriteset_waki_5000_greenstripe, "gfx/freight/waki_5000.png") {
 	template_2cc_std(1, 96)

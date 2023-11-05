@@ -130,7 +130,14 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		default: switch_yo_8000_livery;
 		purchase: spriteset_yo_8000_purchase;
 		cargo_subtype_text: switch_yo_8000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JNR),								
+								string(STR_SUFFIX_JR)
+							)
+						);
 	}
 }
 
@@ -198,7 +205,13 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 		default: switch_yo_38000_livery;
 		purchase: spriteset_yo_38000_purchase;
 		cargo_subtype_text: switch_yo_38000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
 	}
 }
 

@@ -90,7 +90,7 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 4;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
-		bitmask_vehicle_info: bitmask(2);
+		bitmask_vehicle_info: bitmask(2);//speed boost 100
 	}
 	graphics {
 		speed: switch_speedboost_1;
@@ -99,7 +99,13 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 		default: switch_yo_9000_livery;
 		purchase: switch_yo_9000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_9000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 	
+								string(STR_SUFFIX_JNR)
+							)
+						);
 	}
 }
 

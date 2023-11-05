@@ -92,6 +92,13 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		default: switch_yo_5000_livery;
 		purchase: switch_yo_5000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_5000_subtype_text;
-		additional_text: string(STR_DESC_BRAKE);
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR)
+							)
+						);
 	}
 }
