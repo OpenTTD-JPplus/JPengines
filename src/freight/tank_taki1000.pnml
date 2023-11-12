@@ -193,7 +193,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 //		cargo_capacity: return 0;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;

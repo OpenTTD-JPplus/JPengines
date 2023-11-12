@@ -646,7 +646,17 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_2_mixed_70) {
 
 
 
-
+ random_switch(FEAT_TRAINS, SELF, random_conts_private_a_2_food_80) {
+//	independent: random_conts_private_a_4_food_80;
+//	independent: random_conts_private_a_3_food_80;
+//	independent: random_conts_private_a_2_food_80;
+//	2: random_conts_jgr_reefer_f_2_loadstage;
+    2: random_conts_jgr_reefer_g_2_loadstage;
+	2: random_conts_jgr_reefer_h_2_loadstage;
+	3: random_conts_jgr_reefer_i_2_loadstage;
+	2: random_conts_jgr_reefer_j_2_loadstage;
+	3: random_conts_jgr_reefer_k_2_loadstage;
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
@@ -655,8 +665,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_food_year, current_year) {
-	0..1965: random_conts_jgr_green_a_2_food_60;
-	random_conts_jgr_green_a_2_food_70;
+	0..1970: random_conts_jgr_green_a_2_food_60;
+	1970..1987: random_conts_jgr_green_a_2_food_70;
+	random_conts_private_a_2_food_80;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_2_liquid_year, current_year) {

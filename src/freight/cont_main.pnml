@@ -3,64 +3,6 @@
 
 
 
-//new food
-//stack food
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_1_food_year;
-	2:	switch_conts_2_food_year;
-	3:	switch_conts_3_food_year;
-	4:	switch_conts_4_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_4_food_year;
-	2:	switch_conts_3_food_year;
-	3:	switch_conts_2_food_year;
-	4:	switch_conts_1_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_conts_food_60_a_down_loadstack;
-	DIRECTION_SOUTH: switch_conts_food_60_a_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_conts_food_60_a_down_loadstack;
-	switch_conts_food_60_a_up_loadstack;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_1_food_year;
-	2:	switch_conts_2_food_year;
-	3:	switch_conts_3_food_year;
-	4:	switch_conts_4_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_4_food_year;
-	2:	switch_conts_3_food_year;
-	3:	switch_conts_2_food_year;
-	4:	switch_conts_1_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_conts_food_70_a_down_loadstack;
-	DIRECTION_SOUTH: switch_conts_food_70_a_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_conts_food_70_a_down_loadstack;
-	switch_conts_food_70_a_up_loadstack;
-}
-
-
 //stack general
 
 switch(FEAT_TRAINS, SELF, switch_conts_general_up_loadstack, [
@@ -90,9 +32,22 @@ switch(FEAT_TRAINS, SELF, switch_conts_general_direction, direction) {
 	switch_conts_general_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_general_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_general_down_loadstack;
+	DIRECTION_NORTH: switch_conts_general_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_general_down_loadstack;
+	switch_conts_general_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_general_flip, vehicle_is_flipped) {
+	1: switch_conts_general_direction_flipped;
+	switch_conts_general_direction;
+	}
+
 
 //stack food
-/*
+
 switch(FEAT_TRAINS, SELF, switch_conts_food_up_loadstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -119,7 +74,21 @@ switch(FEAT_TRAINS, SELF, switch_conts_food_direction, direction) {
 	DIRECTION_SOUTHWEST: switch_conts_food_down_loadstack;
 	switch_conts_food_up_loadstack;
 }
-*/
+
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_food_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_food_down_loadstack;
+	DIRECTION_NORTH: switch_conts_food_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_food_down_loadstack;
+	switch_conts_food_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_food_flip, vehicle_is_flipped) {
+	1: switch_conts_food_direction_flipped;
+	switch_conts_food_direction;
+	}
+
+
 
 //stack liquid
 
@@ -150,6 +119,21 @@ switch(FEAT_TRAINS, SELF, switch_conts_liquid_direction, direction) {
 	switch_conts_liquid_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_liquid_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_liquid_down_loadstack;
+	DIRECTION_NORTH: switch_conts_liquid_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_liquid_down_loadstack;
+	switch_conts_liquid_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_liquid_flip, vehicle_is_flipped) {
+	1: switch_conts_liquid_direction_flipped;
+	switch_conts_liquid_direction;
+	}
+
+
+
 //stack bulk
 
 switch(FEAT_TRAINS, SELF, switch_conts_bulk_up_loadstack, [
@@ -179,10 +163,23 @@ switch(FEAT_TRAINS, SELF, switch_conts_bulk_direction, direction) {
 	switch_conts_bulk_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_bulk_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_bulk_down_loadstack;
+	DIRECTION_NORTH: switch_conts_bulk_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_bulk_down_loadstack;
+	switch_conts_bulk_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_bulk_flip, vehicle_is_flipped) {
+	1: switch_conts_bulk_direction_flipped;
+	switch_conts_bulk_direction;
+	}
+
 //stack mixed
 
 switch(FEAT_TRAINS, SELF, switch_conts_mixed_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     1:  switch_conts_1_mixed_year;
@@ -192,7 +189,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_mixed_up_loadstack, [
 }
 
 switch(FEAT_TRAINS, SELF, switch_conts_mixed_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     1:  switch_conts_4_mixed_year;
@@ -208,52 +205,49 @@ switch(FEAT_TRAINS, SELF, switch_conts_mixed_direction, direction) {
 	switch_conts_mixed_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_mixed_down_loadstack;
+	DIRECTION_NORTH: switch_conts_mixed_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_mixed_down_loadstack;
+	switch_conts_mixed_up_loadstack;
+}
 
-
-
-
-//year switch food
-
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_year, current_year) {
-	0..1965: switch_conts_food_60_a_direction;
-	switch_conts_food_70_a_direction;
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_flip, vehicle_is_flipped) {
+	1: switch_conts_mixed_direction_flipped;
+	switch_conts_mixed_direction;
 	}
 
 
 
 
-
-
-
-
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_conts_liquid_direction;
-	bitmask(CC_REFRIGERATED): switch_conts_food_year;
-	bitmask(CC_EXPRESS): switch_conts_general_direction;
-	bitmask(CC_BULK): switch_conts_bulk_direction;
+	bitmask(CC_LIQUID): switch_conts_liquid_flip;
+	bitmask(CC_REFRIGERATED): switch_conts_food_flip;
+	bitmask(CC_EXPRESS): switch_conts_general_flip;
+	bitmask(CC_BULK): switch_conts_bulk_flip;
 //	bitmask(CC_OVERSIZED): switch_koki_10000_cargo_goods;
-	switch_conts_mixed_direction;
+	switch_conts_mixed_flip;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
-	MAIL: switch_conts_general_direction;
-	GOOD: switch_conts_general_direction;
-	FOOD: switch_conts_food_year;
-	OIL_: switch_conts_liquid_direction;
-	BEER: switch_conts_liquid_direction;
-	VEHI: switch_conts_general_direction;
+	MAIL: switch_conts_general_flip;
+	GOOD: switch_conts_general_flip;
+	FOOD: switch_conts_food_flip;
+	OIL_: switch_conts_liquid_flip;
+	BEER: switch_conts_liquid_flip;
+	VEHI: switch_conts_general_flip;
 	
-	MILK: switch_conts_liquid_direction;
-	EOIL: switch_conts_liquid_direction;
+	MILK: switch_conts_liquid_flip;
+	EOIL: switch_conts_liquid_flip;
 	
-	ACID: switch_conts_liquid_direction;
-	SULP: switch_conts_liquid_direction;
-	CHLO: switch_conts_liquid_direction;
+	ACID: switch_conts_liquid_flip;
+	SULP: switch_conts_liquid_flip;
+	CHLO: switch_conts_liquid_flip;
 	
-	FRUT: switch_conts_food_year;
-	FISH: switch_conts_food_year;
+	FRUT: switch_conts_food_flip;
+	FISH: switch_conts_food_flip;
 	
 	switch_conts_cargo_class;
 }

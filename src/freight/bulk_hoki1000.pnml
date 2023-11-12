@@ -62,7 +62,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;

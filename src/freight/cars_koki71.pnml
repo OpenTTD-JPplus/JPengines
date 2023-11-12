@@ -145,7 +145,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;

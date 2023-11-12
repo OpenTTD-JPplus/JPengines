@@ -366,7 +366,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;

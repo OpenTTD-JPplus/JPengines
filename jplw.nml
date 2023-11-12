@@ -13027,9 +13027,10 @@ item (FEAT_TRAINS, yo_1, 1601) {
 		additional_text:	string(STR_CONCAT_3S, 
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_2C, 	
+							string(STR_CONCAT_3C, 	
 								string(STR_SUFFIX_JGR),								
-								string(STR_SUFFIX_JNR)
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
 							)
 						);
 
@@ -21693,7 +21694,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 60;
 	default: switch_waki_10000_loadstack;
 	purchase: switch_waki_10000_yeardep_purchase;
@@ -22305,7 +22306,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;
@@ -22753,7 +22754,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 65;
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;
@@ -22950,7 +22951,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 70;
 	default: random_hoki_10000_livery;
 	purchase: switch_hoki_10000_purchase;
@@ -23572,7 +23573,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
@@ -24855,7 +24856,7 @@ spritegroup spritegroup_conts_jgr_reefer_j_4_f {
 spriteset(spriteset_conts_jgr_reefer_k_4, "gfx/containers/jnr_reefer.png") { //tank b
 	template_container_4(1, 320)
 }
-
+ 
 spritegroup spritegroup_conts_jgr_reefer_k_4_h {
     loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_4];
     loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_4];
@@ -25050,7 +25051,17 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_4_mixed_70) {
 }
 
 
-
+random_switch(FEAT_TRAINS, SELF, random_conts_private_a_4_food_80) {
+//	independent: random_conts_private_a_4_food_80;
+//	independent: random_conts_private_a_3_food_80;
+//	independent: random_conts_private_a_2_food_80;
+	2: random_conts_jgr_reefer_f_4_loadstage;
+    3: random_conts_jgr_reefer_g_4_loadstage;
+//	4: random_conts_jgr_reefer_h_4_loadstage;
+	5: random_conts_jgr_reefer_i_4_loadstage;
+	4: random_conts_jgr_reefer_j_4_loadstage;
+	5: random_conts_jgr_reefer_k_4_loadstage;
+}
 
 
 
@@ -25060,8 +25071,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_4_general_year, current_year) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_4_food_year, current_year) {
-	0..1965: random_conts_jgr_green_a_4_food_60;
-	random_conts_jgr_green_a_4_food_70;
+	0..1970: random_conts_jgr_green_a_4_food_60;
+	1970..1987: random_conts_jgr_green_a_4_food_70;
+	random_conts_private_a_4_food_80;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_4_liquid_year, current_year) {
@@ -25661,7 +25673,7 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_3_general_60) {
 	1: random_conts_jgr_green_c_3_loadstage;
 	1: random_conts_jgr_green_d_3_loadstage;
 }
-
+ 
 random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_3_food_60) {
 	independent: random_conts_jgr_green_a_4_food_60;
 //	independent: random_conts_jgr_green_a_3_food_60;
@@ -25762,7 +25774,17 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_3_mixed_70) {
 }
 
 
-
+random_switch(FEAT_TRAINS, SELF, random_conts_private_a_3_food_80) {
+//	independent: random_conts_private_a_4_food_80;
+//	independent: random_conts_private_a_3_food_80;
+//	independent: random_conts_private_a_2_food_80;
+	2: random_conts_jgr_reefer_f_3_loadstage;
+    3: random_conts_jgr_reefer_g_3_loadstage;
+	6: random_conts_jgr_reefer_h_3_loadstage;
+	4: random_conts_jgr_reefer_i_3_loadstage;
+//	6: random_conts_jgr_reefer_j_3_loadstage;
+	4: random_conts_jgr_reefer_k_3_loadstage;
+}
 
 
 
@@ -25772,8 +25794,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_3_general_year, current_year) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_3_food_year, current_year) {
-	0..1965: random_conts_jgr_green_a_3_food_60;
-	random_conts_jgr_green_a_3_food_70;
+	0..1970: random_conts_jgr_green_a_3_food_60;
+	1970..1987: random_conts_jgr_green_a_3_food_70;
+	random_conts_private_a_3_food_80;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_3_liquid_year, current_year) {
@@ -26476,7 +26499,17 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_2_mixed_70) {
 
 
 
-
+ random_switch(FEAT_TRAINS, SELF, random_conts_private_a_2_food_80) {
+//	independent: random_conts_private_a_4_food_80;
+//	independent: random_conts_private_a_3_food_80;
+//	independent: random_conts_private_a_2_food_80;
+//	2: random_conts_jgr_reefer_f_2_loadstage;
+    2: random_conts_jgr_reefer_g_2_loadstage;
+	2: random_conts_jgr_reefer_h_2_loadstage;
+	3: random_conts_jgr_reefer_i_2_loadstage;
+	2: random_conts_jgr_reefer_j_2_loadstage;
+	3: random_conts_jgr_reefer_k_2_loadstage;
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
@@ -26485,8 +26518,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_food_year, current_year) {
-	0..1965: random_conts_jgr_green_a_2_food_60;
-	random_conts_jgr_green_a_2_food_70;
+	0..1970: random_conts_jgr_green_a_2_food_60;
+	1970..1987: random_conts_jgr_green_a_2_food_70;
+	random_conts_private_a_2_food_80;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_2_liquid_year, current_year) {
@@ -27191,33 +27225,46 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_mixed_70) {
 	1: random_conts_jgr_green_k_1_loadstage;
 }
 
+//80s
 
+random_switch(FEAT_TRAINS, SELF, random_conts_private_a_1_food_80) {
+//	independent: random_conts_private_a_4_food_80;
+//	independent: random_conts_private_a_3_food_80;
+//	independent: random_conts_private_a_2_food_80;
+	2: random_conts_jgr_reefer_f_1_loadstage;
+    3: random_conts_jgr_reefer_g_1_loadstage;
+	6: random_conts_jgr_reefer_h_1_loadstage;
+	4: random_conts_jgr_reefer_i_1_loadstage;
+//	6: random_conts_jgr_reefer_j_1_loadstage;
+	4: random_conts_jgr_reefer_k_1_loadstage;
+}
 
 
 
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_general_year, current_year) {
-	0..1965: random_conts_jgr_green_a_1_general_60;
+	0..1970: random_conts_jgr_green_a_1_general_60;
 	random_conts_jgr_green_a_1_general_70;
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_food_year, current_year) {
-	0..1965: random_conts_jgr_green_a_1_food_60;
-	random_conts_jgr_green_a_1_food_70;
+	0..1970: random_conts_jgr_green_a_1_food_60;
+	1970..1987: random_conts_jgr_green_a_1_food_70;
+	random_conts_private_a_1_food_80;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_1_liquid_year, current_year) {
-	0..1965: random_conts_jgr_green_a_1_liquid_60;
+	0..1970: random_conts_jgr_green_a_1_liquid_60;
 	random_conts_jgr_green_a_1_liquid_70;
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_bulk_year, current_year) {
-	0..1965: random_conts_jgr_green_a_1_bulk_60;
+	0..1970: random_conts_jgr_green_a_1_bulk_60;
 	random_conts_jgr_green_a_1_bulk_70;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_year, current_year) {
-	0..1965: random_conts_jgr_green_a_1_mixed_60;
+	0..1970: random_conts_jgr_green_a_1_mixed_60;
 	random_conts_jgr_green_a_1_mixed_70;
 	}
 	
@@ -27229,64 +27276,6 @@ switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_year, current_year) {
 
 
 
-
-
-//new food
-//stack food
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_1_food_year;
-	2:	switch_conts_2_food_year;
-	3:	switch_conts_3_food_year;
-	4:	switch_conts_4_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_4_food_year;
-	2:	switch_conts_3_food_year;
-	3:	switch_conts_2_food_year;
-	4:	switch_conts_1_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_60_a_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_conts_food_60_a_down_loadstack;
-	DIRECTION_SOUTH: switch_conts_food_60_a_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_conts_food_60_a_down_loadstack;
-	switch_conts_food_60_a_up_loadstack;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_1_food_year;
-	2:	switch_conts_2_food_year;
-	3:	switch_conts_3_food_year;
-	4:	switch_conts_4_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    1:  switch_conts_4_food_year;
-	2:	switch_conts_3_food_year;
-	3:	switch_conts_2_food_year;
-	4:	switch_conts_1_food_year;
-}
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_70_a_direction, direction) {
-	DIRECTION_SOUTHEAST: switch_conts_food_70_a_down_loadstack;
-	DIRECTION_SOUTH: switch_conts_food_70_a_down_loadstack;
-	DIRECTION_SOUTHWEST: switch_conts_food_70_a_down_loadstack;
-	switch_conts_food_70_a_up_loadstack;
-}
 
 
 //stack general
@@ -27318,9 +27307,22 @@ switch(FEAT_TRAINS, SELF, switch_conts_general_direction, direction) {
 	switch_conts_general_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_general_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_general_down_loadstack;
+	DIRECTION_NORTH: switch_conts_general_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_general_down_loadstack;
+	switch_conts_general_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_general_flip, vehicle_is_flipped) {
+	1: switch_conts_general_direction_flipped;
+	switch_conts_general_direction;
+	}
+
 
 //stack food
-/*
+
 switch(FEAT_TRAINS, SELF, switch_conts_food_up_loadstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -27347,7 +27349,21 @@ switch(FEAT_TRAINS, SELF, switch_conts_food_direction, direction) {
 	DIRECTION_SOUTHWEST: switch_conts_food_down_loadstack;
 	switch_conts_food_up_loadstack;
 }
-*/
+
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_food_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_food_down_loadstack;
+	DIRECTION_NORTH: switch_conts_food_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_food_down_loadstack;
+	switch_conts_food_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_food_flip, vehicle_is_flipped) {
+	1: switch_conts_food_direction_flipped;
+	switch_conts_food_direction;
+	}
+
+
 
 //stack liquid
 
@@ -27378,6 +27394,21 @@ switch(FEAT_TRAINS, SELF, switch_conts_liquid_direction, direction) {
 	switch_conts_liquid_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_liquid_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_liquid_down_loadstack;
+	DIRECTION_NORTH: switch_conts_liquid_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_liquid_down_loadstack;
+	switch_conts_liquid_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_liquid_flip, vehicle_is_flipped) {
+	1: switch_conts_liquid_direction_flipped;
+	switch_conts_liquid_direction;
+	}
+
+
+
 //stack bulk
 
 switch(FEAT_TRAINS, SELF, switch_conts_bulk_up_loadstack, [
@@ -27407,10 +27438,23 @@ switch(FEAT_TRAINS, SELF, switch_conts_bulk_direction, direction) {
 	switch_conts_bulk_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_bulk_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_bulk_down_loadstack;
+	DIRECTION_NORTH: switch_conts_bulk_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_bulk_down_loadstack;
+	switch_conts_bulk_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_bulk_flip, vehicle_is_flipped) {
+	1: switch_conts_bulk_direction_flipped;
+	switch_conts_bulk_direction;
+	}
+
 //stack mixed
 
 switch(FEAT_TRAINS, SELF, switch_conts_mixed_up_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     1:  switch_conts_1_mixed_year;
@@ -27420,7 +27464,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_mixed_up_loadstack, [
 }
 
 switch(FEAT_TRAINS, SELF, switch_conts_mixed_down_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     1:  switch_conts_4_mixed_year;
@@ -27436,52 +27480,49 @@ switch(FEAT_TRAINS, SELF, switch_conts_mixed_direction, direction) {
 	switch_conts_mixed_up_loadstack;
 }
 
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_mixed_down_loadstack;
+	DIRECTION_NORTH: switch_conts_mixed_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_mixed_down_loadstack;
+	switch_conts_mixed_up_loadstack;
+}
 
-
-
-
-//year switch food
-
-
-switch(FEAT_TRAINS, SELF, switch_conts_food_year, current_year) {
-	0..1965: switch_conts_food_60_a_direction;
-	switch_conts_food_70_a_direction;
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_flip, vehicle_is_flipped) {
+	1: switch_conts_mixed_direction_flipped;
+	switch_conts_mixed_direction;
 	}
 
 
 
 
-
-
-
-
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_class, cargo_classes) {
-	bitmask(CC_LIQUID): switch_conts_liquid_direction;
-	bitmask(CC_REFRIGERATED): switch_conts_food_year;
-	bitmask(CC_EXPRESS): switch_conts_general_direction;
-	bitmask(CC_BULK): switch_conts_bulk_direction;
+	bitmask(CC_LIQUID): switch_conts_liquid_flip;
+	bitmask(CC_REFRIGERATED): switch_conts_food_flip;
+	bitmask(CC_EXPRESS): switch_conts_general_flip;
+	bitmask(CC_BULK): switch_conts_bulk_flip;
 //	bitmask(CC_OVERSIZED): switch_koki_10000_cargo_goods;
-	switch_conts_mixed_direction;
+	switch_conts_mixed_flip;
 }
 
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
-	MAIL: switch_conts_general_direction;
-	GOOD: switch_conts_general_direction;
-	FOOD: switch_conts_food_year;
-	OIL_: switch_conts_liquid_direction;
-	BEER: switch_conts_liquid_direction;
-	VEHI: switch_conts_general_direction;
+	MAIL: switch_conts_general_flip;
+	GOOD: switch_conts_general_flip;
+	FOOD: switch_conts_food_flip;
+	OIL_: switch_conts_liquid_flip;
+	BEER: switch_conts_liquid_flip;
+	VEHI: switch_conts_general_flip;
 	
-	MILK: switch_conts_liquid_direction;
-	EOIL: switch_conts_liquid_direction;
+	MILK: switch_conts_liquid_flip;
+	EOIL: switch_conts_liquid_flip;
 	
-	ACID: switch_conts_liquid_direction;
-	SULP: switch_conts_liquid_direction;
-	CHLO: switch_conts_liquid_direction;
+	ACID: switch_conts_liquid_flip;
+	SULP: switch_conts_liquid_flip;
+	CHLO: switch_conts_liquid_flip;
 	
-	FRUT: switch_conts_food_year;
-	FISH: switch_conts_food_year;
+	FRUT: switch_conts_food_flip;
+	FISH: switch_conts_food_flip;
 	
 	switch_conts_cargo_class;
 }
@@ -27854,7 +27895,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
@@ -27942,7 +27983,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 60;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
@@ -27951,6 +27992,10 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 }
 spriteset(spriteset_koki_10000_purchase, "gfx/freight/koki_10000.png") {
 	template_purchase(1, 352)
+}
+
+spriteset(spriteset_kokifu_10000_purchase, "gfx/freight/koki_10000.png") {
+	template_purchase(89, 352)
 }
 
 //base
@@ -28020,8 +28065,17 @@ switch(FEAT_TRAINS, SELF, switch_kokifu_10000_direction, direction) {
 	switch_kokifu_10000_up_loadstack;
 }
 
+switch(FEAT_TRAINS, SELF, switch_kokifu_10000_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_kokifu_10000_down_loadstack;
+	DIRECTION_NORTH: switch_kokifu_10000_down_loadstack;
+	DIRECTION_NORTHEAST: switch_kokifu_10000_down_loadstack;
+	switch_kokifu_10000_up_loadstack;
+}
 
-
+switch(FEAT_TRAINS, SELF, switch_kokifu_10000_flip, vehicle_is_flipped) {
+	1: switch_kokifu_10000_direction_flipped;
+	switch_kokifu_10000_direction;
+	}
 
 
 
@@ -28038,10 +28092,12 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 	6:  switch_taillights_8;
 }
 
+/*
 switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose, position_in_consist_from_end) {
 	0: switch_kokifu_10000_direction;
 	switch_koki_10000_base_loadstack;
 	}
+*/
 
 item (FEAT_TRAINS, koki_10000, 1413) {
 	property {
@@ -28078,15 +28134,63 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 60;
-		default: switch_koki_10000_caboose;
+		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+item (FEAT_TRAINS, kokifu_10000, 1433) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKIFU_10000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+	running_cost_factor: 12;
+	running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(2);//speed boost 100
+		variant_group: 1413;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 45;
+		default: switch_kokifu_10000_flip;
+		purchase: spriteset_kokifu_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
 spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_50000.png") {
 	template_purchase(1, 352)
+}
+
+spriteset(spriteset_kokifu_50000_purchase, "gfx/freight/koki_50000.png") {
+	template_purchase(89, 352)
 }
 
 //base
@@ -28156,6 +28260,19 @@ switch(FEAT_TRAINS, SELF, switch_kokifu_50000_direction, direction) {
 	switch_kokifu_50000_up_loadstack;
 }
 
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_kokifu_50000_down_loadstack;
+	DIRECTION_NORTH: switch_kokifu_50000_down_loadstack;
+	DIRECTION_NORTHEAST: switch_kokifu_50000_down_loadstack;
+	switch_kokifu_50000_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_kokifu_50000_flip, vehicle_is_flipped) {
+	1: switch_kokifu_50000_direction_flipped;
+	switch_kokifu_50000_direction;
+	}
+
+
 
 
 
@@ -28174,10 +28291,12 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 	6:  switch_taillights_8;
 }
 
+/*
 switch(FEAT_TRAINS, SELF, switch_koki_50000_caboose, position_in_consist_from_end) {
 	0: switch_kokifu_50000_direction;
 	switch_koki_50000_base_loadstack;
 	}
+*/
 
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
@@ -28216,8 +28335,52 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 						);
 
 		cargo_capacity: return 70;
-		default: switch_koki_50000_caboose;
+		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+item (FEAT_TRAINS, kokifu_50000, 1434) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_50000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1971,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 55; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+	running_cost_factor: 15;
+	running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(1);//speed boost 110
+		variant_group: 1414;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+
+		cargo_capacity: return 55;
+		default: switch_kokifu_50000_flip;
+		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
@@ -30472,7 +30635,7 @@ graphics {
 							)
 						);
 
-//	speed: switch_speedboost_1;
+	speed: switch_speedboost_1;
 //	purchase_speed: return 75;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
@@ -32810,7 +32973,7 @@ graphics {
 								string(STR_SUFFIX_PRIVATE)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 60;
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
@@ -33758,7 +33921,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 //		cargo_capacity: return 0;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;

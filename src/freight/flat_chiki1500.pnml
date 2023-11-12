@@ -559,7 +559,7 @@ graphics {
 							)
 						);
 
-//	speed: switch_speedboost_1;
+	speed: switch_speedboost_1;
 //	purchase_speed: return 75;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;

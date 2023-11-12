@@ -80,7 +80,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 60;
 	default: switch_waki_10000_loadstack;
 	purchase: switch_waki_10000_yeardep_purchase;

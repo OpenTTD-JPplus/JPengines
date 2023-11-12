@@ -1,3 +1,5 @@
+This is an unused file
+
 spriteset(spriteset_conts_jgr_reefer_a_1, "gfx/containers/jnr_reefer.png") { //old
 	template_container_1(1, 1)
 }
@@ -143,7 +145,7 @@ spritegroup spritegroup_conts_jgr_reefer_i_1_f {
 
 //j
 
-spriteset(spriteset_conts_jgr_reefer_j_1, "gfx/containers/jnr_reefer.png") { //tank a
+spriteset(spriteset_conts_jgr_reefer_j_1, "gfx/containers/jnr_reefer.png") { 
 	template_container_1(1, 1)
 }
 
@@ -240,3 +242,4 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_k_1_loadstage) {
     1: spritegroup_conts_jgr_reefer_k_1_h;
 	1: spritegroup_conts_jgr_reefer_k_1_f;
 }
+ blah 

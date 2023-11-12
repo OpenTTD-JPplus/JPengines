@@ -70,7 +70,7 @@ graphics {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+	speed: switch_speedboost_1;
 	cargo_capacity: return 65;
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;
