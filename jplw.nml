@@ -166,7 +166,7 @@ sort(FEAT_TRAINS, [
 //wagons reefer
 1281, 1455, 1456, 1286, 1460, 1461,
 //wagons cont/car
-1405, 1407, 1412, 1413, 1414, 1415, 1418, 1419, 1400, 39, 44, 43, 
+1405, 1407, 1412, 1413, 1433, 1414, 1434, 1415, 1418, 1419, 1400, 39, 44, 43, 
 //wagons lvst
 1282, 1431, 1432, 
 //wagons open hopper
@@ -21695,6 +21695,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	purchase_speed: return 100;
 	cargo_capacity: return 60;
 	default: switch_waki_10000_loadstack;
 	purchase: switch_waki_10000_yeardep_purchase;
@@ -22307,6 +22308,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 100;
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;
@@ -22755,6 +22757,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	purchase_speed: return 100;
 	cargo_capacity: return 65;
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;
@@ -22952,6 +22955,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	purchase_speed: return 100;
 	cargo_capacity: return 70;
 	default: random_hoki_10000_livery;
 	purchase: switch_hoki_10000_purchase;
@@ -27242,6 +27246,7 @@ random_switch(FEAT_TRAINS, SELF, random_conts_private_a_1_food_80) {
 
 
 
+
 switch(FEAT_TRAINS, SELF, switch_conts_1_general_year, current_year) {
 	0..1970: random_conts_jgr_green_a_1_general_60;
 	random_conts_jgr_green_a_1_general_70;
@@ -27984,6 +27989,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 60;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
@@ -28092,12 +28098,6 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 	6:  switch_taillights_8;
 }
 
-/*
-switch(FEAT_TRAINS, SELF, switch_koki_10000_caboose, position_in_consist_from_end) {
-	0: switch_kokifu_10000_direction;
-	switch_koki_10000_base_loadstack;
-	}
-*/
 
 item (FEAT_TRAINS, koki_10000, 1413) {
 	property {
@@ -28135,6 +28135,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 100;
 		cargo_capacity: return 60;
 		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
@@ -28179,6 +28180,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 100;
 		cargo_capacity: return 45;
 		default: switch_kokifu_10000_flip;
 		purchase: spriteset_kokifu_10000_purchase;
@@ -28192,6 +28194,15 @@ spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_50000.png") {
 spriteset(spriteset_kokifu_50000_purchase, "gfx/freight/koki_50000.png") {
 	template_purchase(89, 352)
 }
+
+alternative_sprites(spriteset_koki_50000_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_50000.png") {
+	template_purchase(1, 352)
+}
+
+alternative_sprites(spriteset_kokifu_50000_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_50000.png") {
+	template_purchase(89, 352)
+}
+
 
 //base
 spriteset(spriteset_koki_50000_empty_a, "gfx/freight/koki_50000.png") {
@@ -28224,7 +28235,6 @@ random_switch (FEAT_TRAINS, SELF, random_koki_50000_brown) {
 }
 
 
-//brakevan test
 
 
 switch(FEAT_TRAINS, SELF, switch_kokifu_50000_up_loadstack, [
@@ -28291,12 +28301,6 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 	6:  switch_taillights_8;
 }
 
-/*
-switch(FEAT_TRAINS, SELF, switch_koki_50000_caboose, position_in_consist_from_end) {
-	0: switch_kokifu_50000_direction;
-	switch_koki_50000_base_loadstack;
-	}
-*/
 
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
@@ -28305,7 +28309,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		name: string(STR_NAME_KOKI_50000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1971,1,1);
-		speed: 100 km/h;
+		speed: 95 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -28333,8 +28337,9 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		purchase_speed: return 95;
 		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -28345,7 +28350,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
-		name: string(STR_NAME_KOKI_50000);
+		name: string(STR_NAME_KOKIFU_50000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1971,1,1);
 		speed: 110 km/h;
@@ -28377,10 +28382,128 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 								string(STR_SUFFIX_JNR)
 							)
 						);
-
+		speed: switch_speedboost_1;
 		cargo_capacity: return 55;
 		default: switch_kokifu_50000_flip;
 		purchase: spriteset_kokifu_50000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+//koki 250000
+
+spriteset(spriteset_koki_250000_jnr_purchase, "gfx/freight/koki_250000.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_koki_250000_jrf_purchase, "gfx/freight/koki_250000.png") {
+	template_purchase(89, 352)
+}
+
+alternative_sprites(spriteset_koki_250000_jnr_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_250000.png") {
+	template_purchase(1, 352)
+}
+
+alternative_sprites(spriteset_koki_250000_jrf_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_250000.png") {
+	template_purchase(89, 352)
+}
+
+//base
+spriteset(spriteset_koki_250000_empty_a, "gfx/freight/koki_250000.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_koki_250000_empty_b, "gfx/freight/koki_250000.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_koki_250000_empty_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_250000.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_koki_250000_empty_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_250000.png") {
+	template_2cc_std(1, 32)
+}
+
+//handrail
+
+spriteset(spriteset_koki_250000_handrail, "gfx/freight/koki_250000.png") {
+	template_2cc_std(1, 320)
+}
+
+alternative_sprites(spriteset_koki_250000_handrail, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/koki_250000.png") {
+	template_2cc_std(1, 320)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_koki_250000_purchase, current_year) {
+	0..1987: spriteset_koki_250000_jnr_purchase;
+	spriteset_koki_250000_jrf_purchase;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_koki_250000_green) {
+	2: spriteset_koki_250000_empty_a;
+	1: spriteset_koki_250000_empty_b;
+}
+
+//main
+
+switch(FEAT_TRAINS, SELF, switch_koki_250000_base_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  random_koki_250000_green;
+    1:  switch_conts_cargo_selection;
+	2:  switch_conts_cargo_selection;
+	3:  switch_conts_cargo_selection;
+	4:  switch_conts_cargo_selection;
+	5:  spriteset_koki_250000_handrail;
+	6:  switch_taillights_8;
+}
+
+
+item (FEAT_TRAINS, koki_250000, 1415) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_250000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1985,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1414;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 70;
+		purchase_speed: return 110;
+		default: switch_koki_250000_base_loadstack;
+		purchase: switch_koki_250000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
@@ -30636,7 +30759,7 @@ graphics {
 						);
 
 	speed: switch_speedboost_1;
-//	purchase_speed: return 75;
+	purchase_speed: return 100;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -32974,6 +33097,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	purchase_speed: return 100;
 	cargo_capacity: return 60;
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
@@ -33922,7 +34046,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 							)
 						);
 		speed: switch_speedboost_1;
-//		cargo_capacity: return 0;
+		purchase_speed: return 110;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
 		cargo_subtype_text: switch_taki_1000_subtype_text;

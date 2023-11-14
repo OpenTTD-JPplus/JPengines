@@ -409,7 +409,8 @@ STR_NAME_KOKI_5500		:KOKI 5500 Container Carrier
 STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
 STR_NAME_KOKIFU_10000	:KOKIFU 10000 Container Carrier with Brake Compartment
 STR_NAME_KOKI_50000		:KOKI 50000 Container Carrier
-STR_NAME_KOKFU_50000    :KOKIFU 50000 Container Carrier with Brake Compartment
+STR_NAME_KOKIFU_50000    :KOKIFU 50000 Container Carrier with Brake Compartment
+STR_NAME_KOKI_250000	:KOKI 250000 Container Carrier
 STR_NAME_KOKI_100		:KOKI 100 Container Carrier
 STR_NAME_CONTAINER		:KOKI 101 Container Carrier
 STR_NAME_M250_TRAILER   :T260 Cargo EMU Trailer

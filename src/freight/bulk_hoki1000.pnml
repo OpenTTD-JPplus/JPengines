@@ -63,6 +63,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 100;
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;

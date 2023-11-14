@@ -71,6 +71,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	purchase_speed: return 100;
 	cargo_capacity: return 65;
 	default: switch_hoki_8300_livery;
 	cargo_subtype_text: switch_hoki_8300_subtype_text;

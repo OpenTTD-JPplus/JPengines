@@ -77,6 +77,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 							)
 						);
 		speed: switch_speedboost_1;
+		purchase_speed: return 85;
 		cargo_capacity: return 60;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
