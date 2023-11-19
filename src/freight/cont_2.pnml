@@ -218,66 +218,88 @@ spritegroup spritegroup_conts_jnr_green_k_2_f {
 
 //randoms for loading stages
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_loadstage) {
+//	independent: random_conts_jnr_green_a_2_loadstage;
+//	independent: random_conts_jnr_green_a_3_loadstage;
 	1: spriteset_conts_jnr_green_a_2;
     1: spritegroup_conts_jnr_green_a_2_h;
 	1: spritegroup_conts_jnr_green_a_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_b_2_loadstage) {
+//	independent: random_conts_jnr_green_b_2_loadstage;
+//	independent: random_conts_jnr_green_b_3_loadstage;
 	1: spriteset_conts_jnr_green_b_2;
     1: spritegroup_conts_jnr_green_b_2_h;
 	1: spritegroup_conts_jnr_green_b_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_c_2_loadstage) {
+//	independent: random_conts_jnr_green_c_2_loadstage;
+//	independent: random_conts_jnr_green_c_3_loadstage;
 	1: spriteset_conts_jnr_green_c_2;
     1: spritegroup_conts_jnr_green_c_2_h;
 	1: spritegroup_conts_jnr_green_c_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_d_2_loadstage) {
+//	independent: random_conts_jnr_green_d_2_loadstage;
+//	independent: random_conts_jnr_green_d_3_loadstage;
 	1: spriteset_conts_jnr_green_d_2;
     1: spritegroup_conts_jnr_green_d_2_h;
 	1: spritegroup_conts_jnr_green_d_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_e_2_loadstage) {
+//	independent: random_conts_jnr_green_e_2_loadstage;
+//	independent: random_conts_jnr_green_e_3_loadstage;
 	1: spriteset_conts_jnr_green_e_2;
     1: spritegroup_conts_jnr_green_e_2_h;
 	1: spritegroup_conts_jnr_green_e_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_f_2_loadstage) {
+//	independent: random_conts_jnr_green_f_2_loadstage;
+//	independent: random_conts_jnr_green_f_3_loadstage;
 	1: spriteset_conts_jnr_green_f_2;
     1: spritegroup_conts_jnr_green_f_2_h;
 	1: spritegroup_conts_jnr_green_f_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_g_2_loadstage) {
+//	independent: random_conts_jnr_green_g_2_loadstage;
+//	independent: random_conts_jnr_green_g_3_loadstage;
 	1: spriteset_conts_jnr_green_g_2;
     1: spritegroup_conts_jnr_green_g_2_h;
 	1: spritegroup_conts_jnr_green_g_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_h_2_loadstage) {
+//	independent: random_conts_jnr_green_h_2_loadstage;
+//	independent: random_conts_jnr_green_h_3_loadstage;
 	1: spriteset_conts_jnr_green_h_2;
     1: spritegroup_conts_jnr_green_h_2_h;
 	1: spritegroup_conts_jnr_green_h_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_i_2_loadstage) {
+//	independent: random_conts_jnr_green_i_2_loadstage;
+//	independent: random_conts_jnr_green_i_3_loadstage;
 	1: spriteset_conts_jnr_green_i_2;
     1: spritegroup_conts_jnr_green_i_2_h;
 	1: spritegroup_conts_jnr_green_i_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_j_2_loadstage) {
+//	independent: random_conts_jnr_green_j_2_loadstage;
+//	independent: random_conts_jnr_green_j_3_loadstage;
 	1: spriteset_conts_jnr_green_j_2;
     1: spritegroup_conts_jnr_green_j_2_h;
 	1: spritegroup_conts_jnr_green_j_2_f;
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_k_2_loadstage) {
+//	independent: random_conts_jnr_green_k_2_loadstage;
+//	independent: random_conts_jnr_green_k_3_loadstage;
 	1: spriteset_conts_jnr_green_k_2;
     1: spritegroup_conts_jnr_green_k_2_h;
 	1: spritegroup_conts_jnr_green_k_2_f;
@@ -690,6 +712,9 @@ spriteset(spriteset_conts_jrf_red_i_2, "gfx/containers/jrf_red.png") { //green j
 	template_container_2(1, 256)
 }
 
+alternative_sprites(spriteset_conts_jrf_red_i_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jrf_red_32.png") {
+	template_container_2(1, 256)
+}
 
 spritegroup spritegroup_conts_jrf_red_i_2_h {
     loading: [spriteset_conts_blank, spriteset_conts_jrf_red_i_2];
@@ -708,7 +733,9 @@ spriteset(spriteset_conts_jrf_red_j_2, "gfx/containers/jrf_red.png") { //jrf eco
 	template_container_2(1, 288)
 }
 
-
+alternative_sprites(spriteset_conts_jrf_red_j_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jrf_red_32.png") {
+	template_container_2(1, 288)
+}
 
 spritegroup spritegroup_conts_jrf_red_j_2_h {
     loading: [spriteset_conts_blank, spriteset_conts_jrf_red_j_2];
@@ -810,9 +837,13 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_k_2_loadstage) {
 	1: spritegroup_conts_jrf_red_k_2_f;
 }
 
-//reefer
+//jnr reefer conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
 
-spriteset(spriteset_conts_jnr_reefer_a_2, "gfx/containers/jnr_reefer.png") { //old
+//a
+
+spriteset(spriteset_conts_jnr_reefer_a_2, "gfx/containers/jnr_reefer.png") { //old white
 	template_container_2(1, 1)
 }
 
@@ -828,7 +859,7 @@ spritegroup spritegroup_conts_jnr_reefer_a_2_f {
 
 //b
 
-spriteset(spriteset_conts_jnr_reefer_b_2, "gfx/containers/jnr_reefer.png") { //old 
+spriteset(spriteset_conts_jnr_reefer_b_2, "gfx/containers/jnr_reefer.png") { //old red logo
 	template_container_2(1, 32)
 }
 
@@ -844,7 +875,7 @@ spritegroup spritegroup_conts_jnr_reefer_b_2_f {
 
 //c
 
-spriteset(spriteset_conts_jnr_reefer_c_2, "gfx/containers/jnr_reefer.png") {
+spriteset(spriteset_conts_jnr_reefer_c_2, "gfx/containers/jnr_reefer.png") { //blue stripe
 	template_container_2(1, 64)
 }
 
@@ -860,7 +891,7 @@ spritegroup spritegroup_conts_jnr_reefer_c_2_f {
 
 //d
 
-spriteset(spriteset_conts_jnr_reefer_d_2, "gfx/containers/jnr_reefer.png") {
+spriteset(spriteset_conts_jnr_reefer_d_2, "gfx/containers/jnr_reefer.png") { //blue bottom 
 	template_container_2(1, 96)
 }
 
@@ -876,7 +907,7 @@ spritegroup spritegroup_conts_jnr_reefer_d_2_f {
 
 //e
 
-spriteset(spriteset_conts_jnr_reefer_e_2, "gfx/containers/jnr_reefer.png") { //red
+spriteset(spriteset_conts_jnr_reefer_e_2, "gfx/containers/jnr_reefer.png") { //blue bottom red logo
 	template_container_2(1, 128)
 }
 
@@ -890,6 +921,9 @@ spritegroup spritegroup_conts_jnr_reefer_e_2_f {
     loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_e_2];
 }
 
+//todo draw more early private reefers
+
+/*
 //f
 
 spriteset(spriteset_conts_jnr_reefer_f_2, "gfx/containers/jnr_reefer.png") { //white
@@ -987,6 +1021,7 @@ spritegroup spritegroup_conts_jnr_reefer_k_2_f {
     loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_k_2];
 }
 
+*/
 
 //randoms for loading stages
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_a_2_loadstage) {
@@ -1019,6 +1054,7 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_e_2_loadstage) {
 	1: spritegroup_conts_jnr_reefer_e_2_f;
 }
 
+/*
 random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_f_2_loadstage) {
 	1: spriteset_conts_jnr_reefer_f_2;
     1: spritegroup_conts_jnr_reefer_f_2_h;
@@ -1055,102 +1091,931 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_k_2_loadstage) {
 	1: spritegroup_conts_jnr_reefer_k_2_f;
 }
 
+*/
+
+//private general conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
+
+//a
+
+spriteset(spriteset_conts_private_general_a_2, "gfx/containers/private_containers.png") { //jfe dolphins
+	template_container_2(1, 1)
+}
+
+spritegroup spritegroup_conts_private_general_a_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_a_2];
+}
+
+spritegroup spritegroup_conts_private_general_a_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_a_2];
+}
+
+
+//b
+
+spriteset(spriteset_conts_private_general_b_2, "gfx/containers/private_containers.png") { //nippon soda blue
+	template_container_2(1, 32)
+}
+
+spritegroup spritegroup_conts_private_general_b_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_b_2];
+}
+
+spritegroup spritegroup_conts_private_general_b_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_b_2];
+}
+
+//c
+
+spriteset(spriteset_conts_private_general_c_2, "gfx/containers/private_containers.png") { //nippon soda red
+	template_container_2(1, 64)
+}
+
+
+spritegroup spritegroup_conts_private_general_c_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_c_2];
+}
+
+spritegroup spritegroup_conts_private_general_c_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_c_2];
+}
+
+//d
+
+spriteset(spriteset_conts_private_general_d_2, "gfx/containers/private_containers.png") { //grey red
+	template_container_2(1, 96)
+}
+
+spritegroup spritegroup_conts_private_general_d_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_d_2];
+}
+
+spritegroup spritegroup_conts_private_general_d_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_d_2];
+}
+
+//e
+
+spriteset(spriteset_conts_private_general_e_2, "gfx/containers/private_containers.png") { //grey cc boue
+	template_container_2(1, 128)
+}
 
 
 
+spritegroup spritegroup_conts_private_general_e_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_e_2];
+}
+
+spritegroup spritegroup_conts_private_general_e_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_e_2];
+}
+
+//f
+
+spriteset(spriteset_conts_private_general_f_2, "gfx/containers/private_containers.png") { //grey cc green
+	template_container_2(1, 160)
+}
+
+
+spritegroup spritegroup_conts_private_general_f_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_f_2];
+}
+
+spritegroup spritegroup_conts_private_general_f_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_f_2];
+}
+
+//g
+
+spriteset(spriteset_conts_private_general_g_2, "gfx/containers/private_containers.png") { //lt blue
+	template_container_2(1, 192)
+}
+
+
+
+spritegroup spritegroup_conts_private_general_g_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_g_2];
+}
+
+spritegroup spritegroup_conts_private_general_g_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_g_2];
+}
+
+
+//h
+
+spriteset(spriteset_conts_private_general_h_2, "gfx/containers/private_containers.png") { //pink
+	template_container_2(1, 224)
+}
+
+
+spritegroup spritegroup_conts_private_general_h_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_h_2];
+}
+
+spritegroup spritegroup_conts_private_general_h_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_h_2];
+}
+
+//i
+
+spriteset(spriteset_conts_private_general_i_2, "gfx/containers/private_containers.png") { //reed blue
+	template_container_2(1, 256)
+}
+
+
+spritegroup spritegroup_conts_private_general_i_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_i_2];
+}
+
+spritegroup spritegroup_conts_private_general_i_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_i_2];
+}
+
+
+//j
+
+spriteset(spriteset_conts_private_general_j_2, "gfx/containers/private_containers.png") { //pink green
+	template_container_2(1, 288)
+}
+
+
+
+spritegroup spritegroup_conts_private_general_j_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_j_2];
+}
+
+spritegroup spritegroup_conts_private_general_j_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_j_2];
+}
+
+//k
+
+spriteset(spriteset_conts_private_general_k_2, "gfx/containers/private_containers.png") { //cc green
+	template_container_2(1, 320)
+}
+
+
+
+spritegroup spritegroup_conts_private_general_k_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_general_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_general_k_2];
+}
+
+spritegroup spritegroup_conts_private_general_k_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_general_k_2];
+}
+
+
+//randoms for loading stages
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_a_2_loadstage) {
+	1: spriteset_conts_private_general_a_2;
+    1: spritegroup_conts_private_general_a_2_h;
+	1: spritegroup_conts_private_general_a_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_b_2_loadstage) {
+	1: spriteset_conts_private_general_b_2;
+    1: spritegroup_conts_private_general_b_2_h;
+	1: spritegroup_conts_private_general_b_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_c_2_loadstage) {
+	1: spriteset_conts_private_general_c_2;
+    1: spritegroup_conts_private_general_c_2_h;
+	1: spritegroup_conts_private_general_c_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_d_2_loadstage) {
+	1: spriteset_conts_private_general_d_2;
+    1: spritegroup_conts_private_general_d_2_h;
+	1: spritegroup_conts_private_general_d_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_e_2_loadstage) {
+	1: spriteset_conts_private_general_e_2;
+    1: spritegroup_conts_private_general_e_2_h;
+	1: spritegroup_conts_private_general_e_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_f_2_loadstage) {
+	1: spriteset_conts_private_general_f_2;
+    1: spritegroup_conts_private_general_f_2_h;
+	1: spritegroup_conts_private_general_f_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_g_2_loadstage) {
+	1: spriteset_conts_private_general_g_2;
+    1: spritegroup_conts_private_general_g_2_h;
+	1: spritegroup_conts_private_general_g_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_h_2_loadstage) {
+	1: spriteset_conts_private_general_h_2;
+    1: spritegroup_conts_private_general_h_2_h;
+	1: spritegroup_conts_private_general_h_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_i_2_loadstage) {
+	1: spriteset_conts_private_general_i_2;
+    1: spritegroup_conts_private_general_i_2_h;
+	1: spritegroup_conts_private_general_i_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_j_2_loadstage) {
+	1: spriteset_conts_private_general_j_2;
+    1: spritegroup_conts_private_general_j_2_h;
+	1: spritegroup_conts_private_general_j_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_general_k_2_loadstage) {
+	1: spriteset_conts_private_general_k_2;
+    1: spritegroup_conts_private_general_k_2_h;
+	1: spritegroup_conts_private_general_k_2_f;
+}
+
+
+//private tanker conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
+
+//a
+
+spriteset(spriteset_conts_private_reefer_a_2, "gfx/containers/private_reefers.png") { //yanmar
+	template_container_2(1, 1)
+}
+
+spritegroup spritegroup_conts_private_reefer_a_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_a_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_a_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_a_2];
+}
+
+
+//b
+
+spriteset(spriteset_conts_private_reefer_b_2, "gfx/containers/private_reefers.png") { //other
+	template_container_2(1, 32)
+}
+
+spritegroup spritegroup_conts_private_reefer_b_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_b_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_b_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_b_2];
+}
+
+//c
+
+spriteset(spriteset_conts_private_reefer_c_2, "gfx/containers/private_reefers.png") { //other
+	template_container_2(1, 64)
+}
+
+
+spritegroup spritegroup_conts_private_reefer_c_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_c_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_c_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_c_2];
+}
+
+//d
+
+spriteset(spriteset_conts_private_reefer_d_2, "gfx/containers/private_reefers.png") { //jot cool
+	template_container_2(1, 96)
+}
+
+spritegroup spritegroup_conts_private_reefer_d_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_d_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_d_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_d_2];
+}
+
+//e
+
+spriteset(spriteset_conts_private_reefer_e_2, "gfx/containers/private_reefers.png") { //jot cool
+	template_container_2(1, 128)
+}
+
+
+
+spritegroup spritegroup_conts_private_reefer_e_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_e_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_e_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_e_2];
+}
+
+//f
+
+spriteset(spriteset_conts_private_reefer_f_2, "gfx/containers/private_reefers.png") { //jfc
+	template_container_2(1, 160)
+}
+
+
+spritegroup spritegroup_conts_private_reefer_f_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_f_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_f_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_f_2];
+}
+
+//g
+
+spriteset(spriteset_conts_private_reefer_g_2, "gfx/containers/private_reefers.png") { //jot green
+	template_container_2(1, 192)
+}
+
+
+
+spritegroup spritegroup_conts_private_reefer_g_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_g_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_g_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_g_2];
+}
+
+
+//h
+
+spriteset(spriteset_conts_private_reefer_h_2, "gfx/containers/private_reefers.png") { //jot red
+	template_container_2(1, 224)
+}
+
+
+spritegroup spritegroup_conts_private_reefer_h_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_h_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_h_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_h_2];
+}
+
+//i
+
+spriteset(spriteset_conts_private_reefer_i_2, "gfx/containers/private_reefers.png") { //jot blue
+	template_container_2(1, 256)
+}
+
+
+spritegroup spritegroup_conts_private_reefer_i_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_i_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_i_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_i_2];
+}
+
+
+//j
+
+spriteset(spriteset_conts_private_reefer_j_2, "gfx/containers/private_reefers.png") { //jot new
+	template_container_2(1, 288)
+}
+
+
+
+spritegroup spritegroup_conts_private_reefer_j_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_j_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_j_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_j_2];
+}
+
+//k
+
+spriteset(spriteset_conts_private_reefer_k_2, "gfx/containers/private_reefers.png") { //orange
+	template_container_2(1, 320)
+}
+
+
+
+spritegroup spritegroup_conts_private_reefer_k_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_reefer_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_reefer_k_2];
+}
+
+spritegroup spritegroup_conts_private_reefer_k_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_reefer_k_2];
+}
+
+
+//randoms for loading stages
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_a_2_loadstage) {
+	1: spriteset_conts_private_reefer_a_2;
+    1: spritegroup_conts_private_reefer_a_2_h;
+	1: spritegroup_conts_private_reefer_a_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_b_2_loadstage) {
+	1: spriteset_conts_private_reefer_b_2;
+    1: spritegroup_conts_private_reefer_b_2_h;
+	1: spritegroup_conts_private_reefer_b_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_c_2_loadstage) {
+	1: spriteset_conts_private_reefer_c_2;
+    1: spritegroup_conts_private_reefer_c_2_h;
+	1: spritegroup_conts_private_reefer_c_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_d_2_loadstage) {
+	1: spriteset_conts_private_reefer_d_2;
+    1: spritegroup_conts_private_reefer_d_2_h;
+	1: spritegroup_conts_private_reefer_d_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_e_2_loadstage) {
+	1: spriteset_conts_private_reefer_e_2;
+    1: spritegroup_conts_private_reefer_e_2_h;
+	1: spritegroup_conts_private_reefer_e_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_f_2_loadstage) {
+	1: spriteset_conts_private_reefer_f_2;
+    1: spritegroup_conts_private_reefer_f_2_h;
+	1: spritegroup_conts_private_reefer_f_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_g_2_loadstage) {
+	1: spriteset_conts_private_reefer_g_2;
+    1: spritegroup_conts_private_reefer_g_2_h;
+	1: spritegroup_conts_private_reefer_g_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_h_2_loadstage) {
+	1: spriteset_conts_private_reefer_h_2;
+    1: spritegroup_conts_private_reefer_h_2_h;
+	1: spritegroup_conts_private_reefer_h_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_i_2_loadstage) {
+	1: spriteset_conts_private_reefer_i_2;
+    1: spritegroup_conts_private_reefer_i_2_h;
+	1: spritegroup_conts_private_reefer_i_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_j_2_loadstage) {
+	1: spriteset_conts_private_reefer_j_2;
+    1: spritegroup_conts_private_reefer_j_2_h;
+	1: spritegroup_conts_private_reefer_j_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_reefer_k_2_loadstage) {
+	1: spriteset_conts_private_reefer_k_2;
+    1: spritegroup_conts_private_reefer_k_2_h;
+	1: spritegroup_conts_private_reefer_k_2_f;
+}
+
+
+//private tanker conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
+
+//a
+
+spriteset(spriteset_conts_private_tanker_a_2, "gfx/containers/private_tankers.png") { //grey frameless
+	template_container_2(1, 1)
+}
+
+spritegroup spritegroup_conts_private_tanker_a_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_a_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_a_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_a_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_a_2];
+}
+
+
+//b
+
+spriteset(spriteset_conts_private_tanker_b_2, "gfx/containers/private_tankers.png") { //black frameless
+	template_container_2(1, 32)
+}
+
+spritegroup spritegroup_conts_private_tanker_b_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_b_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_b_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_b_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_b_2];
+}
+
+//c
+
+spriteset(spriteset_conts_private_tanker_c_2, "gfx/containers/private_tankers.png") { //silver frameless
+	template_container_2(1, 64)
+}
+
+
+spritegroup spritegroup_conts_private_tanker_c_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_c_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_c_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_c_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_c_2];
+}
+
+//d
+
+spriteset(spriteset_conts_private_tanker_d_2, "gfx/containers/private_tankers.png") { //blue frame
+	template_container_2(1, 96)
+}
+
+spritegroup spritegroup_conts_private_tanker_d_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_d_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_d_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_d_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_d_2];
+}
+
+//e
+
+spriteset(spriteset_conts_private_tanker_e_2, "gfx/containers/private_tankers.png") { //yellow frame
+	template_container_2(1, 128)
+}
+
+
+
+spritegroup spritegroup_conts_private_tanker_e_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_e_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_e_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_e_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_e_2];
+}
+
+//f
+
+spriteset(spriteset_conts_private_tanker_f_2, "gfx/containers/private_tankers.png") { //green frame
+	template_container_2(1, 160)
+}
+
+
+spritegroup spritegroup_conts_private_tanker_f_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_f_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_f_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_f_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_f_2];
+}
+
+//g
+
+spriteset(spriteset_conts_private_tanker_g_2, "gfx/containers/private_tankers.png") { //cream 
+	template_container_2(1, 192)
+}
+
+
+
+spritegroup spritegroup_conts_private_tanker_g_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_g_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_g_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_g_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_g_2];
+}
+
+
+//h
+
+spriteset(spriteset_conts_private_tanker_h_2, "gfx/containers/private_tankers.png") { //blue white
+	template_container_2(1, 224)
+}
+
+
+spritegroup spritegroup_conts_private_tanker_h_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_h_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_h_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_h_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_h_2];
+}
+
+//i
+
+spriteset(spriteset_conts_private_tanker_i_2, "gfx/containers/private_tankers.png") { //green white
+	template_container_2(1, 256)
+}
+
+
+spritegroup spritegroup_conts_private_tanker_i_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_i_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_i_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_i_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_i_2];
+}
+
+
+//j
+
+spriteset(spriteset_conts_private_tanker_j_2, "gfx/containers/private_tankers.png") { //cc green
+	template_container_2(1, 288)
+}
+
+
+
+spritegroup spritegroup_conts_private_tanker_j_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_j_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_j_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_j_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_j_2];
+}
+
+//k
+
+spriteset(spriteset_conts_private_tanker_k_2, "gfx/containers/private_tankers.png") { //cc blue
+	template_container_2(1, 320)
+}
+
+
+
+spritegroup spritegroup_conts_private_tanker_k_2_h {
+    loading: [spriteset_conts_blank, spriteset_conts_private_tanker_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_private_tanker_k_2];
+}
+
+spritegroup spritegroup_conts_private_tanker_k_2_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_k_2];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_private_tanker_k_2];
+}
+
+
+//randoms for loading stages
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_a_2_loadstage) {
+	1: spriteset_conts_private_tanker_a_2;
+    1: spritegroup_conts_private_tanker_a_2_h;
+	1: spritegroup_conts_private_tanker_a_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_b_2_loadstage) {
+	1: spriteset_conts_private_tanker_b_2;
+    1: spritegroup_conts_private_tanker_b_2_h;
+	1: spritegroup_conts_private_tanker_b_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_c_2_loadstage) {
+	1: spriteset_conts_private_tanker_c_2;
+    1: spritegroup_conts_private_tanker_c_2_h;
+	1: spritegroup_conts_private_tanker_c_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_d_2_loadstage) {
+	1: spriteset_conts_private_tanker_d_2;
+    1: spritegroup_conts_private_tanker_d_2_h;
+	1: spritegroup_conts_private_tanker_d_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_e_2_loadstage) {
+	1: spriteset_conts_private_tanker_e_2;
+    1: spritegroup_conts_private_tanker_e_2_h;
+	1: spritegroup_conts_private_tanker_e_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_f_2_loadstage) {
+	1: spriteset_conts_private_tanker_f_2;
+    1: spritegroup_conts_private_tanker_f_2_h;
+	1: spritegroup_conts_private_tanker_f_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_g_2_loadstage) {
+	1: spriteset_conts_private_tanker_g_2;
+    1: spritegroup_conts_private_tanker_g_2_h;
+	1: spritegroup_conts_private_tanker_g_2_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_h_2_loadstage) {
+	1: spriteset_conts_private_tanker_h_2;
+    1: spritegroup_conts_private_tanker_h_2_h;
+	1: spritegroup_conts_private_tanker_h_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_i_2_loadstage) {
+	1: spriteset_conts_private_tanker_i_2;
+    1: spritegroup_conts_private_tanker_i_2_h;
+	1: spritegroup_conts_private_tanker_i_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_j_2_loadstage) {
+	1: spriteset_conts_private_tanker_j_2;
+    1: spritegroup_conts_private_tanker_j_2_h;
+	1: spritegroup_conts_private_tanker_j_2_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_private_tanker_k_2_loadstage) {
+	1: spriteset_conts_private_tanker_k_2;
+    1: spritegroup_conts_private_tanker_k_2_h;
+	1: spritegroup_conts_private_tanker_k_2_f;
+}
 
 //randoms for variation
 
 //general conts
 
 //60s era JNR green
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_general_60) {
-	5: random_conts_jnr_green_a_2_loadstage;
-    8: random_conts_jnr_green_b_2_loadstage;
-	5: random_conts_jnr_green_c_2_loadstage;
-	2: random_conts_jnr_green_d_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_2_general_y1960) {
+	1: random_conts_jnr_green_a_2_loadstage;
+    2: random_conts_jnr_green_b_2_loadstage;
+	7: random_conts_jnr_green_c_2_loadstage;
+	3: random_conts_jnr_green_d_2_loadstage;
 }
 
 //70s era JNR green
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_general_70) {
-	5: random_conts_jnr_green_d_2_loadstage;
-    2: random_conts_jnr_green_e_2_loadstage;
-	5: random_conts_jnr_green_f_2_loadstage;
-	5: random_conts_jnr_green_g_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_2_general_y1970) {
+	4: random_conts_jnr_green_a_2_loadstage;
+    4: random_conts_jnr_green_b_2_loadstage;
+	1: random_conts_jnr_green_c_2_loadstage;
+	4: random_conts_jnr_green_d_2_loadstage;
+    5: random_conts_jnr_green_e_2_loadstage;
+	6: random_conts_jnr_green_f_2_loadstage;
+	1: random_conts_jnr_green_g_2_loadstage;
 }
 //80s era mixed blue/green
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_general_80) {
-	5: random_conts_jrf_blue_a_2_loadstage;
-    5: random_conts_jrf_blue_b_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_2_general_y1980) {
+	2: random_conts_jrf_blue_a_2_loadstage;
+    1: random_conts_jrf_blue_b_2_loadstage;
 	5: random_conts_jrf_blue_c_2_loadstage;
-	5: random_conts_jrf_blue_d_2_loadstage;
-	2: random_conts_jnr_green_d_2_loadstage;
-    2: random_conts_jnr_green_e_2_loadstage;
-	2: random_conts_jnr_green_f_2_loadstage;
-	2: random_conts_jnr_green_g_2_loadstage;
+	7: random_conts_jrf_blue_d_2_loadstage;
+	8: random_conts_jnr_green_a_2_loadstage;
+    6: random_conts_jnr_green_b_2_loadstage;
+	8: random_conts_jnr_green_c_2_loadstage;
+	3: random_conts_jnr_green_d_2_loadstage;
+    3: random_conts_jnr_green_e_2_loadstage;
+	5: random_conts_jnr_green_f_2_loadstage;
+	8: random_conts_jnr_green_g_2_loadstage;
 }
-//late 80s blue only
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_blue_a_2_general_85) {
-	5: random_conts_jrf_blue_a_2_loadstage;
-    5: random_conts_jrf_blue_b_2_loadstage;
-	5: random_conts_jrf_blue_c_2_loadstage;
-	5: random_conts_jrf_blue_d_2_loadstage;
+//late 80s mixed blue green
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_blue_2_general_y1985) {
+	2: random_conts_jrf_blue_a_2_loadstage;
+    6: random_conts_jrf_blue_b_2_loadstage;
+	4: random_conts_jrf_blue_c_2_loadstage;
+	3: random_conts_jrf_blue_d_2_loadstage;
+	4: random_conts_jrf_blue_h_2_loadstage;
+    6: random_conts_jrf_blue_i_2_loadstage;
+	6: random_conts_jrf_blue_j_2_loadstage;
+	3: random_conts_jrf_blue_k_2_loadstage;
+	1: random_conts_jnr_green_d_2_loadstage;
+    6: random_conts_jnr_green_e_2_loadstage;
+	2: random_conts_jnr_green_f_2_loadstage;
+	6: random_conts_jnr_green_g_2_loadstage;
 }
 //90s blue jrf mixed
-random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_a_2_general_90) {
-	8: random_conts_jrf_blue_h_2_loadstage;
-    5: random_conts_jrf_blue_i_2_loadstage;
-	5: random_conts_jrf_blue_j_2_loadstage;
-	2: random_conts_jrf_blue_k_2_loadstage;
-	2: random_conts_jrf_blue_a_2_loadstage;
-    2: random_conts_jrf_blue_b_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_2_general_y1990) {
+	7: random_conts_jrf_blue_a_2_loadstage;
+    9: random_conts_jrf_blue_b_2_loadstage;
 	2: random_conts_jrf_blue_c_2_loadstage;
-	2: random_conts_jrf_blue_d_2_loadstage;
+	6: random_conts_jrf_blue_d_2_loadstage;
+	7: random_conts_jrf_blue_h_2_loadstage;
+    2: random_conts_jrf_blue_i_2_loadstage;
+	3: random_conts_jrf_blue_j_2_loadstage;
+	5: random_conts_jrf_blue_k_2_loadstage;
+
 }
 //90s blue only
-random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_a_2_general_95) {
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_2_general_y1995) {
+    6: random_conts_jrf_blue_b_2_loadstage;
+	3: random_conts_jrf_blue_c_2_loadstage;
+	1: random_conts_jrf_blue_d_2_loadstage;
 	8: random_conts_jrf_blue_h_2_loadstage;
-    5: random_conts_jrf_blue_i_2_loadstage;
-	5: random_conts_jrf_blue_j_2_loadstage;
-	2: random_conts_jrf_blue_k_2_loadstage;
+    8: random_conts_jrf_blue_i_2_loadstage;
+	3: random_conts_jrf_blue_j_2_loadstage;
+	1: random_conts_jrf_blue_k_2_loadstage;
+	9: random_conts_jrf_red_c_2_loadstage;
+	7: random_conts_jrf_red_d_2_loadstage;
+	2: random_conts_jrf_red_e_2_loadstage;
 }
 //00s red jrf mixed
-random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_2_general_00) {
-	8: random_conts_jrf_red_c_2_loadstage;
-	8: random_conts_jrf_red_d_2_loadstage;
-	8: random_conts_jrf_red_e_2_loadstage;
-	8: random_conts_jrf_red_f_2_loadstage;
-	2: random_conts_jrf_blue_h_2_loadstage;
-    2: random_conts_jrf_blue_i_2_loadstage;
-	2: random_conts_jrf_blue_j_2_loadstage;
-	2: random_conts_jrf_blue_k_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_2_general_y2000) {
+	6: random_conts_jrf_red_b_2_loadstage;
+	9: random_conts_jrf_red_c_2_loadstage;
+	1: random_conts_jrf_red_d_2_loadstage;
+	2: random_conts_jrf_red_e_2_loadstage;
+	4: random_conts_jrf_red_f_2_loadstage;
+	6: random_conts_jrf_red_g_2_loadstage;
+	2: random_conts_jrf_red_h_2_loadstage;
+	8: random_conts_jrf_red_k_2_loadstage;
+	5: random_conts_jrf_blue_h_2_loadstage;
+    5: random_conts_jrf_blue_i_2_loadstage;
+	7: random_conts_jrf_blue_j_2_loadstage;
+	1: random_conts_jrf_blue_k_2_loadstage;
 
 }
 
 //10s red jrf mixed
-random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_2_general_05) {
-	8: random_conts_jrf_red_b_2_loadstage;
-	8: random_conts_jrf_red_c_2_loadstage;
-	8: random_conts_jrf_red_d_2_loadstage;
-	8: random_conts_jrf_red_e_2_loadstage;
-	5: random_conts_jrf_red_f_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_2_general_y2005) {
+	7: random_conts_jrf_red_b_2_loadstage;
+	9: random_conts_jrf_red_c_2_loadstage;
+	2: random_conts_jrf_red_d_2_loadstage;
+	3: random_conts_jrf_red_e_2_loadstage;
+	8: random_conts_jrf_red_f_2_loadstage;
 	5: random_conts_jrf_red_g_2_loadstage;
-	5: random_conts_jrf_red_h_2_loadstage;
-	2: random_conts_jrf_red_k_2_loadstage;
+	2: random_conts_jrf_red_h_2_loadstage;
+	9: random_conts_jrf_red_k_2_loadstage;
+	1: random_conts_jrf_blue_h_2_loadstage;
+    3: random_conts_jrf_blue_i_2_loadstage;
 
 }
 
 //20s red jrf mixed
-random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_2_general_25) {
-	8: random_conts_jrf_red_b_2_loadstage;
-	8: random_conts_jrf_red_c_2_loadstage;
-	8: random_conts_jrf_red_d_2_loadstage;
-	8: random_conts_jrf_red_g_2_loadstage;
-	2: random_conts_jrf_red_h_2_loadstage;
-	2: random_conts_jrf_red_i_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_2_general_y2015) {
+	2: random_conts_jrf_red_b_2_loadstage;
+	7: random_conts_jrf_red_c_2_loadstage;
+	4: random_conts_jrf_red_d_2_loadstage;
+	8: random_conts_jrf_red_e_2_loadstage;
+	6: random_conts_jrf_red_f_2_loadstage;
+	6: random_conts_jrf_red_g_2_loadstage;
+	7: random_conts_jrf_red_h_2_loadstage;
+	7: random_conts_jrf_red_i_2_loadstage;
 	2: random_conts_jrf_red_j_2_loadstage;
 	2: random_conts_jrf_red_k_2_loadstage;
-
 }
 
 
@@ -1159,45 +2024,65 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_2_general_25) {
 
 //jnr reefer old style
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_a_2_food_60) {
-	8: random_conts_jnr_reefer_a_2_loadstage;
-    2: random_conts_jnr_reefer_b_2_loadstage;
-	5: random_conts_jnr_green_c_2_loadstage;
-	2: random_conts_jnr_green_d_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_2_food_y1960) {
+	1: random_conts_jnr_reefer_a_2_loadstage;
+    4: random_conts_jnr_reefer_b_2_loadstage;
+	9: random_conts_jnr_green_c_2_loadstage;
+	3: random_conts_jnr_green_d_2_loadstage;
 }
 
 //jnr reefer newer style
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_a_2_food_70) {
-	2: random_conts_jnr_reefer_b_2_loadstage;
-    2: random_conts_jnr_reefer_c_2_loadstage;
-	5: random_conts_jnr_reefer_d_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_2_food_y1970) {
+	3: random_conts_jnr_reefer_b_2_loadstage;
+    4: random_conts_jnr_reefer_c_2_loadstage;
+	4: random_conts_jnr_reefer_d_2_loadstage;
 	5: random_conts_jnr_reefer_e_2_loadstage;
+	1: random_conts_jnr_green_2_general_y1970;
 }
 
 //private reefers jnr mixed
 
-random_switch(FEAT_TRAINS, SELF, random_conts_private_a_2_food_80) {
-	2: random_conts_jnr_reefer_f_2_loadstage;
-    2: random_conts_jnr_reefer_g_2_loadstage;
-	5: random_conts_jnr_reefer_h_2_loadstage;
-	5: random_conts_jnr_reefer_i_2_loadstage;
-	5: random_conts_jnr_reefer_j_2_loadstage;
-	5: random_conts_jnr_reefer_k_2_loadstage;
-	2: random_conts_jnr_reefer_b_2_loadstage;
-    2: random_conts_jnr_reefer_c_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_private_2_food_y1980) {
+	1: random_conts_private_reefer_b_2_loadstage;
+    5: random_conts_private_reefer_c_2_loadstage;
+	9: random_conts_private_reefer_f_2_loadstage;
+	2: random_conts_private_reefer_g_2_loadstage;
+	6: random_conts_jnr_reefer_b_2_loadstage;
+    8: random_conts_jnr_reefer_c_2_loadstage;
 	2: random_conts_jnr_reefer_d_2_loadstage;
-	2: random_conts_jnr_reefer_e_2_loadstage;
+	5: random_conts_jnr_reefer_e_2_loadstage;
+	10: random_conts_jnr_green_2_general_y1980;
+
+	//todo more old private reefers
 }
 
 //private reefers only
-random_switch(FEAT_TRAINS, SELF, random_conts_private_a_2_food_90) {
-	2: random_conts_jnr_reefer_f_2_loadstage;
-    2: random_conts_jnr_reefer_g_2_loadstage;
-	5: random_conts_jnr_reefer_h_2_loadstage;
-	5: random_conts_jnr_reefer_i_2_loadstage;
-	5: random_conts_jnr_reefer_j_2_loadstage;
-	5: random_conts_jnr_reefer_k_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_private_2_food_y1990) {
+	9: random_conts_private_reefer_f_2_loadstage;
+    3: random_conts_private_reefer_g_2_loadstage;
+	6: random_conts_private_reefer_h_2_loadstage;
+	4: random_conts_private_reefer_i_2_loadstage;
+	4: random_conts_private_reefer_j_2_loadstage;
+	1: random_conts_private_reefer_k_2_loadstage;
+	10: random_conts_jrf_blue_2_general_y1990;
+}
+
+
+//private reefers modern
+random_switch(FEAT_TRAINS, SELF, random_conts_private_2_food_y2010) {
+	9: random_conts_private_reefer_a_2_loadstage;
+    1: random_conts_private_reefer_b_2_loadstage;
+	7: random_conts_private_reefer_c_2_loadstage;
+	3: random_conts_private_reefer_d_2_loadstage;
+    9: random_conts_private_reefer_e_2_loadstage;
+	9: random_conts_private_reefer_f_2_loadstage;
+    6: random_conts_private_reefer_g_2_loadstage;
+	1: random_conts_private_reefer_h_2_loadstage;
+	6: random_conts_private_reefer_i_2_loadstage;
+	4: random_conts_private_reefer_j_2_loadstage;
+	8: random_conts_private_reefer_k_2_loadstage;
+	10: random_conts_jrf_red_2_general_y2015;
 }
 
 
@@ -1205,125 +2090,186 @@ random_switch(FEAT_TRAINS, SELF, random_conts_private_a_2_food_90) {
 //liquid conts
 
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_liquid_60) {
-//	independent: random_conts_jnr_green_a_4_liquid_60;
-//	independent: random_conts_jnr_green_a_3_liquid_60;
-//	independent: random_conts_jnr_green_a_2_liquid_60;
-	2: random_conts_jnr_green_j_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_2_liquid_y1960) {
+	7: random_conts_jnr_green_j_2_loadstage;
     5: random_conts_jnr_green_k_2_loadstage;
-	5: random_conts_jnr_green_c_2_loadstage;
-	2: random_conts_jnr_green_d_2_loadstage;
+	6: random_conts_jnr_green_2_general_y1960;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_liquid_y1975) {
+	1: random_conts_jnr_green_j_2_loadstage;
+    3: random_conts_jnr_green_k_2_loadstage;
+	6: random_conts_private_tanker_a_2_loadstage;
+	3: random_conts_private_tanker_b_2_loadstage;
+	6: random_conts_private_tanker_c_2_loadstage;
+	9: random_conts_private_tanker_d_2_loadstage;
+	2: random_conts_private_tanker_e_2_loadstage;
+	7: random_conts_private_tanker_f_2_loadstage;
+	8: random_conts_private_tanker_g_2_loadstage;
+	6: random_conts_jnr_green_2_general_y1970;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_liquid_y1990) {
+	4: random_conts_private_tanker_a_2_loadstage;
+	5: random_conts_private_tanker_b_2_loadstage;
+	9: random_conts_private_tanker_c_2_loadstage;
+	7: random_conts_private_tanker_d_2_loadstage;
+	4: random_conts_private_tanker_e_2_loadstage;
+	4: random_conts_private_tanker_f_2_loadstage;
+	6: random_conts_private_tanker_g_2_loadstage;
+	7: random_conts_private_tanker_h_2_loadstage;
+	8: random_conts_private_tanker_i_2_loadstage;
+	5: random_conts_private_tanker_j_2_loadstage;
+	8: random_conts_private_tanker_k_2_loadstage;
+	1: random_conts_jnr_green_2_general_y1980;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_liquid_y2010) {
+	7: random_conts_private_tanker_a_2_loadstage;
+	5: random_conts_private_tanker_b_2_loadstage;
+	1: random_conts_private_tanker_c_2_loadstage;
+	4: random_conts_private_tanker_d_2_loadstage;
+	8: random_conts_private_tanker_e_2_loadstage;
+	5: random_conts_private_tanker_f_2_loadstage;
+	7: random_conts_private_tanker_g_2_loadstage;
+	1: random_conts_private_tanker_h_2_loadstage;
+	5: random_conts_private_tanker_i_2_loadstage;
+	6: random_conts_private_tanker_j_2_loadstage;
+	1: random_conts_private_tanker_k_2_loadstage;
+	8: random_conts_jrf_red_2_general_y2005;
 }
 
 
 //bulk conts
 
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_bulk_60) {
-//	independent: random_conts_jnr_green_a_4_bulk_60;
-//	independent: random_conts_jnr_green_a_3_bulk_60;
-//	independent: random_conts_jnr_green_a_2_bulk_60;
-	5: random_conts_jnr_green_h_2_loadstage;
-    2: random_conts_jnr_green_i_2_loadstage;
-	2: random_conts_jnr_green_c_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_2_bulk_y1960) {
+	7: random_conts_jnr_green_h_2_loadstage;
+    1: random_conts_jnr_green_i_2_loadstage;
+	4: random_conts_jnr_green_c_2_loadstage;
 	5: random_conts_jnr_green_d_2_loadstage;
 }
 
-//mixed conts
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_mixed_60) {
-//	independent: random_conts_jnr_green_a_4_mixed_60;
-//	independent: random_conts_jnr_green_a_3_mixed_60;
-//	independent: random_conts_jnr_green_a_2_mixed_60;
-	2: random_conts_jnr_green_a_2_loadstage;
-    5: random_conts_jnr_green_b_2_loadstage;
-	2: random_conts_jnr_green_c_2_loadstage;
-	5: random_conts_jnr_green_d_2_loadstage;
-	2: random_conts_jnr_green_h_2_loadstage;
-	2: random_conts_jnr_green_i_2_loadstage;
-	2: random_conts_jnr_green_j_2_loadstage;
-	2: random_conts_jnr_green_k_2_loadstage;
-}
-
-
-
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_liquid_70) {
-//	independent: random_conts_jnr_green_a_4_liquid_70;
-//	independent: random_conts_jnr_green_a_3_liquid_70;
-//	independent: random_conts_jnr_green_a_2_liquid_70;
-	5: random_conts_jnr_green_j_2_loadstage;
-    2: random_conts_jnr_green_k_2_loadstage;
-	8: random_conts_jnr_green_e_2_loadstage;
-	5: random_conts_jnr_green_f_2_loadstage;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_bulk_70) {
-//	independent: random_conts_jnr_green_a_4_bulk_70;
-//	independent: random_conts_jnr_green_a_3_bulk_70;
-//	independent: random_conts_jnr_green_a_2_bulk_70;
-	5: random_conts_jnr_green_h_2_loadstage;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_2_bulk_y1970) {
+	4: random_conts_jnr_green_h_2_loadstage;
     8: random_conts_jnr_green_i_2_loadstage;
 	5: random_conts_jnr_green_f_2_loadstage;
-	2: random_conts_jnr_green_g_2_loadstage;
+	5: random_conts_jnr_green_g_2_loadstage;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_2_mixed_70) {
-//	independent: random_conts_jnr_green_a_4_mixed_70;
-//	independent: random_conts_jnr_green_a_3_mixed_70;
-//	independent: random_conts_jnr_green_a_2_mixed_70;
+
+
+//mixed conts pre-private
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_y1960) {
+	5: random_conts_jnr_green_a_2_loadstage;
+    4: random_conts_jnr_green_b_2_loadstage;
+	8: random_conts_jnr_green_c_2_loadstage;
 	5: random_conts_jnr_green_d_2_loadstage;
-    2: random_conts_jnr_green_e_2_loadstage;
-	8: random_conts_jnr_green_f_2_loadstage;
-	2: random_conts_jnr_green_g_2_loadstage;
-	8: random_conts_jnr_green_h_2_loadstage;
-	2: random_conts_jnr_green_i_2_loadstage;
-	2: random_conts_jnr_green_j_2_loadstage;
-	2: random_conts_jnr_green_k_2_loadstage;
+	1: random_conts_jnr_green_h_2_loadstage;
+	6: random_conts_jnr_green_i_2_loadstage;
+
 }
 
 
+//mixed private
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_private_y1975) {
+
+	7: random_conts_jnr_green_d_2_loadstage;
+    5: random_conts_jnr_green_e_2_loadstage;
+	9: random_conts_jnr_green_f_2_loadstage;
+	2: random_conts_jnr_green_g_2_loadstage;
+	2: random_conts_jnr_green_h_2_loadstage;
+	3: random_conts_jnr_green_i_2_loadstage;
+	5: random_conts_private_general_d_2_loadstage;
+	7: random_conts_private_general_e_2_loadstage;
+	2: random_conts_private_general_f_2_loadstage;
+	5: random_conts_private_general_g_2_loadstage;
+	5: random_conts_private_general_h_2_loadstage;
+	6: random_conts_private_general_i_2_loadstage;
+	5: random_conts_private_general_j_2_loadstage;
+	4: random_conts_private_general_k_2_loadstage;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_private_y1990) {
+	10: random_conts_jrf_blue_2_general_y1990;
+	2: random_conts_private_general_a_2_loadstage;
+	1: random_conts_private_general_b_2_loadstage;
+	9: random_conts_private_general_c_2_loadstage;
+	6: random_conts_private_general_d_2_loadstage;
+	3: random_conts_private_general_e_2_loadstage;
+	3: random_conts_private_general_f_2_loadstage;
+	8: random_conts_private_general_g_2_loadstage;
+	5: random_conts_private_general_h_2_loadstage;
+	1: random_conts_private_general_i_2_loadstage;
+	3: random_conts_private_general_j_2_loadstage;
+	5: random_conts_private_general_k_2_loadstage;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_private_y2010) {
+	10: random_conts_jrf_red_2_general_y2015;
+	3: random_conts_private_general_a_2_loadstage;
+	1: random_conts_private_general_b_2_loadstage;
+	1: random_conts_private_general_c_2_loadstage;
+	7: random_conts_private_general_g_2_loadstage;
+	7: random_conts_private_general_h_2_loadstage;
+	9: random_conts_private_general_i_2_loadstage;
+	8: random_conts_private_general_j_2_loadstage;
+	4: random_conts_private_general_k_2_loadstage;
+
+}
 
 
-//final year switches
-
-switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
-	0..1970: random_conts_jnr_green_a_2_general_60;
-	
-	1970..1980: random_conts_jnr_green_a_2_general_70;
-	1980..1985: random_conts_jnr_green_a_2_general_80;
-	1985..1990: random_conts_jnr_blue_a_2_general_85;
-	1990..1995: random_conts_jrf_blue_a_2_general_90;
-	1995..2000: random_conts_jrf_blue_a_2_general_95;
-	2000..2005: random_conts_jrf_red_a_2_general_00;
-	2005..2015: random_conts_jrf_red_a_2_general_05;
-	random_conts_jrf_red_a_2_general_25;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_conts_2_food_year, current_year) {
-	0..1970: random_conts_jnr_white_a_2_food_60;
-	1970..1980: random_conts_jnr_white_a_2_food_70;
-	1980..1990: random_conts_private_a_2_food_80;
-	random_conts_private_a_2_food_90;
-	}
-	
-switch(FEAT_TRAINS, SELF, switch_conts_2_liquid_year, current_year) {
-	0..1970: random_conts_jnr_green_a_2_liquid_60;
-	random_conts_jnr_green_a_2_liquid_70;
-	}
-
-switch(FEAT_TRAINS, SELF, switch_conts_2_bulk_year, current_year) {
-	0..1970: random_conts_jnr_green_a_2_bulk_60;
-	random_conts_jnr_green_a_2_bulk_70;
-	}
-	
-switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_year, current_year) {
-	0..1970: random_conts_jnr_green_a_2_mixed_60;
-	random_conts_jnr_green_a_2_mixed_70;
-	}
-	
+//mixed food
 
 
 
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_food_y1975) {
+	7: random_conts_jnr_green_2_general_y1970;
+	3: random_conts_2_liquid_y1975;
+	3: random_conts_jnr_white_2_food_y1970;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_food_y1990) {
+	8: random_conts_jrf_blue_2_general_y1990;
+	1: random_conts_2_liquid_y1990;
+	7: random_conts_private_2_food_y1980;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_food_y2010) {
+	1: random_conts_jrf_red_2_general_y2005;
+	1: random_conts_2_liquid_y2010;
+	1: random_conts_private_2_food_y1990;
+
+}
+
+
+//mixed liquid
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_liquid_y1975) {
+	1: random_conts_jnr_green_2_general_y1970;
+	4: random_conts_2_liquid_y1975;
+	9: random_conts_2_mixed_private_y1975;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_liquid_y1990) {
+	5: random_conts_jrf_blue_2_general_y1990;
+	6: random_conts_2_liquid_y1990;
+	9: random_conts_2_mixed_private_y1990;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_liquid_y2010) {
+	6: random_conts_jrf_red_2_general_y2005;
+	6: random_conts_2_liquid_y2010;
+	9: random_conts_2_mixed_private_y2010;
+
+}
 
 

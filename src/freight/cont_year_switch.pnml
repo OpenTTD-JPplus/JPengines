@@ -1,0 +1,252 @@
+
+//final year switches _1
+
+switch(FEAT_TRAINS, SELF, switch_conts_1_general_year, current_year) {
+	0..1970: random_conts_jnr_green_1_general_y1960;
+	
+	1970..1980: random_conts_jnr_green_1_general_y1970;
+	1980..1985: random_conts_jnr_green_1_general_y1980;
+	1985..1990: random_conts_jnr_blue_1_general_y1985;
+	1990..1995: random_conts_jrf_blue_1_general_y1990;
+	1995..2000: random_conts_jrf_blue_1_general_y1995;
+	2000..2005: random_conts_jrf_red_1_general_y2000;
+	2005..2015: random_conts_jrf_red_1_general_y2005;
+	random_conts_jrf_red_1_general_y2015;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_1_food_year, current_year) {
+	0..1970: random_conts_jnr_white_1_food_y1960;
+	1970..1980: random_conts_jnr_white_1_food_y1970;
+	1980..1990: random_conts_private_1_food_y1980;
+	1990..2004: random_conts_private_1_food_y1990;
+	random_conts_private_1_food_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_1_liquid_year, current_year) {
+	0..1970: random_conts_1_liquid_y1960;
+	1970..1990: random_conts_1_liquid_y1975;
+	1990..2010: random_conts_1_liquid_y1990;
+	random_conts_1_liquid_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_1_bulk_year, current_year) {
+	0..1970: random_conts_jnr_green_1_bulk_y1960;
+	1970..1985: random_conts_jnr_green_1_bulk_y1970;
+
+	//todo bulktainers
+	1985..2000: random_conts_1_mixed_private_y1990;
+	random_conts_1_mixed_private_y2010;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_private_year, current_year) {
+	0..1970: random_conts_1_mixed_y1960;
+	1970..1986: random_conts_1_mixed_private_y1975;
+	1986..2005: random_conts_1_mixed_private_y1990;
+	random_conts_1_mixed_private_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_food_year, current_year) {
+	0..1973: random_conts_jnr_white_1_food_y1960;
+	1973..1988: random_conts_1_mixed_food_y1975;
+	1988..2003: random_conts_1_mixed_food_y1990;
+	random_conts_1_mixed_food_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_liquid_year, current_year) {
+	0..1971: random_conts_1_mixed_y1960;
+	1971..1986: random_conts_1_mixed_liquid_y1975;
+	1986..2001: random_conts_1_mixed_liquid_y1990;
+	random_conts_1_mixed_liquid_y2010;
+	}
+
+
+
+//final year switches _2_
+
+switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
+	0..1970: random_conts_jnr_green_2_general_y1960;
+	
+	1970..1980: random_conts_jnr_green_2_general_y1970;
+	1980..1985: random_conts_jnr_green_2_general_y1980;
+	1985..1990: random_conts_jnr_blue_2_general_y1985;
+	1990..1995: random_conts_jrf_blue_2_general_y1990;
+	1995..2000: random_conts_jrf_blue_2_general_y1995;
+	2000..2005: random_conts_jrf_red_2_general_y2000;
+	2005..2015: random_conts_jrf_red_2_general_y2005;
+	random_conts_jrf_red_2_general_y2015;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_2_food_year, current_year) {
+	0..1970: random_conts_jnr_white_2_food_y1960;
+	1970..1980: random_conts_jnr_white_2_food_y1970;
+	1980..1990: random_conts_private_2_food_y1980;
+	1990..2004: random_conts_private_2_food_y1990;
+	random_conts_private_2_food_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_2_liquid_year, current_year) {
+	0..1970: random_conts_2_liquid_y1960;
+	1970..1990: random_conts_2_liquid_y1975;
+	1990..2010: random_conts_2_liquid_y1990;
+	random_conts_2_liquid_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_2_bulk_year, current_year) {
+	0..1970: random_conts_jnr_green_2_bulk_y1960;
+	1970..1985: random_conts_jnr_green_2_bulk_y1970;
+
+	//todo bulktainers
+	1985..2000: random_conts_2_mixed_private_y1990;
+	random_conts_2_mixed_private_y2010;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_private_year, current_year) {
+	0..1970: random_conts_2_mixed_y1960;
+	1970..1986: random_conts_2_mixed_private_y1975;
+	1986..2005: random_conts_2_mixed_private_y1990;
+	random_conts_2_mixed_private_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_food_year, current_year) {
+	0..1973: random_conts_jnr_white_2_food_y1960;
+	1973..1988: random_conts_2_mixed_food_y1975;
+	1988..2003: random_conts_2_mixed_food_y1990;
+	random_conts_2_mixed_food_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_liquid_year, current_year) {
+	0..1971: random_conts_2_mixed_y1960;
+	1971..1986: random_conts_2_mixed_liquid_y1975;
+	1986..2001: random_conts_2_mixed_liquid_y1990;
+	random_conts_2_mixed_liquid_y2010;
+	}
+
+
+//final year switches _3_
+
+switch(FEAT_TRAINS, SELF, switch_conts_3_general_year, current_year) {
+	0..1970: random_conts_jnr_green_3_general_y1960;
+	
+	1970..1980: random_conts_jnr_green_3_general_y1970;
+	1980..1985: random_conts_jnr_green_3_general_y1980;
+	1985..1990: random_conts_jnr_blue_3_general_y1985;
+	1990..1995: random_conts_jrf_blue_3_general_y1990;
+	1995..2000: random_conts_jrf_blue_3_general_y1995;
+	2000..2005: random_conts_jrf_red_3_general_y2000;
+	2005..2015: random_conts_jrf_red_3_general_y2005;
+	random_conts_jrf_red_3_general_y2015;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_3_food_year, current_year) {
+	0..1970: random_conts_jnr_white_3_food_y1960;
+	1970..1980: random_conts_jnr_white_3_food_y1970;
+	1980..1990: random_conts_private_3_food_y1980;
+	1990..2004: random_conts_private_3_food_y1990;
+	random_conts_private_3_food_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_3_liquid_year, current_year) {
+	0..1970: random_conts_3_liquid_y1960;
+	1970..1990: random_conts_3_liquid_y1975;
+	1990..2010: random_conts_3_liquid_y1990;
+	random_conts_3_liquid_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_3_bulk_year, current_year) {
+	0..1970: random_conts_jnr_green_3_bulk_y1960;
+	1970..1985: random_conts_jnr_green_3_bulk_y1970;
+
+	//todo bulktainers
+	1985..2000: random_conts_3_mixed_private_y1990;
+	random_conts_3_mixed_private_y2010;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_conts_3_mixed_private_year, current_year) {
+	0..1970: random_conts_3_mixed_y1960;
+	1970..1986: random_conts_3_mixed_private_y1975;
+	1986..2005: random_conts_3_mixed_private_y1990;
+	random_conts_3_mixed_private_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_3_mixed_food_year, current_year) {
+	0..1973: random_conts_jnr_white_3_food_y1960;
+	1973..1988: random_conts_3_mixed_food_y1975;
+	1988..2003: random_conts_3_mixed_food_y1990;
+	random_conts_3_mixed_food_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_3_mixed_liquid_year, current_year) {
+	0..1971: random_conts_3_mixed_y1960;
+	1971..1986: random_conts_3_mixed_liquid_y1975;
+	1986..2001: random_conts_3_mixed_liquid_y1990;
+	random_conts_3_mixed_liquid_y2010;
+	}
+
+//final year switches _4_
+
+switch(FEAT_TRAINS, SELF, switch_conts_4_general_year, current_year) {
+	0..1970: random_conts_jnr_green_4_general_y1960;
+	
+	1970..1980: random_conts_jnr_green_4_general_y1970;
+	1980..1985: random_conts_jnr_green_4_general_y1980;
+	1985..1990: random_conts_jnr_blue_4_general_y1985;
+	1990..1995: random_conts_jrf_blue_4_general_y1990;
+	1995..2000: random_conts_jrf_blue_4_general_y1995;
+	2000..2005: random_conts_jrf_red_4_general_y2000;
+	2005..2015: random_conts_jrf_red_4_general_y2005;
+	random_conts_jrf_red_4_general_y2015;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_4_food_year, current_year) {
+	0..1970: random_conts_jnr_white_4_food_y1960;
+	1970..1980: random_conts_jnr_white_4_food_y1970;
+	1980..1990: random_conts_private_4_food_y1980;
+	1990..2004: random_conts_private_4_food_y1990;
+	random_conts_private_4_food_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_4_liquid_year, current_year) {
+	0..1970: random_conts_4_liquid_y1960;
+	1970..1990: random_conts_4_liquid_y1975;
+	1990..2010: random_conts_4_liquid_y1990;
+	random_conts_4_liquid_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_4_bulk_year, current_year) {
+	0..1970: random_conts_jnr_green_4_bulk_y1960;
+	1970..1985: random_conts_jnr_green_4_bulk_y1970;
+
+	//todo bulktainers
+	1985..2000: random_conts_4_mixed_private_y1990;
+	random_conts_4_mixed_private_y2010;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_conts_4_mixed_private_year, current_year) {
+	0..1970: random_conts_4_mixed_y1960;
+	1970..1986: random_conts_4_mixed_private_y1975;
+	1986..2005: random_conts_4_mixed_private_y1990;
+	random_conts_4_mixed_private_y2010;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_conts_4_mixed_food_year, current_year) {
+	0..1973: random_conts_jnr_white_4_food_y1960;
+	1973..1988: random_conts_4_mixed_food_y1975;
+	1988..2003: random_conts_4_mixed_food_y1990;
+	random_conts_4_mixed_food_y2010;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_conts_4_mixed_liquid_year, current_year) {
+	0..1971: random_conts_4_mixed_y1960;
+	1971..1986: random_conts_4_mixed_liquid_y1975;
+	1986..2001: random_conts_4_mixed_liquid_y1990;
+	random_conts_4_mixed_liquid_y2010;
+	}
+
+
+
+
+

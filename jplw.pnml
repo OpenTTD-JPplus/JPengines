@@ -139,6 +139,7 @@
 #include "src/freight/cont_3.pnml"
 #include "src/freight/cont_2.pnml"
 #include "src/freight/cont_1.pnml"
+#include "src/freight/cont_year_switch.pnml"
 #include "src/freight/cont_main.pnml"
 
 #include "src/freight/cont_dmt.pnml"
