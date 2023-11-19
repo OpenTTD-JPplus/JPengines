@@ -1,536 +1,1085 @@
-//blank
-
-spriteset(spriteset_conts_blank, "gfx/blank.png") { 
-	template_container_1(1, 1)
-}
 
 
 //conts 
 //cont types a,b,c,d
 //cont position 1,2,3,4
 
-spriteset(spriteset_conts_jgr_green_a_1, "gfx/containers/jnr_green.png") { //old
+spriteset(spriteset_conts_jnr_green_a_1, "gfx/containers/jnr_green.png") { //old
 	template_container_1(1, 1)
 }
 
-spritegroup spritegroup_conts_jgr_green_a_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_a_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_a_1];
+spritegroup spritegroup_conts_jnr_green_a_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_a_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_a_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_a_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_a_1];
+spritegroup spritegroup_conts_jnr_green_a_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_a_1];
 }
 
 //b
 
-spriteset(spriteset_conts_jgr_green_b_1, "gfx/containers/jnr_green.png") { //old 
+spriteset(spriteset_conts_jnr_green_b_1, "gfx/containers/jnr_green.png") { //old 
 	template_container_1(1, 32)
 }
 
-spritegroup spritegroup_conts_jgr_green_b_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_b_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_b_1];
+spritegroup spritegroup_conts_jnr_green_b_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_b_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_b_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_b_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_b_1];
+spritegroup spritegroup_conts_jnr_green_b_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_b_1];
 }
 
 //c
 
-spriteset(spriteset_conts_jgr_green_c_1, "gfx/containers/jnr_green.png") {
+spriteset(spriteset_conts_jnr_green_c_1, "gfx/containers/jnr_green.png") {
 	template_container_1(1, 64)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_c_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_c_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 64)
 }
 
-spritegroup spritegroup_conts_jgr_green_c_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_c_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_c_1];
+spritegroup spritegroup_conts_jnr_green_c_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_c_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_c_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_c_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_c_1];
+spritegroup spritegroup_conts_jnr_green_c_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_c_1];
 }
 
 //d
 
-spriteset(spriteset_conts_jgr_green_d_1, "gfx/containers/jnr_green.png") {
+spriteset(spriteset_conts_jnr_green_d_1, "gfx/containers/jnr_green.png") {
 	template_container_1(1, 96)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_d_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_d_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 96)
 }
 
-spritegroup spritegroup_conts_jgr_green_d_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_d_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_d_1];
+spritegroup spritegroup_conts_jnr_green_d_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_d_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_d_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_d_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_d_1];
+spritegroup spritegroup_conts_jnr_green_d_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_d_1];
 }
 
 //e
 
-spriteset(spriteset_conts_jgr_green_e_1, "gfx/containers/jnr_green.png") { //red
+spriteset(spriteset_conts_jnr_green_e_1, "gfx/containers/jnr_green.png") { //red
 	template_container_1(1, 128)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_e_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_e_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 128)
 }
 
-spritegroup spritegroup_conts_jgr_green_e_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_e_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_e_1];
+spritegroup spritegroup_conts_jnr_green_e_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_e_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_e_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_e_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_e_1];
+spritegroup spritegroup_conts_jnr_green_e_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_e_1];
 }
 
 //f
 
-spriteset(spriteset_conts_jgr_green_f_1, "gfx/containers/jnr_green.png") { //white
+spriteset(spriteset_conts_jnr_green_f_1, "gfx/containers/jnr_green.png") { //white
 	template_container_1(1, 160)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_f_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_f_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 160)
 }
 
-spritegroup spritegroup_conts_jgr_green_f_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_f_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_f_1];
+spritegroup spritegroup_conts_jnr_green_f_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_f_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_f_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_f_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_f_1];
+spritegroup spritegroup_conts_jnr_green_f_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_f_1];
 }
 
 //g
 
-spriteset(spriteset_conts_jgr_green_g_1, "gfx/containers/jnr_green.png") { //blue
+spriteset(spriteset_conts_jnr_green_g_1, "gfx/containers/jnr_green.png") { //blue
 	template_container_1(1, 192)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_g_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_g_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 192)
 }
 
-spritegroup spritegroup_conts_jgr_green_g_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_g_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_g_1];
+spritegroup spritegroup_conts_jnr_green_g_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_g_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_g_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_g_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_g_1];
+spritegroup spritegroup_conts_jnr_green_g_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_g_1];
 }
 
 //h
 
-spriteset(spriteset_conts_jgr_green_h_1, "gfx/containers/jnr_green.png") { //vent
+spriteset(spriteset_conts_jnr_green_h_1, "gfx/containers/jnr_green.png") { //vent
 	template_container_1(1, 224)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_h_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_h_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 224)
 }
 
-spritegroup spritegroup_conts_jgr_green_h_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_h_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_h_1];
+spritegroup spritegroup_conts_jnr_green_h_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_h_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_h_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_h_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_h_1];
+spritegroup spritegroup_conts_jnr_green_h_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_h_1];
 }
 
 //i
 
-spriteset(spriteset_conts_jgr_green_i_1, "gfx/containers/jnr_green.png") { //hopper
+spriteset(spriteset_conts_jnr_green_i_1, "gfx/containers/jnr_green.png") { //hopper
 	template_container_1(1, 256)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_i_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_i_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 256)
 }
 
-spritegroup spritegroup_conts_jgr_green_i_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_i_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_i_1];
+spritegroup spritegroup_conts_jnr_green_i_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_i_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_i_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_i_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_i_1];
+spritegroup spritegroup_conts_jnr_green_i_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_i_1];
 }
 
 
 //j
 
-spriteset(spriteset_conts_jgr_green_j_1, "gfx/containers/jnr_green.png") { //tank a
+spriteset(spriteset_conts_jnr_green_j_1, "gfx/containers/jnr_green.png") { //tank a
 	template_container_1(1, 288)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_j_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_j_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 288)
 }
 
-spritegroup spritegroup_conts_jgr_green_j_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_j_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_j_1];
+spritegroup spritegroup_conts_jnr_green_j_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_j_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_j_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_j_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_j_1];
+spritegroup spritegroup_conts_jnr_green_j_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_j_1];
 }
 
 //k
 
-spriteset(spriteset_conts_jgr_green_k_1, "gfx/containers/jnr_green.png") { //tank b
+spriteset(spriteset_conts_jnr_green_k_1, "gfx/containers/jnr_green.png") { //tank b
 	template_container_1(1, 320)
 }
 
-alternative_sprites(spriteset_conts_jgr_green_k_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
+alternative_sprites(spriteset_conts_jnr_green_k_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_green_32.png") {
 	template_container_1(1, 320)
 }
 
-spritegroup spritegroup_conts_jgr_green_k_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_green_k_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_green_k_1];
+spritegroup spritegroup_conts_jnr_green_k_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_green_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_green_k_1];
 }
 
-spritegroup spritegroup_conts_jgr_green_k_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_k_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_green_k_1];
+spritegroup spritegroup_conts_jnr_green_k_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_green_k_1];
 }
 
 
 //randoms for loading stages
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_loadstage) {
-	1: spriteset_conts_jgr_green_a_1;
-    1: spritegroup_conts_jgr_green_a_1_h;
-	1: spritegroup_conts_jgr_green_a_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_loadstage) {
+	independent: random_conts_jnr_green_a_2_loadstage;
+	independent: random_conts_jnr_green_a_3_loadstage;
+	1: spriteset_conts_jnr_green_a_1;
+    1: spritegroup_conts_jnr_green_a_1_h;
+	1: spritegroup_conts_jnr_green_a_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_b_1_loadstage) {
-	1: spriteset_conts_jgr_green_b_1;
-    1: spritegroup_conts_jgr_green_b_1_h;
-	1: spritegroup_conts_jgr_green_b_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_b_1_loadstage) {
+	independent: random_conts_jnr_green_b_2_loadstage;
+	independent: random_conts_jnr_green_b_3_loadstage;
+	1: spriteset_conts_jnr_green_b_1;
+    1: spritegroup_conts_jnr_green_b_1_h;
+	1: spritegroup_conts_jnr_green_b_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_c_1_loadstage) {
-	1: spriteset_conts_jgr_green_c_1;
-    1: spritegroup_conts_jgr_green_c_1_h;
-	1: spritegroup_conts_jgr_green_c_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_c_1_loadstage) {
+	independent: random_conts_jnr_green_c_2_loadstage;
+	independent: random_conts_jnr_green_c_3_loadstage;
+	1: spriteset_conts_jnr_green_c_1;
+    1: spritegroup_conts_jnr_green_c_1_h;
+	1: spritegroup_conts_jnr_green_c_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_d_1_loadstage) {
-	1: spriteset_conts_jgr_green_d_1;
-    1: spritegroup_conts_jgr_green_d_1_h;
-	1: spritegroup_conts_jgr_green_d_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_d_1_loadstage) {
+	independent: random_conts_jnr_green_d_2_loadstage;
+	independent: random_conts_jnr_green_d_3_loadstage;
+	1: spriteset_conts_jnr_green_d_1;
+    1: spritegroup_conts_jnr_green_d_1_h;
+	1: spritegroup_conts_jnr_green_d_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_e_1_loadstage) {
-	1: spriteset_conts_jgr_green_e_1;
-    1: spritegroup_conts_jgr_green_e_1_h;
-	1: spritegroup_conts_jgr_green_e_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_e_1_loadstage) {
+	independent: random_conts_jnr_green_e_2_loadstage;
+	independent: random_conts_jnr_green_e_3_loadstage;
+	1: spriteset_conts_jnr_green_e_1;
+    1: spritegroup_conts_jnr_green_e_1_h;
+	1: spritegroup_conts_jnr_green_e_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_f_1_loadstage) {
-	1: spriteset_conts_jgr_green_f_1;
-    1: spritegroup_conts_jgr_green_f_1_h;
-	1: spritegroup_conts_jgr_green_f_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_f_1_loadstage) {
+	independent: random_conts_jnr_green_f_2_loadstage;
+	independent: random_conts_jnr_green_f_3_loadstage;
+	1: spriteset_conts_jnr_green_f_1;
+    1: spritegroup_conts_jnr_green_f_1_h;
+	1: spritegroup_conts_jnr_green_f_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_g_1_loadstage) {
-	1: spriteset_conts_jgr_green_g_1;
-    1: spritegroup_conts_jgr_green_g_1_h;
-	1: spritegroup_conts_jgr_green_g_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_g_1_loadstage) {
+	independent: random_conts_jnr_green_g_2_loadstage;
+	independent: random_conts_jnr_green_g_3_loadstage;
+	1: spriteset_conts_jnr_green_g_1;
+    1: spritegroup_conts_jnr_green_g_1_h;
+	1: spritegroup_conts_jnr_green_g_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_h_1_loadstage) {
-	1: spriteset_conts_jgr_green_h_1;
-    1: spritegroup_conts_jgr_green_h_1_h;
-	1: spritegroup_conts_jgr_green_h_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_h_1_loadstage) {
+	independent: random_conts_jnr_green_h_2_loadstage;
+	independent: random_conts_jnr_green_h_3_loadstage;
+	1: spriteset_conts_jnr_green_h_1;
+    1: spritegroup_conts_jnr_green_h_1_h;
+	1: spritegroup_conts_jnr_green_h_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_i_1_loadstage) {
-	1: spriteset_conts_jgr_green_i_1;
-    1: spritegroup_conts_jgr_green_i_1_h;
-	1: spritegroup_conts_jgr_green_i_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_i_1_loadstage) {
+	independent: random_conts_jnr_green_i_2_loadstage;
+	independent: random_conts_jnr_green_i_3_loadstage;
+	1: spriteset_conts_jnr_green_i_1;
+    1: spritegroup_conts_jnr_green_i_1_h;
+	1: spritegroup_conts_jnr_green_i_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_j_1_loadstage) {
-	1: spriteset_conts_jgr_green_j_1;
-    1: spritegroup_conts_jgr_green_j_1_h;
-	1: spritegroup_conts_jgr_green_j_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_j_1_loadstage) {
+	independent: random_conts_jnr_green_j_2_loadstage;
+	independent: random_conts_jnr_green_j_3_loadstage;
+	1: spriteset_conts_jnr_green_j_1;
+    1: spritegroup_conts_jnr_green_j_1_h;
+	1: spritegroup_conts_jnr_green_j_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_k_1_loadstage) {
-	1: spriteset_conts_jgr_green_k_1;
-    1: spritegroup_conts_jgr_green_k_1_h;
-	1: spritegroup_conts_jgr_green_k_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_k_1_loadstage) {
+	independent: random_conts_jnr_green_k_2_loadstage;
+	independent: random_conts_jnr_green_k_3_loadstage;
+	1: spriteset_conts_jnr_green_k_1;
+    1: spritegroup_conts_jnr_green_k_1_h;
+	1: spritegroup_conts_jnr_green_k_1_f;
+}
+
+//JNR/JRF blue  general conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
+
+spriteset(spriteset_conts_jrf_blue_a_1, "gfx/containers/jrf_blue.png") { //old plain blue
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jrf_blue_a_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_a_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_a_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_a_1];
+}
+
+//b
+
+spriteset(spriteset_conts_jrf_blue_b_1, "gfx/containers/jrf_blue.png") { //old blue red logo
+	template_container_1(1, 32)
+}
+
+spritegroup spritegroup_conts_jrf_blue_b_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_b_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_b_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_b_1];
+}
+
+//c
+
+spriteset(spriteset_conts_jrf_blue_c_1, "gfx/containers/jrf_blue.png") { //old blue white logo
+	template_container_1(1, 64)
+}
+
+
+spritegroup spritegroup_conts_jrf_blue_c_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_c_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_c_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_c_1];
+}
+
+//d
+
+spriteset(spriteset_conts_jrf_blue_d_1, "gfx/containers/jrf_blue.png") { //old blue white stripe
+	template_container_1(1, 96)
+}
+
+spritegroup spritegroup_conts_jrf_blue_d_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_d_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_d_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_d_1];
+}
+/*
+//e
+
+spriteset(spriteset_conts_jrf_blue_e_1, "gfx/containers/jrf_blue.png") { //red
+	template_container_1(1, 128)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_blue_e_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_e_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_e_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_e_1];
+}
+
+//f
+
+spriteset(spriteset_conts_jrf_blue_f_1, "gfx/containers/jrf_blue.png") { //white
+	template_container_1(1, 160)
+}
+
+
+spritegroup spritegroup_conts_jrf_blue_f_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_f_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_f_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_f_1];
+}
+
+//g
+
+spriteset(spriteset_conts_jrf_blue_g_1, "gfx/containers/jrf_blue.png") { //blue
+	template_container_1(1, 192)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_blue_g_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_g_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_g_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_g_1];
+}
+*/
+
+//h
+
+spriteset(spriteset_conts_jrf_blue_h_1, "gfx/containers/jrf_blue.png") { //jrf _/^
+	template_container_1(1, 224)
+}
+
+
+spritegroup spritegroup_conts_jrf_blue_h_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_h_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_h_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_h_1];
+}
+
+//i
+
+spriteset(spriteset_conts_jrf_blue_i_1, "gfx/containers/jrf_blue.png") { //jrf __/
+	template_container_1(1, 256)
+}
+
+
+spritegroup spritegroup_conts_jrf_blue_i_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_i_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_i_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_i_1];
+}
+
+
+//j
+
+spriteset(spriteset_conts_jrf_blue_j_1, "gfx/containers/jrf_blue.png") { //jrf swoosh
+	template_container_1(1, 288)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_blue_j_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_j_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_j_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_j_1];
+}
+
+//k
+
+spriteset(spriteset_conts_jrf_blue_k_1, "gfx/containers/jrf_blue.png") { //jrf vent
+	template_container_1(1, 320)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_blue_k_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_blue_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_blue_k_1];
+}
+
+spritegroup spritegroup_conts_jrf_blue_k_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_blue_k_1];
+}
+
+
+//randoms for loading stages
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_a_1_loadstage) {
+	1: spriteset_conts_jrf_blue_a_1;
+    1: spritegroup_conts_jrf_blue_a_1_h;
+	1: spritegroup_conts_jrf_blue_a_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_b_1_loadstage) {
+	1: spriteset_conts_jrf_blue_b_1;
+    1: spritegroup_conts_jrf_blue_b_1_h;
+	1: spritegroup_conts_jrf_blue_b_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_c_1_loadstage) {
+	1: spriteset_conts_jrf_blue_c_1;
+    1: spritegroup_conts_jrf_blue_c_1_h;
+	1: spritegroup_conts_jrf_blue_c_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_d_1_loadstage) {
+	1: spriteset_conts_jrf_blue_d_1;
+    1: spritegroup_conts_jrf_blue_d_1_h;
+	1: spritegroup_conts_jrf_blue_d_1_f;
+}
+
+/*
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_e_1_loadstage) {
+	1: spriteset_conts_jrf_blue_e_1;
+    1: spritegroup_conts_jrf_blue_e_1_h;
+	1: spritegroup_conts_jrf_blue_e_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_f_1_loadstage) {
+	1: spriteset_conts_jrf_blue_f_1;
+    1: spritegroup_conts_jrf_blue_f_1_h;
+	1: spritegroup_conts_jrf_blue_f_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_g_1_loadstage) {
+	1: spriteset_conts_jrf_blue_g_1;
+    1: spritegroup_conts_jrf_blue_g_1_h;
+	1: spritegroup_conts_jrf_blue_g_1_f;
+}
+*/
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_h_1_loadstage) {
+	1: spriteset_conts_jrf_blue_h_1;
+    1: spritegroup_conts_jrf_blue_h_1_h;
+	1: spritegroup_conts_jrf_blue_h_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_i_1_loadstage) {
+	1: spriteset_conts_jrf_blue_i_1;
+    1: spritegroup_conts_jrf_blue_i_1_h;
+	1: spritegroup_conts_jrf_blue_i_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_j_1_loadstage) {
+	1: spriteset_conts_jrf_blue_j_1;
+    1: spritegroup_conts_jrf_blue_j_1_h;
+	1: spritegroup_conts_jrf_blue_j_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_k_1_loadstage) {
+	1: spriteset_conts_jrf_blue_k_1;
+    1: spritegroup_conts_jrf_blue_k_1_h;
+	1: spritegroup_conts_jrf_blue_k_1_f;
+}
+//JRF red  general conts
+//cont types a,b,c,d
+//cont position 1,2,3,4
+
+/*
+spriteset(spriteset_conts_jrf_red_a_1, "gfx/containers/jrf_red.png") { //old plain blue
+	template_container_1(1, 1)
+}
+
+spritegroup spritegroup_conts_jrf_red_a_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_a_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_a_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_a_1];
+}
+*/
+
+//b
+
+spriteset(spriteset_conts_jrf_red_b_1, "gfx/containers/jrf_red.png") { //red small logo
+	template_container_1(1, 32)
+}
+
+spritegroup spritegroup_conts_jrf_red_b_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_b_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_b_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_b_1];
+}
+
+//c
+
+spriteset(spriteset_conts_jrf_red_c_1, "gfx/containers/jrf_red.png") { //red big logo
+	template_container_1(1, 64)
+}
+
+
+spritegroup spritegroup_conts_jrf_red_c_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_c_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_c_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_c_1];
+}
+
+//d
+
+spriteset(spriteset_conts_jrf_red_d_1, "gfx/containers/jrf_red.png") { //red logo
+	template_container_1(1, 96)
+}
+
+spritegroup spritegroup_conts_jrf_red_d_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_d_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_d_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_d_1];
+}
+
+//e
+
+spriteset(spriteset_conts_jrf_red_e_1, "gfx/containers/jrf_red.png") { //red black
+	template_container_1(1, 128)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_red_e_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_e_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_e_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_e_1];
+}
+
+//f
+
+spriteset(spriteset_conts_jrf_red_f_1, "gfx/containers/jrf_red.png") { //red ribbed
+	template_container_1(1, 160)
+}
+
+
+spritegroup spritegroup_conts_jrf_red_f_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_f_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_f_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_f_1];
+}
+
+//g
+
+spriteset(spriteset_conts_jrf_red_g_1, "gfx/containers/jrf_red.png") { //red ribbed small logo
+	template_container_1(1, 192)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_red_g_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_g_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_g_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_g_1];
+}
+
+
+//h
+
+spriteset(spriteset_conts_jrf_red_h_1, "gfx/containers/jrf_red.png") { //white jrf
+	template_container_1(1, 224)
+}
+
+
+spritegroup spritegroup_conts_jrf_red_h_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_h_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_h_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_h_1];
+}
+
+//i
+
+spriteset(spriteset_conts_jrf_red_i_1, "gfx/containers/jrf_red.png") { //green jrf
+	template_container_1(1, 256)
+}
+
+alternative_sprites(spriteset_conts_jrf_red_i_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_red_32.png") {
+	template_container_1(1, 256)
+}
+
+spritegroup spritegroup_conts_jrf_red_i_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_i_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_i_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_i_1];
+}
+
+
+//j
+
+spriteset(spriteset_conts_jrf_red_j_1, "gfx/containers/jrf_red.png") { //jrf eco
+	template_container_1(1, 288)
+}
+
+alternative_sprites(spriteset_conts_jrf_red_j_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/containers/jnr_red_32.png") {
+	template_container_1(1, 288)
+}
+
+spritegroup spritegroup_conts_jrf_red_j_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_j_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_j_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_j_1];
+}
+
+//k
+
+spriteset(spriteset_conts_jrf_red_k_1, "gfx/containers/jrf_red.png") { //jrf vent
+	template_container_1(1, 320)
+}
+
+
+
+spritegroup spritegroup_conts_jrf_red_k_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jrf_red_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jrf_red_k_1];
+}
+
+spritegroup spritegroup_conts_jrf_red_k_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jrf_red_k_1];
+}
+
+
+//randoms for loading stages
+/*
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_1_loadstage) {
+	1: spriteset_conts_jrf_red_a_1;
+    1: spritegroup_conts_jrf_red_a_1_h;
+	1: spritegroup_conts_jrf_red_a_1_f;
+}
+*/
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_b_1_loadstage) {
+	1: spriteset_conts_jrf_red_b_1;
+    1: spritegroup_conts_jrf_red_b_1_h;
+	1: spritegroup_conts_jrf_red_b_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_c_1_loadstage) {
+	1: spriteset_conts_jrf_red_c_1;
+    1: spritegroup_conts_jrf_red_c_1_h;
+	1: spritegroup_conts_jrf_red_c_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_d_1_loadstage) {
+	1: spriteset_conts_jrf_red_d_1;
+    1: spritegroup_conts_jrf_red_d_1_h;
+	1: spritegroup_conts_jrf_red_d_1_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_e_1_loadstage) {
+	1: spriteset_conts_jrf_red_e_1;
+    1: spritegroup_conts_jrf_red_e_1_h;
+	1: spritegroup_conts_jrf_red_e_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_f_1_loadstage) {
+	1: spriteset_conts_jrf_red_f_1;
+    1: spritegroup_conts_jrf_red_f_1_h;
+	1: spritegroup_conts_jrf_red_f_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_g_1_loadstage) {
+	1: spriteset_conts_jrf_red_g_1;
+    1: spritegroup_conts_jrf_red_g_1_h;
+	1: spritegroup_conts_jrf_red_g_1_f;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_h_1_loadstage) {
+	1: spriteset_conts_jrf_red_h_1;
+    1: spritegroup_conts_jrf_red_h_1_h;
+	1: spritegroup_conts_jrf_red_h_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_i_1_loadstage) {
+	1: spriteset_conts_jrf_red_i_1;
+    1: spritegroup_conts_jrf_red_i_1_h;
+	1: spritegroup_conts_jrf_red_i_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_j_1_loadstage) {
+	1: spriteset_conts_jrf_red_j_1;
+    1: spritegroup_conts_jrf_red_j_1_h;
+	1: spritegroup_conts_jrf_red_j_1_f;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_k_1_loadstage) {
+	1: spriteset_conts_jrf_red_k_1;
+    1: spritegroup_conts_jrf_red_k_1_h;
+	1: spritegroup_conts_jrf_red_k_1_f;
 }
 
 //reefer
 
-spriteset(spriteset_conts_jgr_reefer_a_1, "gfx/containers/jnr_reefer.png") { //old
+spriteset(spriteset_conts_jnr_reefer_a_1, "gfx/containers/jnr_reefer.png") { //old
 	template_container_1(1, 1)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_a_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+spritegroup spritegroup_conts_jnr_reefer_a_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_a_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_a_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_a_1];
+spritegroup spritegroup_conts_jnr_reefer_a_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_a_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_a_1];
 }
 
 //b
 
-spriteset(spriteset_conts_jgr_reefer_b_1, "gfx/containers/jnr_reefer.png") { //old 
+spriteset(spriteset_conts_jnr_reefer_b_1, "gfx/containers/jnr_reefer.png") { //old 
 	template_container_1(1, 32)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_b_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+spritegroup spritegroup_conts_jnr_reefer_b_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_b_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_b_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_b_1];
+spritegroup spritegroup_conts_jnr_reefer_b_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_b_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_b_1];
 }
 
 //c
 
-spriteset(spriteset_conts_jgr_reefer_c_1, "gfx/containers/jnr_reefer.png") {
+spriteset(spriteset_conts_jnr_reefer_c_1, "gfx/containers/jnr_reefer.png") {
 	template_container_1(1, 64)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_c_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+spritegroup spritegroup_conts_jnr_reefer_c_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_c_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_c_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_c_1];
+spritegroup spritegroup_conts_jnr_reefer_c_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_c_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_c_1];
 }
 
 //d
 
-spriteset(spriteset_conts_jgr_reefer_d_1, "gfx/containers/jnr_reefer.png") {
+spriteset(spriteset_conts_jnr_reefer_d_1, "gfx/containers/jnr_reefer.png") {
 	template_container_1(1, 96)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_d_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+spritegroup spritegroup_conts_jnr_reefer_d_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_d_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_d_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_d_1];
+spritegroup spritegroup_conts_jnr_reefer_d_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_d_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_d_1];
 }
 
 //e
 
-spriteset(spriteset_conts_jgr_reefer_e_1, "gfx/containers/jnr_reefer.png") { //red
+spriteset(spriteset_conts_jnr_reefer_e_1, "gfx/containers/jnr_reefer.png") { //red
 	template_container_1(1, 128)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_e_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+spritegroup spritegroup_conts_jnr_reefer_e_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_e_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_e_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_e_1];
+spritegroup spritegroup_conts_jnr_reefer_e_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_e_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_e_1];
 }
 
 //f
 
-spriteset(spriteset_conts_jgr_reefer_f_1, "gfx/containers/jnr_reefer.png") { //white
+spriteset(spriteset_conts_jnr_reefer_f_1, "gfx/containers/jnr_reefer.png") { //white
 	template_container_1(1, 160)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_f_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+spritegroup spritegroup_conts_jnr_reefer_f_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_f_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_f_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_f_1];
+spritegroup spritegroup_conts_jnr_reefer_f_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_f_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_f_1];
 }
 
 //g
 
-spriteset(spriteset_conts_jgr_reefer_g_1, "gfx/containers/jnr_reefer.png") { //blue
+spriteset(spriteset_conts_jnr_reefer_g_1, "gfx/containers/jnr_reefer.png") { //blue
 	template_container_1(1, 192)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_g_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+spritegroup spritegroup_conts_jnr_reefer_g_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_g_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_g_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_g_1];
+spritegroup spritegroup_conts_jnr_reefer_g_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_g_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_g_1];
 }
 
 //h
 
-spriteset(spriteset_conts_jgr_reefer_h_1, "gfx/containers/jnr_reefer.png") { //vent
+spriteset(spriteset_conts_jnr_reefer_h_1, "gfx/containers/jnr_reefer.png") { //vent
 	template_container_1(1, 224)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_h_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+spritegroup spritegroup_conts_jnr_reefer_h_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_h_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_h_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_h_1];
+spritegroup spritegroup_conts_jnr_reefer_h_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_h_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_h_1];
 }
 
 //i
 
-spriteset(spriteset_conts_jgr_reefer_i_1, "gfx/containers/jnr_reefer.png") { //hopper
+spriteset(spriteset_conts_jnr_reefer_i_1, "gfx/containers/jnr_reefer.png") { //hopper
 	template_container_1(1, 256)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_i_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+spritegroup spritegroup_conts_jnr_reefer_i_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_i_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_i_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_i_1];
+spritegroup spritegroup_conts_jnr_reefer_i_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_i_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_i_1];
 }
 
 
 //j
 
-spriteset(spriteset_conts_jgr_reefer_j_1, "gfx/containers/jnr_reefer.png") { //tank a
+spriteset(spriteset_conts_jnr_reefer_j_1, "gfx/containers/jnr_reefer.png") { //tank a
 	template_container_1(1, 288)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_j_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+spritegroup spritegroup_conts_jnr_reefer_j_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_j_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_j_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_j_1];
+spritegroup spritegroup_conts_jnr_reefer_j_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_j_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_j_1];
 }
 
 //k
 
-spriteset(spriteset_conts_jgr_reefer_k_1, "gfx/containers/jnr_reefer.png") { //tank b
+spriteset(spriteset_conts_jnr_reefer_k_1, "gfx/containers/jnr_reefer.png") { //tank b
 	template_container_1(1, 320)
 }
 
-spritegroup spritegroup_conts_jgr_reefer_k_1_h {
-    loading: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+spritegroup spritegroup_conts_jnr_reefer_k_1_h {
+    loading: [spriteset_conts_blank, spriteset_conts_jnr_reefer_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_jnr_reefer_k_1];
 }
 
-spritegroup spritegroup_conts_jgr_reefer_k_1_f {
-    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
-    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jgr_reefer_k_1];
+spritegroup spritegroup_conts_jnr_reefer_k_1_f {
+    loading: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_k_1];
+    loaded: [spriteset_conts_blank, spriteset_conts_blank, spriteset_conts_jnr_reefer_k_1];
 }
 
 
 //randoms for loading stages
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_a_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_a_1;
-    1: spritegroup_conts_jgr_reefer_a_1_h;
-	1: spritegroup_conts_jgr_reefer_a_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_a_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_a_1;
+    1: spritegroup_conts_jnr_reefer_a_1_h;
+	1: spritegroup_conts_jnr_reefer_a_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_b_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_b_1;
-    1: spritegroup_conts_jgr_reefer_b_1_h;
-	1: spritegroup_conts_jgr_reefer_b_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_b_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_b_1;
+    1: spritegroup_conts_jnr_reefer_b_1_h;
+	1: spritegroup_conts_jnr_reefer_b_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_c_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_c_1;
-    1: spritegroup_conts_jgr_reefer_c_1_h;
-	1: spritegroup_conts_jgr_reefer_c_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_c_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_c_1;
+    1: spritegroup_conts_jnr_reefer_c_1_h;
+	1: spritegroup_conts_jnr_reefer_c_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_d_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_d_1;
-    1: spritegroup_conts_jgr_reefer_d_1_h;
-	1: spritegroup_conts_jgr_reefer_d_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_d_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_d_1;
+    1: spritegroup_conts_jnr_reefer_d_1_h;
+	1: spritegroup_conts_jnr_reefer_d_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_e_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_e_1;
-    1: spritegroup_conts_jgr_reefer_e_1_h;
-	1: spritegroup_conts_jgr_reefer_e_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_e_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_e_1;
+    1: spritegroup_conts_jnr_reefer_e_1_h;
+	1: spritegroup_conts_jnr_reefer_e_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_f_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_f_1;
-    1: spritegroup_conts_jgr_reefer_f_1_h;
-	1: spritegroup_conts_jgr_reefer_f_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_f_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_f_1;
+    1: spritegroup_conts_jnr_reefer_f_1_h;
+	1: spritegroup_conts_jnr_reefer_f_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_g_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_g_1;
-    1: spritegroup_conts_jgr_reefer_g_1_h;
-	1: spritegroup_conts_jgr_reefer_g_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_g_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_g_1;
+    1: spritegroup_conts_jnr_reefer_g_1_h;
+	1: spritegroup_conts_jnr_reefer_g_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_h_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_h_1;
-    1: spritegroup_conts_jgr_reefer_h_1_h;
-	1: spritegroup_conts_jgr_reefer_h_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_h_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_h_1;
+    1: spritegroup_conts_jnr_reefer_h_1_h;
+	1: spritegroup_conts_jnr_reefer_h_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_i_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_i_1;
-    1: spritegroup_conts_jgr_reefer_i_1_h;
-	1: spritegroup_conts_jgr_reefer_i_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_i_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_i_1;
+    1: spritegroup_conts_jnr_reefer_i_1_h;
+	1: spritegroup_conts_jnr_reefer_i_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_j_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_j_1;
-    1: spritegroup_conts_jgr_reefer_j_1_h;
-	1: spritegroup_conts_jgr_reefer_j_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_j_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_j_1;
+    1: spritegroup_conts_jnr_reefer_j_1_h;
+	1: spritegroup_conts_jnr_reefer_j_1_f;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_k_1_loadstage) {
-	1: spriteset_conts_jgr_reefer_k_1;
-    1: spritegroup_conts_jgr_reefer_k_1_h;
-	1: spritegroup_conts_jgr_reefer_k_1_f;
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_reefer_k_1_loadstage) {
+	1: spriteset_conts_jnr_reefer_k_1;
+    1: spritegroup_conts_jnr_reefer_k_1_h;
+	1: spritegroup_conts_jnr_reefer_k_1_f;
 }
 
 
@@ -539,157 +1088,276 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_k_1_loadstage) {
 
 //randoms for variation
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_general_60) {
-//	independent: random_conts_jgr_green_a_4_general_60;
-//	independent: random_conts_jgr_green_a_3_general_60;
-//	independent: random_conts_jgr_green_a_2_general_60;
-	6: random_conts_jgr_green_a_1_loadstage;
-    8: random_conts_jgr_green_b_1_loadstage;
-	5: random_conts_jgr_green_c_1_loadstage;
-	2: random_conts_jgr_green_d_1_loadstage;
+//general conts
+
+//60s era JNR green
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_general_60) {
+	6: random_conts_jnr_green_a_1_loadstage;
+    8: random_conts_jnr_green_b_1_loadstage;
+	5: random_conts_jnr_green_c_1_loadstage;
+	2: random_conts_jnr_green_d_1_loadstage;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_food_60) {
-//	independent: random_conts_jgr_green_a_4_food_60;
-//	independent: random_conts_jgr_green_a_3_food_60;
-//	independent: random_conts_jgr_green_a_2_food_60;
-	7: random_conts_jgr_reefer_a_1_loadstage;
-    3: random_conts_jgr_reefer_b_1_loadstage;
-	4: random_conts_jgr_green_c_1_loadstage;
-	2: random_conts_jgr_green_d_1_loadstage;
+//70s era JNR green
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_general_70) {
+	6: random_conts_jnr_green_d_1_loadstage;
+    3: random_conts_jnr_green_e_1_loadstage;
+	4: random_conts_jnr_green_f_1_loadstage;
+	6: random_conts_jnr_green_g_1_loadstage;
+}
+//80s era mixed blue/green
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_general_80) {
+	4: random_conts_jrf_blue_a_1_loadstage;
+    5: random_conts_jrf_blue_b_1_loadstage;
+	6: random_conts_jrf_blue_c_1_loadstage;
+	5: random_conts_jrf_blue_d_1_loadstage;
+	1: random_conts_jnr_green_d_1_loadstage;
+    1: random_conts_jnr_green_e_1_loadstage;
+	1: random_conts_jnr_green_f_1_loadstage;
+	1: random_conts_jnr_green_g_1_loadstage;
+}
+//late 80s blue only
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_blue_a_1_general_85) {
+	4: random_conts_jrf_blue_a_1_loadstage;
+    5: random_conts_jrf_blue_b_1_loadstage;
+	6: random_conts_jrf_blue_c_1_loadstage;
+	5: random_conts_jrf_blue_d_1_loadstage;
+}
+//90s blue jrf mixed
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_a_1_general_90) {
+	7: random_conts_jrf_blue_h_1_loadstage;
+    5: random_conts_jrf_blue_i_1_loadstage;
+	6: random_conts_jrf_blue_j_1_loadstage;
+	2: random_conts_jrf_blue_k_1_loadstage;
+	1: random_conts_jrf_blue_a_1_loadstage;
+    1: random_conts_jrf_blue_b_1_loadstage;
+	1: random_conts_jrf_blue_c_1_loadstage;
+	1: random_conts_jrf_blue_d_1_loadstage;
+}
+//90s blue only
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_blue_a_1_general_95) {
+	9: random_conts_jrf_blue_h_1_loadstage;
+    5: random_conts_jrf_blue_i_1_loadstage;
+	6: random_conts_jrf_blue_j_1_loadstage;
+	2: random_conts_jrf_blue_k_1_loadstage;
+}
+//00s red jrf mixed
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_1_general_00) {
+	7: random_conts_jrf_red_c_1_loadstage;
+	7: random_conts_jrf_red_d_1_loadstage;
+	7: random_conts_jrf_red_e_1_loadstage;
+	7: random_conts_jrf_red_f_1_loadstage;
+	1: random_conts_jrf_blue_h_1_loadstage;
+    1: random_conts_jrf_blue_i_1_loadstage;
+	1: random_conts_jrf_blue_j_1_loadstage;
+	1: random_conts_jrf_blue_k_1_loadstage;
+
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_liquid_60) {
-//	independent: random_conts_jgr_green_a_4_liquid_60;
-//	independent: random_conts_jgr_green_a_3_liquid_60;
-//	independent: random_conts_jgr_green_a_2_liquid_60;
-	3: random_conts_jgr_green_j_1_loadstage;
-    6: random_conts_jgr_green_k_1_loadstage;
-	4: random_conts_jgr_green_c_1_loadstage;
-	2: random_conts_jgr_green_d_1_loadstage;
+//10s red jrf mixed
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_1_general_05) {
+	7: random_conts_jrf_red_b_1_loadstage;
+	7: random_conts_jrf_red_c_1_loadstage;
+	7: random_conts_jrf_red_d_1_loadstage;
+	7: random_conts_jrf_red_e_1_loadstage;
+	6: random_conts_jrf_red_f_1_loadstage;
+	5: random_conts_jrf_red_g_1_loadstage;
+	4: random_conts_jrf_red_h_1_loadstage;
+	3: random_conts_jrf_red_k_1_loadstage;
+
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_bulk_60) {
-//	independent: random_conts_jgr_green_a_4_bulk_60;
-//	independent: random_conts_jgr_green_a_3_bulk_60;
-//	independent: random_conts_jgr_green_a_2_bulk_60;
-	4: random_conts_jgr_green_h_1_loadstage;
-    3: random_conts_jgr_green_i_1_loadstage;
-	2: random_conts_jgr_green_c_1_loadstage;
-	6: random_conts_jgr_green_d_1_loadstage;
+//20s red jrf mixed
+random_switch(FEAT_TRAINS, SELF, random_conts_jrf_red_a_1_general_15) {
+	7: random_conts_jrf_red_b_1_loadstage;
+	7: random_conts_jrf_red_c_1_loadstage;
+	7: random_conts_jrf_red_d_1_loadstage;
+	7: random_conts_jrf_red_g_1_loadstage;
+	2: random_conts_jrf_red_h_1_loadstage;
+	1: random_conts_jrf_red_i_1_loadstage;
+	1: random_conts_jrf_red_j_1_loadstage;
+	1: random_conts_jrf_red_k_1_loadstage;
+
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_mixed_60) {
-//	independent: random_conts_jgr_green_a_4_mixed_60;
-//	independent: random_conts_jgr_green_a_3_mixed_60;
-//	independent: random_conts_jgr_green_a_2_mixed_60;
-	3: random_conts_jgr_green_a_1_loadstage;
-    4: random_conts_jgr_green_b_1_loadstage;
-	1: random_conts_jgr_green_c_1_loadstage;
-	5: random_conts_jgr_green_d_1_loadstage;
-	1: random_conts_jgr_green_h_1_loadstage;
-	2: random_conts_jgr_green_i_1_loadstage;
-	1: random_conts_jgr_green_j_1_loadstage;
-	3: random_conts_jgr_green_k_1_loadstage;
+
+//food conts
+
+
+//jnr reefer old style
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_a_1_food_60) {
+	7: random_conts_jnr_reefer_a_1_loadstage;
+    3: random_conts_jnr_reefer_b_1_loadstage;
+	4: random_conts_jnr_green_c_1_loadstage;
+	2: random_conts_jnr_green_d_1_loadstage;
 }
 
-//70
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_general_70) {
-//	independent: random_conts_jgr_green_a_4_general_70;
-//	independent: random_conts_jgr_green_a_3_general_70;
-//	independent: random_conts_jgr_green_a_2_general_70;
-	6: random_conts_jgr_green_d_1_loadstage;
-    3: random_conts_jgr_green_e_1_loadstage;
-	4: random_conts_jgr_green_f_1_loadstage;
-	6: random_conts_jgr_green_g_1_loadstage;
+//jnr reefer newer style
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_white_a_1_food_70) {
+	2: random_conts_jnr_reefer_b_1_loadstage;
+    3: random_conts_jnr_reefer_c_1_loadstage;
+	6: random_conts_jnr_reefer_d_1_loadstage;
+	4: random_conts_jnr_reefer_e_1_loadstage;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_food_70) {
-//	independent: random_conts_jgr_green_a_4_food_70;
-//	independent: random_conts_jgr_green_a_3_food_70;
-//	independent: random_conts_jgr_green_a_2_food_70;
-	2: random_conts_jgr_reefer_b_1_loadstage;
-    3: random_conts_jgr_reefer_c_1_loadstage;
-	6: random_conts_jgr_reefer_d_1_loadstage;
-	4: random_conts_jgr_reefer_e_1_loadstage;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_liquid_70) {
-//	independent: random_conts_jgr_green_a_4_liquid_70;
-//	independent: random_conts_jgr_green_a_3_liquid_70;
-//	independent: random_conts_jgr_green_a_2_liquid_70;
-	4: random_conts_jgr_green_j_1_loadstage;
-    3: random_conts_jgr_green_k_1_loadstage;
-	7: random_conts_jgr_green_e_1_loadstage;
-	5: random_conts_jgr_green_f_1_loadstage;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_bulk_70) {
-//	independent: random_conts_jgr_green_a_4_bulk_70;
-//	independent: random_conts_jgr_green_a_3_bulk_70;
-//	independent: random_conts_jgr_green_a_2_bulk_70;
-	5: random_conts_jgr_green_h_1_loadstage;
-    9: random_conts_jgr_green_i_1_loadstage;
-	6: random_conts_jgr_green_f_1_loadstage;
-	2: random_conts_jgr_green_g_1_loadstage;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_conts_jgr_green_a_1_mixed_70) {
-//	independent: random_conts_jgr_green_a_4_mixed_70;
-//	independent: random_conts_jgr_green_a_3_mixed_70;
-//	independent: random_conts_jgr_green_a_2_mixed_70;
-	5: random_conts_jgr_green_d_1_loadstage;
-    2: random_conts_jgr_green_e_1_loadstage;
-	8: random_conts_jgr_green_f_1_loadstage;
-	2: random_conts_jgr_green_g_1_loadstage;
-	9: random_conts_jgr_green_h_1_loadstage;
-	3: random_conts_jgr_green_i_1_loadstage;
-	2: random_conts_jgr_green_j_1_loadstage;
-	1: random_conts_jgr_green_k_1_loadstage;
-}
-
-//80s
+//private reefers jnr mixed
 
 random_switch(FEAT_TRAINS, SELF, random_conts_private_a_1_food_80) {
-//	independent: random_conts_private_a_4_food_80;
-//	independent: random_conts_private_a_3_food_80;
-//	independent: random_conts_private_a_2_food_80;
-	2: random_conts_jgr_reefer_f_1_loadstage;
-    3: random_conts_jgr_reefer_g_1_loadstage;
-	6: random_conts_jgr_reefer_h_1_loadstage;
-	4: random_conts_jgr_reefer_i_1_loadstage;
-//	6: random_conts_jgr_reefer_j_1_loadstage;
-	4: random_conts_jgr_reefer_k_1_loadstage;
+	2: random_conts_jnr_reefer_f_1_loadstage;
+    3: random_conts_jnr_reefer_g_1_loadstage;
+	6: random_conts_jnr_reefer_h_1_loadstage;
+	4: random_conts_jnr_reefer_i_1_loadstage;
+	6: random_conts_jnr_reefer_j_1_loadstage;
+	4: random_conts_jnr_reefer_k_1_loadstage;
+	1: random_conts_jnr_reefer_b_1_loadstage;
+    1: random_conts_jnr_reefer_c_1_loadstage;
+	1: random_conts_jnr_reefer_d_1_loadstage;
+	1: random_conts_jnr_reefer_e_1_loadstage;
+}
+
+//private reefers only
+random_switch(FEAT_TRAINS, SELF, random_conts_private_a_1_food_90) {
+	2: random_conts_jnr_reefer_f_1_loadstage;
+    3: random_conts_jnr_reefer_g_1_loadstage;
+	6: random_conts_jnr_reefer_h_1_loadstage;
+	4: random_conts_jnr_reefer_i_1_loadstage;
+	6: random_conts_jnr_reefer_j_1_loadstage;
+	4: random_conts_jnr_reefer_k_1_loadstage;
+}
+
+
+
+//liquid conts
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_liquid_60) {
+//	independent: random_conts_jnr_green_a_4_liquid_60;
+//	independent: random_conts_jnr_green_a_3_liquid_60;
+//	independent: random_conts_jnr_green_a_2_liquid_60;
+	3: random_conts_jnr_green_j_1_loadstage;
+    6: random_conts_jnr_green_k_1_loadstage;
+	4: random_conts_jnr_green_c_1_loadstage;
+	2: random_conts_jnr_green_d_1_loadstage;
+}
+
+
+//bulk conts
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_bulk_60) {
+//	independent: random_conts_jnr_green_a_4_bulk_60;
+//	independent: random_conts_jnr_green_a_3_bulk_60;
+//	independent: random_conts_jnr_green_a_2_bulk_60;
+	4: random_conts_jnr_green_h_1_loadstage;
+    3: random_conts_jnr_green_i_1_loadstage;
+	2: random_conts_jnr_green_c_1_loadstage;
+	6: random_conts_jnr_green_d_1_loadstage;
+}
+
+//mixed conts
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_mixed_60) {
+//	independent: random_conts_jnr_green_a_4_mixed_60;
+//	independent: random_conts_jnr_green_a_3_mixed_60;
+//	independent: random_conts_jnr_green_a_2_mixed_60;
+	3: random_conts_jnr_green_a_1_loadstage;
+    4: random_conts_jnr_green_b_1_loadstage;
+	1: random_conts_jnr_green_c_1_loadstage;
+	5: random_conts_jnr_green_d_1_loadstage;
+	1: random_conts_jnr_green_h_1_loadstage;
+	2: random_conts_jnr_green_i_1_loadstage;
+	1: random_conts_jnr_green_j_1_loadstage;
+	3: random_conts_jnr_green_k_1_loadstage;
 }
 
 
 
 
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_liquid_70) {
+//	independent: random_conts_jnr_green_a_4_liquid_70;
+//	independent: random_conts_jnr_green_a_3_liquid_70;
+//	independent: random_conts_jnr_green_a_2_liquid_70;
+	4: random_conts_jnr_green_j_1_loadstage;
+    3: random_conts_jnr_green_k_1_loadstage;
+	7: random_conts_jnr_green_e_1_loadstage;
+	5: random_conts_jnr_green_f_1_loadstage;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_bulk_70) {
+//	independent: random_conts_jnr_green_a_4_bulk_70;
+//	independent: random_conts_jnr_green_a_3_bulk_70;
+//	independent: random_conts_jnr_green_a_2_bulk_70;
+	5: random_conts_jnr_green_h_1_loadstage;
+    9: random_conts_jnr_green_i_1_loadstage;
+	6: random_conts_jnr_green_f_1_loadstage;
+	2: random_conts_jnr_green_g_1_loadstage;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_mixed_70) {
+//	independent: random_conts_jnr_green_a_4_mixed_70;
+//	independent: random_conts_jnr_green_a_3_mixed_70;
+//	independent: random_conts_jnr_green_a_2_mixed_70;
+	5: random_conts_jnr_green_d_1_loadstage;
+    2: random_conts_jnr_green_e_1_loadstage;
+	8: random_conts_jnr_green_f_1_loadstage;
+	2: random_conts_jnr_green_g_1_loadstage;
+	9: random_conts_jnr_green_h_1_loadstage;
+	3: random_conts_jnr_green_i_1_loadstage;
+	2: random_conts_jnr_green_j_1_loadstage;
+	1: random_conts_jnr_green_k_1_loadstage;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_jnr_green_a_1_mixed_80) {
+//	independent: random_conts_jnr_green_a_4_mixed_70;
+//	independent: random_conts_jnr_green_a_3_mixed_70;
+//	independent: random_conts_jnr_green_a_2_mixed_70;
+	5: random_conts_jnr_green_a_1_general_80;
+    2: random_conts_jnr_green_a_1_liquid_70;
+	8: random_conts_private_a_1_food_80;
+}
+
+
+
+
+//final year switches
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_general_year, current_year) {
-	0..1970: random_conts_jgr_green_a_1_general_60;
-	random_conts_jgr_green_a_1_general_70;
+	0..1970: random_conts_jnr_green_a_1_general_60;
+	
+	1970..1980: random_conts_jnr_green_a_1_general_70;
+	1980..1985: random_conts_jnr_green_a_1_general_80;
+	1985..1990: random_conts_jnr_blue_a_1_general_85;
+	1990..1995: random_conts_jrf_blue_a_1_general_90;
+	1995..2000: random_conts_jrf_blue_a_1_general_95;
+	2000..2005: random_conts_jrf_red_a_1_general_00;
+	2005..2015: random_conts_jrf_red_a_1_general_05;
+	random_conts_jrf_red_a_1_general_15;
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_food_year, current_year) {
-	0..1970: random_conts_jgr_green_a_1_food_60;
-	1970..1987: random_conts_jgr_green_a_1_food_70;
-	random_conts_private_a_1_food_80;
+	0..1970: random_conts_jnr_white_a_1_food_60;
+	1970..1980: random_conts_jnr_white_a_1_food_70;
+	1980..1990: random_conts_private_a_1_food_80;
+	random_conts_private_a_1_food_90;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_1_liquid_year, current_year) {
-	0..1970: random_conts_jgr_green_a_1_liquid_60;
-	random_conts_jgr_green_a_1_liquid_70;
+	0..1970: random_conts_jnr_green_a_1_liquid_60;
+	random_conts_jnr_green_a_1_liquid_70;
 	}
 
 switch(FEAT_TRAINS, SELF, switch_conts_1_bulk_year, current_year) {
-	0..1970: random_conts_jgr_green_a_1_bulk_60;
-	random_conts_jgr_green_a_1_bulk_70;
+	0..1970: random_conts_jnr_green_a_1_bulk_60;
+	random_conts_jnr_green_a_1_bulk_70;
 	}
 	
 switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_year, current_year) {
-	0..1970: random_conts_jgr_green_a_1_mixed_60;
-	random_conts_jgr_green_a_1_mixed_70;
+	0..1970: random_conts_jnr_green_a_1_mixed_60;
+	1970..1980: random_conts_jnr_green_a_1_mixed_70;
+
+	random_conts_jnr_green_a_1_mixed_80;
 	}
 	
 

@@ -1,4 +1,9 @@
 
+//blank
+
+spriteset(spriteset_conts_blank, "gfx/blank.png") { 
+	template_container_1(1, 1)
+}
 
 
 

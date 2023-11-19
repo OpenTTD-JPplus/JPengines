@@ -125,7 +125,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -169,7 +169,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 	running_cost_factor: 12;
 	running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		bitmask_vehicle_info: bitmask(2);//speed boost 100
 		variant_group: 1413;
 	}
