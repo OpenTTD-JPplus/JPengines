@@ -53,9 +53,9 @@ switch(FEAT_TRAINS, SELF, switch_kokifu_50000_up_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  random_koki_50000_brown;
-    1:  switch_conts_cargo_selection;
-	2:	switch_conts_cargo_selection;
-	3:	switch_conts_cargo_selection;
+    1:  switch_conts_cargo_load_end;
+	2:	switch_conts_cargo_load_middle;
+	3:	switch_conts_cargo_load_middle;
 	4:	spriteset_koki_50000_brakevan_rear;
 	5:  spriteset_blank;
 	6:  switch_taillights_8;
@@ -67,9 +67,9 @@ switch(FEAT_TRAINS, SELF, switch_kokifu_50000_down_loadstack, [
     ]) {
     0:  random_koki_50000_brown;
     1:  spriteset_koki_50000_brakevan_rear;
-	2:	switch_conts_cargo_selection;
-	3:	switch_conts_cargo_selection;
-	4:	switch_conts_cargo_selection;
+	2:	switch_conts_cargo_load_middle;
+	3:	switch_conts_cargo_load_middle;
+	4:	switch_conts_cargo_load_end;
 	5:  spriteset_blank;
 	6:  switch_taillights_8;
 }
@@ -104,10 +104,10 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  random_koki_50000_brown;
-    1:  switch_conts_cargo_selection;
-	2:  switch_conts_cargo_selection;
-	3:  switch_conts_cargo_selection;
-	4:  switch_conts_cargo_selection;
+    1:  switch_conts_cargo_load_end;
+	2:	switch_conts_cargo_load_middle;
+	3:	switch_conts_cargo_load_middle;
+	4:	switch_conts_cargo_load_end;
 	5:  spriteset_koki_50000_handrail;
 	6:  switch_taillights_8;
 }
@@ -130,7 +130,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -174,7 +174,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -265,10 +265,10 @@ switch(FEAT_TRAINS, SELF, switch_koki_250000_base_loadstack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0:  random_koki_250000_green;
-    1:  switch_conts_cargo_selection;
-	2:  switch_conts_cargo_selection;
-	3:  switch_conts_cargo_selection;
-	4:  switch_conts_cargo_selection;
+    1:  switch_conts_cargo_load_end;
+	2:	switch_conts_cargo_load_middle;
+	3:	switch_conts_cargo_load_middle;
+	4:	switch_conts_cargo_load_end;
 	5:  spriteset_koki_250000_handrail;
 	6:  switch_taillights_8;
 }
@@ -281,7 +281,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 		name: string(STR_NAME_KOKI_250000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1985,1,1);
-		speed: 110 km/h;
+		speed: 100 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -291,7 +291,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -312,9 +312,11 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
-		purchase_speed: return 110;
+		purchase_speed: return 100;
 		default: switch_koki_250000_base_loadstack;
 		purchase: switch_koki_250000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }
+
+//todo add koki350000

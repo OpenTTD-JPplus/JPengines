@@ -25,15 +25,15 @@ spriteset(spriteset_slag_ladle_new_full, "gfx/freight/steel_wagons.png") {
 
 
 spriteset(spriteset_slag_ladle_yawata_old_purchase, "gfx/freight/steel_wagons.png") {
-	template_purchase(1, 288)
+	template_purchase_anim(1, 288)
 }
 
 spriteset(spriteset_slag_ladle_yawata_new_purchase, "gfx/freight/steel_wagons.png") {
-	template_purchase(180, 288)
+	template_purchase_anim(180, 288)
 }
 
 spriteset(spriteset_slag_ladle_nippon_purchase, "gfx/freight/steel_wagons.png") {
-	template_purchase(89, 288)
+	template_purchase_anim(89, 288)
 }
 
 spritegroup spritegroup_slag_ladle_old {

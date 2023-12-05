@@ -109,6 +109,11 @@ template template_container_4(x, y) {
         [x, y,  54, 12, -25, -7]
     }
 
+    template template_purchase_anim(x, y) {
+        //[left_x, upper_y, width, height, offset_x, offset_y]
+        [x, y,  87, 12, -25, -7, ANIM]
+    }
+
     template template_purchase(x, y) {
         //[left_x, upper_y, width, height, offset_x, offset_y]
         [x, y,  87, 12, -25, -7]

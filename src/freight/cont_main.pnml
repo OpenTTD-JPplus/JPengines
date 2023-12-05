@@ -309,7 +309,137 @@ switch(FEAT_TRAINS, SELF, switch_conts_mixed_liquid_flip, vehicle_is_flipped) {
 	switch_conts_mixed_liquid_direction;
 	}
 
+//stack mixed open
 
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_open_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_1_mixed_open_year;
+	2:	switch_conts_2_mixed_open_year;
+	3:	switch_conts_3_mixed_open_year;
+	4:	switch_conts_4_mixed_open_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_open_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_4_mixed_open_year;
+	2:	switch_conts_3_mixed_open_year;
+	3:	switch_conts_2_mixed_open_year;
+	4:	switch_conts_1_mixed_open_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_open_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_conts_mixed_open_down_loadstack;
+	DIRECTION_SOUTH: switch_conts_mixed_open_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_conts_mixed_open_down_loadstack;
+	switch_conts_mixed_open_up_loadstack;
+}
+
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_open_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_mixed_open_down_loadstack;
+	DIRECTION_NORTH: switch_conts_mixed_open_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_mixed_open_down_loadstack;
+	switch_conts_mixed_open_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_open_flip, vehicle_is_flipped) {
+	1: switch_conts_mixed_open_direction_flipped;
+	switch_conts_mixed_open_direction;
+	}
+
+
+//stack lidded
+
+switch(FEAT_TRAINS, SELF, switch_conts_lidded_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_1_lidded_year;
+	2:	switch_conts_2_lidded_year;
+	3:	switch_conts_3_lidded_year;
+	4:	switch_conts_4_lidded_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_lidded_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_4_lidded_year;
+	2:	switch_conts_3_lidded_year;
+	3:	switch_conts_2_lidded_year;
+	4:	switch_conts_1_lidded_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_lidded_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_conts_lidded_down_loadstack;
+	DIRECTION_SOUTH: switch_conts_lidded_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_conts_lidded_down_loadstack;
+	switch_conts_lidded_up_loadstack;
+}
+
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_lidded_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_lidded_down_loadstack;
+	DIRECTION_NORTH: switch_conts_lidded_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_lidded_down_loadstack;
+	switch_conts_lidded_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_lidded_flip, vehicle_is_flipped) {
+	1: switch_conts_lidded_direction_flipped;
+	switch_conts_lidded_direction;
+	}
+
+
+//stack mixed open
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_vented_up_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_1_mixed_vented_year;
+	2:	switch_conts_2_mixed_vented_year;
+	3:	switch_conts_3_mixed_vented_year;
+	4:	switch_conts_4_mixed_vented_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_vented_down_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    1:  switch_conts_4_mixed_vented_year;
+	2:	switch_conts_3_mixed_vented_year;
+	3:	switch_conts_2_mixed_vented_year;
+	4:	switch_conts_1_mixed_vented_year;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_vented_direction, direction) {
+	DIRECTION_SOUTHEAST: switch_conts_mixed_vented_down_loadstack;
+	DIRECTION_SOUTH: switch_conts_mixed_vented_down_loadstack;
+	DIRECTION_SOUTHWEST: switch_conts_mixed_vented_down_loadstack;
+	switch_conts_mixed_vented_up_loadstack;
+}
+
+//reversing switch for when containers are ctrl-flipped
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_vented_direction_flipped, direction) {
+	DIRECTION_NORTHWEST: switch_conts_mixed_vented_down_loadstack;
+	DIRECTION_NORTH: switch_conts_mixed_vented_down_loadstack;
+	DIRECTION_NORTHEAST: switch_conts_mixed_vented_down_loadstack;
+	switch_conts_mixed_vented_up_loadstack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_mixed_vented_flip, vehicle_is_flipped) {
+	1: switch_conts_mixed_vented_direction_flipped;
+	switch_conts_mixed_vented_direction;
+	}
+
+
+
+/////////
 
 //final cargo select
 
@@ -319,7 +449,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_class, cargo_classes) {
 	bitmask(CC_EXPRESS): switch_conts_general_flip;
 	bitmask(CC_BULK): switch_conts_bulk_flip;
 	bitmask(CC_POWDERIZED): switch_conts_bulk_flip;
-//	bitmask(CC_OVERSIZED): switch_koki_10000_cargo_goods;
+//	bitmask(CC_PIECE_GOODS): switch_conts_mixed_open_flip;
 	switch_conts_mixed_flip;
 }
 
@@ -329,12 +459,20 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	FOOD: switch_conts_food_flip;
 
 	VEHI: switch_conts_general_flip;
+	ENSP: switch_conts_general_flip;
+	FMSP: switch_conts_general_flip;
+	TYRE: switch_conts_general_flip;
+	VPTS: switch_conts_general_flip;
+	MNSP: switch_conts_general_flip;
 	
-	
-	ACID: switch_conts_mixed_liquid_flip;
-	SULP: switch_conts_mixed_liquid_flip;
-	CHLO: switch_conts_mixed_liquid_flip;
-	FERT: switch_conts_mixed_liquid_flip;
+	PETR: switch_conts_liquid_flip;
+	RFPR: switch_conts_liquid_flip;
+	H2__: switch_conts_liquid_flip;
+	CHLO: switch_conts_liquid_flip;
+
+	ACID: switch_conts_liquid_flip;
+	SULP: switch_conts_liquid_flip;
+
 	COAT: switch_conts_mixed_liquid_flip;
 	LYE_: switch_conts_mixed_liquid_flip;
 	NH3_: switch_conts_mixed_liquid_flip;
@@ -342,17 +480,97 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	C3H6: switch_conts_mixed_liquid_flip;
 	C2H4: switch_conts_mixed_liquid_flip;
 	NAPH: switch_conts_mixed_liquid_flip;
+	WELD: switch_conts_mixed_liquid_flip;
 	
 	BEER: switch_conts_mixed_food_flip;
 	MILK: switch_conts_mixed_food_flip;
 	EOIL: switch_conts_mixed_food_flip;
-	FRUT: switch_conts_mixed_food_flip;
 	FISH: switch_conts_food_flip;
 
 	CMNT: switch_conts_bulk_flip;
 	KAOL: switch_conts_bulk_flip;
 	CBLK: switch_conts_bulk_flip;
 	CLAY: switch_conts_bulk_flip;
+	PLAS: switch_conts_bulk_flip;
+	NHNO: switch_conts_bulk_flip;
+
+
+	STEL: switch_conts_mixed_open_flip;
+	ALUM: switch_conts_mixed_open_flip;
+	CSTI: switch_conts_mixed_open_flip;
+	METL: switch_conts_mixed_open_flip;
+	COPR: switch_conts_mixed_open_flip;
+	WDPR: switch_conts_mixed_open_flip;
+	FOCA: switch_conts_mixed_open_flip;
+	STAL: switch_conts_mixed_open_flip;
+	STSH: switch_conts_mixed_open_flip;
+	STSE: switch_conts_mixed_open_flip;
+	STST: switch_conts_mixed_open_flip;
+	STWR: switch_conts_mixed_open_flip;
+	IRON: switch_conts_mixed_open_flip;
+	STCB: switch_conts_mixed_open_flip;
+	STPP: switch_conts_mixed_open_flip;
+	ZINC: switch_conts_mixed_open_flip;
+
+
+	//more metal cargos if needed
+
+
+	RCYC: switch_conts_lidded_flip;
+	WSTE: switch_conts_lidded_flip;
+	SLAG: switch_conts_lidded_flip;
+	CTAR: switch_conts_lidded_flip;
+	FERT: switch_conts_lidded_flip;
+
+	FRUT: switch_conts_mixed_vented_flip;
+	BEAN: switch_conts_mixed_vented_flip;
+	FRVG: switch_conts_mixed_vented_flip;
+	JAVA: switch_conts_mixed_vented_flip;
+	TATO: switch_conts_mixed_vented_flip;
+
+
 	
 	switch_conts_cargo_class;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_empty) {
+
+	2: spriteset_blank;
+    1: switch_conts_cargo_selection;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_half) {
+
+	1: spriteset_blank;
+    3: switch_conts_cargo_selection;
+
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_end, cargo_count) {
+	0..1: random_conts_cargo_load_end_empty;
+	1..40: random_conts_cargo_load_end_half;
+	switch_conts_cargo_selection;
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_middle_empty) {
+
+	4: spriteset_blank;
+    1: switch_conts_cargo_selection;
+
+}
+
+random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_middle_half) {
+
+	1: spriteset_blank;
+    2: switch_conts_cargo_selection;
+
+}
+
+switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_middle, cargo_count) {
+	0..10: spriteset_blank;
+	10..30: random_conts_cargo_load_middle_empty;
+	30..50: random_conts_cargo_load_middle_half;
+	switch_conts_cargo_selection;
 }
