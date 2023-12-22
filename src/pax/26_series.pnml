@@ -329,7 +329,7 @@ item (FEAT_TRAINS, pax_26series, 1346) {
 		dual_headed: 0;
 		cargo_capacity: 70; 
 		refit_cost: 0;
-		cargo_age_period: 0;
+		cargo_age_period: 800;
 		default_cargo_type: PASS;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 

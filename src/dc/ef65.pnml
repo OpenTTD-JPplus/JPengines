@@ -235,7 +235,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 84;
@@ -340,7 +340,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 88;
@@ -484,7 +484,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 88;
@@ -583,7 +583,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 84;
