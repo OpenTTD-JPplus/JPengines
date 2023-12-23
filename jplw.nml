@@ -12230,6 +12230,10 @@ spriteset(spriteset_df200_7000, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 1)
 }
 
+alternative_sprites(spriteset_df200_7000, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 256)
+}
+
 spriteset(spriteset_df200_7000_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 32)
 }
@@ -12286,6 +12290,10 @@ spriteset(spriteset_df200_100_jr_purchase, "gfx/diesel/df200.png") {
 
 spriteset(spriteset_df200_7000_purchase, "gfx/diesel/df200.png") {
 	template_purchase(180, 288)
+}
+
+alternative_sprites(spriteset_df200_7000_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_purchase(89, 288)
 }
 
 
@@ -18057,12 +18065,64 @@ spriteset(spriteset_pax_77series_cc_flip_7, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_flip(180, 128)
 }
 
+
+
+
+//32bpp
+
+alternative_sprites(spriteset_pax_77series_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_pax_77series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_pax_77series_3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 64)
+}
+
+alternative_sprites(spriteset_pax_77series_4, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 96)
+}
+
+alternative_sprites(spriteset_pax_77series_7, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 128)
+}
+
+
+//32bpp flipped
+
+alternative_sprites(spriteset_pax_77series_flip_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 1)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 32)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 64)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_4, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 96)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_7, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 128)
+}
+
+
 //purch
 
 spriteset(spriteset_pax_77series_purchase, "gfx/paxmail/77series-7stars.png") {
 	template_purchase(1, 288)
 }
 
+alternative_sprites(spriteset_pax_77series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_purchase(1, 288)
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_77series_middle, position_in_vehid_chain % 2) {
@@ -25985,7 +26045,6 @@ random_switch(FEAT_TRAINS, SELF, random_conts_4_mixed_open_y1960) {
 }
 
 random_switch(FEAT_TRAINS, SELF, random_conts_4_mixed_open_y1970) {
-	4: spriteset_conts_jnr_green_a_4;
     4: spriteset_conts_jnr_green_b_4;
 	5: spriteset_conts_jnr_green_c_4;
 	7: spriteset_conts_jnr_green_d_4;
@@ -31600,7 +31659,6 @@ random_switch(FEAT_TRAINS, SELF, random_conts_1_mixed_open_y2000) {
 	6: spriteset_conts_jrf_blue_g_1;
 	7: spriteset_conts_jrf_blue_h_1;
     5: spriteset_conts_jrf_blue_i_1;
-	6: spriteset_conts_jrf_blue_j_1;
 	7: spriteset_conts_jrf_red_b_1;
 	7: spriteset_conts_jrf_red_c_1;
 	7: spriteset_conts_jrf_red_d_1;
@@ -31626,8 +31684,6 @@ random_switch(FEAT_TRAINS, SELF, random_conts_1_mixed_open_y2010) {
 	6: spriteset_conts_jrf_red_f_1;
 	1: spriteset_conts_jrf_red_g_1;
 	7: spriteset_conts_jrf_red_h_1;
-    5: spriteset_conts_jrf_red_i_1;
-	6: spriteset_conts_jrf_red_j_1;
     4: spriteset_conts_private_open_a_1;
 	4: spriteset_conts_private_open_b_1;
 	4: spriteset_conts_private_open_c_1;
@@ -32838,7 +32894,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 30;
@@ -32984,7 +33040,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -33028,7 +33084,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -33187,7 +33243,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -33231,7 +33287,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -33348,7 +33404,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -33503,7 +33559,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		loading_speed: 35;
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED); 
 		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, ALO_, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, GRVL, LIME, OLSD, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;

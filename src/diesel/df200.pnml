@@ -31,6 +31,10 @@ spriteset(spriteset_df200_7000, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 1)
 }
 
+alternative_sprites(spriteset_df200_7000, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 256)
+}
+
 spriteset(spriteset_df200_7000_cc, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 32)
 }
@@ -87,6 +91,10 @@ spriteset(spriteset_df200_100_jr_purchase, "gfx/diesel/df200.png") {
 
 spriteset(spriteset_df200_7000_purchase, "gfx/diesel/df200.png") {
 	template_purchase(180, 288)
+}
+
+alternative_sprites(spriteset_df200_7000_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_purchase(89, 288)
 }
 
 

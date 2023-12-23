@@ -80,12 +80,64 @@ spriteset(spriteset_pax_77series_cc_flip_7, "gfx/paxmail/77series-7stars.png") {
 	template_2cc_flip(180, 128)
 }
 
+
+
+
+//32bpp
+
+alternative_sprites(spriteset_pax_77series_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 1)
+}
+
+alternative_sprites(spriteset_pax_77series_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 32)
+}
+
+alternative_sprites(spriteset_pax_77series_3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 64)
+}
+
+alternative_sprites(spriteset_pax_77series_4, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 96)
+}
+
+alternative_sprites(spriteset_pax_77series_7, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_std(1, 128)
+}
+
+
+//32bpp flipped
+
+alternative_sprites(spriteset_pax_77series_flip_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 1)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 32)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 64)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_4, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 96)
+}
+
+alternative_sprites(spriteset_pax_77series_flip_7, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_2cc_flip(1, 128)
+}
+
+
 //purch
 
 spriteset(spriteset_pax_77series_purchase, "gfx/paxmail/77series-7stars.png") {
 	template_purchase(1, 288)
 }
 
+alternative_sprites(spriteset_pax_77series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/paxmail/32bpp/7stars.png") {
+	template_purchase(1, 288)
+}
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_77series_middle, position_in_vehid_chain % 2) {
