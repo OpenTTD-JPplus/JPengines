@@ -21,7 +21,7 @@ An extension and overhaul of all locomotives and locomotive-hauled rolling stock
 Featuring a much larger selection of locomotives from all different eras and companies. Includes some private railways in addition to JGR/JNR/JR Group. 
 All locomotives have livery refits and are also available in company colours.
 
-A much larger selection of freight wagons allows for realistic consists. Fully compatible with industry sets such as FIRS and XIS, including custom load graphics.
+A much larger selection of freight wagons allows for realistic consists. Fully compatible with industry sets such as FIRS and AXIS, including custom load graphics.
 
 Brake van speed boost feature allows for freight trains to run at consistent speeds, even with wagon speed limits on.
 
@@ -42,7 +42,7 @@ The source code is available on GitHub (https://github.com/EmperorJake/JPengines
 
 JP+ Engines overwrites vehicle IDs from JapanSet3 Trains. This is subject to change in the future and will involve a major shakeup of IDs. 
 
-The lang file contains many redundant strings as it is still being reworked. Translations will not be accepted until the restructure is complete, to prevent wasted time.
+Translations are being accepted as of now, but please be aware that somewhat major changes could still be made to the lang file as the project progresses.
 
 ## 5.0 Credits & License
 
