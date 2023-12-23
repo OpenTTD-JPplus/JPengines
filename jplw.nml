@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 190;
+ version: 191;
  min_compatible_version: 60;
  
  //params, thanks tin
@@ -2233,7 +2233,7 @@ property {
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 925 kW;
-  reliability_decay: 20;
+  reliability_decay: 17;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 31;
@@ -2302,7 +2302,7 @@ item (FEAT_TRAINS, ed50, 1012) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 60;
-  reliability_decay: 20;
+  reliability_decay: 17;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 31;
@@ -2956,7 +2956,7 @@ property {
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1350 kW;
-  reliability_decay: 20;
+  reliability_decay: 22;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 39;
@@ -3056,7 +3056,7 @@ item (FEAT_TRAINS, ef10_2, 1052) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 98;
-  reliability_decay: 20;
+  reliability_decay: 22;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 39;
@@ -3155,7 +3155,7 @@ property {
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
   weight: 99;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 38;
@@ -3231,7 +3231,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 99;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 38;
@@ -3800,7 +3800,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 19;
   cost_factor: 46;
   length: 8;
   running_cost_factor: 74;
@@ -4529,7 +4529,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 115;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 68;
@@ -4603,7 +4603,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 113;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 66;
@@ -4665,7 +4665,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 113;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 44;
@@ -5648,7 +5648,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 85;
@@ -5793,7 +5793,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 15;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 85;
@@ -6062,7 +6062,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 84;
@@ -6167,7 +6167,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 88;
@@ -6311,7 +6311,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 88;
@@ -6410,7 +6410,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 3;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 84;
@@ -6653,7 +6653,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 17;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 100;
@@ -6752,7 +6752,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 17;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 100;
@@ -6828,7 +6828,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 17;
   model_life: 55;
   vehicle_life: 45;
   cost_factor: 101;
@@ -6979,7 +6979,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 21;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 109;
@@ -7068,7 +7068,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 21;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 109;
@@ -7237,7 +7237,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -7341,7 +7341,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -7424,7 +7424,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -7597,7 +7597,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 116;
-  reliability_decay: 20;
+  reliability_decay: 22;
   model_life: 45;
   vehicle_life: 40;
   cost_factor: 50;
@@ -7713,7 +7713,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 118;
-  reliability_decay: 20;
+  reliability_decay: 22;
   model_life: 45;
   vehicle_life: 40;
   cost_factor: 50;
@@ -7829,7 +7829,7 @@ property {
   cargo_capacity: 1; 
   cargo_allow_refit: [PASS];
   weight: 116;
-  reliability_decay: 20;
+  reliability_decay: 22;
   model_life: 45;
   vehicle_life: 40;
   cost_factor: 88;
@@ -7940,7 +7940,7 @@ property {
 	name: string(STR_NAME_EH200);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 16;
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -9813,7 +9813,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 19;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -9930,7 +9930,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 19;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -10018,7 +10018,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 19;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -10269,7 +10269,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 40;
   length: 8;
@@ -10380,7 +10380,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 40;
   length: 8;
@@ -10463,7 +10463,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 40;
   length: 8;
@@ -10691,7 +10691,7 @@ property {
 	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	weight: 134;
-	reliability_decay: 20;
+	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
 	cargo_capacity: 1; 
@@ -10842,7 +10842,7 @@ property {
 	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	weight: 134;
-	reliability_decay: 20;
+	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
 	cargo_capacity: 1; 
@@ -10988,7 +10988,7 @@ property {
 	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	weight: 134;
-	reliability_decay: 20;
+	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
 	cargo_capacity: 1; 
@@ -11527,7 +11527,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 2;
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	engine_class: ENGINE_CLASS_DIESEL;
@@ -12083,7 +12083,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 9;
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 //	length: 6;
@@ -12172,7 +12172,7 @@ property {
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 13;
 
 //	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	cost_factor: 40;
@@ -12390,7 +12390,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 18;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 96;
@@ -12526,7 +12526,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 18;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 97;
@@ -12604,7 +12604,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 18;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 97;
@@ -12719,7 +12719,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
-  reliability_decay: 20;
+  reliability_decay: 18;
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 25;
   cost_factor: 96;
@@ -12810,7 +12810,7 @@ property {
 	name: string(STR_NAME_HD300);
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
-	reliability_decay: 20;
+	reliability_decay: 13;
 
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	engine_class: ENGINE_CLASS_DIESEL;
@@ -13783,6 +13783,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		dual_headed: 0;
 		cargo_capacity: 36; 
 		refit_cost: 0;
+		cargo_age_period: 100;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
@@ -14112,6 +14113,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		dual_headed: 0;
 		cargo_capacity: 50; 
 		refit_cost: 0;
+		cargo_age_period: 120;
 		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
@@ -14677,6 +14679,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		dual_headed: 0;
 		cargo_capacity: 75; 
 		refit_cost: 0;
+		cargo_age_period: 160;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
@@ -15928,7 +15931,7 @@ item (FEAT_TRAINS, pax_suha43, 1318) {
 		cargo_capacity: 80; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-		cargo_age_period: 0;
+		cargo_age_period: 400;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
@@ -16265,7 +16268,7 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		cargo_capacity: 85; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-		cargo_age_period: 0;
+		cargo_age_period: 400;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
@@ -16510,7 +16513,7 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		cargo_capacity: 70; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-		cargo_age_period: 0;
+		cargo_age_period: 600;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
@@ -16718,7 +16721,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 70; 
-		cargo_age_period: 0;
+		cargo_age_period: 600;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
@@ -16895,6 +16898,7 @@ item (FEAT_TRAINS, pax_12_series, 1320) {
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
+		cargo_age_period: 240;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 26;
@@ -17183,7 +17187,7 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 70; 
-		cargo_age_period: 0;
+		cargo_age_period: 600;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 40;
@@ -17385,6 +17389,7 @@ item (FEAT_TRAINS, pax_50_series, 1340) {
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
+		cargo_age_period: 160;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
@@ -17597,6 +17602,7 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
+		cargo_age_period: 200;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
 		weight: 24;
@@ -17956,7 +17962,7 @@ item (FEAT_TRAINS, pax_26series, 1346) {
 		dual_headed: 0;
 		cargo_capacity: 70; 
 		refit_cost: 0;
-		cargo_age_period: 0;
+		cargo_age_period: 800;
 		default_cargo_type: PASS;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
@@ -18269,7 +18275,7 @@ item (FEAT_TRAINS, pax_77series, 1347) {
 		dual_headed: 0;
 		cargo_capacity: 70; 
 		refit_cost: 0;
-		cargo_age_period: 0;
+		cargo_age_period: 800;
 		default_cargo_type: PASS;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
@@ -19039,7 +19045,7 @@ item (FEAT_TRAINS, pax_10series, 1322) {
 		cargo_capacity: 80; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-		cargo_age_period: 0;
+		cargo_age_period: 500;
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
@@ -21874,7 +21880,7 @@ property {
 //	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	loading_speed: 20;
-	cargo_age_period: 0;
+	cargo_age_period: 720;
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -21943,7 +21949,7 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		cargo_capacity: 30; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 840;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 10;
@@ -22028,7 +22034,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		cargo_capacity: 50; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 1000;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		weight: 20;
@@ -22089,7 +22095,7 @@ property {
 	non_refittable_cargo_classes: 0; 
 	loading_speed: 20;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	cargo_age_period: 0;
+	cargo_age_period: 1200;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -22143,7 +22149,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		cargo_capacity: 60; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 1200;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
@@ -35106,6 +35112,7 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		refit_cost: 0;
 		default_cargo_type: SLAG;
 		loading_speed: 20;
+		cargo_age_period: 320;
 		cargo_allow_refit: [SLAG, IRON, METL]; 
 		weight: 30;
 		cost_factor: 22;
@@ -35215,6 +35222,7 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		refit_cost: 0;
 		default_cargo_type: IRON;
 		loading_speed: 40;
+		cargo_age_period: 320;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [IRON, METL]; 

@@ -274,6 +274,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		dual_headed: 0;
 		cargo_capacity: 36; 
 		refit_cost: 0;
+		cargo_age_period: 100;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 

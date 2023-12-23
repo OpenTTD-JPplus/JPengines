@@ -155,7 +155,7 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 70; 
-		cargo_age_period: 0;
+		cargo_age_period: 600;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;

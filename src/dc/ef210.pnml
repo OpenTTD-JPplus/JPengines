@@ -139,7 +139,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -243,7 +243,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
@@ -326,7 +326,7 @@ property {
   cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
-  reliability_decay: 20;
+  reliability_decay: 16;
   model_life: 40;
   vehicle_life: 40;
   length: 8;
