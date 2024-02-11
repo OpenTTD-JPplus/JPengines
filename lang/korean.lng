@@ -331,34 +331,34 @@ STR_REFIT_PAX_KN24		:{SILVER}코니 24{BLACK}
 ################
 #CLASS SUFFIXES#
 ################
-STR_SUFFIX_PAX_3CLASS			: III. Class Coach 
-STR_SUFFIX_PAX_2CLASS			: II. Class Coach 
-STR_SUFFIX_PAX_1CLASS			: I. Class Coach
-STR_SUFFIX_PAX_12CLASS			: I./II. Class Coach
-STR_SUFFIX_PAX_GREEN			: Green Car
-STR_SUFFIX_CONDUCTOR			:with Conductor's Room
+STR_SUFFIX_PAX_3CLASS			: 삼등석 객차
+STR_SUFFIX_PAX_2CLASS			: 이등석 객차
+STR_SUFFIX_PAX_1CLASS			: 일등석 객차
+STR_SUFFIX_PAX_12CLASS			: 일/이등석 객차
+STR_SUFFIX_PAX_GREEN			: 그린샤
+STR_SUFFIX_CONDUCTOR			:지휘자의 방과 함께
 
-STR_SUFFIX_OBS_1CLASS			: I. Class Observation Coach
+STR_SUFFIX_OBS_1CLASS			: 일등석 전망 객차
 
-STR_SUFFIX_DINER				: Dining Car
-STR_SUFFIX_DINER_1CLASS			: I. Class/Dining Car
-STR_SUFFIX_COMBINE_3CLASS		: III. Class Combine Coach 
-STR_SUFFIX_COMFLIP_3CLASS		: III. Class Combine Coach, Flipped
+STR_SUFFIX_DINER				: 식당차
+STR_SUFFIX_DINER_1CLASS			: 일등석/식당차
+STR_SUFFIX_COMBINE_3CLASS		: 삼등석 결합 객차
+STR_SUFFIX_COMFLIP_3CLASS		: 삼등석 뒤집힌 결합 객차
 
-STR_SUFFIX_SLEEPER_3CLASS		: III. Class Sleeper
-STR_SUFFIX_SLEEPER_2CLASS		: II. Class Sleeper
-STR_SUFFIX_SLEEPER_1CLASS		: I. Class Sleeper
-STR_SUFFIX_SLEEPER_12CLASS		: I./II. Class Sleeper
-STR_SUFFIX_SLEEPER_23CLASS		: II./III. Class Sleeper
-STR_SUFFIX_SLEEPER_STANDARD		: Standard Sleeper
-STR_SUFFIX_SLEEPER_GREEN		: Green Car Sleeper
+STR_SUFFIX_SLEEPER_3CLASS		: 삼등석 침대차
+STR_SUFFIX_SLEEPER_2CLASS		: 이등석 침대차
+STR_SUFFIX_SLEEPER_1CLASS		: 일등석 침대차
+STR_SUFFIX_SLEEPER_12CLASS		: 일/이등석 침대차
+STR_SUFFIX_SLEEPER_23CLASS		: 이/삼등석 침대차
+STR_SUFFIX_SLEEPER_STANDARD		: 일반 침대차
+STR_SUFFIX_SLEEPER_GREEN		: 그린샤 침대차
 
-STR_SUFFIX_GENERATOR			: Generator Van
-STR_SUFFIX_LOUNGE       		: Lounge Car
-STR_SUFFIX_INSPECTION			: Inspection Car
-STR_SUFFIX_ARMOURED				: Armoured Van
-STR_SUFFIX_MAIL                 : Mail Van
-STR_SUFFIX_LUGGAGE              : Luggage Van
+STR_SUFFIX_GENERATOR			: 발전차
+STR_SUFFIX_LOUNGE       		: 라운지차
+STR_SUFFIX_INSPECTION			: 점검차
+STR_SUFFIX_ARMOURED				: 장갑차
+STR_SUFFIX_MAIL                 : 우편차
+STR_SUFFIX_LUGGAGE              : 수하물차
 
 ################
 #FREIGHT WAGONS#
