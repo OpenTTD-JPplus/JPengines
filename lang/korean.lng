@@ -692,31 +692,31 @@ STR_DESC_WHEELS_1D2      :{BLACK}차륜 배치:{GOLD} 1-D-2 / 2-8-4{}
 STR_DESC_WHEELS_E        :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
 STR_DESC_WHEELS_1E2      :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
 
-STR_DESC_WHEELS_1BB1      :{BLACK}Wheel Arrangement:{GOLD} 1-B-B-1{}
-STR_DESC_WHEELS_BB        :{BLACK}Wheel Arrangement:{GOLD} B-B{}
-STR_DESC_WHEELS_BBB       :{BLACK}Wheel Arrangement:{GOLD} B-B-B{}
-STR_DESC_WHEELS_CB        :{BLACK}Wheel Arrangement:{GOLD} C-B{}
-STR_DESC_WHEELS_CC        :{BLACK}Wheel Arrangement:{GOLD} C-C{}
-STR_DESC_WHEELS_1CC1      :{BLACK}Wheel Arrangement:{GOLD} 1-C-C-1{}
-STR_DESC_WHEELS_2CC1      :{BLACK}Wheel Arrangement:{GOLD} 2-C-C-1{}
-STR_DESC_WHEELS_2CC2      :{BLACK}Wheel Arrangement:{GOLD} 2-C-C-2{}
-STR_DESC_WHEELS_B1B       :{BLACK}Wheel Arrangement:{GOLD} B-1-B{}
-STR_DESC_WHEELS_B2B       :{BLACK}Wheel Arrangement:{GOLD} B-2-B{}
-STR_DESC_WHEELS_BBBB      :{BLACK}Wheel Arrangement:{GOLD} B-B+B-B{}
+STR_DESC_WHEELS_1BB1      :{BLACK}차륜 배치:{GOLD} 1-B-B-1{}
+STR_DESC_WHEELS_BB        :{BLACK}차륜 배치:{GOLD} B-B{}
+STR_DESC_WHEELS_BBB       :{BLACK}차륜 배치:{GOLD} B-B-B{}
+STR_DESC_WHEELS_CB        :{BLACK}차륜 배치:{GOLD} C-B{}
+STR_DESC_WHEELS_CC        :{BLACK}차륜 배치:{GOLD} C-C{}
+STR_DESC_WHEELS_1CC1      :{BLACK}차륜 배치:{GOLD} 1-C-C-1{}
+STR_DESC_WHEELS_2CC1      :{BLACK}차륜 배치:{GOLD} 2-C-C-1{}
+STR_DESC_WHEELS_2CC2      :{BLACK}차륜 배치:{GOLD} 2-C-C-2{}
+STR_DESC_WHEELS_B1B       :{BLACK}차륜 배치:{GOLD} B-1-B{}
+STR_DESC_WHEELS_B2B       :{BLACK}차륜 배치:{GOLD} B-2-B{}
+STR_DESC_WHEELS_BBBB      :{BLACK}차륜 배치:{GOLD} B-B+B-B{}
 
-STR_DESC_USAGE_GP		:{BLACK}Usage: {SILVER}General Purpose{}
-STR_DESC_USAGE_LF		:{BLACK}Usage: {SILVER}Light Freight{}
-STR_DESC_USAGE_SHG		:{BLACK}Usage: {SILVER}Shunter / General Purpose{}
-STR_DESC_USAGE_SH		:{BLACK}Usage: {SILVER}Shunter{}
-STR_DESC_USAGE_HF		:{BLACK}Usage: {SILVER}Heavy Freight{}
-STR_DESC_USAGE_P		:{BLACK}Usage: {SILVER}Passenger{}
-STR_DESC_USAGE_XP		:{BLACK}Usage: {SILVER}Excursion Passenger{}
-STR_DESC_USAGE_EP		:{BLACK}Usage: {SILVER}Express Passenger{}
-STR_DESC_USAGE_EF		:{BLACK}Usage: {SILVER}Express Passenger / Heavy Freight{}
-STR_DESC_USAGE_FF		:{BLACK}Usage: {SILVER}Express Passenger / Fast Freight{}
-STR_DESC_USAGE_BANK		:{BLACK}Usage: {SILVER}Banker / Pusher{}
-STR_DESC_USAGE_PROTO	:{BLACK}Usage: {SILVER}Prototype{}
-STR_DESC_USAGE_CONCEPT	:{BLACK}Usage: {SILVER}Concept - Never Built{}
+STR_DESC_USAGE_GP		:{BLACK}용도: {SILVER}General Purpose{}
+STR_DESC_USAGE_LF		:{BLACK}용도: {SILVER}Light Freight{}
+STR_DESC_USAGE_SHG		:{BLACK}용도: {SILVER}Shunter / General Purpose{}
+STR_DESC_USAGE_SH		:{BLACK}용도: {SILVER}Shunter{}
+STR_DESC_USAGE_HF		:{BLACK}용도: {SILVER}Heavy Freight{}
+STR_DESC_USAGE_P		:{BLACK}용도: {SILVER}Passenger{}
+STR_DESC_USAGE_XP		:{BLACK}용도: {SILVER}Excursion Passenger{}
+STR_DESC_USAGE_EP		:{BLACK}용도: {SILVER}Express Passenger{}
+STR_DESC_USAGE_EF		:{BLACK}용도: {SILVER}Express Passenger / Heavy Freight{}
+STR_DESC_USAGE_FF		:{BLACK}용도: {SILVER}Express Passenger / Fast Freight{}
+STR_DESC_USAGE_BANK		:{BLACK}용도: {SILVER}Banker / Pusher{}
+STR_DESC_USAGE_PROTO	:{BLACK}용도: {SILVER}Prototype{}
+STR_DESC_USAGE_CONCEPT	:{BLACK}용도: {SILVER}Concept - Never Built{}
 
 STR_DESC_USAGE_PAX_LOC	:{BLACK}Usage: {SILVER}Local Trains{}
 STR_DESC_USAGE_PAX_EXP	:{BLACK}Usage: {SILVER}Local / Express Trains{}
