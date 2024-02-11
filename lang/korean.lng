@@ -704,66 +704,66 @@ STR_DESC_WHEELS_B1B       :{BLACK}차륜 배치:{GOLD} B-1-B{}
 STR_DESC_WHEELS_B2B       :{BLACK}차륜 배치:{GOLD} B-2-B{}
 STR_DESC_WHEELS_BBBB      :{BLACK}차륜 배치:{GOLD} B-B+B-B{}
 
-STR_DESC_USAGE_GP		:{BLACK}용도: {SILVER}General Purpose{}
-STR_DESC_USAGE_LF		:{BLACK}용도: {SILVER}Light Freight{}
-STR_DESC_USAGE_SHG		:{BLACK}용도: {SILVER}Shunter / General Purpose{}
-STR_DESC_USAGE_SH		:{BLACK}용도: {SILVER}Shunter{}
-STR_DESC_USAGE_HF		:{BLACK}용도: {SILVER}Heavy Freight{}
-STR_DESC_USAGE_P		:{BLACK}용도: {SILVER}Passenger{}
-STR_DESC_USAGE_XP		:{BLACK}용도: {SILVER}Excursion Passenger{}
-STR_DESC_USAGE_EP		:{BLACK}용도: {SILVER}Express Passenger{}
-STR_DESC_USAGE_EF		:{BLACK}용도: {SILVER}Express Passenger / Heavy Freight{}
-STR_DESC_USAGE_FF		:{BLACK}용도: {SILVER}Express Passenger / Fast Freight{}
-STR_DESC_USAGE_BANK		:{BLACK}용도: {SILVER}Banker / Pusher{}
-STR_DESC_USAGE_PROTO	:{BLACK}용도: {SILVER}Prototype{}
-STR_DESC_USAGE_CONCEPT	:{BLACK}용도: {SILVER}Concept - Never Built{}
+STR_DESC_USAGE_GP		:{BLACK}용도: {SILVER}범용{}
+STR_DESC_USAGE_LF		:{BLACK}용도: {SILVER}경량 화물{}
+STR_DESC_USAGE_SHG		:{BLACK}용도: {SILVER}입환 / 범용{}
+STR_DESC_USAGE_SH		:{BLACK}용도: {SILVER}입환{}
+STR_DESC_USAGE_HF		:{BLACK}용도: {SILVER}중량 화물{}
+STR_DESC_USAGE_P		:{BLACK}용도: {SILVER}여객{}
+STR_DESC_USAGE_XP		:{BLACK}용도: {SILVER}관광 여객{}
+STR_DESC_USAGE_EP		:{BLACK}용도: {SILVER}특급 여객{}
+STR_DESC_USAGE_EF		:{BLACK}용도: {SILVER}특급 여객 / 중량 화물{}
+STR_DESC_USAGE_FF		:{BLACK}용도: {SILVER}특급 여객 / 고속 화물{}
+STR_DESC_USAGE_BANK		:{BLACK}용도: {SILVER}뱅커 / 푸셔{}
+STR_DESC_USAGE_PROTO	:{BLACK}용도: {SILVER}시제기{}
+STR_DESC_USAGE_CONCEPT	:{BLACK}용도: {SILVER}컨셉 - 구현되지 않음{}
 
-STR_DESC_USAGE_PAX_LOC	:{BLACK}Usage: {SILVER}Local Trains{}
-STR_DESC_USAGE_PAX_EXP	:{BLACK}Usage: {SILVER}Local / Express Trains{}
-STR_DESC_USAGE_PAX_SLP	:{BLACK}Usage: {SILVER}Express / Night Trains{}
-STR_DESC_USAGE_PAX_LEX	:{BLACK}Usage: {SILVER}Luxury Express{}
-STR_DESC_USAGE_PAX_LUX	:{BLACK}Usage: {SILVER}Luxury Sleeper{}
-STR_DESC_USAGE_PAX_JOY	:{BLACK}Usage: {SILVER}Luxury Charters / Excursions{}
+STR_DESC_USAGE_PAX_LOC	:{BLACK}용도: {SILVER}보통열차{}
+STR_DESC_USAGE_PAX_EXP	:{BLACK}용도: {SILVER}보통열차 / 특급열차{}
+STR_DESC_USAGE_PAX_SLP	:{BLACK}용도: {SILVER}특급열차 / 야간열차{}
+STR_DESC_USAGE_PAX_LEX	:{BLACK}용도: {SILVER}호화 특급열차{}
+STR_DESC_USAGE_PAX_LUX	:{BLACK}용도: {SILVER}호화 침대특급열차{}
+STR_DESC_USAGE_PAX_JOY	:{BLACK}용도: {SILVER}호화 전세열차 / 관광열차{}
 
-STR_DESC_USAGE_PAX_TOKAIDO	:{BLACK}Usage: {SILVER}Express Trains - {GREEN}Use with EF58 New Type, Tokaido Livery{}
+STR_DESC_USAGE_PAX_TOKAIDO	:{BLACK}용도: {SILVER}특급열차 - {GREEN}EF58 신형, 도카이도 도색{}
 
-STR_DESC_USAGE_MAIL_LUG	:{BLACK}Usage: {SILVER}Luggage / Mail{}
-STR_DESC_USAGE_MAIL_RPO	:{BLACK}Usage: {SILVER}Travelling Post Office{}
-STR_DESC_USAGE_MAIL_EXP	:{BLACK}Usage: {SILVER}Luggage / Mail /  Express Cargo{}
-STR_DESC_USAGE_MAIL_EXF	:{BLACK}Usage: {SILVER}Mail / Express Cargo{}
-STR_DESC_USAGE_MAIL_VAL	:{BLACK}Usage: {SILVER}Valuables / Express Cargo{}
+STR_DESC_USAGE_MAIL_LUG	:{BLACK}용도: {SILVER}수하물 / 우편{}
+STR_DESC_USAGE_MAIL_RPO	:{BLACK}용도: {SILVER}여행 우체국{}
+STR_DESC_USAGE_MAIL_EXP	:{BLACK}용도: {SILVER}수하물 / 우편 /  특급 화물{}
+STR_DESC_USAGE_MAIL_EXF	:{BLACK}용도: {SILVER}우편 / 특급 화물{}
+STR_DESC_USAGE_MAIL_VAL	:{BLACK}용도: {SILVER}귀중품 / 특급 화물{}
 
-STR_DESC_USAGE_FRT_STEL	:{BLACK}Usage: {SILVER}Metal Products - Coils / Bars / Slabs{}
-STR_DESC_USAGE_FRT_HVY	:{BLACK}Usage: {SILVER}Oversized Heavy Cargo - Transformers{}
-STR_DESC_USAGE_FRT_CAR	:{BLACK}Usage: {SILVER}Vehicles - Car Transport{}
-STR_DESC_USAGE_FRT_CARR	:{BLACK}Usage: {SILVER}Vehicles / General Cargo - Containers{}
-STR_DESC_USAGE_FRT_DMT	:{BLACK}Usage: {SILVER}Express Cargo - Truck Trailers{}
+STR_DESC_USAGE_FRT_STEL	:{BLACK}용도: {SILVER}금속 제품 - 코일 / 철근 / 슬래브{}
+STR_DESC_USAGE_FRT_HVY	:{BLACK}용도: {SILVER}대형 중량화물 - 변압기{}
+STR_DESC_USAGE_FRT_CAR	:{BLACK}용도: {SILVER}차량 - 자동차 수송{}
+STR_DESC_USAGE_FRT_CARR	:{BLACK}용도: {SILVER}차량 / 일반 화물 - 컨테이너{}
+STR_DESC_USAGE_FRT_DMT	:{BLACK}용도: {SILVER}특급 화물 - 트럭 트레일러{}
 
-STR_DESC_USAGE_FRT_CONT	:{BLACK}Usage: {SILVER}General / Express Cargo - Containers{}
-STR_DESC_USAGE_FRT_BOX	:{BLACK}Usage: {SILVER}General / Express Cargo{}
-STR_DESC_USAGE_FRT_FLAT	:{BLACK}Usage: {SILVER}General / Long Cargo{}
-STR_DESC_USAGE_FRT_EXP	:{BLACK}Usage: {SILVER}Express Cargo{}
-STR_DESC_USAGE_FRT_LVST	:{BLACK}Usage: {SILVER}Livestock - {GREEN}Reduced cargo aging{}
-STR_DESC_USAGE_FRT_REEF	:{BLACK}Usage: {SILVER}Refrigerated Cargo - {GREEN}Reduced cargo aging{}
-STR_DESC_USAGE_FRT_OPEN	:{BLACK}Usage: {SILVER}General / Bulk Cargo{}
-STR_DESC_USAGE_FRT_BULK	:{BLACK}Usage: {SILVER}Bulk Cargo{}
-STR_DESC_USAGE_FRT_COV	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo{}
+STR_DESC_USAGE_FRT_CONT	:{BLACK}용도: {SILVER}일반 / 특급 화물 - 컨테이너{}
+STR_DESC_USAGE_FRT_BOX	:{BLACK}용도: {SILVER}일반 / 특급 화물{}
+STR_DESC_USAGE_FRT_FLAT	:{BLACK}용도: {SILVER}일반 / 장대형 화물{}
+STR_DESC_USAGE_FRT_EXP	:{BLACK}용도: {SILVER}특급 화물{}
+STR_DESC_USAGE_FRT_LVST	:{BLACK}용도: {SILVER}가축 - {GREEN}화물 노후화 감소{}
+STR_DESC_USAGE_FRT_REEF	:{BLACK}용도: {SILVER}냉장 화물 - {GREEN}화물 노후화 감소{}
+STR_DESC_USAGE_FRT_OPEN	:{BLACK}용도: {SILVER}일반 / 벌크 화물{}
+STR_DESC_USAGE_FRT_BULK	:{BLACK}용도: {SILVER}벌크 화물{}
+STR_DESC_USAGE_FRT_COV	:{BLACK}용도: {SILVER}가루 벌크 화물{}
 
-STR_DESC_USAGE_FRT_COAL	:{BLACK}Usage: {SILVER}Bulk Cargo - Coal{}
-STR_DESC_USAGE_FRT_STON	:{BLACK}Usage: {SILVER}Bulk Cargo - Ballast{}
-STR_DESC_USAGE_FRT_LMST	:{BLACK}Usage: {SILVER}Bulk Cargo - Limestone{}
-STR_DESC_USAGE_FRT_CMNT	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Cement{}
-STR_DESC_USAGE_FRT_QLME	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Quicklime{}
-STR_DESC_USAGE_FRT_GRAI	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Grain{}
-STR_DESC_USAGE_FRT_CHIP	:{BLACK}Usage: {SILVER}Lightweight Bulk Cargo - Fibres / Woodchips{}
+STR_DESC_USAGE_FRT_COAL	:{BLACK}용도: {SILVER}벌크 화물 - 석탄{}
+STR_DESC_USAGE_FRT_STON	:{BLACK}용도: {SILVER}벌크 화물 - 밸러스트{}
+STR_DESC_USAGE_FRT_LMST	:{BLACK}용도: {SILVER}벌크 화물 - 석회석{}
+STR_DESC_USAGE_FRT_CMNT	:{BLACK}용도: {SILVER}가루 벌크 화물 - 시멘트{}
+STR_DESC_USAGE_FRT_QLME	:{BLACK}용도: {SILVER}가루 벌크 화물 - 석회{}
+STR_DESC_USAGE_FRT_GRAI	:{BLACK}용도: {SILVER}가루 벌크 화물 - 곡물{}
+STR_DESC_USAGE_FRT_CHIP	:{BLACK}용도: {SILVER}경량 벌크 화물 - 섬유 / 우드칩{}
 
-STR_DESC_USAGE_FRT_TANK	:{BLACK}Usage: {SILVER}General Liquid Cargo{}
-STR_DESC_USAGE_FRT_OIL	:{BLACK}Usage: {SILVER}General Liquid Cargo - Fuel / Oil{}
-STR_DESC_USAGE_FRT_CHEM	:{BLACK}Usage: {SILVER}Hazardous Liquid Cargo - Acid / Chlorine{}
-STR_DESC_USAGE_FRT_GAS	:{BLACK}Usage: {SILVER}Gaseous Cargo - Ammonia / LPG{}
+STR_DESC_USAGE_FRT_TANK	:{BLACK}용도: {SILVER}일반 액체 화물{}
+STR_DESC_USAGE_FRT_OIL	:{BLACK}용도: {SILVER}일반 액체 화물 - 연료 / 석유{}
+STR_DESC_USAGE_FRT_CHEM	:{BLACK}용도: {SILVER}위험 액체 화물 - 산 / 염소{}
+STR_DESC_USAGE_FRT_GAS	:{BLACK}용도: {SILVER}기체 화물 - 암모니아 / LPG{}
 
-STR_DESC_USAGE_FRT_T260	:{BLACK}Usage: {SILVER}Express Cargo - {GREEN}Use with M250 Cargo EMU{}
+STR_DESC_USAGE_FRT_T260	:{BLACK}용도: {SILVER}특급 화물 - {GREEN} M250 화물 동차{}
 
-STR_DESC_BRAKE		:{BLACK}Usage: {SILVER}Brake Van - {GREEN}Attach behind slower freight wagons to increase speed limit{}
+STR_DESC_BRAKE		:{BLACK}용도: {SILVER}차장차 - {GREEN}속도 제한을 높이려면 느린 화물 화차 뒤에 연결하시오.{}
 
-STR_DESC_BRAKE_NA	:{BLACK}Brake Van Speed Boost: {RED}Not Available{}
+STR_DESC_BRAKE_NA	:{BLACK}차장차 속력 증대: {RED}사용 불가{}
