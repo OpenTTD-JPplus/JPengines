@@ -597,46 +597,46 @@ STR_SUFFIX_3WINDOW       :{BLACK}(세개의 창문)
 STR_SUFFIX_5WINDOW       :{BLACK}(다섯개의 창문)
 
 
-STR_SUFFIX_JNR_RETRO     :{BLACK}(JNR Retro){BLACK}
-STR_SUFFIX_PANDA         :{BLACK}(Panda){BLACK}
-STR_SUFFIX_MOMOTARO      :{BLACK}(Momotaro){BLACK}
-STR_SUFFIX_KINTARO       :{BLACK}(Kintaro){BLACK}
-STR_SUFFIX_REDTHUNDER    :{BLACK}(Red Thunder){BLACK}
-STR_SUFFIX_BLUETHUNDER   :{BLACK}(Blue Thunder){BLACK}
-STR_SUFFIX_REDBEAR       :{BLACK}(Red Bear){BLACK}
-STR_SUFFIX_INVERTER      :{BLACK}(Inverter Hi-Tech Loco){BLACK}
-STR_SUFFIX_HAMAMATSU     :{BLACK}(Hamamatsu Depot){BLACK}
-STR_SUFFIX_NAEBO         :{BLACK}(Naebo Depot){BLACK}
-STR_SUFFIX_CAMO          :{BLACK}(Camouflage Paint){BLACK}
-STR_SUFFIX_AIME          :{BLACK}(Ai-Me){BLACK}
+STR_SUFFIX_JNR_RETRO     :{BLACK}(JNR 레트로){BLACK}
+STR_SUFFIX_PANDA         :{BLACK}(팬더){BLACK}
+STR_SUFFIX_MOMOTARO      :{BLACK}(모모타로){BLACK}
+STR_SUFFIX_KINTARO       :{BLACK}(킨타로){BLACK}
+STR_SUFFIX_REDTHUNDER    :{BLACK}(레드 썬더){BLACK}
+STR_SUFFIX_BLUETHUNDER   :{BLACK}(블루 썬더){BLACK}
+STR_SUFFIX_REDBEAR       :{BLACK}(레드 베어){BLACK}
+STR_SUFFIX_INVERTER      :{BLACK}(인버터 고급 기술 기관차){BLACK}
+STR_SUFFIX_HAMAMATSU     :{BLACK}(하마마쓰 차량기지){BLACK}
+STR_SUFFIX_NAEBO         :{BLACK}(나에보 차량기지){BLACK}
+STR_SUFFIX_CAMO          :{BLACK}(위장 도장){BLACK}
+STR_SUFFIX_AIME          :{BLACK}(아이메){BLACK}
 
-STR_SUFFIX_FOPEN	:(Open)
-STR_SUFFIX_FCOVER	:(Covered)
+STR_SUFFIX_FOPEN	:(열려있음)
+STR_SUFFIX_FCOVER	:(닫혀있음)
 
-STR_SUFFIX_LOCAL	:{BLACK}Local Train
-STR_SUFFIX_LTDEXP	:{BLACK}Limited Express
-STR_SUFFIX_SLEEPER	:{BLACK}Night Train
+STR_SUFFIX_LOCAL	:{BLACK}보통열차
+STR_SUFFIX_LTDEXP	:{BLACK}특급열차
+STR_SUFFIX_SLEEPER	:{BLACK}야간열차
 
 #################
 #MODULAR COLOUR SUFFIXES#
 #################
-STR_COLOUR_WHITE			:{WHITE}White{BLACK}
-STR_COLOUR_BLACK			:{BLACK}Black{BLACK}
-STR_COLOUR_GOLD 			:{GOLD}Gold{BLACK}
-STR_COLOUR_SILVER			:{SILVER}Silver{BLACK}
-STR_COLOUR_GREY			    :{SILVER}Grey{BLACK}
-STR_COLOUR_LTGREEN			:{DKGREEN}Light Green{BLACK}
-STR_COLOUR_GREEN			:{GREEN}Green{BLACK}
-STR_COLOUR_BROWN			:{BROWN}Brown{BLACK}
-STR_COLOUR_DKRED			:{BROWN}Dark Red{BLACK}
-STR_COLOUR_BLUE				:{BLUE}Blue{BLACK}
-STR_COLOUR_LTBLUE			:{LTBLUE}Light Blue{BLACK}
-STR_COLOUR_RED				:{RED}Red{BLACK}
-STR_COLOUR_ORANGE			:{ORANGE}Orange{BLACK}
-STR_COLOUR_PINK 			:{CREAM}Pink{BLACK}
-STR_COLOUR_CREAM			:{LTBROWN}Cream{BLACK}
-STR_COLOUR_YELLOW			:{YELLOW}Yellow{BLACK}
-STR_COLOUR_PURPLE			:{PURPLE}Purple{BLACK}
+STR_COLOUR_WHITE			:{WHITE}하얀색{BLACK}
+STR_COLOUR_BLACK			:{BLACK}검정색{BLACK}
+STR_COLOUR_GOLD 			:{GOLD}금색{BLACK}
+STR_COLOUR_SILVER			:{SILVER}은색{BLACK}
+STR_COLOUR_GREY			    :{SILVER}회색{BLACK}
+STR_COLOUR_LTGREEN			:{DKGREEN}밝은 녹색{BLACK}
+STR_COLOUR_GREEN			:{GREEN}녹색{BLACK}
+STR_COLOUR_BROWN			:{BROWN}갈색{BLACK}
+STR_COLOUR_DKRED			:{BROWN}짙은 빨간색{BLACK}
+STR_COLOUR_BLUE				:{BLUE}파란색{BLACK}
+STR_COLOUR_LTBLUE			:{LTBLUE}밝은 파랑색{BLACK}
+STR_COLOUR_RED				:{RED}빨간색{BLACK}
+STR_COLOUR_ORANGE			:{ORANGE}주황색{BLACK}
+STR_COLOUR_PINK 			:{CREAM}분홍색{BLACK}
+STR_COLOUR_CREAM			:{LTBROWN}크림색{BLACK}
+STR_COLOUR_YELLOW			:{YELLOW}노란색{BLACK}
+STR_COLOUR_PURPLE			:{PURPLE}보라색{BLACK}
 
 
 # ####################
@@ -644,53 +644,53 @@ STR_COLOUR_PURPLE			:{PURPLE}Purple{BLACK}
 # ####################
 
 
-STR_REFIT_DMT_PROTO		: DMT Prototype
-STR_REFIT_DMT_SAGAWA	: Sagawa
-STR_REFIT_DMT_JRF		: JR Freight
-STR_REFIT_DMT_YAMATO	: Yamato
-STR_REFIT_DMT_SEINO		: Seino
-STR_REFIT_DMT_FUKUYAMA	: Fukuyama
-STR_REFIT_DMT_FISH		: Reefer
-STR_REFIT_DMT_NITTSU	: Nittsu
+STR_REFIT_DMT_PROTO		: DMT 시제기
+STR_REFIT_DMT_SAGAWA	: 사가와
+STR_REFIT_DMT_JRF		: JR 화물
+STR_REFIT_DMT_YAMATO	: 야마토
+STR_REFIT_DMT_SEINO		: 세이노
+STR_REFIT_DMT_FUKUYAMA	: 후쿠야마
+STR_REFIT_DMT_FISH		: 리퍼
+STR_REFIT_DMT_NITTSU	: 니츠
 
 # ####################
 # DESCRIPTION TEXT   #
 # ####################
 
-STR_DESC_POWER_STEAM 	:{BLACK}Engine Type: {GOLD}Steam{}
-STR_DESC_POWER_DE 	    :{BLACK}Engine Type: {GOLD}Diesel Electric{}
-STR_DESC_POWER_DH    	:{BLACK}Engine Type: {GOLD}Diesel Hydraulic{}
-STR_DESC_POWER_HYBRID 	:{BLACK}Engine Type: {GOLD}Diesel Electric Hybrid{}
-STR_DESC_POWER_BATT		:{BLACK}Engine Type: {GOLD}Battery Electric{}
-STR_DESC_POWER_AC20		:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV){}
-STR_DESC_POWER_DC15		:{BLACK}Engine Type: {GOLD}Electric - {BLUE} DC (1500V){}
-STR_DESC_POWER_MS20		:{BLACK}Engine Type: {GOLD}Electric Multisystem - {RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}
-STR_DESC_POWER_MS25 	:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV){}
+STR_DESC_POWER_STEAM 	:{BLACK}기관차 구분: {GOLD}증기식{}
+STR_DESC_POWER_DE 	    :{BLACK}기관차 구분: {GOLD}디젤-전기식{}
+STR_DESC_POWER_DH    	:{BLACK}기관차 구분: {GOLD}디젤-유압식{}
+STR_DESC_POWER_HYBRID 	:{BLACK}기관차 구분: {GOLD}디젤-전기 하이브리드식{}
+STR_DESC_POWER_BATT		:{BLACK}기관차 구분: {GOLD}배터리 전기식{}
+STR_DESC_POWER_AC20		:{BLACK}기관차 구분: {GOLD}전기식 - {RED} 교류 (20kV){}
+STR_DESC_POWER_DC15		:{BLACK}기관차 구분: {GOLD}전기식 - {BLUE} 직류 (1500V){}
+STR_DESC_POWER_MS20		:{BLACK}기관차 구분: {GOLD}전기다전류식 - {RED} 교류 (20kV) {WHITE}/ {BLUE} 직류 (1500V){}
+STR_DESC_POWER_MS25 	:{BLACK}기관차 구분: {GOLD}전기식 - {RED} 교류 (20kV) {WHITE}/ {PURPLE} 교류 (25kV){}
 
-STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow {SILVER}(1,067mm){}
-STR_DESC_STDGAUGE	    :{BLACK}Gauge:{GOLD} Standard {SILVER}(1,435mm){}
+STR_DESC_NARROWGAUGE	:{BLACK}궤간:{GOLD} 협궤 {SILVER}(1,067mm){}
+STR_DESC_STDGAUGE	    :{BLACK}궤간:{GOLD} 표준궤 {SILVER}(1,435mm){}
 
-STR_DESC_WHEELS_B        :{BLACK}Wheel Arrangement:{GOLD} B / 0-4-0{}
-STR_DESC_WHEELS_B1       :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
-STR_DESC_WHEELS_1B       :{BLACK}Wheel Arrangement:{GOLD} 1-B / 2-4-0{}
-STR_DESC_WHEELS_1B1      :{BLACK}Wheel Arrangement:{GOLD} 1-B-1 / 2-4-2{}
-STR_DESC_WHEELS_2B       :{BLACK}Wheel Arrangement:{GOLD} 2-B / 4-4-0{}
-STR_DESC_WHEELS_2B1      :{BLACK}Wheel Arrangement:{GOLD} 2-B / 4-4-2{}
-STR_DESC_WHEELS_C        :{BLACK}Wheel Arrangement:{GOLD} C / 0-6-0{}
-STR_DESC_WHEELS_C1       :{BLACK}Wheel Arrangement:{GOLD} C-1 / 0-6-2{}
-STR_DESC_WHEELS_C2       :{BLACK}Wheel Arrangement:{GOLD} C-2 / 0-6-4{}
-STR_DESC_WHEELS_1C       :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
-STR_DESC_WHEELS_1C1      :{BLACK}Wheel Arrangement:{GOLD} 1-C-1 / 2-6-2{}
-STR_DESC_WHEELS_1C2      :{BLACK}Wheel Arrangement:{GOLD} 1-C-2 / 2-6-4{}
-STR_DESC_WHEELS_2C       :{BLACK}Wheel Arrangement:{GOLD} 2-C / 4-6-0{}
-STR_DESC_WHEELS_2C1      :{BLACK}Wheel Arrangement:{GOLD} 2-C-1 / 4-6-2{}
-STR_DESC_WHEELS_2C2      :{BLACK}Wheel Arrangement:{GOLD} 2-C-2 / 4-6-4{}
-STR_DESC_WHEELS_1D       :{BLACK}Wheel Arrangement:{GOLD} 1-D / 2-8-0{}
-STR_DESC_WHEELS_1D1      :{BLACK}Wheel Arrangement:{GOLD} 1-D-1 / 2-8-2{}
-STR_DESC_WHEELS_1D2      :{BLACK}Wheel Arrangement:{GOLD} 1-D-2 / 2-8-4{}
+STR_DESC_WHEELS_B        :{BLACK}차륜 배치:{GOLD} B / 0-4-0{}
+STR_DESC_WHEELS_B1       :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
+STR_DESC_WHEELS_1B       :{BLACK}차륜 배치:{GOLD} 1-B / 2-4-0{}
+STR_DESC_WHEELS_1B1      :{BLACK}차륜 배치:{GOLD} 1-B-1 / 2-4-2{}
+STR_DESC_WHEELS_2B       :{BLACK}차륜 배치:{GOLD} 2-B / 4-4-0{}
+STR_DESC_WHEELS_2B1      :{BLACK}차륜 배치:{GOLD} 2-B / 4-4-2{}
+STR_DESC_WHEELS_C        :{BLACK}차륜 배치:{GOLD} C / 0-6-0{}
+STR_DESC_WHEELS_C1       :{BLACK}차륜 배치:{GOLD} C-1 / 0-6-2{}
+STR_DESC_WHEELS_C2       :{BLACK}차륜 배치:{GOLD} C-2 / 0-6-4{}
+STR_DESC_WHEELS_1C       :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
+STR_DESC_WHEELS_1C1      :{BLACK}차륜 배치:{GOLD} 1-C-1 / 2-6-2{}
+STR_DESC_WHEELS_1C2      :{BLACK}차륜 배치:{GOLD} 1-C-2 / 2-6-4{}
+STR_DESC_WHEELS_2C       :{BLACK}차륜 배치:{GOLD} 2-C / 4-6-0{}
+STR_DESC_WHEELS_2C1      :{BLACK}차륜 배치:{GOLD} 2-C-1 / 4-6-2{}
+STR_DESC_WHEELS_2C2      :{BLACK}차륜 배치:{GOLD} 2-C-2 / 4-6-4{}
+STR_DESC_WHEELS_1D       :{BLACK}차륜 배치:{GOLD} 1-D / 2-8-0{}
+STR_DESC_WHEELS_1D1      :{BLACK}차륜 배치:{GOLD} 1-D-1 / 2-8-2{}
+STR_DESC_WHEELS_1D2      :{BLACK}차륜 배치:{GOLD} 1-D-2 / 2-8-4{}
 
-STR_DESC_WHEELS_E        :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
-STR_DESC_WHEELS_1E2      :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
+STR_DESC_WHEELS_E        :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
+STR_DESC_WHEELS_1E2      :{BLACK}차륜 배치:{GOLD} 1-C / 2-6-0{}
 
 STR_DESC_WHEELS_1BB1      :{BLACK}Wheel Arrangement:{GOLD} 1-B-B-1{}
 STR_DESC_WHEELS_BB        :{BLACK}Wheel Arrangement:{GOLD} B-B{}
