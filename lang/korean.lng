@@ -364,18 +364,18 @@ STR_SUFFIX_LUGGAGE              : 수하물차
 #FREIGHT WAGONS#
 ################
 
-STR_NAME_CAR_CARRIER	:Future Car Transporter
-STR_NAME_SUPPLY_CARRIER	:Old Vehicle Flatbed
-STR_NAME_BOXCAR			:Future Box Van
-STR_NAME_COVERED_HOPPER	:Future Covered Hopper
-STR_NAME_OPEN_HOPPER	:Future Hopper
+STR_NAME_CAR_CARRIER	:미래 차량 운송업자
+STR_NAME_SUPPLY_CARRIER	:오래된 차량 평판
+STR_NAME_BOXCAR			:미래 박스카
+STR_NAME_COVERED_HOPPER	:미래 덮힌 호퍼
+STR_NAME_OPEN_HOPPER	:미래 호퍼
 
-STR_NAME_COIL_CARRIER	:Metal Coil Carrier
-STR_NAME_SLAG_LADLE		:Slag Ladle Wagon
-STR_NAME_TORPEDO		:Torpedo Wagon
-STR_NAME_SHIKI_800		:SHIKI 800 Superheavy Carrier
+STR_NAME_COIL_CARRIER	:코일차
+STR_NAME_SLAG_LADLE		:슬래그 조차
+STR_NAME_TORPEDO		:토페도차
+STR_NAME_SHIKI_800		:시키 800 중장비차
 
-STR_NAME_WA_1			:WA 1 Box Van
+STR_NAME_WA_1			:와 1 Box Van
 STR_NAME_WAKI_1			:WAKI 1 Express Van
 STR_NAME_WAMUFU_1		:WAMUFU 1 Express Van with Brake Compartment
 STR_NAME_WAKI_1000		:WAKI 1000 Express Van
