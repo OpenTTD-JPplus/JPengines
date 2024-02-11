@@ -375,40 +375,40 @@ STR_NAME_SLAG_LADLE		:슬래그 조차
 STR_NAME_TORPEDO		:토페도차
 STR_NAME_SHIKI_800		:시키 800 중장비차
 
-STR_NAME_WA_1			:와 1 유개차
-STR_NAME_WAKI_1			:와키 1 Express Van
-STR_NAME_WAMUFU_1		:와무후 1 
-STR_NAME_WAKI_1000		:WAKI 1000 Express Van
-STR_NAME_WAMUFU_100		:WAMUFU 100 Express Van with Brake Compartment
-STR_NAME_WAKI_5000		:WAKI 5000 Box Van
-STR_NAME_WAKI_8000		:WAKI 8000 Express Van
-STR_NAME_WASAFU_8000	:WASAFU 8000 Express Van with Brake Compartment
-STR_NAME_WAKI_10000		:WAKI 10000 Express Van
-STR_NAME_WAMU_21000		:WAMU 21000 Box Van
-STR_NAME_WAFU_21000		:WAFU 21000 Box Van with Brake Compartment
-STR_NAME_WAMU_50000		:WAMU 50000 Box Van
-STR_NAME_WAMU_80000		:WAMU 80000 Box Van
-STR_NAME_WAMU_480000	:WAMU 480000 Bulk Wagon
-STR_NAME_WAMU_580000	:WAMU 580000 Insulated Box Van
-STR_NAME_WAMU_90000		:WAMU 90000 Express Van
+STR_NAME_WA_1			:와 1 박스차
+STR_NAME_WAKI_1			:와키 1 특급화차
+STR_NAME_WAMUFU_1		:와무후 1 브레이크가 있는 특급화차
+STR_NAME_WAKI_1000		:와키 1000 특급화차
+STR_NAME_WAMUFU_100		:와무후 100 브레이크가 있는 특급화차
+STR_NAME_WAKI_5000		:와키 5000 박스차
+STR_NAME_WAKI_8000		:와키 8000 특급화차
+STR_NAME_WASAFU_8000	:와사후 8000 브레이크가 있는 특급화차
+STR_NAME_WAKI_10000		:와키 10000 특급화차
+STR_NAME_WAMU_21000		:와무 21000 박스차
+STR_NAME_WAFU_21000		:와후 21000 브레이크가 있는 박스차
+STR_NAME_WAMU_50000		:와무 50000 박스차
+STR_NAME_WAMU_80000		:와무 80000 박스차
+STR_NAME_WAMU_480000	:와무 480000 무개화차
+STR_NAME_WAMU_580000	:와무 580000 절연박스차
+STR_NAME_WAMU_90000		:와무 90000 특급화차
 
-STR_NAME_KA_1			:KA 1 Livestock Van
+STR_NAME_KA_1			:카 1 가축화차
 
-STR_NAME_RE_1			:RE 1 Refrigerated Van
-STR_NAME_RE_2500		:RE 2500 Refrigerated Van
-STR_NAME_REKI_1 		:REKI 1 / RESA 900 Refrigerated Van
-STR_NAME_REMU_5000		:REMU 5000 Refrigerated Van
-STR_NAME_RESA_10000		:RESA 10000 Refrigerated Van
-STR_NAME_REMUFU_10000	:REMUFU 10000 Refrigerated Van with Brake Compartment
+STR_NAME_RE_1			:레 1 냉장화차
+STR_NAME_RE_2500		:레 2500 냉장화차
+STR_NAME_REKI_1 		:레키 1 / 레사 900 냉장화차
+STR_NAME_REMU_5000		:레무 5000 냉장화차
+STR_NAME_RESA_10000		:레사 10000 냉장화차
+STR_NAME_REMUFU_10000	:레무후 10000 브레이크가 있는 냉장화차
 
 
 
-STR_NAME_KU_5000		:KU 5000 Car Transporter
-STR_NAME_KOKI_71		:KOKI 71 Car Rack
-STR_NAME_KOKI_5500		:KOKI 5500 Container Carrier
-STR_NAME_KOKI_10000		:KOKI 10000 Container Carrier
-STR_NAME_KOKIFU_10000	:KOKIFU 10000 Container Carrier with Brake Compartment
-STR_NAME_KOKI_50000		:KOKI 50000 Container Carrier
+STR_NAME_KU_5000		:쿠 5000 자동차 수송차
+STR_NAME_KOKI_71		:코키 71 자동차 수송차
+STR_NAME_KOKI_5500		:코키 5500 컨테이너차
+STR_NAME_KOKI_10000		:코키 10000 컨테이너차
+STR_NAME_KOKIFU_10000	:코키후 10000 Container Carrier with Brake Compartment
+STR_NAME_KOKI_50000		:코키 50000 Container Carrier
 STR_NAME_KOKIFU_50000   :KOKIFU 50000 Container Carrier with Brake Compartment
 STR_NAME_KOKI_250000	:KOKI 250000 Container Carrier
 STR_NAME_KOKI_100		:KOKI 100 / 101 Container Carrier
