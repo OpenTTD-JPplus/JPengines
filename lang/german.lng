@@ -1,8 +1,7 @@
-##grflangid 0x03
+##grflangid 0x02
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.12.4
 STR_GRF_DESCRIPTION :{RED}ACHTUNG!{SILVER} Muss unter JapanSet3: Trains geladen werden!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Ein Teil von der {WHITE}JP{RED}+{BLACK} serie, konzentriert an Lokomotiven, Personenwagen und Güterwagen der Japanische Eisenbahn. Enthält viele Lokomotiven und verschiedene Farbgebungen. {}{}{TINYFONT}Gezeichnet von {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded von {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Anschaffungskosten
@@ -11,8 +10,8 @@ STR_PARAM_DESC_BASECOSTMODBUY	:Anschaffungskosten ändern
 STR_PARAM_NAME_BASECOSTMODRUN	:Betriebskosten
 STR_PARAM_DESC_BASECOSTMODRUN	:Betriebskosten ändern
 
-STR_PARAM_NAME_PURCHASELOGO     :Purchase Menu Logos
-STR_PARAM_DESC_PURCHASELOGO     :Enable or disable the railway company logos in the vehicle purchase menu
+STR_PARAM_NAME_PURCHASELOGO     :Verkaufsmenü-Logos
+STR_PARAM_DESC_PURCHASELOGO     :Logos der Bangesellschaften im Verkaufsmenü ein- oder ausschalten
 
 STR_PARAM_VLOW		:Sehr Nieder
 STR_PARAM_LOW		:Nieder
@@ -212,12 +211,12 @@ STR_CONCAT_3S	:{STRING}{STRING}{STRING}
 STR_CONCAT_4S	:{STRING}{STRING}{STRING}{STRING}
 STR_CONCAT_5S	:{STRING}{STRING}{STRING}{STRING}{STRING}
 
-STR_CONCAT_1C	:{BLACK}Operators: {STRING}{}
-STR_CONCAT_2C	:{BLACK}Operators: {STRING} / {STRING}{}
-STR_CONCAT_3C	:{BLACK}Operators: {STRING} / {STRING} / {STRING}{}
-STR_CONCAT_4C	:{BLACK}Operators: {STRING} / {STRING} / {STRING} / {STRING}{}
-STR_CONCAT_5C	:{BLACK}Operators: {STRING} / {STRING} / {STRING} / {STRING} / {STRING}{}
-STR_CONCAT_6C	:{BLACK}Operators: {STRING} / {STRING} / {STRING} / {STRING} / {STRING} / {STRING}{}
+STR_CONCAT_1C	:{BLACK}Gesellschaften: {STRING}{}
+STR_CONCAT_2C	:{BLACK}Gesellschaften: {STRING} / {STRING}{}
+STR_CONCAT_3C	:{BLACK}Gesellschaften: {STRING} / {STRING} / {STRING}{}
+STR_CONCAT_4C	:{BLACK}Gesellschaften: {STRING} / {STRING} / {STRING} / {STRING}{}
+STR_CONCAT_5C	:{BLACK}Gesellschaften: {STRING} / {STRING} / {STRING} / {STRING} / {STRING}{}
+STR_CONCAT_6C	:{BLACK}Gesellschaften: {STRING} / {STRING} / {STRING} / {STRING} / {STRING} / {STRING}{}
 
 STR_CONCAT_1F	:{BLACK} - {STRING}
 STR_CONCAT_2F	:{BLACK} - {STRING}{BLACK} / {STRING}
@@ -498,7 +497,7 @@ STR_SUFFIX_KOSAKA		    :{WHITE}Kosaka Railway
 STR_SUFFIX_KAMIOKA		    :{WHITE}Kamioka Railway
 STR_SUFFIX_KASHIMA		    :{WHITE}Kashima Railway
 
-STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators
+STR_SUFFIX_PRIVATE		:{WHITE}Verschiedene Privatgesellschaften
 
 STR_SUFFIX_NIPPON       :{WHITE}Nippon Express
 STR_SUFFIX_TOSHIBA      :{WHITE}Toshiba Logistics
@@ -516,22 +515,22 @@ STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
 #NEW MODULAR STRINGS#
 #####################
 
-STR_SUFFIX_YEARDEP	:{GREEN}Year-Dependent{BLACK}
-STR_SUFFIX_RANDOM	:{GREEN}Random{BLACK}
-STR_SUFFIX_CC		:{GREEN}Company Colour{BLACK}
-STR_SUFFIX_AUTOFORM	:{GREEN}Auto-Formation{BLACK}
+STR_SUFFIX_YEARDEP	:{GREEN}Jahresabhängig{BLACK}
+STR_SUFFIX_RANDOM	:{GREEN}Zufällig{BLACK}
+STR_SUFFIX_CC		:{GREEN}Firmenfarbe{BLACK}
+STR_SUFFIX_AUTOFORM	:{GREEN}automatische Zugkonfiguration{BLACK}
 
-STR_REFIT_YEARDEP	:{BLACK} - {GREEN}Year-Dependent{BLACK}
-STR_REFIT_CC		:{BLACK} - {GREEN}Company Colour{BLACK}
-STR_REFIT_RANDOM	:{BLACK} - {GREEN}Random{BLACK}
-STR_REFIT_AUTOFORM	:{BLACK} - {GREEN}Auto-Formation{BLACK}
-
-
-STR_REFIT_AUTOYEAR	: {GREEN}Random {BLACK} -  Auto-Update
-STR_REFIT_RANDYEAR	: {GREEN}Random {BLACK} -  Year-Dependent
+STR_REFIT_YEARDEP	:{BLACK} - {GREEN}Jahresabhängig{BLACK}
+STR_REFIT_CC		:{BLACK} - {GREEN}Firmenfarbe{BLACK}
+STR_REFIT_RANDOM	:{BLACK} - {GREEN}Zufällig{BLACK}
+STR_REFIT_AUTOFORM	:{BLACK} - {GREEN}automatische Zugkonfiguration{BLACK}
 
 
-STR_REFIT_YEARFORM	: {GREEN}Auto-Formation {BLACK} -  Year-Dependent
+STR_REFIT_AUTOYEAR	: {GREEN}Zufällig {BLACK} -  automatische Aktualisierung
+STR_REFIT_RANDYEAR	: {GREEN}Zufällig {BLACK} -  Jahresabhängig
+
+
+STR_REFIT_YEARFORM	: {GREEN}automatische Zugkonfiguration {BLACK} -  Jahresabhängig
 
 
 # Named Trains
@@ -566,35 +565,35 @@ STR_SUFFIX_GINGA             :{GOLD}"Ginga"{BLACK}
 
 # Misc Suffixes
 
-STR_SUFFIX_AIRCON	     :{BLACK}(Air Conditioned)
-STR_SUFFIX_CLERESTORY    :{BLACK}(Clerestory)
-STR_SUFFIX_FLATROOF      :{BLACK}(Flat Roof)
+STR_SUFFIX_AIRCON	     :{BLACK}(Klimatisiert)
+STR_SUFFIX_CLERESTORY    :{BLACK}(Obergaden)
+STR_SUFFIX_FLATROOF      :{BLACK}(Flachdach)
 STR_SUFFIX_ORIGINAL	:{BLACK}(Original)
-STR_SUFFIX_PROTO	:{BLACK}(Prototype)
-STR_SUFFIX_PANTOS	:{BLACK}(New Pantographs)
-STR_SUFFIX_LIGHTS	:{BLACK}(New Headlights)
-STR_SUFFIX_UPGRADE	:{BLACK}(Upgraded)
-STR_SUFFIX_OLDSHAPE	:{BLACK}(Old Shape)
-STR_SUFFIX_NEWSHAPE	:{BLACK}(New Shape)
-STR_SUFFIX_REFURB	:{BLACK}(Refurbished)
-STR_SUFFIX_FLIPPED  :{BLACK}(Flipped)
-STR_SUFFIX_NOLOGO   :{BLACK}(No Logo)
+STR_SUFFIX_PROTO	:{BLACK}(Prototyp)
+STR_SUFFIX_PANTOS	:{BLACK}(Neue Stromabnehmer)
+STR_SUFFIX_LIGHTS	:{BLACK}(Neue Scheinwerfer)
+STR_SUFFIX_UPGRADE	:{BLACK}(Aktualisiert)
+STR_SUFFIX_OLDSHAPE	:{BLACK}(Alte Form)
+STR_SUFFIX_NEWSHAPE	:{BLACK}(Neue Form)
+STR_SUFFIX_REFURB	:{BLACK}(Überholt)
+STR_SUFFIX_FLIPPED  :{BLACK}(Umgedräht)
+STR_SUFFIX_NOLOGO   :{BLACK}(Kein Logo)
 STR_SUFFIX_LOGO          :{BLACK}(Logo)
-STR_SUFFIX_LARGELOGO    :{BLACK}(Large Logo)
-STR_SUFFIX_REDLOGO      :{BLACK}(Red Logo)
-STR_SUFFIX_WHITELOGO    :{BLACK}(White Logo)
-STR_SUFFIX_STRIPE       :{BLACK}(Stripe)
-STR_SUFFIX_WHISKERS     :{BLACK}(Whiskers)
-STR_SUFFIX_2TONE        :{BLACK}(Two-Tone)
-STR_SUFFIX_SEMIFIC      :{BLACK}(Semi-Fictional)
-STR_SUFFIX_FICTION      :{BLACK}(Fictional)
-STR_SUFFIX_PROPOSAL     :{BLACK}(Proposed - Never Built)
-STR_SUFFIX_CONCEPT      :{BLACK}(Concept - Never Built)
+STR_SUFFIX_LARGELOGO    :{BLACK}(Großes Logo)
+STR_SUFFIX_REDLOGO      :{BLACK}(Rotes Logo)
+STR_SUFFIX_WHITELOGO    :{BLACK}(Weisses Logo)
+STR_SUFFIX_STRIPE       :{BLACK}(Streifen)
+STR_SUFFIX_WHISKERS     :{BLACK}(Schnurrhaare)
+STR_SUFFIX_2TONE        :{BLACK}(Zweifarbig)
+STR_SUFFIX_SEMIFIC      :{BLACK}(Halbfiktiv)
+STR_SUFFIX_FICTION      :{BLACK}(Fiktiv)
+STR_SUFFIX_PROPOSAL     :{BLACK}(Vorgeschlagen, nie gebaut)
+STR_SUFFIX_CONCEPT      :{BLACK}(Konzept, nie gebaut)
 STR_SUFFIX_EXPERIMENT   :{BLACK}(Experimental)
-STR_SUFFIX_BANKER       :{BLACK}(Banker Conversion)
-STR_SUFFIX_2WINDOW       :{BLACK}(Two Windows)
-STR_SUFFIX_3WINDOW       :{BLACK}(Three Windows)
-STR_SUFFIX_5WINDOW       :{BLACK}(Five Windows)
+STR_SUFFIX_BANKER       :{BLACK}(Schublokomotive-Umwandlung)
+STR_SUFFIX_2WINDOW       :{BLACK}(Zwei Fenster)
+STR_SUFFIX_3WINDOW       :{BLACK}(Drei Fenster)
+STR_SUFFIX_5WINDOW       :{BLACK}(Fünf Fenster)
 
 
 STR_SUFFIX_JNR_RETRO     :{BLACK}(JNR Retro){BLACK}
@@ -607,15 +606,15 @@ STR_SUFFIX_REDBEAR       :{BLACK}(Red Bear){BLACK}
 STR_SUFFIX_INVERTER      :{BLACK}(Inverter Hi-Tech Loco){BLACK}
 STR_SUFFIX_HAMAMATSU     :{BLACK}(Hamamatsu Depot){BLACK}
 STR_SUFFIX_NAEBO         :{BLACK}(Naebo Depot){BLACK}
-STR_SUFFIX_CAMO          :{BLACK}(Camouflage Paint){BLACK}
+STR_SUFFIX_CAMO          :{BLACK}(Tarnfarbe){BLACK}
 STR_SUFFIX_AIME          :{BLACK}(Ai-Me){BLACK}
 
-STR_SUFFIX_FOPEN	:(Open)
-STR_SUFFIX_FCOVER	:(Covered)
+STR_SUFFIX_FOPEN	:(Offen)
+STR_SUFFIX_FCOVER	:(Gedäckt)
 
-STR_SUFFIX_LOCAL	:{BLACK}Local Train
-STR_SUFFIX_LTDEXP	:{BLACK}Limited Express
-STR_SUFFIX_SLEEPER	:{BLACK}Night Train
+STR_SUFFIX_LOCAL	:{BLACK}Nahverkehrszug
+STR_SUFFIX_LTDEXP	:{BLACK}Schnellzug
+STR_SUFFIX_SLEEPER	:{BLACK}Nachtzug
 
 #################
 #MODULAR COLOUR SUFFIXES#
@@ -650,7 +649,7 @@ STR_REFIT_DMT_JRF		: JR Freight
 STR_REFIT_DMT_YAMATO	: Yamato
 STR_REFIT_DMT_SEINO		: Seino
 STR_REFIT_DMT_FUKUYAMA	: Fukuyama
-STR_REFIT_DMT_FISH		: Reefer
+STR_REFIT_DMT_FISH		: Kühlwagen
 STR_REFIT_DMT_NITTSU	: Nittsu
 
 # ####################
