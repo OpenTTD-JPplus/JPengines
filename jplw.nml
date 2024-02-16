@@ -78,9 +78,9 @@ cargotable {
 	EOIL, ACID, CHLO, ZINC, IRON, SASH, SALT, QLME, SLAG, MNO2, NITR, COKE, BEAN, PORE, PEAT, BOOM, KAOL, VPTS, VBOD, POWR, PIPE, 
 	//FIRS 4
 	CBLK, CSTI, CTAR, FECR, TYRE, COAT, LYE_, NH3_, O2__, SOAP, STAL, STCB, STSE, STSH, STST, STWR, VENG, 
-	C2H4, ENUM, HYAC, MEOH, NAPH, PHAC, C3H6, SUAC, TEXT, TIN_, TINP, UREA, 
+	C2H4, HYAC, MEOH, NAPH, PHAC, C3H6, SUAC, TEXT, TIN_, TINP, UREA, 
 	//AXIS
-	ALO_, ALUM, COCO, H2__, NHNO, PPAR, 
+	ALO_, ALUM, COCO, H2__, NHNO, PPAR, ENUM, ACET, BIOM, RAMT,
 	//FIRS 5
 	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTP, SWRP, TYCO, WELD, 
 	//OTIS
@@ -796,6 +796,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
     ALUM: return recolour_piece ;
 	COPR: return recolour_piece +4;
 	ZINC: return recolour_piece +5;
+    RAMT: return recolour_piece +5;
 	NICK: return recolour_piece +6;
 	ENSP: return recolour_piece +5;
 	FMSP: return recolour_piece +6;
@@ -850,6 +851,8 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
     CMNT: return recolour_bulk +12;
     CBLK: return recolour_bulk +13;
     ALO_: return recolour_bulk +12;
+
+    SGCN: return recolour_bulk +17;
 
 //FALLBACK
     recolour_bulk;    
@@ -912,6 +915,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 	
     JAVA: return recolour_bulk +18;	
 	PEAT: return recolour_bulk +18;
+	BIOM: return recolour_bulk +18;
 	NUTS: return recolour_bulk +18;
 	
 	RCYC: return recolour_bulk +19;
@@ -21114,6 +21118,14 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_1_livery, cargo_subtype) {
 	2: spriteset_wamufu_1;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_wamufu_1_livery;
+	1:  switch_taillights_7;
+}
+
 switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
@@ -21167,7 +21179,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 	
 		speed: switch_speedboost_1;
 		purchase_speed: return 95;
-		default: switch_wamufu_1_livery;
+		default: switch_wamufu_1_loadstack;
 		cargo_subtype_text: switch_wamufu_1_subtype_text;
 		purchase: switch_wamufu_1_yeardep_purchase;
 		
@@ -21335,6 +21347,14 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_100_livery, cargo_subtype) {
 	2: spriteset_wamufu_100;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_wamufu_100_livery;
+	1:  switch_taillights_7;
+}
+
 switch(FEAT_TRAINS, SELF, switch_wamufu_100_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
@@ -21387,7 +21407,7 @@ item (FEAT_TRAINS, wamufu_100, 1451) {
 	
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
-		default: switch_wamufu_100_livery;
+		default: switch_wamufu_100_loadstack;
 		cargo_subtype_text: switch_wamufu_100_subtype_text;
 		purchase: switch_wamufu_100_yeardep_purchase;
 		
@@ -21600,6 +21620,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 								)
 							);
 		speed: switch_speedboost_1;
+		purchase_speed: return 95;
 		default: switch_waki_8000_loadstack;
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
@@ -21678,6 +21699,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 								)
 							);
 		speed: switch_speedboost_1;
+		purchase_speed: return 95;
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
@@ -35703,6 +35725,10 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	TEXT: random_to_1_supplies;
 	
 	SCMT: spritegroup_to_1_a_bulk;
+	RCYC: spritegroup_to_1_a_bulk;
+	WSTE: spritegroup_to_1_a_bulk;
+	SGCN: spritegroup_to_1_a_bulk;
+
 	SULP: random_to_1_covered;
 	SEED: random_to_1_covered;
 	FERT: random_to_1_covered;
@@ -36081,6 +36107,8 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	SCMT: random_toki_900_bulk;
 	RCYC: random_toki_900_bulk;
 	WSTE: random_toki_900_bulk;
+	SGCN: random_toki_900_bulk;
+
 	SULP: random_toki_900_covered;
 	SEED: random_toki_900_covered;
 	FERT: random_toki_900_covered;
@@ -36462,6 +36490,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	SCMT: random_tomu_1_bulk;
 	RCYC: random_tomu_1_bulk;
 	WSTE: random_tomu_1_bulk;
+	SGCN: random_tomu_1_bulk;
 
 	SULP: random_tomu_1_covered;
 	SEED: random_tomu_1_covered;
@@ -36843,6 +36872,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	SCMT: random_tora_5000_bulk;
 	WSTE: random_tora_5000_bulk;
 	RCYC: random_tora_5000_bulk;
+	SGCN: random_tora_5000_bulk;
 
 	SULP: random_tora_5000_covered;
 	SEED: random_tora_5000_covered;
@@ -37246,6 +37276,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	SCMT: spritegroup_toki_25000_bulk;
 	RCYC: spritegroup_toki_25000_bulk;
 	WSTE: spritegroup_toki_25000_bulk;
+	SGCN: spritegroup_toki_25000_bulk;
 	SULP: switch_toki_25000_tarp_yeardep;
 	SEED: switch_toki_25000_tarp_yeardep;
 	FERT: switch_toki_25000_tarp_yeardep;

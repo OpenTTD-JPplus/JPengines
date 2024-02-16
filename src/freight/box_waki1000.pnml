@@ -160,6 +160,14 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_100_livery, cargo_subtype) {
 	2: spriteset_wamufu_100;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamufu_100_loadstack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0:  switch_wamufu_100_livery;
+	1:  switch_taillights_7;
+}
+
 switch(FEAT_TRAINS, SELF, switch_wamufu_100_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
@@ -212,7 +220,7 @@ item (FEAT_TRAINS, wamufu_100, 1451) {
 	
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
-		default: switch_wamufu_100_livery;
+		default: switch_wamufu_100_loadstack;
 		cargo_subtype_text: switch_wamufu_100_subtype_text;
 		purchase: switch_wamufu_100_yeardep_purchase;
 		

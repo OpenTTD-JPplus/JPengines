@@ -93,6 +93,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 								)
 							);
 		speed: switch_speedboost_1;
+		purchase_speed: return 95;
 		default: switch_waki_8000_loadstack;
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
@@ -171,6 +172,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 								)
 							);
 		speed: switch_speedboost_1;
+		purchase_speed: return 95;
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;

@@ -488,6 +488,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
     ALUM: return recolour_piece ;
 	COPR: return recolour_piece +4;
 	ZINC: return recolour_piece +5;
+    RAMT: return recolour_piece +5;
 	NICK: return recolour_piece +6;
 	ENSP: return recolour_piece +5;
 	FMSP: return recolour_piece +6;
@@ -542,6 +543,8 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
     CMNT: return recolour_bulk +12;
     CBLK: return recolour_bulk +13;
     ALO_: return recolour_bulk +12;
+
+    SGCN: return recolour_bulk +17;
 
 //FALLBACK
     recolour_bulk;    
@@ -604,6 +607,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 	
     JAVA: return recolour_bulk +18;	
 	PEAT: return recolour_bulk +18;
+	BIOM: return recolour_bulk +18;
 	NUTS: return recolour_bulk +18;
 	
 	RCYC: return recolour_bulk +19;

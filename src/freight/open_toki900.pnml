@@ -310,6 +310,8 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	SCMT: random_toki_900_bulk;
 	RCYC: random_toki_900_bulk;
 	WSTE: random_toki_900_bulk;
+	SGCN: random_toki_900_bulk;
+
 	SULP: random_toki_900_covered;
 	SEED: random_toki_900_covered;
 	FERT: random_toki_900_covered;

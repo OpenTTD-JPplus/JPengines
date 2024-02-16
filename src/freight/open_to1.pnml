@@ -176,6 +176,10 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	TEXT: random_to_1_supplies;
 	
 	SCMT: spritegroup_to_1_a_bulk;
+	RCYC: spritegroup_to_1_a_bulk;
+	WSTE: spritegroup_to_1_a_bulk;
+	SGCN: spritegroup_to_1_a_bulk;
+
 	SULP: random_to_1_covered;
 	SEED: random_to_1_covered;
 	FERT: random_to_1_covered;

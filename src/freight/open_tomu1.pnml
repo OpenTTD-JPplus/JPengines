@@ -320,6 +320,7 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 	SCMT: random_tomu_1_bulk;
 	RCYC: random_tomu_1_bulk;
 	WSTE: random_tomu_1_bulk;
+	SGCN: random_tomu_1_bulk;
 
 	SULP: random_tomu_1_covered;
 	SEED: random_tomu_1_covered;
