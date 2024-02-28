@@ -2,6 +2,7 @@
 
 lang: 7F
 
+STR_GRF_NAME :JP+ Engines & Wagons v0.12.5
 STR_GRF_DESCRIPTION :{RED}注意!{SILVER} JapanSet3より後にロードしてください{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}は{WHITE}JP{RED}+{BLACK}シリーズのうち,鉄道省,国鉄,JR各社および私鉄会社より機関車,貨車および客車に集中してお届けします。新しい貨車・客車および塗装のバリエーションが含まれています。{}{}{TINYFONT}作画:{SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}コード:{SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:購入費
@@ -29,6 +30,7 @@ STR_ERROR_JPPLUSSET			:JP+ Multiple Unitsより後にロードしてください
 STR_NAME_7100	    :7100形
 STR_NAME_7200	    :7200形
 STR_NAME_860	    :860形
+STR_NAME_7050	    :7050形 C-1 
 
 STR_NAME_DF50	    :DF50形
 STR_NAME_DD13	    :DD13形
@@ -39,8 +41,8 @@ STR_NAME_DD51       :DD51形
 STR_NAME_DF200      :DF200形
 STR_NAME_DF200_1     :DF200形 0番台
 STR_NAME_DF200_2     :DF200形 100番台/200番台
-STR_NAME_DF200_P     :DF200-901 (試作機)
-STR_NAME_DF200_7     :DF200-7000 {GOLD}(ななつ星 in 九州){BLACK}
+STR_NAME_DF200_P     :DF200形 900番台 (試作機)
+STR_NAME_DF200_7     :DF200形 7000番台 {GOLD}(ななつ星 in 九州){BLACK}
 STR_NAME_HD300      :HD300形
 
 STR_NAME_AB10	:AB10形
@@ -163,14 +165,14 @@ STR_NAME_E851	    :E851形
 STR_NAME_E31	    :E31形
 STR_NAME_E51	    :E51形
 
-STR_NAME_PAX_HA4995		:ハ4995 客車
-STR_NAME_PAX_FUKOHA7945	:フコハ7945 客車
-STR_NAME_PAX_HOHA6810	:ホハ6810 客車
-STR_NAME_PAX_OHA31		:オハ31 客車
-STR_NAME_PAX_SUHA32		:サハ32 客車
-STR_NAME_PAX_OHA35		:オハ35 客車
-STR_NAME_PAX_SUHA43		:スハ43 客車
-STR_NAME_PAX_SUHA44		:スハ43 {GOLD}"Tokaidō"{BLACK}
+STR_NAME_PAX_HA4995		:ハ4995形 客車
+STR_NAME_PAX_FUKOHA7945	:フコハ7945形 客車
+STR_NAME_PAX_HOHA6810	:ホハ6810形 客車
+STR_NAME_PAX_OHA31		:オハ31系 客車
+STR_NAME_PAX_SUHA32		:スハ32系 客車
+STR_NAME_PAX_OHA35		:オハ35系 客車
+STR_NAME_PAX_SUHA43		:スハ43系 客車
+STR_NAME_PAX_SUHA44		:スハ43形 {GOLD}"Tokaidō"{BLACK}
 STR_NAME_SLEEPER_10		:10系 客車
 STR_NAME_PASSENGER_12	:12系 客車
 STR_NAME_PASSENGER_24	:24系 寝台車
@@ -502,12 +504,12 @@ STR_SUFFIX_NIPPON       :{WHITE}日本通運
 STR_SUFFIX_TOSHIBA      :{WHITE}東芝ロジスティクス
 STR_SUFFIX_YAWATA       :{WHITE}八幡製鐵/日本製鉄
 
-STR_SUFFIX_GNR          :{WHITE}Great Northern Railway
-STR_SUFFIX_NYC          :{WHITE}New York Central
-STR_SUFFIX_MILW         :{WHITE}Milwaukee Road
-STR_SUFFIX_PRR          :{WHITE}Pennsylvania Railroad
-STR_SUFFIX_MPL          :{WHITE}Missouri Pacific
-STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
+STR_SUFFIX_GNR          :{WHITE}グレート・ノーザン鉄道
+STR_SUFFIX_NYC          :{WHITE}ニューヨーク・セントラル鉄道
+STR_SUFFIX_MILW         :{WHITE}ミルウォーキー鉄道
+STR_SUFFIX_PRR          :{WHITE}ペンシルバニア鉄道
+STR_SUFFIX_MPL          :{WHITE}ミズーリ・パシフィック鉄道
+STR_SUFFIX_AMTRAK       :{WHITE}アムトラック
 
 
 #####################
