@@ -25,7 +25,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 		name: string(STR_NAME_RESA_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);
-		speed: 100		km/h;
+		speed: 85		km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -54,7 +54,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 
 		cargo_capacity: return 60;
 		speed: switch_speedboost_1;
-		purchase_speed: return 100;
+		purchase_speed: return 85;
 		default: spriteset_resa_10000;
 		purchase: spriteset_resa_10000_purchase;
 		

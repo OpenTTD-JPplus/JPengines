@@ -108,7 +108,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		name: string(STR_NAME_KOKI_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);
-		speed: 100 km/h;
+		speed: 85 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
@@ -116,7 +116,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 35;
-		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
@@ -137,7 +137,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 							)
 						);
 		speed: switch_speedboost_1;
-		purchase_speed: return 100;
+		purchase_speed: return 85;
 		cargo_capacity: return 60;
 		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
@@ -160,7 +160,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 35;
-		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED); 
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
