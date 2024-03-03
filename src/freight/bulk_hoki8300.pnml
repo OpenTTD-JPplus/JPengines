@@ -1,61 +1,52 @@
-spriteset(spriteset_hoki_8300_black, "gfx/freight/hoki_covered.png") {
-	template_2cc_std(1, 128)
-}
 
-spriteset(spriteset_hoki_8300_logo, "gfx/freight/hoki_covered.png") {
-	template_2cc_std(1, 160)
-}
 
 spriteset(spriteset_hoki_8300_cream, "gfx/freight/hoki_covered.png") {
 	template_2cc_std(1, 192)
 }
 
-
 spriteset(spriteset_hoki_8300_purchase, "gfx/freight/hoki_covered.png") {
+	template_purchase(1, 224)
+}
+
+
+spriteset(spriteset_hoki_9300_black, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_hoki_9300_logo, "gfx/freight/hoki_covered.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_hoki_9300_purchase, "gfx/freight/hoki_covered.png") {
 	template_purchase(1, 256)
 }
 
 
 
-random_switch(FEAT_TRAINS, SELF, random_hoki_8300_all) {
-	1: spriteset_hoki_8300_cream;
-	1: spriteset_hoki_8300_black;
-	1: spriteset_hoki_8300_logo;
-	}
-	
-random_switch(FEAT_TRAINS, SELF, random_hoki_8300_black) {
-	1: spriteset_hoki_8300_black;
-	1: spriteset_hoki_8300_logo;
-	}
-
-
-switch(FEAT_TRAINS, SELF, switch_hoki_8300_livery, cargo_subtype) {
-	1: random_hoki_8300_black;
-	2: spriteset_hoki_8300_cream;
-	random_hoki_8300_all;
-}
-
-switch(FEAT_TRAINS, SELF, switch_hoki_8300_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_RANDOM);
-	1: return string(STR_CONCAT_1F, string(STR_COLOUR_BLACK));
-	2: return string(STR_CONCAT_1F, string(STR_COLOUR_CREAM));
-	   return CB_RESULT_NO_TEXT;
-	}
 
 
 
-item (FEAT_TRAINS, hoki_8300, 1290) {
+item (FEAT_TRAINS, hoki_8300, 1464) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1974,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_8300);
+	track_type: NAAN;
+	speed: 100 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	speed: 100 km/h;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	cargo_capacity: 65;
+	weight: 17;
+//	refittable_cargo_classes: bitmask(CC_COVERED); 
+	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
-	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
-	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+	cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SUGR, SALT, SASH, POTA];
+	cargo_disallow_refit: [WOOL, WOOD, SGCN, TBCO];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
 	running_cost_factor: 8;
@@ -73,8 +64,64 @@ graphics {
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
 	cargo_capacity: return 65;
-	default: switch_hoki_8300_livery;
-	cargo_subtype_text: switch_hoki_8300_subtype_text;
+	default: spriteset_hoki_8300_cream;
 	purchase: spriteset_hoki_8300_purchase;
+	}
+}
+
+
+random_switch(FEAT_TRAINS, SELF, random_hoki_9300_black) {
+	1: spriteset_hoki_9300_black;
+	1: spriteset_hoki_9300_logo;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_hoki_9300_livery, cargo_subtype) {
+	1: spriteset_hoki_9300_black;
+	2: spriteset_hoki_9300_logo;
+	random_hoki_9300_black;
+}
+
+switch(FEAT_TRAINS, SELF, switch_hoki_9300_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_1F, string(STR_COLOUR_BLACK));
+	2: return string(STR_CONCAT_2F, string(STR_COLOUR_BLACK), string(STR_SUFFIX_REDLOGO));
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, hoki_9300, 1290) {
+
+property {
+	introduction_date: date(1974,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_HOKI_9300);
+	speed: 100 km/h;
+	loading_speed: 40;
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	non_refittable_cargo_classes: 0;
+	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
+	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	cost_factor: 50;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
+	variant_group: 1464;
+	}
+graphics {
+	additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COKE),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+	speed: switch_speedboost_1;
+	purchase_speed: return 100;
+	cargo_capacity: return 65;
+	default: switch_hoki_9300_livery;
+	cargo_subtype_text: switch_hoki_9300_subtype_text;
+	purchase: spriteset_hoki_9300_purchase;
 	}
 }

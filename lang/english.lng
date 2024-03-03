@@ -434,7 +434,8 @@ STR_NAME_HOKI_1000		:HOKI 1000 Covered Hopper
 STR_NAME_HOKI_2200		:HOKI 2200 Grain Hopper
 STR_NAME_HOKI_2500		:HOKI 2500 / 9500 Lidded Hopper
 STR_NAME_HOKI_5700		:HOKI 5700 / 7500 Covered Hopper
-STR_NAME_HOKI_8300		:HOKI 8300 / 9300 Covered Hopper
+STR_NAME_HOKI_8300		:HOKI 8300 Grain Hopper
+STR_NAME_HOKI_9300		:HOKI 9300 Covered Hopper
 STR_NAME_HOKI_8500		:HOKI 8500 Hopper
 STR_NAME_HOKI_10000		:HOKI 10000 Hopper
 
@@ -755,6 +756,7 @@ STR_DESC_USAGE_FRT_LMST	:{BLACK}Usage: {SILVER}Bulk Cargo - Limestone{}
 STR_DESC_USAGE_FRT_CMNT	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Cement{}
 STR_DESC_USAGE_FRT_QLME	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Quicklime{}
 STR_DESC_USAGE_FRT_GRAI	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Grain{}
+STR_DESC_USAGE_FRT_COKE	:{BLACK}Usage: {SILVER}Powdered Bulk Cargo - Coke{}
 STR_DESC_USAGE_FRT_CHIP	:{BLACK}Usage: {SILVER}Lightweight Bulk Cargo - Fibres / Woodchips{}
 
 STR_DESC_USAGE_FRT_TANK	:{BLACK}Usage: {SILVER}General Liquid Cargo{}
