@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.12.5
+STR_GRF_NAME :JP+ Engines & Wagons {VERSION}
 STR_GRF_DESCRIPTION :{RED}注意!{SILVER} JapanSet3より後にロードしてください{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}は{WHITE}JP{RED}+{BLACK}シリーズのうち,鉄道省,国鉄,JR各社および私鉄会社より機関車,貨車および客車に集中してお届けします。新しい貨車・客車および塗装のバリエーションが含まれています。{}{}{TINYFONT}作画:{SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}コード:{SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:購入費

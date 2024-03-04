@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ 机车与车厢 v0.12.5
+STR_GRF_NAME :JP+ 机车与车厢 {VERSION}
 STR_GRF_DESCRIPTION :{RED}注意!{SILVER} 必须在JapanSet3: Trains之后加载以工作!{}{}{WHITE}JP{RED}+{WHITE}机车与车厢{BLACK}：{WHITE}JP{RED}+{BLACK}系列的一部分, 主要包含来自日本铁道省, 日本国有铁道, JR集团各公司与其他私铁的机车与车厢, 并提供多种涂装样式{}{}{TINYFONT}原始图像由{SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth与JapanSet团队绘制{}{BLACK}GRF由{SILVER}Emperor Jake编制{}{BLACK}{COPYRIGHT} 2023 GPLv2+。
 
 STR_PARAM_NAME_BASECOSTMODBUY	:购买费用

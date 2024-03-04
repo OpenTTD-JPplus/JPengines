@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ 기관차 & 객차 v0.12.4
+STR_GRF_NAME :JP+ 기관차 & 객차 {VERSION}
 STR_GRF_DESCRIPTION :{RED}주의!{SILVER} 이 NewGRF는 JapanSet3: Trains와 함께 추가되어야 합니다.{}{}{WHITE}JP{RED}+{WHITE}기관차 & 객차{BLACK}: {WHITE}JP{RED}+{BLACK} 시리즈 중 하나로, 일본국유철도, JR, 다양한 민간 사철의 기관차, 객차, 화차를 중점에 두고 있습니다. 다양한 새로운 차량와 도색이 포함되어 있습니다. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:구매 비용
