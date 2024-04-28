@@ -37614,7 +37614,6 @@ graphics {
 	cargo_capacity: return 50;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;
-	cargo_subtype_text: switch_toki_25000_subtype_text;
 	colour_mapping: switch_generic_recolour;
 	}
 }
