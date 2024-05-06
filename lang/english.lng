@@ -2,7 +2,7 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ Engines & Wagons v0.12.5
+STR_GRF_NAME :JP+ Engines & Wagons {VERSION}
 STR_GRF_DESCRIPTION :{RED}ATTENTION!{SILVER} Must be loaded AFTER JapanSet3: Trains to work!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Part of the {WHITE}JP{RED}+{BLACK} series, focused on locomotives, passenger coaches and freight wagons from JGR, JNR, JR and various private operators. Includes many new vehicles and livery refits. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs

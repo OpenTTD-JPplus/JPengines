@@ -2,8 +2,8 @@
 
 lang: 7F
 
-STR_GRF_NAME :JP+ 机车与车厢 v0.12.5
-STR_GRF_DESCRIPTION :{RED}注意!{SILVER} 必须在JapanSet3: Trains之后加载以工作!{}{}{WHITE}JP{RED}+{WHITE}机车与车厢{BLACK}：{WHITE}JP{RED}+{BLACK}系列的一部分, 主要包含来自日本铁道省, 日本国有铁道, JR集团各公司与其他私铁的机车与车厢, 并提供多种涂装样式{}{}{TINYFONT}原始图像由{SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth与JapanSet团队绘制{}{BLACK}GRF由{SILVER}Emperor Jake编制{}{BLACK}{COPYRIGHT} 2023 GPLv2+。
+STR_GRF_NAME :JP+ 机车与车厢 {VERSION}
+STR_GRF_DESCRIPTION :{RED}注意!{SILVER} 必须在 JapanSet3: Trains 之后加载以工作!{}{}{WHITE}JP{RED}+{WHITE}机车与车厢{BLACK}：{WHITE}JP{RED}+{BLACK}系列的一部分，主要包含来自日本铁道省、日本国有铁道、JR集团各公司与其他私铁的机车与车厢，并提供多种涂装样式{}{}{TINYFONT}原始图像由{SILVER} Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth 与 JapanSet团队{BLACK}绘制{}GRF 由{SILVER} Emperor Jake {BLACK}编制 {}{COPYRIGHT} 2023 GPLv2+
 
 STR_PARAM_NAME_BASECOSTMODBUY	:购买费用
 STR_PARAM_DESC_BASECOSTMODBUY	:调整机车与车厢购买费用以与 Japan Set 相匹配
@@ -21,7 +21,7 @@ STR_PARAM_HIGH		:高
 STR_PARAM_VHIGH		:非常高
 
 STR_ERROR_JAPANSETTRAINS_LOADORDER	:必须在 JapanSet 3 Trains 之后加载!
-STR_ERROR_JAPANSETTRAINS_REQUIRES	:JP+ Engines 需要 JapanSet 3 Trains以工作!
+STR_ERROR_JAPANSETTRAINS_REQUIRES	:JP+ 机车与车厢需要 JapanSet 3 Trains以工作!
 STR_ERROR_JAPANSETTRAINS	:JapanSet 3 Trains
 
 STR_ERROR_JPPLUSSET			:必须在 JP+ Set 之后加载!
@@ -43,7 +43,7 @@ STR_NAME_DF200_1     :DF200-0
 STR_NAME_DF200_2     :DF200-100 / -200
 STR_NAME_DF200_P     :DF200-901（试作机）
 STR_NAME_DF200_7     :DF200-7000 {GOLD}（九州七星）{BLACK}
-STR_NAME_HD300      :HD300形
+STR_NAME_HD300      :HD300
 
 STR_NAME_AB10	:AB10
 STR_NAME_EB10	:EB10
@@ -334,7 +334,7 @@ STR_REFIT_PAX_KN24		:{SILVER}KANI 24{BLACK}
 STR_SUFFIX_PAX_3CLASS			: 三等车
 STR_SUFFIX_PAX_2CLASS			: 二等车
 STR_SUFFIX_PAX_1CLASS			: 一等车
-STR_SUFFIX_PAX_12CLASS			: 一/二等车
+STR_SUFFIX_PAX_12CLASS			: 一 / 二等车
 STR_SUFFIX_PAX_GREEN			: 绿车
 STR_SUFFIX_CONDUCTOR			: 带车掌室
 
@@ -729,7 +729,7 @@ STR_DESC_USAGE_PAX_LUX     :{BLACK}用途：{SILVER}豪华卧铺{}
 STR_DESC_USAGE_PAX_JOY     :{BLACK}用途：{SILVER}团体 / 观光列车{}
 
 # TOKAIDO(东海道)实际为スハ43的青大将涂装
-STR_DESC_USAGE_PAX_TOKAIDO :{BLACK}用途：{SILVER}急行列车 - {GREEN}与EF58新型号与青大将涂装一起使用{}
+STR_DESC_USAGE_PAX_TOKAIDO :{BLACK}用途：{SILVER}急行列车 - {GREEN}与 EF58 新型号与青大将涂装一起使用{}
 
 STR_DESC_USAGE_MAIL_LUG    :{BLACK}用途：{SILVER}行李 / 邮件{}
 STR_DESC_USAGE_MAIL_RPO    :{BLACK}用途：{SILVER}移动邮局{}
@@ -766,7 +766,7 @@ STR_DESC_USAGE_FRT_OIL     :{BLACK}用途：{SILVER}液体货物 - 燃料 / 油{
 STR_DESC_USAGE_FRT_CHEM    :{BLACK}用途：{SILVER}危险液体货物 - 酸 / 氯{}
 STR_DESC_USAGE_FRT_GAS     :{BLACK}用途：{SILVER}气体货物 - 氨 / 液化石油气{}
 
-STR_DESC_USAGE_FRT_T260    :{BLACK}用途：{SILVER}特急货物 - {GREEN}与M250系货车动车组一起使用{}
+STR_DESC_USAGE_FRT_T260    :{BLACK}用途：{SILVER}特急货物 - {GREEN}与 M250系货车动车组一起使用{}
 
 STR_DESC_BRAKE             :{BLACK}用途：{SILVER}守车 - {GREEN}连接至较低速度上限之车厢后以提升速度上限{}
 
