@@ -12957,6 +12957,11 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) 
 	switch_speedboost_2;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_container_cargo_decay, hasbit(cargo_classes, 7)) {
+	1: return 1000;
+	return 185;
+	}
+
 spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
 	template_2cc_std(1, 1)
 }
@@ -13721,6 +13726,7 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 							);
 
 		cargo_capacity: return 36;
+		cargo_age_period: return 100;
 		default: switch_pax_1870_livery;
 		purchase: switch_pax_1870_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1870_subtype_text;
@@ -13787,7 +13793,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		dual_headed: 0;
 		cargo_capacity: 36; 
 		refit_cost: 0;
-		cargo_age_period: 100;
+		cargo_age_period: 185;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
@@ -14141,6 +14147,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 							);
 
 		cargo_capacity: return 50;
+		cargo_age_period: return 120;
 		default: switch_pax_1880_livery;
 		purchase: switch_pax_1880_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1880_subtype_text;
@@ -14683,7 +14690,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		dual_headed: 0;
 		cargo_capacity: 75; 
 		refit_cost: 0;
-		cargo_age_period: 160;
+		cargo_age_period: 185;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
@@ -20106,7 +20113,7 @@ property {
 	introduction_date: date(1870,1,1);
 	default_cargo_type: LVST;
 	cargo_capacity: 20;
-	cargo_age_period: 0;
+	cargo_age_period: 1000;
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -20937,7 +20944,7 @@ property {
 	default_cargo_type: FOOD;
 	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 	loading_speed: 20;
-	cargo_age_period: 0;
+	cargo_age_period: 1200;
 //	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 //	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
@@ -22224,7 +22231,7 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 		cargo_capacity: 45; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 1200;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
@@ -23718,6 +23725,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	cargo_age_period: switch_container_cargo_decay;
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
@@ -32900,6 +32908,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
@@ -32990,6 +32999,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 60;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33136,6 +33146,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 60;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33181,6 +33192,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 100;
 		cargo_capacity: return 45;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_kokifu_10000_flip;
 		purchase: spriteset_kokifu_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33338,6 +33350,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 95;
 		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
@@ -33383,6 +33396,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 55;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_kokifu_50000_flip;
 		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33500,6 +33514,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 100;
 		default: switch_koki_250000_base_loadstack;
 		purchase: switch_koki_250000_purchase;
@@ -33601,6 +33616,7 @@ item (FEAT_TRAINS, koki_350000, 1416) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_350000_base_loadstack;
 		purchase: switch_koki_350000_purchase;
@@ -33752,6 +33768,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 75;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_100_flip;
 		purchase: spriteset_koki_100_purchase;
@@ -33850,6 +33867,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 		cargo_capacity: return 80;
 		purchase_speed: return 110;
 		default: switch_koki_107_flip;
@@ -39016,6 +39034,7 @@ graphics {
 						);
 
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		default: spritegroup_m250_trailer;
 		purchase: spriteset_m250_trailer_purchase;
 	}

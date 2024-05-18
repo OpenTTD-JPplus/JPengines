@@ -117,7 +117,8 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) 
 	switch_speedboost_2;
 	}
 
-switch(FEAT_TRAINS, SELF, switch_container_cargo_decay, cargo_classes) {
-	bitmask(CC_REFRIGERATED): return 1000;
+// "7" stands for bitmask(CC_REFRIGERATED); only in this way it worked
+switch(FEAT_TRAINS, SELF, switch_container_cargo_decay, hasbit(cargo_classes, 7)) {
+	1: return 1000;
 	return 185;
-}
+	}
