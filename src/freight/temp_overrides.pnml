@@ -92,6 +92,7 @@ graphics {
 						);
 
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		default: spritegroup_m250_trailer;
 		purchase: spriteset_m250_trailer_purchase;
 	}
