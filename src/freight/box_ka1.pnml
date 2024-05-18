@@ -73,7 +73,7 @@ property {
 	introduction_date: date(1870,1,1);
 	default_cargo_type: LVST;
 	cargo_capacity: 20;
-	cargo_age_period: 0;
+	cargo_age_period: 1000;
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;

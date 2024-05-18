@@ -367,6 +367,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
