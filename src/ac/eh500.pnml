@@ -139,14 +139,14 @@ switch(FEAT_TRAINS, SELF, switch_eh500_new_rear_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_eh500_new_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_KINTARO)
                                  );
-	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_NOLOGO)
@@ -169,16 +169,21 @@ switch(FEAT_TRAINS, SELF, switch_eh500_new_articulated_part, extra_callback_info
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_eh500_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_eh500_2_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EH500);
-  } 
-switch (FEAT_TRAINS, SELF, switch_eh500_2_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_eh500_2_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_eh500_2_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_eh500_2_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
+GRAPHICS_STACK_2(\
+	sw_eh500_new_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_eh500_new_purchase\
+)
 
 item (FEAT_TRAINS, eh500_new, 1098) {
 
@@ -200,22 +205,22 @@ property {
 	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	length: 6;
 	cost_factor: 103;
 	running_cost_factor: 106;
 	running_cost_base: RUNNING_COST_ELECTRIC;
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -223,7 +228,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh500_new_subtype_text;
   default: switch_eh500_new_front_livery;
-  purchase: switch_eh500_new_purchase;
+  purchase: sw_eh500_new_purchase;
   articulated_part: switch_eh500_new_articulated_part;
   name: switch_eh500_2_name;
   }
@@ -239,7 +244,7 @@ item (FEAT_TRAINS, eh500_new_rear, 1998) {
 		introduction_date: date(1950,1,1);
 		engine_class: ENGINE_CLASS_ELECTRIC;
 		power: 1 kW;
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -253,7 +258,7 @@ item (FEAT_TRAINS, eh500_new_rear, 1998) {
 }
 
 
-//old type 
+//old type
 
 switch(FEAT_TRAINS, SELF, switch_eh500_old_front_yeardep, build_year) {
 	0..2002: spriteset_eh500_old_low_front;
@@ -285,20 +290,20 @@ switch(FEAT_TRAINS, SELF, switch_eh500_old_rear_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_eh500_old_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_KINTARO)
                                  );
-	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_KINTARO), string(STR_SUFFIX_LIGHTS)
@@ -321,15 +326,21 @@ switch(FEAT_TRAINS, SELF, switch_eh500_old_articulated_part, extra_callback_info
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_eh500_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_eh500_1_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EH500);
-  } 
-switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_eh500_1_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_eh500_1_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
+
+GRAPHICS_STACK_2(\
+	sw_eh500_old_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_eh500_old_purchase\
+)
 
 item (FEAT_TRAINS, eh500_old, 67) {
 
@@ -351,23 +362,23 @@ property {
 	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	length: 6;
 	cost_factor: 103;
 	running_cost_factor: 106;
 	running_cost_base: RUNNING_COST_ELECTRIC;
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	variant_group: 1098;
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -375,7 +386,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh500_old_subtype_text;
   default: switch_eh500_old_front_livery;
-  purchase: switch_eh500_old_purchase;
+  purchase: sw_eh500_old_purchase;
   articulated_part: switch_eh500_old_articulated_part;
   name: switch_eh500_1_name;
   }
@@ -391,7 +402,7 @@ item (FEAT_TRAINS, eh500_old_rear, 1067) {
 		introduction_date: date(1950,1,1);
 		engine_class: ENGINE_CLASS_ELECTRIC;
 		power: 1 kW;
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -436,14 +447,14 @@ switch(FEAT_TRAINS, SELF, switch_eh500_proto_rear_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_eh500_proto_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_KINTARO)
@@ -466,16 +477,20 @@ switch(FEAT_TRAINS, SELF, switch_eh500_proto_articulated_part, extra_callback_in
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_eh500_p_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_eh500_p_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EH500);
-  } 
-switch (FEAT_TRAINS, SELF, switch_eh500_p_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_eh500_p_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_eh500_p_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_eh500_p_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
-
+GRAPHICS_STACK_2(\
+	sw_eh500_proto_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_eh500_proto_purchase\
+)
 
 item (FEAT_TRAINS, eh500_proto, 1097) {
 
@@ -497,23 +512,23 @@ property {
 	reliability_decay: 16;
 	model_life: 40;
 	vehicle_life: 50;
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	length: 6;
 	cost_factor: 103;
 	running_cost_factor: 106;
 	running_cost_base: RUNNING_COST_ELECTRIC;
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	variant_group: 1098;
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -521,7 +536,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_eh500_proto_subtype_text;
   default: switch_eh500_proto_front_livery;
-  purchase: switch_eh500_proto_purchase;
+  purchase: sw_eh500_proto_purchase;
   articulated_part: switch_eh500_proto_articulated_part;
   name: switch_eh500_p_name;
   }
@@ -537,7 +552,7 @@ item (FEAT_TRAINS, eh500_proto_rear, 1997) {
 		introduction_date: date(1950,1,1);
 		engine_class: ENGINE_CLASS_ELECTRIC;
 		power: 1 kW;
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);

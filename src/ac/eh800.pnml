@@ -37,8 +37,8 @@ switch(FEAT_TRAINS, SELF, switch_eh800_livery_rear, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_eh800_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									string(STR_COLOUR_SILVER)
                                     )
@@ -59,7 +59,12 @@ switch(FEAT_TRAINS, SELF, switch_eh800_purchase, current_year) {
 	2018..9999: spriteset_eh800_jr_purchase;
 	spriteset_eh800_jrf_purchase;
 	}
-	
+
+GRAPHICS_STACK_2(\
+	sw_eh800_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_eh800_purchase\
+)
 
 item (FEAT_TRAINS, eh800, 1095) {
 
@@ -85,14 +90,14 @@ property {
 	length: 6;
 	running_cost_factor: 115;
 	running_cost_base: RUNNING_COST_ELECTRIC;
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS25),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -100,7 +105,7 @@ graphics { // graphics for engine
 	cargo_capacity: return 0;
 	cargo_subtype_text: switch_eh800_subtype_text;
 	default: switch_eh800_livery;
-	purchase: switch_eh800_purchase;
+	purchase: sw_eh800_purchase;
 	articulated_part: switch_eh800_articulated_part;
 	}
 }
@@ -115,7 +120,7 @@ item (FEAT_TRAINS, eh800_rear, 1096) {
 		introduction_date: date(1950,1,1);
 		engine_class: ENGINE_CLASS_ELECTRIC;
 		power: 1 kW;
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_ELECTRIC);

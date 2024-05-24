@@ -34,13 +34,13 @@ switch(FEAT_TRAINS, SELF, switch_ef80_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_PINK)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRW), 
-                                   string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRW),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
@@ -48,7 +48,11 @@ switch(FEAT_TRAINS, SELF, switch_ef80_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+GRAPHICS_STACK_2(\
+	sw_ef80_purchase,\
+	switch_jnr_jrf_1987,\
+	spriteset_ef80_purchase\
+)
 
 
 item (FEAT_TRAINS, ef80, 1080) {
@@ -74,14 +78,14 @@ item (FEAT_TRAINS, ef80, 1080) {
   length: 7;
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                     string(STR_SUFFIX_JNR)
                     )
                   );
@@ -89,6 +93,6 @@ item (FEAT_TRAINS, ef80, 1080) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef80_subtype_text;
   default: switch_ef80_livery;
-  purchase: spriteset_ef80_purchase;
+  purchase: sw_ef80_purchase;
   }
 }

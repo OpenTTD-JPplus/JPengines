@@ -17,8 +17,8 @@ switch(FEAT_TRAINS, SELF, switch_ed500_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed500_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLACK),
 									                  string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_PROTO)
@@ -27,6 +27,11 @@ switch(FEAT_TRAINS, SELF, switch_ed500_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 }
 
+GRAPHICS_STACK_2(\
+	sw_ed500_purchase,\
+	switch_logo_jrf,\
+	spriteset_ed500_purchase\
+)
 
 item (FEAT_TRAINS, ed500, 1090) {
  property {
@@ -51,14 +56,14 @@ item (FEAT_TRAINS, ed500, 1090) {
   length: 8;
   running_cost_factor: 95;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_PROTO),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                     string(STR_SUFFIX_JRF)
                     )
                   );
@@ -66,6 +71,6 @@ item (FEAT_TRAINS, ed500, 1090) {
   cargo_capacity: return 0;
   default: switch_ed500_livery;
   cargo_subtype_text: switch_ed500_subtype_text;
-  purchase: spriteset_ed500_purchase;
+  purchase: sw_ed500_purchase;
   }
 }

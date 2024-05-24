@@ -91,7 +91,7 @@ switch(FEAT_TRAINS, SELF, switch_ef510_0_yeardep_livery, build_year) {
 switch(FEAT_TRAINS, SELF, switch_ef510_0_livery, cargo_subtype) {
 	1: spriteset_ef510_0_proto;
 	2: spriteset_ef510_0_red;
-	3: spriteset_ef510_0_nologo;	
+	3: spriteset_ef510_0_nologo;
 	4: spriteset_ef510_0_cc;
 	switch_ef510_0_yeardep_livery;
 }
@@ -100,20 +100,20 @@ switch(FEAT_TRAINS, SELF, switch_ef510_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef510_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_PROTO)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REDTHUNDER)
                                  );
-	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REDTHUNDER), string(STR_SUFFIX_NOLOGO)
@@ -123,16 +123,20 @@ switch(FEAT_TRAINS, SELF, switch_ef510_0_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef510_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF510);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef510_0_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef510_0_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
-
+GRAPHICS_STACK_2(\
+	sw_ef510_0_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_ef510_0_purchase\
+)
 
 item (FEAT_TRAINS, ef510_0, 105) {
 
@@ -158,16 +162,16 @@ property {
   cost_factor: 97;
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -175,7 +179,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef510_0_subtype_text;
   default: switch_ef510_0_livery;
-  purchase: switch_ef510_0_purchase;
+  purchase: sw_ef510_0_purchase;
   name: switch_ef510_0_name;
   }
 }
@@ -197,8 +201,8 @@ switch(FEAT_TRAINS, SELF, switch_ef510_500_yeardep_livery, build_year) {
 switch(FEAT_TRAINS, SELF, switch_ef510_500_livery, cargo_subtype) {
 	1: spriteset_ef510_500_hokutosei;
 	2: spriteset_ef510_500_cassiopeia;
-	3: spriteset_ef510_500_blue;	
-	4: spriteset_ef510_500_silver;	
+	3: spriteset_ef510_500_blue;
+	4: spriteset_ef510_500_silver;
 	5: spriteset_ef510_500_cc;
 	switch_ef510_500_yeardep_livery;
 }
@@ -207,25 +211,25 @@ switch(FEAT_TRAINS, SELF, switch_ef510_500_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef510_500_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE), 
-                                   string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_SILVER)
                                     ), string(STR_SUFFIX_CASSIOPEIA)
                                  );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_GOLD)
                                     )
                                  );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_1F, 
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_SILVER)
                                     )
                                  );
@@ -234,16 +238,25 @@ switch(FEAT_TRAINS, SELF, switch_ef510_500_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef510_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF510);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef510_500_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef510_500_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
+switch (FEAT_TRAINS, SELF, switch_jre_jr, current_year) {
+  0..2018: switch_logo_jre;
+  switch_logo_jr;
+  }
 
+GRAPHICS_STACK_2(\
+	sw_ef510_500_purchase,\
+	switch_jre_jr,\
+	switch_ef510_500_purchase\
+)
 
 item (FEAT_TRAINS, ef510_500, 1986) {
 
@@ -269,17 +282,17 @@ property {
   cost_factor: 97;
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   variant_group: 105;
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_2C, 
+                      string(STR_CONCAT_2C,
                         string(STR_SUFFIX_JRF),
 						string(STR_SUFFIX_JRE)
                     )
@@ -288,7 +301,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef510_500_subtype_text;
   default: switch_ef510_500_livery;
-  purchase: switch_ef510_500_purchase;
+  purchase: sw_ef510_500_purchase;
   name: switch_ef510_500_name;
   }
 }
@@ -306,8 +319,8 @@ switch(FEAT_TRAINS, SELF, switch_ef510_300_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef510_300_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_SILVER),
                                     string(STR_COLOUR_RED)
                                     )
@@ -317,16 +330,21 @@ switch(FEAT_TRAINS, SELF, switch_ef510_300_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef510_300_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF510);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef510_300_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef510_300_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
+GRAPHICS_STACK_2(\
+	sw_ef510_300_purchase,\
+	switch_logo_jr,\
+	spriteset_ef510_300_jr_purchase\
+)
 
 item (FEAT_TRAINS, ef510_300, 1086) {
 
@@ -352,17 +370,17 @@ property {
   cost_factor: 97;
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   variant_group: 105;
 	}
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_HF),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -370,7 +388,7 @@ property {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef510_300_subtype_text;
   default: switch_ef510_300_livery;
-  purchase: spriteset_ef510_300_jr_purchase;
+  purchase: sw_ef510_300_purchase;
   name: switch_ef510_300_name;
   }
 }
