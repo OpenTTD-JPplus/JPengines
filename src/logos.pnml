@@ -1,0 +1,30 @@
+template template_logo_EZ() {[0,0,48,24,-90,-14]}
+template template_logo() 	{[0,0,24,12,0,0]}
+
+spriteset(spriteset_logo_jgr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jgr.png"){template_logo_EZ()} // Japanese Governmental Railways
+spriteset(spriteset_logo_jnr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jnr.png"){[0,0,96,24,-90,-14]}// Japanese National Railways
+spriteset(spriteset_logo_jre, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jre.png"){template_logo_EZ()} // JR East
+spriteset(spriteset_logo_jrw, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrw.png"){template_logo_EZ()} // JR West
+spriteset(spriteset_logo_jrf, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrf.png"){template_logo_EZ()} // JR Freight
+spriteset(spriteset_logo_jrs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrs.png"){template_logo_EZ()} // JR Shikoku
+spriteset(spriteset_logo_jrh, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrh.png"){template_logo_EZ()} // JR Hokkaido
+spriteset(spriteset_logo_jrc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrc.png"){template_logo_EZ()} // JR Central
+spriteset(spriteset_logo_jrk, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrk.png"){template_logo_EZ()} // JR Kyushu
+spriteset(spriteset_logo_jr,  ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jr.png") {template_logo_EZ()} // JR
+
+
+switch(FEAT_TRAINS,SELF,switch_logo_jr,  param_purchase_logo) {1: spriteset_logo_jr;}
+switch(FEAT_TRAINS,SELF,switch_logo_jgr, param_purchase_logo) {1: spriteset_logo_jgr;}
+switch(FEAT_TRAINS,SELF,switch_logo_jnr, param_purchase_logo) {1: spriteset_logo_jnr;}
+switch(FEAT_TRAINS,SELF,switch_logo_jre, param_purchase_logo) {1: spriteset_logo_jre;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrw, param_purchase_logo) {1: spriteset_logo_jrw;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrf, param_purchase_logo) {1: spriteset_logo_jrf;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrs, param_purchase_logo) {1: spriteset_logo_jrs;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrh, param_purchase_logo) {1: spriteset_logo_jrh;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrc, param_purchase_logo) {1: spriteset_logo_jrc;}
+switch(FEAT_TRAINS,SELF,switch_logo_jrk, param_purchase_logo) {1: spriteset_logo_jrk;}
+
+switch(FEAT_TRAINS, SELF, switch_jnr_jrf_1987, current_year) {
+	0..1987: switch_logo_jnr;
+    switch_logo_jrf;
+}
