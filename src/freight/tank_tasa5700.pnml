@@ -131,7 +131,7 @@ switch(FEAT_TRAINS, SELF, switch_tasa_5700_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, tasa_5700, 45) {
+/* item (FEAT_TRAINS, tasa_5700, 45) {
 property {
 		name: string(STR_NAME_TASA_5700);
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -144,10 +144,10 @@ property {
 	loading_speed: 30;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_GAS),
-								string(STR_CONCAT_2C, 									
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -159,6 +159,42 @@ property {
 		default: switch_tasa_5700_wearstack;
 		purchase: switch_tasa_5700_purchase;
 		cargo_subtype_text: switch_tasa_5700_subtype_text;
-		
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_tasa_5700_purchase,\
+switch_jnr_jrf_1987,\
+switch_tasa_5700_purchase\
+)
+
+item (FEAT_TRAINS, tasa_5700, 45) {
+	property {
+		name: string(STR_NAME_TASA_5700);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
+		introduction_date: date(1963,1,1);
+		speed: 85 km/h;
+		cost_factor: 40;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 30;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_GAS),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 50;
+		default: switch_tasa_5700_wearstack;
+		purchase: sw_tasa_5700_purchase;
+		cargo_subtype_text: switch_tasa_5700_subtype_text;
 	}
 }

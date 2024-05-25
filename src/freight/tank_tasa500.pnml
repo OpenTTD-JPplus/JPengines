@@ -188,7 +188,7 @@ switch(FEAT_TRAINS, SELF, switch_tasa_500_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, tasa_500, 1481) {
+/* item (FEAT_TRAINS, tasa_500, 1481) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -199,7 +199,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 25; 
+		cargo_capacity: 25;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
@@ -211,10 +211,10 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_TANK),
-								string(STR_CONCAT_2C, 									
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR)
 								)
@@ -226,6 +226,51 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		default: random_tasa_500_flip;
 		purchase: switch_tasa_500_purchase;
 		cargo_subtype_text: switch_tasa_500_subtype_text;
-		
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_tasa_500_purchase,\
+switch_logo_jgr,\
+switch_tasa_500_purchase\
+)
+
+item (FEAT_TRAINS, tasa_500, 1481) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TASA_500);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1915,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 25;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 30;
+		weight: 11;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_TANK),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+								)
+							);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		default: random_tasa_500_flip;
+		purchase: sw_tasa_500_purchase;
+		cargo_subtype_text: switch_tasa_500_subtype_text;
 	}
 }

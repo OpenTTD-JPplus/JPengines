@@ -115,7 +115,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
 	VEHI: switch_koki_71_cars_random;
 	switch_koki_71_conts_random;
 	}
-	
+
 	switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_capacity, cargo_type_in_veh) {
 	VEHI: return 50;
 	return 75;
@@ -123,14 +123,14 @@ switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, koki_71, 43) {
+/* item (FEAT_TRAINS, koki_71, 43) {
 
 property {
 	name: string(STR_NAME_KOKI_71);
 	default_cargo_type: VEHI;
-	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG]; 
+	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL);
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 50;
 	running_cost_factor: 8;
@@ -138,10 +138,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CARR),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
@@ -149,5 +149,39 @@ graphics {
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_koki_71_purchase,\
+switch_logo_jrf,\
+spriteset_koki_71_purchase\
+)
+
+item (FEAT_TRAINS, koki_71, 43) {
+	property {
+		name: string(STR_NAME_KOKI_71);
+		default_cargo_type: VEHI;
+		refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CARR),
+							string(STR_CONCAT_1C,
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		default: switch_koki_71_cargo_type;
+		purchase: sw_koki_71_purchase;
+		cargo_capacity: switch_koki_71_cargo_capacity;
 	}
 }

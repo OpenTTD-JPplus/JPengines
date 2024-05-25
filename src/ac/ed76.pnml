@@ -81,32 +81,32 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed76_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_STRIPE)
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
 									                  string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_WHISKERS)
                                  );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
 	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
-                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+                                    string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_SOUTHERNCROSS)
                                  );
@@ -119,15 +119,20 @@ switch(FEAT_TRAINS, SELF, switch_ed76_0_yeardep_purchase, current_year) {
     spriteset_ed76_0_jrf_purchase;
 }
 
-
-switch (FEAT_TRAINS, SELF, switch_ed76_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_ED76);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ed76_0_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ed76_0_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
+
+GRAPHICS_STACK_2(\
+	sw_ed76_purchase,\
+	switch_jnr_jrf_1987,\
+	switch_ed76_0_yeardep_purchase\
+)
 
 
 item (FEAT_TRAINS, ed76_0, 1071) {
@@ -153,14 +158,14 @@ item (FEAT_TRAINS, ed76_0, 1071) {
   length: 8;
   running_cost_factor: 55;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
 						string(STR_DESC_POWER_AC20),
 						string(STR_DESC_NARROWGAUGE),
 						string(STR_DESC_USAGE_EF),
-						string(STR_CONCAT_3C, 
+						string(STR_CONCAT_3C,
 							string(STR_SUFFIX_JNR),
 							string(STR_SUFFIX_JRF),
 							string(STR_SUFFIX_JRK)
@@ -170,7 +175,7 @@ item (FEAT_TRAINS, ed76_0, 1071) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed76_0_subtype_text;
   default: switch_ed76_0_livery;
-  purchase: switch_ed76_0_yeardep_purchase;
+  purchase: sw_ed76_purchase;
   name: switch_ed76_0_name;
   }
 }
@@ -185,8 +190,8 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed76_500_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_RED)
                                     )
                                  );
@@ -200,16 +205,20 @@ switch(FEAT_TRAINS, SELF, switch_ed76_500_yeardep_purchase, current_year) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_ed76_500_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_ED76);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ed76_500_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ed76_500_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
-
+GRAPHICS_STACK_2(\
+	sw_ed76_500_purchase,\
+	switch_logo_jnr,\
+	switch_ed76_500_yeardep_purchase\
+)
 
 item (FEAT_TRAINS, ed76_500, 1072) {
  property {
@@ -234,15 +243,15 @@ item (FEAT_TRAINS, ed76_500, 1072) {
   length: 8;
   running_cost_factor: 55;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   variant_group: 1071;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
 						string(STR_DESC_POWER_AC20),
 						string(STR_DESC_NARROWGAUGE),
 						string(STR_DESC_USAGE_EP),
-						string(STR_CONCAT_2C, 
+						string(STR_CONCAT_2C,
 							string(STR_SUFFIX_JNR),
 							string(STR_SUFFIX_JRH)
 							)
@@ -251,7 +260,7 @@ item (FEAT_TRAINS, ed76_500, 1072) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed76_500_subtype_text;
   default: switch_ed76_500_livery;
-  purchase: switch_ed76_500_yeardep_purchase;
+  purchase: sw_ed76_500_purchase;
   name: switch_ed76_500_name;
   }
 }
@@ -265,8 +274,8 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     )
@@ -276,16 +285,20 @@ switch(FEAT_TRAINS, SELF, switch_ed76_550_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ed76_550_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_ED76);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ed76_550_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ed76_550_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
-
+GRAPHICS_STACK_2(\
+	sw_ed76_550_purchase,\
+	switch_logo_jrh,\
+	spriteset_ed76_550_jr_purchase\
+)
 
 item (FEAT_TRAINS, ed76_550, 1972) {
  property {
@@ -310,15 +323,15 @@ item (FEAT_TRAINS, ed76_550, 1972) {
   length: 8;
   running_cost_factor: 57;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   variant_group: 1071;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
 						string(STR_DESC_POWER_AC20),
 						string(STR_DESC_NARROWGAUGE),
 						string(STR_DESC_USAGE_EP),
-						string(STR_CONCAT_1C, 
+						string(STR_CONCAT_1C,
 							string(STR_SUFFIX_JRH)
 							)
 						);
@@ -326,7 +339,7 @@ item (FEAT_TRAINS, ed76_550, 1972) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ed76_550_subtype_text;
   default: switch_ed76_550_livery;
-  purchase: spriteset_ed76_550_jr_purchase;
+  purchase: sw_ed76_550_purchase;
   name: switch_ed76_550_name;
   }
 }

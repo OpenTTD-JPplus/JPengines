@@ -39,7 +39,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
 }
 
 
-item (FEAT_TRAINS, tora_90000, 1280) {
+/* item (FEAT_TRAINS, tora_90000, 1280) {
 
 property {
 	introduction_date: date(1950,1,1);
@@ -47,7 +47,7 @@ property {
 
 	name: string(STR_NAME_TORA_90000);
 	speed: 75 km/h;
-//	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+//	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
 	non_refittable_cargo_classes: 0;
 	loading_speed: 10;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
@@ -59,10 +59,10 @@ property {
 	variant_group: 29;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CHIP),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -74,5 +74,44 @@ graphics {
 	default: switch_tora_90000_cargo_class;
 	purchase: spriteset_tora_90000_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_tora_90000_purchase,\
+switch_jnr_jrf_1987,\
+spriteset_tora_90000_purchase\
+)
+
+item (FEAT_TRAINS, tora_90000, 1280) {
+	property {
+		introduction_date: date(1950,1,1);
+		name: string(STR_NAME_TORA_90000);
+		speed: 75 km/h;
+		non_refittable_cargo_classes: 0;
+		loading_speed: 10;
+		cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
+		cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		variant_group: 29;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHIP),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 35;
+		default: switch_tora_90000_cargo_class;
+		purchase: sw_tora_90000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

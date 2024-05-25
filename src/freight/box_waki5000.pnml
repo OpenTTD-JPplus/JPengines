@@ -75,14 +75,14 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_loadstack, [
     1:  spritegroup_boxvan8_doors_load;
 }
 
-item (FEAT_TRAINS, waki_5000, 53) {
+/* item (FEAT_TRAINS, waki_5000, 53) {
 property {
 	name: string(STR_NAME_WAKI_5000);
 	speed: 85 km/h;
 	introduction_date: date(1964,1,1);
 	default_cargo_type: GOOD;
-	cargo_capacity: 80; 
-	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	cargo_capacity: 80;
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -92,10 +92,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF),
 								string(STR_SUFFIX_PRIVATE)
@@ -108,5 +108,46 @@ graphics {
 	default: switch_waki_5000_loadstack;
 	purchase: switch_waki_5000_yeardep_purchase;
 	cargo_subtype_text: switch_waki_5000_subtype_text;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_waki_5000_purchase,\
+switch_jnr_jrf_1987,\
+switch_waki_5000_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, waki_5000, 53) {
+	property {
+		name: string(STR_NAME_WAKI_5000);
+		speed: 85 km/h;
+		introduction_date: date(1964,1,1);
+		default_cargo_type: GOOD;
+		cargo_capacity: 80;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 40;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 80;
+		default: switch_waki_5000_loadstack;
+		purchase: sw_waki_5000_purchase;
+		cargo_subtype_text: switch_waki_5000_subtype_text;
 	}
 }

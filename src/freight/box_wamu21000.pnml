@@ -59,7 +59,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
 }
 
 
-item (FEAT_TRAINS, wamu_21000, 1435) {
+/* item (FEAT_TRAINS, wamu_21000, 1435) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -70,11 +70,11 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 30; 
+		cargo_capacity: 30;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
@@ -85,10 +85,10 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -100,9 +100,9 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 		cargo_capacity: return 30;
 		default: random_wamu_21000;
 		purchase: spriteset_wamu_21000_jgr_purchase;
-		
+
 	}
-}
+} */
 
 
 switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
@@ -113,7 +113,7 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
 	1:  switch_taillights_5;
 }
 
-item (FEAT_TRAINS, wafu_21000, 1436) {
+/* item (FEAT_TRAINS, wafu_21000, 1436) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -124,11 +124,11 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 15; 
+		cargo_capacity: 15;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
@@ -141,10 +141,10 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		variant_group: 1435;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -156,6 +156,107 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		cargo_capacity: return 15;
 		default: stack_wafu_21000;
 		purchase: spriteset_wafu_21000_jgr_purchase;
-		
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_wamu_21000_purchase,\
+switch_logo_jgr,\
+spriteset_wamu_21000_jgr_purchase\
+)
+
+item (FEAT_TRAINS, wamu_21000, 1435) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAMU_21000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
+		cargo_allow_refit: [GRAI, MAIZ, BEAN];
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+		weight: 10;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C,
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		cargo_capacity: return 30;
+		default: random_wamu_21000;
+		purchase: sw_wamu_21000_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_wafu_21000_purchase,\
+switch_logo_jgr,\
+spriteset_wafu_21000_jgr_purchase\
+)
+
+item (FEAT_TRAINS, wafu_21000, 1436) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAFU_21000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 15;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
+		cargo_allow_refit: [GRAI, MAIZ, BEAN];
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+		weight: 10;
+		cost_factor: 18;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(5);
+		variant_group: 1435;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_3C,
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 15;
+		default: stack_wafu_21000;
+		purchase: sw_wafu_21000_purchase;
 	}
 }

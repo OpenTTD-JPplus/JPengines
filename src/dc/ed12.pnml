@@ -29,8 +29,8 @@ switch(FEAT_TRAINS, SELF, switch_ed12_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed12_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -39,7 +39,7 @@ switch(FEAT_TRAINS, SELF, switch_ed12_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed12, 990) {
+/* item (FEAT_TRAINS, ed12, 990) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -64,11 +64,11 @@ item (FEAT_TRAINS, ed12, 990) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -77,7 +77,7 @@ item (FEAT_TRAINS, ed12, 990) {
   default: switch_ed12_livery;
   purchase: spriteset_ed12_jgr_purchase;
   }
-}
+} */
 
 
 
@@ -87,8 +87,8 @@ switch(FEAT_TRAINS, SELF, switch_e51_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_PINK)
                                     )
                                  );
@@ -97,7 +97,7 @@ switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, e51, 991) {
+/* item (FEAT_TRAINS, e51, 991) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -123,11 +123,11 @@ item (FEAT_TRAINS, e51, 991) {
   variant_group: 990;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_SEIBU)
                     )
                   );
@@ -136,4 +136,101 @@ item (FEAT_TRAINS, e51, 991) {
   default: switch_e51_livery;
   purchase: spriteset_ed12_seibu_purchase;
   }
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_ed12_purchase,\
+switch_logo_jgr_only,\
+spriteset_ed12_jgr_purchase\
+)
+
+item (FEAT_TRAINS, ed12, 990) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED12);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1923,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 875 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 59;
+		reliability_decay: 20;
+		model_life: 65;
+		vehicle_life: 50;
+		cost_factor: 31;
+		length: 5;
+		running_cost_factor: 38;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C,
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed12_subtype_text;
+		default: switch_ed12_livery;
+		purchase: sw_ed12_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_e51_purchase,\
+switch_logo_seibu,\
+spriteset_ed12_seibu_purchase\
+)
+
+item (FEAT_TRAINS, e51, 991) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_E51);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1950,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 875 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 59;
+		reliability_decay: 20;
+		model_life: 65;
+		vehicle_life: 50;
+		cost_factor: 31;
+		length: 5;
+		running_cost_factor: 38;
+		running_cost_base: RUNNING_COST_STEAM;
+		variant_group: 990;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C,
+                           string(STR_SUFFIX_SEIBU)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_e51_subtype_text;
+		default: switch_e51_livery;
+		purchase: sw_e51_purchase;
+	}
 }

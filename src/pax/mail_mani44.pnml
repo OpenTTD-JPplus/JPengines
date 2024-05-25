@@ -49,14 +49,14 @@ switch(FEAT_TRAINS, SELF, switch_mani_44_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_mani_44_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
                                     )
                                  );
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_WHITE), 
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_EUROLINER)
                                  );
@@ -75,6 +75,53 @@ switch(FEAT_TRAINS, SELF, switch_mani_44_loadstack, [
 }
 
 
+/* item (FEAT_TRAINS, mail_mani_44, 1390) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1970,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
+		weight: 24;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRC)
+								)
+							);
+
+		default: switch_mani_44_loadstack;
+		purchase: switch_mani_44_purchase_yeardep;
+		cargo_subtype_text: switch_mani_44_subtype_text;
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_mail_mani_44_purchase,\
+switch_logo_jnr,\
+switch_mani_44_purchase_yeardep\
+)
+
 item (FEAT_TRAINS, mail_mani_44, 1390) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -86,32 +133,30 @@ item (FEAT_TRAINS, mail_mani_44, 1390) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
 		weight: 24;
 		cost_factor: 52;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXF),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRC)
 								)
 							);
-
 		default: switch_mani_44_loadstack;
-		purchase: switch_mani_44_purchase_yeardep;
+		purchase: sw_mail_mani_44_purchase;
 		cargo_subtype_text: switch_mani_44_subtype_text;
-		
 	}
 }

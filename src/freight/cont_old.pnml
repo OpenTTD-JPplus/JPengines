@@ -434,7 +434,7 @@ spriteset(spriteset_flip_brown_cont_b_2, "gfx/outdated/cont_brown.png") {
 }
 
 
-//spritegroups 
+//spritegroups
 
 //cc
 
@@ -707,18 +707,18 @@ random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_goods) {
 
 random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_food) {
     1: spritegroup_koki_red_cont_b;
-    1: spritegroup_koki_cc_tank_a;	
-	1: spritegroup_koki_cc_cont_b;	
-	1: spritegroup_koki_cc_cont_c;	
+    1: spritegroup_koki_cc_tank_a;
+	1: spritegroup_koki_cc_cont_b;
+	1: spritegroup_koki_cc_cont_c;
 	1: spritegroup_koki_blue_cont_a;
 	1: spritegroup_koki_blue_cont_b;
 	1: spritegroup_koki_blue_tank_a;
 	1: spritegroup_koki_blue_tank_b;
 	1: spritegroup_koki_grey_cont_c;
     1: spritegroup_flip_red_cont_b;
-    1: spritegroup_flip_cc_tank_a;	
-	1: spritegroup_flip_cc_cont_b;	
-	1: spritegroup_flip_cc_cont_c;	
+    1: spritegroup_flip_cc_tank_a;
+	1: spritegroup_flip_cc_cont_b;
+	1: spritegroup_flip_cc_cont_c;
 	1: spritegroup_flip_blue_cont_a;
 	1: spritegroup_flip_blue_cont_b;
 	1: spritegroup_flip_blue_tank_a;
@@ -734,14 +734,14 @@ random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_oil) {
 	1: spritegroup_flip_red_tank_a;
     1: spritegroup_flip_red_tank_b;
 	1: spritegroup_flip_grey_tank_a;
-	1: spritegroup_flip_brown_tank_a;	
+	1: spritegroup_flip_brown_tank_a;
 }
 
 random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_alcohol) {
     1: spritegroup_koki_red_cont_b;
-    1: spritegroup_koki_cc_tank_a;	
-	1: spritegroup_koki_cc_cont_b;	
-	1: spritegroup_koki_cc_cont_c;	
+    1: spritegroup_koki_cc_tank_a;
+	1: spritegroup_koki_cc_cont_b;
+	1: spritegroup_koki_cc_cont_c;
 	1: spritegroup_koki_blue_cont_a;
 	1: spritegroup_koki_blue_cont_b;
 	1: spritegroup_koki_blue_tank_a;
@@ -750,9 +750,9 @@ random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_alcohol) {
 	1: spritegroup_koki_grey_tank_a;
 	1: spritegroup_koki_brown_tank_a;
     1: spritegroup_flip_red_cont_b;
-    1: spritegroup_flip_cc_tank_a;	
-	1: spritegroup_flip_cc_cont_b;	
-	1: spritegroup_flip_cc_cont_c;	
+    1: spritegroup_flip_cc_tank_a;
+	1: spritegroup_flip_cc_cont_b;
+	1: spritegroup_flip_cc_cont_c;
 	1: spritegroup_flip_blue_cont_a;
 	1: spritegroup_flip_blue_cont_b;
 	1: spritegroup_flip_blue_tank_a;
@@ -788,16 +788,16 @@ random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_dry) {
 random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_fluid) {
 	1: spritegroup_koki_red_tank_a;
     1: spritegroup_koki_red_tank_b;
-	1: spritegroup_koki_cc_tank_a;	
-	1: spritegroup_koki_blue_tank_a;	
-	1: spritegroup_koki_blue_tank_b;	
+	1: spritegroup_koki_cc_tank_a;
+	1: spritegroup_koki_blue_tank_a;
+	1: spritegroup_koki_blue_tank_b;
 	1: spritegroup_koki_grey_tank_a;
 	1: spritegroup_koki_brown_tank_a;
 	1: spritegroup_flip_red_tank_a;
     1: spritegroup_flip_red_tank_b;
-	1: spritegroup_flip_cc_tank_a;	
-	1: spritegroup_flip_blue_tank_a;	
-	1: spritegroup_flip_blue_tank_b;	
+	1: spritegroup_flip_cc_tank_a;
+	1: spritegroup_flip_blue_tank_a;
+	1: spritegroup_flip_blue_tank_b;
 	1: spritegroup_flip_grey_tank_a;
 	1: spritegroup_flip_brown_tank_a;
 }
@@ -805,30 +805,30 @@ random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_fluid) {
 random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_edible_fluid) {
 	1: spritegroup_koki_cc_cont_c;
     1: spritegroup_koki_red_tank_b;
-	1: spritegroup_koki_cc_tank_a;	
-	1: spritegroup_koki_blue_tank_a;	
-	1: spritegroup_koki_blue_tank_b;	
+	1: spritegroup_koki_cc_tank_a;
+	1: spritegroup_koki_blue_tank_a;
+	1: spritegroup_koki_blue_tank_b;
 	1: spritegroup_koki_blue_cont_a;
 	1: spritegroup_koki_brown_tank_a;
 	1: spritegroup_flip_cc_cont_c;
     1: spritegroup_flip_red_tank_b;
-	1: spritegroup_flip_cc_tank_a;	
-	1: spritegroup_flip_blue_tank_a;	
-	1: spritegroup_flip_blue_tank_b;	
+	1: spritegroup_flip_cc_tank_a;
+	1: spritegroup_flip_blue_tank_a;
+	1: spritegroup_flip_blue_tank_b;
 	1: spritegroup_flip_blue_cont_a;
 	1: spritegroup_flip_brown_tank_a;
 }
 
 random_switch(FEAT_TRAINS, SELF, switch_koki_cargo_general_refrigerated) {
-    1: spritegroup_koki_red_cont_b;	
-	1: spritegroup_koki_cc_cont_b;	
-	1: spritegroup_koki_cc_cont_c;	
+    1: spritegroup_koki_red_cont_b;
+	1: spritegroup_koki_cc_cont_b;
+	1: spritegroup_koki_cc_cont_c;
 	1: spritegroup_koki_blue_cont_a;
 	1: spritegroup_koki_blue_cont_b;
 	1: spritegroup_koki_grey_cont_c;
     1: spritegroup_flip_red_cont_b;
-	1: spritegroup_flip_cc_cont_b;	
-	1: spritegroup_flip_cc_cont_c;	
+	1: spritegroup_flip_cc_cont_b;
+	1: spritegroup_flip_cc_cont_c;
 	1: spritegroup_flip_blue_cont_a;
 	1: spritegroup_flip_blue_cont_b;
 	1: spritegroup_flip_grey_cont_c;
@@ -840,7 +840,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_cargo_class, cargo_classes) {
 	bitmask(CC_LIQUID): switch_koki_cargo_general_fluid;
 	bitmask(CC_REFRIGERATED): switch_koki_cargo_general_refrigerated;
 	bitmask(CC_EXPRESS): switch_koki_cargo_goods;
-	
+
 	switch_koki_cargo_general_dry;
 }
 
@@ -851,22 +851,71 @@ switch(FEAT_TRAINS, SELF, switch_koki_cargo_selection, cargo_type_in_veh) {
 	OIL_: switch_koki_cargo_oil;
 	BEER: switch_koki_cargo_alcohol;
 	VEHI: switch_koki_cargo_goods;
-	
+
 	MILK: switch_koki_cargo_edible_fluid;
 	EOIL: switch_koki_cargo_edible_fluid;
-	
+
 	ACID: switch_koki_cargo_general_fluid;
 	SULP: switch_koki_cargo_general_fluid;
 	CHLO: switch_koki_cargo_general_fluid;
-	
+
 	FRUT: switch_koki_cargo_general_refrigerated;
 	FISH: switch_koki_cargo_general_refrigerated;
-	
+
 	switch_koki_cargo_class;
 }
 
 //container wagons
 //FIX LOAD SPEEDvvv, check for food bug
+/* item (FEAT_TRAINS, koki_100, 1400) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_CONTAINER);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1988,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 75;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_1C,
+								string(STR_SUFFIX_JRF)
+							)
+						);
+
+		cargo_capacity: return 75;
+		default: switch_koki_cargo_selection;
+		purchase: spriteset_koki_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_koki_100_purchase,\
+switch_logo_jrf,\
+spriteset_koki_purchase\
+)
+
 item (FEAT_TRAINS, koki_100, 1400) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -878,33 +927,32 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 75; 
+		cargo_capacity: 75;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID); 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO]; 
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO];
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, BRCK, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CONT),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
-
 		cargo_capacity: return 75;
 		default: switch_koki_cargo_selection;
-		purchase: spriteset_koki_purchase;
+		purchase: sw_koki_100_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }

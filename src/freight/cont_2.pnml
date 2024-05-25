@@ -1,6 +1,6 @@
 
 
-//conts 
+//conts
 //cont types a,b,c,d
 //cont position 1,2,3,4
 
@@ -10,7 +10,7 @@ spriteset(spriteset_conts_jnr_green_a_2, "gfx/containers/jnr_green.png") { //old
 
 //b
 
-spriteset(spriteset_conts_jnr_green_b_2, "gfx/containers/jnr_green.png") { //old 
+spriteset(spriteset_conts_jnr_green_b_2, "gfx/containers/jnr_green.png") { //old
 	template_container_2(1, 32)
 }
 
@@ -301,7 +301,7 @@ spriteset(spriteset_conts_jnr_reefer_c_2, "gfx/containers/jnr_reefer.png") { //b
 
 //d
 
-spriteset(spriteset_conts_jnr_reefer_d_2, "gfx/containers/jnr_reefer.png") { //blue bottom 
+spriteset(spriteset_conts_jnr_reefer_d_2, "gfx/containers/jnr_reefer.png") { //blue bottom
 	template_container_2(1, 96)
 }
 
@@ -571,7 +571,7 @@ spriteset(spriteset_conts_private_tanker_f_2, "gfx/containers/private_tankers.pn
 
 //g
 
-spriteset(spriteset_conts_private_tanker_g_2, "gfx/containers/private_tankers.png") { //cream 
+spriteset(spriteset_conts_private_tanker_g_2, "gfx/containers/private_tankers.png") { //cream
 	template_container_2(1, 192)
 }
 
@@ -1759,7 +1759,7 @@ random_switch(FEAT_TRAINS, SELF, random_conts_2_mixed_vented_y2010) {
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_general_year, current_year) {
 	0..1970: random_conts_jnr_green_2_general_y1960;
-	
+
 	1970..1980: random_conts_jnr_green_2_general_y1970;
 	1980..1985: random_conts_jnr_green_2_general_y1980;
 	1985..1990: random_conts_jnr_blue_2_general_y1985;
@@ -1778,7 +1778,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_food_year, current_year) {
     2001..2011: random_conts_2_reefer_y2000;
 	random_conts_2_reefer_y2010;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_conts_2_liquid_year, current_year) {
 	0..1970: random_conts_2_liquid_y1960;
 	1970..1980: random_conts_2_liquid_y1970;
@@ -1796,7 +1796,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_bulk_year, current_year) {
 	2000..2010: random_conts_2_bulk_y2000;
 	random_conts_2_bulk_y2010;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_conts_2_lidded_year, current_year) {
 	0..1970: random_conts_jnr_green_2_general_y1960;
 	1970..1980: random_conts_jnr_green_2_general_y1970;
@@ -1804,7 +1804,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_lidded_year, current_year) {
     1990..2000: random_conts_2_lidded_y1990;
 	random_conts_2_lidded_y2000;
 	}
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_private_year, current_year) {
 	0..1972: random_conts_2_mixed_y1960;
@@ -1814,7 +1814,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_private_year, current_year) {
     2002..2012: random_conts_2_mixed_private_y2000;
 	random_conts_2_mixed_private_y2010;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_food_year, current_year) {
 	0..1972: random_conts_2_mixed_food_y1960;
 	1972..1982: random_conts_2_mixed_food_y1970;
@@ -1850,3 +1850,5 @@ switch(FEAT_TRAINS, SELF, switch_conts_2_mixed_vented_year, current_year) {
     2001..2013: random_conts_2_mixed_vented_y2000;
 	random_conts_2_mixed_vented_y2010;
 	}
+
+

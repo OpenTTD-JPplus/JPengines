@@ -32,8 +32,8 @@ switch(FEAT_TRAINS, SELF, switch_ef30_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_SILVER)
                                     )
                                  );
@@ -41,6 +41,11 @@ switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+GRAPHICS_STACK_2(\
+	sw_ef30_purchase,\
+	switch_logo_jnr_only,\
+	spriteset_ef30_purchase\
+)
 
 item (FEAT_TRAINS, ef30, 1015) {
  property {
@@ -65,13 +70,14 @@ item (FEAT_TRAINS, ef30, 1015) {
   length: 7;
   running_cost_factor: 64;
   running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_GP),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                     string(STR_SUFFIX_JNR)
                     )
                   );
@@ -79,7 +85,7 @@ item (FEAT_TRAINS, ef30, 1015) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef30_subtype_text;
   default: switch_ef30_livery;
-  purchase: spriteset_ef30_purchase;
+  purchase: sw_ef30_purchase;
   }
 }
 
@@ -92,14 +98,14 @@ switch(FEAT_TRAINS, SELF, switch_ef30_proto_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_SILVER),
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-  1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+  1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_SILVER)
                                     )
                                  );
@@ -108,15 +114,20 @@ switch(FEAT_TRAINS, SELF, switch_ef30_proto_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef30_p_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef30_p_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF30);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef30_p_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef30_p_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef30_p_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef30_p_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
+GRAPHICS_STACK_2(\
+	sw_ef30_proto_purchase,\
+	switch_logo_jnr_only,\
+	spriteset_ef30_proto_purchase\
+)
 
 item (FEAT_TRAINS, ef30_proto, 1915) {
  property {
@@ -142,13 +153,14 @@ item (FEAT_TRAINS, ef30_proto, 1915) {
   running_cost_factor: 64;
   running_cost_base: RUNNING_COST_ELECTRIC;
   variant_group: 1015;
+  misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_PROTO),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                     string(STR_SUFFIX_JNR)
                     )
                   );
@@ -156,7 +168,7 @@ item (FEAT_TRAINS, ef30_proto, 1915) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef30_proto_subtype_text;
   default: switch_ef30_proto_livery;
-  purchase: spriteset_ef30_proto_purchase;
+  purchase: sw_ef30_proto_purchase;
   name: switch_ef30_p_name;
   }
 }

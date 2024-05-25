@@ -20,9 +20,9 @@ switch(FEAT_TRAINS, SELF, switch_el120_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
@@ -33,7 +33,7 @@ switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
 
 
 //deki
-item (FEAT_TRAINS, el120, 1106) {
+/* item (FEAT_TRAINS, el120, 1106) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -59,11 +59,11 @@ item (FEAT_TRAINS, el120, 1106) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_MEITETSU)
                     )
                   );
@@ -72,4 +72,51 @@ item (FEAT_TRAINS, el120, 1106) {
   default: switch_el120_livery;
   purchase: spriteset_el120_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_el120_purchase,\
+switch_logo_meitetsu,\
+spriteset_el120_purchase\
+)
+
+item (FEAT_TRAINS, el120, 1106) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EL120);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(2015,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 760 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 40;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 40;
+		cost_factor: 29;
+		length: 5;
+		running_cost_factor: 39;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_1C,
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_el120_subtype_text;
+		default: switch_el120_livery;
+		purchase: sw_el120_purchase;
+	}
 }

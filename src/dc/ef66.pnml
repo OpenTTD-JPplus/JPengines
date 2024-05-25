@@ -130,53 +130,53 @@ switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_CREAM), 
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_CREAM),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_PANTOS)
                                  );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_PANTOS)
                                  );
-	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_REFURB)
                                  );
-	7: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	7: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_LARGELOGO), string(STR_SUFFIX_FICTION)
                                  );
-	8: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	8: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
                                  );
@@ -185,18 +185,18 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef66_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef66_0_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF66);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef66_0_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef66_0_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef66_0_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef66_0_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
 
-item (FEAT_TRAINS, ef66, 26) {
+/* item (FEAT_TRAINS, ef66, 26) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -210,7 +210,7 @@ property {
   power: 3900 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
   reliability_decay: 17;
@@ -225,23 +225,23 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EF),
-                        string(STR_CONCAT_3C, 
+                        string(STR_CONCAT_3C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JRF),
                            string(STR_SUFFIX_JRW)
                     )
-                  );  
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_subtype_text;
   default: switch_ef66_livery;
   purchase: switch_ef66_yeardep_purchase;
   name: switch_ef66_0_name;
   }
-}
+} */
 
 //-100
 
@@ -255,28 +255,28 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
@@ -285,17 +285,17 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef66_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef66_100_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF66);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef66_100_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef66_100_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef66_100_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef66_100_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
-item (FEAT_TRAINS, ef66_2, 1926) {
+/* item (FEAT_TRAINS, ef66_2, 1926) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -309,7 +309,7 @@ property {
   power: 3900 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
   reliability_decay: 17;
@@ -325,21 +325,21 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
-                  );  
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_2_subtype_text;
   default: switch_ef66_2_livery;
   purchase: spriteset_ef66_100_jrf_purchase;
   name: switch_ef66_100_name;
   }
-}
+} */
 
 //-2000 concept
 
@@ -350,9 +350,9 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2000_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_2000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_GREY), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_GREY),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_CONCEPT)
                                  );
@@ -361,17 +361,17 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2000_subtype_text, cargo_subtype) {
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_ef66_2000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef66_2000_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF66);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef66_2000_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef66_2000_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef66_2000_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef66_2000_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
-item (FEAT_TRAINS, ef66_2000, 1927) {
+/* item (FEAT_TRAINS, ef66_2000, 1927) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -385,7 +385,7 @@ property {
   power: 3900 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 100;
   reliability_decay: 17;
@@ -401,15 +401,161 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_3S, 
+  additional_text:	string(STR_CONCAT_3S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_CONCEPT)
-                  );  
+                  );
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_2000_subtype_text;
   default: switch_ef66_2000_livery;
   purchase: spriteset_ef66_2000_purchase;
   name: switch_ef66_2000_name;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef66_purchase,\
+switch_jnr_jrf_1987,\
+switch_ef66_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef66, 26) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		name: string(STR_NAME_EF66_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 17;
+		model_life: 55;
+		vehicle_life: 45;
+		cost_factor: 100;
+		length: 8;
+		running_cost_factor: 100;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C,
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef66_subtype_text;
+		default: switch_ef66_livery;
+		purchase: sw_ef66_purchase;
+		name: switch_ef66_0_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef66_2_purchase,\
+switch_logo_jrf,\
+spriteset_ef66_100_jrf_purchase\
+)
+
+item (FEAT_TRAINS, ef66_2, 1926) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF66_2);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1989,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 17;
+		model_life: 55;
+		vehicle_life: 45;
+		cost_factor: 100;
+		length: 8;
+		running_cost_factor: 100;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 26;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C,
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef66_2_subtype_text;
+		default: switch_ef66_2_livery;
+		purchase: sw_ef66_2_purchase;
+		name: switch_ef66_100_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef66_2000_purchase,\
+switch_logo_jr,\
+spriteset_ef66_2000_purchase\
+)
+
+item (FEAT_TRAINS, ef66_2000, 1927) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF66_3);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(2014,1,1);
+		speed: 130 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 17;
+		model_life: 55;
+		vehicle_life: 45;
+		cost_factor: 101;
+		length: 8;
+		running_cost_factor: 102;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 26;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_CONCEPT)
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef66_2000_subtype_text;
+		default: switch_ef66_2000_livery;
+		purchase: sw_ef66_2000_purchase;
+		name: switch_ef66_2000_name;
+	}
 }

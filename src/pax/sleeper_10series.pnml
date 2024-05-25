@@ -113,7 +113,7 @@ spriteset(spriteset_pax_10series_jr_purchase, "gfx/paxmail/10series.png") {
 
 switch(FEAT_TRAINS, SELF, switch_pax_10series_purchase, current_year) {
 	0..1964: spriteset_pax_10series_jnr_brown_purchase;
-	spriteset_pax_10series_jnr_blue_purchase;	
+	spriteset_pax_10series_jnr_blue_purchase;
 }
 
 
@@ -134,7 +134,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_naro10_yeardep, current_year) {
 	0..1964: spriteset_pax_naro10_brown;
 	1964..1970: random_pax_naro10_old;
 	1970..1979: random_pax_naro10_new;
-	spriteset_pax_naro10_blue;	
+	spriteset_pax_naro10_blue;
 }
 
 
@@ -153,11 +153,11 @@ switch(FEAT_TRAINS, SELF, switch_pax_orone10_yeardep, current_year) {
 	0..1964: spriteset_pax_orone10_brown;
 	1964..1970: random_pax_orone10_old;
 	1970..1979: random_pax_orone10_new;
-	spriteset_pax_orone10_blue;	
+	spriteset_pax_orone10_blue;
 }
-	
 
-	
+
+
 random_switch (FEAT_TRAINS, SELF, random_pax_ohane17_old) {
 	3: spriteset_pax_ohane17_brown;
 	1: spriteset_pax_ohane17_blue;
@@ -173,10 +173,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_ohane17_yeardep, current_year) {
 	0..1964: spriteset_pax_ohane17_brown;
 	1964..1970: random_pax_ohane17_old;
 	1970..1979: random_pax_ohane17_new;
-	spriteset_pax_ohane17_blue;	
+	spriteset_pax_ohane17_blue;
 }
-	
-	
+
+
 random_switch (FEAT_TRAINS, SELF, random_pax_narohane10_old) {
 	3: spriteset_pax_narohane10_brown;
 	1: spriteset_pax_narohane10_blue;
@@ -192,10 +192,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_narohane10_yeardep, current_year) {
 	0..1964: spriteset_pax_narohane10_brown;
 	1964..1970: random_pax_narohane10_old;
 	1970..1979: random_pax_narohane10_new;
-	spriteset_pax_narohane10_blue;	
+	spriteset_pax_narohane10_blue;
 }
-	
-	
+
+
 random_switch (FEAT_TRAINS, SELF, random_pax_naha10_old) {
 	3: spriteset_pax_naha10_brown;
 	1: spriteset_pax_naha10_blue;
@@ -211,10 +211,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_naha10_yeardep, current_year) {
 	0..1959: spriteset_pax_naha10_brown;
 	1959..1964: random_pax_naha10_old;
 	1964..1979: random_pax_naha10_new;
-	spriteset_pax_naha10_blue;	
+	spriteset_pax_naha10_blue;
 }
-	
-	
+
+
 random_switch (FEAT_TRAINS, SELF, random_pax_nahafu10_old) {
 	3: spriteset_pax_nahafu10_brown;
 	1: spriteset_pax_nahafu10_blue;
@@ -230,10 +230,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_nahafu10_yeardep, current_year) {
 	0..1959: spriteset_pax_nahafu10_brown;
 	1959..1964: random_pax_nahafu10_old;
 	1964..1979: random_pax_nahafu10_new;
-	spriteset_pax_nahafu10_blue;	
+	spriteset_pax_nahafu10_blue;
 }
-	
-	
+
+
 	random_switch (FEAT_TRAINS, SELF, random_pax_nahane10_old) {
 	3: spriteset_pax_nahane10_brown;
 	1: spriteset_pax_nahane10_blue;
@@ -249,7 +249,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_nahane10_yeardep, current_year) {
 	0..1959: spriteset_pax_nahane10_brown;
 	1959..1964: random_pax_nahane10_old;
 	1964..1979: random_pax_nahane10_new;
-	spriteset_pax_nahane10_blue;	
+	spriteset_pax_nahane10_blue;
 }
 
 
@@ -268,23 +268,23 @@ switch(FEAT_TRAINS, SELF, switch_pax_oshi17_yeardep, current_year) {
 	0..1959: spriteset_pax_oshi17_brown;
 	1959..1964: random_pax_oshi17_old;
 	1964..1979: random_pax_oshi17_new;
-	spriteset_pax_oshi17_blue;	
+	spriteset_pax_oshi17_blue;
 }
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_pax_10series_stripe_yeardep, current_year) {
 	0..1961: spriteset_pax_10_stripe_blue;
 	1961..1987: spriteset_pax_10_stripe_green;
 	spriteset_blank;
 }
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_10series_halfstripe_yeardep, current_year) {
 	0..1961: spriteset_pax_10_halfstripe_blue;
 	1961..1987: spriteset_pax_10_halfstripe_green;
 	spriteset_blank;
-}	
-	
-	
+}
+
+
 //aircon switch
 
 random_switch (FEAT_TRAINS, SELF, random_pax_10_roof_old) {
@@ -307,7 +307,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_10_aircon, current_year) {
 
 
 
-	
+
 //auto formations
 //local auto formation
 
@@ -530,182 +530,182 @@ switch(FEAT_TRAINS, SELF, switch_pax_10series_roof, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_10series_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_LOCAL)
                                     )
                                  );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_LTDEXP)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_SLEEPER)
                                     )
                                  );
-	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+	3: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10),
 									string(STR_SUFFIX_PAX_2CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10),
 									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17),
 									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+	6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10),
 									string(STR_SUFFIX_SLEEPER_23CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
+	7: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10),
 									string(STR_SUFFIX_PAX_2CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_GREEN)
 									 )
 	                                );
-	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+	8: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10),
 									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_GREEN)
 									 )
 	                                );
-	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
+	9: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17),
 									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_GREEN)
 									 )
 	                                );
-	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
+	10: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10),
 									string(STR_SUFFIX_SLEEPER_23CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_GREEN)
 									 )
 	                                );
-	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), 
+	11: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10),
 									string(STR_SUFFIX_PAX_3CLASS),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), 
-									string(STR_SUFFIX_PAX_3CLASS),
-									string(STR_SUFFIX_CONDUCTOR),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BROWN)
-									 )
-	                                );
-	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), 
-									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BROWN)
-									 )
-	                                );
-	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), 
-									string(STR_SUFFIX_DINER), 
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BROWN)
-									 )
-	                                );
-	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
-									string(STR_SUFFIX_PAX_2CLASS),
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLUE),
-									 string(STR_COLOUR_GREEN)
-									 )
-	                                );
-	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
-									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLUE),
-									 string(STR_COLOUR_GREEN)
-									 )
-	                                );
-	17: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
-									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLUE),
-									 string(STR_COLOUR_GREEN)
-									 )
-	                                );
-	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
-									string(STR_SUFFIX_SLEEPER_23CLASS),
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BLUE),
-									 string(STR_COLOUR_GREEN)
-									 )
-	                                );
-	19: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10), 
-									string(STR_SUFFIX_PAX_2CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
-									 )
-	                                );
-	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
-									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
-									 )
-	                                );
-	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17), 
-									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
-									 )
-	                                );
-	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10), 
-									string(STR_SUFFIX_SLEEPER_23CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
-									 )
-	                                );
-	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10), 
-									string(STR_SUFFIX_PAX_3CLASS),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
-									 )
-	                                );
-	24: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10), 
+	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10),
 									string(STR_SUFFIX_PAX_3CLASS),
 									string(STR_SUFFIX_CONDUCTOR),
-									string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BLUE)
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10), 
+	13: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10),
 									string(STR_SUFFIX_SLEEPER_3CLASS),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	14: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17),
+									string(STR_SUFFIX_DINER),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BROWN)
+									 )
+	                                );
+	15: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10),
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	16: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10),
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	17: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17),
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	18: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10),
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GREEN)
+									 )
+	                                );
+	19: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NR10),
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17), 
-									string(STR_SUFFIX_DINER), 
-									string(STR_CONCAT_1F, 
+	20: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10),
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10), 
+	21: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OHN17),
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	22: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NRHN10),
+									string(STR_SUFFIX_SLEEPER_23CLASS),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	23: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NH10),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	24: return string(STR_CONCAT_4, string(STR_REFIT_PAX_NHF10),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_SUFFIX_CONDUCTOR),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	25: return string(STR_CONCAT_3, string(STR_REFIT_PAX_NHN10),
+									string(STR_SUFFIX_SLEEPER_3CLASS),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	26: return string(STR_CONCAT_3, string(STR_REFIT_PAX_OS17),
+									string(STR_SUFFIX_DINER),
+									string(STR_CONCAT_1F,
+                                     string(STR_COLOUR_BLUE)
+									 )
+	                                );
+	27: return string(STR_CONCAT_3, string(STR_REFIT_PAX_ORN10),
 									string(STR_SUFFIX_SLEEPER_2CLASS),
-									string(STR_CONCAT_2F, 
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BLUE),
 									 string(STR_COLOUR_WHITE)
 									 )
@@ -727,6 +727,55 @@ switch(FEAT_TRAINS, SELF, stack_pax_10series, [
 
 
 
+/* item (FEAT_TRAINS, pax_10series, 1322) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SLEEPER_10);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1956,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 80;
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 500;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 28;
+		cost_factor: 80;
+		running_cost_factor: 9;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_SLP),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JR)
+								)
+							);
+
+		cargo_capacity: return 80;
+		default: stack_pax_10series;
+		purchase: switch_pax_10series_purchase;
+		cargo_subtype_text: switch_pax_10series_subtype_text;
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_pax_10series_purchase,\
+switch_logo_jnr,\
+switch_pax_10series_purchase\
+)
+
 item (FEAT_TRAINS, pax_10series, 1322) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -738,34 +787,32 @@ item (FEAT_TRAINS, pax_10series, 1322) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 80; 
+		cargo_capacity: 80;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		cargo_age_period: 500;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 		weight: 28;
 		cost_factor: 80;
 		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_SLP),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JR)
 								)
 							);
-
 		cargo_capacity: return 80;
 		default: stack_pax_10series;
-		purchase: switch_pax_10series_purchase;
+		purchase: sw_pax_10series_purchase;
 		cargo_subtype_text: switch_pax_10series_subtype_text;
-		
 	}
 }

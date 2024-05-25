@@ -33,7 +33,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2200_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hoki_2200, 1291) {
+/* item (FEAT_TRAINS, hoki_2200, 1291) {
 
 property {
 	introduction_date: date(1966,1,1);
@@ -41,7 +41,7 @@ property {
 	name: string(STR_NAME_HOKI_2200);
 	speed: 85 km/h;
 	loading_speed: 40;
-//	refittable_cargo_classes: bitmask(CC_COVERED); 
+//	refittable_cargo_classes: bitmask(CC_COVERED);
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SUGR, SALT, SASH, POTA];
@@ -52,10 +52,10 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_GRAI),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR)
 							)
 						);
@@ -66,5 +66,44 @@ graphics {
 	default: switch_hoki_2200_livery;
 	cargo_subtype_text: switch_hoki_2200_subtype_text;
 	purchase: spriteset_hoki_2200_purchase;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_2200_purchase,\
+switch_logo_jnr_only,\
+spriteset_hoki_2200_purchase\
+)
+
+item (FEAT_TRAINS, hoki_2200, 1291) {
+	property {
+		introduction_date: date(1966,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_HOKI_2200);
+		speed: 85 km/h;
+		loading_speed: 40;
+		default_cargo_type: FOOD;
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SUGR, SALT, SASH, POTA];
+		cargo_disallow_refit: [WOOL, WOOD, SGCN, TBCO];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 40;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_GRAI),
+							string(STR_CONCAT_1C,
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 58;
+		default: switch_hoki_2200_livery;
+		cargo_subtype_text: switch_hoki_2200_subtype_text;
+		purchase: sw_hoki_2200_purchase;
 	}
 }

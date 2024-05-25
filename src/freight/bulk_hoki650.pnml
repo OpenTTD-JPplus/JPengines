@@ -34,7 +34,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_650_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hoki_650, 1444) {
+/* item (FEAT_TRAINS, hoki_650, 1444) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -46,11 +46,11 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 45; 
+	cargo_capacity: 45;
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
@@ -62,10 +62,10 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_QLME),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -77,5 +77,54 @@ graphics {
 	default: switch_hoki_650_livery;
 	cargo_subtype_text: switch_hoki_650_subtype_text;
 	purchase: spriteset_hoki_650_purchase;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_650_purchase,\
+switch_jnr_jrf_1987,\
+spriteset_hoki_650_purchase\
+)
+
+item (FEAT_TRAINS, hoki_650, 1444) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1961,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_HOKI_650);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45;
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		weight: 15;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_QLME),
+							string(STR_CONCAT_1C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 45;
+		default: switch_hoki_650_livery;
+		cargo_subtype_text: switch_hoki_650_subtype_text;
+		purchase: sw_hoki_650_purchase;
 	}
 }

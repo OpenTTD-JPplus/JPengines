@@ -16,9 +16,9 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e31_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
@@ -28,7 +28,7 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, seibu_e31, 1101) {
+/* item (FEAT_TRAINS, seibu_e31, 1101) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -53,11 +53,11 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_SEIBU),
                            string(STR_SUFFIX_OIGAWA)
                     )
@@ -68,4 +68,52 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   default: switch_seibu_e31_livery;
   purchase: spriteset_seibu_e31_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_seibu_e31_purchase,\
+switch_logo_seibu,\
+spriteset_seibu_e31_purchase\
+)
+
+item (FEAT_TRAINS, seibu_e31, 1101) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_E31);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1986,1,1);
+		speed: 70 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.27;
+		power: 520 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 40;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 13;
+		length: 4;
+		running_cost_factor: 9;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C,
+                           string(STR_SUFFIX_SEIBU),
+                           string(STR_SUFFIX_OIGAWA)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_seibu_e31_subtype_text;
+		default: switch_seibu_e31_livery;
+		purchase: sw_seibu_e31_purchase;
+	}
 }

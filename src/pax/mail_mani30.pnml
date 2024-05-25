@@ -12,6 +12,51 @@ spriteset(spriteset_mani_30_purchase, "gfx/paxmail/mailvans.png") {
 
 
 
+/* item (FEAT_TRAINS, mail_mani_30, 1380) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_30);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1965,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED);
+		non_refittable_cargo_classes: 0;
+		weight: 29;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_VAL),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JNR)
+								)
+							);
+
+		default: spriteset_mani_30;
+		purchase: spriteset_mani_30_purchase;
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_mail_mani_30_purchase,\
+switch_logo_jnr_only,\
+spriteset_mani_30_purchase\
+)
+
 item (FEAT_TRAINS, mail_mani_30, 1380) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -23,30 +68,28 @@ item (FEAT_TRAINS, mail_mani_30, 1380) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED);
+		non_refittable_cargo_classes: 0;
 		weight: 29;
 		cost_factor: 52;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_VAL),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);
-
 		default: spriteset_mani_30;
-		purchase: spriteset_mani_30_purchase;
-		
+		purchase: sw_mail_mani_30_purchase;
 	}
 }

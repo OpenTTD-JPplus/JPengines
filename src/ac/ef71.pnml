@@ -28,8 +28,8 @@ switch(FEAT_TRAINS, SELF, switch_ef71_yeardep_purchase, current_year) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_RED)
                                     )
                                  );
@@ -37,6 +37,11 @@ switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+GRAPHICS_STACK_2(\
+	sw_ef71_purchase,\
+	switch_logo_jnr,\
+	switch_ef71_yeardep_purchase\
+)
 
 item (FEAT_TRAINS, ef71, 1047) {
  property {
@@ -61,14 +66,14 @@ item (FEAT_TRAINS, ef71, 1047) {
   length: 8;
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_AC20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_EF),
-                      string(STR_CONCAT_2C, 
+                      string(STR_CONCAT_2C,
                     string(STR_SUFFIX_JNR),
                     string(STR_SUFFIX_JRE)
                     )
@@ -77,7 +82,7 @@ item (FEAT_TRAINS, ef71, 1047) {
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef71_subtype_text;
   default: switch_ef71_livery;
-  purchase: switch_ef71_yeardep_purchase;
+  purchase: sw_ef71_purchase;
   }
 }
 

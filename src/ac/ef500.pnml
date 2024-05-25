@@ -16,8 +16,8 @@ switch(FEAT_TRAINS, SELF, switch_ef500_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef500_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_WHITE),
 									                  string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_INVERTER)
@@ -26,6 +26,11 @@ switch(FEAT_TRAINS, SELF, switch_ef500_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 }
 
+GRAPHICS_STACK_2(\
+	sw_ef500_purchase,\
+	switch_logo_jrf,\
+	spriteset_ef500_purchase\
+)
 
 item (FEAT_TRAINS, ef500, 1085) {
  property {
@@ -50,13 +55,14 @@ item (FEAT_TRAINS, ef500, 1085) {
   length: 8;
   running_cost_factor: 110;
   running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                       string(STR_DESC_POWER_MS20),
                       string(STR_DESC_NARROWGAUGE),
                       string(STR_DESC_USAGE_PROTO),
-                      string(STR_CONCAT_1C, 
+                      string(STR_CONCAT_1C,
                         string(STR_SUFFIX_JRF)
                     )
                   );
@@ -64,6 +70,6 @@ item (FEAT_TRAINS, ef500, 1085) {
   cargo_capacity: return 0;
   default: switch_ef500_livery;
   cargo_subtype_text: switch_ef500_subtype_text;
-  purchase: spriteset_ef500_purchase;
+  purchase: sw_ef500_purchase;
   }
 }

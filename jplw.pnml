@@ -1,3 +1,4 @@
+#include "src/defines.pnml"
 #include "src/header.pnml"
 #include "src/basecost.pnml"
 #include "src/cargotable.pnml"
@@ -6,6 +7,7 @@
 #include "src/sort.pnml"
 #include "src/template.pnml"
 #include "src/recolour.pnml"
+#include "src/logos.pnml"
 
 
 #include "src/steam/7100.pnml"
@@ -176,8 +178,6 @@
 
 
 #include "src/freight/temp_overrides.pnml"
-
-
 
 
 

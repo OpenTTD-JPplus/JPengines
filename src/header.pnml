@@ -4,7 +4,7 @@ grf {
  desc: string(STR_GRF_DESCRIPTION);
  version: 191;
  min_compatible_version: 60;
- 
+
  //params, thanks tin
 		//basecosts
 		param 0 {
@@ -40,16 +40,15 @@ grf {
 						};
 				}
 		}
-		/*
 		param 2 {
-			param_purchaselogo {
+			param_purchase_logo {
 				type: bool;
 				name: string(STR_PARAM_NAME_PURCHASELOGO);
 				desc: string(STR_PARAM_DESC_PURCHASELOGO);
-				
+				bit: 0;
+				def_value: 1;
 			}
 		}
-		*/
 }
 
 //disable_item(FEAT_TRAINS);

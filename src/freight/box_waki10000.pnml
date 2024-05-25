@@ -55,13 +55,13 @@ switch(FEAT_TRAINS, SELF, switch_waki_10000_loadstack, [
     1:  spritegroup_boxvan8_doors_load;
 }
 
-item (FEAT_TRAINS, waki_10000, 1288) {
+/* item (FEAT_TRAINS, waki_10000, 1288) {
 
 property {
 	name: string(STR_NAME_WAKI_10000);
 	introduction_date: date(1967,1,1);
 	default_cargo_type: GOOD;
-	cargo_capacity: 60; 
+	cargo_capacity: 60;
 	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
@@ -72,10 +72,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_EXP),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -86,5 +86,45 @@ graphics {
 	default: switch_waki_10000_loadstack;
 	purchase: switch_waki_10000_yeardep_purchase;
 	cargo_subtype_text: switch_waki_10000_subtype_text;
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_waki_10000_purchase,\
+switch_jnr_jrf_1987,\
+switch_waki_10000_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, waki_10000, 1288) {
+	property {
+		name: string(STR_NAME_WAKI_10000);
+		introduction_date: date(1967,1,1);
+		default_cargo_type: GOOD;
+		cargo_capacity: 60;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		cargo_allow_refit: [BEER];
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_EXP),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 100;
+		cargo_capacity: return 60;
+		default: switch_waki_10000_loadstack;
+		purchase: sw_waki_10000_purchase;
+		cargo_subtype_text: switch_waki_10000_subtype_text;
 	}
 }

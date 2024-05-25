@@ -52,7 +52,7 @@ spritegroup spritegroup_hoki_10000_black_bulk {
 random_switch(FEAT_TRAINS, SELF, random_hoki_10000_livery) {
 	1: spritegroup_hoki_10000_cc_bulk;
 	1: spritegroup_hoki_10000_black_bulk;
-}	
+}
 
 
 
@@ -64,14 +64,14 @@ switch(FEAT_TRAINS, SELF, switch_hoki_10000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_10000, 52) {
+/* item (FEAT_TRAINS, hoki_10000, 52) {
 
 property {
 	introduction_date: date(1980,1,1);
 	name: string(STR_NAME_HOKI_10000);
 	speed: 100 km/h;
-	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK);
+	non_refittable_cargo_classes: bitmask(CC_COVERED);
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	cost_factor: 50;
@@ -80,10 +80,10 @@ property {
 	loading_speed: 40;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_COAL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -95,5 +95,43 @@ graphics {
 	purchase: switch_hoki_10000_purchase;
 //	cargo_subtype_text: switch_hoki_10000_subtype_text;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_10000_purchase,\
+switch_jnr_jrf_1987,\
+switch_hoki_10000_purchase\
+)
+
+item (FEAT_TRAINS, hoki_10000, 52) {
+	property {
+		introduction_date: date(1980,1,1);
+		name: string(STR_NAME_HOKI_10000);
+		speed: 100 km/h;
+		refittable_cargo_classes: bitmask(CC_BULK);
+		non_refittable_cargo_classes: bitmask(CC_COVERED);
+		cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 40;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 100;
+		cargo_capacity: return 70;
+		default: random_hoki_10000_livery;
+		purchase: sw_hoki_10000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

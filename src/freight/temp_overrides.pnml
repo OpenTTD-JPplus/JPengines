@@ -71,6 +71,13 @@ spriteset(spriteset_m250_trailer_purchase, "gfx/freight/m250.png") {
 	template_purchase(89, 352)
 }
 
+GRAPHICS_STACK_2(\
+sw_m250_trailer_purchase,\
+switch_logo_jrf,\
+spriteset_m250_trailer_purchase\
+)
+
+
 item (FEAT_TRAINS, m250_trailer, 39) {
 
 property {
@@ -81,19 +88,20 @@ property {
 		cost_factor: 50;
 		running_cost_factor: 9;
 		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_T260),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
 
 		cargo_capacity: return 70;
 		default: spritegroup_m250_trailer;
-		purchase: spriteset_m250_trailer_purchase;
+		purchase: sw_m250_trailer_purchase;
 	}
 }
 

@@ -52,7 +52,7 @@ spritegroup spritegroup_hoki_800_black_bulk {
 random_switch(FEAT_TRAINS, SELF, random_hoki_800_livery) {
 	1: spritegroup_hoki_800_cc_bulk;
 	1: spritegroup_hoki_800_black_bulk;
-}	
+}
 
 
 
@@ -64,7 +64,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_800_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_800, 1446) {
+/* item (FEAT_TRAINS, hoki_800, 1446) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -76,13 +76,13 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 60; 
+	cargo_capacity: 60;
 	refit_cost: 0;
 	default_cargo_type: COAL;
 	loading_speed: 35;
-	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+	refittable_cargo_classes: bitmask(CC_BULK);
+	non_refittable_cargo_classes: bitmask(CC_COVERED);
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT];
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
 	weight: 18;
 	cost_factor: 30;
@@ -92,10 +92,10 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_STON),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -108,5 +108,54 @@ graphics {
 	purchase: switch_hoki_800_purchase;
 //	cargo_subtype_text: switch_hoki_800_subtype_text;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_800_purchase,\
+switch_logo_jnr_only,\
+switch_hoki_800_purchase\
+)
+
+item (FEAT_TRAINS, hoki_800, 1446) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_800);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1958,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 60;
+		refit_cost: 0;
+		default_cargo_type: COAL;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_BULK);
+		non_refittable_cargo_classes: bitmask(CC_COVERED);
+		cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
+		weight: 18;
+		cost_factor: 30;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_STON),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		cargo_capacity: return 60;
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		default: random_hoki_800_livery;
+		purchase: sw_hoki_800_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

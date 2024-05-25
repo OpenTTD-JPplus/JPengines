@@ -1,7 +1,7 @@
 
 //blank
 
-spriteset(spriteset_conts_blank, "gfx/blank.png") { 
+spriteset(spriteset_conts_blank, "gfx/blank.png") {
 	template_container_1(1, 1)
 }
 
@@ -464,7 +464,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	TYRE: switch_conts_general_flip;
 	VPTS: switch_conts_general_flip;
 	MNSP: switch_conts_general_flip;
-	
+
 	PETR: switch_conts_liquid_flip;
 	RFPR: switch_conts_liquid_flip;
 	H2__: switch_conts_liquid_flip;
@@ -481,7 +481,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	C2H4: switch_conts_mixed_liquid_flip;
 	NAPH: switch_conts_mixed_liquid_flip;
 	WELD: switch_conts_mixed_liquid_flip;
-	
+
 	BEER: switch_conts_mixed_food_flip;
 	MILK: switch_conts_mixed_food_flip;
 	EOIL: switch_conts_mixed_food_flip;
@@ -529,7 +529,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	TATO: switch_conts_mixed_vented_flip;
 
 
-	
+
 	switch_conts_cargo_class;
 }
 
@@ -574,3 +574,4 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_middle, cargo_count) {
 	30..50: random_conts_cargo_load_middle_half;
 	switch_conts_cargo_selection;
 }
+

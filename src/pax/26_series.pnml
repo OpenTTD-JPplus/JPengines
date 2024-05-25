@@ -148,24 +148,24 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_forward_autoform, position_in_vehi
 	spriteset_pax_26series_6;
 	}
 
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_lounge;
 	switch_pax_26series_forward_autoform;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_gen_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_gen;
 	switch_pax_26series_forward_autoform;
 	}
-	
+
 //autoform rev
 
 switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_front, position_in_vehid_chain) {
 	0: spriteset_pax_26series_flip_lounge;
 	spriteset_pax_26series_flip_6;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_lounge_backward_autoform, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_flip_1;
 	1: spriteset_pax_26series_flip_2;
@@ -189,7 +189,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_gen_backward_autoform, position_in
 	4: spriteset_pax_26series_flip_5;
 	switch_pax_26series_gen_front;
 	}
-	
+
 //autoform forward CC
 
 switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_forward_autoform, position_in_vehid_chain) {
@@ -201,24 +201,24 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_forward_autoform, position_in_v
 	spriteset_pax_26series_cc_6;
 	}
 
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_cc_lounge;
 	switch_pax_26series_cc_forward_autoform;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_gen_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_cc_gen;
 	switch_pax_26series_cc_forward_autoform;
 	}
-	
+
 //autoform rev CC
 
 switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_front, position_in_vehid_chain) {
 	0: spriteset_pax_26series_cc_flip_lounge;
 	spriteset_pax_26series_cc_flip_6;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_lounge_backward_autoform, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_26series_cc_flip_1;
 	1: spriteset_pax_26series_cc_flip_2;
@@ -242,7 +242,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_cc_gen_backward_autoform, position
 	4: spriteset_pax_26series_cc_flip_5;
 	switch_pax_26series_cc_gen_front;
 	}
-	
+
 
 
 //refits
@@ -261,7 +261,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
-                                     						   string(STR_CONCAT_4F, 
+                                     						   string(STR_CONCAT_4F,
 																string(STR_COLOUR_SILVER),
 																string(STR_COLOUR_PURPLE),
 																string(STR_COLOUR_RED),
@@ -269,7 +269,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
                                     							)
 															);
 	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
-                                     						   string(STR_CONCAT_4F, 
+                                     						   string(STR_CONCAT_4F,
 																string(STR_COLOUR_SILVER),
 																string(STR_COLOUR_PURPLE),
 																string(STR_COLOUR_RED),
@@ -277,7 +277,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
                                     							)
 															);
 	2: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
-                                     						   string(STR_CONCAT_4F, 
+                                     						   string(STR_CONCAT_4F,
 																string(STR_COLOUR_SILVER),
 																string(STR_COLOUR_PURPLE),
 																string(STR_COLOUR_RED),
@@ -285,7 +285,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
                                     							), string(STR_SUFFIX_FLIPPED)
 															);
 	3: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
-                                     						   string(STR_CONCAT_4F, 
+                                     						   string(STR_CONCAT_4F,
 																string(STR_COLOUR_SILVER),
 																string(STR_COLOUR_PURPLE),
 																string(STR_COLOUR_RED),
@@ -293,28 +293,75 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
                                     							), string(STR_SUFFIX_FLIPPED)
 															);
 	4: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
-                                     						   string(STR_CONCAT_1F, 
+                                     						   string(STR_CONCAT_1F,
 																string(STR_SUFFIX_CC)
                                     							)
 															);
 	5: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
-                                     						   string(STR_CONCAT_1F, 
+                                     						   string(STR_CONCAT_1F,
 																string(STR_SUFFIX_CC)
                                     							)
 															);
 	6: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
-                                     						   string(STR_CONCAT_1F, 
+                                     						   string(STR_CONCAT_1F,
 																string(STR_SUFFIX_CC)
                                     							), string(STR_SUFFIX_FLIPPED)
 															);
 	7: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
-                                     						   string(STR_CONCAT_1F, 
+                                     						   string(STR_CONCAT_1F,
 																string(STR_SUFFIX_CC)
                                     							), string(STR_SUFFIX_FLIPPED)
 															);
 	   return CB_RESULT_NO_TEXT;
 	}
 
+
+/* item (FEAT_TRAINS, pax_26series, 1346) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_26);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1999,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		cargo_age_period: 800;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 29;
+		cost_factor: 83;
+		running_cost_factor: 11;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JRE)
+								)
+							);
+
+		default: switch_pax_26series_livery;
+		purchase: spriteset_pax_26series_purchase;
+		cargo_subtype_text: switch_pax_26series_subtype_text;
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_pax_26series_purchase,\
+switch_logo_jre,\
+spriteset_pax_26series_purchase\
+)
 
 item (FEAT_TRAINS, pax_26series, 1346) {
 	property {
@@ -327,32 +374,30 @@ item (FEAT_TRAINS, pax_26series, 1346) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 70;
 		refit_cost: 0;
 		cargo_age_period: 800;
 		default_cargo_type: PASS;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 		weight: 29;
 		cost_factor: 83;
 		running_cost_factor: 11;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_LUX),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JRE)
 								)
 							);
-
 		default: switch_pax_26series_livery;
-		purchase: spriteset_pax_26series_purchase;
+		purchase: sw_pax_26series_purchase;
 		cargo_subtype_text: switch_pax_26series_subtype_text;
-
 	}
 }

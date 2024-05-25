@@ -63,7 +63,7 @@ switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
     1:  random_ta_1_wear;
 }
 
-item (FEAT_TRAINS, ta_1, 1480) {
+/* item (FEAT_TRAINS, ta_1, 1480) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -74,7 +74,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 15; 
+		cargo_capacity: 15;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
@@ -86,10 +86,10 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_TANK),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -101,6 +101,50 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		default: switch_ta_1_wearstack;
 		purchase: spriteset_ta_1_purchase;
 //		cargo_subtype_text: switch_taki_1000_subtype_text;
-		
+
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_ta_1_purchase,\
+switch_logo_jgr_only,\
+spriteset_ta_1_purchase\
+)
+
+item (FEAT_TRAINS, ta_1, 1480) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TA_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 15;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 30;
+		weight: 8;
+		cost_factor: 14;
+		running_cost_factor: 2;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 60;
+		default: switch_ta_1_wearstack;
+		purchase: sw_ta_1_purchase;
 	}
 }

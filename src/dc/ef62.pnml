@@ -60,14 +60,14 @@ switch(FEAT_TRAINS, SELF, switch_ef62_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef62_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
@@ -81,7 +81,7 @@ switch(FEAT_TRAINS, SELF, switch_ef62_purchase_yeardep, current_year) {
     }
 
 
-item (FEAT_TRAINS, ef62, 1039) {
+/* item (FEAT_TRAINS, ef62, 1039) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -94,7 +94,7 @@ item (FEAT_TRAINS, ef62, 1039) {
   power: 2550 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 96;
   reliability_decay: 20;
@@ -107,11 +107,11 @@ item (FEAT_TRAINS, ef62, 1039) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_FF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JRW)
                     )
@@ -122,7 +122,7 @@ item (FEAT_TRAINS, ef62, 1039) {
   purchase: switch_ef62_purchase_yeardep;
 
   }
-}
+} */
 
 
 switch(FEAT_TRAINS, SELF, switch_ef62_proto_yeardep_livery, build_year) {
@@ -141,14 +141,14 @@ switch(FEAT_TRAINS, SELF, switch_ef62_proto_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef62_proto_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
@@ -161,17 +161,17 @@ switch(FEAT_TRAINS, SELF, switch_ef62_proto_purchase_yeardep, current_year) {
     spriteset_ef62_proto_blue_purchase;
     }
 
-switch (FEAT_TRAINS, SELF, switch_ef62_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef62_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF62);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef62_proto_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef62_proto_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef62_proto_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef62_proto_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
 
-item (FEAT_TRAINS, ef62_proto, 1939) {
+/* item (FEAT_TRAINS, ef62_proto, 1939) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -184,7 +184,7 @@ item (FEAT_TRAINS, ef62_proto, 1939) {
   power: 2550 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 92;
   reliability_decay: 20;
@@ -198,11 +198,11 @@ item (FEAT_TRAINS, ef62_proto, 1939) {
   variant_group: 1039;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PROTO),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JNR)
                     )
                   );
@@ -212,4 +212,102 @@ item (FEAT_TRAINS, ef62_proto, 1939) {
   purchase: switch_ef62_proto_purchase_yeardep;
   name: switch_ef62_proto_name;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef62_purchase,\
+switch_logo_jnr,\
+switch_ef62_purchase_yeardep\
+)
+
+item (FEAT_TRAINS, ef62, 1039) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF62);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1963,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.24;
+		power: 2550 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 96;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 81;
+		length: 8;
+		running_cost_factor: 76;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FF),
+                        string(STR_CONCAT_2C,
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef62_subtype_text;
+		default: switch_ef62_livery;
+		purchase: sw_ef62_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef62_proto_purchase,\
+switch_logo_jnr_only,\
+switch_ef62_proto_purchase_yeardep\
+)
+
+item (FEAT_TRAINS, ef62_proto, 1939) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF62_0);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1962,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.24;
+		power: 2550 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 92;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 81;
+		length: 8;
+		running_cost_factor: 76;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1039;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PROTO),
+                        string(STR_CONCAT_1C,
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef62_proto_subtype_text;
+		default: switch_ef62_proto_livery;
+		purchase: sw_ef62_proto_purchase;
+		name: switch_ef62_proto_name;
+	}
 }

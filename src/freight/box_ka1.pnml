@@ -62,11 +62,11 @@ random_switch(FEAT_TRAINS, SELF, random_ka_1_livery) {
 	1: spritegroup_ka_1_grey_load;
 	1: spritegroup_ka_1_brown_load;
 	}
-	
 
 
 
-item (FEAT_TRAINS, ka_1, 1282) {
+
+/* item (FEAT_TRAINS, ka_1, 1282) {
 
 property {
 	name: string(STR_NAME_KA_1);
@@ -80,10 +80,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_LVST),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_PRIVATE)
@@ -97,5 +97,42 @@ graphics {
 //	cargo_subtype_text: switch_ka_1_subtype_text;
 	purchase: spriteset_ka_1_jgr_purchase;
 //	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_ka_1_purchase,\
+switch_logo_jgr,\
+spriteset_ka_1_jgr_purchase\
+)
+
+item (FEAT_TRAINS, ka_1, 1282) {
+	property {
+		name: string(STR_NAME_KA_1);
+		introduction_date: date(1870,1,1);
+		default_cargo_type: LVST;
+		cargo_capacity: 20;
+		cargo_age_period: 0;
+		cost_factor: 14;
+		running_cost_factor: 2;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 20;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_LVST),
+								string(STR_CONCAT_3C,
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+							);
+		speed: switch_speedboost_1;
+		purchase_speed: return 60;
+		cargo_capacity: return 20;
+		default: random_ka_1_livery;
+		purchase: sw_ka_1_purchase;
 	}
 }

@@ -20,7 +20,7 @@ random_switch(FEAT_TRAINS, SELF, switch_hoki_5700_livery) {
 
 
 
-item (FEAT_TRAINS, hoki_5700, 1448) {
+/* item (FEAT_TRAINS, hoki_5700, 1448) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -31,10 +31,10 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 50; 
+		cargo_capacity: 50;
 		refit_cost: 0;
 		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
@@ -46,10 +46,10 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CMNT),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -58,6 +58,55 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		cargo_capacity: return 50;
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_5700_purchase,\
+switch_logo_jnr_only,\
+spriteset_hoki_5700_purchase\
+)
+
+item (FEAT_TRAINS, hoki_5700, 1448) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_5700);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1965,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50;
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		weight: 13;
+		cost_factor: 30;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CMNT),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		cargo_capacity: return 50;
+		default: switch_hoki_5700_livery;
+		purchase: sw_hoki_5700_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;

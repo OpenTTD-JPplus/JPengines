@@ -39,7 +39,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_8000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_waki_8000_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLUE),
 									string(STR_COLOUR_SILVER)
                                     )
@@ -59,7 +59,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
 
 
 
-item (FEAT_TRAINS, waki_8000, 1452) {
+/* item (FEAT_TRAINS, waki_8000, 1452) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -70,12 +70,12 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
 		weight: 21;
 		cost_factor: 52;
 		running_cost_factor: 8;
@@ -84,10 +84,10 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_EXP),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -98,7 +98,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
 	}
-}
+} */
 
 
 
@@ -111,13 +111,13 @@ switch(FEAT_TRAINS, SELF, switch_wasafu_8000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_wasafu_8000_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLUE),
 									string(STR_COLOUR_SILVER)
                                     )
                                  );
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
@@ -136,6 +136,103 @@ switch(FEAT_TRAINS, SELF, switch_wasafu_8000_loadstack, [
 
 
 
+/* item (FEAT_TRAINS, wasafu_8000, 1453) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WASAFU_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 60;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(3);//95 boost
+		variant_group: 1452;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_BRAKE),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+		speed: switch_speedboost_1;
+		purchase_speed: return 95;
+		default: switch_wasafu_8000_loadstack;
+		purchase: spriteset_wasafu_8000_jnr_purchase;
+		cargo_subtype_text: switch_wasafu_8000_subtype_text;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_waki_8000_purchase,\
+switch_jnr_jrf_1987,\
+spriteset_waki_8000_jnr_purchase\
+)
+
+item (FEAT_TRAINS, waki_8000, 1452) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_WAKI_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_EXP),
+								string(STR_CONCAT_2C,
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+		speed: switch_speedboost_1;
+		purchase_speed: return 95;
+		default: switch_waki_8000_loadstack;
+		purchase: sw_waki_8000_purchase;
+		cargo_subtype_text: switch_waki_8000_subtype_text;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_wasafu_8000_purchase,\
+switch_jnr_jrf_1987,\
+spriteset_wasafu_8000_jnr_purchase\
+)
+
 item (FEAT_TRAINS, wasafu_8000, 1453) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -147,26 +244,26 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 60; 
+		cargo_capacity: 60;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
+		non_refittable_cargo_classes: 0;
 		weight: 21;
 		cost_factor: 52;
 		running_cost_factor: 12;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 8;
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
-		bitmask_vehicle_info: bitmask(3);//95 boost
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(3);
 		variant_group: 1452;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_BRAKE),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -174,7 +271,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 95;
 		default: switch_wasafu_8000_loadstack;
-		purchase: spriteset_wasafu_8000_jnr_purchase;
+		purchase: sw_wasafu_8000_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
 	}
 }

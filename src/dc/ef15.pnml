@@ -81,46 +81,46 @@ switch(FEAT_TRAINS, SELF, switch_ef15_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_RANDOM)
                                  );
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_2WINDOW)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_3WINDOW)
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_5WINDOW)
                                  );
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                    string(STR_CONCAT_1F, 
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
-                                    string(STR_CONCAT_2F, 
+	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE),
+                                    string(STR_CONCAT_2F,
                                      string(STR_COLOUR_RED),
                                      string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
                                  );
-	7: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC), 
-                                    string(STR_CONCAT_1F, 
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_NYC),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLACK)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
@@ -132,7 +132,7 @@ switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, ef15, 1054) {
+/* item (FEAT_TRAINS, ef15, 1054) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -145,7 +145,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   power: 1900 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 102;
   reliability_decay: 20;
@@ -158,11 +158,11 @@ item (FEAT_TRAINS, ef15, 1054) {
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -172,4 +172,52 @@ item (FEAT_TRAINS, ef15, 1054) {
   default: switch_ef15_livery;
   purchase: switch_ef15_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef15_purchase,\
+switch_logo_jgr,\
+switch_ef15_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef15, 1054) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF15);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1947,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 102;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 45;
+		cost_factor: 42;
+		length: 7;
+		running_cost_factor: 56;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S,
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_2C,
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef15_subtype_text;
+		default: switch_ef15_livery;
+		purchase: sw_ef15_purchase;
+	}
 }
