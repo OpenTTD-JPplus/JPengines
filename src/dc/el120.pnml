@@ -20,9 +20,9 @@ switch(FEAT_TRAINS, SELF, switch_el120_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_MEITETSU),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
@@ -59,11 +59,11 @@ switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_MEITETSU)
                     )
                   );
@@ -106,11 +106,11 @@ item (FEAT_TRAINS, el120, 1106) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_MEITETSU)
                     )
                   );

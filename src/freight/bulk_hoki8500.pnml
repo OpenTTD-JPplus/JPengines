@@ -52,7 +52,7 @@ spritegroup spritegroup_hoki_8500_black_bulk {
 random_switch(FEAT_TRAINS, SELF, random_hoki_8500_livery) {
 	1: spritegroup_hoki_8500_red_bulk;
 	1: spritegroup_hoki_8500_black_bulk;
-}	
+}
 
 
 
@@ -70,8 +70,8 @@ property {
 	introduction_date: date(1967,1,1);
 	name: string(STR_NAME_HOKI_8500);
 	speed: 85 km/h;
-	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: bitmask(CC_COVERED); 
+	refittable_cargo_classes: bitmask(CC_BULK);
+	non_refittable_cargo_classes: bitmask(CC_COVERED);
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	cost_factor: 40;
@@ -80,10 +80,10 @@ property {
 	loading_speed: 40;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_LMST),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -101,7 +101,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_hoki_8500_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_hoki_8500_purchase\
 )
 
@@ -120,10 +120,10 @@ item (FEAT_TRAINS, hoki_8500, 1285) {
 		loading_speed: 40;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_LMST),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)

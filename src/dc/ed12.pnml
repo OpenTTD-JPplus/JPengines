@@ -29,8 +29,8 @@ switch(FEAT_TRAINS, SELF, switch_ed12_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed12_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -64,11 +64,11 @@ switch(FEAT_TRAINS, SELF, switch_ed12_subtype_text, cargo_subtype) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -87,8 +87,8 @@ switch(FEAT_TRAINS, SELF, switch_e51_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_PINK)
                                     )
                                  );
@@ -123,11 +123,11 @@ switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
   variant_group: 990;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_SEIBU)
                     )
                   );
@@ -141,7 +141,7 @@ switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_ed12_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 spriteset_ed12_jgr_purchase\
 )
 
@@ -171,11 +171,11 @@ item (FEAT_TRAINS, ed12, 990) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -220,11 +220,11 @@ item (FEAT_TRAINS, e51, 991) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_SEIBU)
                     )
                   );

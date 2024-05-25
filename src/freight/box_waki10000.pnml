@@ -61,7 +61,7 @@ property {
 	name: string(STR_NAME_WAKI_10000);
 	introduction_date: date(1967,1,1);
 	default_cargo_type: GOOD;
-	cargo_capacity: 60; 
+	cargo_capacity: 60;
 	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
@@ -72,10 +72,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_EXP),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -92,7 +92,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_waki_10000_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_waki_10000_yeardep_purchase\
 )
 
@@ -112,10 +112,10 @@ item (FEAT_TRAINS, waki_10000, 1288) {
 		loading_speed: 20;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_EXP),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)

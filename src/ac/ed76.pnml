@@ -216,7 +216,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0
 
 GRAPHICS_STACK_2(\
 	sw_ed76_500_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jnr,\
 	switch_ed76_500_yeardep_purchase\
 )
 
@@ -296,7 +296,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0
 
 GRAPHICS_STACK_2(\
 	sw_ed76_550_purchase,\
-	switch_logo_jrf,\
+	switch_logo_jrh,\
 	spriteset_ed76_550_jr_purchase\
 )
 

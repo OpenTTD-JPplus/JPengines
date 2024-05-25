@@ -1,28 +1,28 @@
 template template_logo_EZ() {[0,0,48,24,-50,-14]}
 template template_logo() 	{[0,0,24,12,0,0]}
 
-spriteset(spriteset_logo_hcc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/hcc.png"){template_logo_EZ()} // Hokkaido Colliery and Railway Company
-spriteset(spriteset_logo_jgr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jgr.png"){template_logo_EZ()} // Japanese Governmental Railways
-spriteset(spriteset_logo_jnr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jnr.png"){[0,0,96,24,-50,-14]}// Japanese National Railways
-spriteset(spriteset_logo_jre, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jre.png"){template_logo_EZ()} // JR East
-spriteset(spriteset_logo_jrw, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrw.png"){template_logo_EZ()} // JR West
-spriteset(spriteset_logo_jrf, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrf.png"){template_logo_EZ()} // JR Freight
-spriteset(spriteset_logo_jrs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrs.png"){template_logo_EZ()} // JR Shikoku
-spriteset(spriteset_logo_jrh, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrh.png"){template_logo_EZ()} // JR Hokkaido
-spriteset(spriteset_logo_jrc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrc.png"){template_logo_EZ()} // JR Central
-spriteset(spriteset_logo_jrk, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrk.png"){template_logo_EZ()} // JR Kyushu
-spriteset(spriteset_logo_jr,  ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jr.png") {template_logo_EZ()} // JR
-spriteset(spriteset_logo_meitetsu_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_1.png") {template_logo_EZ()} // Meitetsu
-spriteset(spriteset_logo_meitetsu_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_2.png") {template_logo_EZ()} // Meitetsu
-spriteset(spriteset_logo_seibu, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/seibu.png") {template_logo_EZ()} // Seibu
-spriteset(spriteset_logo_aichi, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/aichi.png") {template_logo_EZ()} // Aichi //todo change to aichi logo
-spriteset(spriteset_logo_yawata, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/yawata.png") {template_logo_EZ()} // Yawata Steel Works Railway
-spriteset(spriteset_logo_nippon, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/nippon.png") {template_logo_EZ()}
+spriteset(spriteset_logo_hcc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/hcc.png"){[0,0,48,24,-40,-14]} // Hokkaido Colliery and Railway Company
+spriteset(spriteset_logo_jgr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jgr.png"){[0,0,48,24,-40,-14]} // Japanese Governmental Railways
+spriteset(spriteset_logo_jnr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jnr.png"){[0,0,96,24,-60,-14]}// Japanese National Railways
+spriteset(spriteset_logo_jre, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jre.png"){[0,0,48,24,-50,-14]} // JR East
+spriteset(spriteset_logo_jrw, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrw.png"){[0,0,48,24,-50,-14]} // JR West
+spriteset(spriteset_logo_jrf, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrf.png"){[0,0,48,24,-50,-14]} // JR Freight
+spriteset(spriteset_logo_jrs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrs.png"){[0,0,48,24,-50,-14]} // JR Shikoku
+spriteset(spriteset_logo_jrh, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrh.png"){[0,0,48,24,-50,-14]} // JR Hokkaido
+spriteset(spriteset_logo_jrc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrc.png"){[0,0,48,24,-50,-14]} // JR Central
+spriteset(spriteset_logo_jrk, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrk.png"){[0,0,48,24,-50,-14]} // JR Kyushu
+spriteset(spriteset_logo_jr,  ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jr.png") {[0,0,48,24,-50,-14]} // JR
+spriteset(spriteset_logo_meitetsu_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_1.png") {[0,0,48,24,-40,-14]} // Meitetsu
+spriteset(spriteset_logo_meitetsu_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_2.png") {[0,0,48,24,-40,-14]} // Meitetsu
+spriteset(spriteset_logo_seibu, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/seibu.png") {[0,0,48,24,-40,-14]} // Seibu
+spriteset(spriteset_logo_aichi, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/aichi.png") {[0,0,48,24,-40,-14]} // Aichi //todo change to aichi logo
+spriteset(spriteset_logo_yawata, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/yawata.png") {[0,0,48,24,-40,-14]} // Yawata Steel Works Railway
+spriteset(spriteset_logo_nippon, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/nippon.png") {[0,0,48,24,-40,-14]}
 
 switch(FEAT_TRAINS,SELF,switch_logo_hcc, param_purchase_logo) {1: spriteset_logo_hcc;}
 switch(FEAT_TRAINS,SELF,switch_logo_jr,  param_purchase_logo) {1: spriteset_logo_jr;}
-switch(FEAT_TRAINS,SELF,switch_logo_jgr_1, param_purchase_logo) {1: spriteset_logo_jgr;}
-switch(FEAT_TRAINS,SELF,switch_logo_jnr_1, param_purchase_logo) {1: spriteset_logo_jnr;}
+switch(FEAT_TRAINS,SELF,switch_logo_jgr_only, param_purchase_logo) {1: spriteset_logo_jgr;}
+switch(FEAT_TRAINS,SELF,switch_logo_jnr_only, param_purchase_logo) {1: spriteset_logo_jnr;}
 switch(FEAT_TRAINS,SELF,switch_logo_jre, param_purchase_logo) {1: spriteset_logo_jre;}
 switch(FEAT_TRAINS,SELF,switch_logo_jrw, param_purchase_logo) {1: spriteset_logo_jrw;}
 switch(FEAT_TRAINS,SELF,switch_logo_jrf, param_purchase_logo) {1: spriteset_logo_jrf;}
@@ -38,13 +38,13 @@ switch(FEAT_TRAINS,SELF,switch_logo_yawata, param_purchase_logo) {1: spriteset_l
 switch(FEAT_TRAINS,SELF,switch_logo_nippon, param_purchase_logo) {1: spriteset_logo_nippon;}
 
 switch(FEAT_TRAINS, SELF, switch_logo_jnr, current_year) {
-	0..1987: switch_logo_jnr_1;
+	0..1987: switch_logo_jnr_only;
 	switch_logo_jr;
 }
 
 switch(FEAT_TRAINS, SELF, switch_logo_jgr, current_year) {
-	0..1949: switch_logo_jgr_1;
-	switch_logo_jnr;
+	0..1949: switch_logo_jgr_only;
+	switch_logo_jnr_only;
 }
 
 switch(FEAT_TRAINS, SELF, switch_jnr_jrf_1987, current_year) {
@@ -54,7 +54,7 @@ switch(FEAT_TRAINS, SELF, switch_jnr_jrf_1987, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_hcc_jgr_1906, current_year) {
 	0..1906: switch_logo_hcc;
-	switch_logo_jgr_1;
+	switch_logo_jgr_only;
 }
 
 switch(FEAT_TRAINS, SELF, switch_logo_meitetsu, current_year) {

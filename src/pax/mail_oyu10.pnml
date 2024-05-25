@@ -32,7 +32,7 @@ random_switch (FEAT_TRAINS, SELF, random_oyu10_new) {
 	1: spriteset_oyu10_brown;
 	3: random_oyu10_blue_ac;
 }
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_oyu10_yeardep_livery, current_year) {
 	0..1964: spriteset_oyu10_brown;
@@ -52,18 +52,18 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_oyu10_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
                                     )
                                  );
-    3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+    3: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_AIRCON)
                                  );
@@ -88,12 +88,12 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_purchase_yeardep, current_year) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
 		weight: 20;
 		cost_factor: 45;
 		running_cost_factor: 8;
@@ -102,10 +102,10 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_purchase_yeardep, current_year) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_RPO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);
@@ -113,13 +113,13 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_purchase_yeardep, current_year) {
 		default: switch_oyu10_livery;
 		purchase: switch_oyu10_purchase_yeardep;
 		cargo_subtype_text: switch_oyu10_subtype_text;
-		
+
 	}
 } */
 
 GRAPHICS_STACK_2(\
 sw_mail_oyu10_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 switch_oyu10_purchase_yeardep\
 )
 
@@ -148,10 +148,10 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_RPO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);

@@ -83,13 +83,13 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 35; 
+	cargo_capacity: 35;
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+	refittable_cargo_classes: bitmask(CC_BULK);
+	non_refittable_cargo_classes: bitmask(CC_COVERED);
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT];
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
 	weight: 13;
 	cost_factor: 18;
@@ -99,10 +99,10 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_COAL),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -150,10 +150,10 @@ item (FEAT_TRAINS, seki_1, 1441) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_COAL),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)

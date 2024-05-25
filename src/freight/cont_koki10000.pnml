@@ -112,13 +112,13 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 60; 
+		cargo_capacity: 60;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 35;
-		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED); 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -128,10 +128,10 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CONT),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -156,13 +156,13 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 45; 
+		cargo_capacity: 45;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 35;
-		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED); 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
 		weight: 20;
 		cost_factor: 50;
@@ -174,10 +174,10 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 		variant_group: 1413;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR)
 							)
 						);
@@ -192,7 +192,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 
 GRAPHICS_STACK_2(\
 sw_koki_10000_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 spriteset_koki_10000_purchase\
 )
 
@@ -223,10 +223,10 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CONT),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -243,7 +243,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 
 GRAPHICS_STACK_2(\
 sw_kokifu_10000_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 spriteset_kokifu_10000_purchase\
 )
 
@@ -276,10 +276,10 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		variant_group: 1413;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR)
 							)
 						);

@@ -43,7 +43,7 @@ switch(FEAT_TRAINS, SELF, switch_ef30_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 	sw_ef30_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ef30_purchase\
 )
 
@@ -125,7 +125,7 @@ switch (FEAT_TRAINS, SELF, switch_ef30_p_name, getbits(extra_callback_info1, 0, 
 
 GRAPHICS_STACK_2(\
 	sw_ef30_proto_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ef30_proto_purchase\
 )
 

@@ -53,7 +53,7 @@ spriteset(spriteset_df200_twilight, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 256)
 }
 
-//logos 
+//logos
 
 spriteset(spriteset_df200_logo_red, "gfx/diesel/df200.png") {
 	template_2cc_std(180, 64)
@@ -126,31 +126,31 @@ switch(FEAT_TRAINS, SELF, switch_df200_0_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_df200_0_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REDLOGO)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_WHITELOGO)
                                  );
-	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	5: return string(STR_REFIT_CC);	
+	5: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -165,12 +165,12 @@ switch(FEAT_TRAINS, SELF, stack_df200_0, [
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_df200_0_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_df200_0_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_DF200);
-  } 
-switch (FEAT_TRAINS, SELF, switch_df200_0_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_df200_0_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_df200_0_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_df200_0_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -199,14 +199,14 @@ property {
   running_cost_factor: 100;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
-  } 
+  }
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -220,7 +220,7 @@ property {
 
 
 
-//df200 100 
+//df200 100
 
 
 switch(FEAT_TRAINS, SELF, switch_df200_100_yeardep_purchase, current_year) {
@@ -248,45 +248,45 @@ switch(FEAT_TRAINS, SELF, switch_df200_100_logo_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_df200_100_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 
-	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_AIME)
                                  );
-	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	4: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
                                  );
-	5: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
-                                   string(STR_CONCAT_4F, 
+	5: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE),
+                                   string(STR_CONCAT_4F,
 												string(STR_COLOUR_SILVER),
 												string(STR_COLOUR_PURPLE),
 												string(STR_COLOUR_RED),
 												string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_FICTION)
                                  );
-	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_GREEN), 
+	6: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_GREEN),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
                                  );
-	7: return string(STR_REFIT_CC);	
+	7: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -300,12 +300,12 @@ switch(FEAT_TRAINS, SELF, stack_df200_100, [
 	 1:  switch_df200_100_logo_livery;
 }
 
-switch (FEAT_TRAINS, SELF, switch_df200_100_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_df200_100_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_DF200);
-  } 
-switch (FEAT_TRAINS, SELF, switch_df200_100_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_df200_100_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_df200_100_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_df200_100_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -336,14 +336,14 @@ property {
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
   variant_group: 63;
-  } 
+  }
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -367,23 +367,23 @@ switch(FEAT_TRAINS, SELF, switch_df200_7000_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_df200_7000_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_DKRED), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_DKRED),
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_7STARS)
                                  );
-	1: return string(STR_REFIT_CC);	
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch (FEAT_TRAINS, SELF, switch_df200_7000_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_df200_7000_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_DF200);
-  } 
-switch (FEAT_TRAINS, SELF, switch_df200_7000_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_df200_7000_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_df200_7000_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_df200_7000_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -414,14 +414,14 @@ property {
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 63;
-  } 
+  }
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PAX_JOY),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRK)
                     )
                   );
@@ -461,25 +461,25 @@ switch(FEAT_TRAINS, SELF, switch_df200_proto_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_df200_proto_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	1: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_INVERTER)
                                  );
-	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_WHITELOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_NOLOGO), string(STR_SUFFIX_REDBEAR)
                                  );
-	4: return string(STR_REFIT_CC);	
+	4: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -494,12 +494,12 @@ switch(FEAT_TRAINS, SELF, stack_df200_proto, [
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_df200_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_df200_proto_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_DF200);
-  } 
-switch (FEAT_TRAINS, SELF, switch_df200_proto_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_df200_proto_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_df200_proto_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_df200_proto_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -529,14 +529,14 @@ property {
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   variant_group: 63;
-  } 
+  }
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PROTO),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -581,11 +581,11 @@ item (FEAT_TRAINS, df200_0, 63) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -631,11 +631,11 @@ item (FEAT_TRAINS, df200_100, 1963) {
 		variant_group: 63;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -681,11 +681,11 @@ item (FEAT_TRAINS, df200_7000, 1964) {
 		variant_group: 63;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PAX_JOY),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRK)
                     )
                   );
@@ -731,11 +731,11 @@ item (FEAT_TRAINS, df200_proto, 1063) {
 		variant_group: 63;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DE),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PROTO),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );

@@ -36,14 +36,14 @@ switch(FEAT_TRAINS, SELF, switch_ef63_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef63_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
@@ -70,7 +70,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
   power: 2550 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 108;
   reliability_decay: 20;
@@ -83,11 +83,11 @@ switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_3C, 
+                        string(STR_CONCAT_3C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JRF),
                            string(STR_SUFFIX_JRW)
@@ -132,11 +132,11 @@ item (FEAT_TRAINS, ef63, 1040) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_3C, 
+                        string(STR_CONCAT_3C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JRF),
                            string(STR_SUFFIX_JRW)

@@ -77,7 +77,7 @@ switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
 	8: spriteset_dd51_testred;
 	9: spriteset_dd51_testwhite;
 	10: spriteset_dd51_testblue;
-	11: spriteset_dd51_cc;	
+	11: spriteset_dd51_cc;
 	switch_dd51_yeardep_livery;
 }
 
@@ -86,62 +86,62 @@ switch(FEAT_TRAINS, SELF, switch_dd51_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_dd51_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), //todo make prototype a variant
-                                    string(STR_CONCAT_1F, 
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_PROTO)
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     )
                                  );
 	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
-                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH), 
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH),
 									         string(STR_COLOUR_RED)
                                  );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_REFURB)
                                  );
-	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_GREY)
                                     ), string(STR_SUFFIX_REFURB)
                                  );
 	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_WHITE), 
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_EUROLINER)
                                  );
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	10: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	10: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	11: return string(STR_REFIT_CC);	
+	11: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -161,7 +161,7 @@ property {
 //	track_type: NAAN;
 	name: string(STR_NAME_DD51);
 
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	reliability_decay: 2;
 
@@ -172,11 +172,11 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DH),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JR)
                     )
@@ -205,11 +205,11 @@ item (FEAT_TRAINS, dd51, 20) {
 		running_cost_factor: 85;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DH),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JNR),
                            string(STR_SUFFIX_JR)
                     )

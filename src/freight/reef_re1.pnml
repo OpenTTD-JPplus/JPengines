@@ -67,7 +67,7 @@ random_switch(FEAT_TRAINS, SELF, random_re_1_stripe) {
 	1: spritegroup_re_1_blue_load;
 	1: spritegroup_re_1_yellow_load;
 	}
-	
+
 random_switch(FEAT_TRAINS, SELF, random_re_1_all) {
 	4: spritegroup_re_1_grey_load;
 	1: spritegroup_re_1_yellow_load;
@@ -99,7 +99,7 @@ property {
 	default_cargo_type: FOOD;
 	cargo_capacity: 20;
 	speed: 65 km/h;
-	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+	refittable_cargo_classes: bitmask(CC_REFRIGERATED);
 	non_refittable_cargo_classes: 0;
 //	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
@@ -110,10 +110,10 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_REEF),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -131,7 +131,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_re_1_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 spriteset_re_1_jgr_purchase\
 )
 
@@ -152,10 +152,10 @@ item (FEAT_TRAINS, re_1, 1281) {
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_REEF),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_PRIVATE)
 							)

@@ -74,7 +74,7 @@ switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 15; 
+		cargo_capacity: 15;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
@@ -86,10 +86,10 @@ switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_TANK),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -101,13 +101,13 @@ switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
 		default: switch_ta_1_wearstack;
 		purchase: spriteset_ta_1_purchase;
 //		cargo_subtype_text: switch_taki_1000_subtype_text;
-		
+
 	}
 } */
 
 GRAPHICS_STACK_2(\
 sw_ta_1_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 spriteset_ta_1_purchase\
 )
 
@@ -134,10 +134,10 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_TANK),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_PRIVATE)
 							)

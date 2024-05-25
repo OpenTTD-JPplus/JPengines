@@ -25,12 +25,12 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
 		weight: 20;
 		cost_factor: 52;
 		running_cost_factor: 8;
@@ -39,10 +39,10 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXP),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JR)
 								)
@@ -50,7 +50,7 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 
 		default: spriteset_mani_50;
 		purchase: spriteset_mani_50_purchase;
-		
+
 	}
 } */
 
@@ -85,10 +85,10 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXP),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JR)
 								)

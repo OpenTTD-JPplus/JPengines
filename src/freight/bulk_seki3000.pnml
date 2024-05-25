@@ -83,13 +83,13 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 45; 
+	cargo_capacity: 45;
 	refit_cost: 0;
 //	default_cargo_type: COAL;
 	loading_speed: 40;
-	refittable_cargo_classes: bitmask(CC_BULK); 
-	non_refittable_cargo_classes: bitmask(CC_COVERED); 
-//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
+	refittable_cargo_classes: bitmask(CC_BULK);
+	non_refittable_cargo_classes: bitmask(CC_COVERED);
+//	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT];
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
 	weight: 14;
 	cost_factor: 22;
@@ -99,10 +99,10 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_COAL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
 							)
@@ -120,7 +120,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_seki_3000_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 spriteset_seki_3000_purchase\
 )
 
@@ -149,10 +149,10 @@ item (FEAT_TRAINS, seki_3000, 1443) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_COAL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
 							)

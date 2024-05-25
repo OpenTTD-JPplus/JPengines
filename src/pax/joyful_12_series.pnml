@@ -78,7 +78,7 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_end, position_in_vehid_cha
 	0: spriteset_joyful_12_series_set_rear;
 	spriteset_joyful_12_series_set;
 	}
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_beginning, position_in_vehid_chain) {
 	0: spriteset_joyful_12_series_set_front;
@@ -90,7 +90,7 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_euro_end, position_in_vehid_ch
 	0: spriteset_joyful_12_series_euro_rear;
 	spriteset_joyful_12_series_euro_pano;
 	}
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_euro_beginning, position_in_vehid_chain) {
 	0: spriteset_joyful_12_series_euro_front;
@@ -103,7 +103,7 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_cc_end, position_in_vehid_
 	0: spriteset_joyful_12_series_set_cc_rear;
 	spriteset_joyful_12_series_set_cc;
 	}
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_set_cc_beginning, position_in_vehid_chain) {
 	0: spriteset_joyful_12_series_set_cc_front;
@@ -123,18 +123,18 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_joyful_12_series_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BROWN), 
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BROWN),
                                     string(STR_COLOUR_RED)
                                     ), string(STR_SUFFIX_SALONEXP)
                                  );
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRC),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_WHITE), 
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_EUROLINER)
                                  );
-	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_REFIT_AUTOFORM), string(STR_CONCAT_1F,
                                      							string(STR_SUFFIX_CC)
                                     							)
 															);
@@ -154,13 +154,13 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 70;
 		cargo_age_period: 600;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 		weight: 26;
 		cost_factor: 77;
 		running_cost_factor: 9;
@@ -170,10 +170,10 @@ switch(FEAT_TRAINS, SELF, switch_joyful_12_series_subtype_text, cargo_subtype) {
 		variant_group: 1320;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_JOY),
-								string(STR_CONCAT_5C, 
+								string(STR_CONCAT_5C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRE),
 									string(STR_SUFFIX_JRC),
@@ -222,10 +222,10 @@ item (FEAT_TRAINS, joyful_12_series, 1321) {
 		variant_group: 1320;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_JOY),
-								string(STR_CONCAT_5C, 
+								string(STR_CONCAT_5C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRE),
 									string(STR_SUFFIX_JRC),

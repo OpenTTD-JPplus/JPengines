@@ -70,11 +70,11 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 30; 
+		cargo_capacity: 30;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
@@ -85,10 +85,10 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -100,7 +100,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
 		cargo_capacity: return 30;
 		default: random_wamu_21000;
 		purchase: spriteset_wamu_21000_jgr_purchase;
-		
+
 	}
 } */
 
@@ -124,11 +124,11 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 15; 
+		cargo_capacity: 15;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 		weight: 10;
@@ -141,10 +141,10 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
 		variant_group: 1435;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -156,7 +156,7 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
 		cargo_capacity: return 15;
 		default: stack_wafu_21000;
 		purchase: spriteset_wafu_21000_jgr_purchase;
-		
+
 	}
 } */
 
@@ -192,10 +192,10 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -244,10 +244,10 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		variant_group: 1435;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)

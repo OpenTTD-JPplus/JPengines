@@ -144,10 +144,10 @@ property {
 	loading_speed: 30;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_GAS),
-								string(STR_CONCAT_2C, 									
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -159,13 +159,13 @@ property {
 		default: switch_tasa_5700_wearstack;
 		purchase: switch_tasa_5700_purchase;
 		cargo_subtype_text: switch_tasa_5700_subtype_text;
-		
+
 	}
 } */
 
 GRAPHICS_STACK_2(\
 sw_tasa_5700_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_tasa_5700_purchase\
 )
 
@@ -182,10 +182,10 @@ item (FEAT_TRAINS, tasa_5700, 45) {
 		loading_speed: 30;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_GAS),
-								string(STR_CONCAT_2C, 									
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)

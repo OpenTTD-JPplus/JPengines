@@ -759,21 +759,21 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ku_5000_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_RED)
                                     )
                                  );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_RED), 
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_RED),
 									string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
@@ -795,9 +795,9 @@ property {
 	name: string(STR_NAME_KU_5000);
 	introduction_date: date(1966,1,1);
 	default_cargo_type: VEHI;
-	refittable_cargo_classes: 0; 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI]; 
+	refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: 0;
+	cargo_allow_refit: [VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	speed: 85 km/h;
 	cost_factor: 30;
@@ -806,10 +806,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CAR),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -826,7 +826,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_ku_5000_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_ku_5000_purchase\
 )
 
@@ -846,10 +846,10 @@ item (FEAT_TRAINS, ku_5000, 44) {
 		loading_speed: 20;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CAR),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)

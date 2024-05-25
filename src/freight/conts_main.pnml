@@ -2,12 +2,12 @@ This is an unused file
 
 //blank
 
-spriteset(spriteset_conts_blank, "gfx/blank.png") { 
+spriteset(spriteset_conts_blank, "gfx/blank.png") {
 	template_container_1(1, 1)
 }
 
 
-//conts 
+//conts
 //cont types a,b,c,d
 //cont position 1,2,3,4
 
@@ -27,7 +27,7 @@ spritegroup spritegroup_conts_jgr_green_a_1_f {
 
 //b
 
-spriteset(spriteset_conts_jgr_green_b_1, "gfx/containers/jnr_green.png") { //old 
+spriteset(spriteset_conts_jgr_green_b_1, "gfx/containers/jnr_green.png") { //old
 	template_container_1(1, 32)
 }
 
@@ -308,7 +308,7 @@ spritegroup spritegroup_conts_jgr_reefer_a_1_f {
 
 //b
 
-spriteset(spriteset_conts_jgr_reefer_b_1, "gfx/containers/jnr_reefer.png") { //old 
+spriteset(spriteset_conts_jgr_reefer_b_1, "gfx/containers/jnr_reefer.png") { //old
 	template_container_1(1, 32)
 }
 
@@ -634,7 +634,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_1_food_year, current_year) {
 	0..1965: random_conts_jgr_green_a_1_food_1960;
 	random_conts_jgr_green_a_1_food_1970;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_conts_1_liquid_year, current_year) {
 	0..1965: random_conts_jgr_green_a_1_liquid_1960;
 	random_conts_jgr_green_a_1_liquid_1970;
@@ -644,12 +644,12 @@ switch(FEAT_TRAINS, SELF, switch_conts_1_bulk_year, current_year) {
 	0..1965: random_conts_jgr_green_a_1_bulk_1960;
 	random_conts_jgr_green_a_1_bulk_1970;
 	}
-	
+
 switch(FEAT_TRAINS, SELF, switch_conts_1_mixed_year, current_year) {
 	0..1965: random_conts_jgr_green_a_1_mixed_1960;
 	random_conts_jgr_green_a_1_mixed_1970;
 	}
-	
+
 
 
 
@@ -670,17 +670,17 @@ switch(FEAT_TRAINS, SELF, switch_conts_1_cargo_selection, cargo_type_in_veh) {
 	OIL_: switch_koki_10000_cargo_oil;
 	BEER: switch_koki_10000_cargo_alcohol;
 	VEHI: switch_koki_10000_cargo_goods;
-	
+
 	MILK: switch_koki_10000_cargo_edible_fluid;
 	EOIL: switch_koki_10000_cargo_edible_fluid;
-	
+
 	ACID: switch_koki_10000_cargo_general_fluid;
 	SULP: switch_koki_10000_cargo_general_fluid;
 	CHLO: switch_koki_10000_cargo_general_fluid;
-	
+
 	FRUT: switch_koki_10000_cargo_general_refrigerated;
 	FISH: switch_koki_10000_cargo_general_refrigerated;
-	
+
 	switch_conts_1_cargo_class;
 }
 */

@@ -23,13 +23,13 @@ switch(FEAT_TRAINS, SELF, switch_ab10_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLACK)
                                     )
                                  );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_SEMIFIC)
                                  );
@@ -64,11 +64,11 @@ switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
   running_cost_base: RUNNING_COST_DIESEL;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_BATT),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -76,7 +76,7 @@ switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
   cargo_subtype_text: switch_ab10_subtype_text;
   default: switch_ab10_livery;
   purchase: spriteset_ab10_purchase;
-  cargo_capacity: return 0;  
+  cargo_capacity: return 0;
   }
 } */
 
@@ -110,8 +110,8 @@ switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -151,11 +151,11 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
   variant_group: 1010;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -170,7 +170,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
 
 GRAPHICS_STACK_2(\
 sw_ab10_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 spriteset_ab10_purchase\
 )
 
@@ -200,11 +200,11 @@ item (FEAT_TRAINS, ab10, 1010) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_BATT),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -249,11 +249,11 @@ item (FEAT_TRAINS, eb10, 1011) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )

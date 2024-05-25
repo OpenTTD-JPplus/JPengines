@@ -37,13 +37,13 @@ switch(FEAT_TRAINS, SELF, switch_ed17_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLACK)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -66,7 +66,7 @@ property {
   cost_factor: 31;
   length: 6;
   running_cost_factor: 37;
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -74,11 +74,11 @@ property {
 
 
 graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -100,13 +100,13 @@ switch(FEAT_TRAINS, SELF, switch_ed50_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLACK)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -126,7 +126,7 @@ switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
   power: 925 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 60;
   reliability_decay: 17;
@@ -140,11 +140,11 @@ switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
 	variant_group: 02;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_P),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -157,7 +157,7 @@ switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_ed17_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 switch_ed17_yeardep_purchase\
 )
 
@@ -178,11 +178,11 @@ item (FEAT_TRAINS, ed17, 02) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );
@@ -196,7 +196,7 @@ item (FEAT_TRAINS, ed17, 02) {
 
 GRAPHICS_STACK_2(\
 sw_ed50_purchase,\
-switch_logo_jgr,\
+switch_logo_jgr_only,\
 switch_ed17_yeardep_purchase\
 )
 
@@ -227,11 +227,11 @@ item (FEAT_TRAINS, ed50, 1012) {
 		variant_group: 02;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_P),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JGR)
                     )
                   );

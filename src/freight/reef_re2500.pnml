@@ -40,12 +40,12 @@ random_switch (FEAT_TRAINS, SELF, random_re_2500) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 30; 
+		cargo_capacity: 30;
 		refit_cost: 0;
 		default_cargo_type: FOOD;
 		cargo_age_period: 840;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED);
 		weight: 10;
 		cost_factor: 18;
 		running_cost_factor: 3;
@@ -54,10 +54,10 @@ random_switch (FEAT_TRAINS, SELF, random_re_2500) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_REEF),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -68,7 +68,7 @@ random_switch (FEAT_TRAINS, SELF, random_re_2500) {
 		cargo_capacity: return 30;
 		default: random_re_2500;
 		purchase: spriteset_re_2500_purchase;
-		
+
 	}
 } */
 
@@ -103,10 +103,10 @@ item (FEAT_TRAINS, re_2500, 1455) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_REEF),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)

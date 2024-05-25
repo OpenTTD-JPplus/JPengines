@@ -39,17 +39,17 @@ switch(FEAT_TRAINS, SELF, switch_ed54_cc_flip, vehicle_is_flipped) {
 
 switch(FEAT_TRAINS, SELF, switch_ed54_livery, cargo_subtype) {
 	0: switch_ed54_brown_flip;
-	1: switch_ed54_cc_flip;	
+	1: switch_ed54_cc_flip;
 	switch_ed54_brown_flip;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ed54_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	1: return string(STR_REFIT_CC);	
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -88,11 +88,11 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -136,11 +136,11 @@ item (FEAT_TRAINS, ed54, 1051) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )

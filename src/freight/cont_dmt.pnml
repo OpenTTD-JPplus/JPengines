@@ -215,7 +215,7 @@ switch (FEAT_TRAINS, SELF, switch_dmt_front_yeardep, build_year) {
 	0..2002: switch_dmt_front_random_proto;
 	switch_dmt_front_random_nocc;
 }
-	
+
 switch (FEAT_TRAINS, SELF, switch_dmt_middle_yeardep, build_year) {
 	0..2002: switch_dmt_middle_random_proto;
 	switch_dmt_middle_random_nocc;
@@ -292,13 +292,13 @@ switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
 		name: string(STR_NAME_ROADRAILER);
 		climates_available: NO_CLIMATE;
 		loading_speed: 40;
-		cargo_capacity: 90; 
+		cargo_capacity: 90;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 60;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA];
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 15;
 		cost_factor: 11;
@@ -343,13 +343,13 @@ switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 90; 
+		cargo_capacity: 90;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA];
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 15;
 		cost_factor: 100;
@@ -359,10 +359,10 @@ switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_DMT),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
@@ -458,10 +458,10 @@ item (FEAT_TRAINS, dmt, 1407) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_DMT),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);

@@ -148,7 +148,7 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	cargo_capacity: 30; 
+	cargo_capacity: 30;
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask (CC_LIQUID);
 	loading_speed: 30;
@@ -160,10 +160,10 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_TANK),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -175,7 +175,7 @@ graphics {
 	default: switch_tamu_500_wearstack;
 	purchase: switch_tamu_500_purchase;
 	cargo_subtype_text: switch_tamu_500_subtype_text;
-		
+
 	}
 } */
 
@@ -206,10 +206,10 @@ item (FEAT_TRAINS, tamu_500, 30) {
 		length: 5;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_TANK),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)

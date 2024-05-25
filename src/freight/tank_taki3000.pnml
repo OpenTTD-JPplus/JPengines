@@ -90,7 +90,7 @@ random_switch(FEAT_TRAINS, SELF, random_taki_3000_livery) {
 	1: spriteset_taki_3000_h;
 	1: spriteset_taki_3000_i;
 	1: spriteset_taki_3000_j;
-	
+
 }
 
 //wear overlay
@@ -125,7 +125,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 48; 
+		cargo_capacity: 48;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
@@ -137,10 +137,10 @@ switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -152,7 +152,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
 		default: switch_taki_3000_wearstack;
 		purchase: switch_taki_3000_purchase;
 //		cargo_subtype_text: switch_taki_1000_subtype_text;
-		
+
 	}
 } */
 
@@ -185,10 +185,10 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)

@@ -19,8 +19,8 @@ switch(FEAT_TRAINS, SELF, switch_ed53_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -56,11 +56,11 @@ switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
   variant_group: 1050;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -99,11 +99,11 @@ switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
 
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -148,11 +148,11 @@ item (FEAT_TRAINS, ed19, 1013) {
 		variant_group: 1050;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -197,11 +197,11 @@ item (FEAT_TRAINS, ed53, 1050) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )

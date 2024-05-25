@@ -342,7 +342,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 
 
 GRAPHICS_STACK_2(\
 	sw_ef510_300_purchase,\
-	switch_logo_jr,\
+	switch_logo_jrf,\
 	spriteset_ef510_300_jr_purchase\
 )
 

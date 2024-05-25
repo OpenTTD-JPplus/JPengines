@@ -56,7 +56,7 @@ switch(FEAT_TRAINS, SELF, switch_jgr_860_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 	sw_jgr_860_purchase,\
-	switch_logo_jgr,\
+	switch_logo_jgr_only,\
 	spriteset_jgr_860_black_purchase\
 )
 

@@ -40,14 +40,14 @@ switch(FEAT_TRAINS, SELF, switch_ed60_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ed60_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                  string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BLUE),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
@@ -82,11 +82,11 @@ switch(FEAT_TRAINS, SELF, switch_ed60_subtype_text, cargo_subtype) {
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JNR)
                     )
                   );
@@ -100,7 +100,7 @@ switch(FEAT_TRAINS, SELF, switch_ed60_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_ed60_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 switch_ed60_yeardep_purchase\
 )
 
@@ -130,11 +130,11 @@ item (FEAT_TRAINS, ed60, 1059) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_GP),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JNR)
                     )
                   );

@@ -35,9 +35,9 @@ switch(FEAT_TRAINS, SELF, switch_eh200_livery_rear, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_eh200_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_LTBLUE),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_BLUETHUNDER)
                                  );
@@ -58,7 +58,7 @@ switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
 
 property {
 	name: string(STR_NAME_EH200);
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	reliability_decay: 16;
 
@@ -67,11 +67,11 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -91,7 +91,7 @@ property {
 		name: string(STR_NAME_EH200);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		engine_class: ENGINE_CLASS_ELECTRIC;
 		power: 1 kW;
 		cargo_allow_refit: [PASS];
@@ -123,11 +123,11 @@ item (FEAT_TRAINS, eh200, 88) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );

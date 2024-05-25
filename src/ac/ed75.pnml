@@ -350,14 +350,14 @@ switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
 	}
 
 switch(FEAT_TRAINS, SELF, switch_ed79_yeardep_purchase, current_year) {
-	0..1987: switch_logo_jnr;
-    switch_logo_jrf;
+	0..1987: spriteset_ed79_jnr_purchase;
+    spriteset_ed79_jrf_purchase;
 }
 
 GRAPHICS_STACK_2(\
 	sw_ed79_purchase,\
-	switch_ed79_yeardep_purchase,\
-	spriteset_ed79_jnr_purchase\
+	switch_jnr_jrf_1987,\
+	switch_ed79_yeardep_purchase\
 )
 
 item (FEAT_TRAINS, ed79, 1075) {
@@ -442,14 +442,14 @@ switch (FEAT_TRAINS, SELF, switch_ed75_2_name, getbits(extra_callback_info1, 0, 
   }
 
 switch(FEAT_TRAINS, SELF, switch_ed75_700_yeardep_purchase, current_year) {
-	0..1987: switch_logo_jnr;
-    switch_logo_jrf;
+	0..1987: spriteset_ed75_700_jnr_purchase;
+    spriteset_ed75_700_jr_purchase;
 }
 
 GRAPHICS_STACK_2(\
 	sw_ed75_700_purchase,\
-	switch_ed75_700_yeardep_purchase,\
-	spriteset_ed75_700_jnr_purchase\
+	switch_logo_jnr,\
+	switch_ed75_700_yeardep_purchase\
 )
 
 item (FEAT_TRAINS, ed75_700, 1970) {

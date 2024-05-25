@@ -174,7 +174,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 55; 
+		cargo_capacity: 55;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 50;
@@ -186,10 +186,10 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
@@ -198,7 +198,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
 		cargo_subtype_text: switch_taki_1000_subtype_text;
-		
+
 	}
 } */
 
@@ -219,7 +219,7 @@ random_switch(FEAT_TRAINS, SELF, random_taki_43000) {
 	2: spriteset_taki_1000_blue_a;
 	2: spriteset_taki_1000_silver;
 	1: spriteset_taki_1000_black_a;
-	1: spriteset_taki_1000_black_b;	
+	1: spriteset_taki_1000_black_b;
 }
 
 
@@ -261,7 +261,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 50; 
+		cargo_capacity: 50;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
@@ -273,10 +273,10 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)
@@ -288,7 +288,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
 		default: switch_taki_43000_wearstack;
 		purchase: switch_taki_43000_purchase;
 		cargo_subtype_text: switch_taki_43000_subtype_text;
-		
+
 	}
 } */
 
@@ -321,10 +321,10 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_1C, 									
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JRF)
 							)
 						);
@@ -339,7 +339,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 
 GRAPHICS_STACK_2(\
 sw_taki_43000_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_taki_43000_purchase\
 )
 
@@ -366,10 +366,10 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OIL),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF)
 							)

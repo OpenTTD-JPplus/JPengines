@@ -107,7 +107,7 @@ switch (FEAT_TRAINS, SELF, switch_ef70_2_name, getbits(extra_callback_info1, 0, 
 
 GRAPHICS_STACK_2(\
 	sw_ef70_new_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ef70_new_purchase\
 )
 
@@ -183,7 +183,7 @@ switch (FEAT_TRAINS, SELF, switch_ef70_1_name, getbits(extra_callback_info1, 0, 
 
 GRAPHICS_STACK_2(\
 	sw_ef70_old_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ef70_old_purchase\
 )
 

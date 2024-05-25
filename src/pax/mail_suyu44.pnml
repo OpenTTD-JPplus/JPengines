@@ -43,7 +43,7 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_suyu_44_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLUE),
 									string(STR_COLOUR_SILVER)
                                     )
@@ -75,12 +75,12 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
 		weight: 21;
 		cost_factor: 52;
 		running_cost_factor: 8;
@@ -89,10 +89,10 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXF),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -127,7 +127,7 @@ switch(FEAT_TRAINS, SELF, switch_suni_41_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_suni_41_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLUE),
 									string(STR_COLOUR_SILVER)
                                     )
@@ -159,12 +159,12 @@ switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
 		weight: 21;
 		cost_factor: 52;
 		running_cost_factor: 8;
@@ -174,10 +174,10 @@ switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
 		variant_group: 1395;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXF),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -220,10 +220,10 @@ item (FEAT_TRAINS, suyu_44, 1395) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXF),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)
@@ -267,10 +267,10 @@ item (FEAT_TRAINS, suni_41, 1396) {
 		variant_group: 1395;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_EXF),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_JRF)
 								)

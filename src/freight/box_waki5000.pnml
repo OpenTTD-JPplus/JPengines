@@ -81,8 +81,8 @@ property {
 	speed: 85 km/h;
 	introduction_date: date(1964,1,1);
 	default_cargo_type: GOOD;
-	cargo_capacity: 80; 
-	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	cargo_capacity: 80;
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -92,10 +92,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF),
 								string(STR_SUFFIX_PRIVATE)
@@ -113,7 +113,7 @@ graphics {
 
 GRAPHICS_STACK_2(\
 sw_waki_5000_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_waki_5000_yeardep_purchase\
 )
 
@@ -134,10 +134,10 @@ item (FEAT_TRAINS, waki_5000, 53) {
 		loading_speed: 20;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF),
 								string(STR_SUFFIX_PRIVATE)

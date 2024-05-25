@@ -21,15 +21,15 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e851_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_seibu_e851_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_SEIBU),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
-   1: return string(STR_CONCAT_3, string(STR_SUFFIX_AMTRAK), 
-                                   string(STR_CONCAT_3F, 
-                                    string(STR_COLOUR_GREY), 
+   1: return string(STR_CONCAT_3, string(STR_SUFFIX_AMTRAK),
+                                   string(STR_CONCAT_3F,
+                                    string(STR_COLOUR_GREY),
                                     string(STR_COLOUR_RED),
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_FICTION)
@@ -65,11 +65,11 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e851_subtype_text, cargo_subtype) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_SEIBU)
                     )
                   );
@@ -113,11 +113,11 @@ item (FEAT_TRAINS, seibu_e851, 1100) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_SEIBU)
                     )
                   );

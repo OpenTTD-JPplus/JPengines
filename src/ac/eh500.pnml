@@ -181,7 +181,7 @@ switch (FEAT_TRAINS, SELF, switch_eh500_2_name, getbits(extra_callback_info1, 0,
 
 GRAPHICS_STACK_2(\
 	sw_eh500_new_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jrf,\
 	switch_eh500_new_purchase\
 )
 
@@ -338,7 +338,7 @@ switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0,
 
 GRAPHICS_STACK_2(\
 	sw_eh500_old_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jrf,\
 	switch_eh500_old_purchase\
 )
 
@@ -488,7 +488,7 @@ switch (FEAT_TRAINS, SELF, switch_eh500_p_name, getbits(extra_callback_info1, 0,
 
 GRAPHICS_STACK_2(\
 	sw_eh500_proto_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jrf,\
 	switch_eh500_proto_purchase\
 )
 

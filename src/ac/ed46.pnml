@@ -32,7 +32,7 @@ switch(FEAT_TRAINS, SELF, switch_ed46_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 	sw_ed46_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ed46_purchase\
 )
 

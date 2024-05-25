@@ -135,7 +135,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_5450_purchase, current_year) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 40; 
+		cargo_capacity: 40;
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
@@ -148,10 +148,10 @@ switch(FEAT_TRAINS, SELF, switch_taki_5450_purchase, current_year) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CHEM),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF),
 								string(STR_SUFFIX_PRIVATE)
@@ -164,13 +164,13 @@ switch(FEAT_TRAINS, SELF, switch_taki_5450_purchase, current_year) {
 		default: switch_taki_5450_wearstack;
 		purchase: switch_taki_5450_purchase;
 		cargo_subtype_text: switch_taki_5450_subtype_text;
-		
+
 	}
 } */
 
 GRAPHICS_STACK_2(\
 sw_taki_5450_purchase,\
-switch_logo_jnr,\
+switch_jnr_jrf_1987,\
 switch_taki_5450_purchase\
 )
 
@@ -198,10 +198,10 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_CHEM),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_JRF),
 								string(STR_SUFFIX_PRIVATE)

@@ -79,13 +79,13 @@ switch(FEAT_TRAINS, SELF, switch_waki_1_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_waki_1_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLACK),
 									string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_PARCELS)
-                                 ); 
+                                 );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_1F, 
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BLACK)
                                     )
                                  );
@@ -104,11 +104,11 @@ switch(FEAT_TRAINS, SELF, switch_waki_1_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 90; 
+		cargo_capacity: 90;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 20;
 		cost_factor: 40;
@@ -118,21 +118,21 @@ switch(FEAT_TRAINS, SELF, switch_waki_1_subtype_text, cargo_subtype) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
 						);
-	
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
 		default: switch_waki_1_livery;
 		purchase: switch_waki_1_yeardep_purchase;
 		cargo_subtype_text: switch_waki_1_subtype_text;
-		
+
 	}
 } */
 
@@ -161,13 +161,13 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_1_loadstack, [
 switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLACK),
 									string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_PARCELS)
-                                 ); 
+                                 );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
-                                   string(STR_CONCAT_1F, 
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BLACK)
                                     )
                                  );
@@ -184,11 +184,11 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 45; 
+		cargo_capacity: 45;
 		refit_cost: 0;
 		default_cargo_type: GOOD;
 		loading_speed: 20;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
 		weight: 20;
 		cost_factor: 40;
@@ -200,21 +200,21 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
 		bitmask_vehicle_info: bitmask(3);//95 boost?
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
 						);
-	
+
 		speed: switch_speedboost_1;
 		purchase_speed: return 95;
 		default: switch_wamufu_1_loadstack;
 		cargo_subtype_text: switch_wamufu_1_subtype_text;
 		purchase: switch_wamufu_1_yeardep_purchase;
-		
+
 	}
 } */
 
@@ -249,10 +249,10 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -299,10 +299,10 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		bitmask_vehicle_info: bitmask(3);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)

@@ -67,7 +67,7 @@ random_switch(FEAT_TRAINS, SELF, random_wa_1_black) {
 	1: spritegroup_wa_1_black_load;
 	1: spritegroup_wa_1_stripe_load;
 	}
-	
+
 random_switch(FEAT_TRAINS, SELF, random_wa_1_brown) {
 	1: spritegroup_wa_1_black_load;
 	1: spritegroup_wa_1_brown_load;
@@ -105,7 +105,7 @@ property {
 	default_cargo_type: GOOD;
 	cargo_capacity: 20;
 	speed: 65 km/h;
-	refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	cost_factor: 14;
@@ -115,10 +115,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -158,10 +158,10 @@ item (FEAT_TRAINS, wa_1, 32) {
 		loading_speed: 20;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_BOX),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)

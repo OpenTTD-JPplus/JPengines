@@ -94,7 +94,7 @@ spritegroup spritegroup_tora_5000_a_wool {
     loaded:  [spriteset_tora_5000_a_empty, spriteset_tora_5000_a_crates_full, spriteset_tora_5000_a_tarpa];
 }
 
-//b 
+//b
 
 spriteset(spriteset_tora_5000_b_empty, "gfx/freight/tora_5000_b.png") {
 	template_2cc_std(1, 1)
@@ -297,7 +297,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	STSH: random_tora_5000_metal;
 	STAL: random_tora_5000_metal;
 	STCB: random_tora_5000_metal;
-	
+
 	ENSP: random_tora_5000_supplies;
 	FMSP: random_tora_5000_supplies;
 	MNSP: random_tora_5000_supplies;
@@ -305,19 +305,19 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 	VPTS: random_tora_5000_supplies;
 	MPTS: random_tora_5000_supplies;
 	GOOD: random_tora_5000_supplies;
-	
+
 	BDMT: random_tora_5000_piece;
 	WDPR: random_tora_5000_piece;
 	GLAS: random_tora_5000_piece;
 	BRCK: random_tora_5000_piece;
 	STWR: random_tora_5000_piece;
 	STSE: random_tora_5000_piece;
-	
+
 	PAPR: random_tora_5000_paper;
 	TYRE: random_tora_5000_paper;
 	WOOL: random_tora_5000_wool;
 	TEXT: random_tora_5000_wool;
-	
+
 	SCMT: random_tora_5000_bulk;
 	WSTE: random_tora_5000_bulk;
 	RCYC: random_tora_5000_bulk;
@@ -354,7 +354,7 @@ property {
 	introduction_date: date(1930,1,1);
 	speed: 75 km/h;
 	name: string(STR_NAME_TORA_5000);
-	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS);
 	non_refittable_cargo_classes: 0;
 	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
@@ -364,10 +364,10 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OPEN),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)
@@ -404,10 +404,10 @@ item (FEAT_TRAINS, tora_5000, 33) {
 		running_cost_base: RUNNING_COST_STEAM;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_OPEN),
-							string(STR_CONCAT_3C, 									
+							string(STR_CONCAT_3C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR),
 								string(STR_SUFFIX_PRIVATE)

@@ -57,19 +57,19 @@ switch(FEAT_TRAINS, SELF, switch_ef53_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BROWN), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BROWN),
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_IMPERIAL)
                                  );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -92,7 +92,7 @@ switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
   power: 1350 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 98;
   reliability_decay: 20;
@@ -104,11 +104,11 @@ switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -127,9 +127,9 @@ switch(FEAT_TRAINS, SELF, switch_ef59_1_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef59_1_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BROWN), 
+	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_BROWN),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_BANKER)
                                  );
@@ -137,12 +137,12 @@ switch(FEAT_TRAINS, SELF, switch_ef59_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-switch (FEAT_TRAINS, SELF, switch_ef59_1_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef59_1_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF59);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef59_1_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef59_1_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -160,7 +160,7 @@ switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 
   power: 1350 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 110;
   reliability_decay: 20;
@@ -173,11 +173,11 @@ switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 
   variant_group: 1016;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JNR)
                     )
                   );
@@ -221,11 +221,11 @@ item (FEAT_TRAINS, ef53, 1016) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_EP),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -240,7 +240,7 @@ item (FEAT_TRAINS, ef53, 1016) {
 
 GRAPHICS_STACK_2(\
 sw_ef59_1_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 spriteset_ef59_1_purchase\
 )
 
@@ -271,11 +271,11 @@ item (FEAT_TRAINS, ef59_1, 1916) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_BANK),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JNR)
                     )
                   );

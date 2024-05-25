@@ -39,7 +39,7 @@ switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 	sw_ef71_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jnr,\
 	switch_ef71_yeardep_purchase\
 )
 

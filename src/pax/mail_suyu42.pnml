@@ -76,7 +76,7 @@ random_switch (FEAT_TRAINS, SELF, random_suyu42_blue) {
     2: spriteset_mail_suyu42_blue;
     2: spriteset_mail_suyu43_blue;
 }
-	
+
 
 switch(FEAT_TRAINS, SELF, switch_suyu42_yeardep_livery, current_year) {
 	0..1964: random_suyu42_old;
@@ -102,63 +102,63 @@ switch(FEAT_TRAINS, SELF, switch_suyu42_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_suyu42_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+	1: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35),
 									string(STR_SUFFIX_COMBINE_3CLASS),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), 
+	2: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42),
 									string(STR_SUFFIX_MAIL),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-    3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), 
+    3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43),
 									string(STR_SUFFIX_MAIL),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	4: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), 
+	4: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35),
 									string(STR_SUFFIX_LUGGAGE),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-    5: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), 
+    5: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36),
 									string(STR_SUFFIX_LUGGAGE),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-    6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35), 
+    6: return string(STR_CONCAT_3, string(STR_REFIT_PAX_SUHANI35),
 									string(STR_SUFFIX_COMBINE_3CLASS),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-    7: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42), 
+    7: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU42),
 									string(STR_SUFFIX_MAIL),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-    8: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43), 
+    8: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_SUYU43),
 									string(STR_SUFFIX_MAIL),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-    9: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35), 
+    9: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI35),
 									string(STR_SUFFIX_LUGGAGE),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
-    10: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36), 
+    10: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_MANI36),
 									string(STR_SUFFIX_LUGGAGE),
-									string(STR_CONCAT_1F, 
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BLUE)
 									 )
 	                                );
@@ -189,12 +189,12 @@ switch(FEAT_TRAINS, SELF, stack_mail_suyu42, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 100; 
+		cargo_capacity: 100;
 		refit_cost: 0;
 		default_cargo_type: MAIL;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_MAIL); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
 		weight: 29;
 		cost_factor: 45;
 		running_cost_factor: 8;
@@ -203,10 +203,10 @@ switch(FEAT_TRAINS, SELF, stack_mail_suyu42, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_RPO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);
@@ -219,7 +219,7 @@ switch(FEAT_TRAINS, SELF, stack_mail_suyu42, [
 
 GRAPHICS_STACK_2(\
 sw_mail_suyu42_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 switch_suyu42_purchase_yeardep\
 )
 
@@ -248,10 +248,10 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_RPO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);

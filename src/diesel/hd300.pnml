@@ -37,20 +37,20 @@ switch(FEAT_TRAINS, SELF, switch_hd300_flip_cc, vehicle_is_flipped) {
 
 
 switch(FEAT_TRAINS, SELF, switch_hd300_livery, cargo_subtype) {
-	1: switch_hd300_flip_cc;	
+	1: switch_hd300_flip_cc;
 	switch_hd300_flip_red;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF),
+                                   string(STR_CONCAT_2F,
+                                    string(STR_COLOUR_RED),
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	1: return string(STR_REFIT_CC);	
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -60,7 +60,7 @@ switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
 
 property {
 	name: string(STR_NAME_HD300);
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
 
@@ -71,11 +71,11 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_HYBRID),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_SH),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );
@@ -102,11 +102,11 @@ item (FEAT_TRAINS, hd300, 111) {
 		engine_class: ENGINE_CLASS_DIESEL;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_HYBRID),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_SH),
-                        string(STR_CONCAT_1C, 
+                        string(STR_CONCAT_1C,
                            string(STR_SUFFIX_JRF)
                     )
                   );

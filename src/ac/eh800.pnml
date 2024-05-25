@@ -62,7 +62,7 @@ switch(FEAT_TRAINS, SELF, switch_eh800_purchase, current_year) {
 
 GRAPHICS_STACK_2(\
 	sw_eh800_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jrf,\
 	switch_eh800_purchase\
 )
 

@@ -49,18 +49,18 @@ switch(FEAT_TRAINS, SELF, switch_yo_9000_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
 	0: return string(STR_SUFFIX_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BLACK)
                                     )
                                  );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_2F, 
+                                   string(STR_CONCAT_2F,
                                     string(STR_COLOUR_BLUE),
 									string(STR_COLOUR_YELLOW)
                                     )
                                  );
 	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
-                                   string(STR_CONCAT_1F, 
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BLUE)
                                     )
                                  );
@@ -80,7 +80,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 1; 
+		cargo_capacity: 1;
 		refit_cost: 0;
 		cargo_allow_refit: [PASS];
 		loading_speed: 1;
@@ -99,10 +99,10 @@ switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
 		default: switch_yo_9000_livery;
 		purchase: switch_yo_9000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_9000_subtype_text;
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_1C, 	
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR)
 							)
 						);
@@ -113,7 +113,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_yo_9000_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 switch_yo_9000_purchase_yeardep\
 )
 
@@ -147,10 +147,10 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 		default: switch_yo_9000_livery;
 		purchase: sw_yo_9000_purchase;
 		cargo_subtype_text: switch_yo_9000_subtype_text;
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
-							string(STR_CONCAT_1C, 	
+							string(STR_CONCAT_1C,
 								string(STR_SUFFIX_JNR)
 							)
 						);

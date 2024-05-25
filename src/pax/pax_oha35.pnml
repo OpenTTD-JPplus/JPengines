@@ -76,7 +76,7 @@ spriteset(spriteset_pax_oha35_jnr_blue_purchase, "gfx/paxmail/oha35.png") {
 switch(FEAT_TRAINS, SELF, switch_pax_oha35_purchase, current_year) {
     0..1949: spriteset_pax_oha35_jgr_brown_purchase;
 	1949..1964: spriteset_pax_oha35_jnr_brown_purchase;
-	spriteset_pax_oha35_jnr_blue_purchase;	
+	spriteset_pax_oha35_jnr_blue_purchase;
 }
 
 
@@ -97,7 +97,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_oha35_yeardep, current_year) {
 	0..1964: spriteset_pax_oha35_brown;
 	1964..1970: random_pax_oha35_old;
 	1970..1979: random_pax_oha35_new;
-	spriteset_pax_oha35_blue;	
+	spriteset_pax_oha35_blue;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_pax_ohafu33_old) {
@@ -115,7 +115,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_ohafu33_yeardep, current_year) {
 	0..1964: spriteset_pax_ohafu33_brown;
 	1964..1970: random_pax_ohafu33_old;
 	1970..1979: random_pax_ohafu33_new;
-	spriteset_pax_ohafu33_blue;	
+	spriteset_pax_ohafu33_blue;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_pax_oro36_old) {
@@ -133,7 +133,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_oro36_yeardep, current_year) {
 	0..1964: spriteset_pax_oro36_brown;
 	1964..1970: random_pax_oro36_old;
 	1970..1979: random_pax_oro36_new;
-	spriteset_pax_oro36_blue;	
+	spriteset_pax_oro36_blue;
 }
 
 
@@ -261,18 +261,18 @@ switch(FEAT_TRAINS, SELF, switch_pax_oha35_stripe_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_oha35_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_LOCAL)
                                     )
                                  );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_LTDEXP)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_OIGAWA)
                                     )
                                  );
@@ -305,13 +305,13 @@ switch(FEAT_TRAINS, SELF, stack_pax_oha35, [
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 85; 
+		cargo_capacity: 85;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		cargo_age_period: 400;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 		weight: 28;
 		cost_factor: 70;
 		running_cost_factor: 8;
@@ -320,10 +320,10 @@ switch(FEAT_TRAINS, SELF, stack_pax_oha35, [
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_LOC),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR)
 								)
@@ -333,7 +333,7 @@ switch(FEAT_TRAINS, SELF, stack_pax_oha35, [
 		default: stack_pax_oha35;
 		purchase: switch_pax_oha35_purchase;
 		cargo_subtype_text: switch_pax_oha35_subtype_text;
-		
+
 	}
 } */
 
@@ -369,10 +369,10 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_LOC),
-								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_2C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR)
 								)

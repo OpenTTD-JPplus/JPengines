@@ -96,8 +96,8 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_hcc_auto_end, position_in_vehid_chain_
 	0: spriteset_pax_1880_hcc_combine;
 	random_pax_1880_hcc_auto_middle;
 	}
-	
-	
+
+
 //brown auto formation
 random_switch (FEAT_TRAINS, SELF, random_pax_1880_brown_auto_middle) {
 	1: spriteset_pax_1880_brown_flat;
@@ -108,8 +108,8 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_brown_auto_end, position_in_vehid_chai
 	0: spriteset_pax_1880_brown_combine;
 	random_pax_1880_brown_auto_middle;
 	}
-	
-	
+
+
 //jgr auto formation
 
 random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_auto_middle) {
@@ -139,12 +139,12 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_auto_beginning, position_in_vehid_
 	0: random_pax_1880_jgr_auto_beginning;
 	switch_pax_1880_jgr_auto_end;
 	}
-	
+
 random_switch (FEAT_TRAINS, SELF, random_pax_1880_jgr_clerestory_auto_middle) {
 	3: spriteset_pax_1880_jgr_3rd_clerestory;
 	1: spriteset_pax_1880_jgr_2nd_clerestory;
 }
-	
+
 switch(FEAT_TRAINS, SELF, switch_pax_1880_jgr_clerestory_auto_end, position_in_vehid_chain_from_end) {
 	0: spriteset_pax_1880_jgr_3rdclass_end;
 	random_pax_1880_jgr_clerestory_auto_middle;
@@ -191,92 +191,92 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARFORM);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_HCC)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_JGR)
                                     )
                                  );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_COLOUR_BROWN)
                                     )
                                  );
-	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670), 
-									string(STR_SUFFIX_PAX_1CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_YELLOW), 
+	4: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670),
+									string(STR_SUFFIX_PAX_1CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_YELLOW),
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	5: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925), 
-									string(STR_SUFFIX_PAX_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_YELLOW), 
+	5: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_YELLOW),
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_FLATROOF)
 	                                );
-	6: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_YELLOW), 
+	6: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_YELLOW),
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	7: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670), 
-									string(STR_SUFFIX_PAX_1CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BROWN), 
+	7: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670),
+									string(STR_SUFFIX_PAX_1CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BROWN),
                                      string(STR_COLOUR_WHITE)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	8: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKR5675), 
-									string(STR_SUFFIX_PAX_2CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BROWN), 
+	8: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKR5675),
+									string(STR_SUFFIX_PAX_2CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BROWN),
                                      string(STR_COLOUR_BLUE)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	9: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7945), 
-									string(STR_SUFFIX_PAX_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BROWN), 
+	9: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7945),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BROWN),
                                      string(STR_COLOUR_RED)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	10: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925), 
-									string(STR_SUFFIX_PAX_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BROWN), 
+	10: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BROWN),
                                      string(STR_COLOUR_RED)
 									 ), string(STR_SUFFIX_FLATROOF)
 	                                );
-	11: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_BROWN), 
+	11: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_BROWN),
                                      string(STR_COLOUR_RED)
 									 ), string(STR_SUFFIX_FLATROOF)
 	                                );
-	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670), 
-									string(STR_SUFFIX_PAX_1CLASS), 
-									string(STR_CONCAT_1F,  
+	12: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKI5670),
+									string(STR_SUFFIX_PAX_1CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_CLERESTORY)
 	                                );
-	13: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925), 
-									string(STR_SUFFIX_PAX_3CLASS), 
-									string(STR_CONCAT_1F,  
+	13: return string(STR_CONCAT_4, string(STR_REFIT_PAX_FKH7925),
+									string(STR_SUFFIX_PAX_3CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_FLATROOF)
 	                                );
-	14: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_1F,  
+	14: return string(STR_CONCAT_4, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 ), string(STR_SUFFIX_FLATROOF)
 	                                );
@@ -298,13 +298,13 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 50; 
+		cargo_capacity: 50;
 		refit_cost: 0;
 		cargo_age_period: 120;
 		default_cargo_type: PASS;
 //		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 //		weight: 28;
 		cost_factor: 55;
 		running_cost_factor: 6;
@@ -313,10 +313,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
 //		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_EXP),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_HCC),
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_PRIVATE)
@@ -361,36 +361,36 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_KN8890), 
-									string(STR_SUFFIX_MAIL), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_YELLOW), 
+	1: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_KN8890),
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_YELLOW),
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	2: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_2F, 
-                                     string(STR_COLOUR_YELLOW), 
+	2: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F,
+                                     string(STR_COLOUR_YELLOW),
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_KN8890), 
-									string(STR_SUFFIX_MAIL), 
-									string(STR_CONCAT_1F,  
+	3: return string(STR_CONCAT_3, string(STR_REFIT_MAIL_KN8890),
+									string(STR_SUFFIX_MAIL),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
-	4: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_2F,  
+	4: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_2F,
                                      string(STR_COLOUR_BROWN),
 									 string(STR_COLOUR_RED)
 									 )
 	                                );
-	5: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050), 
-									string(STR_SUFFIX_COMBINE_3CLASS), 
-									string(STR_CONCAT_1F,  
+	5: return string(STR_CONCAT_3, string(STR_REFIT_PAXMAIL_FKHY8050),
+									string(STR_SUFFIX_COMBINE_3CLASS),
+									string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
 									 )
 	                                );
@@ -412,12 +412,12 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 50; 
+		cargo_capacity: 50;
 		refit_cost: 0;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
-		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED);
+		non_refittable_cargo_classes: 0;
 //		weight: 28;
 		cost_factor: 30;
 		running_cost_factor: 5;
@@ -426,10 +426,10 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_LUG),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_HCC),
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_PRIVATE)
@@ -447,7 +447,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_pax_1880_purchase,\
-switch_logo_hcc,\
+switch_hcc_jgr_1906,\
 switch_pax_1880_yeardep_purchase\
 )
 
@@ -474,10 +474,10 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_EXP),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_HCC),
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_PRIVATE)
@@ -493,7 +493,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 
 GRAPHICS_STACK_2(\
 sw_mail_1880_purchase,\
-switch_logo_hcc,\
+switch_hcc_jgr_1906,\
 switch_mail_1880_yeardep_purchase\
 )
 
@@ -518,10 +518,10 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_MAIL_LUG),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_HCC),
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_PRIVATE)

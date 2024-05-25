@@ -39,8 +39,8 @@ switch(FEAT_TRAINS, SELF, switch_ef13_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -49,12 +49,12 @@ switch(FEAT_TRAINS, SELF, switch_ef13_subtype_text, cargo_subtype) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_ef13_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef13_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF13);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef13_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef13_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -76,7 +76,7 @@ property {
   cost_factor: 38;
   length: 7;
   running_cost_factor: 57;
-	cargo_capacity: 1; 
+	cargo_capacity: 1;
 	cargo_allow_refit: [PASS];
 	length: 7;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -84,11 +84,11 @@ property {
 
 
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -109,8 +109,8 @@ switch(FEAT_TRAINS, SELF, switch_ef13_2_livery, cargo_subtype) {
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef13_2_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR),
+                                    string(STR_CONCAT_1F,
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
@@ -119,12 +119,12 @@ switch(FEAT_TRAINS, SELF, switch_ef13_2_subtype_text, cargo_subtype) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_ef13_2_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name_purchase, getbits(extra_callback_info1, 8, 8)) {
+  1: return CB_RESULT_NO_TEXT;
   return string(STR_NAME_EF13);
-  } 
-switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_ef13_2_name_purchase; 
+  }
+switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 8)) {
+  0x20: switch_ef13_2_name_purchase;
   return CB_RESULT_NO_TEXT;
   }
 
@@ -143,7 +143,7 @@ switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 
   power: 1600 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  cargo_capacity: 1; 
+  cargo_capacity: 1;
   cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
@@ -157,11 +157,11 @@ switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 
 	variant_group: 103;
   }
   graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
+  additional_text:	string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -198,11 +198,11 @@ item (FEAT_TRAINS, ef13_1, 103) {
 		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )
@@ -249,11 +249,11 @@ item (FEAT_TRAINS, ef13_2, 1053) {
 		variant_group: 103;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_4S, 
+		additional_text: string(STR_CONCAT_4S,
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_HF),
-                        string(STR_CONCAT_2C, 
+                        string(STR_CONCAT_2C,
                            string(STR_SUFFIX_JGR),
                            string(STR_SUFFIX_JNR)
                     )

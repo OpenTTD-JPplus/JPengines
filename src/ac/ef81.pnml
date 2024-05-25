@@ -436,7 +436,7 @@ switch (FEAT_TRAINS, SELF, switch_ef81_450_name, getbits(extra_callback_info1, 0
 
 GRAPHICS_STACK_2(\
 	sw_ef81_450_purchase,\
-	switch_jnr_jrf_1987,\
+	switch_logo_jrf,\
 	spriteset_ef81_450_jrf_purchase\
 )
 

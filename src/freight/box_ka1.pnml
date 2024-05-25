@@ -62,7 +62,7 @@ random_switch(FEAT_TRAINS, SELF, random_ka_1_livery) {
 	1: spritegroup_ka_1_grey_load;
 	1: spritegroup_ka_1_brown_load;
 	}
-	
+
 
 
 
@@ -80,10 +80,10 @@ property {
 	loading_speed: 20;
 	}
 graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_LVST),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_PRIVATE)
@@ -120,10 +120,10 @@ item (FEAT_TRAINS, ka_1, 1282) {
 		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_FRT_LVST),
-								string(STR_CONCAT_3C, 
+								string(STR_CONCAT_3C,
 									string(STR_SUFFIX_JGR),
 									string(STR_SUFFIX_JNR),
 									string(STR_SUFFIX_PRIVATE)

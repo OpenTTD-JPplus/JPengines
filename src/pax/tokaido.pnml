@@ -118,8 +118,8 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_tsubame_auto_beginning, position_in
 	0: spriteset_pax_suhani35_green;
 	switch_pax_tokaido_tsubame_auto_end;
 	}
-	
-	
+
+
 // Hato auto formation
 
 
@@ -136,7 +136,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_hato_auto_beginning, position_in_ve
 	0: spriteset_pax_suhani35_green;
 	switch_pax_tokaido_hato_auto_end;
 	}
-	
+
 
 
 // cc auto formation
@@ -182,13 +182,13 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_TSUBAME)
                                     )
                                  );
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM), 
-                                   string(STR_CONCAT_1F, 
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_AUTOFORM),
+                                   string(STR_CONCAT_1F,
                                     string(STR_SUFFIX_HATO)
                                     )
                                  );
@@ -212,13 +212,13 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
 		air_drag_coefficient: 0;
 		power: 0;
 		dual_headed: 0;
-		cargo_capacity: 70; 
+		cargo_capacity: 70;
 		refit_cost: 0;
 		default_cargo_type: PASS;
 		cargo_age_period: 600;
 		loading_speed: 50;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
-		non_refittable_cargo_classes: 0; 
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
 		weight: 28;
 		cost_factor: 75;
 		running_cost_factor: 9;
@@ -228,10 +228,10 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
 		variant_group: 1318;
 	}
 	graphics {
-		additional_text:	string(STR_CONCAT_3S, 
+		additional_text:	string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_TOKAIDO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);
@@ -240,7 +240,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
 		default: switch_pax_tokaido_livery;
 		purchase: spriteset_pax_tokaido_jnr_purchase;
 		cargo_subtype_text: switch_pax_tokaido_subtype_text;
-		
+
 	}
 } */
 
@@ -270,7 +270,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 sw_pax_suha44_purchase,\
-switch_logo_jnr,\
+switch_logo_jnr_only,\
 spriteset_pax_tokaido_jnr_purchase\
 )
 
@@ -301,10 +301,10 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		variant_group: 1318;
 	}
 	graphics {
-		additional_text: string(STR_CONCAT_3S, 
+		additional_text: string(STR_CONCAT_3S,
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_PAX_TOKAIDO),
-								string(STR_CONCAT_1C, 
+								string(STR_CONCAT_1C,
 									string(STR_SUFFIX_JNR)
 								)
 							);

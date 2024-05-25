@@ -19,7 +19,7 @@ switch(FEAT_TRAINS, SELF, switch_ed70_livery, cargo_subtype) {
 
 GRAPHICS_STACK_2(\
 	sw_ed70_purchase,\
-	switch_logo_jnr,\
+	switch_logo_jnr_only,\
 	spriteset_ed70_purchase\
 )
 
