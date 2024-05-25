@@ -39,7 +39,7 @@ switch(FEAT_TRAINS,SELF,switch_logo_nippon, param_purchase_logo) {1: spriteset_l
 
 switch(FEAT_TRAINS, SELF, switch_logo_jnr, current_year) {
 	0..1987: switch_logo_jnr_1;
-	spriteset_logo_jr;
+	switch_logo_jr;
 }
 
 switch(FEAT_TRAINS, SELF, switch_logo_jgr, current_year) {
