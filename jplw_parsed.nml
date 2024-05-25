@@ -405,71 +405,71 @@ template template_logo() {
 }
 
 spriteset(spriteset_logo_hcc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/hcc.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_jgr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jgr.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_jnr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jnr.png") {
-	[0, 0, 96, 24, -50, -14]
+	[0, 0, 96, 24, -60, -14]
 }
 
 spriteset(spriteset_logo_jre, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jre.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrw, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrw.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrf, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrf.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrs.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrh, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrh.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrc.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jrk, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jrk.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_jr, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/jr.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -50, -14]
 }
 
 spriteset(spriteset_logo_meitetsu_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_1.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_meitetsu_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/meitetsu_2.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_seibu, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/seibu.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_aichi, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/aichi.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_yawata, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/yawata.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 spriteset(spriteset_logo_nippon, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "gfx/logos/nippon.png") {
-	template_logo_EZ()
+	[0, 0, 48, 24, -40, -14]
 }
 
 switch(0, SELF, switch_logo_hcc, param_purchase_logo) {
@@ -1263,7 +1263,7 @@ switch(0, SELF, switch_eb10_purchase_yeardep, current_year) {
 }
 
 switch(0, SELF, sw_ab10_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jgr_only;
 	1: spriteset_ab10_purchase;
 }
 
@@ -1388,7 +1388,7 @@ switch(0, SELF, switch_e51_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed12_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jgr_only;
 	1: spriteset_ed12_jgr_purchase;
 }
 
@@ -1642,7 +1642,7 @@ switch(0, SELF, switch_ed50_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed17_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jgr_only;
 	1: switch_ed17_yeardep_purchase;
 }
 
@@ -1672,7 +1672,7 @@ item(0, ed17, 2) {
 }
 
 switch(0, SELF, sw_ed50_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jgr_only;
 	1: switch_ed17_yeardep_purchase;
 }
 
@@ -1949,7 +1949,7 @@ switch(0, SELF, switch_ed60_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed60_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ed60_yeardep_purchase;
 }
 
@@ -2090,7 +2090,7 @@ switch(0, SELF, switch_ed62_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed61_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ed61_yeardep_purchase;
 }
 
@@ -2129,7 +2129,7 @@ item(0, ed61, 1060) {
 }
 
 switch(0, SELF, sw_ed62_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_jnr_jrf_1987;
 	1: switch_ed62_yeardep_purchase;
 }
 
@@ -2678,7 +2678,7 @@ switch(0, SELF, switch_ef50_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ef50_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jgr_only;
 	1: switch_ef50_yeardep_purchase;
 }
 
@@ -2840,7 +2840,7 @@ item(0, ef53, 1016) {
 }
 
 switch(0, SELF, sw_ef59_1_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef59_1_purchase;
 }
 
@@ -3069,7 +3069,7 @@ item(0, ef56, 1019) {
 }
 
 switch(0, SELF, sw_ef59_2_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef59_2_purchase;
 }
 
@@ -3587,7 +3587,7 @@ item(0, ef58_2, 1021) {
 }
 
 switch(0, SELF, sw_ef18_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ef18_yeardep_purchase;
 }
 
@@ -3873,7 +3873,7 @@ item(0, ef60_1, 1030) {
 }
 
 switch(0, SELF, sw_ef60_2_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ef60_2_yeardep_purchase;
 }
 
@@ -3914,7 +3914,7 @@ item(0, ef60_2, 1031) {
 }
 
 switch(0, SELF, sw_ef60_0_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ef60_1_yeardep_purchase;
 }
 
@@ -3954,7 +3954,7 @@ item(0, ef60_0, 1930) {
 }
 
 switch(0, SELF, sw_ef67_1_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_jnr_jrf_1987;
 	1: switch_ef67_1_yeardep_purchase;
 }
 
@@ -4138,7 +4138,7 @@ item(0, ef62, 1039) {
 }
 
 switch(0, SELF, sw_ef62_proto_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_ef62_proto_purchase_yeardep;
 }
 
@@ -4821,7 +4821,7 @@ switch(0, SELF, switch_ef67_100_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef65_0_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_jnr_jrf_1987;
 	1: switch_ef65_0_yeardep_purchase;
 }
 
@@ -5176,7 +5176,7 @@ switch(0, SELF, switch_ef66_2000_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef66_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_jnr_jrf_1987;
 	1: switch_ef66_yeardep_purchase;
 }
 
@@ -5256,7 +5256,7 @@ item(0, ef66_2, 1926) {
 }
 
 switch(0, SELF, sw_ef66_2000_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jgr;
+	0: switch_logo_jr;
 	1: spriteset_ef66_2000_purchase;
 }
 
@@ -5940,7 +5940,7 @@ switch(0, SELF, switch_eh50_articulated_part, extra_callback_info1) {
 }
 
 switch(0, SELF, sw_eh10_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_eh10_purchase;
 }
 
@@ -6002,7 +6002,7 @@ item(0, eh10_rear, 1018) {
 }
 
 switch(0, SELF, sw_eh10_2_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_eh10_proto_purchase;
 }
 
@@ -6238,7 +6238,7 @@ switch(0, SELF, switch_ed46_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed46_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ed46_purchase;
 }
 
@@ -6294,7 +6294,7 @@ switch(0, SELF, switch_ed70_livery, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ed70_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ed70_purchase;
 }
 
@@ -6593,13 +6593,13 @@ switch(0, SELF, switch_ed79_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, switch_ed79_yeardep_purchase, current_year) {
-	0..1987: switch_logo_jnr;
-	switch_logo_jrf;
+	0..1987: spriteset_ed79_jnr_purchase;
+	spriteset_ed79_jrf_purchase;
 }
 
 switch(0, SELF, sw_ed79_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_ed79_yeardep_purchase;
-	1: spriteset_ed79_jnr_purchase;
+	0: switch_jnr_jrf_1987;
+	1: switch_ed79_yeardep_purchase;
 }
 
 item(0, ed79, 1075) {
@@ -6661,13 +6661,13 @@ switch(0, SELF, switch_ed75_2_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, switch_ed75_700_yeardep_purchase, current_year) {
-	0..1987: switch_logo_jnr;
-	switch_logo_jrf;
+	0..1987: spriteset_ed75_700_jnr_purchase;
+	spriteset_ed75_700_jr_purchase;
 }
 
 switch(0, SELF, sw_ed75_700_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_ed75_700_yeardep_purchase;
-	1: spriteset_ed75_700_jnr_purchase;
+	0: switch_logo_jnr;
+	1: switch_ed75_700_yeardep_purchase;
 }
 
 item(0, ed75_700, 1970) {
@@ -6875,7 +6875,7 @@ switch(0, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ed76_500_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jnr;
 	1: switch_ed76_500_yeardep_purchase;
 }
 
@@ -6937,7 +6937,7 @@ switch(0, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ed76_550_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jrf;
+	0: switch_logo_jrh;
 	1: spriteset_ed76_550_jr_purchase;
 }
 
@@ -7079,7 +7079,7 @@ switch(0, SELF, switch_ef30_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ef30_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef30_purchase;
 }
 
@@ -7141,7 +7141,7 @@ switch(0, SELF, switch_ef30_p_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef30_proto_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef30_proto_purchase;
 }
 
@@ -7257,7 +7257,7 @@ switch(0, SELF, switch_ef70_2_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef70_new_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef70_new_purchase;
 }
 
@@ -7318,7 +7318,7 @@ switch(0, SELF, switch_ef70_1_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef70_old_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef70_old_purchase;
 }
 
@@ -7391,7 +7391,7 @@ switch(0, SELF, switch_ef71_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ef71_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jnr;
 	1: switch_ef71_yeardep_purchase;
 }
 
@@ -7466,7 +7466,7 @@ switch(0, SELF, switch_ef80_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ef80_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jnr_only;
 	1: spriteset_ef80_purchase;
 }
 
@@ -7804,7 +7804,7 @@ switch(0, SELF, switch_ef81_450_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef81_450_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: spriteset_ef81_450_jrf_purchase;
 }
 
@@ -7868,7 +7868,7 @@ switch(0, SELF, switch_ef500_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_ef500_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: spriteset_ef500_purchase;
 }
 
@@ -8160,7 +8160,7 @@ switch(0, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_ef510_300_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jr;
+	0: switch_logo_jrf;
 	1: spriteset_ef510_300_jr_purchase;
 }
 
@@ -8357,7 +8357,7 @@ switch(0, SELF, switch_eh500_2_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_eh500_new_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: switch_eh500_new_purchase;
 }
 
@@ -8476,7 +8476,7 @@ switch(0, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_eh500_old_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: switch_eh500_old_purchase;
 }
 
@@ -8592,7 +8592,7 @@ switch(0, SELF, switch_eh500_p_name, getbits(extra_callback_info1, 0, 8)) {
 }
 
 switch(0, SELF, sw_eh500_proto_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: switch_eh500_proto_purchase;
 }
 
@@ -8707,7 +8707,7 @@ switch(0, SELF, switch_eh800_purchase, current_year) {
 }
 
 switch(0, SELF, sw_eh800_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_jnr_jrf_1987;
+	0: switch_logo_jrf;
 	1: switch_eh800_purchase;
 }
 
@@ -8861,7 +8861,7 @@ switch(0, SELF, switch_dd13_yeardep_purchase, current_year) {
 }
 
 switch(0, SELF, sw_dd13_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: switch_dd13_yeardep_purchase;
 }
 
@@ -9473,7 +9473,7 @@ switch(0, SELF, switch_df50_subtype_text, cargo_subtype) {
 }
 
 switch(0, SELF, sw_df50_purchase, [STORE_TEMP((CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT), 256), getbits(extra_callback_info1, 8, 8)]) {
-	0: switch_logo_jnr;
+	0: switch_logo_jnr_only;
 	1: spriteset_df50_purchase;
 }
 
