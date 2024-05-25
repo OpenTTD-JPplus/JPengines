@@ -63,7 +63,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_5000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, yo_5000, 1600) {
+/* item (FEAT_TRAINS, yo_5000, 1600) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -93,6 +93,53 @@ item (FEAT_TRAINS, yo_5000, 1600) {
 		purchase: switch_yo_5000_purchase_yeardep;
 		cargo_subtype_text: switch_yo_5000_subtype_text;
 		additional_text:	string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR)
+							)
+						);
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_yo_5000_purchase,\
+switch_logo_jgr,\
+switch_yo_5000_purchase_yeardep\
+)
+
+item (FEAT_TRAINS, yo_5000, 1600) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1928,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1;
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 22;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		bitmask_vehicle_info: bitmask(4);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 0;
+		default: switch_yo_5000_livery;
+		purchase: sw_yo_5000_purchase;
+		cargo_subtype_text: switch_yo_5000_subtype_text;
+		additional_text: string(STR_CONCAT_3S, 
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_BRAKE),
 							string(STR_CONCAT_2C, 	

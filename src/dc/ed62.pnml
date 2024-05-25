@@ -84,7 +84,7 @@ switch(FEAT_TRAINS, SELF, switch_ed61_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed61, 1060) {
+/* item (FEAT_TRAINS, ed61, 1060) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -122,7 +122,7 @@ item (FEAT_TRAINS, ed61, 1060) {
   default: switch_ed61_livery;
   purchase: switch_ed61_yeardep_purchase;
   }
-}
+} */
 
 //ed62
 
@@ -182,7 +182,7 @@ switch(FEAT_TRAINS, SELF, switch_ed62_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed62, 1960) {
+/* item (FEAT_TRAINS, ed62, 1960) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -222,4 +222,101 @@ item (FEAT_TRAINS, ed62, 1960) {
   default: switch_ed62_livery;
   purchase: switch_ed62_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ed61_purchase,\
+switch_logo_jnr,\
+switch_ed61_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ed61, 1060) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED61);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1958,1,1);
+		speed: 90 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1560 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 60;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 36;
+		length: 7;
+		running_cost_factor: 53;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed61_subtype_text;
+		default: switch_ed61_livery;
+		purchase: sw_ed61_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ed62_purchase,\
+switch_logo_jnr,\
+switch_ed62_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ed62, 1960) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED62);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1974,1,1);
+		speed: 90 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1560 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 60;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 36;
+		length: 7;
+		running_cost_factor: 53;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		variant_group: 1060;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed62_subtype_text;
+		default: switch_ed62_livery;
+		purchase: sw_ed62_purchase;
+	}
 }

@@ -316,7 +316,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_26series_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, pax_26series, 1346) {
+/* item (FEAT_TRAINS, pax_26series, 1346) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -354,5 +354,50 @@ item (FEAT_TRAINS, pax_26series, 1346) {
 		purchase: spriteset_pax_26series_purchase;
 		cargo_subtype_text: switch_pax_26series_subtype_text;
 
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_pax_26series_purchase,\
+switch_logo_jre,\
+spriteset_pax_26series_purchase\
+)
+
+item (FEAT_TRAINS, pax_26series, 1346) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_26);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1999,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		cargo_age_period: 800;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 29;
+		cost_factor: 83;
+		running_cost_factor: 11;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRE)
+								)
+							);
+		default: switch_pax_26series_livery;
+		purchase: sw_pax_26series_purchase;
+		cargo_subtype_text: switch_pax_26series_subtype_text;
 	}
 }

@@ -108,7 +108,7 @@ switch(FEAT_TRAINS, SELF, stack_mail_mani34, [
 	1:  switch_taillights_8;
 }
 
-item (FEAT_TRAINS, mail_mani34, 1357) {
+/* item (FEAT_TRAINS, mail_mani34, 1357) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -143,6 +143,50 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 
 		default: stack_mail_mani34;
 		purchase: switch_mani34_purchase_yeardep;
+		cargo_subtype_text: switch_mani34_subtype_text;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_mail_mani34_purchase,\
+switch_logo_jnr,\
+switch_mani34_purchase_yeardep\
+)
+
+item (FEAT_TRAINS, mail_mani34, 1357) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_MANI_34);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1946,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: VALU;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED);
+		non_refittable_cargo_classes: 0;
+		weight: 29;
+		cost_factor: 45;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_VAL),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+		default: stack_mail_mani34;
+		purchase: sw_mail_mani34_purchase;
 		cargo_subtype_text: switch_mani34_subtype_text;
 	}
 }

@@ -74,7 +74,7 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 
 
 //deki
-item (FEAT_TRAINS, deki_400, 1005) {
+/* item (FEAT_TRAINS, deki_400, 1005) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -115,4 +115,52 @@ item (FEAT_TRAINS, deki_400, 1005) {
   default: switch_deki_400_livery;
   purchase: switch_deki_400_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_deki_400_purchase,\
+switch_logo_aichi,\
+switch_deki_400_purchase\
+)
+
+item (FEAT_TRAINS, deki_400, 1005) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_DEKI_400);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1930,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 400 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 40;
+		reliability_decay: 20;
+		model_life: 70;
+		vehicle_life: 60;
+		cost_factor: 22;
+		length: 5;
+		running_cost_factor: 32;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_AICHI),
+                           string(STR_SUFFIX_MEITETSU)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_deki_400_subtype_text;
+		default: switch_deki_400_livery;
+		purchase: sw_deki_400_purchase;
+	}
 }

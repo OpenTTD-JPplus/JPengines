@@ -97,7 +97,7 @@ switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, wa_1, 32) {
+/* item (FEAT_TRAINS, wa_1, 32) {
 
 property {
 	name: string(STR_NAME_WA_1);
@@ -132,5 +132,46 @@ graphics {
 	cargo_subtype_text: switch_wa_1_subtype_text;
 	purchase: spriteset_wa_1_jgr_purchase;
 //	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_wa_1_purchase,\
+switch_logo_jgr,\
+spriteset_wa_1_jgr_purchase\
+)
+
+item (FEAT_TRAINS, wa_1, 32) {
+	property {
+		name: string(STR_NAME_WA_1);
+		introduction_date: date(1870,1,1);
+		default_cargo_type: GOOD;
+		cargo_capacity: 20;
+		speed: 65 km/h;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+		cost_factor: 14;
+		running_cost_factor: 2;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		cargo_capacity: return 20;
+		default: switch_wa_1_livery;
+		cargo_subtype_text: switch_wa_1_subtype_text;
+		purchase: sw_wa_1_purchase;
 	}
 }

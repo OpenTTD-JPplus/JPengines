@@ -73,7 +73,7 @@ switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
 	CB_FAILED;
 }
 
-item (FEAT_TRAINS, torpedo_car_middle, 1422) {
+/* item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -95,9 +95,9 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		cargo_capacity: return 59;
 		default: switch_torpedo_loading;
 	}
-}
+} */
 
-item (FEAT_TRAINS, torpedo_car_rear, 1423) {
+/* item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -110,11 +110,11 @@ item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 	graphics {
 		default: switch_torpedo_rear_yeardep;
 	}
-}
+} */
 
 
 
-item (FEAT_TRAINS, torpedo_car, 1421) {
+/* item (FEAT_TRAINS, torpedo_car, 1421) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -154,6 +154,95 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 		cargo_capacity: return 1;
 		default: switch_torpedo_front_yeardep;
 		purchase: switch_torpedo_purchase;
+		articulated_part: switch_torpedo_articulated_part;
+	}
+} */
+
+
+item (FEAT_TRAINS, torpedo_car_middle, 1422) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: NO_CLIMATE;
+		cargo_capacity: 59;
+		refit_cost: 0;
+		default_cargo_type: IRON;
+		loading_speed: 40;
+		cargo_age_period: 320;
+		cargo_allow_refit: [IRON, METL];
+		introduction_date: date(1920,1,1);
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 59;
+		default: switch_torpedo_loading;
+	}
+}
+
+
+
+item (FEAT_TRAINS, torpedo_car_rear, 1423) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1920,1,1);
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		default: switch_torpedo_rear_yeardep;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_torpedo_car_purchase,\
+switch_logo_yawata,\
+switch_torpedo_purchase\
+)
+
+item (FEAT_TRAINS, torpedo_car, 1421) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TORPEDO);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1920,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1;
+		refit_cost: 0;
+		default_cargo_type: IRON;
+		loading_speed: 20;
+		cargo_allow_refit: [IRON, METL];
+		weight: 120;
+		cost_factor: 100;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 3;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+		cargo_capacity: return 1;
+		default: switch_torpedo_front_yeardep;
+		purchase: sw_torpedo_car_purchase;
 		articulated_part: switch_torpedo_articulated_part;
 	}
 }

@@ -348,7 +348,7 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, tora_5000, 33) {
+/* item (FEAT_TRAINS, tora_5000, 33) {
 
 property {
 	introduction_date: date(1930,1,1);
@@ -380,5 +380,44 @@ graphics {
 	default: switch_tora_5000_cargo_type;
 	purchase: spriteset_tora_5000_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_tora_5000_purchase,\
+switch_logo_jgr,\
+spriteset_tora_5000_purchase\
+)
+
+item (FEAT_TRAINS, tora_5000, 33) {
+	property {
+		introduction_date: date(1930,1,1);
+		speed: 75 km/h;
+		name: string(STR_NAME_TORA_5000);
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS);
+		non_refittable_cargo_classes: 0;
+		loading_speed: 10;
+		cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 40;
+		default: switch_tora_5000_cargo_type;
+		purchase: sw_tora_5000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

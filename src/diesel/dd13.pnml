@@ -146,7 +146,7 @@ switch(FEAT_TRAINS, SELF, switch_dd13_yeardep_purchase, current_year) {
 }
 
 
-item (FEAT_TRAINS, dd13, 1207) {
+/* item (FEAT_TRAINS, dd13, 1207) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NAAN;
@@ -186,4 +186,52 @@ item (FEAT_TRAINS, dd13, 1207) {
   default: switch_dd13_livery;
   purchase: switch_dd13_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_dd13_purchase,\
+switch_logo_jnr,\
+switch_dd13_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, dd13, 1207) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_DD13);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1958,1,1);
+		speed: 70 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 735 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_DIESEL;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 56;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 55;
+		cost_factor: 18;
+		length: 6;
+		running_cost_factor: 80;
+		running_cost_base: RUNNING_COST_DIESEL;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+						   string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_dd13_subtype_text;
+		default: switch_dd13_livery;
+		purchase: sw_dd13_purchase;
+	}
 }

@@ -14,7 +14,7 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 
 
 
-item (FEAT_TRAINS, mail_mani_50, 1370) {
+/* item (FEAT_TRAINS, mail_mani_50, 1370) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -51,5 +51,49 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 		default: spriteset_mani_50;
 		purchase: spriteset_mani_50_purchase;
 		
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_mail_mani_50_purchase,\
+switch_logo_jnr,\
+spriteset_mani_50_purchase\
+)
+
+item (FEAT_TRAINS, mail_mani_50, 1370) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_50);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1969,1,1);
+		speed: 109.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
+		weight: 20;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JR)
+								)
+							);
+		default: spriteset_mani_50;
+		purchase: sw_mail_mani_50_purchase;
 	}
 }

@@ -53,7 +53,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_1_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, yo_1, 1601) {
+/* item (FEAT_TRAINS, yo_1, 1601) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -92,5 +92,54 @@ item (FEAT_TRAINS, yo_1, 1601) {
 							)
 						);
 
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_yo_1_purchase,\
+switch_logo_jgr,\
+spriteset_yo_1_purchase\
+)
+
+item (FEAT_TRAINS, yo_1, 1601) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1;
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		loading_speed: 1;
+		weight: 20;
+		cost_factor: 14;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(5);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 0;
+		default: switch_yo_1_livery;
+		purchase: sw_yo_1_purchase;
+		cargo_subtype_text: switch_yo_1_subtype_text;
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_3C, 	
+								string(STR_SUFFIX_JGR),								
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
 	}
 }

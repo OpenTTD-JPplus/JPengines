@@ -298,7 +298,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1910_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, pax_1910_17m, 1538) {
+/* item (FEAT_TRAINS, pax_1910_17m, 1538) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
@@ -336,7 +336,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		purchase: spriteset_pax_1910_17m_jgr_purchase;
 		cargo_subtype_text: switch_pax_1910_subtype_text;
 	}
-}
+} */
 
 
 
@@ -408,7 +408,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, mail_1910_17m, 1666) {
+/* item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 //		track_type: NAAN;
@@ -445,6 +445,92 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		cargo_capacity: return 75;
 		default: switch_mail_1910_livery;
 		purchase: spriteset_mail_1910_17m_jgr_purchase;
+		cargo_subtype_text: switch_mail_1910_subtype_text;
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_pax_1910_17m_purchase,\
+switch_logo_jgr,\
+spriteset_pax_1910_17m_jgr_purchase\
+)
+
+item (FEAT_TRAINS, pax_1910_17m, 1538) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		name: string(STR_NAME_PAX_HOHA6810);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1910,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 75;
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		cost_factor: 65;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+		cargo_capacity: return 75;
+		default: switch_pax_1910_livery;
+		purchase: sw_pax_1910_17m_purchase;
+		cargo_subtype_text: switch_pax_1910_subtype_text;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_mail_1910_17m_purchase,\
+switch_logo_jgr,\
+spriteset_mail_1910_17m_jgr_purchase\
+)
+
+item (FEAT_TRAINS, mail_1910_17m, 1666) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		name: string(STR_NAME_MAIL_HONI_8900);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1910,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 75;
+		refit_cost: 0;
+		cargo_age_period: 160;
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
+		cost_factor: 35;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_LUG),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JGR)
+								)
+							);
+		cargo_capacity: return 75;
+		default: switch_mail_1910_livery;
+		purchase: sw_mail_1910_17m_purchase;
 		cargo_subtype_text: switch_mail_1910_subtype_text;
 	}
 }

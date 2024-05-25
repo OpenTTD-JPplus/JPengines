@@ -64,7 +64,7 @@ switch(FEAT_TRAINS, SELF, switch_ef50_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, ef50, 1014) {
+/* item (FEAT_TRAINS, ef50, 1014) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -103,4 +103,51 @@ item (FEAT_TRAINS, ef50, 1014) {
   default: switch_ef50_livery;
   purchase: switch_ef50_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef50_purchase,\
+switch_logo_jgr,\
+switch_ef50_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef50, 1014) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF50);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1925,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1230 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 97;
+		reliability_decay: 20;
+		model_life: 30;
+		vehicle_life: 32;
+		cost_factor: 45;
+		length: 8;
+		running_cost_factor: 71;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef50_subtype_text;
+		default: switch_ef50_livery;
+		purchase: sw_ef50_purchase;
+	}
 }

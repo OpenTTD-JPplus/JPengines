@@ -255,7 +255,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_cargo_type, cargo_type_in_veh) {
 	STSE: random_flatbed_5_metal_prod;
 	NICK: random_flatbed_5_metal;
 	COBL: random_flatbed_5_metal;
-	
+
 	ENSP: random_flatbed_5_ensp;
 	FMSP: random_flatbed_5_fmsp;
 	MNSP: random_flatbed_5_tarp;
@@ -263,24 +263,24 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_cargo_type, cargo_type_in_veh) {
 	VPTS: random_flatbed_5_tarp;
 	MPTS: random_flatbed_5_tarp;
 	GOOD: random_flatbed_5_wdpr;
-	
+
 	BDMT: random_flatbed_5_bdmt;
 	WDPR: random_flatbed_5_wdpr;
 	GLAS: random_flatbed_5_wdpr;
 	BRCK: random_flatbed_5_bdmt;
 
-	
+
 	PAPR: random_flatbed_5_tarp;
 	TYRE: random_flatbed_5_tarp;
 	WOOL: random_flatbed_5_tarp;
 	TEXT: random_flatbed_5_tarp;
-	
+
 	WOOD: spritegroup_flatbed_5_logs;
 	TWOD: spritegroup_flatbed_5_logs;
-	
+
 	VEHI: random_flatbed_5_cars;
-	
-	
+
+
 	random_flatbed_5_tarp;
 }
 
@@ -345,29 +345,29 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_rungs_back, cargo_type_in_veh) {
 	STCB: random_flatbed_5_rungs_all_back;
 	STWR: random_flatbed_5_rungs_some_back;
 	STSE: random_flatbed_5_rungs_some_back;
-	
+
 	ENSP: spriteset_flatbed_5_blank;
 	FMSP: spriteset_flatbed_5_blank;
 	POWR: spriteset_flatbed_5_blank;
 	VPTS: spriteset_flatbed_5_blank;
 	MPTS: spriteset_flatbed_5_blank;
-	
+
 	BDMT: random_flatbed_5_rungs_all_back;
 	WDPR: random_flatbed_5_rungs_all_back;
 	GLAS: random_flatbed_5_rungs_all_back;
 	BRCK: random_flatbed_5_rungs_all_back;
 
-	
+
 	PAPR: spriteset_flatbed_5_blank;
 	TYRE: spriteset_flatbed_5_blank;
 	WOOL: random_flatbed_5_rungs_all_back;
 	TEXT: random_flatbed_5_rungs_all_back;
-	
+
 	WOOD: random_flatbed_5_rungs_all_back;
 	TWOD: random_flatbed_5_rungs_all_back;
-	
+
 	VEHI: spriteset_flatbed_5_blank;
-	
+
 	random_flatbed_5_rungs_some_back;
 }
 
@@ -385,29 +385,29 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_5_rungs_front, cargo_type_in_veh) {
 	STCB: random_flatbed_5_rungs_all_front;
 	STWR: random_flatbed_5_rungs_some_front;
 	STSE: random_flatbed_5_rungs_some_front;
-	
+
 	ENSP: spriteset_flatbed_5_blank;
 	FMSP: spriteset_flatbed_5_blank;
 	POWR: spriteset_flatbed_5_blank;
 	VPTS: spriteset_flatbed_5_blank;
 	MPTS: spriteset_flatbed_5_blank;
-	
+
 	BDMT: random_flatbed_5_rungs_all_front;
 	WDPR: random_flatbed_5_rungs_all_front;
 	GLAS: random_flatbed_5_rungs_all_front;
 	BRCK: random_flatbed_5_rungs_all_front;
 
-	
+
 	PAPR: spriteset_flatbed_5_blank;
 	TYRE: spriteset_flatbed_5_blank;
 	WOOL: random_flatbed_5_rungs_all_front;
 	TEXT: random_flatbed_5_rungs_all_front;
-	
+
 	WOOD: random_flatbed_5_rungs_all_front;
 	TWOD: random_flatbed_5_rungs_all_front;
-	
+
 	VEHI: spriteset_flatbed_5_blank;
-	
+
 	random_flatbed_5_rungs_some_front;
 }
 
@@ -449,7 +449,7 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1, [
 
 
 //main item
-item (FEAT_TRAINS, chisa_1, 34) {
+/* item (FEAT_TRAINS, chisa_1, 34) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -469,15 +469,15 @@ property {
 		running_cost_base: RUNNING_COST_STEAM;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_FLAT),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -489,7 +489,7 @@ graphics {
 	purchase: switch_chisa_1_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
-}
+} */
 
 
 //CHIKI 7000 main
@@ -530,7 +530,7 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1600, [
 
 //main item TODO FIX
 
-item (FEAT_TRAINS, chi_1000, 1526) {
+/* item (FEAT_TRAINS, chi_1000, 1526) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -549,15 +549,15 @@ property {
 	running_cost_factor: 5;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
-	additional_text:	string(STR_CONCAT_3S, 
+	additional_text:	string(STR_CONCAT_3S,
 							string(STR_DESC_NARROWGAUGE),
 							string(STR_DESC_USAGE_FRT_FLAT),
-							string(STR_CONCAT_2C, 									
+							string(STR_CONCAT_2C,
 								string(STR_SUFFIX_JGR),
 								string(STR_SUFFIX_JNR)
 							)
@@ -568,5 +568,90 @@ graphics {
 	default: stack_chisa_1600;
 	purchase: switch_chisa_1600_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_chisa_1_purchase,\
+switch_logo_jgr,\
+switch_chisa_1_purchase\
+)
+
+item (FEAT_TRAINS, chisa_1, 34) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_CHISA_1);
+		introduction_date: date(1906,1,1);
+		cargo_capacity: 30;
+		power: 0;
+		refit_cost: 0;
+		default_cargo_type: WOOD;
+		loading_speed: 20;
+		speed: 65 km/h;
+		weight: 12;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		default: stack_chisa_1;
+		purchase: sw_chisa_1_purchase;
+		colour_mapping: switch_generic_recolour;
+	}
+}
+
+item (FEAT_TRAINS, chi_1000, 1526) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		climates_available: NO_CLIMATE;
+		name: string(STR_NAME_CHI_1000);
+		introduction_date: date(1957,1,1);
+		cargo_capacity: 40;
+		power: 0;
+		refit_cost: 0;
+		default_cargo_type: WOOD;
+		loading_speed: 20;
+		speed: 65 km/h;
+		weight: 12;
+		cost_factor: 6;
+		running_cost_factor: 5;
+		length: 5;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S,
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C,
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		default: stack_chisa_1600;
+		colour_mapping: switch_generic_recolour;
 	}
 }

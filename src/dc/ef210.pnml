@@ -122,7 +122,7 @@ switch (FEAT_TRAINS, SELF, switch_ef210_0_name, getbits(extra_callback_info1, 0,
   }
 
 
-item (FEAT_TRAINS, ef210_0, 84) {
+/* item (FEAT_TRAINS, ef210_0, 84) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -165,7 +165,7 @@ property {
   purchase: switch_ef210_0_yeardep_purchase;
   name: switch_ef210_0_name;
   }
-}
+} */
 
 
 //ef210_100
@@ -226,7 +226,7 @@ switch (FEAT_TRAINS, SELF, switch_ef210_100_name, getbits(extra_callback_info1, 
   }
 
 
-item (FEAT_TRAINS, ef210_100, 1084) {
+/* item (FEAT_TRAINS, ef210_100, 1084) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -270,7 +270,7 @@ property {
   purchase: switch_ef210_100_yeardep_purchase;
   name: switch_ef210_100_name;
   }
-}
+} */
 
 //ef210_300
 
@@ -309,7 +309,7 @@ switch (FEAT_TRAINS, SELF, switch_ef210_300_name, getbits(extra_callback_info1, 
   }
 
 
-item (FEAT_TRAINS, ef210_300, 1984) {
+/* item (FEAT_TRAINS, ef210_300, 1984) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -353,4 +353,152 @@ property {
   purchase: switch_ef210_300_yeardep_purchase;
   name: switch_ef210_300_name;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef210_0_purchase,\
+switch_logo_jrf,\
+switch_ef210_0_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef210_0, 84) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF210_0);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1996,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3600 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 16;
+		model_life: 40;
+		vehicle_life: 40;
+		length: 8;
+		cost_factor: 98;
+		running_cost_factor: 92;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef210_0_subtype_text;
+		default: switch_ef210_0_livery;
+		purchase: sw_ef210_0_purchase;
+		name: switch_ef210_0_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef210_100_purchase,\
+switch_logo_jrf,\
+switch_ef210_100_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef210_100, 1084) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF210_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(2000,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3600 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 16;
+		model_life: 40;
+		vehicle_life: 40;
+		length: 8;
+		cost_factor: 98;
+		running_cost_factor: 92;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 84;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef210_100_subtype_text;
+		default: switch_ef210_100_livery;
+		purchase: sw_ef210_100_purchase;
+		name: switch_ef210_100_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef210_300_purchase,\
+switch_logo_jrf,\
+switch_ef210_300_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef210_300, 1984) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF210_2);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(2013,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 3600 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 16;
+		model_life: 40;
+		vehicle_life: 40;
+		length: 8;
+		cost_factor: 98;
+		running_cost_factor: 92;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 84;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef210_300_subtype_text;
+		default: switch_ef210_300_livery;
+		purchase: sw_ef210_300_purchase;
+		name: switch_ef210_300_name;
+	}
 }

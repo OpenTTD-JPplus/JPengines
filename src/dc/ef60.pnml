@@ -155,7 +155,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_1_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef60_1, 1030) {
+/* item (FEAT_TRAINS, ef60_1, 1030) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -198,7 +198,7 @@ item (FEAT_TRAINS, ef60_1, 1030) {
   purchase: switch_ef60_1_yeardep_purchase;
   name: switch_ef60_1_name;
   }
-}
+} */
 
 //ef60 new
 
@@ -257,7 +257,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_2_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef60_2, 1031) {
+/* item (FEAT_TRAINS, ef60_2, 1031) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -298,7 +298,7 @@ item (FEAT_TRAINS, ef60_2, 1031) {
   purchase: switch_ef60_2_yeardep_purchase;
   name: switch_ef60_2_name;
   }
-}
+} */
 
 //ef60 proto
 
@@ -338,7 +338,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_0_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef60_0, 1930) {
+/* item (FEAT_TRAINS, ef60_0, 1930) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -379,7 +379,7 @@ item (FEAT_TRAINS, ef60_0, 1930) {
   purchase: switch_ef60_1_yeardep_purchase;
   name: switch_ef60_0_name;
   }
-}
+} */
 
 
 
@@ -418,7 +418,7 @@ switch (FEAT_TRAINS, SELF, switch_ef67_1_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef67_1, 1931) {
+/* item (FEAT_TRAINS, ef67_1, 1931) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -460,4 +460,205 @@ item (FEAT_TRAINS, ef67_1, 1931) {
   purchase: switch_ef67_1_yeardep_purchase;
   name: switch_ef67_1_name;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef60_1_purchase,\
+switch_logo_jnr,\
+switch_ef60_1_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef60_1, 1030) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF60_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1962,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 2550 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 96;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 82;
+		length: 7;
+		running_cost_factor: 78;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1930;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_3C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef60_1_subtype_text;
+		default: switch_ef60_1_livery;
+		purchase: sw_ef60_1_purchase;
+		name: switch_ef60_1_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef60_2_purchase,\
+switch_logo_jnr,\
+switch_ef60_2_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef60_2, 1031) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF60_2);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1965,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 2550 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 96;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 82;
+		length: 7;
+		running_cost_factor: 78;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1930;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef60_2_subtype_text;
+		default: switch_ef60_2_livery;
+		purchase: sw_ef60_2_purchase;
+		name: switch_ef60_2_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef60_0_purchase,\
+switch_logo_jnr,\
+switch_ef60_1_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef60_0, 1930) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF60_0);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1960,1,1);
+		speed: 90 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.24;
+		power: 2340 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 96;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 78;
+		length: 7;
+		running_cost_factor: 71;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef60_0_subtype_text;
+		default: switch_ef60_0_livery;
+		purchase: sw_ef60_0_purchase;
+		name: switch_ef60_0_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef67_1_purchase,\
+switch_logo_jnr,\
+switch_ef67_1_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef67_1, 1931) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF67_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1982,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 2550 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 96;
+		reliability_decay: 20;
+		model_life: 45;
+		vehicle_life: 40;
+		cost_factor: 82;
+		length: 7;
+		running_cost_factor: 78;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1930;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef67_1_subtype_text;
+		default: switch_ef67_1_livery;
+		purchase: sw_ef67_1_purchase;
+		name: switch_ef67_1_name;
+	}
 }

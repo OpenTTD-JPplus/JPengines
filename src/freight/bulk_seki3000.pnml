@@ -71,7 +71,7 @@ switch(FEAT_TRAINS, SELF, switch_seki_3000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, seki_3000, 1443) {
+/* item (FEAT_TRAINS, seki_3000, 1443) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -115,5 +115,54 @@ graphics {
 	cargo_subtype_text: switch_seki_3000_subtype_text;
 	purchase: spriteset_seki_3000_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_seki_3000_purchase,\
+switch_logo_jnr,\
+spriteset_seki_3000_purchase\
+)
+
+item (FEAT_TRAINS, seki_3000, 1443) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1951,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_SEKI_3000);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 45;
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK);
+		non_refittable_cargo_classes: bitmask(CC_COVERED);
+		cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
+		weight: 14;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COAL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		cargo_capacity: return 45;
+		default: switch_seki_3000_livery;
+		cargo_subtype_text: switch_seki_3000_subtype_text;
+		purchase: sw_seki_3000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

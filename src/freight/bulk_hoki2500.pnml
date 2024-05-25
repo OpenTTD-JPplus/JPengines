@@ -86,7 +86,7 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_2500, 42) {
+/* item (FEAT_TRAINS, hoki_2500, 42) {
 
 property {
 	introduction_date: date(1970,1,1);
@@ -118,5 +118,44 @@ graphics {
 	purchase: switch_hoki_2500_purchase;
 	cargo_subtype_text: switch_hoki_2500_subtype_text;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_2500_purchase,\
+switch_logo_jnr,\
+switch_hoki_2500_purchase\
+)
+
+item (FEAT_TRAINS, hoki_2500, 42) {
+	property {
+		introduction_date: date(1970,1,1);
+		name: string(STR_NAME_HOKI_2500);
+		speed: 85 km/h;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [GRAI, WHEA, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT, SGCN, TBCO, SUGR];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 40;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 40;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_LMST),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 55;
+		default: switch_hoki_2500_livery;
+		purchase: sw_hoki_2500_purchase;
+		cargo_subtype_text: switch_hoki_2500_subtype_text;
+		colour_mapping: switch_generic_recolour;
 	}
 }

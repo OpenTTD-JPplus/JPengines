@@ -243,3 +243,4 @@ random_switch(FEAT_TRAINS, SELF, random_conts_jgr_reefer_k_1_loadstage) {
 	1: spritegroup_conts_jgr_reefer_k_1_f;
 }
  blah 
+

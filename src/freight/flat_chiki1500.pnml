@@ -449,7 +449,7 @@ switch(FEAT_TRAINS, SELF, stack_chiki_1500, [
 
 
 //main item
-item (FEAT_TRAINS, chiki_1500, 41) {
+/* item (FEAT_TRAINS, chiki_1500, 41) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -485,7 +485,7 @@ graphics {
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
-}
+} */
 
 
 //CHIKI 7000 main
@@ -525,7 +525,7 @@ switch(FEAT_TRAINS, SELF, stack_chiki_7000, [
 
 
 //main item
-item (FEAT_TRAINS, chiki_7000, 1529) {
+/* item (FEAT_TRAINS, chiki_7000, 1529) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -564,5 +564,93 @@ graphics {
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_chiki_1500_purchase,\
+switch_logo_jgr,\
+switch_chiki_1500_purchase\
+)
+
+item (FEAT_TRAINS, chiki_1500, 41) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_CHIKI_1500);
+		introduction_date: date(1934,1,1);
+		cargo_capacity: 45;
+		speed: 75 km/h;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
+		non_refittable_cargo_classes: 0;
+		default_cargo_type: WOOD;
+		cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 30;
+		running_cost_factor: 10;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		default: stack_chiki_1500;
+		purchase: sw_chiki_1500_purchase;
+		colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_chiki_7000_purchase,\
+switch_logo_jnr,\
+switch_chiki_7000_purchase\
+)
+
+item (FEAT_TRAINS, chiki_7000, 1529) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_CHIKI_7000);
+		introduction_date: date(1975,1,1);
+		cargo_capacity: 60;
+		power: 0;
+		refit_cost: 0;
+		default_cargo_type: WOOD;
+		loading_speed: 20;
+		speed: 100 km/h;
+		weight: 16;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_FLAT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 100;
+		default: stack_chiki_7000;
+		purchase: sw_chiki_7000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

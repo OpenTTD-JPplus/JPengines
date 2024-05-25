@@ -154,7 +154,7 @@ switch(FEAT_TRAINS, SELF, switch_dd51_yeardep_purchase, current_year) {
 
 
 
-item (FEAT_TRAINS, dd51, 20) {
+/* item (FEAT_TRAINS, dd51, 20) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -186,4 +186,37 @@ property {
   default: switch_dd51_livery;
   purchase: switch_dd51_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_dd51_purchase,\
+switch_logo_jnr,\
+switch_dd51_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, dd51, 20) {
+	property {
+		name: string(STR_NAME_DD51);
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		reliability_decay: 2;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		engine_class: ENGINE_CLASS_DIESEL;
+		running_cost_factor: 85;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_dd51_subtype_text;
+		default: switch_dd51_livery;
+		purchase: sw_dd51_purchase;
+	}
 }

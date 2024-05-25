@@ -337,7 +337,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, toki_900, 1284) {
+/* item (FEAT_TRAINS, toki_900, 1284) {
 
 property {
 //	introduction_date: date(1940,1,1);
@@ -369,5 +369,42 @@ graphics {
 	default: switch_toki_900_cargo_type;
 	purchase: spriteset_toki_900_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_toki_900_purchase,\
+switch_logo_jgr,\
+spriteset_toki_900_purchase\
+)
+
+item (FEAT_TRAINS, toki_900, 1284) {
+	property {
+		speed: 65 km/h;
+		name: string(STR_NAME_TOKI_900);
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS);
+		non_refittable_cargo_classes: 0;
+		loading_speed: 10;
+		cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		cargo_capacity: return 45;
+		default: switch_toki_900_cargo_type;
+		purchase: sw_toki_900_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

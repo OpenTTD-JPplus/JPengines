@@ -37,7 +37,7 @@ switch(FEAT_TRAINS, SELF, switch_ed16_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed16, 1004) {
+/* item (FEAT_TRAINS, ed16, 1004) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -77,7 +77,7 @@ item (FEAT_TRAINS, ed16, 1004) {
   default: switch_ed16_livery;
   purchase: switch_ed16_yeardep_purchase;
   }
-}
+} */
 
 
 switch(FEAT_TRAINS, SELF, switch_ed55_subtype_text, cargo_subtype) {
@@ -91,7 +91,7 @@ switch(FEAT_TRAINS, SELF, switch_ed55_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, ed55, 1904) {
+/* item (FEAT_TRAINS, ed55, 1904) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
@@ -132,4 +132,103 @@ item (FEAT_TRAINS, ed55, 1904) {
   default: switch_ed16_livery;
   purchase: switch_ed16_yeardep_purchase;
   }
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_ed16_purchase,\
+switch_logo_jgr,\
+switch_ed16_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ed16, 1004) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED16);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1931,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 77;
+		reliability_decay: 20;
+		model_life: 65;
+		vehicle_life: 50;
+		cost_factor: 32;
+		length: 6;
+		running_cost_factor: 40;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed16_subtype_text;
+		default: switch_ed16_livery;
+		purchase: sw_ed16_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ed55_purchase,\
+switch_logo_jgr,\
+switch_ed16_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ed55, 1904) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED55);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1941,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.23;
+		power: 900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 77;
+		reliability_decay: 20;
+		model_life: 65;
+		vehicle_life: 50;
+		cost_factor: 32;
+		length: 6;
+		running_cost_factor: 42;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1004;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed55_subtype_text;
+		default: switch_ed16_livery;
+		purchase: sw_ed55_purchase;
+	}
 }

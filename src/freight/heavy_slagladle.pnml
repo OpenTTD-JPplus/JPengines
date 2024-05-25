@@ -57,7 +57,7 @@ switch(FEAT_TRAINS, SELF, switch_slag_ladle_purchase, current_year) {
 	spriteset_slag_ladle_nippon_purchase;
 	}
 
-item (FEAT_TRAINS, slag_ladle, 1420) {
+/* item (FEAT_TRAINS, slag_ladle, 1420) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -95,5 +95,51 @@ item (FEAT_TRAINS, slag_ladle, 1420) {
 		cargo_capacity: return 38;
 		default: switch_slag_ladle_yeardep;
 		purchase: switch_slag_ladle_purchase;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_slag_ladle_purchase,\
+switch_logo_yawata,\
+switch_slag_ladle_purchase\
+)
+
+item (FEAT_TRAINS, slag_ladle, 1420) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SLAG_LADLE);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1900,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 38;
+		refit_cost: 0;
+		default_cargo_type: SLAG;
+		loading_speed: 20;
+		cargo_age_period: 320;
+		cargo_allow_refit: [SLAG, IRON, METL];
+		weight: 30;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_STEL),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_YAWATA),
+									string(STR_SUFFIX_PRIVATE)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+		cargo_capacity: return 38;
+		default: switch_slag_ladle_yeardep;
+		purchase: sw_slag_ladle_purchase;
 	}
 }

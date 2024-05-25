@@ -56,7 +56,7 @@ switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hd300, 111) {
+/* item (FEAT_TRAINS, hd300, 111) {
 
 property {
 	name: string(STR_NAME_HD300);
@@ -84,4 +84,35 @@ property {
   default: switch_hd300_livery;
   purchase: spriteset_hd300_red_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_hd300_purchase,\
+switch_logo_jrf,\
+spriteset_hd300_red_purchase\
+)
+
+item (FEAT_TRAINS, hd300, 111) {
+	property {
+		name: string(STR_NAME_HD300);
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		reliability_decay: 13;
+		misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		engine_class: ENGINE_CLASS_DIESEL;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_HYBRID),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_hd300_subtype_text;
+		default: switch_hd300_livery;
+		purchase: sw_hd300_purchase;
+	}
 }

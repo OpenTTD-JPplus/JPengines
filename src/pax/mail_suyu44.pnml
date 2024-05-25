@@ -64,7 +64,7 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
 
 
 
-item (FEAT_TRAINS, suyu_44, 1395) {
+/* item (FEAT_TRAINS, suyu_44, 1395) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -102,7 +102,7 @@ item (FEAT_TRAINS, suyu_44, 1395) {
 		purchase: spriteset_suyu_44_post_purchase;
 		cargo_subtype_text: switch_suyu_44_subtype_text;
 	}
-}
+} */
 
 
 
@@ -148,7 +148,7 @@ switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
 
 
 
-item (FEAT_TRAINS, suni_41, 1396) {
+/* item (FEAT_TRAINS, suni_41, 1396) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -185,6 +185,98 @@ item (FEAT_TRAINS, suni_41, 1396) {
 
 		default: switch_suni_41_loadstack;
 		purchase: spriteset_suni_41_post_purchase;
+		cargo_subtype_text: switch_suni_41_subtype_text;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_suyu_44_purchase,\
+switch_logo_jnr,\
+spriteset_suyu_44_post_purchase\
+)
+
+item (FEAT_TRAINS, suyu_44, 1395) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUYU_44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+		default: switch_suyu_44_loadstack;
+		purchase: sw_suyu_44_purchase;
+		cargo_subtype_text: switch_suyu_44_subtype_text;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_suni_41_purchase,\
+switch_logo_jnr,\
+spriteset_suni_41_post_purchase\
+)
+
+item (FEAT_TRAINS, suni_41, 1396) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_MAIL_SUNI_41);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1968,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 100;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_MAIL);
+		non_refittable_cargo_classes: 0;
+		weight: 21;
+		cost_factor: 52;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1395;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_MAIL_EXF),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_JRF)
+								)
+							);
+		default: switch_suni_41_loadstack;
+		purchase: sw_suni_41_purchase;
 		cargo_subtype_text: switch_suni_41_subtype_text;
 	}
 }

@@ -211,7 +211,7 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_loadstack, [
 }
 
 
-item (FEAT_TRAINS, wamu_80000, 51) {
+/* item (FEAT_TRAINS, wamu_80000, 51) {
 
 property {
 	name: string(STR_NAME_WAMU_80000);
@@ -244,7 +244,7 @@ graphics {
 	purchase: switch_wamu_80000_purchase;
 	cargo_subtype_text: switch_wamu_80000_subtype_text;
 	}
-}
+} */
 
 
 //wamu 48000
@@ -287,7 +287,7 @@ switch(FEAT_TRAINS, SELF, switch_wamu_480000_loadstack, [
 }
 
 
-item (FEAT_TRAINS, wamu_480000, 1462) {
+/* item (FEAT_TRAINS, wamu_480000, 1462) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -331,7 +331,7 @@ graphics {
 	purchase: spriteset_wamu_480000_jrf_purchase;
 	colour_mapping: switch_generic_recolour;
 	}
-}
+} */
 
 switch(FEAT_TRAINS, SELF, switch_wamu_580000_loadstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
@@ -343,7 +343,7 @@ switch(FEAT_TRAINS, SELF, switch_wamu_580000_loadstack, [
 }
 
 
-item (FEAT_TRAINS, wamu_580000, 1463) {
+/* item (FEAT_TRAINS, wamu_580000, 1463) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -387,5 +387,142 @@ graphics {
 	default: switch_wamu_580000_loadstack;
 	purchase: spriteset_wamu_580000_jnr_purchase;
 //	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_wamu_80000_purchase,\
+switch_logo_jnr,\
+switch_wamu_80000_purchase\
+)
+
+item (FEAT_TRAINS, wamu_80000, 51) {
+	property {
+		name: string(STR_NAME_WAMU_80000);
+		introduction_date: date(1958,1,1);
+		default_cargo_type: GOOD;
+		cargo_capacity: 50;
+		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_BOX),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 50;
+		default: switch_wamu_80000_loadstack;
+		purchase: sw_wamu_80000_purchase;
+		cargo_subtype_text: switch_wamu_80000_subtype_text;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_wamu_480000_purchase,\
+switch_logo_jrf,\
+spriteset_wamu_480000_jrf_purchase\
+)
+
+item (FEAT_TRAINS, wamu_480000, 1462) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1998,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_WAMU_480000);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50;
+		refit_cost: 0;
+		loading_speed: 20;
+		cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
+		cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
+		non_refittable_cargo_classes: 0;
+		weight: 15;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 51;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHIP),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 50;
+		default: switch_wamu_480000_loadstack;
+		purchase: sw_wamu_480000_purchase;
+		colour_mapping: switch_generic_recolour;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_wamu_580000_purchase,\
+switch_logo_jnr,\
+spriteset_wamu_580000_jnr_purchase\
+)
+
+item (FEAT_TRAINS, wamu_580000, 1463) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1967,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_WAMU_580000);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50;
+		refit_cost: 0;
+		default_cargo_type: FOOD;
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED);
+		loading_speed: 20;
+		cargo_age_period: 0;
+		non_refittable_cargo_classes: 0;
+		weight: 15;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 51;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_REEF),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 50;
+		default: switch_wamu_580000_loadstack;
+		purchase: sw_wamu_580000_purchase;
 	}
 }

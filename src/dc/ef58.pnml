@@ -232,7 +232,7 @@ switch (FEAT_TRAINS, SELF, switch_ef58_1_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef58, 14) {
+/* item (FEAT_TRAINS, ef58, 14) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -276,7 +276,7 @@ property {
   purchase: switch_ef58_yeardep_purchase;
   name: switch_ef58_1_name;
   }
-}
+} */
 
 //ef58 old type
 
@@ -306,7 +306,7 @@ switch (FEAT_TRAINS, SELF, switch_ef58_2_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef58_2, 1021) {
+/* item (FEAT_TRAINS, ef58_2, 1021) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -348,7 +348,7 @@ property {
   purchase: switch_ef58_old_yeardep_purchase;
   name: switch_ef58_2_name;
   }
-}
+} */
 
 //ef18
 
@@ -368,7 +368,7 @@ switch(FEAT_TRAINS, SELF, switch_ef18_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-item (FEAT_TRAINS, ef18, 1921) {
+/* item (FEAT_TRAINS, ef18, 1921) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -408,4 +408,155 @@ property {
   default: switch_ef18_livery;
   purchase: switch_ef18_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef58_purchase,\
+switch_logo_jnr,\
+switch_ef58_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef58, 14) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		name: string(STR_NAME_EF58_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1952,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 115;
+		reliability_decay: 15;
+		model_life: 45;
+		vehicle_life: 45;
+		cost_factor: 68;
+		length: 8;
+		running_cost_factor: 80;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FF),
+                        string(STR_CONCAT_5C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JRF),
+                           string(STR_SUFFIX_JRE),
+                           string(STR_SUFFIX_JRC),
+                           string(STR_SUFFIX_JRW)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef58_subtype_text;
+		default: switch_ef58_livery;
+		purchase: sw_ef58_purchase;
+		name: switch_ef58_1_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef58_2_purchase,\
+switch_logo_jgr,\
+switch_ef58_old_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef58_2, 1021) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF58_2);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1946,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 113;
+		reliability_decay: 15;
+		model_life: 45;
+		vehicle_life: 45;
+		cost_factor: 66;
+		length: 8;
+		running_cost_factor: 72;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		variant_group: 14;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef58_old_subtype_text;
+		default: switch_ef58_old_livery;
+		purchase: sw_ef58_2_purchase;
+		name: switch_ef58_2_name;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_ef18_purchase,\
+switch_logo_jnr,\
+switch_ef18_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef18, 1921) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF18);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1951,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.25;
+		power: 1900 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 113;
+		reliability_decay: 15;
+		model_life: 45;
+		vehicle_life: 45;
+		cost_factor: 44;
+		length: 8;
+		running_cost_factor: 56;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		variant_group: 14;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef18_subtype_text;
+		default: switch_ef18_livery;
+		purchase: sw_ef18_purchase;
+	}
 }

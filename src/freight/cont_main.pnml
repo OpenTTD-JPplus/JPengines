@@ -574,3 +574,4 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_middle, cargo_count) {
 	30..50: random_conts_cargo_load_middle_half;
 	switch_conts_cargo_selection;
 }
+

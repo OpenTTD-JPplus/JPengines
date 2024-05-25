@@ -42,7 +42,7 @@ switch(FEAT_TRAINS, SELF, switch_seki_1000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, seki_1000, 1442) {
+/* item (FEAT_TRAINS, seki_1000, 1442) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -86,5 +86,55 @@ graphics {
 	cargo_subtype_text: switch_seki_1000_subtype_text;
 	purchase: switch_seki_1000_yeardep_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_seki_1000_purchase,\
+switch_logo_jgr,\
+switch_seki_1000_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, seki_1000, 1442) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1930,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_SEKI_1000);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40;
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		weight: 15;
+		cost_factor: 18;
+		running_cost_factor: 3;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_QLME),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 65;
+		cargo_capacity: return 40;
+		default: switch_seki_1000_livery;
+		cargo_subtype_text: switch_seki_1000_subtype_text;
+		purchase: sw_seki_1000_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

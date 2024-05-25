@@ -201,7 +201,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_tokaido_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, pax_suha44, 1319) {
+/* item (FEAT_TRAINS, pax_suha44, 1319) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -242,27 +242,75 @@ item (FEAT_TRAINS, pax_suha44, 1319) {
 		cargo_subtype_text: switch_pax_tokaido_subtype_text;
 		
 	}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GRAPHICS_STACK_2(\
+sw_pax_suha44_purchase,\
+switch_logo_jnr,\
+spriteset_pax_tokaido_jnr_purchase\
+)
+
+item (FEAT_TRAINS, pax_suha44, 1319) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_SUHA44);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1954,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		cargo_age_period: 600;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 28;
+		cost_factor: 75;
+		running_cost_factor: 9;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_FLIP, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1318;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_TOKAIDO),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JNR)
+								)
+							);
+		cargo_capacity: return 70;
+		default: switch_pax_tokaido_livery;
+		purchase: sw_pax_suha44_purchase;
+		cargo_subtype_text: switch_pax_tokaido_subtype_text;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

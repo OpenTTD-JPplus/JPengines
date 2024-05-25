@@ -165,7 +165,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_subtype_text, cargo_subtype)
 	
 
 
-item (FEAT_TRAINS, pax_50_5000_series, 1341) {
+/* item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -206,5 +206,53 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 		purchase: spriteset_pax_50_5000_jr_purchase;
 		cargo_subtype_text: switch_pax_50_5000_series_subtype_text;
 		
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_pax_50_5000_series_purchase,\
+switch_logo_jre,\
+spriteset_pax_50_5000_jr_purchase\
+)
+
+item (FEAT_TRAINS, pax_50_5000_series, 1341) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_50_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1987,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90;
+		refit_cost: 0;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		cargo_age_period: 200;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 24;
+		cost_factor: 74;
+		running_cost_factor: 9;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1340;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_EXP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JRE),
+									string(STR_SUFFIX_JRH)
+								)
+							);
+		cargo_capacity: return 90;
+		default: switch_pax_50_5000_series_livery;
+		purchase: sw_pax_50_5000_series_purchase;
+		cargo_subtype_text: switch_pax_50_5000_series_subtype_text;
 	}
 }

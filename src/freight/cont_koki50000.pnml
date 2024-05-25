@@ -113,7 +113,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 }
 
 
-item (FEAT_TRAINS, koki_50000, 1414) {
+/* item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -155,9 +155,9 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
-}
+} */
 
-item (FEAT_TRAINS, kokifu_50000, 1434) {
+/* item (FEAT_TRAINS, kokifu_50000, 1434) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -199,7 +199,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
-}
+} */
 
 //koki 250000
 
@@ -274,7 +274,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_250000_base_loadstack, [
 }
 
 
-item (FEAT_TRAINS, koki_250000, 1415) {
+/* item (FEAT_TRAINS, koki_250000, 1415) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -317,7 +317,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 		purchase: switch_koki_250000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
-}
+} */
 
 
 
@@ -375,7 +375,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_350000_base_loadstack, [
 }
 
 
-item (FEAT_TRAINS, koki_350000, 1416) {
+/* item (FEAT_TRAINS, koki_350000, 1416) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -416,6 +416,212 @@ item (FEAT_TRAINS, koki_350000, 1416) {
 		purchase_speed: return 110;
 		default: switch_koki_350000_base_loadstack;
 		purchase: switch_koki_350000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+} */
+
+
+GRAPHICS_STACK_2(\
+sw_koki_50000_purchase,\
+switch_logo_jnr,\
+spriteset_koki_50000_purchase\
+)
+
+item (FEAT_TRAINS, koki_50000, 1414) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_50000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1971,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 70;
+		purchase_speed: return 95;
+		default: switch_koki_50000_base_loadstack;
+		purchase: sw_koki_50000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_kokifu_50000_purchase,\
+switch_logo_jnr,\
+spriteset_kokifu_50000_purchase\
+)
+
+item (FEAT_TRAINS, kokifu_50000, 1434) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKIFU_50000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1971,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 55;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		bitmask_vehicle_info: bitmask(1);
+		variant_group: 1414;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 55;
+		default: switch_kokifu_50000_flip;
+		purchase: sw_kokifu_50000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_koki_250000_purchase,\
+switch_logo_jnr,\
+switch_koki_250000_purchase\
+)
+
+item (FEAT_TRAINS, koki_250000, 1415) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_250000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1985,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1414;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 70;
+		purchase_speed: return 100;
+		default: switch_koki_250000_base_loadstack;
+		purchase: sw_koki_250000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_koki_350000_purchase,\
+switch_logo_jnr,\
+switch_koki_350000_purchase\
+)
+
+item (FEAT_TRAINS, koki_350000, 1416) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_350000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1988,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 35;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_LIQUID, CC_POWDERIZED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG];
+		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 1414;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CONT),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		cargo_capacity: return 70;
+		purchase_speed: return 110;
+		default: switch_koki_350000_base_loadstack;
+		purchase: sw_koki_350000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }

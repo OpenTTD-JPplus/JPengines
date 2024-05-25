@@ -124,7 +124,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_5450_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, taki_5450, 1491) {
+/* item (FEAT_TRAINS, taki_5450, 1491) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -165,5 +165,52 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		purchase: switch_taki_5450_purchase;
 		cargo_subtype_text: switch_taki_5450_subtype_text;
 		
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_taki_5450_purchase,\
+switch_logo_jnr,\
+switch_taki_5450_purchase\
+)
+
+item (FEAT_TRAINS, taki_5450, 1491) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TAKI_5450);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1964,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		cargo_disallow_refit: [OIL_, PETR, FUEL];
+		loading_speed: 30;
+		weight: 17;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CHEM),
+							string(STR_CONCAT_3C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		default: switch_taki_5450_wearstack;
+		purchase: sw_taki_5450_purchase;
+		cargo_subtype_text: switch_taki_5450_subtype_text;
 	}
 }

@@ -160,7 +160,7 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_purchase, current_year) {
 
 //articulated part
 
-item (FEAT_TRAINS, shiki_800_rear, 1651) {
+/* item (FEAT_TRAINS, shiki_800_rear, 1651) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -177,11 +177,11 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 		cargo_capacity: return 0;
 		default: switch_shiki_800_position;
 	}
-}
+} */
 
 //main item
 
-item (FEAT_TRAINS, shiki_800, 50) {
+/* item (FEAT_TRAINS, shiki_800, 50) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -221,6 +221,75 @@ item (FEAT_TRAINS, shiki_800, 50) {
 		cargo_capacity: return 155;
 		default: switch_shiki_800_front_livery;
 		purchase: switch_shiki_800_purchase;
+		articulated_part: switch_shiki_800_articulated_part;
+		cargo_subtype_text: switch_shiki_8000_subtype_text;
+	}
+} */
+
+
+item (FEAT_TRAINS, shiki_800_rear, 1651) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SHIKI_800);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1920,1,1);
+		cargo_capacity: 1;
+		default_cargo_type: GOOD;
+		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_shiki_800_position;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_shiki_800_purchase,\
+switch_logo_nippon,\
+switch_shiki_800_purchase\
+)
+
+item (FEAT_TRAINS, shiki_800, 50) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_SHIKI_800);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1973,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 155;
+		refit_cost: 0;
+		default_cargo_type: GOOD;
+		loading_speed: 10;
+		cargo_allow_refit: [GOOD, POWR, ENSP, VPTS, MPTS, SESP, URAN, NUKF, NUKW, NWST];
+		weight: 100;
+		cost_factor: 100;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_FRT_HVY),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_NIPPON),
+									string(STR_SUFFIX_TOSHIBA)
+								),
+								string(STR_DESC_BRAKE_NA)
+							);
+		cargo_capacity: return 155;
+		default: switch_shiki_800_front_livery;
+		purchase: sw_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;
 		cargo_subtype_text: switch_shiki_8000_subtype_text;
 	}

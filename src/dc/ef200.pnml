@@ -107,7 +107,7 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, jr_ef200, 60) {
+/* item (FEAT_TRAINS, jr_ef200, 60) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -149,7 +149,7 @@ property {
   default: switch_ef200_livery;
   purchase: switch_ef200_yeardep_purchase;
   }
-}
+} */
 
 //prototype
 
@@ -196,7 +196,7 @@ switch (FEAT_TRAINS, SELF, switch_ef200_proto_name, getbits(extra_callback_info1
   }
 
 
-item (FEAT_TRAINS, jr_ef200_proto, 1962) {
+/* item (FEAT_TRAINS, jr_ef200_proto, 1962) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -240,4 +240,101 @@ property {
   purchase: spriteset_ef200_proto_purchase;
   name: switch_ef200_proto_name;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_jr_ef200_purchase,\
+switch_logo_jrf,\
+switch_ef200_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, jr_ef200, 60) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF200);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1992,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.28;
+		power: 6000 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 21;
+		model_life: VEHICLE_NEVER_EXPIRES;
+		vehicle_life: 25;
+		cost_factor: 109;
+		length: 8;
+		running_cost_factor: 109;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef200_subtype_text;
+		default: switch_ef200_livery;
+		purchase: sw_jr_ef200_purchase;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_jr_ef200_proto_purchase,\
+switch_logo_jrf,\
+spriteset_ef200_proto_purchase\
+)
+
+item (FEAT_TRAINS, jr_ef200_proto, 1962) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_EF200_P);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1990,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.28;
+		power: 6000 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 100;
+		reliability_decay: 21;
+		model_life: VEHICLE_NEVER_EXPIRES;
+		vehicle_life: 25;
+		cost_factor: 109;
+		length: 8;
+		running_cost_factor: 109;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 60;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PROTO),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef200_proto_subtype_text;
+		default: switch_ef200_proto_livery;
+		purchase: sw_jr_ef200_proto_purchase;
+		name: switch_ef200_proto_name;
+	}
 }

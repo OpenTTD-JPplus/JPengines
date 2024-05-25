@@ -285,7 +285,7 @@ switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, dmt_middle, 1408) {
+/* item (FEAT_TRAINS, dmt_middle, 1408) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -311,9 +311,9 @@ item (FEAT_TRAINS, dmt_middle, 1408) {
 		length: switch_dmt_middle_length;
 		default: switch_dmt_middle_livery;
 	}
-}
+} */
 
-item (FEAT_TRAINS, dmt_rear, 1409) {
+/* item (FEAT_TRAINS, dmt_rear, 1409) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -328,11 +328,11 @@ item (FEAT_TRAINS, dmt_rear, 1409) {
 	graphics {
 		default: spriteset_dmt_rear;
 	}
-}
+} */
 
 
 
-item (FEAT_TRAINS, dmt, 1407) {
+/* item (FEAT_TRAINS, dmt, 1407) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -371,6 +371,103 @@ item (FEAT_TRAINS, dmt, 1407) {
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
 //		length: switch_dmt_rear_length;
+		refit_cost: CB_RESULT_AUTOREFIT;
+		articulated_part: switch_dmt_articulated_part;
+		cargo_subtype_text: switch_dmt_subtype_text;
+	}
+} */
+
+
+item (FEAT_TRAINS, dmt_middle, 1408) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: NO_CLIMATE;
+		loading_speed: 60;
+		cargo_capacity: 90;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA];
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 15;
+		cost_factor: 11;
+		introduction_date: date(1992,1,1);
+		length: 7;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		length: switch_dmt_middle_length;
+		default: switch_dmt_middle_livery;
+	}
+}
+
+
+
+item (FEAT_TRAINS, dmt_rear, 1409) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1992,1,1);
+		weight: 1;
+		length: 1;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		default: spriteset_dmt_rear;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_dmt_purchase,\
+switch_logo_jrf,\
+switch_dmt_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, dmt, 1407) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_ROADRAILER);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1992,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 90;
+		refit_cost: 0;
+		default_cargo_type: MAIL;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA];
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
+		weight: 15;
+		cost_factor: 100;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_DMT),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		default: switch_dmt_front_livery;
+		purchase: sw_dmt_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 		articulated_part: switch_dmt_articulated_part;
 		cargo_subtype_text: switch_dmt_subtype_text;

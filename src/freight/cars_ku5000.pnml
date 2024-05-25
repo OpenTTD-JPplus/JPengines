@@ -789,7 +789,7 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, ku_5000, 44) {
+/* item (FEAT_TRAINS, ku_5000, 44) {
 
 property {
 	name: string(STR_NAME_KU_5000);
@@ -821,5 +821,44 @@ graphics {
 	default: switch_ku_5000_livery;
 	purchase: switch_ku_5000_purchase;
 	cargo_subtype_text: switch_ku_5000_subtype_text;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_ku_5000_purchase,\
+switch_logo_jnr,\
+switch_ku_5000_purchase\
+)
+
+item (FEAT_TRAINS, ku_5000, 44) {
+	property {
+		name: string(STR_NAME_KU_5000);
+		introduction_date: date(1966,1,1);
+		default_cargo_type: VEHI;
+		refittable_cargo_classes: 0;
+		non_refittable_cargo_classes: 0;
+		cargo_allow_refit: [VEHI];
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		speed: 85 km/h;
+		cost_factor: 30;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
+		loading_speed: 20;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_CAR),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		cargo_capacity: return 40;
+		default: switch_ku_5000_livery;
+		purchase: sw_ku_5000_purchase;
+		cargo_subtype_text: switch_ku_5000_subtype_text;
 	}
 }

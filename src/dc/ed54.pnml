@@ -59,7 +59,7 @@ switch(FEAT_TRAINS, SELF, switch_ed54_yeardep_purchase, current_year) {
     }
 
 
-item (FEAT_TRAINS, ed54, 1051) {
+/* item (FEAT_TRAINS, ed54, 1051) {
 
 property {
     sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -102,4 +102,52 @@ property {
   default: switch_ed54_livery;
   purchase: switch_ed54_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ed54_purchase,\
+switch_logo_jgr,\
+switch_ed54_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ed54, 1051) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NABE;
+		name: string(STR_NAME_ED54);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1926,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient: 0.20;
+		power: 1540 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 78;
+		reliability_decay: 20;
+		model_life: 60;
+		vehicle_life: 50;
+		cost_factor: 49;
+		length: 6;
+		running_cost_factor: 76;
+		running_cost_base: RUNNING_COST_ELECTRIC;
+		misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ed54_subtype_text;
+		default: switch_ed54_livery;
+		purchase: sw_ed54_purchase;
+	}
 }

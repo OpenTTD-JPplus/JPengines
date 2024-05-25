@@ -163,7 +163,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
 }
 
 
-item (FEAT_TRAINS, taki_1000, 1490) {
+/* item (FEAT_TRAINS, taki_1000, 1490) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -200,7 +200,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		cargo_subtype_text: switch_taki_1000_subtype_text;
 		
 	}
-}
+} */
 
 
 //taki 43000
@@ -250,7 +250,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
 }
 
 
-item (FEAT_TRAINS, taki_43000, 1496) {
+/* item (FEAT_TRAINS, taki_43000, 1496) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -289,5 +289,95 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		purchase: switch_taki_43000_purchase;
 		cargo_subtype_text: switch_taki_43000_subtype_text;
 		
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_taki_1000_purchase,\
+switch_logo_jrf,\
+spriteset_taki_1000_purchase\
+)
+
+item (FEAT_TRAINS, taki_1000, 1490) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TAKI_1000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1993,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 55;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 50;
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 110;
+		default: switch_taki_1000_wearstack;
+		purchase: sw_taki_1000_purchase;
+		cargo_subtype_text: switch_taki_1000_subtype_text;
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_taki_43000_purchase,\
+switch_logo_jnr,\
+switch_taki_43000_purchase\
+)
+
+item (FEAT_TRAINS, taki_43000, 1496) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_TAKI_43000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1967,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 30;
+		weight: 20;
+		cost_factor: 40;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OIL),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JNR),
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 85;
+		default: switch_taki_43000_wearstack;
+		purchase: sw_taki_43000_purchase;
+		cargo_subtype_text: switch_taki_43000_subtype_text;
 	}
 }

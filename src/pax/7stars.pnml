@@ -271,7 +271,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_77series_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, pax_77series, 1347) {
+/* item (FEAT_TRAINS, pax_77series, 1347) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -309,5 +309,50 @@ item (FEAT_TRAINS, pax_77series, 1347) {
 		cargo_subtype_text: switch_pax_77series_subtype_text;
 		purchase: spriteset_pax_77series_purchase;
 
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_pax_77series_purchase,\
+switch_logo_jrk,\
+spriteset_pax_77series_purchase\
+)
+
+item (FEAT_TRAINS, pax_77series, 1347) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_PAX_77);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(2013,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70;
+		refit_cost: 0;
+		cargo_age_period: 800;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		non_refittable_cargo_classes: 0;
+		weight: 29;
+		cost_factor: 83;
+		running_cost_factor: 11;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRK)
+								)
+							);
+		default: switch_pax_77series_livery;
+		cargo_subtype_text: switch_pax_77series_subtype_text;
+		purchase: sw_pax_77series_purchase;
 	}
 }

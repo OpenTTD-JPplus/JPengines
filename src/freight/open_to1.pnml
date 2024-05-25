@@ -202,7 +202,7 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 }
 
 
-item (FEAT_TRAINS, to_1, 1469) {
+/* item (FEAT_TRAINS, to_1, 1469) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -244,5 +244,53 @@ graphics {
 	default: switch_to_1_cargo_type;
 	purchase: spriteset_to_1_purchase;
 	colour_mapping: switch_generic_recolour;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_to_1_purchase,\
+switch_logo_jgr,\
+spriteset_to_1_purchase\
+)
+
+item (FEAT_TRAINS, to_1, 1469) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		introduction_date: date(1870,1,1);
+		climates_available: ALL_CLIMATES;
+		name: string(STR_NAME_TO_1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 15;
+		refit_cost: 0;
+		loading_speed: 10;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
+		weight: 9;
+		cost_factor: 14;
+		running_cost_factor: 2;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_OPEN),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_PRIVATE)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 60;
+		cargo_capacity: return 15;
+		default: switch_to_1_cargo_type;
+		purchase: sw_to_1_purchase;
+		colour_mapping: switch_generic_recolour;
 	}
 }

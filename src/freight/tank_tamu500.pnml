@@ -137,7 +137,7 @@ switch(FEAT_TRAINS, SELF, switch_tamu_500_purchase, current_year) {
 	spriteset_tamu_500_jrf_purchase;
 	}
 
-item (FEAT_TRAINS, tamu_500, 30) {
+/* item (FEAT_TRAINS, tamu_500, 30) {
 
 property {
 	name: string(STR_NAME_TAMU_500);
@@ -176,5 +176,49 @@ graphics {
 	purchase: switch_tamu_500_purchase;
 	cargo_subtype_text: switch_tamu_500_subtype_text;
 		
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_tamu_500_purchase,\
+switch_logo_jgr,\
+switch_tamu_500_purchase\
+)
+
+item (FEAT_TRAINS, tamu_500, 30) {
+	property {
+		name: string(STR_NAME_TAMU_500);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		introduction_date: date(1930,1,1);
+		speed: 75 km/h;
+		climates_available: ALL_CLIMATES;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30;
+		refit_cost: 0;
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 30;
+		weight: 10;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 5;
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_TANK),
+							string(STR_CONCAT_2C, 									
+								string(STR_SUFFIX_JGR),
+								string(STR_SUFFIX_JNR)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 75;
+		cargo_capacity: return 30;
+		default: switch_tamu_500_wearstack;
+		purchase: sw_tamu_500_purchase;
+		cargo_subtype_text: switch_tamu_500_subtype_text;
 	}
 }

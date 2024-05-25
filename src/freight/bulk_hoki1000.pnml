@@ -29,7 +29,7 @@ random_switch(FEAT_TRAINS, SELF, switch_hoki_1000_livery) {
 
 
 
-item (FEAT_TRAINS, hoki_1000, 1410) {
+/* item (FEAT_TRAINS, hoki_1000, 1410) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -67,6 +67,54 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		cargo_capacity: return 72;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;
+		refit_cost: CB_RESULT_AUTOREFIT;
+	}
+} */
+
+GRAPHICS_STACK_2(\
+sw_hoki_1000_purchase,\
+switch_logo_jrf,\
+spriteset_hoki_1000_purchase\
+)
+
+item (FEAT_TRAINS, hoki_1000, 1410) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_1000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1990,1,1);
+		speed: 100 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 72;
+		refit_cost: 0;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED);
+		non_refittable_cargo_classes: 0;
+		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
+		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
+		weight: 15;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_USAGE_FRT_COV),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+		speed: switch_speedboost_1;
+		purchase_speed: return 100;
+		cargo_capacity: return 72;
+		default: switch_hoki_1000_livery;
+		purchase: sw_hoki_1000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
 	}
 }

@@ -60,7 +60,7 @@ switch(FEAT_TRAINS, SELF, switch_ef55_yeardep_purchase, current_year) {
     }
 
 
-item (FEAT_TRAINS, ef55, 10) {
+/* item (FEAT_TRAINS, ef55, 10) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -92,4 +92,38 @@ property {
   default: switch_ef55_livery;
   purchase: switch_ef55_yeardep_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_ef55_purchase,\
+switch_logo_jgr,\
+switch_ef55_yeardep_purchase\
+)
+
+item (FEAT_TRAINS, ef55, 10) {
+	property {
+		name: string(STR_NAME_EF55);
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		reliability_decay: 19;
+		cost_factor: 46;
+		length: 8;
+		running_cost_factor: 74;
+		misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_EP),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JGR),
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_ef55_subtype_text;
+		default: switch_ef55_livery;
+		purchase: sw_ef55_purchase;
+	}
 }

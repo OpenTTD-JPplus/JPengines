@@ -101,7 +101,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, yo_8000, 35) {
+/* item (FEAT_TRAINS, yo_8000, 35) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -139,7 +139,7 @@ item (FEAT_TRAINS, yo_8000, 35) {
 							)
 						);
 	}
-}
+} */
 
 
 
@@ -174,7 +174,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_38000_subtype_text, cargo_subtype) {
 	}
 
 
-item (FEAT_TRAINS, yo_38000, 1603) {
+/* item (FEAT_TRAINS, yo_38000, 1603) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -213,7 +213,7 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 							)
 						);
 	}
-}
+} */
 
 //brake van super switch
 
@@ -240,3 +240,92 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_100, hasbit(bitmask_consist_info, 1)
 	}
 
 */
+
+GRAPHICS_STACK_2(\
+sw_yo_8000_purchase,\
+switch_logo_jnr,\
+spriteset_yo_8000_purchase\
+)
+
+item (FEAT_TRAINS, yo_8000, 35) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_8000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1974,1,1);
+		speed: 95 km/h;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 11;
+		cost_factor: 40;
+		running_cost_factor: 12;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(3);
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 95;
+		cargo_capacity: return 0;
+		default: switch_yo_8000_livery;
+		purchase: sw_yo_8000_purchase;
+		cargo_subtype_text: switch_yo_8000_subtype_text;
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_2C, 	
+								string(STR_SUFFIX_JNR),								
+								string(STR_SUFFIX_JR)
+							)
+						);
+	}
+}
+
+
+GRAPHICS_STACK_2(\
+sw_yo_38000_purchase,\
+switch_logo_jrf,\
+spriteset_yo_38000_purchase\
+)
+
+item (FEAT_TRAINS, yo_38000, 1603) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_YO_38000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1994,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 1;
+		refit_cost: 0;
+		cargo_allow_refit: [PASS];
+		weight: 11;
+		cost_factor: 40;
+		running_cost_factor: 15;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		bitmask_vehicle_info: bitmask(1);
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+		variant_group: 35;
+	}
+	graphics {
+		speed: switch_speedboost_1;
+		purchase_speed: return 110;
+		cargo_capacity: return 0;
+		default: switch_yo_38000_livery;
+		purchase: sw_yo_38000_purchase;
+		cargo_subtype_text: switch_yo_38000_subtype_text;
+		additional_text: string(STR_CONCAT_3S, 
+							string(STR_DESC_NARROWGAUGE),
+							string(STR_DESC_BRAKE),
+							string(STR_CONCAT_1C, 									
+								string(STR_SUFFIX_JRF)
+							)
+						);
+	}
+}

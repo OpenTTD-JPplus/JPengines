@@ -52,7 +52,7 @@ switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, df50, 71) {
+/* item (FEAT_TRAINS, df50, 71) {
 
 property {
 //	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -85,4 +85,37 @@ property {
   default: switch_df50_livery;
   purchase: spriteset_df50_purchase;
   }
+} */
+
+GRAPHICS_STACK_2(\
+sw_df50_purchase,\
+switch_logo_jnr,\
+spriteset_df50_purchase\
+)
+
+item (FEAT_TRAINS, df50, 71) {
+	property {
+		name: string(STR_NAME_DF50);
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		reliability_decay: 13;
+		cost_factor: 40;
+		running_cost_factor: 82;
+		engine_class: ENGINE_CLASS_DIESEL;
+		misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DE),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_df50_subtype_text;
+		default: switch_df50_livery;
+		purchase: sw_df50_purchase;
+	}
 }

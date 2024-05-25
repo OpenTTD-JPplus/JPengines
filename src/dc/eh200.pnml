@@ -54,7 +54,7 @@ switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
 
 
 
-item (FEAT_TRAINS, eh200, 88) {
+/* item (FEAT_TRAINS, eh200, 88) {
 
 property {
 	name: string(STR_NAME_EH200);
@@ -81,10 +81,10 @@ property {
   purchase: spriteset_eh200_purchase;
   articulated_part: switch_eh200_articulated_part;
   }
-}
+} */
 
 
-item (FEAT_TRAINS, eh200_rear, 1088) {
+/* item (FEAT_TRAINS, eh200_rear, 1088) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -104,5 +104,61 @@ item (FEAT_TRAINS, eh200_rear, 1088) {
 		power: return 0;
 		default: switch_eh200_livery_rear;
 	}
+} */
+
+
+
+GRAPHICS_STACK_2(\
+sw_eh200_purchase,\
+switch_logo_jrf,\
+spriteset_eh200_purchase\
+)
+
+item (FEAT_TRAINS, eh200, 88) {
+	property {
+		name: string(STR_NAME_EH200);
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		reliability_decay: 16;
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		additional_text: string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_HF),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JRF)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_eh200_subtype_text;
+		default: switch_eh200_livery;
+		purchase: sw_eh200_purchase;
+		articulated_part: switch_eh200_articulated_part;
+	}
 }
 
+
+
+item (FEAT_TRAINS, eh200_rear, 1088) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_EH200);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1950,1,1);
+		cargo_capacity: 1;
+		engine_class: ENGINE_CLASS_ELECTRIC;
+		power: 1 kW;
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC) | bitmask(TRAIN_FLAG_SPRITE_STACK);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		power: return 0;
+		default: switch_eh200_livery_rear;
+	}
+}
