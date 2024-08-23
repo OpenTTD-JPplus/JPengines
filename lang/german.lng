@@ -2,6 +2,7 @@
 
 lang: 7F
 
+STR_GRF_NAME :JP+ Lokomotiven & Wagen {VERSION}
 STR_GRF_DESCRIPTION :{RED}ACHTUNG!{SILVER} Muss unter JapanSet3: Trains geladen werden!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Ein Teil von der {WHITE}JP{RED}+{BLACK} serie, konzentriert an Lokomotiven, Personenwagen und Güterwagen der Japanische Eisenbahn. Enthält viele Lokomotiven und verschiedene Farbgebungen. {}{}{TINYFONT}Gezeichnet von {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded von {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Anschaffungskosten
