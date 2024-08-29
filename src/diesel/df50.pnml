@@ -52,22 +52,32 @@ switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, df50, 71) {
+item (FEAT_TRAINS, df50, 1225) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_DF50);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1955,1,1);
+  speed: 90 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 800 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 83;
+  model_life: 20;
+  vehicle_life: 25;
+  length: 7;
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
-
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	cost_factor: 40;
 	running_cost_factor: 82;
-	engine_class: ENGINE_CLASS_DIESEL;
-
+   running_cost_base: RUNNING_COST_DIESEL;
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	}
 
 

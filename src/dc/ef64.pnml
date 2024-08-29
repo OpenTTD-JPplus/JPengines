@@ -161,14 +161,14 @@ switch (FEAT_TRAINS, SELF, switch_ef64_0_name, getbits(extra_callback_info1, 0, 
 
 
 
-item (FEAT_TRAINS, ef64, 22) {
+item (FEAT_TRAINS, ef64, 1022) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
   name: string(STR_NAME_EF64_1);
   climates_available: ALL_CLIMATES;
-//  introduction_date: date(1980,1,1);
+  introduction_date: date(1964,1,1);
   speed: 110 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -331,7 +331,7 @@ property {
   running_cost_factor: 80;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-  variant_group: 22;
+  variant_group: 1022;
 	}
 
 

@@ -74,23 +74,30 @@ switch (FEAT_TRAINS, SELF, switch_ef10_name, getbits(extra_callback_info1, 0, 8)
   }
 
 
-item (FEAT_TRAINS, ef10, 08) {
+item (FEAT_TRAINS, ef10, 1008) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF10_1);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF10_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1933,1,1);
+  speed: 75 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 98;
   reliability_decay: 22;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 39;
+  length: 7;
   running_cost_factor: 56;
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	length: 7;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -191,7 +198,7 @@ item (FEAT_TRAINS, ef10_2, 1052) {
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 08;
+	variant_group: 1008;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 

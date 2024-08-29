@@ -331,10 +331,10 @@ switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0,
   }
 
 
-item (FEAT_TRAINS, eh500_old, 67) {
+item (FEAT_TRAINS, eh500_old, 1267) {
 
 property {
-//  sprite_id: SPRITE_ID_NEW_TRAIN;
+    sprite_id: SPRITE_ID_NEW_TRAIN;
 	track_type: NABE;
 	name: string(STR_NAME_EH500_1);
 	climates_available: ALL_CLIMATES;

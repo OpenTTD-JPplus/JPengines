@@ -220,7 +220,7 @@ switch (FEAT_TRAINS, SELF, switch_ef81_0_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef81, 55) {
+item (FEAT_TRAINS, ef81, 1255) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -362,7 +362,7 @@ property {
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 55;
+  variant_group: 1255;
 	}
 
 
@@ -450,7 +450,7 @@ property {
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 55;
+  variant_group: 1255;
 	}
 
 

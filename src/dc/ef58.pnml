@@ -232,12 +232,12 @@ switch (FEAT_TRAINS, SELF, switch_ef58_1_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef58, 14) {
+item (FEAT_TRAINS, ef58, 1914) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-//  track_type: NABE;
-	name: string(STR_NAME_EF58_1);
+  track_type: NABE;
+  name: string(STR_NAME_EF58_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1952,1,1);
   speed: 110 km/h;
@@ -330,7 +330,7 @@ property {
   length: 8;
   running_cost_factor: 72;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  variant_group: 14;
+  variant_group: 1914;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -392,7 +392,7 @@ property {
   length: 8;
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  variant_group: 14;
+  variant_group: 1914;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 

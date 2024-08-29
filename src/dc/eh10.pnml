@@ -126,7 +126,7 @@ switch(FEAT_TRAINS, SELF, switch_eh10_articulated_part, extra_callback_info1) {
 
 
 
-item (FEAT_TRAINS, eh10, 18) {
+item (FEAT_TRAINS, eh10, 1218) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -267,7 +267,7 @@ property {
   running_cost_factor: 58;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 18;
+  variant_group: 1218;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -383,7 +383,7 @@ property {
   running_cost_factor: 82;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 18;
+  variant_group: 1218;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 

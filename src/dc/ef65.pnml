@@ -218,7 +218,7 @@ switch (FEAT_TRAINS, SELF, switch_ef65_0_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef65_0, 24) {
+item (FEAT_TRAINS, ef65_0, 1024) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -348,7 +348,7 @@ property {
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 
@@ -492,7 +492,7 @@ property {
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC); //temp removal pending 32bpp sprite for twilight
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 
@@ -591,7 +591,7 @@ property {
   running_cost_factor: 81;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 

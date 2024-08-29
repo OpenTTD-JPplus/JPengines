@@ -134,7 +134,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0,
 
 
 
-item (FEAT_TRAINS, ef510_0, 105) {
+item (FEAT_TRAINS, ef510_0, 1086) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -245,7 +245,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 
 
 
 
-item (FEAT_TRAINS, ef510_500, 1986) {
+item (FEAT_TRAINS, ef510_500, 1087) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -270,7 +270,7 @@ property {
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 105;
+  variant_group: 1086;
 	}
 
 
@@ -328,7 +328,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 
 
 
 
-item (FEAT_TRAINS, ef510_300, 1086) {
+item (FEAT_TRAINS, ef510_300, 1987) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -353,7 +353,7 @@ property {
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 105;
+  variant_group: 1086;
 	}
 
 

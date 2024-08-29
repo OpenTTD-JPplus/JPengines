@@ -60,15 +60,22 @@ switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)
 
 
 
-item (FEAT_TRAINS, ef13_1, 103) {
+item (FEAT_TRAINS, ef13_1, 1033) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF13_1);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF13_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1944,1,1);
+  speed: 75 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
   model_life: 45;
@@ -76,9 +83,7 @@ property {
   cost_factor: 38;
   length: 7;
   running_cost_factor: 57;
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	length: 7;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -154,7 +159,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   running_cost_factor: 57;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 103;
+	variant_group: 1033;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 

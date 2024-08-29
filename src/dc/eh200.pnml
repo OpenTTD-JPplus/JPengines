@@ -54,15 +54,31 @@ switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
 
 
 
-item (FEAT_TRAINS, eh200, 88) {
+item (FEAT_TRAINS, eh200, 1088) {
 
 property {
-	name: string(STR_NAME_EH200);
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 16;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EH200);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2001,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 4520 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 134;
+  reliability_decay: 16;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 45;
+  cost_factor: 99;
+  length: 6;
+  running_cost_factor: 97;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -84,7 +100,7 @@ property {
 }
 
 
-item (FEAT_TRAINS, eh200_rear, 1088) {
+item (FEAT_TRAINS, eh200_rear, 1988) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;

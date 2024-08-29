@@ -174,7 +174,7 @@ switch (FEAT_TRAINS, SELF, switch_df200_0_name, getbits(extra_callback_info1, 0,
   return CB_RESULT_NO_TEXT;
   }
 
-item (FEAT_TRAINS, df200_0, 63) {
+item (FEAT_TRAINS, df200_0, 1263) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -335,7 +335,7 @@ property {
   running_cost_factor: 101;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine
@@ -413,7 +413,7 @@ property {
   running_cost_factor: 101;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine
@@ -528,7 +528,7 @@ property {
   running_cost_factor: 100;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine

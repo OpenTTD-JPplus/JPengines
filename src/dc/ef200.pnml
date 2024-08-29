@@ -107,7 +107,7 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, jr_ef200, 60) {
+item (FEAT_TRAINS, jr_ef200, 1262) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -221,7 +221,7 @@ property {
   running_cost_factor: 109;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 60;
+  variant_group: 1262;
 	} 
 
 

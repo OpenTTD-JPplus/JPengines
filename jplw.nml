@@ -140,19 +140,20 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //diesels
-1203, 1205, 1207, 1209, 1210, 20, 1211, 1212, 1215, 25, 1220, 1221, 71, 63, 1063, 1963, 1964, 111,
+1203, 1205, 1207, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1225, 1263, 1063, 1963, 1964, 1230,
 //electrics DC old
-1010, 1011, 990, 1004, 1904, 02, 1013, 1012, 1050, 1051, 08, 1052, 103, 1053, 1054, 1014, 1016, 1916, 10, 1019, 1919, 1920, 1020, 18, 1081, 1082, 1021, 14, 1921, 
+1010, 1011, 990, 1004, 1904, 1002, 1013, 1012, 1050, 1051, 1008, 1052, 1033, 1053, 1054, 1014, 1016, 1916, 1910, 1019, 1919, 1920, 1020, 1218, 1081, 1082, 1021, 1914, 1921, 
 //electrics DC new
-1059, 1060, 1960, 1930, 1030, 1031, 1931, 1039, 1939, 1040, 22, 1922, 1041, 24, 1042, 1942, 1924, 26, 1926, 1945, 60, 84, 1084, 1984, 88, 
+1059, 1060, 1960, 1930, 1030, 1031, 1931, 1039, 1939, 1040, 1022, 1922, 1041, 1024, 1042, 1942, 1924, 1026, 1926, 1945, 1062, 1262, 1984, 1084, 1985, 1088, 
 //electrics AC
 1065, 1070, 1970, 1075, 1071, 1072, 1972, 1946, 1045, 1047, 1095,
 //electrics MS 
-1055, 1915, 1015, 1080, 55, 1083, 1983, 1090, 1085, 105, 1098, 67, 1097, 
+1055, 1915, 1015, 1080, 1255, 1083, 1983, 1090, 1085, 1086, 1098, 1267, 1097, 
 //cargo MU
 // 77,
-
-//non JNR/JR
+//diesels private
+//
+//electrics private
 1005, 1106, 991, 1100, 1101, 
 
 //wagons pax
@@ -2230,24 +2231,30 @@ switch(FEAT_TRAINS, SELF, switch_ed17_subtype_text, cargo_subtype) {
 }
 
 
-item (FEAT_TRAINS, ed17, 02) {
+item (FEAT_TRAINS, ed17, 1002) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_ED17);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_ED17);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1923,1,1);
+  speed: 65 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 925 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 60;
   reliability_decay: 17;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 31;
   length: 6;
   running_cost_factor: 37;
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	length: 6;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -2316,7 +2323,7 @@ item (FEAT_TRAINS, ed50, 1012) {
   running_cost_factor: 40;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 02;
+	variant_group: 1002;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -2953,23 +2960,30 @@ switch (FEAT_TRAINS, SELF, switch_ef10_name, getbits(extra_callback_info1, 0, 8)
   }
 
 
-item (FEAT_TRAINS, ef10, 08) {
+item (FEAT_TRAINS, ef10, 1008) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF10_1);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF10_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1933,1,1);
+  speed: 75 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 98;
   reliability_decay: 22;
   model_life: 45;
   vehicle_life: 45;
   cost_factor: 39;
+  length: 7;
   running_cost_factor: 56;
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	length: 7;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -3070,7 +3084,7 @@ item (FEAT_TRAINS, ef10_2, 1052) {
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 08;
+	variant_group: 1008;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -3151,15 +3165,22 @@ switch (FEAT_TRAINS, SELF, switch_ef13_name, getbits(extra_callback_info1, 0, 8)
 
 
 
-item (FEAT_TRAINS, ef13_1, 103) {
+item (FEAT_TRAINS, ef13_1, 1033) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF13_1);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF13_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1944,1,1);
+  speed: 75 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
   power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
   model_life: 45;
@@ -3167,9 +3188,7 @@ property {
   cost_factor: 38;
   length: 7;
   running_cost_factor: 57;
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	length: 7;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
@@ -3245,7 +3264,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   running_cost_factor: 57;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 103;
+	variant_group: 1033;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -3797,19 +3816,30 @@ switch(FEAT_TRAINS, SELF, switch_ef55_yeardep_purchase, current_year) {
     }
 
 
-item (FEAT_TRAINS, ef55, 10) {
+item (FEAT_TRAINS, ef55, 1910) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF55);
-
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 19;
-  cost_factor: 46;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF55);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1936,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 45;
+  cost_factor: 47;
   length: 8;
-  running_cost_factor: 74;
+  running_cost_factor: 70;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
 
@@ -4518,12 +4548,12 @@ switch (FEAT_TRAINS, SELF, switch_ef58_1_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef58, 14) {
+item (FEAT_TRAINS, ef58, 1914) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-//  track_type: NABE;
-	name: string(STR_NAME_EF58_1);
+  track_type: NABE;
+  name: string(STR_NAME_EF58_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1952,1,1);
   speed: 110 km/h;
@@ -4616,7 +4646,7 @@ property {
   length: 8;
   running_cost_factor: 72;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  variant_group: 14;
+  variant_group: 1914;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -4678,7 +4708,7 @@ property {
   length: 8;
   running_cost_factor: 56;
   running_cost_base: RUNNING_COST_ELECTRIC;
-  variant_group: 14;
+  variant_group: 1914;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -5637,14 +5667,14 @@ switch (FEAT_TRAINS, SELF, switch_ef64_0_name, getbits(extra_callback_info1, 0, 
 
 
 
-item (FEAT_TRAINS, ef64, 22) {
+item (FEAT_TRAINS, ef64, 1022) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NABE;
   name: string(STR_NAME_EF64_1);
   climates_available: ALL_CLIMATES;
-//  introduction_date: date(1980,1,1);
+  introduction_date: date(1964,1,1);
   speed: 110 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
@@ -5807,7 +5837,7 @@ property {
   running_cost_factor: 80;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-  variant_group: 22;
+  variant_group: 1022;
 	}
 
 
@@ -6051,7 +6081,7 @@ switch (FEAT_TRAINS, SELF, switch_ef65_0_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef65_0, 24) {
+item (FEAT_TRAINS, ef65_0, 1024) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -6181,7 +6211,7 @@ property {
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 
@@ -6325,7 +6355,7 @@ property {
   running_cost_factor: 85;
   running_cost_base: RUNNING_COST_ELECTRIC;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC); //temp removal pending 32bpp sprite for twilight
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 
@@ -6424,7 +6454,7 @@ property {
   running_cost_factor: 81;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 24;
+  variant_group: 1024;
 	}
 
 
@@ -6642,11 +6672,11 @@ switch (FEAT_TRAINS, SELF, switch_ef66_0_name, getbits(extra_callback_info1, 0, 
 
 
 
-item (FEAT_TRAINS, ef66, 26) {
+item (FEAT_TRAINS, ef66, 1026) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-//  track_type: NABE;
+  track_type: NABE;
   name: string(STR_NAME_EF66_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1966,1,1);
@@ -6766,7 +6796,7 @@ property {
   running_cost_factor: 100;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 26;
+  variant_group: 1026;
 	}
 
 
@@ -6842,7 +6872,7 @@ property {
   running_cost_factor: 102;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 26;
+  variant_group: 1026;
 	}
 
 
@@ -6968,7 +6998,7 @@ switch(FEAT_TRAINS, SELF, switch_ef200_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, jr_ef200, 60) {
+item (FEAT_TRAINS, jr_ef200, 1262) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -7082,7 +7112,7 @@ property {
   running_cost_factor: 109;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 60;
+  variant_group: 1262;
 	} 
 
 
@@ -7226,7 +7256,7 @@ switch (FEAT_TRAINS, SELF, switch_ef210_0_name, getbits(extra_callback_info1, 0,
   }
 
 
-item (FEAT_TRAINS, ef210_0, 84) {
+item (FEAT_TRAINS, ef210_0, 1984) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -7355,7 +7385,7 @@ property {
   running_cost_factor: 92;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 84;
+  variant_group: 1984;
 	}
 
 
@@ -7413,7 +7443,7 @@ switch (FEAT_TRAINS, SELF, switch_ef210_300_name, getbits(extra_callback_info1, 
   }
 
 
-item (FEAT_TRAINS, ef210_300, 1984) {
+item (FEAT_TRAINS, ef210_300, 1985) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -7438,7 +7468,7 @@ property {
   running_cost_factor: 92;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 84;
+  variant_group: 1984;
 	}
 
 
@@ -7586,7 +7616,7 @@ switch(FEAT_TRAINS, SELF, switch_eh10_articulated_part, extra_callback_info1) {
 
 
 
-item (FEAT_TRAINS, eh10, 18) {
+item (FEAT_TRAINS, eh10, 1218) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -7727,7 +7757,7 @@ property {
   running_cost_factor: 58;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 18;
+  variant_group: 1218;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -7843,7 +7873,7 @@ property {
   running_cost_factor: 82;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 18;
+  variant_group: 1218;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -7940,15 +7970,31 @@ switch(FEAT_TRAINS, SELF, switch_eh200_articulated_part, extra_callback_info1) {
 
 
 
-item (FEAT_TRAINS, eh200, 88) {
+item (FEAT_TRAINS, eh200, 1088) {
 
 property {
-	name: string(STR_NAME_EH200);
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 16;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EH200);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2001,1,1);
+  speed: 120 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 4520 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 134;
+  reliability_decay: 16;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 45;
+  cost_factor: 99;
+  length: 6;
+  running_cost_factor: 97;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -7970,7 +8016,7 @@ property {
 }
 
 
-item (FEAT_TRAINS, eh200_rear, 1088) {
+item (FEAT_TRAINS, eh200_rear, 1988) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -9802,7 +9848,7 @@ switch (FEAT_TRAINS, SELF, switch_ef81_0_name, getbits(extra_callback_info1, 0, 
   }
 
 
-item (FEAT_TRAINS, ef81, 55) {
+item (FEAT_TRAINS, ef81, 1255) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -9944,7 +9990,7 @@ property {
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 55;
+  variant_group: 1255;
 	}
 
 
@@ -10032,7 +10078,7 @@ property {
   running_cost_factor: 90;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 55;
+  variant_group: 1255;
 	}
 
 
@@ -10258,7 +10304,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_0_name, getbits(extra_callback_info1, 0,
 
 
 
-item (FEAT_TRAINS, ef510_0, 105) {
+item (FEAT_TRAINS, ef510_0, 1086) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -10369,7 +10415,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_500_name, getbits(extra_callback_info1, 
 
 
 
-item (FEAT_TRAINS, ef510_500, 1986) {
+item (FEAT_TRAINS, ef510_500, 1087) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -10394,7 +10440,7 @@ property {
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 105;
+  variant_group: 1086;
 	}
 
 
@@ -10452,7 +10498,7 @@ switch (FEAT_TRAINS, SELF, switch_ef510_300_name, getbits(extra_callback_info1, 
 
 
 
-item (FEAT_TRAINS, ef510_300, 1086) {
+item (FEAT_TRAINS, ef510_300, 1987) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -10477,7 +10523,7 @@ property {
   running_cost_factor: 94;
   running_cost_base: RUNNING_COST_ELECTRIC;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 105;
+  variant_group: 1086;
 	}
 
 
@@ -10831,10 +10877,10 @@ switch (FEAT_TRAINS, SELF, switch_eh500_1_name, getbits(extra_callback_info1, 0,
   }
 
 
-item (FEAT_TRAINS, eh500_old, 67) {
+item (FEAT_TRAINS, eh500_old, 1267) {
 
 property {
-//  sprite_id: SPRITE_ID_NEW_TRAIN;
+    sprite_id: SPRITE_ID_NEW_TRAIN;
 	track_type: NABE;
 	name: string(STR_NAME_EH500_1);
 	climates_available: ALL_CLIMATES;
@@ -11524,20 +11570,31 @@ switch(FEAT_TRAINS, SELF, switch_dd51_yeardep_purchase, current_year) {
 
 
 
-item (FEAT_TRAINS, dd51, 20) {
+item (FEAT_TRAINS, dd51, 1214) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_DD51);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1961,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.27;
+  power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 84;
+  model_life: 60;
+  vehicle_life: 40;
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 2;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	engine_class: ENGINE_CLASS_DIESEL;
+   cost_factor: 89;
+   running_cost_base: RUNNING_COST_DIESEL;
 	running_cost_factor: 85;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
@@ -12080,21 +12137,32 @@ switch (FEAT_TRAINS, SELF, switch_de10_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, de10, 25) {
+item (FEAT_TRAINS, de10, 1219) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_DE10);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1967,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 1005 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 65;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 7;
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 9;
-
+    cost_factor: 46;
+	running_cost_factor: 80;
+    running_cost_base: RUNNING_COST_DIESEL;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-//	length: 6;
-	engine_class: ENGINE_CLASS_DIESEL;
-	running_cost_factor: 90;
 	}
 
 
@@ -12169,22 +12237,32 @@ switch(FEAT_TRAINS, SELF, switch_df50_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, df50, 71) {
+item (FEAT_TRAINS, df50, 1225) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_DF50);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1955,1,1);
+  speed: 90 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 800 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 83;
+  model_life: 20;
+  vehicle_life: 25;
+  length: 7;
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
-
-//	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	cost_factor: 40;
 	running_cost_factor: 82;
-	engine_class: ENGINE_CLASS_DIESEL;
-
+   running_cost_base: RUNNING_COST_DIESEL;
+//	misc_flags: bitmask(TRAIN_FLAG_2CC);	
 	}
 
 
@@ -12379,7 +12457,7 @@ switch (FEAT_TRAINS, SELF, switch_df200_0_name, getbits(extra_callback_info1, 0,
   return CB_RESULT_NO_TEXT;
   }
 
-item (FEAT_TRAINS, df200_0, 63) {
+item (FEAT_TRAINS, df200_0, 1263) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -12540,7 +12618,7 @@ property {
   running_cost_factor: 101;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine
@@ -12618,7 +12696,7 @@ property {
   running_cost_factor: 101;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine
@@ -12733,7 +12811,7 @@ property {
   running_cost_factor: 100;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
-  variant_group: 63;
+  variant_group: 1263;
   } 
 
   graphics { // graphics for engine
@@ -12810,17 +12888,31 @@ switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hd300, 111) {
+item (FEAT_TRAINS, hd300, 1230) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_HD300);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2011,1,1);
+  speed: 110 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 500 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 60;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 7;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
-
+    cost_factor: 38;
+	running_cost_factor: 45;
+    running_cost_base: RUNNING_COST_DIESEL;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	engine_class: ENGINE_CLASS_DIESEL;
-//	running_cost_factor: 115;
 	}
 
 

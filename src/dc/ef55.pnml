@@ -60,19 +60,30 @@ switch(FEAT_TRAINS, SELF, switch_ef55_yeardep_purchase, current_year) {
     }
 
 
-item (FEAT_TRAINS, ef55, 10) {
+item (FEAT_TRAINS, ef55, 1910) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
-	name: string(STR_NAME_EF55);
-
-	cargo_capacity: 1; 
-	cargo_allow_refit: [PASS];
-	reliability_decay: 19;
-  cost_factor: 46;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NABE;
+  name: string(STR_NAME_EF55);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1936,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 45;
+  cost_factor: 47;
   length: 8;
-  running_cost_factor: 74;
+  running_cost_factor: 70;
+  running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
 

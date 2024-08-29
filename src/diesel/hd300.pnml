@@ -56,17 +56,31 @@ switch(FEAT_TRAINS, SELF, switch_hd300_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, hd300, 111) {
+item (FEAT_TRAINS, hd300, 1230) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_HD300);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(2011,1,1);
+  speed: 110 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 500 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 60;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 7;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
-
+    cost_factor: 38;
+	running_cost_factor: 45;
+    running_cost_base: RUNNING_COST_DIESEL;
 	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
-	engine_class: ENGINE_CLASS_DIESEL;
-//	running_cost_factor: 115;
 	}
 
 

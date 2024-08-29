@@ -154,20 +154,31 @@ switch(FEAT_TRAINS, SELF, switch_dd51_yeardep_purchase, current_year) {
 
 
 
-item (FEAT_TRAINS, dd51, 20) {
+item (FEAT_TRAINS, dd51, 1214) {
 
 property {
-//	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_DD51);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1961,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.27;
+  power: 1600 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 84;
+  model_life: 60;
+  vehicle_life: 40;
 
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 2;
-
-	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	engine_class: ENGINE_CLASS_DIESEL;
+   cost_factor: 89;
+   running_cost_base: RUNNING_COST_DIESEL;
 	running_cost_factor: 85;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 
 
