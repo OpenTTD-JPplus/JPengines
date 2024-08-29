@@ -208,6 +208,7 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 							);
 
 		cargo_capacity: return 36;
+		cargo_age_period: return 100;
 		default: switch_pax_1870_livery;
 		purchase: switch_pax_1870_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1870_subtype_text;
@@ -274,7 +275,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		dual_headed: 0;
 		cargo_capacity: 36; 
 		refit_cost: 0;
-		cargo_age_period: 100;
+		cargo_age_period: 185;
 //		default_cargo_type: PASS;
 //		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 

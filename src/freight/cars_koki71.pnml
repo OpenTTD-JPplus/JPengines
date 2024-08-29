@@ -146,6 +146,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	cargo_age_period: switch_container_cargo_decay;
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
