@@ -79,6 +79,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 60;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;

@@ -150,6 +150,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 95;
 		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
@@ -195,6 +196,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 55;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_kokifu_50000_flip;
 		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -312,6 +314,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 100;
 		default: switch_koki_250000_base_loadstack;
 		purchase: switch_koki_250000_purchase;
@@ -413,6 +416,7 @@ item (FEAT_TRAINS, koki_350000, 1416) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_350000_base_loadstack;
 		purchase: switch_koki_350000_purchase;

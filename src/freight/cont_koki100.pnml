@@ -143,6 +143,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 75;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_100_flip;
 		purchase: spriteset_koki_100_purchase;
@@ -241,6 +242,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 		cargo_capacity: return 80;
 		purchase_speed: return 110;
 		default: switch_koki_107_flip;

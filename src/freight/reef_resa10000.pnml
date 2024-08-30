@@ -85,7 +85,7 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 		cargo_capacity: 45; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 1200;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 

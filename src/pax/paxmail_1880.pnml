@@ -324,6 +324,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 							);
 
 		cargo_capacity: return 50;
+		cargo_age_period: return 120;
 		default: switch_pax_1880_livery;
 		purchase: switch_pax_1880_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1880_subtype_text;
