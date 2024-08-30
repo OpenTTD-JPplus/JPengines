@@ -128,7 +128,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, eb10, 1011) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EB10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1931,1,1);

@@ -71,7 +71,7 @@ switch(FEAT_TRAINS, SELF, switch_ef56_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef56, 1019) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF56);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1937,1,1);
@@ -139,7 +139,7 @@ switch (FEAT_TRAINS, SELF, switch_ef59_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef59_2, 1919) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF59_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);

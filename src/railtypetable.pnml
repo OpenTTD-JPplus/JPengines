@@ -1,6 +1,19 @@
 
 railtypetable {
-    NAAN, NABE
-	}
-	
-	//todo more, once JP tracks is a thing
+	//narrow gauge
+    NAAN, 
+	JND1,
+	JNA1,
+	NABE,
+	railtype_NG_DC: [JND1, NABE],
+	railtype_NG_AC: [JNA1, NABE],
+
+	//standard gauge
+	RAIL,
+	JSD1,
+	JSA1,
+	ELRL,
+	railtype_SG_DC: [JSD1, ELRL],
+	railtype_SG_AC: [JSA1, ELRL]
+
+}

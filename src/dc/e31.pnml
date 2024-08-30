@@ -31,7 +31,7 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, seibu_e31, 1101) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_E31);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1986,1,1);

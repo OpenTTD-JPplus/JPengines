@@ -127,10 +127,23 @@ if (grf_order_behind("BS\42\13") == 0) {
 // engine_override("\53\5A\0D\00");
 
 railtypetable {
-    NAAN, NABE
-	}
-	
-	//todo more, once JP tracks is a thing
+	//narrow gauge
+    NAAN, 
+	JND1,
+	JNA1,
+	NABE,
+	railtype_NG_DC: [JND1, NABE],
+	railtype_NG_AC: [JNA1, NABE],
+
+	//standard gauge
+	RAIL,
+	JSD1,
+	JSA1,
+	ELRL,
+	railtype_SG_DC: [JSD1, ELRL],
+	railtype_SG_AC: [JSA1, ELRL]
+
+}
 //sort in depot //could change to item names instead of ID numbers
 
 //variants should be sorted in order too so they show up correctly in replace window
@@ -1467,7 +1480,7 @@ switch(FEAT_TRAINS, SELF, switch_deki_400_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, deki_400, 1005) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_DEKI_400);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1930,1,1);
@@ -1544,7 +1557,7 @@ switch(FEAT_TRAINS, SELF, switch_el120_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, el120, 1106) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EL120);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2015,1,1);
@@ -1614,7 +1627,7 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e31_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, seibu_e31, 1101) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_E31);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1986,1,1);
@@ -1697,7 +1710,7 @@ switch(FEAT_TRAINS, SELF, switch_seibu_e851_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, seibu_e851, 1100) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_E851);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
@@ -1865,7 +1878,7 @@ switch(FEAT_TRAINS, SELF, switch_eb10_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, eb10, 1011) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EB10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1931,1,1);
@@ -1948,7 +1961,7 @@ switch(FEAT_TRAINS, SELF, switch_ed12_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed12, 990) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED12);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1923,1,1);
@@ -2006,7 +2019,7 @@ switch(FEAT_TRAINS, SELF, switch_e51_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, e51, 991) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_E51);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1950,1,1);
@@ -2085,7 +2098,7 @@ switch(FEAT_TRAINS, SELF, switch_ed16_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed16, 1004) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED16);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1931,1,1);
@@ -2139,7 +2152,7 @@ switch(FEAT_TRAINS, SELF, switch_ed55_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed55, 1904) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED55);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1941,1,1);
@@ -2235,7 +2248,7 @@ item (FEAT_TRAINS, ed17, 1002) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED17);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1923,1,1);
@@ -2302,7 +2315,7 @@ switch(FEAT_TRAINS, SELF, switch_ed50_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed50, 1012) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED50);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1923,1,1);
@@ -2374,7 +2387,7 @@ switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed19, 1013) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED19);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1937,1,1);
@@ -2417,7 +2430,7 @@ item (FEAT_TRAINS, ed19, 1013) {
 item (FEAT_TRAINS, ed53, 1050) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED53);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1926,1,1);
@@ -2521,7 +2534,7 @@ item (FEAT_TRAINS, ed54, 1051) {
 
 property {
     sprite_id: SPRITE_ID_NEW_TRAIN;
-    track_type: NABE;
+    track_type: railtype_NG_DC;
     name: string(STR_NAME_ED54);
     climates_available: ALL_CLIMATES;
     introduction_date: date(1926,1,1);
@@ -2622,7 +2635,7 @@ switch(FEAT_TRAINS, SELF, switch_ed60_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed60, 1059) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED60);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1958,1,1);
@@ -2748,7 +2761,7 @@ switch(FEAT_TRAINS, SELF, switch_ed61_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed61, 1060) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED61);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1958,1,1);
@@ -2846,7 +2859,7 @@ switch(FEAT_TRAINS, SELF, switch_ed62_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed62, 1960) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_ED62);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1974,1,1);
@@ -2964,7 +2977,7 @@ item (FEAT_TRAINS, ef10, 1008) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF10_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1933,1,1);
@@ -3063,7 +3076,7 @@ switch (FEAT_TRAINS, SELF, switch_ef10_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef10_2, 1052) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF10_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1937,1,1);
@@ -3169,7 +3182,7 @@ item (FEAT_TRAINS, ef13_1, 1033) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF13_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1944,1,1);
@@ -3243,7 +3256,7 @@ switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef13_2, 1053) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF13_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1957,1,1);
@@ -3420,7 +3433,7 @@ switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef15, 1054) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF15);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1947,1,1);
@@ -3527,7 +3540,7 @@ switch(FEAT_TRAINS, SELF, switch_ef50_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef50, 1014) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF50);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1925,1,1);
@@ -3648,7 +3661,7 @@ switch(FEAT_TRAINS, SELF, switch_ef53_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef53, 1016) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF53);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1932,1,1);
@@ -3716,7 +3729,7 @@ switch (FEAT_TRAINS, SELF, switch_ef59_1_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef59_1, 1916) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF59_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
@@ -3820,7 +3833,7 @@ item (FEAT_TRAINS, ef55, 1910) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF55);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1936,1,1);
@@ -3933,7 +3946,7 @@ switch(FEAT_TRAINS, SELF, switch_ef56_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef56, 1019) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF56);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1937,1,1);
@@ -4001,7 +4014,7 @@ switch (FEAT_TRAINS, SELF, switch_ef59_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef59_2, 1919) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF59_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
@@ -4199,7 +4212,7 @@ switch(FEAT_TRAINS, SELF, switch_ef57_1_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef57, 1020) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF57);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1940,1,1);
@@ -4275,7 +4288,7 @@ switch (FEAT_TRAINS, SELF, switch_ef57_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef57_2, 1920) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF57_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1938,1,1);
@@ -4552,7 +4565,7 @@ item (FEAT_TRAINS, ef58, 1914) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF58_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1952,1,1);
@@ -4626,7 +4639,7 @@ item (FEAT_TRAINS, ef58_2, 1021) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF58_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1946,1,1);
@@ -4688,7 +4701,7 @@ item (FEAT_TRAINS, ef18, 1921) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF18);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1951,1,1);
@@ -4885,7 +4898,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_1_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef60_1, 1030) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF60_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1962,1,1);
@@ -4987,7 +5000,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef60_2, 1031) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF60_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
@@ -5068,7 +5081,7 @@ switch (FEAT_TRAINS, SELF, switch_ef60_0_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef60_0, 1930) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF60_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1960,1,1);
@@ -5148,7 +5161,7 @@ switch (FEAT_TRAINS, SELF, switch_ef67_1_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef67_1, 1931) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF67_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1982,1,1);
@@ -5274,7 +5287,7 @@ switch(FEAT_TRAINS, SELF, switch_ef62_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, ef62, 1039) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF62);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
@@ -5364,7 +5377,7 @@ switch (FEAT_TRAINS, SELF, switch_ef62_proto_name, getbits(extra_callback_info1,
 item (FEAT_TRAINS, ef62_proto, 1939) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF62_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1962,1,1);
@@ -5465,7 +5478,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, ef63, 1040) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF63);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1962,1,1);
@@ -5671,7 +5684,7 @@ item (FEAT_TRAINS, ef64, 1022) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF64_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1964,1,1);
@@ -5816,7 +5829,7 @@ item (FEAT_TRAINS, ef64_1000, 1922) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF64_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1980,1,1);
@@ -6085,7 +6098,7 @@ item (FEAT_TRAINS, ef65_0, 1024) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF65_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
@@ -6190,7 +6203,7 @@ item (FEAT_TRAINS, ef65_500, 1042) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF65_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
@@ -6334,7 +6347,7 @@ item (FEAT_TRAINS, ef65_1000, 1942) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF65_3);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1969,1,1);
@@ -6433,7 +6446,7 @@ item (FEAT_TRAINS, ef67_100, 1924) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF67_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1990,1,1);
@@ -6676,7 +6689,7 @@ item (FEAT_TRAINS, ef66, 1026) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF66_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1966,1,1);
@@ -6775,7 +6788,7 @@ item (FEAT_TRAINS, ef66_2, 1926) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF66_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1989,1,1);
@@ -6851,7 +6864,7 @@ item (FEAT_TRAINS, ef66_2000, 1927) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF66_3);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2014,1,1);
@@ -7002,7 +7015,7 @@ item (FEAT_TRAINS, jr_ef200, 1262) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF200);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1992,1,1);
@@ -7091,7 +7104,7 @@ item (FEAT_TRAINS, jr_ef200_proto, 1962) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF200_P);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1990,1,1);
@@ -7260,7 +7273,7 @@ item (FEAT_TRAINS, ef210_0, 1984) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF210_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1996,1,1);
@@ -7364,7 +7377,7 @@ item (FEAT_TRAINS, ef210_100, 1084) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF210_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2000,1,1);
@@ -7447,7 +7460,7 @@ item (FEAT_TRAINS, ef210_300, 1985) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF210_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2013,1,1);
@@ -7620,7 +7633,7 @@ item (FEAT_TRAINS, eh10, 1218) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EH10);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1955,1,1);
@@ -7736,7 +7749,7 @@ item (FEAT_TRAINS, eh10_2, 1081) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EH10_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1954,1,1);
@@ -7852,7 +7865,7 @@ item (FEAT_TRAINS, eh50, 1082) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EH50);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1956,1,1);
@@ -7974,7 +7987,7 @@ item (FEAT_TRAINS, eh200, 1088) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EH200);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2001,1,1);
@@ -8150,7 +8163,7 @@ switch(FEAT_TRAINS, SELF, switch_ed70_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed70, 1065) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED70);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1957,1,1);
@@ -8447,7 +8460,7 @@ switch (FEAT_TRAINS, SELF, switch_ed75_0_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ed75, 1070) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED75_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
@@ -8536,7 +8549,7 @@ switch(FEAT_TRAINS, SELF, switch_ed79_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed79, 1075) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED79);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1986,1,1);
@@ -8622,7 +8635,7 @@ switch (FEAT_TRAINS, SELF, switch_ed75_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ed75_700, 1970) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED75_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1971,1,1);
@@ -8797,7 +8810,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ed76_0, 1071) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED76_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
@@ -8878,7 +8891,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, ed76_500, 1072) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED76_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1968,1,1);
@@ -8954,7 +8967,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, ed76_550, 1972) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_ED76_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1991,1,1);
@@ -9338,7 +9351,7 @@ switch (FEAT_TRAINS, SELF, switch_ef70_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef70_new, 1045) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_EF70_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1964,1,1);
@@ -9409,7 +9422,7 @@ switch (FEAT_TRAINS, SELF, switch_ef70_1_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef70_old, 1946) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_EF70_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1961,1,1);
@@ -9492,7 +9505,7 @@ switch(FEAT_TRAINS, SELF, switch_ef71_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef71, 1047) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_AC;
   name: string(STR_NAME_EF71);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1968,1,1);
@@ -11162,7 +11175,7 @@ item (FEAT_TRAINS, eh800, 1095) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NABE;
+	track_type: railtype_NG_AC;
 	name: string(STR_NAME_EH800);
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(2012,1,1);

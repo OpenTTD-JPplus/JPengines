@@ -111,7 +111,7 @@ item (FEAT_TRAINS, jr_ef200, 1262) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF200);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1992,1,1);
@@ -200,7 +200,7 @@ item (FEAT_TRAINS, jr_ef200_proto, 1962) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF200_P);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1990,1,1);

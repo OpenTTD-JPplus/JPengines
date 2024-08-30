@@ -64,7 +64,7 @@ item (FEAT_TRAINS, ef13_1, 1033) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF13_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1944,1,1);
@@ -138,7 +138,7 @@ switch (FEAT_TRAINS, SELF, switch_ef13_2_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ef13_2, 1053) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF13_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1957,1,1);

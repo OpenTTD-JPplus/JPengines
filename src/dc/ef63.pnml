@@ -60,7 +60,7 @@ switch(FEAT_TRAINS, SELF, switch_ef63_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, ef63, 1040) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NABE;
+  track_type: railtype_NG_DC;
   name: string(STR_NAME_EF63);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1962,1,1);
