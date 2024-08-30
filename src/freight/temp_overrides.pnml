@@ -1,3 +1,7 @@
+//all redundant with removal of japanset dependency
+
+/*
+
 //fix string bug in JP trains
 
 item (FEAT_TRAINS, jgr_7050, 0x87) {
@@ -98,7 +102,7 @@ graphics {
 	}
 }
 
-/*
+
 item (FEAT_TRAINS, m250, 77) {
 
 property {

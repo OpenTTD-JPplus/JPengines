@@ -449,7 +449,7 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1, [
 
 
 //main item
-item (FEAT_TRAINS, chisa_1, 34) {
+item (FEAT_TRAINS, chisa_1, 1934) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;

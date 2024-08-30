@@ -58,18 +58,29 @@ switch(FEAT_TRAINS, SELF, switch_waki_10000_loadstack, [
 item (FEAT_TRAINS, waki_10000, 1288) {
 
 property {
-	name: string(STR_NAME_WAKI_10000);
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1967,1,1);
-	default_cargo_type: GOOD;
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_WAKI_10000);
+	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	cargo_capacity: 60; 
-	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+	refit_cost: 0;
+	default_cargo_type: GOOD;
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	loading_speed: 20;
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 8;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

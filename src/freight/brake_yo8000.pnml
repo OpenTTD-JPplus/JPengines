@@ -101,7 +101,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, yo_8000, 35) {
+item (FEAT_TRAINS, yo_8000, 1935) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -109,11 +109,11 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1974,1,1);
 		speed: 95 km/h;
-//		air_drag_coefficient: 0;
-//		power: 0;
-//		dual_headed: 0;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
 		cargo_capacity: 1; 
-//		refit_cost: 0;
+		refit_cost: 0;
 		cargo_allow_refit: [PASS];
 //		loading_speed: 1;
 		weight: 11;
@@ -196,7 +196,7 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 		length: 4;
 		bitmask_vehicle_info: bitmask(1);//speed boost 110
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
-		variant_group: 35;
+		variant_group: 1935;
 	}
 	graphics {
 		speed: switch_speedboost_1;

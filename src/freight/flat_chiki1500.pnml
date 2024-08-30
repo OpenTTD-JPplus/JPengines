@@ -449,16 +449,21 @@ switch(FEAT_TRAINS, SELF, stack_chiki_1500, [
 
 
 //main item
-item (FEAT_TRAINS, chiki_1500, 41) {
+item (FEAT_TRAINS, chiki_1500, 1941) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	track_type: NAAN;
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_CHIKI_1500);
 	introduction_date: date(1934,1,1);
 	cargo_capacity: 45;
 	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 35; 
+	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
 	default_cargo_type: WOOD;

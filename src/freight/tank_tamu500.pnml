@@ -137,9 +137,11 @@ switch(FEAT_TRAINS, SELF, switch_tamu_500_purchase, current_year) {
 	spriteset_tamu_500_jrf_purchase;
 	}
 
-item (FEAT_TRAINS, tamu_500, 30) {
+item (FEAT_TRAINS, tamu_500, 1482) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_TAMU_500);
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	introduction_date: date(1930,1,1);

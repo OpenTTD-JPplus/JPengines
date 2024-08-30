@@ -301,7 +301,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1910_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_1910_17m, 1538) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_HOHA6810);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
@@ -312,15 +312,15 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		cargo_capacity: 75; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 65;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -411,7 +411,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_HONI_8900);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
@@ -422,11 +422,11 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		cargo_capacity: 75; 
 		refit_cost: 0;
 		cargo_age_period: 185;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 35;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;

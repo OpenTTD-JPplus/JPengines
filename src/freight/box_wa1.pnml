@@ -97,13 +97,20 @@ switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, wa_1, 32) {
+item (FEAT_TRAINS, wa_1, 1932) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WA_1);
 	introduction_date: date(1870,1,1);
 	default_cargo_type: GOOD;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	cargo_capacity: 20;
+	refit_cost: 0;
 	speed: 65 km/h;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 	non_refittable_cargo_classes: 0;
@@ -112,7 +119,9 @@ property {
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	length: 4;
 	loading_speed: 20;
+	weight: 10;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

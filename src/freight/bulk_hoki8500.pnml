@@ -67,9 +67,19 @@ switch(FEAT_TRAINS, SELF, switch_hoki_8500_purchase, current_year) {
 item (FEAT_TRAINS, hoki_8500, 1285) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1967,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_8500);
+	track_type: NAAN;
 	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	speed: 100 km/h;
+	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 15;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];

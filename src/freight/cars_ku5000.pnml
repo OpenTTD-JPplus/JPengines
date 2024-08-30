@@ -789,21 +789,32 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, ku_5000, 44) {
+item (FEAT_TRAINS, ku_5000, 1944) {
 
 property {
-	name: string(STR_NAME_KU_5000);
-	introduction_date: date(1966,1,1);
-	default_cargo_type: VEHI;
-	refittable_cargo_classes: 0; 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI]; 
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	speed: 85 km/h;
-	cost_factor: 30;
-	running_cost_factor: 5;
-	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KU_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40; 
+		refit_cost: 0;
+		default_cargo_type: VEHI;
+		loading_speed: 20;
+		refittable_cargo_classes: 0; 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [VEHI, GOOD]; 
+//		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+		weight: 12;
+		cost_factor: 30;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

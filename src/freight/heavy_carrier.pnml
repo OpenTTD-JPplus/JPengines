@@ -181,7 +181,7 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 
 //main item
 
-item (FEAT_TRAINS, shiki_800, 50) {
+item (FEAT_TRAINS, shiki_800, 1950) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;

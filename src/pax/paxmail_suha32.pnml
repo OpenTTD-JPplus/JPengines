@@ -364,7 +364,7 @@ switch(FEAT_TRAINS, SELF, stack_suha_32, [
 item (FEAT_TRAINS, pax_suha_32, 1539) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_SUHA32);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
@@ -373,13 +373,13 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 80; 
-//		cargo_age_period: 0;
+		cargo_age_period: 185;
 		refit_cost: 0;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 76;
 		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -467,7 +467,7 @@ switch(FEAT_TRAINS, SELF, stack_mani_31, [
 item (FEAT_TRAINS, mani_31, 1667) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_MANI_31);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
@@ -477,11 +477,11 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		dual_headed: 0;
 		cargo_capacity: 90; 
 		refit_cost: 0;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 45;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;

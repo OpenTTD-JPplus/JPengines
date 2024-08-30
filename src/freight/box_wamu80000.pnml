@@ -211,20 +211,32 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_loadstack, [
 }
 
 
-item (FEAT_TRAINS, wamu_80000, 51) {
+item (FEAT_TRAINS, wamu_80000, 1951) {
 
 property {
-	name: string(STR_NAME_WAMU_80000);
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1958,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_WAMU_80000);
+	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 50; 
+	refit_cost: 0;
 	default_cargo_type: GOOD;
-	cargo_capacity: 50;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0;
+	loading_speed: 20;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -313,7 +325,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	variant_group: 51;
+	variant_group: 1951;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -370,7 +382,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	variant_group: 51;
+	variant_group: 1951;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

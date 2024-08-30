@@ -86,12 +86,22 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_2500, 42) {
+item (FEAT_TRAINS, hoki_2500, 1242) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1970,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_2500);
+	track_type: NAAN;
 	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	speed: 100 km/h;
+	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 15;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT, SGCN, TBCO, SUGR];

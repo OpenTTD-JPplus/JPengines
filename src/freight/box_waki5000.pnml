@@ -75,21 +75,31 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_loadstack, [
     1:  spritegroup_boxvan8_doors_load;
 }
 
-item (FEAT_TRAINS, waki_5000, 53) {
+item (FEAT_TRAINS, waki_5000, 1953) {
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1964,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_5000);
 	speed: 85 km/h;
-	introduction_date: date(1964,1,1);
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 50; 
+	refit_cost: 0;
 	default_cargo_type: GOOD;
-	cargo_capacity: 80; 
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0;
+	loading_speed: 20;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+	length: 8;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

@@ -123,19 +123,32 @@ switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, koki_71, 43) {
+item (FEAT_TRAINS, koki_71, 1943) {
 
 property {
-	name: string(STR_NAME_KOKI_71);
-	default_cargo_type: VEHI;
-	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG]; 
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	cost_factor: 50;
-	running_cost_factor: 8;
-	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_71);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1995,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		default_cargo_type: VEHI;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 

@@ -93,12 +93,21 @@ switch(FEAT_TRAINS, SELF, switch_hoki_9300_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, hoki_9300, 1290) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1974,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_9300);
+	track_type: NAAN;
+	speed: 100 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	speed: 100 km/h;
 	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 17;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];

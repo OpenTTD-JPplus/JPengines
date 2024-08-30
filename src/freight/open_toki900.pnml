@@ -340,18 +340,28 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 item (FEAT_TRAINS, toki_900, 1284) {
 
 property {
-//	introduction_date: date(1940,1,1);
-//	default_cargo_type: FOOD;
-	speed: 65 km/h;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1940,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TOKI_900);
+	speed: 65 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 45; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 11;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
