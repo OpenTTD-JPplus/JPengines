@@ -461,6 +461,8 @@ property {
 	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
+	weight: 16;
+	length: 7;
 	dual_headed: 0;
 	cargo_capacity: 35; 
 	refit_cost: 0;

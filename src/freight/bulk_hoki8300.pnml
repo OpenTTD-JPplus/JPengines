@@ -42,6 +42,7 @@ property {
 	loading_speed: 40;
 	cargo_capacity: 65;
 	weight: 17;
+	length: 7;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
@@ -106,6 +107,7 @@ property {
 	loading_speed: 40;
 	cargo_capacity: 65;
 	weight: 17;
+	length: 7;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
