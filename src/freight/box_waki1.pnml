@@ -214,6 +214,6 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		default: switch_wamufu_1_loadstack;
 		cargo_subtype_text: switch_wamufu_1_subtype_text;
 		purchase: switch_wamufu_1_yeardep_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }

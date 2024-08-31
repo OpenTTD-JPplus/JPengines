@@ -176,5 +176,6 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
+		reverse_build_probability: return 50;
 	}
 }

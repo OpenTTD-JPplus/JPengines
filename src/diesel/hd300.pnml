@@ -97,5 +97,6 @@ property {
   cargo_subtype_text: switch_hd300_subtype_text;
   default: switch_hd300_livery;
   purchase: spriteset_hd300_red_purchase;
+  reverse_build_probability: return 50;
   }
 }

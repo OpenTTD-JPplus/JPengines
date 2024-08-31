@@ -1,34 +1,21 @@
-spriteset(spriteset_tasa_500_black_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_black_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_tasa_500_black_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_black_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_tasa_500_black_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 64)
-}
 
-spriteset(spriteset_tasa_500_black_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_tasa_500_silver_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_silver_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_tasa_500_silver_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_silver_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_tasa_500_silver_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 192)
-}
 
-spriteset(spriteset_tasa_500_silver_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 224)
-}
 
 //overlay dummies
 
@@ -36,21 +23,15 @@ spriteset(spriteset_tasa_500_overlay_blank, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_overlay_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_overlay_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 256)
-}
 
-spriteset(spriteset_tasa_500_overlay_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 256)
-}
 
 //purchase
 spriteset(spriteset_tasa_500_jgr_purchase, "gfx/freight/tasa_500.png") {
@@ -67,110 +48,59 @@ alternative_sprites(spriteset_tasa_500_overlay_blank, ZOOM_LEVEL_NORMAL, BIT_DEP
 	template_2cc_std(1, 1)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_forward_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+alternative_sprites(spriteset_tasa_500_overlay_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
 	template_2cc_std(1, 128)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_backward_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
-	template_2cc_std(1, 160)
-}
 
-alternative_sprites(spriteset_tasa_500_overlay_forward_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+
+alternative_sprites(spriteset_tasa_500_overlay_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
 	template_2cc_std(1, 192)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_backward_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
-	template_2cc_std(1, 224)
-}
+
 
 //forward
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_forward_livery) {
-	3: spriteset_tasa_500_black_forward_a;
-	3: spriteset_tasa_500_black_forward_b;
-	1: spriteset_tasa_500_silver_forward_a;
-	1: spriteset_tasa_500_silver_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_livery) {
+	3: spriteset_tasa_500_black_a;
+	3: spriteset_tasa_500_black_b;
+	1: spriteset_tasa_500_silver_a;
+	1: spriteset_tasa_500_silver_b;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_forward_livery) {
-	1: spriteset_tasa_500_black_forward_a;
-	1: spriteset_tasa_500_black_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_livery) {
+	1: spriteset_tasa_500_black_a;
+	1: spriteset_tasa_500_black_b;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_forward_livery) {
-	1: spriteset_tasa_500_silver_forward_a;
-	1: spriteset_tasa_500_silver_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_livery) {
+	1: spriteset_tasa_500_silver_a;
+	1: spriteset_tasa_500_silver_b;
 }
 
-switch(FEAT_TRAINS, SELF, switch_tasa_500_forward_livery, cargo_subtype) {
-	1: random_tasa_500_black_forward_livery;
-	2: random_tasa_500_silver_forward_livery;
-	random_tasa_500_all_forward_livery;
-}
-
-
-//wear overlay
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_forward_wear) {
-	1: spriteset_tasa_500_overlay_forward_a;
-	1: spriteset_tasa_500_overlay_forward_b;
-	1: spriteset_tasa_500_overlay_blank;
-}
-
-switch(FEAT_TRAINS, SELF, switch_tasa_500_forward_wearstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0:  switch_tasa_500_forward_livery;
-    1:  random_tasa_500_forward_wear;
-}
-
-//backward
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_backward_livery) {
-	3: spriteset_tasa_500_black_backward_a;
-	3: spriteset_tasa_500_black_backward_b;
-	1: spriteset_tasa_500_silver_backward_a;
-	1: spriteset_tasa_500_silver_backward_b;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_backward_livery) {
-	1: spriteset_tasa_500_black_backward_a;
-	1: spriteset_tasa_500_black_backward_b;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_backward_livery) {
-	1: spriteset_tasa_500_silver_backward_a;
-	1: spriteset_tasa_500_silver_backward_b;
-}
-
-switch(FEAT_TRAINS, SELF, switch_tasa_500_backward_livery, cargo_subtype) {
-	1: random_tasa_500_black_backward_livery;
-	2: random_tasa_500_silver_backward_livery;
-	random_tasa_500_all_backward_livery;
+switch(FEAT_TRAINS, SELF, switch_tasa_500_livery, cargo_subtype) {
+	1: random_tasa_500_black_livery;
+	2: random_tasa_500_silver_livery;
+	random_tasa_500_all_livery;
 }
 
 
 //wear overlay
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_backward_wear) {
-	1: spriteset_tasa_500_overlay_backward_a;
-	1: spriteset_tasa_500_overlay_backward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_wear) {
+	1: spriteset_tasa_500_overlay_a;
+	1: spriteset_tasa_500_overlay_b;
 	1: spriteset_tasa_500_overlay_blank;
 }
 
-switch(FEAT_TRAINS, SELF, switch_tasa_500_backward_wearstack, [
+switch(FEAT_TRAINS, SELF, switch_tasa_500_wearstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0:  switch_tasa_500_backward_livery;
-    1:  random_tasa_500_backward_wear;
+    0:  switch_tasa_500_livery;
+    1:  random_tasa_500_wear;
 }
 
-//final random
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_flip) {
-	1: switch_tasa_500_forward_wearstack;
-	1: switch_tasa_500_backward_wearstack;
-}
 
 
 switch(FEAT_TRAINS, SELF, switch_tasa_500_subtype_text, cargo_subtype) {
@@ -179,7 +109,6 @@ switch(FEAT_TRAINS, SELF, switch_tasa_500_subtype_text, cargo_subtype) {
 	2: return string(STR_CONCAT_1F, string(STR_COLOUR_SILVER));
 	   return CB_RESULT_NO_TEXT;
 }
-
 
 
 switch(FEAT_TRAINS, SELF, switch_tasa_500_purchase, current_year) {
@@ -223,9 +152,9 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
 //		cargo_capacity: return 0;
-		default: random_tasa_500_flip;
+		default: switch_tasa_500_wearstack;
 		purchase: switch_tasa_500_purchase;
 		cargo_subtype_text: switch_tasa_500_subtype_text;
-		
+		reverse_build_probability: return 50;
 	}
 }

@@ -156,6 +156,6 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		cargo_capacity: return 15;
 		default: stack_wafu_21000;
 		purchase: spriteset_wafu_21000_jgr_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }

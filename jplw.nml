@@ -1375,6 +1375,7 @@ property {
   cargo_subtype_text: switch_jgr_860_subtype_text;
   default: switch_jgr_860_livery;
   purchase: spriteset_jgr_860_black_purchase;
+	reverse_build_probability: return 50;
   }
 }
 
@@ -12273,6 +12274,7 @@ property {
   cargo_subtype_text: switch_de10_subtype_text;
   default: switch_de10_livery;
   purchase: switch_de10_purchase;
+	reverse_build_probability: return 50;
   }
 }
 spriteset(spriteset_df50_red, "gfx/diesel/df50.png") {
@@ -13021,6 +13023,7 @@ property {
   cargo_subtype_text: switch_hd300_subtype_text;
   default: switch_hd300_livery;
   purchase: spriteset_hd300_red_purchase;
+  reverse_build_probability: return 50;
   }
 }
 
@@ -13489,6 +13492,7 @@ item (FEAT_TRAINS, yo_8000, 1935) {
 								string(STR_SUFFIX_JR)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -13563,6 +13567,7 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -13699,6 +13704,7 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 								string(STR_SUFFIX_JNR)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -20143,21 +20149,10 @@ item (FEAT_TRAINS, suyu_44, 1395) {
 
 
 
-random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
- 1: spriteset_suni_41;
- 1: spriteset_suni_41_flip;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_suni_41_cc_flip) {
- 1: spriteset_suni_41_cc;
- 1: spriteset_suni_41_cc_flip;
-}
-
-
 
 switch(FEAT_TRAINS, SELF, switch_suni_41_livery, cargo_subtype) {
-	1: random_suni_41_cc_flip;
-	random_suni_41_flip;
+	1: spriteset_suni_41_cc;
+	spriteset_suni_41;
 }
 
 
@@ -20222,6 +20217,7 @@ item (FEAT_TRAINS, suni_41, 1396) {
 		default: switch_suni_41_loadstack;
 		purchase: spriteset_suni_41_post_purchase;
 		cargo_subtype_text: switch_suni_41_subtype_text;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -20641,7 +20637,7 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 		cargo_capacity: return 15;
 		default: stack_wafu_21000;
 		purchase: spriteset_wafu_21000_jgr_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_wamu_90000_exp_1, "gfx/freight/wamu_90000.png") {
@@ -21409,7 +21405,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		default: switch_wamufu_1_loadstack;
 		cargo_subtype_text: switch_wamufu_1_subtype_text;
 		purchase: switch_wamufu_1_yeardep_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_waki_1000_1, "gfx/freight/waki_1000.png") {
@@ -21637,7 +21633,7 @@ item (FEAT_TRAINS, wamufu_100, 1451) {
 		default: switch_wamufu_100_loadstack;
 		cargo_subtype_text: switch_wamufu_100_subtype_text;
 		purchase: switch_wamufu_100_yeardep_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -21940,6 +21936,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -22335,7 +22332,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		purchase_speed: return 85;
 		default: random_reki_1;
 		purchase: switch_reki_1_yeardep_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_remu_5000_1, "gfx/freight/remu_5000.png") {
@@ -22515,7 +22512,7 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 		purchase_speed: return 100;
 		default: switch_remufu_10000_loadstack;
 		purchase: spriteset_remufu_10000_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -33344,6 +33341,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_koki_10000_purchase, "gfx/freight/koki_10000.png") {
@@ -33491,6 +33489,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -33537,6 +33536,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		default: switch_kokifu_10000_flip;
 		purchase: spriteset_kokifu_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_koki_50000_purchase, "gfx/freight/koki_50000.png") {
@@ -33696,6 +33696,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -33741,6 +33742,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 		default: switch_kokifu_50000_flip;
 		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -33860,6 +33862,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 		default: switch_koki_250000_base_loadstack;
 		purchase: switch_koki_250000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -33962,6 +33965,7 @@ item (FEAT_TRAINS, koki_350000, 1416) {
 		default: switch_koki_350000_base_loadstack;
 		purchase: switch_koki_350000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -34114,6 +34118,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		default: switch_koki_100_flip;
 		purchase: spriteset_koki_100_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -34214,6 +34219,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 		default: switch_koki_107_flip;
 		purchase: spriteset_koki_107_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -38130,37 +38136,24 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		
 	}
 }
-spriteset(spriteset_tasa_500_black_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_black_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_tasa_500_black_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_black_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_tasa_500_black_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 64)
-}
 
-spriteset(spriteset_tasa_500_black_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 96)
-}
-
-spriteset(spriteset_tasa_500_silver_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_silver_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_tasa_500_silver_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_silver_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_tasa_500_silver_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 192)
-}
 
-spriteset(spriteset_tasa_500_silver_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 224)
-}
 
 //overlay dummies
 
@@ -38168,21 +38161,15 @@ spriteset(spriteset_tasa_500_overlay_blank, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_forward_a, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_overlay_a, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_forward_b, "gfx/freight/tasa_500.png") {
+spriteset(spriteset_tasa_500_overlay_b, "gfx/freight/tasa_500.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_tasa_500_overlay_backward_a, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 256)
-}
 
-spriteset(spriteset_tasa_500_overlay_backward_b, "gfx/freight/tasa_500.png") {
-	template_2cc_std(1, 256)
-}
 
 //purchase
 spriteset(spriteset_tasa_500_jgr_purchase, "gfx/freight/tasa_500.png") {
@@ -38199,110 +38186,59 @@ alternative_sprites(spriteset_tasa_500_overlay_blank, ZOOM_LEVEL_NORMAL, BIT_DEP
 	template_2cc_std(1, 1)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_forward_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+alternative_sprites(spriteset_tasa_500_overlay_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
 	template_2cc_std(1, 128)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_backward_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
-	template_2cc_std(1, 160)
-}
 
-alternative_sprites(spriteset_tasa_500_overlay_forward_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
+
+alternative_sprites(spriteset_tasa_500_overlay_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
 	template_2cc_std(1, 192)
 }
 
-alternative_sprites(spriteset_tasa_500_overlay_backward_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/freight/32bpp/ta_overlay.png") {
-	template_2cc_std(1, 224)
-}
+
 
 //forward
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_forward_livery) {
-	3: spriteset_tasa_500_black_forward_a;
-	3: spriteset_tasa_500_black_forward_b;
-	1: spriteset_tasa_500_silver_forward_a;
-	1: spriteset_tasa_500_silver_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_livery) {
+	3: spriteset_tasa_500_black_a;
+	3: spriteset_tasa_500_black_b;
+	1: spriteset_tasa_500_silver_a;
+	1: spriteset_tasa_500_silver_b;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_forward_livery) {
-	1: spriteset_tasa_500_black_forward_a;
-	1: spriteset_tasa_500_black_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_livery) {
+	1: spriteset_tasa_500_black_a;
+	1: spriteset_tasa_500_black_b;
 }
 
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_forward_livery) {
-	1: spriteset_tasa_500_silver_forward_a;
-	1: spriteset_tasa_500_silver_forward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_livery) {
+	1: spriteset_tasa_500_silver_a;
+	1: spriteset_tasa_500_silver_b;
 }
 
-switch(FEAT_TRAINS, SELF, switch_tasa_500_forward_livery, cargo_subtype) {
-	1: random_tasa_500_black_forward_livery;
-	2: random_tasa_500_silver_forward_livery;
-	random_tasa_500_all_forward_livery;
-}
-
-
-//wear overlay
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_forward_wear) {
-	1: spriteset_tasa_500_overlay_forward_a;
-	1: spriteset_tasa_500_overlay_forward_b;
-	1: spriteset_tasa_500_overlay_blank;
-}
-
-switch(FEAT_TRAINS, SELF, switch_tasa_500_forward_wearstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0:  switch_tasa_500_forward_livery;
-    1:  random_tasa_500_forward_wear;
-}
-
-//backward
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_all_backward_livery) {
-	3: spriteset_tasa_500_black_backward_a;
-	3: spriteset_tasa_500_black_backward_b;
-	1: spriteset_tasa_500_silver_backward_a;
-	1: spriteset_tasa_500_silver_backward_b;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_black_backward_livery) {
-	1: spriteset_tasa_500_black_backward_a;
-	1: spriteset_tasa_500_black_backward_b;
-}
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_silver_backward_livery) {
-	1: spriteset_tasa_500_silver_backward_a;
-	1: spriteset_tasa_500_silver_backward_b;
-}
-
-switch(FEAT_TRAINS, SELF, switch_tasa_500_backward_livery, cargo_subtype) {
-	1: random_tasa_500_black_backward_livery;
-	2: random_tasa_500_silver_backward_livery;
-	random_tasa_500_all_backward_livery;
+switch(FEAT_TRAINS, SELF, switch_tasa_500_livery, cargo_subtype) {
+	1: random_tasa_500_black_livery;
+	2: random_tasa_500_silver_livery;
+	random_tasa_500_all_livery;
 }
 
 
 //wear overlay
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_backward_wear) {
-	1: spriteset_tasa_500_overlay_backward_a;
-	1: spriteset_tasa_500_overlay_backward_b;
+random_switch(FEAT_TRAINS, SELF, random_tasa_500_wear) {
+	1: spriteset_tasa_500_overlay_a;
+	1: spriteset_tasa_500_overlay_b;
 	1: spriteset_tasa_500_overlay_blank;
 }
 
-switch(FEAT_TRAINS, SELF, switch_tasa_500_backward_wearstack, [
+switch(FEAT_TRAINS, SELF, switch_tasa_500_wearstack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0:  switch_tasa_500_backward_livery;
-    1:  random_tasa_500_backward_wear;
+    0:  switch_tasa_500_livery;
+    1:  random_tasa_500_wear;
 }
 
-//final random
-
-random_switch(FEAT_TRAINS, SELF, random_tasa_500_flip) {
-	1: switch_tasa_500_forward_wearstack;
-	1: switch_tasa_500_backward_wearstack;
-}
 
 
 switch(FEAT_TRAINS, SELF, switch_tasa_500_subtype_text, cargo_subtype) {
@@ -38311,7 +38247,6 @@ switch(FEAT_TRAINS, SELF, switch_tasa_500_subtype_text, cargo_subtype) {
 	2: return string(STR_CONCAT_1F, string(STR_COLOUR_SILVER));
 	   return CB_RESULT_NO_TEXT;
 }
-
 
 
 switch(FEAT_TRAINS, SELF, switch_tasa_500_purchase, current_year) {
@@ -38355,10 +38290,10 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
 //		cargo_capacity: return 0;
-		default: random_tasa_500_flip;
+		default: switch_tasa_500_wearstack;
 		purchase: switch_tasa_500_purchase;
 		cargo_subtype_text: switch_tasa_500_subtype_text;
-		
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_taki_25000_silver_a, "gfx/freight/tasa_5700.png") {
@@ -38918,7 +38853,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
 		cargo_subtype_text: switch_taki_1000_subtype_text;
-		
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -39008,7 +38943,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		default: switch_taki_43000_wearstack;
 		purchase: switch_taki_43000_purchase;
 		cargo_subtype_text: switch_taki_43000_subtype_text;
-		
+		reverse_build_probability: return 50;
 	}
 }
 spriteset(spriteset_taki_3000_a, "gfx/freight/taki_3000.png") {

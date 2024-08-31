@@ -138,6 +138,7 @@ item (FEAT_TRAINS, yo_8000, 1935) {
 								string(STR_SUFFIX_JR)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -212,6 +213,7 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 								string(STR_SUFFIX_JRF)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 

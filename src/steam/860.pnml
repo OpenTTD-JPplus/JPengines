@@ -99,5 +99,6 @@ property {
   cargo_subtype_text: switch_jgr_860_subtype_text;
   default: switch_jgr_860_livery;
   purchase: spriteset_jgr_860_black_purchase;
+	reverse_build_probability: return 50;
   }
 }

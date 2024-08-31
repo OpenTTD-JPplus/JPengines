@@ -106,6 +106,7 @@ item (FEAT_TRAINS, yo_9000, 1604) {
 								string(STR_SUFFIX_JNR)
 							)
 						);
+		reverse_build_probability: return 50;
 	}
 }
 

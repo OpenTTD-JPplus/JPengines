@@ -107,21 +107,10 @@ item (FEAT_TRAINS, suyu_44, 1395) {
 
 
 
-random_switch (FEAT_TRAINS, SELF, random_suni_41_flip) {
- 1: spriteset_suni_41;
- 1: spriteset_suni_41_flip;
-}
-
-random_switch (FEAT_TRAINS, SELF, random_suni_41_cc_flip) {
- 1: spriteset_suni_41_cc;
- 1: spriteset_suni_41_cc_flip;
-}
-
-
 
 switch(FEAT_TRAINS, SELF, switch_suni_41_livery, cargo_subtype) {
-	1: random_suni_41_cc_flip;
-	random_suni_41_flip;
+	1: spriteset_suni_41_cc;
+	spriteset_suni_41;
 }
 
 
@@ -186,5 +175,6 @@ item (FEAT_TRAINS, suni_41, 1396) {
 		default: switch_suni_41_loadstack;
 		purchase: spriteset_suni_41_post_purchase;
 		cargo_subtype_text: switch_suni_41_subtype_text;
+		reverse_build_probability: return 50;
 	}
 }

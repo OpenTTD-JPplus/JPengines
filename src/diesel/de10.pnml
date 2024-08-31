@@ -565,5 +565,6 @@ property {
   cargo_subtype_text: switch_de10_subtype_text;
   default: switch_de10_livery;
   purchase: switch_de10_purchase;
+	reverse_build_probability: return 50;
   }
 }

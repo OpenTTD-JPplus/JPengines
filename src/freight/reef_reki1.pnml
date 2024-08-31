@@ -79,6 +79,6 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		purchase_speed: return 85;
 		default: random_reki_1;
 		purchase: switch_reki_1_yeardep_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }

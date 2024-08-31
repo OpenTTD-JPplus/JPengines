@@ -148,6 +148,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		default: switch_koki_100_flip;
 		purchase: spriteset_koki_100_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }
 
@@ -248,5 +249,6 @@ item (FEAT_TRAINS, koki_107, 1417) {
 		default: switch_koki_107_flip;
 		purchase: spriteset_koki_107_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
+		reverse_build_probability: return 50;
 	}
 }

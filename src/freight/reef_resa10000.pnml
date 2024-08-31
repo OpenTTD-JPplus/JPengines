@@ -112,6 +112,6 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 		purchase_speed: return 100;
 		default: switch_remufu_10000_loadstack;
 		purchase: spriteset_remufu_10000_purchase;
-		
+		reverse_build_probability: return 50;
 	}
 }
