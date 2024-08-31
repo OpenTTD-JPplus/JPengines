@@ -52,7 +52,8 @@ grf {
 		*/
 }
 
-//disable_item(FEAT_TRAINS);
+//disable default trains
+disable_item(FEAT_TRAINS);
 
 //train look nice thing
 traininfo_y_offset = 2;
@@ -101,30 +102,6 @@ if (ttd_platform != PLATFORM_OPENTTD) {
     }
 }
 
-
-/*
-
-//load order checks for JapanSet3
-if (grf_order_behind("\53\5A\0D\00") == 0) {
-    error(FATAL, MUST_LOAD_AFTER, string(STR_ERROR_JAPANSETTRAINS));
-}
-
-if (grf_future_status("\53\5A\0D\00") == 0) {
- //   error(WARNING, string(STR_ERROR_JAPANSETTRAINS_REQUIRES));
-    error(FATAL, USED_WITH, string(STR_ERROR_JAPANSETTRAINS));
-}
-
-
-
-if (grf_order_behind("BS\42\13") == 0) {
-    error(FATAL, string(STR_ERROR_JPPLUSSET));
-}
-*/
-
-
-//OVERRIDE JAPAN SET TRAINS 3
-
-// engine_override("\53\5A\0D\00");
 
 railtypetable {
 	//narrow gauge
@@ -176,29 +153,29 @@ sort(FEAT_TRAINS, [
 //wagons armoured
 1357, 1380, 
 //wagons box
-32, 1435, 1436, 1437, 51, 1461, 1462, 53, 
+1932, 1435, 1436, 1437, 1951, 1461, 1462, 1953, 
 //wagons express box
 1445, 1438, 1450, 1451, 1452, 1453, 1288, 
 //wagons reefer
 1281, 1455, 1456, 1286, 1460, 1461,
 //wagons cont/car
-1407, 1412, 1413, 1433, 1414, 1434, 1415, 1400, 1416, 1417, 1418, 39, 44, 43, 
+1407, 1412, 1413, 1433, 1414, 1434, 1415, 1400, 1416, 1417, 1418, 1939, 1944, 1943, 
 //wagons lvst
 1282, 1431, 1432, 
 //wagons open hopper
-1439, 1440, 1441, 1443, 1446, 1447, 1285, 42, 52, 
+1439, 1440, 1441, 1443, 1446, 1447, 1285, 1242, 1952, 
 //wagons covered hopper/dry tank
 1442, 1444, 1448, 1449, 1291, 1464, 1290, 1410, 1411, 1465, 1466, 1467, 1468,
 //wagons open
-1469, 29, 33, 1284, 1470, 1471,
+1469, 1929, 1933, 1284, 1470, 1471,
 //open bulk
 1280, 1462, 
 //wagons flatbeds
-1476, 1477, 1520, 34, 41, 1525, 1526, 1527, 1528, 1529, 1570, 1575, 1580, 50, 
+1476, 1477, 1520, 1934, 1941, 1525, 1526, 1527, 1528, 1529, 1570, 1575, 1580, 1950, 
 //wagons tankers
-1480, 1481, 30, 1487, 1488, 1489, 45, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1490, 
+1480, 1481, 1482, 1487, 1488, 1489, 1485, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1490, 
 //brake vans
-1601, 1602, 1600, 35, 1603, 1604, 
+1601, 1602, 1600, 1935, 1603, 1604, 
 //wagons non JNR/JR
 1402, 1420, 1421
 ]);
@@ -11427,6 +11404,108 @@ item (FEAT_TRAINS, dd13, 1207) {
   purchase: switch_dd13_yeardep_purchase;
   }
 }
+spriteset(spriteset_dd16_red, "gfx/diesel/dd16.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dd16_flip_red, "gfx/diesel/dd16.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_dd16_cc, "gfx/diesel/dd16.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_dd16_flip_cc, "gfx/diesel/dd16.png") {
+	template_2cc_flip(180, 320)
+}
+
+
+spriteset(spriteset_dd16_red_purchase, "gfx/diesel/dd16.png") {
+	template_purchase(1, 352)
+}
+
+
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_dd16_flip_red, vehicle_is_flipped) {
+	0: spriteset_dd16_red;
+	1: spriteset_dd16_flip_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_dd16_flip_cc, vehicle_is_flipped) {
+	0: spriteset_dd16_cc;
+	1: spriteset_dd16_flip_cc;
+}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd16_livery, cargo_subtype) {
+	1: switch_dd16_flip_cc;	
+	switch_dd16_flip_red;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd16_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, dd16, 1209) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_DD16);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1971,1,1);
+  speed: 75 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 588 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 48;
+  model_life: 40;
+  vehicle_life: 35;
+  length: 5;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	reliability_decay: 13;
+    cost_factor: 37;
+	running_cost_factor: 44;
+    running_cost_base: RUNNING_COST_DIESEL;
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd16_subtype_text;
+  default: switch_dd16_livery;
+  purchase: spriteset_dd16_red_purchase;
+  reverse_build_probability: return 50;
+  }
+}
 spriteset(spriteset_dd51_brown, "gfx/diesel/dd51.png") {
 	template_2cc_std(1, 96)
 }
@@ -13064,6 +13143,12 @@ switch(FEAT_TRAINS, SELF, switch_speedboost_1, hasbit(bitmask_consist_info, 1)) 
 	switch_speedboost_2;
 	}
 
+// "7" stands for bitmask(CC_REFRIGERATED); only in this way it worked
+switch(FEAT_TRAINS, SELF, switch_container_cargo_decay, hasbit(cargo_classes, 7)) {
+	1: return 1000;
+	return 185;
+	}
+
 spriteset(spriteset_yo_1_black, "gfx/brake/yo_1.png") {
 	template_2cc_std(1, 1)
 }
@@ -13367,7 +13452,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_8000_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, yo_8000, 35) {
+item (FEAT_TRAINS, yo_8000, 1935) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -13375,11 +13460,11 @@ item (FEAT_TRAINS, yo_8000, 35) {
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1974,1,1);
 		speed: 95 km/h;
-//		air_drag_coefficient: 0;
-//		power: 0;
-//		dual_headed: 0;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
 		cargo_capacity: 1; 
-//		refit_cost: 0;
+		refit_cost: 0;
 		cargo_allow_refit: [PASS];
 //		loading_speed: 1;
 		weight: 11;
@@ -13462,7 +13547,7 @@ item (FEAT_TRAINS, yo_38000, 1603) {
 		length: 4;
 		bitmask_vehicle_info: bitmask(1);//speed boost 110
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
-		variant_group: 35;
+		variant_group: 1935;
 	}
 	graphics {
 		speed: switch_speedboost_1;
@@ -13796,7 +13881,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1870_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_1870, 1536) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_HA4995);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1870,1,1);
@@ -13807,15 +13892,15 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 		cargo_capacity: 36; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 50;
 		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
-//		length: 6;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		length: 5;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -13828,6 +13913,7 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 							);
 
 		cargo_capacity: return 36;
+		cargo_age_period: return 100;
 		default: switch_pax_1870_livery;
 		purchase: switch_pax_1870_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1870_subtype_text;
@@ -13884,7 +13970,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1870_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, mail_1870, 1664) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_HANI1);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1870,1,1);
@@ -13894,16 +13980,16 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		dual_headed: 0;
 		cargo_capacity: 36; 
 		refit_cost: 0;
-		cargo_age_period: 100;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		cargo_age_period: 185;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 25;
 		running_cost_factor: 4;
 		running_cost_base: RUNNING_COST_STEAM;
-//		length: 5;
+		length: 5;
 		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
@@ -14214,7 +14300,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_1880, 1537) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
@@ -14226,15 +14312,15 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		refit_cost: 0;
 		cargo_age_period: 120;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 55;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 6;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -14248,6 +14334,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 							);
 
 		cargo_capacity: return 50;
+		cargo_age_period: return 120;
 		default: switch_pax_1880_livery;
 		purchase: switch_pax_1880_yeardep_purchase;
 		cargo_subtype_text: switch_pax_1880_subtype_text;
@@ -14328,7 +14415,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, mail_1880, 1665) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_KONI_8890);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
@@ -14338,11 +14425,11 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		dual_headed: 0;
 		cargo_capacity: 50; 
 		refit_cost: 0;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 30;
 		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -14670,7 +14757,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1910_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_1910_17m, 1538) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_HOHA6810);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
@@ -14681,15 +14768,15 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		cargo_capacity: 75; 
 		refit_cost: 0;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 65;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
 		length: 7;
-//		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -14780,7 +14867,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1910_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, mail_1910_17m, 1666) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_HONI_8900);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1910,1,1);
@@ -14790,12 +14877,12 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		dual_headed: 0;
 		cargo_capacity: 75; 
 		refit_cost: 0;
-		cargo_age_period: 160;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		cargo_age_period: 185;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 35;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -15183,7 +15270,7 @@ switch(FEAT_TRAINS, SELF, stack_suha_32, [
 item (FEAT_TRAINS, pax_suha_32, 1539) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_PAX_SUHA32);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
@@ -15192,13 +15279,13 @@ item (FEAT_TRAINS, pax_suha_32, 1539) {
 		power: 0;
 		dual_headed: 0;
 		cargo_capacity: 80; 
-//		cargo_age_period: 0;
+		cargo_age_period: 185;
 		refit_cost: 0;
 		default_cargo_type: PASS;
-//		loading_speed: 40;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 76;
 		running_cost_factor: 10;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -15286,7 +15373,7 @@ switch(FEAT_TRAINS, SELF, stack_mani_31, [
 item (FEAT_TRAINS, mani_31, 1667) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-//		track_type: NAAN;
+		track_type: NAAN;
 		name: string(STR_NAME_MAIL_MANI_31);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
@@ -15296,11 +15383,11 @@ item (FEAT_TRAINS, mani_31, 1667) {
 		dual_headed: 0;
 		cargo_capacity: 90; 
 		refit_cost: 0;
-//		default_cargo_type: PASS;
-//		loading_speed: 40;
+		default_cargo_type: PASS;
+		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-//		weight: 28;
+		weight: 28;
 		cost_factor: 45;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -20209,15 +20296,27 @@ random_switch(FEAT_TRAINS, SELF, random_ka_1_livery) {
 item (FEAT_TRAINS, ka_1, 1282) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_KA_1);
 	introduction_date: date(1870,1,1);
 	default_cargo_type: LVST;
-	cargo_capacity: 20;
-	cargo_age_period: 0;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 22;
+	refit_cost: 0;
+	cargo_age_period: 1000;
+	speed: 65 km/h;
+	non_refittable_cargo_classes: 0;
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	length: 4;
 	loading_speed: 20;
+	weight: 9;
 	}
 graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -20338,13 +20437,20 @@ switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
 
 
 
-item (FEAT_TRAINS, wa_1, 32) {
+item (FEAT_TRAINS, wa_1, 1932) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WA_1);
 	introduction_date: date(1870,1,1);
 	default_cargo_type: GOOD;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	cargo_capacity: 20;
+	refit_cost: 0;
 	speed: 65 km/h;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 	non_refittable_cargo_classes: 0;
@@ -20353,7 +20459,9 @@ property {
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	length: 4;
 	loading_speed: 20;
+	weight: 10;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -20895,20 +21003,32 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_loadstack, [
 }
 
 
-item (FEAT_TRAINS, wamu_80000, 51) {
+item (FEAT_TRAINS, wamu_80000, 1951) {
 
 property {
-	name: string(STR_NAME_WAMU_80000);
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1958,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_WAMU_80000);
+	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 50; 
+	refit_cost: 0;
 	default_cargo_type: GOOD;
-	cargo_capacity: 50;
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0;
+	loading_speed: 20;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -20997,7 +21117,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	variant_group: 51;
+	variant_group: 1951;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -21044,7 +21164,7 @@ property {
 	default_cargo_type: FOOD;
 	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 	loading_speed: 20;
-	cargo_age_period: 0;
+	cargo_age_period: 1200;
 //	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 //	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
@@ -21054,7 +21174,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	variant_group: 51;
+	variant_group: 1951;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -21597,21 +21717,31 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_loadstack, [
     1:  spritegroup_boxvan8_doors_load;
 }
 
-item (FEAT_TRAINS, waki_5000, 53) {
+item (FEAT_TRAINS, waki_5000, 1953) {
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1964,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_5000);
 	speed: 85 km/h;
-	introduction_date: date(1964,1,1);
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 50; 
+	refit_cost: 0;
 	default_cargo_type: GOOD;
-	cargo_capacity: 80; 
 	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0;
+	loading_speed: 20;
+	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+	length: 8;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -21872,18 +22002,29 @@ switch(FEAT_TRAINS, SELF, switch_waki_10000_loadstack, [
 item (FEAT_TRAINS, waki_10000, 1288) {
 
 property {
-	name: string(STR_NAME_WAKI_10000);
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1967,1,1);
-	default_cargo_type: GOOD;
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_WAKI_10000);
+	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	cargo_capacity: 60; 
-	refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+	refit_cost: 0;
+	default_cargo_type: GOOD;
+	refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+	loading_speed: 20;
 	cargo_allow_refit: [BEER];
 	cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+	non_refittable_cargo_classes: 0;
+	weight: 15;
 	cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 8;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-	loading_speed: 20;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -21999,20 +22140,27 @@ switch(FEAT_TRAINS, SELF, switch_re_1_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, re_1, 1281) {
 
 property {
-	name: string(STR_NAME_RE_1);
-	introduction_date: date(1870,1,1);
-	default_cargo_type: FOOD;
-	cargo_capacity: 20;
-	speed: 65 km/h;
-	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0;
-//	cargo_disallow_refit: [PASS, COAL, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	loading_speed: 20;
-	cargo_age_period: 720;
-	cost_factor: 14;
-	running_cost_factor: 2;
-	running_cost_base: RUNNING_COST_STEAM;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_RE_1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1870,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 30; 
+		refit_cost: 0;
+		default_cargo_type: FOOD;
+		cargo_age_period: 720;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+		weight: 8;
+		cost_factor: 14;
+		running_cost_factor: 2;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 4;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -22216,18 +22364,27 @@ random_switch (FEAT_TRAINS, SELF, random_remu_5000) {
 item (FEAT_TRAINS, remu_5000, 1286) {
 
 property {
-	introduction_date: date(1960,1,1);
-	default_cargo_type: FOOD;
-	cargo_capacity: 40; 
-	name: string(STR_NAME_REMU_5000);
-	refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
-	non_refittable_cargo_classes: 0; 
-	loading_speed: 20;
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	cargo_age_period: 1200;
-	cost_factor: 22;
-	running_cost_factor: 4;
-	running_cost_base: RUNNING_COST_STEAM;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_REMU_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1960,1,1);
+		speed: 74.5 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40; 
+		refit_cost: 0;
+		default_cargo_type: FOOD;
+		cargo_age_period: 1200;
+		loading_speed: 20;
+		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
+		weight: 10;
+		cost_factor: 22;
+		running_cost_factor: 4;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 6;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -22331,7 +22488,7 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 		cargo_capacity: 45; 
 		refit_cost: 0;
 		default_cargo_type: FOOD;
-		cargo_age_period: 0;
+		cargo_age_period: 1200;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
 		non_refittable_cargo_classes: 0; 
@@ -22665,20 +22822,29 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2200_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, hoki_2200, 1291) {
 
 property {
-	introduction_date: date(1966,1,1);
-	climates_available: ALL_CLIMATES;
-	name: string(STR_NAME_HOKI_2200);
-	speed: 85 km/h;
-	loading_speed: 40;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_HOKI_2200);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		loading_speed: 40;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [FOOD, GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, SUGR, SALT, SASH, POTA];
 	cargo_disallow_refit: [WOOL, WOOD, SGCN, TBCO];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 17;
 	cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
+		length: 7;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -22785,12 +22951,22 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_2500, 42) {
+item (FEAT_TRAINS, hoki_2500, 1242) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1970,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_2500);
+	track_type: NAAN;
 	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	speed: 100 km/h;
+	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 15;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT, SGCN, TBCO, SUGR];
@@ -22979,12 +23155,21 @@ switch(FEAT_TRAINS, SELF, switch_hoki_9300_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, hoki_9300, 1290) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1974,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_9300);
+	track_type: NAAN;
+	speed: 100 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
 	speed: 100 km/h;
 	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 17;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
+	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 	cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
@@ -23080,9 +23265,19 @@ switch(FEAT_TRAINS, SELF, switch_hoki_8500_purchase, current_year) {
 item (FEAT_TRAINS, hoki_8500, 1285) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
 	introduction_date: date(1967,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_8500);
+	track_type: NAAN;
 	speed: 85 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	speed: 100 km/h;
+	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 15;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
@@ -23177,9 +23372,31 @@ switch(FEAT_TRAINS, SELF, switch_hoki_10000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, hoki_10000, 52) {
+item (FEAT_TRAINS, hoki_10000, 1952) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	introduction_date: date(1974,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_HOKI_8300);
+	track_type: NAAN;
+	speed: 100 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	speed: 100 km/h;
+	loading_speed: 40;
+	cargo_capacity: 65;
+	weight: 17;
+	refittable_cargo_classes: bitmask(CC_BULK); 
+	non_refittable_cargo_classes: bitmask(CC_COVERED); 
+	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+	cost_factor: 50;
+	running_cost_factor: 8;
+	running_cost_base: RUNNING_COST_STEAM;
+	loading_speed: 40;
+
 	introduction_date: date(1980,1,1);
 	name: string(STR_NAME_HOKI_10000);
 	speed: 100 km/h;
@@ -23802,19 +24019,32 @@ switch(FEAT_TRAINS, SELF, switch_koki_71_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, koki_71, 43) {
+item (FEAT_TRAINS, koki_71, 1943) {
 
 property {
-	name: string(STR_NAME_KOKI_71);
-	default_cargo_type: VEHI;
-	refittable_cargo_classes: bitmask(CC_EXPRESS, CC_MAIL); 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI, VPTS, VBOD, PAPR, RCYC, PIPE, POWR, TYRE, PPAR, VENG]; 
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	cost_factor: 50;
-	running_cost_factor: 8;
-	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KOKI_71);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1995,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 50; 
+		refit_cost: 0;
+		default_cargo_type: VEHI;
+		loading_speed: 40;
+		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED); 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [MAIL, GOOD, VALU, GOLD, DIAM, PAPR, FOOD, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, CTCD, BUBL, PLST, BEER, COPR, FICR, BDMT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PLAS, RCYC, WDPR, WOOL, VEHI, EOIL, JAVA]; 
+		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+		weight: 20;
+		cost_factor: 50;
+		running_cost_factor: 8;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -23825,6 +24055,7 @@ graphics {
 							)
 						);
 	speed: switch_speedboost_1;
+	cargo_age_period: switch_container_cargo_decay;
 	default: switch_koki_71_cargo_type;
 	purchase: spriteset_koki_71_purchase;
 	cargo_capacity: switch_koki_71_cargo_capacity;
@@ -24621,21 +24852,32 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, ku_5000, 44) {
+item (FEAT_TRAINS, ku_5000, 1944) {
 
 property {
-	name: string(STR_NAME_KU_5000);
-	introduction_date: date(1966,1,1);
-	default_cargo_type: VEHI;
-	refittable_cargo_classes: 0; 
-	non_refittable_cargo_classes: 0; 
-	cargo_allow_refit: [VEHI]; 
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
-	speed: 85 km/h;
-	cost_factor: 30;
-	running_cost_factor: 5;
-	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 20;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_KU_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1966,1,1);
+		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 40; 
+		refit_cost: 0;
+		default_cargo_type: VEHI;
+		loading_speed: 20;
+		refittable_cargo_classes: 0; 
+		non_refittable_cargo_classes: 0; 
+		cargo_allow_refit: [VEHI, GOOD]; 
+//		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR];
+		weight: 12;
+		cost_factor: 30;
+		running_cost_factor: 5;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -33007,6 +33249,7 @@ item (FEAT_TRAINS, dmt, 1407) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 //		cargo_capacity: return 50;
 		default: switch_dmt_front_livery;
 		purchase: switch_dmt_yeardep_purchase;
@@ -33097,6 +33340,7 @@ item (FEAT_TRAINS, koki_5500, 1412) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 60;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_koki_5500_base_loadstack;
 		purchase: spriteset_koki_5500_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33243,6 +33487,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		cargo_capacity: return 60;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_koki_10000_base_loadstack;
 		purchase: spriteset_koki_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33288,6 +33533,7 @@ item (FEAT_TRAINS, kokifu_10000, 1433) {
 		speed: switch_speedboost_1;
 		purchase_speed: return 100;
 		cargo_capacity: return 45;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_kokifu_10000_flip;
 		purchase: spriteset_kokifu_10000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33445,6 +33691,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 95;
 		default: switch_koki_50000_base_loadstack;
 		purchase: spriteset_koki_50000_purchase;
@@ -33490,6 +33737,7 @@ item (FEAT_TRAINS, kokifu_50000, 1434) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 55;
+		cargo_age_period: switch_container_cargo_decay;
 		default: switch_kokifu_50000_flip;
 		purchase: spriteset_kokifu_50000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;
@@ -33607,6 +33855,7 @@ item (FEAT_TRAINS, koki_250000, 1415) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 100;
 		default: switch_koki_250000_base_loadstack;
 		purchase: switch_koki_250000_purchase;
@@ -33708,6 +33957,7 @@ item (FEAT_TRAINS, koki_350000, 1416) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_350000_base_loadstack;
 		purchase: switch_koki_350000_purchase;
@@ -33859,6 +34109,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 						);
 		speed: switch_speedboost_1;
 		cargo_capacity: return 75;
+		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_100_flip;
 		purchase: spriteset_koki_100_purchase;
@@ -33957,6 +34208,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 							)
 						);
 		speed: switch_speedboost_1;
+		cargo_age_period: switch_container_cargo_decay;
 		cargo_capacity: return 80;
 		purchase_speed: return 110;
 		default: switch_koki_107_flip;
@@ -34623,7 +34875,7 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1, [
 
 
 //main item
-item (FEAT_TRAINS, chisa_1, 34) {
+item (FEAT_TRAINS, chisa_1, 1934) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -35195,16 +35447,21 @@ switch(FEAT_TRAINS, SELF, stack_chiki_1500, [
 
 
 //main item
-item (FEAT_TRAINS, chiki_1500, 41) {
+item (FEAT_TRAINS, chiki_1500, 1941) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-//	track_type: NAAN;
+	track_type: NAAN;
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_CHIKI_1500);
 	introduction_date: date(1934,1,1);
 	cargo_capacity: 45;
 	speed: 75 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 35; 
+	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
 	default_cargo_type: WOOD;
@@ -35754,7 +36011,7 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 
 //main item
 
-item (FEAT_TRAINS, shiki_800, 50) {
+item (FEAT_TRAINS, shiki_800, 1950) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -36390,18 +36647,28 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 item (FEAT_TRAINS, toki_900, 1284) {
 
 property {
-//	introduction_date: date(1940,1,1);
-//	default_cargo_type: FOOD;
-	speed: 65 km/h;
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	introduction_date: date(1940,1,1);
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TOKI_900);
+	speed: 65 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 45; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 11;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -36768,20 +37035,31 @@ switch(FEAT_TRAINS, SELF, switch_tomu_1_cargo_type, cargo_type_in_veh) {
 }
 
 
-item (FEAT_TRAINS, tomu_1, 29) {
+item (FEAT_TRAINS, tomu_1, 1929) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1911,1,1);
-	speed: 65 km/h;
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TOMU_1);
+	speed: 65 km/h;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 30; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 10;
 	cost_factor: 18;
-		running_cost_factor: 3;
-		running_cost_base: RUNNING_COST_STEAM;
+	running_cost_factor: 3;
+	running_cost_base: RUNNING_COST_STEAM;
+	length: 5;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -37152,20 +37430,31 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 
 
 
-item (FEAT_TRAINS, tora_5000, 33) {
+item (FEAT_TRAINS, tora_5000, 1933) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1930,1,1);
+	climates_available: ALL_CLIMATES;
+	name: string(STR_NAME_TOMU_1);
 	speed: 75 km/h;
-	name: string(STR_NAME_TORA_5000);
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 40; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
+	loading_speed: 10;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
-	loading_speed: 10;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 10;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+	length: 6;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -37230,21 +37519,30 @@ switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
 item (FEAT_TRAINS, tora_90000, 1280) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	introduction_date: date(1950,1,1);
-//	default_cargo_type: FOOD;
-
+	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TORA_90000);
 	speed: 75 km/h;
-//	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
-	non_refittable_cargo_classes: 0;
+	air_drag_coefficient: 0;
+	power: 0;
+	dual_headed: 0;
+	cargo_capacity: 35; 
+	refit_cost: 0;
+//	default_cargo_type: COAL;
 	loading_speed: 10;
+//	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
+	non_refittable_cargo_classes: 0;
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
-	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	weight: 11;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
-	variant_group: 29;
+	length: 5;
+	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+	variant_group: 1929;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -38196,17 +38494,28 @@ switch(FEAT_TRAINS, SELF, switch_tasa_5700_purchase, current_year) {
 	}
 
 
-item (FEAT_TRAINS, tasa_5700, 45) {
+item (FEAT_TRAINS, tasa_5700, 1485) {
 property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
 		name: string(STR_NAME_TASA_5700);
-		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
-		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1963,1,1);
 		speed: 85 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 25; 
+		refit_cost: 0;
+		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
+		refittable_cargo_classes: bitmask (CC_LIQUID);
+		loading_speed: 30;
+		weight: 11;
 		cost_factor: 40;
-	running_cost_factor: 6;
-	running_cost_base: RUNNING_COST_STEAM;
-	loading_speed: 30;
+		running_cost_factor: 6;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
 	graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -38366,9 +38675,11 @@ switch(FEAT_TRAINS, SELF, switch_tamu_500_purchase, current_year) {
 	spriteset_tamu_500_jrf_purchase;
 	}
 
-item (FEAT_TRAINS, tamu_500, 30) {
+item (FEAT_TRAINS, tamu_500, 1482) {
 
 property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
 	name: string(STR_NAME_TAMU_500);
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	introduction_date: date(1930,1,1);
@@ -39029,6 +39340,10 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 
 
 
+//all redundant with removal of japanset dependency
+
+/*
+
 //fix string bug in JP trains
 
 item (FEAT_TRAINS, jgr_7050, 0x87) {
@@ -39123,12 +39438,13 @@ graphics {
 						);
 
 		cargo_capacity: return 70;
+		cargo_age_period: switch_container_cargo_decay;
 		default: spritegroup_m250_trailer;
 		purchase: spriteset_m250_trailer_purchase;
 	}
 }
 
-/*
+
 item (FEAT_TRAINS, m250, 77) {
 
 property {

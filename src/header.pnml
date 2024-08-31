@@ -52,7 +52,8 @@ grf {
 		*/
 }
 
-//disable_item(FEAT_TRAINS);
+//disable default trains
+disable_item(FEAT_TRAINS);
 
 //train look nice thing
 traininfo_y_offset = 2;

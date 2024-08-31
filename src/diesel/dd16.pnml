@@ -1,0 +1,102 @@
+spriteset(spriteset_dd16_red, "gfx/diesel/dd16.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dd16_flip_red, "gfx/diesel/dd16.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_dd16_cc, "gfx/diesel/dd16.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_dd16_flip_cc, "gfx/diesel/dd16.png") {
+	template_2cc_flip(180, 320)
+}
+
+
+spriteset(spriteset_dd16_red_purchase, "gfx/diesel/dd16.png") {
+	template_purchase(1, 352)
+}
+
+
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_dd16_flip_red, vehicle_is_flipped) {
+	0: spriteset_dd16_red;
+	1: spriteset_dd16_flip_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_dd16_flip_cc, vehicle_is_flipped) {
+	0: spriteset_dd16_cc;
+	1: spriteset_dd16_flip_cc;
+}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd16_livery, cargo_subtype) {
+	1: switch_dd16_flip_cc;	
+	switch_dd16_flip_red;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd16_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, dd16, 1209) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_DD16);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1971,1,1);
+  speed: 75 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 588 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 48;
+  model_life: 40;
+  vehicle_life: 35;
+  length: 5;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	reliability_decay: 13;
+    cost_factor: 37;
+	running_cost_factor: 44;
+    running_cost_base: RUNNING_COST_DIESEL;
+	misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_1C, 
+                           string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd16_subtype_text;
+  default: switch_dd16_livery;
+  purchase: spriteset_dd16_red_purchase;
+  reverse_build_probability: return 50;
+  }
+}
