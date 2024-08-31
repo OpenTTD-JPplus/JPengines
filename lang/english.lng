@@ -33,7 +33,9 @@ STR_NAME_860	    :860
 STR_NAME_7050	    :7050 C-1 
 
 STR_NAME_DF50	    :DF50
-STR_NAME_DD13	    :DD13 
+STR_NAME_DD13	    :DD13
+STR_NAME_DD13_1	    :DD13 Old type
+STR_NAME_DD13_2	    :DD13 New type
 STR_NAME_DD16	    :DD16 
 STR_NAME_DD54	    :DD54 
 STR_NAME_DE10       :DE10
@@ -492,13 +494,24 @@ STR_SUFFIX_SAKHALIN		:{WHITE}Sakhalin Railway
 STR_SUFFIX_SAGANO		:{WHITE}Sagano Scenic Railway
 STR_SUFFIX_WATARASE 	:{WHITE}Watarase Keikoku
 STR_SUFFIX_KANSAI		:{WHITE}Kansai Freight Railway
-STR_SUFFIX_ASAHIKAWA		:{WHITE}Asahikawa Express Railway
+STR_SUFFIX_TARUMI       :{WHITE}Tarumi Railway
+STR_SUFFIX_ASAHIKAWA		:{WHITE}Nippon Express Asahikawa
 STR_SUFFIX_AKITA_RINKAI	    :{WHITE}Akita Rinkai Railway
 STR_SUFFIX_TOMAKOMAI		:{WHITE}Tomakomai Port Development Line
 STR_SUFFIX_NAGOYA_RINKAI	:{WHITE}Nagoya Rinkai Railway
 STR_SUFFIX_KOSAKA		    :{WHITE}Kosaka Railway
 STR_SUFFIX_KAMIOKA		    :{WHITE}Kamioka Railway
 STR_SUFFIX_KASHIMA		    :{WHITE}Kashima Railway
+STR_SUFFIX_NIIGATA_RINKAI	:{WHITE}Niigata Rinkai Railway
+STR_SUFFIX_OHMI         	:{WHITE}Ohmi Railway
+STR_SUFFIX_OKAYAMA_RINKO   	:{WHITE}Okayama Rinko Railway
+STR_SUFFIX_HACHINOHE_RINKAI	:{WHITE}Hachinohe Rinkai Railway
+STR_SUFFIX_KEIYO_RINKAI 	:{WHITE}Keiyo Rinkai Railway
+STR_SUFFIX_SENDAI_RINKAI 	:{WHITE}Sendai Rinkai Railway
+STR_SUFFIX_KANAGAWA_RINKAI 	:{WHITE}Kanagawa Rinkai Railway
+STR_SUFFIX_MITSUBISHI   	:{WHITE}Mitsubishi Yubari
+STR_SUFFIX_FUKUSHIMA_RINKAI :{WHITE}Fukushima Rinkai Railway
+
 
 STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators
 
@@ -555,6 +568,7 @@ STR_SUFFIX_AMERICANTRAIN :{GOLD}"American Train"{BLACK}
 STR_SUFFIX_YASURAGI      :{GOLD}"Yasuragi"{BLACK}
 STR_SUFFIX_7STARS        :{GOLD}"Seven Stars in Kyushu"{BLACK}
 STR_SUFFIX_SALONEXP      :{GOLD}"Salon Express Tokyo"{BLACK}
+STR_SUFFIX_HYPERSALOON   :{GOLD}"Hyper Saloon"{BLACK}
 
 STR_SUFFIX_NOROKKO            :{GOLD}"Norokko"{BLACK}
 STR_SUFFIX_ISLANDEXPRESS      :{GOLD}"Island Express"{BLACK}

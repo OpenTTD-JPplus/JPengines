@@ -1,267 +1,89 @@
-spriteset(spriteset_dd13_old_jnr_red, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_jnr_red, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dd13_old_jnr_brown_yellow, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_jnr_brown, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dd13_old_cc, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_cc, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dd13_old_asahikawa, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_akita, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dd13_old_nagoya_rinkai, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_nagoya_rinkai, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dd13_old_niigata_rinkai, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_tomakomai, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dd13_old_ohmi, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_kashima_black, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dd13_old_okayama_rinko, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_kashima_red, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_dd13_old_naebo, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_kosaka, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 256)
 }
 
-
-spriteset(spriteset_dd13_old_brown_purchase, "gfx/diesel/dd13.png") {
-	template_purchase(1, 512)
-}
-
-spriteset(spriteset_dd13_old_red_purchase, "gfx/diesel/dd13.png") {
-	template_purchase(89, 512)
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_dd13_old_yeardep_livery, build_year) {
-	0..1965: spriteset_dd13_old_jnr_brown_yellow;
-    spriteset_dd13_old_jnr_red;
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_dd13_old_livery, cargo_subtype) {
-	1: spriteset_dd13_old_jnr_red;
-	2: spriteset_dd13_old_jnr_brown_yellow;
-	3: spriteset_dd13_old_asahikawa;
-	4: spriteset_dd13_old_nagoya_rinkai;
-	5: spriteset_dd13_old_niigata_rinkai;
-	6: spriteset_dd13_old_ohmi;
-	7: spriteset_dd13_old_okayama_rinko;
-	8: spriteset_dd13_old_naebo;
-	9: spriteset_dd13_old_cc;
-	switch_dd13_old_yeardep_livery;
-}
-
-
-switch(FEAT_TRAINS, SELF, switch_dd13_old_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
-                                    string(STR_COLOUR_GREY)
-                                    )
-                                 );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BROWN), 
-                                    string(STR_COLOUR_YELLOW)
-                                    )
-                                 );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTGREEN), 
-                                    string(STR_COLOUR_WHITE)
-                                    )
-                                 );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTBLUE), 
-                                    string(STR_COLOUR_WHITE)
-                                    )
-                                 );
-	5: return string(STR_CONCAT_2, string(STR_SUFFIX_NIIGATA_RINKAI), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_RED), 
-                                    string(STR_COLOUR_YELLOW)
-                                    )
-                                 );
-	6: return string(STR_CONCAT_2, string(STR_SUFFIX_OHMI), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_LTGREEN), 
-                                    string(STR_COLOUR_YELLOW)
-                                    )
-                                 );
-	7: return string(STR_CONCAT_2, string(STR_SUFFIX_OKAYAMA_RINKO), 
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_LTBLUE)
-                                    )
-                                 );
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_GREEN)
-                                    ), string(STR_SUFFIX_NAEBO)
-                                 );
-	9: return string(STR_REFIT_CC);
-	   return CB_RESULT_NO_TEXT;
-	}
-
-
-switch(FEAT_TRAINS, SELF, switch_dd13_old_yeardep_purchase, current_year) {
-	0..1965: spriteset_dd13_old_brown_purchase;
-    spriteset_dd13_old_red_purchase;
-}
-
-switch (FEAT_TRAINS, SELF, switch_dd13_old_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
-  return string(STR_NAME_DD13);
-  } 
-switch (FEAT_TRAINS, SELF, switch_dd13_old_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_dd13_old_name_purchase; 
-  return CB_RESULT_NO_TEXT;
-  }
-
-
-item (FEAT_TRAINS, dd13_old, 1207) {
- property {
-  sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NAAN;
-  name: string(STR_NAME_DD13_1);
-  climates_available: ALL_CLIMATES;
-  introduction_date: date(1958,1,1);
-  speed: 70 km/h;
-  air_drag_coefficient: 0;
-  tractive_effort_coefficient:    0.25;
-  power: 552 kW;
-  dual_headed: 0;
-  engine_class: ENGINE_CLASS_DIESEL;
-  cargo_capacity: 1;
-  cargo_allow_refit: [PASS];
-  weight: 56;
-  reliability_decay: 20;
-  model_life: 40;
-  vehicle_life: 55;
-  cost_factor: 18;
-  length: 6;
-  running_cost_factor: 80;
-  running_cost_base: RUNNING_COST_DIESEL;
-//  misc_flags: bitmask(TRAIN_FLAG_2CC);
-  }
-  graphics { // graphics for engine
-  additional_text:	string(STR_CONCAT_4S, 
-                        string(STR_DESC_POWER_DH),
-                        string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_LF),
-                        string(STR_CONCAT_2C, 
-                           string(STR_SUFFIX_JNR),
-						   string(STR_SUFFIX_PRIVATE)
-                    )
-                  );
-  cargo_capacity: return 0;
-  cargo_subtype_text: switch_dd13_old_subtype_text;
-  default: switch_dd13_old_livery;
-  purchase: switch_dd13_old_yeardep_purchase;
-  name: switch_dd13_old_name;
-  }
-}
-
-
-spriteset(spriteset_dd13_new_jnr_red, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 1)
-}
-
-spriteset(spriteset_dd13_new_jnr_brown, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 32)
-}
-
-spriteset(spriteset_dd13_new_cc, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 64)
-}
-
-spriteset(spriteset_dd13_new_akita, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 96)
-}
-
-spriteset(spriteset_dd13_new_nagoya_rinkai, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 128)
-}
-
-spriteset(spriteset_dd13_new_tomakomai, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 160)
-}
-
-spriteset(spriteset_dd13_new_kashima_black, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 192)
-}
-
-spriteset(spriteset_dd13_new_kashima_red, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 224)
-}
-
-spriteset(spriteset_dd13_new_kosaka, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 256)
-}
-
 spriteset(spriteset_dd13_new_kamioka_white, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 288)
+	template_2cc_std(1, 288)
 }
 
 spriteset(spriteset_dd13_new_kamioka_brown, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 320)
-}
-
-spriteset(spriteset_dd13_new_hachinohe, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 352)
-}
-
-spriteset(spriteset_dd13_new_keiyo_blue, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 384)
-}
-
-spriteset(spriteset_dd13_new_keiyo_red, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 416)
-}
-
-spriteset(spriteset_dd13_new_sendai_yellow, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 448)
-}
-
-spriteset(spriteset_dd13_new_sendai_white, "gfx/diesel/dd13.png") {
-	template_2cc_std(180, 480)
-}
-
-spriteset(spriteset_dd13_new_okayama_rinko, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 320)
 }
 
-spriteset(spriteset_dd13_new_kanagawa, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_hachinohe, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 352)
 }
 
-spriteset(spriteset_dd13_new_mitsubishi_yubari, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_keiyo_blue, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 384)
 }
 
-spriteset(spriteset_dd13_new_fukushima_green, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_keiyo_red, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 416)
 }
 
-spriteset(spriteset_dd13_new_fukushima_blue, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_sendai_yellow, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 448)
 }
 
-spriteset(spriteset_dd13_new_fukushima_red, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_new_sendai_white, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 480)
+}
+
+spriteset(spriteset_dd13_new_okayama_rinko, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 320)
+}
+
+spriteset(spriteset_dd13_new_kanagawa, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 352)
+}
+
+spriteset(spriteset_dd13_new_mitsubishi_yubari, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 384)
+}
+
+spriteset(spriteset_dd13_new_fukushima_green, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 416)
+}
+
+spriteset(spriteset_dd13_new_fukushima_blue, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 448)
+}
+
+spriteset(spriteset_dd13_new_fukushima_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 480)
 }
 
 
@@ -272,7 +94,7 @@ spriteset(spriteset_dd13_new_brown_purchase, "gfx/diesel/dd13.png") {
 }
 
 spriteset(spriteset_dd13_new_red_purchase, "gfx/diesel/dd13.png") {
-	template_purchase(268, 512)
+	template_purchase(269, 512)
 }
 
 
@@ -372,20 +194,20 @@ switch(FEAT_TRAINS, SELF, switch_dd13_new_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_BLACK)
                                     )
                                  );
-	11: return string(STR_CONCAT_2, string(STR_SUFFIX_HACHINOHE_RINKAI), 
+	11: return string(STR_CONCAT_2, string(STR_SUFFIX_HACHINOHE), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_GREY), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	12: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO_RINKAI), 
+	12: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GREY)
                                     )
                                  );
-	13: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO_RINKAI), 
+	13: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_LTBLUE),
@@ -451,21 +273,11 @@ switch(FEAT_TRAINS, SELF, switch_dd13_new_yeardep_purchase, current_year) {
 }
 
 
-switch (FEAT_TRAINS, SELF, switch_dd13_new_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
-  1: return CB_RESULT_NO_TEXT; 
-  return string(STR_NAME_DD13);
-  } 
-switch (FEAT_TRAINS, SELF, switch_dd13_new_name, getbits(extra_callback_info1, 0, 8)) { 
-  0x20: switch_dd13_new_name_purchase; 
-  return CB_RESULT_NO_TEXT;
-  }
-
-
 item (FEAT_TRAINS, dd13_new, 1208) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NAAN;
-  name: string(STR_NAME_DD13_2);
+  name: string(STR_NAME_DD13);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1961,1,1);
   speed: 70 km/h;
@@ -501,6 +313,5 @@ item (FEAT_TRAINS, dd13_new, 1208) {
   cargo_subtype_text: switch_dd13_new_subtype_text;
   default: switch_dd13_new_livery;
   purchase: switch_dd13_new_yeardep_purchase;
-  name: switch_dd13_new_name;
   }
 }

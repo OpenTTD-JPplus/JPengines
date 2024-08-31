@@ -44,7 +44,7 @@ switch(FEAT_TRAINS, SELF, switch_dd16_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_dd16_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_WHITE)

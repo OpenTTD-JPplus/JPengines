@@ -130,7 +130,7 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //diesels
-1203, 1205, 1207, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1225, 1263, 1063, 1963, 1964, 1230,
+1203, 1205, 1207, 1208, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1225, 1263, 1063, 1963, 1964, 1230,
 //electrics DC old
 1010, 1011, 990, 1004, 1904, 1002, 1013, 1012, 1050, 1051, 1008, 1052, 1033, 1053, 1054, 1014, 1016, 1916, 1910, 1019, 1919, 1920, 1020, 1218, 1081, 1082, 1021, 1914, 1921, 
 //electrics DC new
@@ -11216,83 +11216,73 @@ item (FEAT_TRAINS, eh800_rear, 1096) {
 	}
 }
 
-spriteset(spriteset_dd13_jnr_red, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_jnr_red, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_dd13_jnr_brown_white, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_jnr_brown_yellow, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_dd13_jnr_brown_yellow, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_cc, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_dd13_asahikawa, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_asahikawa, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 96)
 }
 
-spriteset(spriteset_dd13_akita_rinkai, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_nagoya_rinkai, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 128)
 }
 
-spriteset(spriteset_dd13_tomakomai, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_niigata_rinkai, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_dd13_nagoya_rinkai, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_ohmi, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 192)
 }
 
-spriteset(spriteset_dd13_kosaka, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_okayama_rinko, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 224)
 }
 
-spriteset(spriteset_dd13_kamioka, "gfx/diesel/dd13.png") {
+spriteset(spriteset_dd13_old_naebo, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 256)
 }
 
-spriteset(spriteset_dd13_kashima, "gfx/diesel/dd13.png") {
-	template_2cc_std(1, 288)
+
+spriteset(spriteset_dd13_old_brown_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(1, 512)
 }
 
-spriteset(spriteset_dd13_cc, "gfx/diesel/dd13.png") {
-	template_2cc_std(1, 320)
-}
-
-
-spriteset(spriteset_dd13_brown_purchase, "gfx/diesel/dd13.png") {
-	template_purchase(1, 352)
-}
-
-spriteset(spriteset_dd13_red_purchase, "gfx/diesel/dd13.png") {
-	template_purchase(89, 352)
+spriteset(spriteset_dd13_old_red_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(89, 512)
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_dd13_yeardep_livery, build_year) {
-	0..1965: spriteset_dd13_jnr_brown_yellow;
-    spriteset_dd13_jnr_red;
+switch(FEAT_TRAINS, SELF, switch_dd13_old_yeardep_livery, build_year) {
+	0..1965: spriteset_dd13_old_jnr_brown_yellow;
+    spriteset_dd13_old_jnr_red;
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_dd13_livery, cargo_subtype) {
-	1: spriteset_dd13_jnr_red;
-	2: spriteset_dd13_jnr_brown_white;
-	3: spriteset_dd13_jnr_brown_yellow;
-	4: spriteset_dd13_asahikawa;
-	5: spriteset_dd13_akita_rinkai;
-	6: spriteset_dd13_tomakomai;
-	7: spriteset_dd13_nagoya_rinkai;
-	8: spriteset_dd13_kosaka;
-	9: spriteset_dd13_kamioka;
-	10: spriteset_dd13_kashima;
-	11: spriteset_dd13_cc;
-	switch_dd13_yeardep_livery;
+switch(FEAT_TRAINS, SELF, switch_dd13_old_livery, cargo_subtype) {
+	1: spriteset_dd13_old_jnr_red;
+	2: spriteset_dd13_old_jnr_brown_yellow;
+	3: spriteset_dd13_old_asahikawa;
+	4: spriteset_dd13_old_nagoya_rinkai;
+	5: spriteset_dd13_old_niigata_rinkai;
+	6: spriteset_dd13_old_ohmi;
+	7: spriteset_dd13_old_okayama_rinko;
+	8: spriteset_dd13_old_naebo;
+	9: spriteset_dd13_old_cc;
+	switch_dd13_old_yeardep_livery;
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
+switch(FEAT_TRAINS, SELF, switch_dd13_old_subtype_text, cargo_subtype) {
 	0: return string(STR_REFIT_YEARDEP);
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
@@ -11301,37 +11291,283 @@ switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
                                     )
                                  );
 	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                    string(STR_CONCAT_1F, 
-                                     string(STR_COLOUR_BROWN)
-                                    )
-                                 );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_2F, 
+                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BROWN), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTGREEN), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	5: return string(STR_CONCAT_2, string(STR_SUFFIX_AKITA_RINKAI), 
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	6: return string(STR_CONCAT_2, string(STR_SUFFIX_TOMAKOMAI), 
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_NIIGATA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_OHMI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTGREEN), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_OKAYAMA_RINKO), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_LTBLUE)
+                                    )
+                                 );
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    ), string(STR_SUFFIX_NAEBO)
+                                 );
+	9: return string(STR_REFIT_CC);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_old_yeardep_purchase, current_year) {
+	0..1965: spriteset_dd13_old_brown_purchase;
+    spriteset_dd13_old_red_purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_dd13_old_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DD13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_dd13_old_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_dd13_old_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, dd13_old, 1207) {
+ property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_DD13_1);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1958,1,1);
+  speed: 70 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 552 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 56;
+  reliability_decay: 20;
+  model_life: 40;
+  vehicle_life: 55;
+  cost_factor: 18;
+  length: 6;
+  running_cost_factor: 80;
+  running_cost_base: RUNNING_COST_DIESEL;
+//  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  }
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_LF),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+						   string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd13_old_subtype_text;
+  default: switch_dd13_old_livery;
+  purchase: switch_dd13_old_yeardep_purchase;
+  name: switch_dd13_old_name;
+  }
+}
+
+
+spriteset(spriteset_dd13_new_jnr_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_dd13_new_jnr_brown, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_dd13_new_cc, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_dd13_new_akita, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_dd13_new_nagoya_rinkai, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_dd13_new_tomakomai, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_dd13_new_kashima_black, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_dd13_new_kashima_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_dd13_new_kosaka, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 256)
+}
+
+spriteset(spriteset_dd13_new_kamioka_white, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 288)
+}
+
+spriteset(spriteset_dd13_new_kamioka_brown, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 320)
+}
+
+spriteset(spriteset_dd13_new_hachinohe, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 352)
+}
+
+spriteset(spriteset_dd13_new_keiyo_blue, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 384)
+}
+
+spriteset(spriteset_dd13_new_keiyo_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 416)
+}
+
+spriteset(spriteset_dd13_new_sendai_yellow, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 448)
+}
+
+spriteset(spriteset_dd13_new_sendai_white, "gfx/diesel/dd13.png") {
+	template_2cc_std(180, 480)
+}
+
+spriteset(spriteset_dd13_new_okayama_rinko, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_dd13_new_kanagawa, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 352)
+}
+
+spriteset(spriteset_dd13_new_mitsubishi_yubari, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_dd13_new_fukushima_green, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_dd13_new_fukushima_blue, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 448)
+}
+
+spriteset(spriteset_dd13_new_fukushima_red, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 480)
+}
+
+
+//purch
+
+spriteset(spriteset_dd13_new_brown_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(180, 512)
+}
+
+spriteset(spriteset_dd13_new_red_purchase, "gfx/diesel/dd13.png") {
+	template_purchase(268, 512)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_new_yeardep_livery, build_year) {
+	0..1965: spriteset_dd13_new_jnr_brown;
+    spriteset_dd13_new_jnr_red;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_new_livery, cargo_subtype) {
+	1: spriteset_dd13_new_jnr_red;
+	2: spriteset_dd13_new_jnr_brown;
+	3: spriteset_dd13_new_akita;
+	4: spriteset_dd13_new_nagoya_rinkai;
+	5: spriteset_dd13_new_tomakomai;
+	6: spriteset_dd13_new_kashima_black;
+	7: spriteset_dd13_new_kashima_red;
+	8: spriteset_dd13_new_kosaka;
+	9: spriteset_dd13_new_kamioka_white;
+	10: spriteset_dd13_new_kamioka_brown;
+	11: spriteset_dd13_new_hachinohe;
+	12: spriteset_dd13_new_keiyo_blue;
+	13: spriteset_dd13_new_keiyo_red;
+	14: spriteset_dd13_new_sendai_yellow;
+	15: spriteset_dd13_new_sendai_white;
+	16: spriteset_dd13_new_okayama_rinko;
+	17: spriteset_dd13_new_kanagawa;
+	18: spriteset_dd13_new_mitsubishi_yubari;
+	19: spriteset_dd13_new_fukushima_green;
+	20: spriteset_dd13_new_fukushima_blue;
+	21: spriteset_dd13_new_fukushima_red;
+	22: spriteset_dd13_new_cc;
+	switch_dd13_new_yeardep_livery;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd13_new_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_AKITA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_TOMAKOMAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_PINK), 
                                     string(STR_COLOUR_GREEN)
                                     )
                                  );
-	7: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_KASHIMA), 
                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_KASHIMA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
@@ -11342,39 +11578,118 @@ switch(FEAT_TRAINS, SELF, switch_dd13_subtype_text, cargo_subtype) {
                                     )
                                  );
 	9: return string(STR_CONCAT_2, string(STR_SUFFIX_KAMIOKA), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_RED)
+                                    )
+                                 );
+	10: return string(STR_CONCAT_2, string(STR_SUFFIX_KAMIOKA), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BROWN), 
                                     string(STR_COLOUR_BLACK)
                                     )
                                  );
-	10: return string(STR_CONCAT_2, string(STR_SUFFIX_KASHIMA), 
+	11: return string(STR_CONCAT_2, string(STR_SUFFIX_HACHINOHE_RINKAI), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	12: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO_RINKAI), 
                                    string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	13: return string(STR_CONCAT_2, string(STR_SUFFIX_KEIYO_RINKAI), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_LTBLUE),
+                                    string(STR_COLOUR_BLUE)
+                                    )
+                                 );
+	14: return string(STR_CONCAT_2, string(STR_SUFFIX_SENDAI_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	15: return string(STR_CONCAT_2, string(STR_SUFFIX_SENDAI_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	11: return string(STR_REFIT_CC);
+	16: return string(STR_CONCAT_2, string(STR_SUFFIX_OKAYAMA_RINKO), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    )
+                                 );
+	17: return string(STR_CONCAT_2, string(STR_SUFFIX_KANAGAWA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	18: return string(STR_CONCAT_2, string(STR_SUFFIX_MITSUBISHI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_ORANGE), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	19: return string(STR_CONCAT_2, string(STR_SUFFIX_FUKUSHIMA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTGREEN), 
+                                    string(STR_COLOUR_LTBLUE)
+                                    )
+                                 );
+	20: return string(STR_CONCAT_2, string(STR_SUFFIX_FUKUSHIMA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	21: return string(STR_CONCAT_2, string(STR_SUFFIX_FUKUSHIMA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	22: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
 
-switch(FEAT_TRAINS, SELF, switch_dd13_yeardep_purchase, current_year) {
-	0..1965: spriteset_dd13_brown_purchase;
-    spriteset_dd13_red_purchase;
+switch(FEAT_TRAINS, SELF, switch_dd13_new_yeardep_purchase, current_year) {
+	0..1965: spriteset_dd13_new_brown_purchase;
+    spriteset_dd13_new_red_purchase;
 }
 
 
-item (FEAT_TRAINS, dd13, 1207) {
+switch (FEAT_TRAINS, SELF, switch_dd13_new_name_purchase, getbits(extra_callback_info1, 8, 8)) { 
+  1: return CB_RESULT_NO_TEXT; 
+  return string(STR_NAME_DD13);
+  } 
+switch (FEAT_TRAINS, SELF, switch_dd13_new_name, getbits(extra_callback_info1, 0, 8)) { 
+  0x20: switch_dd13_new_name_purchase; 
+  return CB_RESULT_NO_TEXT;
+  }
+
+
+item (FEAT_TRAINS, dd13_new, 1208) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
   track_type: NAAN;
-  name: string(STR_NAME_DD13);
+  name: string(STR_NAME_DD13_2);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1958,1,1);
+  introduction_date: date(1961,1,1);
   speed: 70 km/h;
   air_drag_coefficient: 0;
-  tractive_effort_coefficient:    0.25;
-  power: 735 kW;
+  tractive_effort_coefficient:    0.27;
+  power: 745 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_DIESEL;
   cargo_capacity: 1;
@@ -11388,6 +11703,7 @@ item (FEAT_TRAINS, dd13, 1207) {
   running_cost_factor: 80;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1207;
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -11400,9 +11716,10 @@ item (FEAT_TRAINS, dd13, 1207) {
                     )
                   );
   cargo_capacity: return 0;
-  cargo_subtype_text: switch_dd13_subtype_text;
-  default: switch_dd13_livery;
-  purchase: switch_dd13_yeardep_purchase;
+  cargo_subtype_text: switch_dd13_new_subtype_text;
+  default: switch_dd13_new_livery;
+  purchase: switch_dd13_new_yeardep_purchase;
+  name: switch_dd13_new_name;
   }
 }
 spriteset(spriteset_dd16_red, "gfx/diesel/dd16.png") {
@@ -11451,7 +11768,7 @@ switch(FEAT_TRAINS, SELF, switch_dd16_livery, cargo_subtype) {
 
 
 switch(FEAT_TRAINS, SELF, switch_dd16_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_WHITE)
@@ -11755,6 +12072,22 @@ spriteset(spriteset_de10_hokutosei, "gfx/diesel/de10_a.png") {
 	template_2cc_std(1, 352)
 }
 
+spriteset(spriteset_de10_hyper_saloon, "gfx/diesel/de10_a.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_de10_kamioka_blue, "gfx/diesel/de10_a.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_de10_kamioka_black, "gfx/diesel/de10_a.png") {
+	template_2cc_std(1, 448)
+}
+
+spriteset(spriteset_de10_niigata, "gfx/diesel/de10_a.png") {
+	template_2cc_std(1, 480)
+}
+
 //B
 spriteset(spriteset_de10_cc, "gfx/diesel/de10_b.png") {
 	template_2cc_std(1, 1)
@@ -11804,6 +12137,21 @@ spriteset(spriteset_de10_kansai_brown, "gfx/diesel/de10_b.png") {
 	template_2cc_std(1, 352)
 }
 
+spriteset(spriteset_de10_tarumi_yellow, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 384)
+}
+
+spriteset(spriteset_de10_tarumi_blue, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 416)
+}
+
+spriteset(spriteset_de10_tarumi_red, "gfx/diesel/de10_b.png") {
+	template_2cc_std(1, 448)
+}
+
+//spriteset(spriteset_de10_niigata, "gfx/diesel/de10_b.png") {
+//	template_2cc_std(1, 480)
+//}
 
 
 //Spriteset de10 flipped
@@ -11855,6 +12203,22 @@ spriteset(spriteset_de10_flip_hokutosei, "gfx/diesel/de10_a.png") {
 	template_2cc_flip(180, 352)
 }
 
+spriteset(spriteset_de10_flip_hyper_saloon, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 384)
+}
+
+spriteset(spriteset_de10_flip_kamioka_blue, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 416)
+}
+
+spriteset(spriteset_de10_flip_kamioka_black, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 448)
+}
+
+spriteset(spriteset_de10_flip_niigata, "gfx/diesel/de10_a.png") {
+	template_2cc_flip(180, 480)
+}
+
 //B
 spriteset(spriteset_de10_flip_cc, "gfx/diesel/de10_b.png") {
 	template_2cc_flip(180, 1)
@@ -11904,15 +12268,31 @@ spriteset(spriteset_de10_flip_kansai_brown, "gfx/diesel/de10_b.png") {
 	template_2cc_flip(180, 352)
 }
 
+spriteset(spriteset_de10_flip_tarumi_yellow, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 384)
+}
+
+spriteset(spriteset_de10_flip_tarumi_blue, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 416)
+}
+
+spriteset(spriteset_de10_flip_tarumi_red, "gfx/diesel/de10_b.png") {
+	template_2cc_flip(180, 448)
+}
+
+//spriteset(spriteset_de10_niigata, "gfx/diesel/de10_b.png") {
+//	template_2cc_std(1, 480)
+//}
+
 
 //purchase
 
 spriteset(spriteset_de10_red_purchase, "gfx/diesel/de10_a.png") {
-	template_purchase(1, 384)
+	template_purchase(1, 512)
 }
 
 spriteset(spriteset_de10_jrf_purchase, "gfx/diesel/de10_a.png") {
-	template_purchase(89, 384)
+	template_purchase(89, 512)
 }
 
 
@@ -11978,6 +12358,28 @@ switch(FEAT_TRAINS, SELF, switch_de10_flip_hokutosei, vehicle_is_flipped) {
 	1: spriteset_de10_flip_hokutosei;
 }
 
+switch(FEAT_TRAINS, SELF, switch_de10_flip_hyper_saloon, vehicle_is_flipped) {
+	0: spriteset_de10_hyper_saloon;
+	1: spriteset_de10_flip_hyper_saloon;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kamioka_blue, vehicle_is_flipped) {
+	0: spriteset_de10_kamioka_blue;
+	1: spriteset_de10_flip_kamioka_blue;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_kamioka_black, vehicle_is_flipped) {
+	0: spriteset_de10_kamioka_black;
+	1: spriteset_de10_flip_kamioka_black;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_niigata, vehicle_is_flipped) {
+	0: spriteset_de10_niigata;
+	1: spriteset_de10_flip_niigata;
+}
+
+//b
+
 switch(FEAT_TRAINS, SELF, switch_de10_flip_cc, vehicle_is_flipped) {
 	0: spriteset_de10_cc;
 	1: spriteset_de10_flip_cc;
@@ -12037,7 +12439,20 @@ switch(FEAT_TRAINS, SELF, switch_de10_flip_kansai_brown, vehicle_is_flipped) {
 	1: spriteset_de10_flip_kansai_brown;
 }
 
+switch(FEAT_TRAINS, SELF, switch_de10_flip_tarumi_yellow, vehicle_is_flipped) {
+	0: spriteset_de10_tarumi_yellow;
+	1: spriteset_de10_flip_tarumi_yellow;
+}
 
+switch(FEAT_TRAINS, SELF, switch_de10_flip_tarumi_red, vehicle_is_flipped) {
+	0: spriteset_de10_tarumi_red;
+	1: spriteset_de10_flip_tarumi_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de10_flip_tarumi_blue, vehicle_is_flipped) {
+	0: spriteset_de10_tarumi_blue;
+	1: spriteset_de10_flip_tarumi_blue;
+}
 
 
 
@@ -12057,22 +12472,29 @@ switch(FEAT_TRAINS, SELF, switch_de10_livery, cargo_subtype) {
 	6: switch_de10_flip_jrf_yellow;
 	7: switch_de10_flip_jnr_brown;
 	8: switch_de10_flip_jnr_cream;
-	9: switch_de10_flip_kyushu_red;
-	10: switch_de10_flip_kyushu_yellow;
-	11: switch_de10_flip_hokkaido_black;
-	12: switch_de10_flip_hokkaido_het;
-	13: switch_de10_flip_hokutosei;
-	14: switch_de10_flip_southerncross;
-	15: switch_de10_flip_norokko;
-	16: switch_de10_flip_island_express;
-	17: switch_de10_flip_nostalgicview;
-	18: switch_de10_flip_okuizumo;
-	19: switch_de10_flip_kinokuni;
-	20: switch_de10_flip_sagano;
-	21: switch_de10_flip_watarase;
-	22: switch_de10_flip_kansai_brown;
-	23: switch_de10_flip_kansai_blue;
-	24: switch_de10_flip_cc;	
+	9: switch_de10_flip_hyper_saloon;
+	10: switch_de10_flip_kyushu_red;
+	11: switch_de10_flip_kyushu_yellow;
+	12: switch_de10_flip_hokkaido_black;
+	13: switch_de10_flip_hokkaido_het;
+	14: switch_de10_flip_hokutosei;
+	15: switch_de10_flip_southerncross;
+	16: switch_de10_flip_norokko;
+	17: switch_de10_flip_island_express;
+	18: switch_de10_flip_nostalgicview;
+	19: switch_de10_flip_okuizumo;
+	20: switch_de10_flip_kinokuni;
+	21: switch_de10_flip_sagano;
+	22: switch_de10_flip_watarase;
+	23: switch_de10_flip_niigata;
+	24: switch_de10_flip_kansai_brown;
+	25: switch_de10_flip_kansai_blue;
+	26: switch_de10_flip_tarumi_red;
+	27: switch_de10_flip_tarumi_blue;
+	28: switch_de10_flip_tarumi_yellow;
+	29: switch_de10_flip_kamioka_blue;
+	30: switch_de10_flip_kamioka_black;
+	31: switch_de10_flip_cc;	
 	switch_de10_yeardep_livery;
 }
 
@@ -12128,98 +12550,145 @@ switch(FEAT_TRAINS, SELF, switch_de10_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_JNR_RETRO)
                                  );
-	9: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_WHITE), 
+                                    string(STR_COLOUR_RED)
+                                    ), string(STR_SUFFIX_HYPERSALOON)
+                                 );		
+
+
+	10: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLACK), 
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	10: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
+	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRK), 
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLACK), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	11: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH),
+	12: return string(STR_CONCAT_2, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BLACK)
                                     )
                                  );
-	12: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+	13: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_LTGREEN),
 									string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_NAEBO)
                                  );
-	13: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+	14: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI)
                                  );
-	14: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
+	15: return string(STR_CONCAT_3, string(STR_SUFFIX_JRK),
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_SOUTHERNCROSS)
                                  );
-	15: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+	16: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_NOROKKO)
                                  );
-	16: return string(STR_CONCAT_3, string(STR_SUFFIX_JRS),
+	17: return string(STR_CONCAT_3, string(STR_SUFFIX_JRS),
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_ISLANDEXPRESS)
                                  );
-	17: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE),
+	18: return string(STR_CONCAT_3, string(STR_SUFFIX_JRE),
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_YELLOW), 
                                     string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_NOSTALGICVIEW)
                                  );
-	18: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
+	19: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_OKUIZUMO)
                                  );
-	19: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
+	20: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_KINOKUNI)
                                  );
-	20: return string(STR_CONCAT_2, string(STR_SUFFIX_SAGANO), 
+	21: return string(STR_CONCAT_2, string(STR_SUFFIX_SAGANO), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_BLACK), 
                                     string(STR_COLOUR_RED),
                                     string(STR_COLOUR_ORANGE),
                                     )
                                  );
-	21: return string(STR_CONCAT_2, string(STR_SUFFIX_WATARASE), 
+	22: return string(STR_CONCAT_2, string(STR_SUFFIX_WATARASE), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_GOLD)
                                     )
                                  );
-	22: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
+	23: return string(STR_CONCAT_2, string(STR_SUFFIX_NIIGATA_RINKAI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	24: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BROWN), 
                                     string(STR_COLOUR_RED)
                                     )
                                  );
-	23: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
+	25: return string(STR_CONCAT_2, string(STR_SUFFIX_KANSAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	24: return string(STR_REFIT_CC);	
+	26: return string(STR_CONCAT_2, string(STR_SUFFIX_TARUMI), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	27: return string(STR_CONCAT_2, string(STR_SUFFIX_TARUMI), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE),
+									string(STR_COLOUR_RED)
+                                    )
+                                 );
+	28: return string(STR_CONCAT_2, string(STR_SUFFIX_TARUMI), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_YELLOW), 
+                                    string(STR_COLOUR_BLUE),
+									string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	29: return string(STR_CONCAT_2, string(STR_SUFFIX_KAMIOKA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	30: return string(STR_CONCAT_2, string(STR_SUFFIX_KAMIOKA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+
+	31: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
