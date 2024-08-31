@@ -130,7 +130,7 @@ sort(FEAT_TRAINS, [
 //steam
 900, 902, 920,
 //diesels
-1203, 1205, 1207, 1208, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1225, 1263, 1063, 1963, 1964, 1230,
+1203, 1205, 1207, 1208, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1222, 1223, 1225, 1263, 1063, 1963, 1964, 1230,
 //electrics DC old
 1010, 1011, 990, 1004, 1904, 1002, 1013, 1012, 1050, 1051, 1008, 1052, 1033, 1053, 1054, 1014, 1016, 1916, 1910, 1019, 1919, 1920, 1020, 1218, 1081, 1082, 1021, 1914, 1921, 
 //electrics DC new
@@ -12706,7 +12706,7 @@ property {
 	track_type: NAAN;
 	name: string(STR_NAME_DE10);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1967,1,1);
+  introduction_date: date(1966,1,1);
   speed: 85 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.28;
@@ -12744,6 +12744,416 @@ property {
   default: switch_de10_livery;
   purchase: switch_de10_purchase;
 	reverse_build_probability: return 50;
+  }
+}
+spriteset(spriteset_de15_red, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_de15_okuizumo, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_de15_royal_express, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_de15_yellow_grey, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_de15_norokko_0, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_de15_black_red, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_de15_norokko_1, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_de15_norokko_2, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_de15_norokko_3, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_de15_norokko_4, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_de15_cc, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 320)
+}
+
+
+//Spriteset de15 flipped
+spriteset(spriteset_de15_flip_red, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_de15_flip_okuizumo, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 32)
+}
+
+spriteset(spriteset_de15_flip_royal_express, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 64)
+}
+
+spriteset(spriteset_de15_flip_yellow_grey, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 96)
+}
+
+spriteset(spriteset_de15_flip_norokko_0, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 128)
+}
+
+spriteset(spriteset_de15_flip_black_red, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 160)
+}
+
+spriteset(spriteset_de15_flip_norokko_1, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 192)
+}
+
+spriteset(spriteset_de15_flip_norokko_2, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 224)
+}
+
+spriteset(spriteset_de15_flip_norokko_3, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 256)
+}
+
+spriteset(spriteset_de15_flip_norokko_4, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 288)
+}
+
+spriteset(spriteset_de15_flip_cc, "gfx/diesel/de15.png") {
+	template_2cc_flip(180, 320)
+}
+
+
+//purchase
+
+spriteset(spriteset_de15_purchase, "gfx/diesel/de15.png") {
+	template_purchase(1, 512)
+}
+
+
+
+
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_de15_flip_red, vehicle_is_flipped) {
+	0: spriteset_de15_red;
+	1: spriteset_de15_flip_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_okuizumo, vehicle_is_flipped) {
+	0: spriteset_de15_okuizumo;
+	1: spriteset_de15_flip_okuizumo;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_royal_express, vehicle_is_flipped) {
+	0: spriteset_de15_royal_express;
+	1: spriteset_de15_flip_royal_express;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_yellow_grey, vehicle_is_flipped) {
+	0: spriteset_de15_yellow_grey;
+	1: spriteset_de15_flip_yellow_grey;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_norokko_0, vehicle_is_flipped) {
+	0: spriteset_de15_norokko_0;
+	1: spriteset_de15_flip_norokko_0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_black_red, vehicle_is_flipped) {
+	0: spriteset_de15_black_red;
+	1: spriteset_de15_flip_black_red;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_norokko_1, vehicle_is_flipped) {
+	0: spriteset_de15_norokko_1;
+	1: spriteset_de15_flip_norokko_1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_norokko_2, vehicle_is_flipped) {
+	0: spriteset_de15_norokko_2;
+	1: spriteset_de15_flip_norokko_2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_norokko_3, vehicle_is_flipped) {
+	0: spriteset_de15_norokko_3;
+	1: spriteset_de15_flip_norokko_3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_norokko_4, vehicle_is_flipped) {
+	0: spriteset_de15_norokko_4;
+	1: spriteset_de15_flip_norokko_4;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_de15_flip_cc, vehicle_is_flipped) {
+	0: spriteset_de15_cc;
+	1: spriteset_de15_flip_cc;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_de15_livery, cargo_subtype) {
+	1: switch_de15_flip_okuizumo;
+	2: switch_de15_flip_royal_express;
+	3: switch_de15_flip_yellow_grey;
+	4: switch_de15_flip_black_red;
+	5: switch_de15_flip_norokko_0;
+	6: switch_de15_flip_norokko_1;
+	7: switch_de15_flip_norokko_2;
+	8: switch_de15_flip_norokko_3;
+	9: switch_de15_flip_norokko_4;
+	10: switch_de15_flip_cc;
+	switch_de15_flip_red;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_de15_subtype_text, cargo_subtype) {
+
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JRW),
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_OKUIZUMO)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_ROYAL_EXPRESS)
+                                 );
+
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_YELLOW), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_NAEBO)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_KUSHIRO)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_WHITE), 
+									string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREEN)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN), 
+									string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_4F, 
+                                    string(STR_COLOUR_GREEN), 
+                                    string(STR_COLOUR_LTGREEN), 
+									string(STR_COLOUR_LTBLUE), 
+                                    string(STR_COLOUR_PURPLE)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_LTGREEN), 
+									string(STR_COLOUR_GREEN), 
+                                    string(STR_COLOUR_PURPLE)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH),
+                                    string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_PURPLE), 
+									string(STR_COLOUR_LTGREEN), 
+									string(STR_COLOUR_ORANGE)
+                                    ), string(STR_SUFFIX_NOROKKO)
+                                 );
+
+	10: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, de15, 1222) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_DE15);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1967,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.28;
+  power: 1005 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 65;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 7;
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	reliability_decay: 9;
+    cost_factor: 46;
+	running_cost_factor: 80;
+    running_cost_base: RUNNING_COST_DIESEL;
+	misc_flags: bitmask(TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PLOWG),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_de15_subtype_text;
+  default: switch_de15_livery;
+  purchase: spriteset_de15_purchase;
+	reverse_build_probability: return 50;
+  }
+}
+
+
+
+//snowplough
+
+spriteset(spriteset_de15_plow, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 448)
+}
+
+spriteset(spriteset_de15_plow_cc, "gfx/diesel/de15.png") {
+	template_2cc_std(1, 480)
+}
+
+//Spriteset snowplough flipped
+spriteset(spriteset_de15_plow_flip, "gfx/diesel/de15.png") {
+	template_2cc_std(180, 448)
+}
+
+spriteset(spriteset_de15_plow_flip_cc, "gfx/diesel/de15.png") {
+	template_2cc_std(180, 480)
+}
+
+//purchase
+
+spriteset(spriteset_de15_plow_purchase, "gfx/diesel/de15.png") {
+	template_purchase(180, 512)
+}
+
+//end switch
+switch(FEAT_TRAINS, SELF, switch_de15_plow_end, position_in_consist_from_end) {
+	0: spriteset_de15_plow_flip;
+	spriteset_de15_plow;
+	}
+	
+
+switch(FEAT_TRAINS, SELF, switch_de15_plow_end_cc, position_in_consist_from_end) {
+	0: spriteset_de15_plow_flip_cc;
+	spriteset_de15_plow_cc;
+	}
+	
+
+
+//livery
+switch(FEAT_TRAINS, SELF, switch_de15_plow_livery, cargo_subtype) {
+	1: switch_de15_plow_end_cc;
+	switch_de15_plow_end;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_de15_plow_subtype_text, cargo_subtype) {
+
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+
+item (FEAT_TRAINS, de15_plow, 1223) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_DE15_P);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1967,1,1);
+  speed: 85 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.1;
+  power: 1 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 25;
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 40;
+  length: 3;
+
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	reliability_decay: 9;
+    cost_factor: 8;
+	running_cost_factor: 2;
+    running_cost_base: RUNNING_COST_DIESEL;
+//	misc_flags: bitmask(TRAIN_FLAG_FLIP);
+	variant_group: 1222;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_PLOW),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_JR)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_de15_plow_subtype_text;
+  default: switch_de15_plow_livery;
+  purchase: spriteset_de15_plow_purchase;
   }
 }
 spriteset(spriteset_df50_red, "gfx/diesel/df50.png") {
@@ -23570,6 +23980,7 @@ property {
 	loading_speed: 40;
 	cargo_capacity: 65;
 	weight: 17;
+	length: 7;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
@@ -23634,6 +24045,7 @@ property {
 	loading_speed: 40;
 	cargo_capacity: 65;
 	weight: 17;
+	length: 7;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	default_cargo_type: FOOD;
 	non_refittable_cargo_classes: 0;
@@ -23854,6 +24266,7 @@ property {
 	loading_speed: 40;
 	cargo_capacity: 65;
 	weight: 17;
+	length: 7;
 	refittable_cargo_classes: bitmask(CC_BULK); 
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
@@ -35934,6 +36347,8 @@ property {
 	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
+	weight: 16;
+	length: 7;
 	dual_headed: 0;
 	cargo_capacity: 35; 
 	refit_cost: 0;

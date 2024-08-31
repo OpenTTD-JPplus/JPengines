@@ -39,6 +39,8 @@ STR_NAME_DD13_2	    :DD13 New type
 STR_NAME_DD16	    :DD16 
 STR_NAME_DD54	    :DD54 
 STR_NAME_DE10       :DE10
+STR_NAME_DE15       :DE15
+STR_NAME_DE15_P     :DE15 Snowplough Unit
 STR_NAME_DD51       :DD51
 STR_NAME_DF200      :DF200
 STR_NAME_DF200_1     :DF200-0
@@ -521,7 +523,7 @@ STR_SUFFIX_YAWATA       :{WHITE}Yawata Works / Nippon Steel
 
 STR_SUFFIX_GNR          :{WHITE}Great Northern Railway
 STR_SUFFIX_NYC          :{WHITE}New York Central
-STR_SUFFIX_MILW          :{WHITE}Milwaukee Road
+STR_SUFFIX_MILW         :{WHITE}Milwaukee Road
 STR_SUFFIX_PRR          :{WHITE}Pennsylvania Railroad
 STR_SUFFIX_MPL          :{WHITE}Missouri Pacific
 STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
@@ -571,6 +573,9 @@ STR_SUFFIX_SALONEXP      :{GOLD}"Salon Express Tokyo"{BLACK}
 STR_SUFFIX_HYPERSALOON   :{GOLD}"Hyper Saloon"{BLACK}
 
 STR_SUFFIX_NOROKKO            :{GOLD}"Norokko"{BLACK}
+STR_SUFFIX_KUSHIRO            :{GOLD}"Kushiro"{BLACK}
+STR_SUFFIX_ROYAL_EXPRESS      :{GOLD}"Royal Express Hokkaido"{BLACK}
+
 STR_SUFFIX_ISLANDEXPRESS      :{GOLD}"Island Express"{BLACK}
 STR_SUFFIX_NOSTALGICVIEW      :{GOLD}"Nostalgic View"{BLACK}
 STR_SUFFIX_OKUIZUMO           :{GOLD}"Okuizumo Orochi"{BLACK}
@@ -731,6 +736,8 @@ STR_DESC_USAGE_EP		:{BLACK}Usage: {SILVER}Express Passenger{}
 STR_DESC_USAGE_EF		:{BLACK}Usage: {SILVER}Express Passenger / Heavy Freight{}
 STR_DESC_USAGE_FF		:{BLACK}Usage: {SILVER}Express Passenger / Fast Freight{}
 STR_DESC_USAGE_BANK		:{BLACK}Usage: {SILVER}Banker / Pusher{}
+STR_DESC_USAGE_PLOWG	:{BLACK}Usage: {SILVER}Snowplough / General Purpose{}
+STR_DESC_USAGE_PLOW		:{BLACK}Usage: {SILVER}Snowplough{}
 STR_DESC_USAGE_PROTO	:{BLACK}Usage: {SILVER}Prototype{}
 STR_DESC_USAGE_CONCEPT	:{BLACK}Usage: {SILVER}Concept - Never Built{}
 

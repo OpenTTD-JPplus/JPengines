@@ -680,7 +680,7 @@ property {
 	track_type: NAAN;
 	name: string(STR_NAME_DE10);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1967,1,1);
+  introduction_date: date(1966,1,1);
   speed: 85 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.28;
