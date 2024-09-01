@@ -687,6 +687,7 @@ STR_DESC_POWER_AC20		:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV){}
 STR_DESC_POWER_DC15		:{BLACK}Engine Type: {GOLD}Electric - {BLUE} DC (1500V){}
 STR_DESC_POWER_MS20		:{BLACK}Engine Type: {GOLD}Electric Multisystem - {RED} AC (20kV) {WHITE}/ {BLUE}DC (1500V){}
 STR_DESC_POWER_MS25 	:{BLACK}Engine Type: {GOLD}Electric - {RED} AC (20kV) {WHITE}/ {PURPLE} AC (25kV){}
+STR_DESC_POWER_NP    	:{BLACK}Engine Type: {GOLD}Non-Powered - {RED}Requires another engine for power{}
 
 STR_DESC_NARROWGAUGE	:{BLACK}Gauge:{GOLD} Narrow {SILVER}(1,067mm){}
 STR_DESC_STDGAUGE	    :{BLACK}Gauge:{GOLD} Standard {SILVER}(1,435mm){}

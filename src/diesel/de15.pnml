@@ -320,19 +320,18 @@ spriteset(spriteset_de15_plow_flip_cc, "gfx/diesel/de15.png") {
 //purchase
 
 spriteset(spriteset_de15_plow_purchase, "gfx/diesel/de15.png") {
-	template_purchase(180, 512)
+	template_purchase(268, 512)
 }
 
 //end switch
-switch(FEAT_TRAINS, SELF, switch_de15_plow_end, position_in_consist_from_end) {
-	0: spriteset_de15_plow_flip;
-	spriteset_de15_plow;
+switch(FEAT_TRAINS, SELF, switch_de15_plow_end, position_in_consist) {
+	0: spriteset_de15_plow;
+	spriteset_de15_plow_flip;
 	}
-	
 
-switch(FEAT_TRAINS, SELF, switch_de15_plow_end_cc, position_in_consist_from_end) {
-	0: spriteset_de15_plow_flip_cc;
-	spriteset_de15_plow_cc;
+switch(FEAT_TRAINS, SELF, switch_de15_plow_end_cc, position_in_consist) {
+	0: spriteset_de15_plow_cc;
+	spriteset_de15_plow_flip_cc;
 	}
 	
 
@@ -380,7 +379,7 @@ property {
   model_life: VEHICLE_NEVER_EXPIRES;
   vehicle_life: 40;
   length: 3;
-
+  visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 	cargo_capacity: 1; 
 	cargo_allow_refit: [PASS];
 	reliability_decay: 9;
@@ -394,7 +393,7 @@ property {
 
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
-                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_POWER_NP),
                         string(STR_DESC_NARROWGAUGE),
                         string(STR_DESC_USAGE_PLOW),
                         string(STR_CONCAT_2C, 
