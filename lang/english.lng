@@ -516,6 +516,7 @@ STR_SUFFIX_SENDAI_RINKAI 	:{WHITE}Sendai Rinkai Railway
 STR_SUFFIX_KANAGAWA_RINKAI 	:{WHITE}Kanagawa Rinkai Railway
 STR_SUFFIX_MITSUBISHI   	:{WHITE}Mitsubishi Yubari
 STR_SUFFIX_FUKUSHIMA_RINKAI :{WHITE}Fukushima Rinkai Railway
+STR_SUFFIX_TAMOURA          :{WHITE}Tamoura Port Railway
 
 
 STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators

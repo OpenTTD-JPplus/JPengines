@@ -34,6 +34,11 @@ spriteset(spriteset_dd13_old_naebo, "gfx/diesel/dd13.png") {
 	template_2cc_std(1, 256)
 }
 
+spriteset(spriteset_dd13_old_tamoura, "gfx/diesel/dd13.png") {
+	template_2cc_std(1, 288)
+}
+
+
 
 spriteset(spriteset_dd13_old_brown_purchase, "gfx/diesel/dd13.png") {
 	template_purchase(1, 512)
@@ -53,13 +58,14 @@ switch(FEAT_TRAINS, SELF, switch_dd13_old_yeardep_livery, build_year) {
 switch(FEAT_TRAINS, SELF, switch_dd13_old_livery, cargo_subtype) {
 	1: spriteset_dd13_old_jnr_red;
 	2: spriteset_dd13_old_jnr_brown_yellow;
-	3: spriteset_dd13_old_asahikawa;
-	4: spriteset_dd13_old_nagoya_rinkai;
-	5: spriteset_dd13_old_niigata_rinkai;
-	6: spriteset_dd13_old_ohmi;
-	7: spriteset_dd13_old_okayama_rinko;
-	8: spriteset_dd13_old_naebo;
-	9: spriteset_dd13_old_cc;
+	3: spriteset_dd13_old_naebo;
+	4: spriteset_dd13_old_asahikawa;
+	5: spriteset_dd13_old_nagoya_rinkai;
+	6: spriteset_dd13_old_niigata_rinkai;
+	7: spriteset_dd13_old_ohmi;
+	8: spriteset_dd13_old_okayama_rinko;
+   9: spriteset_dd13_old_tamoura;
+	10: spriteset_dd13_old_cc;
 	switch_dd13_old_yeardep_livery;
 }
 
@@ -78,41 +84,48 @@ switch(FEAT_TRAINS, SELF, switch_dd13_old_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	3: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
+   3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRH), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_GREEN)
+                                    ), string(STR_SUFFIX_NAEBO)
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTGREEN), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	4: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_NAGOYA_RINKAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE)
                                     )
                                  );
-	5: return string(STR_CONCAT_2, string(STR_SUFFIX_NIIGATA_RINKAI), 
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_NIIGATA_RINKAI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_RED), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	6: return string(STR_CONCAT_2, string(STR_SUFFIX_OHMI), 
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_OHMI), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTGREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	7: return string(STR_CONCAT_2, string(STR_SUFFIX_OKAYAMA_RINKO), 
+	8: return string(STR_CONCAT_2, string(STR_SUFFIX_OKAYAMA_RINKO), 
                                    string(STR_CONCAT_1F, 
                                     string(STR_COLOUR_LTBLUE)
                                     )
                                  );
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                   string(STR_CONCAT_1F, 
-                                    string(STR_COLOUR_GREEN)
-                                    ), string(STR_SUFFIX_NAEBO)
+	9: return string(STR_CONCAT_2, string(STR_SUFFIX_TAMOURA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_GREEN),
+                                    string(STR_COLOUR_GREY)
+                                    )
                                  );
-	9: return string(STR_REFIT_CC);
+
+	10: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
