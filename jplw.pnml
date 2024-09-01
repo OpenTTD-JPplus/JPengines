@@ -12,6 +12,9 @@
 #include "src/steam/7200.pnml"
 #include "src/steam/860.pnml"
 
+#include "src/steam/c53.pnml"
+#include "src/steam/d50.pnml"
+
 #include "src/dc/deki_400.pnml"
 #include "src/dc/el120.pnml"
 #include "src/dc/e31.pnml"
