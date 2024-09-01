@@ -64,6 +64,7 @@
 #include "src/diesel/dd16.pnml"
 #include "src/diesel/dd51.pnml"
 #include "src/diesel/de10.pnml"
+#include "src/diesel/de11.pnml"
 #include "src/diesel/de15.pnml"
 #include "src/diesel/df50.pnml"
 #include "src/diesel/df200.pnml"
