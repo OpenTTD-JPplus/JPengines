@@ -43,6 +43,7 @@ STR_NAME_D52        :D52
 STR_NAME_D52_R      :D52 Reversed
 
 STR_NAME_DF50	    :DF50
+STR_NAME_DD11	    :DD11
 STR_NAME_DD13	    :DD13
 STR_NAME_DD13_1	    :DD13 Old type
 STR_NAME_DD13_2	    :DD13 New type
@@ -527,6 +528,7 @@ STR_SUFFIX_KANAGAWA_RINKAI 	:{WHITE}Kanagawa Rinkai Railway
 STR_SUFFIX_MITSUBISHI   	:{WHITE}Mitsubishi Yubari
 STR_SUFFIX_FUKUSHIMA_RINKAI :{WHITE}Fukushima Rinkai Railway
 STR_SUFFIX_TAMOURA          :{WHITE}Tamoura Port Railway
+STR_SUFFIX_SUMITOMO         :{WHITE}Sumitomo Kokura Works
 
 STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators
 

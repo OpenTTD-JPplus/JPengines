@@ -1,0 +1,150 @@
+spriteset(spriteset_dd11_red, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_dd11_brown_yellow, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_dd11_brown_white, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_dd11_yellow, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_dd11_green, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_dd11_blue, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 160)
+}
+
+
+
+spriteset(spriteset_dd11_cc, "gfx/diesel/dd11.png") {
+	template_2cc_std(1, 320)
+}
+
+
+spriteset(spriteset_dd11_brown_purchase, "gfx/diesel/dd11.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_dd11_red_purchase, "gfx/diesel/dd11.png") {
+	template_purchase(89, 352)
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_dd11_yeardep_livery, build_year) {
+	0..1967: spriteset_dd11_brown_yellow;
+    spriteset_dd11_red;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd11_livery, cargo_subtype) {
+	1: spriteset_dd11_red;	
+  2: spriteset_dd11_brown_yellow;	
+  3: spriteset_dd11_brown_white;	
+  4: spriteset_dd11_yellow;	
+  5: spriteset_dd11_green;	
+  6: spriteset_dd11_blue;	
+  7: spriteset_dd11_cc;	
+	switch_dd11_yeardep_livery;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_dd11_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_YEARDEP);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_YELLOW)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	4: return string(STR_CONCAT_2, string(STR_SUFFIX_NIPPON), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_YELLOW), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	5: return string(STR_CONCAT_2, string(STR_SUFFIX_ASAHIKAWA), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTGREEN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	6: return string(STR_CONCAT_2, string(STR_SUFFIX_SUMITOMO), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_ORANGE)
+                                    )
+                                 );
+	7: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+item (FEAT_TRAINS, dd11, 1203) {
+
+property {
+	sprite_id: SPRITE_ID_NEW_TRAIN;
+	track_type: NAAN;
+	name: string(STR_NAME_DD11);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1954,1,1);
+  speed: 53 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 240 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_DIESEL;
+  weight: 34;
+  model_life: 30;
+  vehicle_life: 35;
+  length: 5;
+	cargo_capacity: 1; 
+	cargo_allow_refit: [PASS];
+	reliability_decay: 13;
+    cost_factor: 28;
+	running_cost_factor: 20;
+    running_cost_base: RUNNING_COST_DIESEL;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_4S, 
+                        string(STR_DESC_POWER_DH),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_SH),
+                        string(STR_CONCAT_2C, 
+                           string(STR_SUFFIX_JNR),
+                           string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_dd11_subtype_text;
+  default: switch_dd11_livery;
+  purchase: spriteset_dd11_red_purchase;
+//  reverse_build_probability: return 50;
+  }
+}
