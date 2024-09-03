@@ -206,12 +206,8 @@ switch(FEAT_TRAINS, SELF, switch_d50_reversed_purchase, current_year) {
 //smoke callback
 
 
-switch(FEAT_TRAINS, SELF, d50_reversed_smoke, position_in_consist) {
-	1: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
-	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
-}
 
-item (FEAT_TRAINS, d50_reversed, 946) {
+item (FEAT_TRAINS, d50_reversed, 745) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -235,7 +231,7 @@ item (FEAT_TRAINS, d50_reversed, 946) {
 		running_cost_factor: 23;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
-//		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 		variant_group: 945;
 	}
 	graphics { // graphics for engine
@@ -254,12 +250,12 @@ item (FEAT_TRAINS, d50_reversed, 946) {
 		default: spriteset_d50_reversed_black_front;
 		purchase: switch_d50_reversed_purchase;
 		articulated_part: switch_d50_reversed_articulated_part;
-		visual_effect_and_powered: d50_reversed_smoke;
+
 	}
 }
 
 
-item (FEAT_TRAINS, d50_reversed_rear, 846) {
+item (FEAT_TRAINS, d50_reversed_rear, 645) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: NAAN;
@@ -269,12 +265,12 @@ item (FEAT_TRAINS, d50_reversed_rear, 846) {
 		cargo_capacity: 1; 
 		cargo_allow_refit: [PASS];
 		length: 7;
-//		visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER)
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
 	graphics {
 		cargo_capacity: return 0;
 		default: switch_d50_reversed_livery;
-		visual_effect_and_powered: d50_reversed_smoke;
+
 	}
 }

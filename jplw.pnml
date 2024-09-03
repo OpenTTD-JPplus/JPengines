@@ -13,7 +13,9 @@
 #include "src/steam/860.pnml"
 
 #include "src/steam/c53.pnml"
+#include "src/steam/c62.pnml"
 #include "src/steam/d50.pnml"
+#include "src/steam/d52.pnml"
 
 #include "src/dc/deki_400.pnml"
 #include "src/dc/el120.pnml"
@@ -63,6 +65,7 @@
 #include "src/ac/eh500.pnml"
 #include "src/ac/eh800.pnml"
 
+#include "src/diesel/dd11.pnml"
 #include "src/diesel/dd13.pnml"
 #include "src/diesel/dd16.pnml"
 #include "src/diesel/dd51.pnml"

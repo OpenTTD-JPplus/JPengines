@@ -1,0 +1,174 @@
+//c62
+	
+	
+spriteset(spriteset_c62_black_front, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_c62_black_rear, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_c62_stripe_front, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_c62_stripe_rear, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_c62_999_front, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_c62_999_rear, "gfx/steam/jnr_c62.png") {
+	template_2cc_std(1, 160)
+}
+
+//purch
+
+spriteset(spriteset_c62_jgr_purchase, "gfx/steam/jnr_c62.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_c62_jnr_purchase, "gfx/steam/jnr_c62.png") {
+	template_purchase(89, 192)
+}
+
+
+//refit
+
+random_switch(FEAT_TRAINS, SELF, switch_c62_random) {
+	1: spriteset_c62_black_front;
+	1: spriteset_c62_stripe_front;
+	}
+
+random_switch(FEAT_TRAINS, PARENT, switch_c62_rear_random) {
+//	dependent: switch_c62_random;
+	1: spriteset_c62_black_rear;
+	1: spriteset_c62_stripe_rear;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_c62_livery, cargo_subtype) {
+	1: spriteset_c62_black_front;
+	2: spriteset_c62_stripe_front;
+	3: spriteset_c62_999_front;
+	switch_c62_random;
+	
+}
+
+switch(FEAT_TRAINS, SELF, switch_c62_rear_livery, cargo_subtype) {
+	1: spriteset_c62_black_rear;
+	2: spriteset_c62_stripe_rear;
+	3: spriteset_c62_999_rear;
+	switch_c62_rear_random;
+	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_c62_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_GE999), 
+                                    string(STR_CONCAT_3F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_BLUE),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_c62_articulated_part, extra_callback_info1) {
+	1: return c62_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_c62_purchase, current_year) {
+	0..1949: spriteset_c62_jgr_purchase;
+	spriteset_c62_jnr_purchase;
+	}
+
+item (FEAT_TRAINS, c62, 957) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_C62);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1948,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.15;
+		power: 1611 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 145;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 40;
+		cost_factor: 100;
+		length: 7;
+		running_cost_factor: 100;
+		running_cost_base: RUNNING_COST_STEAM;
+//		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_2C2),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_EP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_c62_subtype_text;
+		default: switch_c62_livery;
+		purchase: switch_c62_purchase;
+		articulated_part: switch_c62_articulated_part;
+	}
+}
+
+
+item (FEAT_TRAINS, c62_rear, 857) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_c62);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 5;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+//		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_c62_rear_livery;
+	}
+}
+
+

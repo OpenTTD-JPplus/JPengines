@@ -33,9 +33,14 @@ STR_NAME_860	    :860
 
 STR_NAME_C53        :C53
 STR_NAME_C53_S      :C53 Streamlined
+STR_NAME_C62        :C62
 
 STR_NAME_D50        :D50
 STR_NAME_D50_R      :D50 Reversed
+STR_NAME_D51        :D51
+STR_NAME_D51_R      :D51 Reversed
+STR_NAME_D52        :D52
+STR_NAME_D52_R      :D52 Reversed
 
 STR_NAME_DF50	    :DF50
 STR_NAME_DD13	    :DD13
@@ -523,7 +528,6 @@ STR_SUFFIX_MITSUBISHI   	:{WHITE}Mitsubishi Yubari
 STR_SUFFIX_FUKUSHIMA_RINKAI :{WHITE}Fukushima Rinkai Railway
 STR_SUFFIX_TAMOURA          :{WHITE}Tamoura Port Railway
 
-
 STR_SUFFIX_PRIVATE		:{WHITE}Various Private Operators
 
 STR_SUFFIX_NIPPON       :{WHITE}Nippon Express
@@ -536,6 +540,8 @@ STR_SUFFIX_MILW         :{WHITE}Milwaukee Road
 STR_SUFFIX_PRR          :{WHITE}Pennsylvania Railroad
 STR_SUFFIX_MPL          :{WHITE}Missouri Pacific
 STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
+
+STR_SUFFIX_GE999        :{WHITE}Galaxy Express 999
 
 
 #####################
