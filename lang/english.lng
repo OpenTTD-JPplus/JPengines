@@ -27,20 +27,42 @@ STR_ERROR_JAPANSETTRAINS	:JapanSet 3 Trains
 STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
 
 
+
+STR_NAME_150	    :150
+STR_NAME_860	    :860
+STR_NAME_1070	    :1070
+STR_NAME_1800	    :1800
+STR_NAME_2100	    :2100
+STR_NAME_C11	    :C11
+STR_NAME_C12	    :C12
+STR_NAME_E10        :E10
+
+STR_NAME_5000	    :5000
+STR_NAME_7010	    :7010
+STR_NAME_5130	    :5130
+STR_NAME_5500	    :5500
+STR_NAME_B1	        :B1
 STR_NAME_7100	    :7100
 STR_NAME_7200	    :7200
-STR_NAME_860	    :860
 
+STR_NAME_8620	    :8620
+STR_NAME_8700	    :8700
 STR_NAME_C53        :C53
 STR_NAME_C53_S      :C53 Streamlined
+STR_NAME_C57	    :C57
+STR_NAME_C58        :C58
 STR_NAME_C62        :C62
 
+STR_NAME_9600	    :9600
+STR_NAME_9700	    :9700
+STR_NAME_9750	    :9750
 STR_NAME_D50        :D50
 STR_NAME_D50_R      :D50 Reversed
 STR_NAME_D51        :D51
 STR_NAME_D51_R      :D51 Reversed
 STR_NAME_D52        :D52
 STR_NAME_D52_R      :D52 Reversed
+
 
 STR_NAME_DF50	    :DF50
 STR_NAME_DD11	    :DD11
@@ -715,7 +737,7 @@ STR_DESC_WHEELS_B1       :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
 STR_DESC_WHEELS_1B       :{BLACK}Wheel Arrangement:{GOLD} 1-B / 2-4-0{}
 STR_DESC_WHEELS_1B1      :{BLACK}Wheel Arrangement:{GOLD} 1-B-1 / 2-4-2{}
 STR_DESC_WHEELS_2B       :{BLACK}Wheel Arrangement:{GOLD} 2-B / 4-4-0{}
-STR_DESC_WHEELS_2B1      :{BLACK}Wheel Arrangement:{GOLD} 2-B / 4-4-2{}
+STR_DESC_WHEELS_2B1      :{BLACK}Wheel Arrangement:{GOLD} 2-B-1 / 4-4-2{}
 STR_DESC_WHEELS_C        :{BLACK}Wheel Arrangement:{GOLD} C / 0-6-0{}
 STR_DESC_WHEELS_C1       :{BLACK}Wheel Arrangement:{GOLD} C-1 / 0-6-2{}
 STR_DESC_WHEELS_C2       :{BLACK}Wheel Arrangement:{GOLD} C-2 / 0-6-4{}

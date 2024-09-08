@@ -1,0 +1,59 @@
+//Spriteset jgr_150
+spriteset(spriteset_jgr_150_black, "gfx/steam/jgr_150.png") {
+	template_2cc_std(1, 1)
+}
+
+
+spriteset(spriteset_jgr_150_black_purchase, "gfx/steam/jgr_150.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+item (FEAT_TRAINS, jgr_150, 930) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_150);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1872,1,1);
+  speed: 55 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 179 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 19;
+  reliability_decay: 20;
+  model_life: 40;
+  vehicle_life: 40;
+  cost_factor: 14;
+  length: 5;
+  running_cost_factor: 27;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_1B),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_1C, 
+                          string(STR_SUFFIX_JGR)
+                    )
+                  );
+  cargo_capacity: return 0;
+//  cargo_subtype_text: switch_jgr_150_subtype_text;
+  default: spriteset_jgr_150_black;
+  purchase: spriteset_jgr_150_black_purchase;
+	reverse_build_probability: return 50;
+  }
+}

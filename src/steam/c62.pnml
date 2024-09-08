@@ -44,7 +44,7 @@ random_switch(FEAT_TRAINS, SELF, switch_c62_random) {
 	}
 
 random_switch(FEAT_TRAINS, PARENT, switch_c62_rear_random) {
-//	dependent: switch_c62_random;
+	dependent: switch_c62_random;
 	1: spriteset_c62_black_rear;
 	1: spriteset_c62_stripe_rear;
 	}

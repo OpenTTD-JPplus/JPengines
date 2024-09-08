@@ -11,6 +11,8 @@
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
 #include "src/steam/860.pnml"
+#include "src/steam/1070.pnml"
+#include "src/steam/150.pnml"
 
 #include "src/steam/c53.pnml"
 #include "src/steam/c62.pnml"
