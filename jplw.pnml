@@ -7,7 +7,7 @@
 #include "src/template.pnml"
 #include "src/recolour.pnml"
 
-
+#include "src/steam/5500.pnml"
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
 #include "src/steam/860.pnml"
