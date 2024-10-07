@@ -1,0 +1,70 @@
+//Spriteset jgr_1800
+spriteset(spriteset_jgr_1800_black, "gfx/steam/jgr_1800.png") {
+	template_2cc_std(1, 1)
+}
+
+
+
+
+
+spriteset(spriteset_jgr_1800_black_purchase, "gfx/steam/jgr_1800.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jnr_1800_black_purchase, "gfx/steam/jgr_1800.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_1800_purchase, current_year) {
+	0..1949: spriteset_jgr_1800_black_purchase;
+	spriteset_jnr_1800_black_purchase;
+	}
+
+
+
+item (FEAT_TRAINS, jgr_1800, 934) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_1800);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1884,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 265 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+//  cargo_capacity: 1;
+//  cargo_allow_refit: [PASS];
+  weight: 40;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 40;
+  cost_factor: 16;
+  length: 5;
+  running_cost_factor: 31;
+  running_cost_base: RUNNING_COST_STEAM;
+//  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_C),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+//  cargo_subtype_text: switch_jgr_1800_subtype_text;
+  default: spriteset_jgr_1800_black;
+  purchase: switch_1800_purchase;
+	reverse_build_probability: return 50;
+  }
+}

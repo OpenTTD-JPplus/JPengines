@@ -1,7 +1,7 @@
 //5500
 	
 spriteset(spriteset_jgr_5500_black_front, "gfx/steam/jgr_5500.png") {
-	template_2cc_std(1, 1)
+	template_2cc_anim(1, 1)
 }
 
 spriteset(spriteset_jgr_5500_black_rear, "gfx/steam/jgr_5500.png") {
@@ -9,7 +9,7 @@ spriteset(spriteset_jgr_5500_black_rear, "gfx/steam/jgr_5500.png") {
 }
 
 spriteset(spriteset_jgr_5500_tobu_front, "gfx/steam/jgr_5500.png") {
-	template_2cc_std(1, 64)
+	template_2cc_anim(1, 64)
 }
 
 spriteset(spriteset_jgr_5500_tobu_rear, "gfx/steam/jgr_5500.png") {

@@ -7,11 +7,17 @@
 #include "src/template.pnml"
 #include "src/recolour.pnml"
 
+#include "src/steam/5000.pnml"
+#include "src/steam/5130.pnml"
 #include "src/steam/5500.pnml"
+#include "src/steam/7010.pnml"
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
+#include "src/steam/9700.pnml"
 #include "src/steam/860.pnml"
 #include "src/steam/1070.pnml"
+#include "src/steam/1800.pnml"
+#include "src/steam/2100.pnml"
 #include "src/steam/150.pnml"
 
 #include "src/steam/c53.pnml"

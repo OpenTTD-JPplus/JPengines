@@ -128,7 +128,8 @@ railtypetable {
 sort(FEAT_TRAINS, [
 
 //steam
-900, 902, 920, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 955, 956, 957, 958, 
+930,  920, 938, 904, 934, 935, 911, 931, 933, 936, 937, 920, 910, 932, 940, 900, 902, 944, 941, 903, 939, 942, 
+912, 949, 950, 913, 914, 947, 948, 915, 916, 917, 953, 954, 918, 957, 945, 951, 955, 946, 952, 956, 919, 958, 
 //diesels
 1203, 1205, 1207, 1208, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1222, 1223, 1225, 1263, 1063, 1963, 1964, 1230,
 //electrics DC old
@@ -948,6 +949,460 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
 	
 }
 
+//5000
+	
+spriteset(spriteset_jgr_5000_black_front, "gfx/steam/jgr_5000.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_5000_black_rear, "gfx/steam/jgr_5000.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+//purchase
+
+spriteset(spriteset_jgr_5000_purchase, "gfx/steam/jgr_5000.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_5000_articulated_part, extra_callback_info1) {
+	1: return jgr_5000_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_5000, 931) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_5000);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1872,1,1);
+		speed: 60 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 250 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 41;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 5;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_B1),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_5000_subtype_text;
+		default: spriteset_jgr_5000_black_front;
+		purchase: spriteset_jgr_5000_purchase;
+		articulated_part: switch_jgr_5000_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_5000_rear, 831) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_5000);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_5000_black_rear;
+	}
+}
+
+//5130
+	
+spriteset(spriteset_jgr_5130_black_front, "gfx/steam/jgr_5130.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_5130_black_rear, "gfx/steam/jgr_5130.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+//purchase
+
+spriteset(spriteset_jgr_5130_purchase, "gfx/steam/jgr_5130.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_5130_articulated_part, extra_callback_info1) {
+	1: return jgr_5130_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_5130, 933) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_5130);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1876,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 279 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 42;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 5;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_2B),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_5130_subtype_text;
+		default: spriteset_jgr_5130_black_front;
+		purchase: spriteset_jgr_5130_purchase;
+		articulated_part: switch_jgr_5130_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_5130_rear, 833) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_5130);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_5130_black_rear;
+	}
+}
+
+//5500
+	
+spriteset(spriteset_jgr_5500_black_front, "gfx/steam/jgr_5500.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_5500_black_rear, "gfx/steam/jgr_5500.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_jgr_5500_tobu_front, "gfx/steam/jgr_5500.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_jgr_5500_tobu_rear, "gfx/steam/jgr_5500.png") {
+	template_2cc_std(1, 96)
+}
+
+
+//purchase
+
+spriteset(spriteset_jgr_5500_purchase, "gfx/steam/jgr_5500.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jgr_5500_tobu_purchase, "gfx/steam/jgr_5500.png") {
+	template_purchase(89, 192)
+}
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_5500_articulated_part, extra_callback_info1) {
+	1: return jgr_5500_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_5500, 936) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_5500);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1893,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 450 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 45;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 6;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_2B),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_5500_subtype_text;
+		default: spriteset_jgr_5500_black_front;
+		purchase: spriteset_jgr_5500_purchase;
+		articulated_part: switch_jgr_5500_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_5500_rear, 836) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_5500);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_5500_black_rear;
+	}
+}
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_5500_tobu_articulated_part, extra_callback_info1) {
+	1: return jgr_5500_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_5500_tobu, 937) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_B1);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1893,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 450 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 45;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 6;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		variant_group: 936;
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_2B),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_TOBU)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_5500_subtype_text;
+		default: spriteset_jgr_5500_tobu_front;
+		purchase: spriteset_jgr_5500_tobu_purchase;
+		articulated_part: switch_jgr_5500_tobu_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_5500_tobu_rear, 837) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_5500);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_5500_tobu_rear;
+	}
+}
+//7010
+	
+spriteset(spriteset_jgr_7010_black_front, "gfx/steam/jgr_7010.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_7010_black_rear, "gfx/steam/jgr_7010.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+//purchase
+
+spriteset(spriteset_jgr_7010_purchase, "gfx/steam/jgr_7010.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_7010_articulated_part, extra_callback_info1) {
+	1: return jgr_7010_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_7010, 932) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_7010);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1874,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 265 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 41;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 5;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_C),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_GP),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_7010_subtype_text;
+		default: spriteset_jgr_7010_black_front;
+		purchase: spriteset_jgr_7010_purchase;
+		articulated_part: switch_jgr_7010_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_7010_rear, 832) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_7010);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 3;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_7010_black_rear;
+	}
+}
 
 //7100
 	
@@ -1274,6 +1729,100 @@ item (FEAT_TRAINS, jgr_7200_rear, 903) {
 		default: switch_jgr_7200_livery_rear;
 	}
 }
+//9700
+	
+spriteset(spriteset_jgr_9700_black_front, "gfx/steam/jgr_9700.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_9700_black_rear, "gfx/steam/jgr_9700.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+//purchase
+
+spriteset(spriteset_jgr_9700_purchase, "gfx/steam/jgr_9700.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_9700_articulated_part, extra_callback_info1) {
+	1: return jgr_9700_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_9700, 939) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+		name: string(STR_NAME_9700);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1897,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 649 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 85;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 7;
+		running_cost_factor: 20;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D1),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_9700_subtype_text;
+		default: spriteset_jgr_9700_black_front;
+		purchase: spriteset_jgr_9700_purchase;
+		articulated_part: switch_jgr_9700_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_9700_rear, 839) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: NAAN;
+//		name: string(STR_NAME_jgr_9700);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_9700_black_rear;
+	}
+}
+
 //Spriteset jgr_860
 spriteset(spriteset_jgr_860_black, "gfx/steam/jgr_860.png") {
 	template_2cc_std(1, 1)
@@ -1455,6 +2004,156 @@ property {
 //  cargo_subtype_text: switch_jgr_1070_subtype_text;
   default: switch_jgr_1070_flip_black;
   purchase: switch_1070_purchase;
+	reverse_build_probability: return 50;
+  }
+}
+//Spriteset jgr_1800
+spriteset(spriteset_jgr_1800_black, "gfx/steam/jgr_1800.png") {
+	template_2cc_std(1, 1)
+}
+
+
+
+
+
+spriteset(spriteset_jgr_1800_black_purchase, "gfx/steam/jgr_1800.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jnr_1800_black_purchase, "gfx/steam/jgr_1800.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_1800_purchase, current_year) {
+	0..1949: spriteset_jgr_1800_black_purchase;
+	spriteset_jnr_1800_black_purchase;
+	}
+
+
+
+item (FEAT_TRAINS, jgr_1800, 934) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_1800);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1884,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 265 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+//  cargo_capacity: 1;
+//  cargo_allow_refit: [PASS];
+  weight: 40;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 40;
+  cost_factor: 16;
+  length: 5;
+  running_cost_factor: 31;
+  running_cost_base: RUNNING_COST_STEAM;
+//  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_C),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+//  cargo_subtype_text: switch_jgr_1800_subtype_text;
+  default: spriteset_jgr_1800_black;
+  purchase: switch_1800_purchase;
+	reverse_build_probability: return 50;
+  }
+}
+//Spriteset jgr_2100
+spriteset(spriteset_jgr_2100_black, "gfx/steam/jgr_2100.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_jgr_2100_flip_black, "gfx/steam/jgr_2100.png") {
+	template_2cc_flip(1, 32)
+}
+
+
+
+
+spriteset(spriteset_jgr_2100_black_purchase, "gfx/steam/jgr_2100.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jnr_2100_black_purchase, "gfx/steam/jgr_2100.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_2100_purchase, current_year) {
+	0..1949: spriteset_jgr_2100_black_purchase;
+	spriteset_jnr_2100_black_purchase;
+	}
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_jgr_2100_flip_black, vehicle_is_flipped) {
+	0: spriteset_jgr_2100_black;
+	1: spriteset_jgr_2100_flip_black;
+}
+
+
+
+
+item (FEAT_TRAINS, jgr_2100, 935) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: NAAN;
+  name: string(STR_NAME_2100);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1890,1,1);
+  speed: 70 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 412 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+//  cargo_capacity: 1;
+//  cargo_allow_refit: [PASS];
+  weight: 49;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 40;
+  cost_factor: 16;
+  length: 6;
+  running_cost_factor: 31;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_C1),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+//  cargo_subtype_text: switch_jgr_2100_subtype_text;
+  default: switch_jgr_2100_flip_black;
+  purchase: switch_2100_purchase;
 	reverse_build_probability: return 50;
   }
 }
