@@ -1,21 +1,7 @@
 
 *.ods#
-*.cache
-*.cacheindex
-*.cache
-*.cacheindex
-*.cache
-*.cacheindex
-jplw_106.grf
-jplw_107.grf
-jplw_108.grf
-jplw_109.grf
 .DS_Store
-jplw.grf
 jplw.nml
 jakesdevland alias
-*.cacheindex
-*.cache
-.nmlcache/gfx/ed500.png.cache
 *.cacheindex
 *.cache
