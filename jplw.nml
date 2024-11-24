@@ -12920,6 +12920,11 @@ spriteset(spriteset_dd11_green, "gfx/diesel/dd11.png") {
 	template_2cc_std(1, 128)
 }
 
+alternative_sprites(spriteset_dd11_green, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/diesel/32bpp/dd11.png") {
+	template_2cc_std(1, 128)
+}
+
+
 spriteset(spriteset_dd11_blue, "gfx/diesel/dd11.png") {
 	template_2cc_std(1, 160)
 }
