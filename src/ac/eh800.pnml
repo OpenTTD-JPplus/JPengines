@@ -65,7 +65,7 @@ item (FEAT_TRAINS, eh800, 1095) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: railtype_NG_AC;
+	track_type: TR_1067_AC;
 	name: string(STR_NAME_EH800);
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(2012,1,1);
@@ -109,7 +109,7 @@ graphics { // graphics for engine
 item (FEAT_TRAINS, eh800_rear, 1096) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_eh800);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1950,1,1);

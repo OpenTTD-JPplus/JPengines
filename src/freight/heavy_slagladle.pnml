@@ -60,7 +60,7 @@ switch(FEAT_TRAINS, SELF, switch_slag_ladle_purchase, current_year) {
 item (FEAT_TRAINS, slag_ladle, 1420) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_SLAG_LADLE);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1900,1,1);

@@ -184,7 +184,7 @@ switch (FEAT_TRAINS, SELF, switch_de11_old_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, de11_old, 1220) {
  property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	name: string(STR_NAME_DE11_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1968,1,1);
@@ -355,7 +355,7 @@ switch (FEAT_TRAINS, SELF, switch_de11_new_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, de11_new, 1221) {
  property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	name: string(STR_NAME_DE11_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1979,1,1);

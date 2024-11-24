@@ -32,7 +32,7 @@ switch(FEAT_TRAINS, SELF, switch_jgr_9700_articulated_part, extra_callback_info1
 item (FEAT_TRAINS, jgr_9700, 939) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_9700);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1897,1,1);
@@ -76,7 +76,7 @@ item (FEAT_TRAINS, jgr_9700, 939) {
 item (FEAT_TRAINS, jgr_9700_rear, 839) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_jgr_9700);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);

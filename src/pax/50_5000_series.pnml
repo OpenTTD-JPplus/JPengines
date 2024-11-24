@@ -168,7 +168,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_50_5000_series_subtype_text, cargo_subtype)
 item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_PAX_50_5000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1987,1,1);

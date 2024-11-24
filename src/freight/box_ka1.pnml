@@ -70,7 +70,7 @@ item (FEAT_TRAINS, ka_1, 1282) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_KA_1);
 	introduction_date: date(1870,1,1);

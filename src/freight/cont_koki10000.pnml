@@ -104,7 +104,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_10000_base_loadstack, [
 item (FEAT_TRAINS, koki_10000, 1413) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKI_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);
@@ -150,7 +150,7 @@ item (FEAT_TRAINS, koki_10000, 1413) {
 item (FEAT_TRAINS, kokifu_10000, 1433) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKIFU_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);

@@ -117,7 +117,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
 item (FEAT_TRAINS, taki_3000, 1489) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TAKI_3000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1947,1,1);

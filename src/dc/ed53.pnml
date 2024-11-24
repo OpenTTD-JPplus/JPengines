@@ -32,7 +32,7 @@ switch(FEAT_TRAINS, SELF, switch_ed53_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ed19, 1013) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_ED19);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1937,1,1);
@@ -75,7 +75,7 @@ item (FEAT_TRAINS, ed19, 1013) {
 item (FEAT_TRAINS, ed53, 1050) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_ED53);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1926,1,1);

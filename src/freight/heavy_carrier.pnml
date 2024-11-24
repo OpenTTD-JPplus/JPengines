@@ -163,7 +163,7 @@ switch(FEAT_TRAINS, SELF, switch_shiki_800_purchase, current_year) {
 item (FEAT_TRAINS, shiki_800_rear, 1651) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_SHIKI_800);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1920,1,1);
@@ -184,7 +184,7 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 item (FEAT_TRAINS, shiki_800, 1950) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_SHIKI_800);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1973,1,1);

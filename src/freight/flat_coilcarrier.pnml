@@ -163,7 +163,7 @@ switch(FEAT_TRAINS, SELF, switch_coilcarrier_cargo_selection, cargo_type_in_veh)
 item (FEAT_TRAINS, coil_carrier, 1402) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_COIL_CARRIER);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1920,1,1);

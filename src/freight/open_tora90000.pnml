@@ -43,7 +43,7 @@ item (FEAT_TRAINS, tora_90000, 1280) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1950,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TORA_90000);

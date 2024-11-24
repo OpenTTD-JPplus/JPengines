@@ -71,7 +71,7 @@ property {
 	introduction_date: date(1967,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_8500);
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	speed: 85 km/h;
 	air_drag_coefficient: 0;
 	power: 0;

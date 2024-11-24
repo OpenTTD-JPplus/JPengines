@@ -59,7 +59,7 @@ item (FEAT_TRAINS, waki_10000, 1288) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1967,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_10000);

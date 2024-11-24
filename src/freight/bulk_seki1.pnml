@@ -75,7 +75,7 @@ item (FEAT_TRAINS, seki_1, 1441) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1911,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_SEKI_1);

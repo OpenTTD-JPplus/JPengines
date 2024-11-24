@@ -101,7 +101,7 @@ switch(FEAT_TRAINS, SELF, switch_jgr_7100_purchase, current_year) {
 item (FEAT_TRAINS, jgr_7100, 900) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_7100);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
@@ -146,7 +146,7 @@ item (FEAT_TRAINS, jgr_7100, 900) {
 item (FEAT_TRAINS, jgr_7100_rear, 901) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_jgr_7100);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);

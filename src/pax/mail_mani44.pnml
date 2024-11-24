@@ -78,7 +78,7 @@ switch(FEAT_TRAINS, SELF, switch_mani_44_loadstack, [
 item (FEAT_TRAINS, mail_mani_44, 1390) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_44);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1970,1,1);

@@ -38,7 +38,7 @@ item (FEAT_TRAINS, hoki_650, 1444) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1961,1,1); //1971
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_HOKI_650);

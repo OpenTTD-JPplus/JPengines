@@ -67,7 +67,7 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
 item (FEAT_TRAINS, suyu_44, 1395) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_SUYU_44);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1968,1,1);
@@ -140,7 +140,7 @@ switch(FEAT_TRAINS, SELF, switch_suni_41_loadstack, [
 item (FEAT_TRAINS, suni_41, 1396) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_SUNI_41);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1968,1,1);

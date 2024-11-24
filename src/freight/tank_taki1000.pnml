@@ -166,7 +166,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
 item (FEAT_TRAINS, taki_1000, 1490) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TAKI_1000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1993,1,1);
@@ -253,7 +253,7 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
 item (FEAT_TRAINS, taki_43000, 1496) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TAKI_43000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1967,1,1);

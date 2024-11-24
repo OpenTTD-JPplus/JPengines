@@ -870,7 +870,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_cargo_selection, cargo_type_in_veh) {
 item (FEAT_TRAINS, koki_100, 1400) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_CONTAINER);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1988,1,1);

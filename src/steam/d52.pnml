@@ -59,7 +59,7 @@ switch(FEAT_TRAINS, SELF, switch_d52_purchase, current_year) {
 item (FEAT_TRAINS, d52, 955) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_D52);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1943,1,1);
@@ -104,7 +104,7 @@ item (FEAT_TRAINS, d52, 955) {
 item (FEAT_TRAINS, d52_rear, 855) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_d52);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);
@@ -139,7 +139,7 @@ switch(FEAT_TRAINS, SELF, switch_d52_reversed_purchase, current_year) {
 item (FEAT_TRAINS, d52_reversed, 755) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_D52_R);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1923,1,1);
@@ -187,7 +187,7 @@ item (FEAT_TRAINS, d52_reversed, 755) {
 item (FEAT_TRAINS, d52_reversed_rear, 655) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_d52);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);

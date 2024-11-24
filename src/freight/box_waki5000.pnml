@@ -78,7 +78,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_5000_loadstack, [
 item (FEAT_TRAINS, waki_5000, 1953) {
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1964,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_5000);

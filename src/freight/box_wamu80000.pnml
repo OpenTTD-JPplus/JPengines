@@ -215,7 +215,7 @@ item (FEAT_TRAINS, wamu_80000, 1951) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1958,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAMU_80000);
@@ -303,7 +303,7 @@ item (FEAT_TRAINS, wamu_480000, 1462) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1998,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAMU_480000);
@@ -359,7 +359,7 @@ item (FEAT_TRAINS, wamu_580000, 1463) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1967,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAMU_580000);

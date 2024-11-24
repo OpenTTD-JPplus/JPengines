@@ -359,7 +359,7 @@ item (FEAT_TRAINS, toki_25000, 1471) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(1966,1,1);
 	speed: 100 km/h;
@@ -420,7 +420,7 @@ item (FEAT_TRAINS, toki_15000, 1470) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	climates_available: ALL_CLIMATES;
 	introduction_date: date(1943,1,1);
 	speed: 75 km/h;

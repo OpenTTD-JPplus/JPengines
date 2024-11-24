@@ -297,7 +297,7 @@ switch(FEAT_TRAINS, SELF, stack_pax_oha35, [
 item (FEAT_TRAINS, pax_oha35, 1316) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_PAX_OHA35);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1939,1,1);

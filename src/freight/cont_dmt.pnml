@@ -288,7 +288,7 @@ switch (FEAT_TRAINS, SELF, switch_dmt_yeardep_purchase, current_year) {
 item (FEAT_TRAINS, dmt_middle, 1408) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_ROADRAILER);
 		climates_available: NO_CLIMATE;
 		loading_speed: 40;
@@ -316,7 +316,7 @@ item (FEAT_TRAINS, dmt_middle, 1408) {
 item (FEAT_TRAINS, dmt_rear, 1409) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_ROADRAILER);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1992,1,1);
@@ -335,7 +335,7 @@ item (FEAT_TRAINS, dmt_rear, 1409) {
 item (FEAT_TRAINS, dmt, 1407) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_ROADRAILER);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1992,1,1);

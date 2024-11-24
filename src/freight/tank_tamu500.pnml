@@ -141,7 +141,7 @@ item (FEAT_TRAINS, tamu_500, 1482) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	name: string(STR_NAME_TAMU_500);
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	introduction_date: date(1930,1,1);

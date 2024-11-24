@@ -17,7 +17,7 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 item (FEAT_TRAINS, mail_mani_50, 1370) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_50);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1969,1,1);

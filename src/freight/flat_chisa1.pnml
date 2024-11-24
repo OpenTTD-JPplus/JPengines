@@ -453,7 +453,7 @@ item (FEAT_TRAINS, chisa_1, 1934) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_CHISA_1);
 	introduction_date: date(1906,1,1);
@@ -534,7 +534,7 @@ item (FEAT_TRAINS, chi_1000, 1526) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	climates_available: NO_CLIMATE;
 	name: string(STR_NAME_CHI_1000);
 	introduction_date: date(1957,1,1);

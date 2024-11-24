@@ -126,7 +126,7 @@ item (FEAT_TRAINS, ef210_0, 1984) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF210_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1996,1,1);
@@ -230,7 +230,7 @@ item (FEAT_TRAINS, ef210_100, 1084) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF210_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2000,1,1);
@@ -313,7 +313,7 @@ item (FEAT_TRAINS, ef210_300, 1985) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF210_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(2013,1,1);

@@ -108,7 +108,7 @@ switch(FEAT_TRAINS, SELF, switch_waki_1000_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, waki_1000, 1450) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_WAKI_1000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1949,1,1);
@@ -186,7 +186,7 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_100_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, wamufu_100, 1451) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_WAMUFU_100);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1949,1,1);

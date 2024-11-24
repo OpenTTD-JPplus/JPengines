@@ -364,7 +364,7 @@ switch(FEAT_TRAINS, SELF, stack_suha_32, [
 item (FEAT_TRAINS, pax_suha_32, 1539) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_PAX_SUHA32);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);
@@ -467,7 +467,7 @@ switch(FEAT_TRAINS, SELF, stack_mani_31, [
 item (FEAT_TRAINS, mani_31, 1667) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_MANI_31);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1929,1,1);

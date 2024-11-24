@@ -72,7 +72,7 @@ switch(FEAT_TRAINS, SELF, switch_yo_9000_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, yo_9000, 1604) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_YO_9000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1968,1,1);

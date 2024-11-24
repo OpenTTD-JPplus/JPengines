@@ -290,7 +290,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_1880_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_1880, 1537) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_PAX_FUKOHA7945);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);
@@ -405,7 +405,7 @@ switch(FEAT_TRAINS, SELF, switch_mail_1880_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, mail_1880, 1665) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_MAIL_KONI_8890);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1880,1,1);

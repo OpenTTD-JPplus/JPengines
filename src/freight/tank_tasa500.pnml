@@ -120,7 +120,7 @@ switch(FEAT_TRAINS, SELF, switch_tasa_500_purchase, current_year) {
 item (FEAT_TRAINS, tasa_500, 1481) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TASA_500);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1915,1,1);

@@ -135,7 +135,7 @@ switch(FEAT_TRAINS, SELF, switch_ef15_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, ef15, 1054) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF15);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1947,1,1);

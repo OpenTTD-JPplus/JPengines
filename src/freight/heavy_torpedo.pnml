@@ -76,7 +76,7 @@ switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
 item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TORPEDO);
 		climates_available: NO_CLIMATE;
 		cargo_capacity: 59; 
@@ -100,7 +100,7 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TORPEDO);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1920,1,1);
@@ -117,7 +117,7 @@ item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 item (FEAT_TRAINS, torpedo_car, 1421) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_TORPEDO);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1920,1,1);

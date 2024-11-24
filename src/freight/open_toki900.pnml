@@ -341,7 +341,7 @@ item (FEAT_TRAINS, toki_900, 1284) {
 
 property {
 	sprite_id: SPRITE_ID_NEW_TRAIN;
-	track_type: NAAN;
+	track_type: TR_1067_NE;
 	introduction_date: date(1940,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_TOKI_900);

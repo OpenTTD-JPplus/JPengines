@@ -84,7 +84,7 @@ switch(FEAT_TRAINS, SELF, switch_ef62_purchase_yeardep, current_year) {
 item (FEAT_TRAINS, ef62, 1039) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF62);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1963,1,1);
@@ -174,7 +174,7 @@ switch (FEAT_TRAINS, SELF, switch_ef62_proto_name, getbits(extra_callback_info1,
 item (FEAT_TRAINS, ef62_proto, 1939) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF62_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1962,1,1);

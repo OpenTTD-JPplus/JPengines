@@ -16,7 +16,7 @@ item (FEAT_TRAINS, jgr_150, 930) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: NAAN;
+  track_type: TR_1067_NE;
   name: string(STR_NAME_150);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1872,1,1);

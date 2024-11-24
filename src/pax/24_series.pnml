@@ -248,7 +248,7 @@ switch(FEAT_TRAINS, SELF, switch_pax_24_series_subtype_text, cargo_subtype) {
 item (FEAT_TRAINS, pax_24_series, 1540) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_PASSENGER_24);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1973,1,1);

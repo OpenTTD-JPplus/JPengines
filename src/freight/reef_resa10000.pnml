@@ -21,7 +21,7 @@ spriteset(spriteset_remufu_10000_purchase, "gfx/freight/resa_10000.png") {
 item (FEAT_TRAINS, resa_10000, 1460) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_RESA_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);
@@ -74,7 +74,7 @@ switch(FEAT_TRAINS, SELF, switch_remufu_10000_loadstack, [
 item (FEAT_TRAINS, remufu_10000, 1461) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_REMUFU_10000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1966,1,1);

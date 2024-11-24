@@ -133,7 +133,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_0_name, getbits(extra_callback_info1, 0, 
 item (FEAT_TRAINS, ed76_0, 1071) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_AC;
+  track_type: TR_1067_AC;
   name: string(STR_NAME_ED76_0);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1965,1,1);
@@ -214,7 +214,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_500_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, ed76_500, 1072) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_AC;
+  track_type: TR_1067_AC;
   name: string(STR_NAME_ED76_1);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1968,1,1);
@@ -290,7 +290,7 @@ switch (FEAT_TRAINS, SELF, switch_ed76_550_name, getbits(extra_callback_info1, 0
 item (FEAT_TRAINS, ed76_550, 1972) {
  property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_AC;
+  track_type: TR_1067_AC;
   name: string(STR_NAME_ED76_2);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1991,1,1);

@@ -32,7 +32,7 @@ random_switch(FEAT_TRAINS, SELF, switch_hoki_1000_livery) {
 item (FEAT_TRAINS, hoki_1000, 1410) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_HOKI_1000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1990,1,1);

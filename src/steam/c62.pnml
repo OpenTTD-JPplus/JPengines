@@ -110,7 +110,7 @@ switch(FEAT_TRAINS, SELF, switch_c62_purchase, current_year) {
 item (FEAT_TRAINS, c62, 957) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_C62);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1948,1,1);
@@ -155,7 +155,7 @@ item (FEAT_TRAINS, c62, 957) {
 item (FEAT_TRAINS, c62_rear, 857) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 //		name: string(STR_NAME_c62);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);

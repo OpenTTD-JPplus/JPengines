@@ -116,7 +116,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_50000_base_loadstack, [
 item (FEAT_TRAINS, koki_50000, 1414) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKI_50000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1971,1,1);
@@ -162,7 +162,7 @@ item (FEAT_TRAINS, koki_50000, 1414) {
 item (FEAT_TRAINS, kokifu_50000, 1434) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKIFU_50000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1971,1,1);
@@ -281,7 +281,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_250000_base_loadstack, [
 item (FEAT_TRAINS, koki_250000, 1415) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKI_250000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1985,1,1);
@@ -384,7 +384,7 @@ switch(FEAT_TRAINS, SELF, switch_koki_350000_base_loadstack, [
 item (FEAT_TRAINS, koki_350000, 1416) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_KOKI_350000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1988,1,1);

@@ -64,7 +64,7 @@ item (FEAT_TRAINS, ef55, 1910) {
 
 property {
   sprite_id: SPRITE_ID_NEW_TRAIN;
-  track_type: railtype_NG_DC;
+  track_type: TR_1067_DC;
   name: string(STR_NAME_EF55);
   climates_available: ALL_CLIMATES;
   introduction_date: date(1936,1,1);

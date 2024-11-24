@@ -62,7 +62,7 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
 item (FEAT_TRAINS, wamu_21000, 1435) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_WAMU_21000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1928,1,1);
@@ -116,7 +116,7 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
 item (FEAT_TRAINS, wafu_21000, 1436) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		track_type: NAAN;
+		track_type: TR_1067_NE;
 		name: string(STR_NAME_WAFU_21000);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1928,1,1);
