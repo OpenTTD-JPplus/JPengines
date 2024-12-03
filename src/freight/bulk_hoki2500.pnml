@@ -110,6 +110,7 @@ property {
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	loading_speed: 40;
+	length: 6;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
