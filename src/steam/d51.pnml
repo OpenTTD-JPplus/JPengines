@@ -1,0 +1,549 @@
+//d51
+	
+//forward front
+spriteset(spriteset_d51_black_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_d51_stripe_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_d51_black_semistreamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_d51_stripe_semistreamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_d51_stripe_streamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_d51_stripe_gold_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_d51_hiro_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_d51_russian_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_d51_cc_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(1, 256)
+}
+
+//forward tender
+spriteset(spriteset_d51_black_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_d51_stripe_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 32)
+}
+/*
+spriteset(spriteset_d51_black_semistreamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_d51_stripe_semistreamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_d51_stripe_streamlined_front, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 128)
+}
+*/
+spriteset(spriteset_d51_stripe_gold_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_d51_hiro_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_d51_russian_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_d51_cc_rear, "gfx/steam/jnr_d51.png") {
+	template_2cc_std(180, 256)
+}
+
+//reversed tender
+spriteset(spriteset_d51_reversed_black_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_d51_reversed_stripe_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_d51_reversed_black_semistreamlined_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_d51_reversed_stripe_semistreamlined_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_d51_reversed_stripe_streamlined_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_d51_reversed_stripe_gold_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_d51_reversed_hiro_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_d51_reversed_russian_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_d51_reversed_cc_front, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(1, 256)
+}
+
+//reversed rear
+spriteset(spriteset_d51_reversed_black_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_d51_reversed_stripe_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 32)
+}
+/*
+spriteset(spriteset_d51_reversed_black_semistreamlined_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_d51_reversed_stripe_semistreamlined_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_d51_reversed_stripe_streamlined_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 128)
+}
+*/
+spriteset(spriteset_d51_reversed_stripe_gold_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_d51_reversed_hiro_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 192)
+}
+
+spriteset(spriteset_d51_reversed_russian_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 224)
+}
+
+spriteset(spriteset_d51_reversed_cc_rear, "gfx/steam/jnr_d51_reversed.png") {
+	template_2cc_std(180, 256)
+}
+
+
+
+
+
+
+//purch
+
+spriteset(spriteset_d51_jgr_purchase, "gfx/steam/jnr_d51.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_d51_jnr_purchase, "gfx/steam/jnr_d51.png") {
+	template_purchase(89, 320)
+}
+
+spriteset(spriteset_d51_jgr_reversed_purchase, "gfx/steam/jnr_d51.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_d51_jnr_reversed_purchase, "gfx/steam/jnr_d51.png") {
+	template_purchase(89, 352)
+}
+
+
+
+//refit
+
+random_switch(FEAT_TRAINS, SELF, switch_d51_random) {
+	3: spriteset_d51_black_front;
+	3: spriteset_d51_stripe_front;
+	2: spriteset_d51_black_semistreamlined_front;
+	1: spriteset_d51_stripe_semistreamlined_front;
+	1: spriteset_d51_stripe_streamlined_front;
+	}
+
+/*
+random_switch(FEAT_TRAINS, SELF, switch_d51_rear_random) {
+	3: spriteset_d51_black_rear;
+	3: spriteset_d51_stripe_rear;
+	2: spriteset_d51_black_rear;
+	1: spriteset_d51_stripe_rear;
+	1: spriteset_d51_stripe_rear;
+	dependent: switch_d51_random;
+	}
+*/
+
+switch(FEAT_TRAINS, SELF, switch_d51_livery, cargo_subtype) {
+	1: spriteset_d51_black_front;
+	2: spriteset_d51_stripe_front;
+	3: spriteset_d51_black_semistreamlined_front;
+	4: spriteset_d51_stripe_semistreamlined_front;
+	5: spriteset_d51_stripe_streamlined_front;
+	6: spriteset_d51_stripe_gold_front;
+	7: spriteset_d51_russian_front;
+	8: spriteset_d51_hiro_front;
+	9: spriteset_d51_cc_front;
+	switch_d51_random;
+	
+}
+
+switch(FEAT_TRAINS, SELF, switch_d51_rear_livery, cargo_subtype) {
+	1: spriteset_d51_black_rear;
+	2: spriteset_d51_stripe_rear;
+	3: spriteset_d51_black_rear;
+	4: spriteset_d51_stripe_rear;
+	5: spriteset_d51_stripe_rear;
+	6: spriteset_d51_stripe_gold_rear;
+	7: spriteset_d51_russian_rear;
+	8: spriteset_d51_hiro_rear;
+	9: spriteset_d51_cc_rear;
+	spriteset_d51_black_rear;
+	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_d51_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_SEMISTREAM)
+                                 );	
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SEMISTREAM)
+                                 );	
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_STREAMLINED)
+                                 );	
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_IMPERIAL)
+                                 );	
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_SAKHALIN), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_RED),
+									string(STR_COLOUR_WHITE)
+                                    )
+                                 );	
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_OIGAWA), 
+                                   string(STR_CONCAT_3F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_RED),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HIRO)
+                                 );	
+	9: return string(STR_REFIT_CC);						 
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_d51_articulated_part, extra_callback_info1) {
+	1: return d51_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_d51_purchase, current_year) {
+	0..1949: spriteset_d51_jgr_purchase;
+	spriteset_d51_jnr_purchase;
+	}
+
+item (FEAT_TRAINS, d51, 951) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_D51);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1936,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 1193 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 126;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 12;
+		length: 7;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D1),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_4C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_SAKHALIN),
+									string(STR_SUFFIX_PRIVATE)
+
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_d51_subtype_text;
+		default: switch_d51_livery;
+		purchase: switch_d51_purchase;
+		articulated_part: switch_d51_articulated_part;
+	}
+}
+
+
+item (FEAT_TRAINS, d51_rear, 851) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_d51);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 5;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_d51_rear_livery;
+	}
+}
+
+//reversed variant
+
+//refit
+
+
+random_switch(FEAT_TRAINS, SELF, switch_d51_reversed_random) {
+	3: spriteset_d51_reversed_black_front;
+	3: spriteset_d51_reversed_stripe_front;
+	2: spriteset_d51_reversed_black_semistreamlined_front;
+	1: spriteset_d51_reversed_stripe_semistreamlined_front;
+	1: spriteset_d51_reversed_stripe_streamlined_front;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_d51_reversed_livery, cargo_subtype) {
+	1: spriteset_d51_reversed_black_front;
+	2: spriteset_d51_reversed_stripe_front;
+	3: spriteset_d51_reversed_black_semistreamlined_front;
+	4: spriteset_d51_reversed_stripe_semistreamlined_front;
+	5: spriteset_d51_reversed_stripe_streamlined_front;
+	6: spriteset_d51_reversed_stripe_gold_front;
+	7: spriteset_d51_reversed_russian_front;
+	8: spriteset_d51_reversed_hiro_front;
+	9: spriteset_d51_reversed_cc_front;
+	switch_d51_reversed_random;
+	
+}
+
+switch(FEAT_TRAINS, SELF, switch_d51_reversed_rear_livery, cargo_subtype) {
+	1: spriteset_d51_reversed_black_rear;
+	2: spriteset_d51_reversed_stripe_rear;
+	3: spriteset_d51_reversed_black_rear;
+	4: spriteset_d51_reversed_stripe_rear;
+	5: spriteset_d51_reversed_stripe_rear;
+	6: spriteset_d51_reversed_stripe_gold_rear;
+	7: spriteset_d51_reversed_russian_rear;
+	8: spriteset_d51_reversed_hiro_rear;
+	9: spriteset_d51_reversed_cc_rear;
+	spriteset_d51_reversed_black_rear;
+	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_d51_reversed_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_1F, 
+                                    string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_SEMISTREAM)
+                                 );	
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SEMISTREAM)
+                                 );	
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_STREAMLINED)
+                                 );	
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_IMPERIAL)
+                                 );	
+	7: return string(STR_CONCAT_2, string(STR_SUFFIX_SAKHALIN), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_BLACK),
+									string(STR_COLOUR_RED),
+									string(STR_COLOUR_WHITE)
+                                    )
+                                 );	
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_OIGAWA), 
+                                   string(STR_CONCAT_3F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_RED),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HIRO)
+                                 );	
+	9: return string(STR_REFIT_CC);						 
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_d51_reversed_articulated_part, extra_callback_info1) {
+	1: return d51_reversed_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_d51_reversed_purchase, current_year) {
+	0..1949: spriteset_d51_jgr_reversed_purchase;
+	spriteset_d51_jnr_reversed_purchase;
+	}
+
+//smoke callback
+
+
+
+item (FEAT_TRAINS, d51_reversed, 751) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_D51_R);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1936,1,1);
+		speed: 75 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 1193 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 126;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 12;
+		length: 5;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		variant_group: 951;
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D1),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_4C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_SAKHALIN),
+									string(STR_SUFFIX_PRIVATE)
+								)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_d51_reversed_subtype_text;
+		default: switch_d51_reversed_rear_livery;
+		purchase: switch_d51_reversed_purchase;
+		articulated_part: switch_d51_reversed_articulated_part;
+
+	}
+}
+
+
+item (FEAT_TRAINS, d51_reversed_rear, 651) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_d51);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 7;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_d51_reversed_livery;
+
+	}
+}

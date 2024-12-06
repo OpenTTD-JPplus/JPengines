@@ -625,6 +625,10 @@ STR_SUFFIX_TSUBAME           :{GOLD}"Tsubame"{BLACK}
 STR_SUFFIX_HATO              :{GOLD}"Hato"{BLACK}
 STR_SUFFIX_GINGA             :{GOLD}"Ginga"{BLACK}
 
+STR_SUFFIX_THOMAS            :{GOLD}"Thomas"{BLACK}
+STR_SUFFIX_JAMES             :{GOLD}"James"{BLACK}
+STR_SUFFIX_HIRO              :{GOLD}"Hiro"{BLACK}
+
 # Misc Suffixes
 
 STR_SUFFIX_AIRCON	     :{BLACK}(Air Conditioned)
@@ -639,6 +643,8 @@ STR_SUFFIX_OLDSHAPE	:{BLACK}(Old Shape)
 STR_SUFFIX_NEWSHAPE	:{BLACK}(New Shape)
 STR_SUFFIX_REFURB	:{BLACK}(Refurbished)
 STR_SUFFIX_SMOKEDEF	:{BLACK}(Smoke Deflectors)
+STR_SUFFIX_SEMISTREAM	:{BLACK}(Semi-Streamlined)
+STR_SUFFIX_STREAMLINED	:{BLACK}(Streamlined)
 STR_SUFFIX_FLIPPED  :{BLACK}(Flipped)
 STR_SUFFIX_NOLOGO   :{BLACK}(No Logo)
 STR_SUFFIX_LOGO          :{BLACK}(Logo)

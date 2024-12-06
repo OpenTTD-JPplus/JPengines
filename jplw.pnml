@@ -20,9 +20,11 @@
 #include "src/steam/2100.pnml"
 #include "src/steam/150.pnml"
 
+#include "src/steam/c11.pnml"
 #include "src/steam/c53.pnml"
 #include "src/steam/c62.pnml"
 #include "src/steam/d50.pnml"
+#include "src/steam/d51.pnml"
 #include "src/steam/d52.pnml"
 
 #include "src/dc/deki_400.pnml"
