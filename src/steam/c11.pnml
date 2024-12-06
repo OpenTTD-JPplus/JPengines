@@ -48,7 +48,7 @@ property {
   engine_class: ENGINE_CLASS_STEAM;
 //  cargo_capacity: 1;
 //  cargo_allow_refit: [PASS];
-  weight: 50;
+  weight: 66;
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;

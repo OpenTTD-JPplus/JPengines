@@ -127,7 +127,7 @@ railtypetable {
 sort(FEAT_TRAINS, [
 
 //steam
-930,  920, 938, 904, 934, 935, 911, 931, 933, 936, 937, 920, 910, 932, 940, 900, 902, 944, 941, 903, 939, 942, 
+930,  920, 938, 904, 934, 935, 911, 931, 933, 936, 937, 920, 910, 932, 940, 900, 902, 944, 941, 903, 943, 939, 942, 
 912, 949, 950, 913, 914, 947, 948, 915, 916, 917, 953, 954, 918, 957, 945, 951, 955, 946, 952, 956, 919, 958, 
 //diesels
 1203, 1205, 1207, 1208, 1209, 1210, 1214, 1211, 1212, 1215, 1219, 1220, 1221, 1222, 1223, 1225, 1263, 1063, 1963, 1964, 1230,
@@ -1728,6 +1728,665 @@ item (FEAT_TRAINS, jgr_7200_rear, 903) {
 		default: switch_jgr_7200_livery_rear;
 	}
 }
+//jgr_8620
+	
+//forward front
+spriteset(spriteset_jgr_8620_nosd_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_8620_gold_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(1, 32)
+}
+
+spriteset(spriteset_jgr_8620_smallsd_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(1, 64)
+}
+
+spriteset(spriteset_jgr_8620_bigsd_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(1, 96)
+}
+
+spriteset(spriteset_jgr_8620_cc_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(1, 128)
+}
+
+
+
+//forward tender
+spriteset(spriteset_jgr_8620_black_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_std(1, 224)
+}
+
+
+
+//reversed tender
+spriteset(spriteset_jgr_8620_reversed_black_front, "gfx/steam/jgr_8620.png") {
+	template_2cc_std(180, 224)
+}
+
+
+//reversed rear
+spriteset(spriteset_jgr_8620_reversed_nosd_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(180, 1)
+}
+
+spriteset(spriteset_jgr_8620_reversed_gold_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(180, 32)
+}
+
+spriteset(spriteset_jgr_8620_reversed_smallsd_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(180, 64)
+}
+
+spriteset(spriteset_jgr_8620_reversed_bigsd_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(180, 96)
+}
+
+spriteset(spriteset_jgr_8620_reversed_cc_rear, "gfx/steam/jgr_8620.png") {
+	template_2cc_anim(180, 128)
+}
+
+
+
+
+
+
+//purch
+
+spriteset(spriteset_jgr_8620_jgr_purchase, "gfx/steam/jgr_8620.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_jgr_8620_jnr_purchase, "gfx/steam/jgr_8620.png") {
+	template_purchase(89, 320)
+}
+
+spriteset(spriteset_jgr_8620_jgr_reversed_purchase, "gfx/steam/jgr_8620.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_jgr_8620_jnr_reversed_purchase, "gfx/steam/jgr_8620.png") {
+	template_purchase(89, 352)
+}
+
+
+
+//refit
+
+random_switch(FEAT_TRAINS, SELF, switch_jgr_8620_random) {
+	1: spriteset_jgr_8620_nosd_front;
+	1: spriteset_jgr_8620_smallsd_front;
+	1: spriteset_jgr_8620_bigsd_front;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_livery, cargo_subtype) {
+	1: spriteset_jgr_8620_nosd_front;
+	2: spriteset_jgr_8620_smallsd_front;
+	3: spriteset_jgr_8620_bigsd_front;
+	4: spriteset_jgr_8620_gold_front;
+	5: spriteset_jgr_8620_cc_front;
+	switch_jgr_8620_random;
+	
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SMALLDEF)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SMOKEDEF)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_SMALLDEF)
+                                 );
+	5: return string(STR_REFIT_CC);		
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_articulated_part, extra_callback_info1) {
+	1: return jgr_8620_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_purchase, current_year) {
+	0..1949: spriteset_jgr_8620_jgr_purchase;
+	spriteset_jgr_8620_jnr_purchase;
+	}
+
+item (FEAT_TRAINS, jgr_8620, 944) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_8620);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1914,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 567 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 83;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 6;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1C),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_EP),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_jgr_8620_subtype_text;
+		default: switch_jgr_8620_livery;
+		purchase: switch_jgr_8620_purchase;
+		articulated_part: switch_jgr_8620_articulated_part;
+	}
+}
+
+
+item (FEAT_TRAINS, jgr_8620_rear, 844) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_jgr_8620);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_8620_black_rear;
+	}
+}
+
+//reversed variant
+
+//refit
+
+
+random_switch(FEAT_TRAINS, SELF, switch_jgr_8620_reversed_random) {
+	1: spriteset_jgr_8620_reversed_nosd_rear;
+	1: spriteset_jgr_8620_reversed_smallsd_rear;
+	1: spriteset_jgr_8620_reversed_bigsd_rear;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_reversed_livery, cargo_subtype) {
+	1: spriteset_jgr_8620_reversed_nosd_rear;
+	2: spriteset_jgr_8620_reversed_smallsd_rear;
+	3: spriteset_jgr_8620_reversed_bigsd_rear;
+	4: spriteset_jgr_8620_reversed_gold_rear;
+	5: spriteset_jgr_8620_reversed_cc_rear;
+	switch_jgr_8620_reversed_random;
+	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_reversed_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SMALLDEF)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_SMOKEDEF)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_SMALLDEF)
+                                 );
+	5: return string(STR_REFIT_CC);		
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_reversed_articulated_part, extra_callback_info1) {
+	1: return jgr_8620_reversed_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_8620_reversed_purchase, current_year) {
+	0..1949: spriteset_jgr_8620_jgr_reversed_purchase;
+	spriteset_jgr_8620_jnr_reversed_purchase;
+	}
+
+//smoke callback
+
+
+
+item (FEAT_TRAINS, jgr_8620_reversed, 744) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_8620_R);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1914,1,1);
+		speed: 95 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 567 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 83;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 4;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		variant_group: 944;
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_2C, 
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+								)
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_jgr_8620_reversed_subtype_text;
+		default: spriteset_jgr_8620_reversed_black_front;
+		purchase: switch_jgr_8620_reversed_purchase;
+		articulated_part: switch_jgr_8620_reversed_articulated_part;
+
+	}
+}
+
+
+item (FEAT_TRAINS, jgr_8620_reversed_rear, 644) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_jgr_8620);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_jgr_8620_reversed_livery;
+
+	}
+}
+//jgr_9600
+	
+//forward front
+spriteset(spriteset_jgr_9600_black_front, "gfx/steam/jgr_9600.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_9600_stripe_front, "gfx/steam/jgr_9600.png") {
+	template_2cc_anim(1, 32)
+}
+
+
+
+//forward tender
+spriteset(spriteset_jgr_9600_black_rear, "gfx/steam/jgr_9600.png") {
+	template_2cc_std(1, 256)
+}
+
+
+
+//reversed tender
+spriteset(spriteset_jgr_9600_reversed_black_front, "gfx/steam/jgr_9600.png") {
+	template_2cc_std(180, 256)
+}
+
+
+//reversed rear
+spriteset(spriteset_jgr_9600_reversed_black_rear, "gfx/steam/jgr_9600.png") {
+	template_2cc_anim(180, 1)
+}
+
+spriteset(spriteset_jgr_9600_reversed_stripe_rear, "gfx/steam/jgr_9600.png") {
+	template_2cc_anim(180, 32)
+}
+
+
+
+
+
+
+//purch
+
+spriteset(spriteset_jgr_9600_jgr_purchase, "gfx/steam/jgr_9600.png") {
+	template_purchase(1, 320)
+}
+
+spriteset(spriteset_jgr_9600_jnr_purchase, "gfx/steam/jgr_9600.png") {
+	template_purchase(89, 320)
+}
+
+spriteset(spriteset_jgr_9600_jgr_reversed_purchase, "gfx/steam/jgr_9600.png") {
+	template_purchase(1, 352)
+}
+
+spriteset(spriteset_jgr_9600_jnr_reversed_purchase, "gfx/steam/jgr_9600.png") {
+	template_purchase(89, 352)
+}
+
+
+
+//refit
+
+random_switch(FEAT_TRAINS, SELF, switch_jgr_9600_random) {
+	1: spriteset_jgr_9600_black_front;
+	1: spriteset_jgr_9600_stripe_front;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_livery, cargo_subtype) {
+	1: spriteset_jgr_9600_black_front;
+	2: spriteset_jgr_9600_stripe_front;
+	switch_jgr_9600_random;
+	
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_OLDSHAPE)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_NEWSHAPE)
+                                 );
+
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_articulated_part, extra_callback_info1) {
+	1: return jgr_9600_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_purchase, current_year) {
+	0..1949: spriteset_jgr_9600_jgr_purchase;
+	spriteset_jgr_9600_jnr_purchase;
+	}
+
+item (FEAT_TRAINS, jgr_9600, 943) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_9600);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1913,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 649 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 94;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 6;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_jgr_9600_subtype_text;
+		default: switch_jgr_9600_livery;
+		purchase: switch_jgr_9600_purchase;
+		articulated_part: switch_jgr_9600_articulated_part;
+	}
+}
+
+
+item (FEAT_TRAINS, jgr_9600_rear, 843) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_jgr_9600);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_9600_black_rear;
+	}
+}
+
+//reversed variant
+
+//refit
+
+
+random_switch(FEAT_TRAINS, SELF, switch_jgr_9600_reversed_random) {
+	1: spriteset_jgr_9600_reversed_black_rear;
+	1: spriteset_jgr_9600_reversed_stripe_rear;
+	}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_reversed_livery, cargo_subtype) {
+	1: spriteset_jgr_9600_reversed_black_rear;
+	2: spriteset_jgr_9600_reversed_stripe_rear;
+	switch_jgr_9600_reversed_random;
+	
+}
+
+
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_reversed_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_OLDSHAPE)
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									 string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_NEWSHAPE)
+                                 );				 
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_reversed_articulated_part, extra_callback_info1) {
+	1: return jgr_9600_reversed_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jgr_9600_reversed_purchase, current_year) {
+	0..1949: spriteset_jgr_9600_jgr_reversed_purchase;
+	spriteset_jgr_9600_jnr_reversed_purchase;
+	}
+
+//smoke callback
+
+
+
+item (FEAT_TRAINS, jgr_9600_reversed, 743) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_9600_R);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1913,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.26;
+		power: 649 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 94;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 4;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		variant_group: 943;
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_1D),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_3C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR),
+									string(STR_SUFFIX_PRIVATE)
+
+                    )
+                  );
+		cargo_capacity: return 0;
+		cargo_subtype_text: switch_jgr_9600_reversed_subtype_text;
+		default: spriteset_jgr_9600_reversed_black_front;
+		purchase: switch_jgr_9600_reversed_purchase;
+		articulated_part: switch_jgr_9600_reversed_articulated_part;
+
+	}
+}
+
+
+item (FEAT_TRAINS, jgr_9600_reversed_rear, 643) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_jgr_9600);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 6;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: switch_jgr_9600_reversed_livery;
+
+	}
+}
 //9700
 	
 spriteset(spriteset_jgr_9700_black_front, "gfx/steam/jgr_9700.png") {
@@ -1821,6 +2480,7 @@ item (FEAT_TRAINS, jgr_9700_rear, 839) {
 		default: spriteset_jgr_9700_black_rear;
 	}
 }
+
 
 //Spriteset jgr_860
 spriteset(spriteset_jgr_860_black, "gfx/steam/jgr_860.png") {
@@ -2266,7 +2926,7 @@ property {
   engine_class: ENGINE_CLASS_STEAM;
 //  cargo_capacity: 1;
 //  cargo_allow_refit: [PASS];
-  weight: 50;
+  weight: 66;
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
@@ -2297,6 +2957,155 @@ property {
 	reverse_build_probability: return 50;
   }
 }
+//Spriteset jnr_c12
+spriteset(spriteset_jnr_c12_nosd, "gfx/steam/jnr_c12.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_jnr_c12_flip_nosd, "gfx/steam/jnr_c12.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_jnr_c12_sd, "gfx/steam/jnr_c12.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_jnr_c12_flip_sd, "gfx/steam/jnr_c12.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_jnr_c12_warnstripes, "gfx/steam/jnr_c12.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_jnr_c12_flip_warnstripes, "gfx/steam/jnr_c12.png") {
+	template_2cc_flip(1, 160)
+}
+
+
+
+
+
+
+spriteset(spriteset_jgr_c12_black_purchase, "gfx/steam/jnr_c12.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jnr_c12_black_purchase, "gfx/steam/jnr_c12.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_c12_purchase, current_year) {
+	0..1949: spriteset_jgr_c12_black_purchase;
+	spriteset_jnr_c12_black_purchase;
+	}
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_jnr_c12_flip_nosd, vehicle_is_flipped) {
+	0: spriteset_jnr_c12_nosd;
+	1: spriteset_jnr_c12_flip_nosd;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jnr_c12_flip_sd, vehicle_is_flipped) {
+	0: spriteset_jnr_c12_sd;
+	1: spriteset_jnr_c12_flip_sd;
+}
+
+switch(FEAT_TRAINS, SELF, switch_jnr_c12_flip_warnstripes, vehicle_is_flipped) {
+	0: spriteset_jnr_c12_warnstripes;
+	1: spriteset_jnr_c12_flip_warnstripes;
+}
+
+//random
+random_switch(FEAT_TRAINS, SELF, switch_jnr_c12_random) {
+	1: switch_jnr_c12_flip_nosd;
+	1: switch_jnr_c12_flip_sd;
+	}
+
+
+
+//refit
+
+switch(FEAT_TRAINS, SELF, switch_jnr_c12_livery, cargo_subtype) {
+	1: switch_jnr_c12_flip_nosd;
+	2: switch_jnr_c12_flip_sd;
+	3: switch_jnr_c12_flip_warnstripes;
+	switch_jnr_c12_random;
+	
+}
+
+switch(FEAT_TRAINS, SELF, switch_jnr_c12_subtype_text, cargo_subtype) {
+	0: return string(STR_REFIT_RANDOM);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    ), string(STR_SUFFIX_SMOKEDEF)
+                                 );
+	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_BLACK),
+									                   string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_WARNSTRIPE)
+                                 );
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+
+
+item (FEAT_TRAINS, jnr_c12, 950) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: TR_1067_NE;
+  name: string(STR_NAME_C12);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1931,1,1);
+  speed: 75 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 440 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+  cargo_capacity: 1;
+  cargo_allow_refit: [PASS];
+  weight: 50;
+  reliability_decay: 20;
+  model_life: 40;
+  vehicle_life: 40;
+  cost_factor: 13;
+  length: 6;
+  running_cost_factor: 27;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_1C1),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_GP),
+                        string(STR_CONCAT_3C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_JNR),
+                          string(STR_SUFFIX_PRIVATE)
+                    )
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_jnr_c12_subtype_text;
+  default: switch_jnr_c12_livery;
+  purchase: switch_c12_purchase;
+	reverse_build_probability: return 50;
+  }
+}
+
 //c53
 	
 	
@@ -3420,7 +4229,7 @@ item (FEAT_TRAINS, d51_reversed, 751) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: TR_1067_NE;
-		name: string(STR_NAME_D51);
+		name: string(STR_NAME_D51_R);
 		climates_available: ALL_CLIMATES;
 		introduction_date: date(1936,1,1);
 		speed: 75 km/h;

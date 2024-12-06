@@ -13,7 +13,10 @@
 #include "src/steam/7010.pnml"
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
+#include "src/steam/8620.pnml"
+#include "src/steam/9600.pnml"
 #include "src/steam/9700.pnml"
+
 #include "src/steam/860.pnml"
 #include "src/steam/1070.pnml"
 #include "src/steam/1800.pnml"
@@ -21,6 +24,8 @@
 #include "src/steam/150.pnml"
 
 #include "src/steam/c11.pnml"
+#include "src/steam/c12.pnml"
+
 #include "src/steam/c53.pnml"
 #include "src/steam/c62.pnml"
 #include "src/steam/d50.pnml"
