@@ -1,0 +1,80 @@
+//Spriteset jnr_e10
+spriteset(spriteset_jnr_e10_black, "gfx/steam/jnr_e10.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_jnr_e10_flip_black, "gfx/steam/jnr_e10.png") {
+	template_2cc_flip(1, 32)
+}
+
+
+
+
+spriteset(spriteset_jgr_e10_black_purchase, "gfx/steam/jnr_e10.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_jnr_e10_black_purchase, "gfx/steam/jnr_e10.png") {
+	template_purchase(89, 192)
+}
+
+switch(FEAT_TRAINS, SELF, switch_e10_purchase, current_year) {
+	0..1949: spriteset_jgr_e10_black_purchase;
+	spriteset_jnr_e10_black_purchase;
+	}
+
+//flip switches
+switch(FEAT_TRAINS, SELF, switch_jnr_e10_flip_black, vehicle_is_flipped) {
+	0: spriteset_jnr_e10_black;
+	1: spriteset_jnr_e10_flip_black;
+}
+
+
+
+
+item (FEAT_TRAINS, jnr_e10, 958) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: TR_1067_NE;
+  name: string(STR_NAME_E10);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1948,1,1);
+  speed: 65 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 969 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_STEAM;
+//  cargo_capacity: 1;
+//  cargo_allow_refit: [PASS];
+  weight: 102;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 40;
+  cost_factor: 16;
+  length: 8;
+  running_cost_factor: 31;
+  running_cost_base: RUNNING_COST_STEAM;
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_5S, 
+                        string(STR_DESC_POWER_STEAM),
+                        string(STR_DESC_WHEELS_1E2),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_BANK),
+                        string(STR_CONCAT_2C, 
+                          string(STR_SUFFIX_JGR),
+						              string(STR_SUFFIX_JNR)
+                    )
+                  );
+  cargo_capacity: return 0;
+//  cargo_subtype_text: switch_jnr_e10_subtype_text;
+  default: switch_jnr_e10_flip_black;
+  purchase: switch_e10_purchase;
+	reverse_build_probability: return 50;
+  }
+}

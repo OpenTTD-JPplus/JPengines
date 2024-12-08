@@ -1,21 +1,21 @@
-//d52
+//d62
 	
 	
-spriteset(spriteset_d52_black_front, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_black_front, "gfx/steam/jnr_d62.png") {
 	template_2cc_std(1, 1)
 }
 
 
 
-spriteset(spriteset_d52_black_rear, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_black_rear, "gfx/steam/jnr_d62.png") {
 	template_2cc_std(1, 32)
 }
 
-spriteset(spriteset_d52_reversed_black_front, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_reversed_black_front, "gfx/steam/jnr_d62.png") {
 	template_2cc_std(1, 64)
 }
 
-spriteset(spriteset_d52_reversed_black_rear, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_reversed_black_rear, "gfx/steam/jnr_d62.png") {
 	template_2cc_std(1, 96)
 }
 
@@ -25,19 +25,19 @@ spriteset(spriteset_d52_reversed_black_rear, "gfx/steam/jnr_d52.png") {
 
 //purch
 
-spriteset(spriteset_d52_jgr_purchase, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_jgr_purchase, "gfx/steam/jnr_d62.png") {
 	template_purchase(1, 192)
 }
 
-spriteset(spriteset_d52_jnr_purchase, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_jnr_purchase, "gfx/steam/jnr_d62.png") {
 	template_purchase(89, 192)
 }
 
-spriteset(spriteset_d52_jgr_reversed_purchase, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_jgr_reversed_purchase, "gfx/steam/jnr_d62.png") {
 	template_purchase(1, 224)
 }
 
-spriteset(spriteset_d52_jnr_reversed_purchase, "gfx/steam/jnr_d52.png") {
+spriteset(spriteset_d62_jnr_reversed_purchase, "gfx/steam/jnr_d62.png") {
 	template_purchase(89, 224)
 }
 
@@ -46,34 +46,34 @@ spriteset(spriteset_d52_jnr_reversed_purchase, "gfx/steam/jnr_d52.png") {
 
 
 /* --- Articulated part callback  --- */
-switch(FEAT_TRAINS, SELF, switch_d52_articulated_part, extra_callback_info1) {
-	1: return d52_rear;
+switch(FEAT_TRAINS, SELF, switch_d62_articulated_part, extra_callback_info1) {
+	1: return d62_rear;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-switch(FEAT_TRAINS, SELF, switch_d52_purchase, current_year) {
-	0..1949: spriteset_d52_jgr_purchase;
-	spriteset_d52_jnr_purchase;
+switch(FEAT_TRAINS, SELF, switch_d62_purchase, current_year) {
+	0..1949: spriteset_d62_jgr_purchase;
+	spriteset_d62_jnr_purchase;
 	}
 
-item (FEAT_TRAINS, d52, 955) {
+item (FEAT_TRAINS, d62, 956) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: TR_1067_NE;
-		name: string(STR_NAME_D52);
+		name: string(STR_NAME_D62);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1943,1,1);
-		speed: 75 km/h;
+		introduction_date: date(1960,1,1);
+		speed: 85 km/h;
 		air_drag_coefficient: 0;
 		tractive_effort_coefficient:    0.26;
-		power: 1454 kW;
+		power: 1500 kW;
 		dual_headed: 0;
 		engine_class: ENGINE_CLASS_STEAM;
 		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		weight: 127;
 		reliability_decay: 20;
-		model_life: 40;
+		model_life: 20;
 		vehicle_life: 60;
 		cost_factor: 12;
 		length: 7;
@@ -84,28 +84,27 @@ item (FEAT_TRAINS, d52, 955) {
 	graphics { // graphics for engine
 		additional_text:	string(STR_CONCAT_5S, 
 								string(STR_DESC_POWER_STEAM),
-								string(STR_DESC_WHEELS_1D1),
+								string(STR_DESC_WHEELS_1D2),
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_HF),
-								string(STR_CONCAT_2C, 
-									string(STR_SUFFIX_JGR),
+								string(STR_CONCAT_1C, 
 									string(STR_SUFFIX_JNR)
                     )
                   );
 		cargo_capacity: return 0;
-//		cargo_subtype_text: switch_d52_subtype_text;
-		default: spriteset_d52_black_front;
-		purchase: switch_d52_purchase;
-		articulated_part: switch_d52_articulated_part;
+//		cargo_subtype_text: switch_d62_subtype_text;
+		default: spriteset_d62_black_front;
+		purchase: switch_d62_purchase;
+		articulated_part: switch_d62_articulated_part;
 	}
 }
 
 
-item (FEAT_TRAINS, d52_rear, 855) {
+item (FEAT_TRAINS, d62_rear, 856) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: TR_1067_NE;
-//		name: string(STR_NAME_d52);
+//		name: string(STR_NAME_d62);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);
 		cargo_capacity: 1; 
@@ -116,79 +115,78 @@ item (FEAT_TRAINS, d52_rear, 855) {
 	}
 	graphics {
 		cargo_capacity: return 0;
-		default: spriteset_d52_black_rear;
+		default: spriteset_d62_black_rear;
 	}
 }
 
 
 /* --- Articulated part callback  --- */
-switch(FEAT_TRAINS, SELF, switch_d52_reversed_articulated_part, extra_callback_info1) {
-	1: return d52_reversed_rear;
+switch(FEAT_TRAINS, SELF, switch_d62_reversed_articulated_part, extra_callback_info1) {
+	1: return d62_reversed_rear;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-switch(FEAT_TRAINS, SELF, switch_d52_reversed_purchase, current_year) {
-	0..1949: spriteset_d52_jgr_reversed_purchase;
-	spriteset_d52_jnr_reversed_purchase;
+switch(FEAT_TRAINS, SELF, switch_d62_reversed_purchase, current_year) {
+	0..1949: spriteset_d62_jgr_reversed_purchase;
+	spriteset_d62_jnr_reversed_purchase;
 	}
 
 //smoke callback
 
 
 
-item (FEAT_TRAINS, d52_reversed, 755) {
+item (FEAT_TRAINS, d62_reversed, 756) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: TR_1067_NE;
-		name: string(STR_NAME_D52_R);
+		name: string(STR_NAME_D62_R);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1943,1,1);
-		speed: 75 km/h;
+		introduction_date: date(1960,1,1);
+		speed: 85 km/h;
 		air_drag_coefficient: 0;
 		tractive_effort_coefficient:    0.26;
-		power: 1454 kW;
+		power: 1500 kW;
 		dual_headed: 0;
 		engine_class: ENGINE_CLASS_STEAM;
 		cargo_capacity: 1;
 		cargo_allow_refit: [PASS];
 		weight: 127;
 		reliability_decay: 20;
-		model_life: 40;
+		model_life: 20;
 		vehicle_life: 60;
 		cost_factor: 12;
-		length: 7;
+		length: 5;
 		running_cost_factor: 23;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
-		variant_group: 955;
+		variant_group: 956;
 	}
 	graphics { // graphics for engine
 		additional_text:	string(STR_CONCAT_5S, 
 								string(STR_DESC_POWER_STEAM),
-								string(STR_DESC_WHEELS_1D1),
+								string(STR_DESC_WHEELS_1D2),
 								string(STR_DESC_NARROWGAUGE),
 								string(STR_DESC_USAGE_HF),
-								string(STR_CONCAT_2C, 
-									string(STR_SUFFIX_JGR),
+								string(STR_CONCAT_1C, 
 									string(STR_SUFFIX_JNR)
                     )
                   );
 		cargo_capacity: return 0;
-//		cargo_subtype_text: switch_d52_reversed_subtype_text;
-		default: spriteset_d52_reversed_black_front;
-		purchase: switch_d52_reversed_purchase;
-		articulated_part: switch_d52_reversed_articulated_part;
+//		cargo_subtype_text: switch_d62_reversed_subtype_text;
+		default: spriteset_d62_reversed_black_front;
+		purchase: switch_d62_reversed_purchase;
+		articulated_part: switch_d62_reversed_articulated_part;
 
 	}
 }
 
 
-item (FEAT_TRAINS, d52_reversed_rear, 655) {
+item (FEAT_TRAINS, d62_reversed_rear, 656) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		track_type: TR_1067_NE;
-//		name: string(STR_NAME_d52);
+//		name: string(STR_NAME_d62);
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1800,1,1);
 		cargo_capacity: 1; 
@@ -199,7 +197,7 @@ item (FEAT_TRAINS, d52_reversed_rear, 655) {
 	}
 	graphics {
 		cargo_capacity: return 0;
-		default: spriteset_d52_reversed_black_rear;
+		default: spriteset_d62_reversed_black_rear;
 
 	}
 }

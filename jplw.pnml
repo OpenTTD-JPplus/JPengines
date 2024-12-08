@@ -11,11 +11,14 @@
 #include "src/steam/5130.pnml"
 #include "src/steam/5500.pnml"
 #include "src/steam/7010.pnml"
+#include "src/steam/7050.pnml"
 #include "src/steam/7100.pnml"
 #include "src/steam/7200.pnml"
 #include "src/steam/8620.pnml"
+#include "src/steam/8700.pnml"
 #include "src/steam/9600.pnml"
 #include "src/steam/9700.pnml"
+#include "src/steam/9750.pnml"
 
 #include "src/steam/860.pnml"
 #include "src/steam/1070.pnml"
@@ -31,6 +34,8 @@
 #include "src/steam/d50.pnml"
 #include "src/steam/d51.pnml"
 #include "src/steam/d52.pnml"
+#include "src/steam/d62.pnml"
+#include "src/steam/e10.pnml"
 
 #include "src/dc/deki_400.pnml"
 #include "src/dc/el120.pnml"

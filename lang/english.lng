@@ -39,6 +39,7 @@ STR_NAME_E10        :E10
 
 STR_NAME_5000	    :5000
 STR_NAME_7010	    :7010
+STR_NAME_7050	    :7050
 STR_NAME_5130	    :5130
 STR_NAME_5500	    :5500
 STR_NAME_B1	        :B1
@@ -64,7 +65,8 @@ STR_NAME_D51        :D51
 STR_NAME_D51_R      :D51 Reversed
 STR_NAME_D52        :D52
 STR_NAME_D52_R      :D52 Reversed
-
+STR_NAME_D62        :D62
+STR_NAME_D62_R      :D62 Reversed
 
 STR_NAME_DF50	    :DF50
 STR_NAME_DD11	    :DD11
@@ -762,8 +764,8 @@ STR_DESC_WHEELS_1D       :{BLACK}Wheel Arrangement:{GOLD} 1-D / 2-8-0{}
 STR_DESC_WHEELS_1D1      :{BLACK}Wheel Arrangement:{GOLD} 1-D-1 / 2-8-2{}
 STR_DESC_WHEELS_1D2      :{BLACK}Wheel Arrangement:{GOLD} 1-D-2 / 2-8-4{}
 
-STR_DESC_WHEELS_E        :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
-STR_DESC_WHEELS_1E2      :{BLACK}Wheel Arrangement:{GOLD} 1-C / 2-6-0{}
+STR_DESC_WHEELS_E        :{BLACK}Wheel Arrangement:{GOLD} E / 0-10-0{}
+STR_DESC_WHEELS_1E2      :{BLACK}Wheel Arrangement:{GOLD} 1-E-2 / 2-10-4{}
 
 STR_DESC_WHEELS_1BB1      :{BLACK}Wheel Arrangement:{GOLD} 1-B-B-1{}
 STR_DESC_WHEELS_BB        :{BLACK}Wheel Arrangement:{GOLD} B-B{}

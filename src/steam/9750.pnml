@@ -1,0 +1,94 @@
+//9750
+	
+spriteset(spriteset_jgr_9750_black_front, "gfx/steam/jgr_9750.png") {
+	template_2cc_anim(1, 1)
+}
+
+spriteset(spriteset_jgr_9750_black_rear, "gfx/steam/jgr_9750.png") {
+	template_2cc_std(1, 32)
+}
+
+
+
+//purchase
+
+spriteset(spriteset_jgr_9750_purchase, "gfx/steam/jgr_9750.png") {
+	template_purchase(1, 192)
+}
+
+
+
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_jgr_9750_articulated_part, extra_callback_info1) {
+	1: return jgr_9750_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+
+item (FEAT_TRAINS, jgr_9750, 942) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_9750);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1912,1,1);
+		speed: 65 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.28;
+		power: 731 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 97;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 11;
+		length: 7;
+		running_cost_factor: 22;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+		}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_CC),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_HF),
+								string(STR_CONCAT_1C,
+									string(STR_SUFFIX_JGR)
+                    )
+                  );
+		cargo_capacity: return 0;
+	//	cargo_subtype_text: switch_jgr_9750_subtype_text;
+		default: spriteset_jgr_9750_black_front;
+		purchase: spriteset_jgr_9750_purchase;
+		articulated_part: switch_jgr_9750_articulated_part;
+		}
+	}
+
+
+item (FEAT_TRAINS, jgr_9750_rear, 842) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_jgr_9750);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 4;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_jgr_9750_black_rear;
+	}
+}
+
