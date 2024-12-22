@@ -53,6 +53,7 @@ STR_NAME_C53        :C53
 STR_NAME_C53_S      :C53 Streamlined
 STR_NAME_C57	    :C57
 STR_NAME_C58        :C58
+STR_NAME_C58_R      :C58 Reversed
 STR_NAME_C62        :C62
 
 STR_NAME_9600	    :9600

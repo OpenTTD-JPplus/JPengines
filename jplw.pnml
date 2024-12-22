@@ -30,6 +30,8 @@
 #include "src/steam/c12.pnml"
 
 #include "src/steam/c53.pnml"
+#include "src/steam/c57.pnml"
+#include "src/steam/c58.pnml"
 #include "src/steam/c62.pnml"
 #include "src/steam/d50.pnml"
 #include "src/steam/d51.pnml"

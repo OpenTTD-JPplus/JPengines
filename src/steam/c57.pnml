@@ -1,0 +1,103 @@
+//c57
+	
+	
+spriteset(spriteset_c57_black_front, "gfx/steam/jnr_c57.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_c57_black_rear, "gfx/steam/jnr_c57.png") {
+	template_2cc_std(1, 32)
+}
+
+
+//purch
+
+spriteset(spriteset_c57_jgr_purchase, "gfx/steam/jnr_c57.png") {
+	template_purchase(1, 192)
+}
+
+spriteset(spriteset_c57_jnr_purchase, "gfx/steam/jnr_c57.png") {
+	template_purchase(89, 192)
+}
+
+
+
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, switch_c57_articulated_part, extra_callback_info1) {
+	1: return c57_rear;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_c57_purchase, current_year) {
+	0..1949: spriteset_c57_jgr_purchase;
+	spriteset_c57_jnr_purchase;
+	}
+
+item (FEAT_TRAINS, c57, 953) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_C57);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1937,1,1);
+		speed: 110 km/h;
+		air_drag_coefficient: 0;
+		tractive_effort_coefficient:    0.20;
+		power: 962 kW;
+		dual_headed: 0;
+		engine_class: ENGINE_CLASS_STEAM;
+		cargo_capacity: 1;
+		cargo_allow_refit: [PASS];
+		weight: 115;
+		reliability_decay: 20;
+		model_life: 40;
+		vehicle_life: 60;
+		cost_factor: 12;
+		length: 7;
+		running_cost_factor: 23;
+		running_cost_base: RUNNING_COST_STEAM;
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics { // graphics for engine
+		additional_text:	string(STR_CONCAT_5S, 
+								string(STR_DESC_POWER_STEAM),
+								string(STR_DESC_WHEELS_2C1),
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_EP),
+								string(STR_CONCAT_2C, 
+									string(STR_SUFFIX_JGR),
+									string(STR_SUFFIX_JNR)
+                    )
+                  );
+		cargo_capacity: return 0;
+//		cargo_subtype_text: switch_c57_subtype_text;
+		default: spriteset_c57_black_front;
+		purchase: switch_c57_purchase;
+		articulated_part: switch_c57_articulated_part;
+	}
+}
+
+
+item (FEAT_TRAINS, c57_rear, 853) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+//		name: string(STR_NAME_c57);
+		climates_available: NO_CLIMATE;
+		introduction_date: date(1800,1,1);
+		cargo_capacity: 1; 
+		cargo_allow_refit: [PASS];
+		length: 5;
+		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
+		misc_flags: bitmask(TRAIN_FLAG_2CC);
+	}
+	graphics {
+		cargo_capacity: return 0;
+		default: spriteset_c57_black_rear;
+	}
+}
+
+
+
+
