@@ -131,7 +131,7 @@ property {
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
     cost_factor: 28;
-	running_cost_factor: 20;
+	running_cost_factor: 30;
     running_cost_base: RUNNING_COST_DIESEL;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}

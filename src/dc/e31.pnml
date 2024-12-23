@@ -49,7 +49,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   vehicle_life: 40;
   cost_factor: 13;
   length: 4;
-  running_cost_factor: 9;
+  running_cost_factor: 16;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine

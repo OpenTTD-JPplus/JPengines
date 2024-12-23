@@ -318,7 +318,7 @@ item (FEAT_TRAINS, jgr_8620_reversed, 744) {
 								string(STR_DESC_POWER_STEAM),
 								string(STR_DESC_WHEELS_1D),
 								string(STR_DESC_NARROWGAUGE),
-								string(STR_DESC_USAGE_HF),
+								string(STR_DESC_USAGE_EP),
 								string(STR_CONCAT_2C, 
 								string(STR_CONCAT_3C, 
 									string(STR_SUFFIX_JGR),

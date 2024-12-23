@@ -67,7 +67,7 @@ property {
   speed: 70 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
-  power: 500 kW;
+  power: 350 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_STEAM;
   cargo_capacity: 1;
@@ -76,7 +76,7 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 14;
+  cost_factor: 15;
   length: 5;
   running_cost_factor: 27;
   running_cost_base: RUNNING_COST_STEAM;

@@ -57,7 +57,7 @@ item (FEAT_TRAINS, jgr_5500, 936) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 15;
+		cost_factor: 18;
 		length: 6;
 		running_cost_factor: 28;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -127,7 +127,7 @@ item (FEAT_TRAINS, jgr_5500_tobu, 937) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 15;
+		cost_factor: 18;
 		length: 6;
 		running_cost_factor: 28;
 		running_cost_base: RUNNING_COST_STEAM;

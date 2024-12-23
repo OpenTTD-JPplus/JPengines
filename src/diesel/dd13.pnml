@@ -164,9 +164,9 @@ item (FEAT_TRAINS, dd13_old, 1207) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 18;
+  cost_factor: 36;
   length: 6;
-  running_cost_factor: 80;
+  running_cost_factor: 43;
   running_cost_base: RUNNING_COST_DIESEL;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
@@ -493,9 +493,9 @@ item (FEAT_TRAINS, dd13_new, 1208) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 18;
+  cost_factor: 36;
   length: 6;
-  running_cost_factor: 80;
+  running_cost_factor: 43;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 1207;

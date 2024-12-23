@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 200;
+ version: 201;
  min_compatible_version: 200;
  
  //params, thanks tin
@@ -998,9 +998,9 @@ item (FEAT_TRAINS, jgr_5000, 931) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 12;
 		length: 5;
-		running_cost_factor: 20;
+		running_cost_factor: 22;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -1092,9 +1092,9 @@ item (FEAT_TRAINS, jgr_5130, 933) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 12;
 		length: 5;
-		running_cost_factor: 20;
+		running_cost_factor: 23;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -1195,9 +1195,9 @@ item (FEAT_TRAINS, jgr_5500, 936) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 18;
 		length: 6;
-		running_cost_factor: 20;
+		running_cost_factor: 28;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -1265,9 +1265,9 @@ item (FEAT_TRAINS, jgr_5500_tobu, 937) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 18;
 		length: 6;
-		running_cost_factor: 20;
+		running_cost_factor: 28;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		variant_group: 936;
@@ -1359,9 +1359,9 @@ item (FEAT_TRAINS, jgr_7010, 932) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 14;
 		length: 5;
-		running_cost_factor: 20;
+		running_cost_factor: 22;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -1453,9 +1453,9 @@ item (FEAT_TRAINS, jgr_7050, 940) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 19;
 		length: 6;
-		running_cost_factor: 20;
+		running_cost_factor: 28;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -1991,9 +1991,9 @@ item (FEAT_TRAINS, jgr_8620, 944) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 25;
 		length: 6;
-		running_cost_factor: 23;
+		running_cost_factor: 35;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -2129,9 +2129,9 @@ item (FEAT_TRAINS, jgr_8620_reversed, 744) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 25;
 		length: 4;
-		running_cost_factor: 23;
+		running_cost_factor: 35;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -2142,7 +2142,7 @@ item (FEAT_TRAINS, jgr_8620_reversed, 744) {
 								string(STR_DESC_POWER_STEAM),
 								string(STR_DESC_WHEELS_1D),
 								string(STR_DESC_NARROWGAUGE),
-								string(STR_DESC_USAGE_HF),
+								string(STR_DESC_USAGE_EP),
 								string(STR_CONCAT_2C, 
 								string(STR_CONCAT_3C, 
 									string(STR_SUFFIX_JGR),
@@ -2230,9 +2230,9 @@ item (FEAT_TRAINS, jgr_8700, 941) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 40;
-		cost_factor: 11;
+		cost_factor: 30;
 		length: 6;
-		running_cost_factor: 20;
+		running_cost_factor: 40;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -2403,9 +2403,9 @@ item (FEAT_TRAINS, jgr_9600, 943) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 24;
 		length: 6;
-		running_cost_factor: 23;
+		running_cost_factor: 34;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -2525,9 +2525,9 @@ item (FEAT_TRAINS, jgr_9600_reversed, 743) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 24;
 		length: 4;
-		running_cost_factor: 23;
+		running_cost_factor: 34;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -2625,9 +2625,9 @@ item (FEAT_TRAINS, jgr_9700, 939) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 26;
 		length: 7;
-		running_cost_factor: 20;
+		running_cost_factor: 36;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -2719,9 +2719,9 @@ item (FEAT_TRAINS, jgr_9750, 942) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 40;
 		length: 7;
-		running_cost_factor: 22;
+		running_cost_factor: 55;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
@@ -2833,7 +2833,7 @@ property {
   speed: 70 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.25;
-  power: 500 kW;
+  power: 350 kW;
   dual_headed: 0;
   engine_class: ENGINE_CLASS_STEAM;
   cargo_capacity: 1;
@@ -2842,7 +2842,7 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 14;
+  cost_factor: 15;
   length: 5;
   running_cost_factor: 27;
   running_cost_base: RUNNING_COST_STEAM;
@@ -2922,9 +2922,9 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 16;
+  cost_factor: 17;
   length: 7;
-  running_cost_factor: 31;
+  running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -2992,9 +2992,9 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 16;
+  cost_factor: 13;
   length: 5;
-  running_cost_factor: 31;
+  running_cost_factor: 24;
   running_cost_base: RUNNING_COST_STEAM;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -3074,7 +3074,7 @@ property {
   vehicle_life: 40;
   cost_factor: 16;
   length: 6;
-  running_cost_factor: 31;
+  running_cost_factor: 25;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -3132,9 +3132,9 @@ property {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 14;
+  cost_factor: 10;
   length: 5;
-  running_cost_factor: 27;
+  running_cost_factor: 20;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -3212,9 +3212,9 @@ property {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 16;
+  cost_factor: 34;
   length: 7;
-  running_cost_factor: 31;
+  running_cost_factor: 38;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -3360,9 +3360,9 @@ property {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 40;
-  cost_factor: 13;
+  cost_factor: 29;
   length: 6;
-  running_cost_factor: 27;
+  running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -3457,9 +3457,9 @@ item (FEAT_TRAINS, c53, 947) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 80;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 82;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -3534,9 +3534,9 @@ item (FEAT_TRAINS, c53_streamlined, 948) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 90;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 92;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		variant_group: 947;
@@ -3634,9 +3634,9 @@ item (FEAT_TRAINS, c57, 953) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 77;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 80;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -3759,9 +3759,9 @@ item (FEAT_TRAINS, c58, 954) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 60;
 		length: 6;
-		running_cost_factor: 23;
+		running_cost_factor: 64;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -3837,9 +3837,9 @@ item (FEAT_TRAINS, c58_reversed, 754) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 60;
 		length: 5;
-		running_cost_factor: 23;
+		running_cost_factor: 64;
 		running_cost_base: RUNNING_COST_STEAM;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -4172,9 +4172,9 @@ item (FEAT_TRAINS, d50, 945) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 70;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 72;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -4285,9 +4285,9 @@ item (FEAT_TRAINS, d50_reversed, 745) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 70;
 		length: 5;
-		running_cost_factor: 23;
+		running_cost_factor: 72;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -4646,9 +4646,9 @@ item (FEAT_TRAINS, d51, 951) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 71;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 73;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -4830,9 +4830,9 @@ item (FEAT_TRAINS, d51_reversed, 751) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 71;
 		length: 5;
-		running_cost_factor: 23;
+		running_cost_factor: 73;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -4959,9 +4959,9 @@ item (FEAT_TRAINS, d52, 955) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 74;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -5039,9 +5039,9 @@ item (FEAT_TRAINS, d52_reversed, 755) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 74;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -5164,9 +5164,9 @@ item (FEAT_TRAINS, d62, 956) {
 		reliability_decay: 20;
 		model_life: 20;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 73;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -5243,9 +5243,9 @@ item (FEAT_TRAINS, d62_reversed, 756) {
 		reliability_decay: 20;
 		model_life: 20;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 73;
 		length: 5;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
@@ -5344,9 +5344,9 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 16;
+  cost_factor: 78;
   length: 8;
-  running_cost_factor: 31;
+  running_cost_factor: 80;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}
@@ -5615,7 +5615,7 @@ item (FEAT_TRAINS, seibu_e31, 1101) {
   vehicle_life: 40;
   cost_factor: 13;
   length: 4;
-  running_cost_factor: 9;
+  running_cost_factor: 16;
   running_cost_base: RUNNING_COST_ELECTRIC;
   }
   graphics { // graphics for engine
@@ -15342,7 +15342,7 @@ property {
 	cargo_allow_refit: [PASS];
 	reliability_decay: 13;
     cost_factor: 28;
-	running_cost_factor: 20;
+	running_cost_factor: 30;
     running_cost_base: RUNNING_COST_DIESEL;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -15531,9 +15531,9 @@ item (FEAT_TRAINS, dd13_old, 1207) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 18;
+  cost_factor: 36;
   length: 6;
-  running_cost_factor: 80;
+  running_cost_factor: 43;
   running_cost_base: RUNNING_COST_DIESEL;
 //  misc_flags: bitmask(TRAIN_FLAG_2CC);
   }
@@ -15860,9 +15860,9 @@ item (FEAT_TRAINS, dd13_new, 1208) {
   reliability_decay: 20;
   model_life: 40;
   vehicle_life: 55;
-  cost_factor: 18;
+  cost_factor: 36;
   length: 6;
-  running_cost_factor: 80;
+  running_cost_factor: 43;
   running_cost_base: RUNNING_COST_DIESEL;
   misc_flags: bitmask(TRAIN_FLAG_2CC);
   variant_group: 1207;
