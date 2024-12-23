@@ -75,9 +75,9 @@ item (FEAT_TRAINS, d62, 956) {
 		reliability_decay: 20;
 		model_life: 20;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 73;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -154,9 +154,9 @@ item (FEAT_TRAINS, d62_reversed, 756) {
 		reliability_decay: 20;
 		model_life: 20;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 73;
 		length: 5;
-		running_cost_factor: 23;
+		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);

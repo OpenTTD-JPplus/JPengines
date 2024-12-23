@@ -52,9 +52,9 @@ property {
   reliability_decay: 20;
   model_life: 30;
   vehicle_life: 40;
-  cost_factor: 16;
+  cost_factor: 17;
   length: 7;
-  running_cost_factor: 31;
+  running_cost_factor: 30;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}

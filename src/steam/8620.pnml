@@ -167,9 +167,9 @@ item (FEAT_TRAINS, jgr_8620, 944) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 25;
 		length: 6;
-		running_cost_factor: 23;
+		running_cost_factor: 35;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -305,9 +305,9 @@ item (FEAT_TRAINS, jgr_8620_reversed, 744) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 25;
 		length: 4;
-		running_cost_factor: 23;
+		running_cost_factor: 35;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);

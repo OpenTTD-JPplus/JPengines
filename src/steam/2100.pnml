@@ -54,7 +54,7 @@ property {
   vehicle_life: 40;
   cost_factor: 16;
   length: 6;
-  running_cost_factor: 31;
+  running_cost_factor: 25;
   running_cost_base: RUNNING_COST_STEAM;
   misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_FLIP);
 	}

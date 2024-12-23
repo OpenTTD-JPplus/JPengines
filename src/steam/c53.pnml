@@ -67,9 +67,9 @@ item (FEAT_TRAINS, c53, 947) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 80;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 82;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 	}
@@ -144,9 +144,9 @@ item (FEAT_TRAINS, c53_streamlined, 948) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 12;
+		cost_factor: 90;
 		length: 7;
-		running_cost_factor: 23;
+		running_cost_factor: 92;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		variant_group: 947;

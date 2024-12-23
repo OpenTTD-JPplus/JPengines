@@ -48,9 +48,9 @@ item (FEAT_TRAINS, jgr_9750, 942) {
 		reliability_decay: 20;
 		model_life: 40;
 		vehicle_life: 60;
-		cost_factor: 11;
+		cost_factor: 40;
 		length: 7;
-		running_cost_factor: 22;
+		running_cost_factor: 55;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
 		}
