@@ -101,5 +101,6 @@ property {
   cargo_subtype_text: switch_ed54_subtype_text;
   default: switch_ed54_livery;
   purchase: switch_ed54_yeardep_purchase;
+  reverse_build_probability: return 50;
   }
 }
