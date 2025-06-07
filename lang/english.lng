@@ -3,7 +3,7 @@
 lang: 7F
 
 STR_GRF_NAME :JP+ Engines & Wagons {VERSION}
-STR_GRF_DESCRIPTION :{RED}ATTENTION!{SILVER} Must be loaded AFTER JapanSet3: Trains to work!{}{}{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Part of the {WHITE}JP{RED}+{BLACK} series, focused on locomotives, passenger coaches and freight wagons from JGR, JNR, JR and various private operators. Includes many new vehicles and livery refits. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2023 GPLv2+.
+STR_GRF_DESCRIPTION :{WHITE}JP{RED}+{WHITE}Engines & Wagons{BLACK}: Part of the {WHITE}JP{RED}+{BLACK} series, focused on locomotives, passenger coaches and freight wagons from JGR, JNR, JR and various private operators. Includes many new vehicles and livery refits. {}{}{TINYFONT}Drawn by {SILVER}Emperor Jake, Voyager One, Davo H., wicket-303, SaYa, Azusa, Erato, andythenorth and the JapanSet Team{}{BLACK}Coded by {SILVER}Emperor Jake{}{BLACK}{COPYRIGHT} 2024 GPLv2+.
 
 STR_PARAM_NAME_BASECOSTMODBUY	:Purchase costs
 STR_PARAM_DESC_BASECOSTMODBUY	:Adjust vehicle purchase costs, to match Japan Set
@@ -20,13 +20,7 @@ STR_PARAM_NORMAL	:Normal
 STR_PARAM_HIGH		:High
 STR_PARAM_VHIGH		:Very High
 
-STR_ERROR_JAPANSETTRAINS_LOADORDER	:Must be loaded after JapanSet 3 Trains!
-STR_ERROR_JAPANSETTRAINS_REQUIRES	:JP+ Engines requires JapanSet 3 Trains to work!
-STR_ERROR_JAPANSETTRAINS	:JapanSet 3 Trains
-
-STR_ERROR_JPPLUSSET			:Must be loaded after JP+ Set!
-
-
+# Steam engines
 
 STR_NAME_150	    :150
 STR_NAME_860	    :860
@@ -69,6 +63,8 @@ STR_NAME_D52_R      :D52 Reversed
 STR_NAME_D62        :D62
 STR_NAME_D62_R      :D62 Reversed
 
+# Diesel engines
+
 STR_NAME_DF50	    :DF50
 STR_NAME_DD11	    :DD11
 STR_NAME_DD13	    :DD13
@@ -89,6 +85,8 @@ STR_NAME_DF200_2     :DF200-100 / -200
 STR_NAME_DF200_P     :DF200-901 Prototype
 STR_NAME_DF200_7     :DF200-7000 {GOLD}"Seven Stars in Kyushu"{BLACK}
 STR_NAME_HD300      :HD300
+
+# Electric engines
 
 STR_NAME_AB10	:AB10 
 STR_NAME_EB10	:EB10 
@@ -209,6 +207,8 @@ STR_NAME_EL120		:EL120
 STR_NAME_E851	    :E851 
 STR_NAME_E31	    :E31 
 STR_NAME_E51	    :E51 
+
+# Passenger rolling stock
 
 STR_NAME_PAX_HA4995		:HA 4995 Passenger Coach
 STR_NAME_PAX_FUKOHA7945	:FUKOHA 7945 Passenger Coach
