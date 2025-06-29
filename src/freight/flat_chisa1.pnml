@@ -565,6 +565,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
+	cargo_capacity: return 40;
 	default: stack_chisa_1600;
 	purchase: switch_chisa_1600_purchase;
 	colour_mapping: switch_generic_recolour;

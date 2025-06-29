@@ -220,6 +220,20 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
 
 //cargo type switches
 
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_piecegoods, hasbit(cargo_classes, CC_PIECE_GOODS)) {
+	0: switch_toki_25000_tarp_yeardep;
+        random_toki_25000_conts;}
+
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_covered, hasbit(cargo_classes, CC_COVERED)) {
+	0: switch_toki_25000_cc_piecegoods;
+        random_toki_25000_bulk_tarp;}
+
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_bulk, hasbit(cargo_classes, CC_BULK)) {
+	0: switch_toki_25000_cc_covered;
+        spritegroup_toki_25000_bulk;}
+
+/*
+
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): spritegroup_toki_25000_bulk;
 	bitmask(CC_BULK, CC_COVERED): switch_toki_25000_tarp_yeardep;
@@ -227,6 +241,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 	bitmask(CC_PIECE_GOODS): random_toki_25000_conts;
 	random_toki_25000_rods_covered;
 }
+*/
 
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_25000_metal;
@@ -283,7 +298,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	WOOD: spritegroup_toki_25000_rods;
 	PIPE: spritegroup_toki_25000_rods;
 	
-	switch_toki_25000_cargo_class;
+	switch_toki_25000_cc_bulk;
 }
 
 
@@ -374,7 +389,7 @@ property {
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
-	non_refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: bitmask(CC_LIQUID);
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -435,7 +450,7 @@ property {
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
-	non_refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: bitmask(CC_LIQUID);
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

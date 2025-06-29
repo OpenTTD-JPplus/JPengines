@@ -68,8 +68,8 @@ switch(FEAT_TRAINS, SELF, switch_torpedo_rear_yeardep, build_year) {
 
 switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
 	0..19: spriteset_torpedo_empty;
-	20..39: spriteset_torpedo_half;
-	40..60: spriteset_torpedo_full;
+	20..79: spriteset_torpedo_half;
+	80..120: spriteset_torpedo_full;
 	CB_FAILED;
 }
 
@@ -79,20 +79,20 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		track_type: TR_1067_NE;
 		name: string(STR_NAME_TORPEDO);
 		climates_available: NO_CLIMATE;
-		cargo_capacity: 59; 
+		cargo_capacity: 119; 
 		refit_cost: 0;
 		default_cargo_type: IRON;
 		loading_speed: 40;
 		cargo_age_period: 320;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [IRON, METL]; 
+		cargo_allow_refit: [IRON, METL, CSTI]; 
 		introduction_date: date(1920,1,1);
 		length: 6;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
-		cargo_capacity: return 59;
+		cargo_capacity: return 119;
 		default: switch_torpedo_loading;
 	}
 }
@@ -133,7 +133,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [IRON, METL]; 
 //		cargo_disallow_refit: [WDPR, WOOL];
-		weight: 120;
+		weight: 90;
 		cost_factor: 100;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;

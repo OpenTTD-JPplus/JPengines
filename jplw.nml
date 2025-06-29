@@ -2,7 +2,7 @@ grf {
  grfid: "\4A\44\A1\E1";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESCRIPTION);
- version: 201;
+ version: 202;
  min_compatible_version: 200;
  
  //params, thanks tin
@@ -83,7 +83,7 @@ cargotable {
 	//AXIS
 	ALO_, ALUM, COCO, H2__, NHNO, PPAR, ENUM, ACET, BIOM, RAMT,
 	//FIRS 5
-	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTP, SWRP, TYCO, WELD, 
+	CCPR, CRAN, FOCA, HWAR, LFEQ, N7__, PPWK, PUMP, RBAR, STBR, STPP, STTB, SWRP, TYCO, WELD, FEAL, SEAL, STIG, STSL, STBL,
 	//OTIS
 	FRVG, URAN, BAKE, CHSE, ELTR, FUEL, FURN, MEAT, MPTS, NKOR, OTI1, OTI2, OYST, PCL_, SEED, SESP, TWOD, TATO, 
 	//ITI, IotC
@@ -888,6 +888,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 
     GRVL: return recolour_bulk +12;
     FECR: return recolour_bulk +12;
+    FEAL: return recolour_bulk +12;
 	CMNT: return recolour_bulk +12;
     ALO_: return recolour_bulk +12;
 
@@ -939,7 +940,16 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
     recolour_bulk; //blue
 }
 
+//new recolour switch thanks to garlic_bread
+switch(FEAT_TRAINS, SELF, switch_generic_recolour2, hasbit(cargo_classes, CC_COVERED)) {
+	0: switch_piece_recolour;
+        switch_bulk_recolour;}
 
+switch(FEAT_TRAINS, SELF, switch_generic_recolour, hasbit(cargo_classes, CC_BULK)) {
+	0: switch_generic_recolour2;
+        switch_bulk_recolour;}
+
+/*
 switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
 	bitmask(CC_BULK): switch_bulk_recolour;
 	bitmask(CC_BULK, CC_COVERED): switch_bulk_recolour;
@@ -947,6 +957,7 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
 	switch_piece_recolour;
 	
 }
+*/
 
 //5000
 	
@@ -5749,7 +5760,7 @@ switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
                                     )
                                  );
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_1F, 
+                                    string(STR_CONCAT_2F, 
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_SEMIFIC)
                                  );
@@ -5832,10 +5843,15 @@ switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
 switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
                                     string(STR_CONCAT_1F, 
+                                     string(STR_COLOUR_BLACK)
+                                    )
+                                 );
+   1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	1: return string(STR_REFIT_CC);
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6542,6 +6558,7 @@ property {
   cargo_subtype_text: switch_ed54_subtype_text;
   default: switch_ed54_livery;
   purchase: switch_ed54_yeardep_purchase;
+  reverse_build_probability: return 50;
   }
 }
 spriteset(spriteset_ed60_cc, "gfx/electric/ed60.png") {
@@ -40444,6 +40461,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
+	cargo_capacity: return 40;
 	default: stack_chisa_1600;
 	purchase: switch_chisa_1600_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -40915,7 +40933,7 @@ property {
 	weight: 16;
 	length: 7;
 	dual_headed: 0;
-	cargo_capacity: 35; 
+	cargo_capacity: 50; 
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
@@ -40939,6 +40957,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
+	cargo_capacity: return 50;
 	default: stack_chiki_1500;
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -41019,6 +41038,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
+	cargo_capacity: return 60;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -41194,8 +41214,8 @@ switch(FEAT_TRAINS, SELF, switch_torpedo_rear_yeardep, build_year) {
 
 switch(FEAT_TRAINS, SELF, switch_torpedo_loading, cargo_count) {
 	0..19: spriteset_torpedo_empty;
-	20..39: spriteset_torpedo_half;
-	40..60: spriteset_torpedo_full;
+	20..79: spriteset_torpedo_half;
+	80..120: spriteset_torpedo_full;
 	CB_FAILED;
 }
 
@@ -41205,20 +41225,21 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		track_type: TR_1067_NE;
 		name: string(STR_NAME_TORPEDO);
 		climates_available: NO_CLIMATE;
-		cargo_capacity: 59; 
+		cargo_capacity: 119; 
 		refit_cost: 0;
 		default_cargo_type: IRON;
 		loading_speed: 40;
 		cargo_age_period: 320;
 //		refittable_cargo_classes: bitmask(CC_COVERED, CC_BULK); 
 //		non_refittable_cargo_classes: 0; 
-		cargo_allow_refit: [IRON, METL]; 
+		cargo_allow_refit: [IRON, METL, CSTI]; 
 		introduction_date: date(1920,1,1);
 		length: 6;
+		weight: 40;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
-		cargo_capacity: return 59;
+		cargo_capacity: return 119;
 		default: switch_torpedo_loading;
 	}
 }
@@ -41231,6 +41252,7 @@ item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1920,1,1);
 		length: 3;
+		weight: 20;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
@@ -41259,7 +41281,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [IRON, METL]; 
 //		cargo_disallow_refit: [WDPR, WOOL];
-		weight: 120;
+		weight: 20;
 		cost_factor: 100;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -43239,6 +43261,20 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
 
 //cargo type switches
 
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_piecegoods, hasbit(cargo_classes, CC_PIECE_GOODS)) {
+	0: switch_toki_25000_tarp_yeardep;
+        random_toki_25000_conts;}
+
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_covered, hasbit(cargo_classes, CC_COVERED)) {
+	0: switch_toki_25000_cc_piecegoods;
+        random_toki_25000_bulk_tarp;}
+
+switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_bulk, hasbit(cargo_classes, CC_BULK)) {
+	0: switch_toki_25000_cc_covered;
+        spritegroup_toki_25000_bulk;}
+
+/*
+
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): spritegroup_toki_25000_bulk;
 	bitmask(CC_BULK, CC_COVERED): switch_toki_25000_tarp_yeardep;
@@ -43246,6 +43282,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 	bitmask(CC_PIECE_GOODS): random_toki_25000_conts;
 	random_toki_25000_rods_covered;
 }
+*/
 
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	IRON: random_toki_25000_metal;
@@ -43302,7 +43339,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	WOOD: spritegroup_toki_25000_rods;
 	PIPE: spritegroup_toki_25000_rods;
 	
-	switch_toki_25000_cargo_class;
+	switch_toki_25000_cc_bulk;
 }
 
 
@@ -43393,7 +43430,7 @@ property {
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
-	non_refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: bitmask(CC_LIQUID);
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -43454,7 +43491,7 @@ property {
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
-	non_refittable_cargo_classes: 0;
+	non_refittable_cargo_classes: bitmask(CC_LIQUID);
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

@@ -464,7 +464,7 @@ property {
 	weight: 16;
 	length: 7;
 	dual_headed: 0;
-	cargo_capacity: 35; 
+	cargo_capacity: 50; 
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
 	non_refittable_cargo_classes: 0; 
@@ -488,6 +488,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
+	cargo_capacity: return 50;
 	default: stack_chiki_1500;
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -568,6 +569,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
+	cargo_capacity: return 60;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;
