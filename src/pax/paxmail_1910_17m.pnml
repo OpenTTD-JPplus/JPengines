@@ -315,7 +315,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 21;
 		cost_factor: 65;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -426,7 +426,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 21;
 		cost_factor: 35;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;

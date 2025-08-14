@@ -255,6 +255,7 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		speed: 120 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
+		weight: 28;
 		dual_headed: 0;
 		cargo_capacity: 70; 
 		cargo_age_period: 600;
