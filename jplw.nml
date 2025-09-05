@@ -811,6 +811,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	STSH: return recolour_piece ;
 	STWR: return recolour_piece +2;
 	STAL: return recolour_piece +1;
+    STIG: return recolour_piece +1;
 	TYRE: return recolour_piece +2;
 	STCB: return recolour_piece +2;
 	CSTI: return recolour_piece +7;
@@ -5051,7 +5052,7 @@ item (FEAT_TRAINS, d52_reversed, 755) {
 		model_life: 40;
 		vehicle_life: 60;
 		cost_factor: 74;
-		length: 7;
+		length: 5;
 		running_cost_factor: 76;
 		running_cost_base: RUNNING_COST_STEAM;
 		misc_flags: bitmask(TRAIN_FLAG_2CC);
@@ -5760,7 +5761,7 @@ switch(FEAT_TRAINS, SELF, switch_ab10_subtype_text, cargo_subtype) {
                                     )
                                  );
 	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
-                                    string(STR_CONCAT_2F, 
+                                    string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
                                     ), string(STR_SUFFIX_SEMIFIC)
                                  );
@@ -5833,25 +5834,32 @@ spriteset(spriteset_eb10_jnr_purchase, "gfx/electric/eb10.png") {
 	template_purchase(89, 224)
 }
 
+switch(FEAT_TRAINS, SELF, switch_eb10_yeardep_livery, build_year) {
+	0..1949: spriteset_eb10_black;
+   spriteset_eb10_brown;
+}
+
 
 switch(FEAT_TRAINS, SELF, switch_eb10_livery, cargo_subtype) {
-	1: spriteset_eb10_brown;
-   2: spriteset_eb10_cc;
-	spriteset_eb10_black;
+	1: spriteset_eb10_black;
+   2: spriteset_eb10_brown;
+   3: spriteset_eb10_cc;
+	switch_eb10_yeardep_livery;
 }
 
 switch(FEAT_TRAINS, SELF, switch_eb10_subtype_text, cargo_subtype) {
-	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+	0: return string(STR_REFIT_YEARDEP);
+   1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BLACK)
                                     )
                                  );
-   1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+   2: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_REFIT_CC);
+	3: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6471,14 +6479,21 @@ spriteset(spriteset_ed54_cc_flip, "gfx/electric/ed54.png") {
 	template_2cc_flip(1, 96)
 }
 
+spriteset(spriteset_ed54_camo, "gfx/electric/ed54.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_ed54_camo_flip, "gfx/electric/ed54.png") {
+	template_2cc_flip(1, 160)
+}
 
 
 spriteset(spriteset_ed54_jgr_purchase, "gfx/electric/ed54.png") {
-	template_purchase(1, 128)
+	template_purchase(1, 192)
 }
 
 spriteset(spriteset_ed54_jnr_purchase, "gfx/electric/ed54.png") {
-	template_purchase(1, 160)
+	template_purchase(1, 224)
 }
 
 
@@ -6492,11 +6507,18 @@ switch(FEAT_TRAINS, SELF, switch_ed54_cc_flip, vehicle_is_flipped) {
 	1: spriteset_ed54_cc_flip;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ed54_camo_flip, vehicle_is_flipped) {
+	0: spriteset_ed54_camo;
+	1: spriteset_ed54_camo_flip;
+}
+
+
 
 
 switch(FEAT_TRAINS, SELF, switch_ed54_livery, cargo_subtype) {
 	0: switch_ed54_brown_flip;
-	1: switch_ed54_cc_flip;	
+  1: switch_ed54_camo_flip;
+	2: switch_ed54_cc_flip;	
 	switch_ed54_brown_flip;
 }
 
@@ -6506,7 +6528,13 @@ switch(FEAT_TRAINS, SELF, switch_ed54_subtype_text, cargo_subtype) {
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	1: return string(STR_REFIT_CC);	
+  1: return string(STR_CONCAT_3, string(STR_SUFFIX_JGR), 
+                                    string(STR_CONCAT_2F, 
+                                     string(STR_COLOUR_GREEN),
+                                     string(STR_COLOUR_BROWN)
+                                    ), string(STR_SUFFIX_CAMO)
+                                 );                             
+	2: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -6926,27 +6954,18 @@ switch(FEAT_TRAINS, SELF, switch_ef10_yeardep_purchase, current_year) {
     spriteset_ef10_jnr_purchase;
     }
 
-switch(FEAT_TRAINS, SELF, switch_ef10_yeardep, build_year) {
-    0..1949: spriteset_ef10_jgr_a;
-    spriteset_ef10_jgr_b;
-    }
-
 switch(FEAT_TRAINS, SELF, switch_ef10_livery, cargo_subtype) {
-	0: switch_ef10_yeardep;
-	1: spriteset_ef10_jgr_a;
-	2: spriteset_ef10_cc_a;
+	0: spriteset_ef10_jgr_a;
+	1: spriteset_ef10_cc_a;
 }
 
-
-
 switch(FEAT_TRAINS, SELF, switch_ef10_subtype_text, cargo_subtype) {
-	0: return string(STR_REFIT_YEARDEP);
-	1: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
                                     string(STR_CONCAT_1F, 
                                      string(STR_COLOUR_BROWN)
                                     )
                                  );
-	2: return string(STR_REFIT_CC);
+	1: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -8347,12 +8366,15 @@ spriteset(spriteset_ef58_experiment_yellow, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 224)
 }
 
+spriteset(spriteset_ef58_newpantos_blue, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 1)
+}
+
 //fake liveries
 
 spriteset(spriteset_ef58_twilight, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 96)
 }
-
 
 spriteset(spriteset_ef58_large_logo, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 128)
@@ -8366,16 +8388,31 @@ spriteset(spriteset_ef58_hokutosei, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 192)
 }
 
-spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
+spriteset(spriteset_ef58_ser, "gfx/electric/ef58.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_ef58_cassiopeia, "gfx/electric/ef58.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_ef58_hokred, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 224)
 }
 
-//old type
-spriteset(spriteset_ef58_old_brown, "gfx/electric/ef58.png") {
-	template_2cc_std(180, 1)
+spriteset(spriteset_ef58_silver, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 256)
 }
 
-spriteset(spriteset_ef58_old_cc, "gfx/electric/ef58.png") {
+spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 288)
+}
+
+
+
+//old type
+
+spriteset(spriteset_ef18_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 32)
 }
 
@@ -8387,40 +8424,29 @@ spriteset(spriteset_ef18_brown, "gfx/electric/ef58.png") {
 //purchase
 
 
-spriteset(spriteset_ef58_old_jgr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 256)
-}
-
-spriteset(spriteset_ef58_old_jnr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(89, 256)
-}
-
 spriteset(spriteset_ef18_jgr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(180, 256)
+	template_purchase(180, 320)
 }
 
 spriteset(spriteset_ef18_jnr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(268, 256)
+	template_purchase(268, 320)
 }
 
 spriteset(spriteset_ef58_jnr_brown_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 288)
+	template_purchase(1, 352)
 }
 
 spriteset(spriteset_ef58_jnr_blue_purchase, "gfx/electric/ef58.png") {
-	template_purchase(89, 288)
+	template_purchase(89, 352)
 }
 
-spriteset(spriteset_ef58_jrf_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 320)
-}
 
 //purchase switches
 
 switch(FEAT_TRAINS, SELF, switch_ef58_old_yeardep_purchase, current_year) {
-	0..1949: spriteset_ef58_old_jgr_purchase;
+	0..1949: spriteset_ef18_jgr_purchase;
 	
-	spriteset_ef58_old_jnr_purchase;
+	spriteset_ef18_jnr_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
@@ -8431,7 +8457,6 @@ switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
 	0..1965: spriteset_ef58_jnr_brown_purchase;
-  //  1988..2000: 	spriteset_ef58_jrf_purchase;
 	//add jr?
 	spriteset_ef58_jnr_blue_purchase;
 }
@@ -8447,16 +8472,21 @@ switch(FEAT_TRAINS, SELF, switch_ef58_livery, cargo_subtype) {
 	1: spriteset_ef58_brown;
 	2: spriteset_ef58_imperial;
 	3: spriteset_ef58_blue;
-	4: spriteset_ef58_express_blue;
-	5: spriteset_ef58_tokaido_green;
-	6: spriteset_ef58_experiment_orange;
-	7: spriteset_ef58_experiment_green;	
-	8: spriteset_ef58_experiment_yellow;
-	9: spriteset_ef58_large_logo;
-	10: spriteset_ef58_jrf;
-	11: spriteset_ef58_twilight;
-	12: spriteset_ef58_hokutosei;
-	13: spriteset_ef58_cc;	
+   4: spriteset_ef58_newpantos_blue;
+	5: spriteset_ef58_express_blue;
+	6: spriteset_ef58_tokaido_green;
+	7: spriteset_ef58_experiment_orange;
+	8: spriteset_ef58_experiment_green;	
+	9: spriteset_ef58_experiment_yellow;
+	10: spriteset_ef58_large_logo;
+	11: spriteset_ef58_jrf;
+	12: spriteset_ef58_twilight;
+	13: spriteset_ef58_hokutosei;
+   14: spriteset_ef58_hokred;
+   15: spriteset_ef58_ser;
+   16: spriteset_ef58_cassiopeia;
+   17: spriteset_ef58_silver;
+	18: spriteset_ef58_cc;	
 	switch_ef58_yeardep_livery;
 }
 
@@ -8481,61 +8511,93 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
                                     )
                                  );
 	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_TOKKYU)
                                  );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTGREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TOKAIDO)
                                  );
-	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_LTGREEN)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	9: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	10: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_LARGELOGO), string(STR_SUFFIX_FICTION)
                                  );
-	10: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+	11: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
+	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
                                  );
-	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+	13: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
                                  );
-	13: return string(STR_REFIT_CC);	
+	14: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
+                                 );
+	15: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	16: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_4F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_FICTION)
+                                 );
+	17: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_SILVER), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	18: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -8598,8 +8660,8 @@ property {
 //ef58 old type
 
 switch(FEAT_TRAINS, SELF, switch_ef58_old_livery, cargo_subtype) {
-	1: spriteset_ef58_old_cc;
-	spriteset_ef58_old_brown;
+	1: spriteset_ef18_cc;
+	spriteset_ef18_brown;
 }
 
 
@@ -8670,7 +8732,7 @@ property {
 //ef18
 
 switch(FEAT_TRAINS, SELF, switch_ef18_livery, cargo_subtype) {
-	1: spriteset_ef58_old_cc;
+	1: spriteset_ef18_cc;
 	spriteset_ef18_brown;
 }
 
@@ -19360,7 +19422,7 @@ item (FEAT_TRAINS, pax_1870, 1536) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 11;
 		cost_factor: 50;
 		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -19450,7 +19512,7 @@ item (FEAT_TRAINS, mail_1870, 1664) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 10;
 		cost_factor: 25;
 		running_cost_factor: 4;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -19780,7 +19842,7 @@ item (FEAT_TRAINS, pax_1880, 1537) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 16;
 		cost_factor: 55;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -19894,7 +19956,7 @@ item (FEAT_TRAINS, mail_1880, 1665) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 15;
 		cost_factor: 30;
 		running_cost_factor: 5;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -20236,7 +20298,7 @@ item (FEAT_TRAINS, pax_1910_17m, 1538) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 21;
 		cost_factor: 65;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -20347,7 +20409,7 @@ item (FEAT_TRAINS, mail_1910_17m, 1666) {
 		loading_speed: 40;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 21;
 		cost_factor: 35;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -21935,7 +21997,7 @@ item (FEAT_TRAINS, pax_oha35, 1316) {
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 28;
+		weight: 23;
 		cost_factor: 70;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -22848,6 +22910,7 @@ item (FEAT_TRAINS, pax_24_series, 1540) {
 		speed: 120 km/h;
 		air_drag_coefficient: 0;
 		power: 0;
+		weight: 28;
 		dual_headed: 0;
 		cargo_capacity: 70; 
 		cargo_age_period: 600;
@@ -40445,7 +40508,7 @@ property {
 	running_cost_factor: 5;
 	length: 5;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_LIQUID, CC_POWDERIZED, CC_BULK); 
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -40724,6 +40787,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	STSE: random_flatbed_7_metal_prod;
 	NICK: random_flatbed_7_metal;
 	COBL: random_flatbed_7_metal;
+	STIG: random_flatbed_7_metal_prod;
 	
 	ENSP: random_flatbed_7_ensp;
 	FMSP: random_flatbed_7_fmsp;
@@ -40936,7 +41000,7 @@ property {
 	cargo_capacity: 50; 
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_LIQUID, CC_POWDERIZED, CC_BULK); 
 	default_cargo_type: WOOD;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -41022,7 +41086,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_LIQUID, CC_POWDERIZED, CC_BULK); 
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -41235,7 +41299,6 @@ item (FEAT_TRAINS, torpedo_car_middle, 1422) {
 		cargo_allow_refit: [IRON, METL, CSTI]; 
 		introduction_date: date(1920,1,1);
 		length: 6;
-		weight: 40;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
@@ -41252,7 +41315,6 @@ item (FEAT_TRAINS, torpedo_car_rear, 1423) {
 		climates_available: NO_CLIMATE;
 		introduction_date: date(1920,1,1);
 		length: 3;
-		weight: 20;
 		visual_effect_and_powered: (VISUAL_EFFECT_DISABLE);
 	}
 	graphics {
@@ -41281,7 +41343,7 @@ item (FEAT_TRAINS, torpedo_car, 1421) {
 //		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [IRON, METL]; 
 //		cargo_disallow_refit: [WDPR, WOOL];
-		weight: 20;
+		weight: 90;
 		cost_factor: 100;
 	running_cost_factor: 10;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -43484,7 +43546,7 @@ property {
 	refit_cost: 0;
 	power: 0;
 	cargo_capacity: 50;
-	loading_speed: 40;
+	loading_speed: 10;
 	length: 7;
 	weight: 16;
 	cost_factor: 30;

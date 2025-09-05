@@ -30,12 +30,15 @@ spriteset(spriteset_ef58_experiment_yellow, "gfx/electric/ef58.png") {
 	template_2cc_std(1, 224)
 }
 
+spriteset(spriteset_ef58_newpantos_blue, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 1)
+}
+
 //fake liveries
 
 spriteset(spriteset_ef58_twilight, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 96)
 }
-
 
 spriteset(spriteset_ef58_large_logo, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 128)
@@ -49,16 +52,31 @@ spriteset(spriteset_ef58_hokutosei, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 192)
 }
 
-spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
+spriteset(spriteset_ef58_ser, "gfx/electric/ef58.png") {
+	template_2cc_std(1, 256)
+}
+
+spriteset(spriteset_ef58_cassiopeia, "gfx/electric/ef58.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_ef58_hokred, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 224)
 }
 
-//old type
-spriteset(spriteset_ef58_old_brown, "gfx/electric/ef58.png") {
-	template_2cc_std(180, 1)
+spriteset(spriteset_ef58_silver, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 256)
 }
 
-spriteset(spriteset_ef58_old_cc, "gfx/electric/ef58.png") {
+spriteset(spriteset_ef58_cc, "gfx/electric/ef58.png") {
+	template_2cc_std(180, 288)
+}
+
+
+
+//old type
+
+spriteset(spriteset_ef18_cc, "gfx/electric/ef58.png") {
 	template_2cc_std(180, 32)
 }
 
@@ -70,40 +88,29 @@ spriteset(spriteset_ef18_brown, "gfx/electric/ef58.png") {
 //purchase
 
 
-spriteset(spriteset_ef58_old_jgr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 256)
-}
-
-spriteset(spriteset_ef58_old_jnr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(89, 256)
-}
-
 spriteset(spriteset_ef18_jgr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(180, 256)
+	template_purchase(180, 320)
 }
 
 spriteset(spriteset_ef18_jnr_purchase, "gfx/electric/ef58.png") {
-	template_purchase(268, 256)
+	template_purchase(268, 320)
 }
 
 spriteset(spriteset_ef58_jnr_brown_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 288)
+	template_purchase(1, 352)
 }
 
 spriteset(spriteset_ef58_jnr_blue_purchase, "gfx/electric/ef58.png") {
-	template_purchase(89, 288)
+	template_purchase(89, 352)
 }
 
-spriteset(spriteset_ef58_jrf_purchase, "gfx/electric/ef58.png") {
-	template_purchase(1, 320)
-}
 
 //purchase switches
 
 switch(FEAT_TRAINS, SELF, switch_ef58_old_yeardep_purchase, current_year) {
-	0..1949: spriteset_ef58_old_jgr_purchase;
+	0..1949: spriteset_ef18_jgr_purchase;
 	
-	spriteset_ef58_old_jnr_purchase;
+	spriteset_ef18_jnr_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
@@ -114,7 +121,6 @@ switch(FEAT_TRAINS, SELF, switch_ef18_yeardep_purchase, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef58_yeardep_purchase, current_year) {
 	0..1965: spriteset_ef58_jnr_brown_purchase;
-  //  1988..2000: 	spriteset_ef58_jrf_purchase;
 	//add jr?
 	spriteset_ef58_jnr_blue_purchase;
 }
@@ -130,16 +136,21 @@ switch(FEAT_TRAINS, SELF, switch_ef58_livery, cargo_subtype) {
 	1: spriteset_ef58_brown;
 	2: spriteset_ef58_imperial;
 	3: spriteset_ef58_blue;
-	4: spriteset_ef58_express_blue;
-	5: spriteset_ef58_tokaido_green;
-	6: spriteset_ef58_experiment_orange;
-	7: spriteset_ef58_experiment_green;	
-	8: spriteset_ef58_experiment_yellow;
-	9: spriteset_ef58_large_logo;
-	10: spriteset_ef58_jrf;
-	11: spriteset_ef58_twilight;
-	12: spriteset_ef58_hokutosei;
-	13: spriteset_ef58_cc;	
+   4: spriteset_ef58_newpantos_blue;
+	5: spriteset_ef58_express_blue;
+	6: spriteset_ef58_tokaido_green;
+	7: spriteset_ef58_experiment_orange;
+	8: spriteset_ef58_experiment_green;	
+	9: spriteset_ef58_experiment_yellow;
+	10: spriteset_ef58_large_logo;
+	11: spriteset_ef58_jrf;
+	12: spriteset_ef58_twilight;
+	13: spriteset_ef58_hokutosei;
+   14: spriteset_ef58_hokred;
+   15: spriteset_ef58_ser;
+   16: spriteset_ef58_cassiopeia;
+   17: spriteset_ef58_silver;
+	18: spriteset_ef58_cc;	
 	switch_ef58_yeardep_livery;
 }
 
@@ -164,61 +175,93 @@ switch(FEAT_TRAINS, SELF, switch_ef58_subtype_text, cargo_subtype) {
                                     )
                                  );
 	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                     string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_CREAM)
                                     ), string(STR_SUFFIX_TOKKYU)
                                  );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_LTGREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TOKAIDO)
                                  );
-	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_ORANGE)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	7: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_LTGREEN)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	8: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_EXPERIMENT)
                                  );
-	9: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
+	10: return string(STR_CONCAT_4, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_LARGELOGO), string(STR_SUFFIX_FICTION)
                                  );
-	10: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+	11: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	11: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
+	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRW), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREEN), 
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_TWILIGHT), string(STR_SUFFIX_FICTION)
                                  );
-	12: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+	13: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_GOLD)
                                     ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
                                  );
-	13: return string(STR_REFIT_CC);	
+	14: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GOLD)
+                                    ), string(STR_SUFFIX_HOKUTOSEI), string(STR_SUFFIX_FICTION)
+                                 );
+	15: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
+                                 );
+	16: return string(STR_CONCAT_4, string(STR_SUFFIX_JRE), 
+                                   string(STR_CONCAT_4F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_WHITE),
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_CASSIOPEIA), string(STR_SUFFIX_FICTION)
+                                 );
+	17: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_SILVER), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	18: return string(STR_REFIT_CC);	
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -281,8 +324,8 @@ property {
 //ef58 old type
 
 switch(FEAT_TRAINS, SELF, switch_ef58_old_livery, cargo_subtype) {
-	1: spriteset_ef58_old_cc;
-	spriteset_ef58_old_brown;
+	1: spriteset_ef18_cc;
+	spriteset_ef18_brown;
 }
 
 
@@ -353,7 +396,7 @@ property {
 //ef18
 
 switch(FEAT_TRAINS, SELF, switch_ef18_livery, cargo_subtype) {
-	1: spriteset_ef58_old_cc;
+	1: spriteset_ef18_cc;
 	spriteset_ef18_brown;
 }
 
