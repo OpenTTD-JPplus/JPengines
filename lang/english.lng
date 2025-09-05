@@ -572,7 +572,7 @@ STR_SUFFIX_MPL          :{WHITE}Missouri Pacific
 STR_SUFFIX_AMTRAK       :{WHITE}Amtrak
 
 STR_SUFFIX_GE999        :{WHITE}Galaxy Express 999
-
+STR_SUFFIX_NERV         :{WHITE}NERV
 
 #####################
 #NEW MODULAR STRINGS#

@@ -22,12 +22,16 @@ spriteset(spriteset_ef66_new_refit, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 160)
 }
 
-spriteset(spriteset_ef66_new_experimental, "gfx/electric/ef66.png") {
+spriteset(spriteset_ef66_largelogo, "gfx/electric/ef66.png") {
 	template_2cc_std(1, 192)
 }
 
 spriteset(spriteset_ef66_rainbow, "gfx/electric/ef66.png") {
 	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_ef66_rrt3, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 192)
 }
 
 spriteset(spriteset_ef66_old_cc, "gfx/electric/ef66.png") {
@@ -51,18 +55,22 @@ spriteset(spriteset_ef66_100_blue_white, "gfx/electric/ef66.png") {
 	template_2cc_std(180, 96)
 }
 
+spriteset(spriteset_ef66_100_nerv, "gfx/electric/ef66.png") {
+	template_2cc_std(180, 224)
+}
+
 spriteset(spriteset_ef66_100_cc, "gfx/electric/ef66.png") {
 	template_2cc_std(180, 128)
 }
 
 //2000 concept
 
-spriteset(spriteset_ef66_2000, "gfx/electric/ef66.png") {
-	template_2cc_std(180, 192)
+spriteset(spriteset_ef66_2000, "gfx/electric/ef66_fake.png") {
+	template_2cc_std(1, 1)
 }
 
-spriteset(spriteset_ef66_2000_cc, "gfx/electric/ef66.png") {
-	template_2cc_std(180, 224)
+spriteset(spriteset_ef66_2000_cc, "gfx/electric/ef66_fake.png") {
+	template_2cc_std(1, 32)
 }
 
 //purch
@@ -84,8 +92,8 @@ spriteset(spriteset_ef66_100_jrf_purchase, "gfx/electric/ef66.png") {
 }
 
 //purch 2000
-spriteset(spriteset_ef66_2000_purchase, "gfx/electric/ef66.png") {
-	template_purchase(180, 288)
+spriteset(spriteset_ef66_2000_purchase, "gfx/electric/ef66_fake.png") {
+	template_purchase(1, 128)
 }
 
 switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_purchase, current_year) {
@@ -115,14 +123,15 @@ switch(FEAT_TRAINS, SELF, switch_ef66_yeardep_livery, build_year) {
 
 switch(FEAT_TRAINS, SELF, switch_ef66_livery, cargo_subtype) {
 	1: spriteset_ef66_old_blue;
-	2: spriteset_ef66_old_jrf;
-	3: spriteset_ef66_old_experimental;
-	4: spriteset_ef66_new_blue;
-	5: spriteset_ef66_new_jrf;
+	2: spriteset_ef66_new_blue;
+	3: spriteset_ef66_old_jrf;
+	4: spriteset_ef66_new_jrf;
+	5: spriteset_ef66_old_experimental;
 	6: spriteset_ef66_new_refit;
-	7: spriteset_ef66_new_experimental;
+	7: spriteset_ef66_largelogo;
   8: spriteset_ef66_rainbow;
-	9: spriteset_ef66_old_cc;
+  9: spriteset_ef66_rrt3;
+	10: spriteset_ef66_old_cc;
 	switch_ef66_yeardep_livery;
 }
 
@@ -136,32 +145,33 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_CREAM)
                                     )
                                  );
-	2: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
+	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                  string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+	3: return string(STR_CONCAT_2, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	3: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_CREAM), 
-                                    string(STR_COLOUR_BLUE)
-                                    ), string(STR_SUFFIX_EXPERIMENT)
-                                 );
-	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
-                                  string(STR_CONCAT_2F, 
-                                    string(STR_COLOUR_BLUE), 
-                                    string(STR_COLOUR_CREAM)
-                                    ), string(STR_SUFFIX_PANTOS)
-                                 );
-	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_PANTOS)
                                  );
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_CREAM), 
+                                    string(STR_COLOUR_BLUE)
+                                    ), string(STR_SUFFIX_EXPERIMENT)
+                                 );
+
 	6: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                   string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
@@ -180,7 +190,14 @@ switch(FEAT_TRAINS, SELF, switch_ef66_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_RAINBOW), string(STR_SUFFIX_FICTION)
                                  );
-	9: return string(STR_REFIT_CC);
+	9: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_YELLOW), 
+                                    string(STR_COLOUR_BROWN),
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	10: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -250,7 +267,8 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_livery, cargo_subtype) {
 	1: spriteset_ef66_100_jnr;
   2: spriteset_ef66_100_2tone;
   3: spriteset_ef66_100_blue_white;
-	4: spriteset_ef66_100_cc;
+  4: spriteset_ef66_100_nerv;
+	5: spriteset_ef66_100_cc;
 	spriteset_ef66_100_jrf;
 }
 
@@ -280,7 +298,13 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_WHITE)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	4: return string(STR_REFIT_CC);
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_NERV), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_RED), 
+                                    string(STR_COLOUR_GREY)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	5: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
@@ -351,7 +375,7 @@ switch(FEAT_TRAINS, SELF, switch_ef66_2000_livery, cargo_subtype) {
 
 switch(FEAT_TRAINS, SELF, switch_ef66_2000_subtype_text, cargo_subtype) {
 	0: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
-                                   string(STR_CONCAT_3F, 
+                                   string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_GREY), 
                                     string(STR_COLOUR_BLUE)
                                     ), string(STR_SUFFIX_CONCEPT)
