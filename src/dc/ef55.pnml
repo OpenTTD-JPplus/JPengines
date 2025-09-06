@@ -24,6 +24,45 @@ spriteset(spriteset_ef55_jnr_purchase, "gfx/electric/ef55.png") {
 	template_purchase(1, 160)
 }
 
+//fake variants
+
+spriteset(spriteset_ef55_double_brown, "gfx/electric/ef55_fake.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_ef55_boxcab_brown, "gfx/electric/ef55_fake.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_ef55_double_cc, "gfx/electric/ef55_fake.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_ef55_boxcab_cc, "gfx/electric/ef55_fake.png") {
+	template_2cc_std(1, 96)
+}
+
+
+
+spriteset(spriteset_ef55_double_jgr_purchase, "gfx/electric/ef55_fake.png") {
+	template_purchase(1, 128)
+}
+
+spriteset(spriteset_ef55_double_jnr_purchase, "gfx/electric/ef55_fake.png") {
+	template_purchase(1, 160)
+}
+
+
+spriteset(spriteset_ef55_boxcab_jgr_purchase, "gfx/electric/ef55_fake.png") {
+	template_purchase(89, 128)
+}
+
+spriteset(spriteset_ef55_boxcab_jnr_purchase, "gfx/electric/ef55_fake.png") {
+	template_purchase(89, 160)
+}
+
+
+
 
 switch(FEAT_TRAINS, SELF, switch_ef55_brown_flip, vehicle_is_flipped) {
 	0: spriteset_ef55_brown;
@@ -102,5 +141,138 @@ property {
   cargo_subtype_text: switch_ef55_subtype_text;
   default: switch_ef55_livery;
   purchase: switch_ef55_yeardep_purchase;
+  }
+}
+
+//double ended
+
+switch(FEAT_TRAINS, SELF, switch_ef55_double_livery, cargo_subtype) {
+	1: spriteset_ef55_double_cc;	
+	spriteset_ef55_double_brown;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef55_double_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef55_double_yeardep_purchase, current_year) {
+    0..1949: spriteset_ef55_double_jgr_purchase;
+    spriteset_ef55_double_jnr_purchase;
+    }
+
+
+
+item (FEAT_TRAINS, ef55_double, 1911) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: TR_1067_DC;
+  name: string(STR_NAME_EF55_D);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1936,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 45;
+  cost_factor: 47;
+  length: 8;
+  running_cost_factor: 70;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1910;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_3S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FICTION)
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef55_double_subtype_text;
+  default: switch_ef55_double_livery;
+  purchase: switch_ef55_double_yeardep_purchase;
+  }
+}
+
+//boxcab
+
+switch(FEAT_TRAINS, SELF, switch_ef55_boxcab_livery, cargo_subtype) {
+	1: spriteset_ef55_boxcab_cc;	
+	spriteset_ef55_boxcab_brown;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ef55_boxcab_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_2, string(STR_SUFFIX_JGR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BROWN), 
+                                    string(STR_COLOUR_WHITE)
+                                    )
+                                 );
+	1: return string(STR_REFIT_CC);	
+	   return CB_RESULT_NO_TEXT;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_ef55_boxcab_yeardep_purchase, current_year) {
+    0..1949: spriteset_ef55_boxcab_jgr_purchase;
+    spriteset_ef55_boxcab_jnr_purchase;
+    }
+
+
+item (FEAT_TRAINS, ef55_boxcab, 1912) {
+
+property {
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  track_type: TR_1067_DC;
+  name: string(STR_NAME_EF55_B);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1936,1,1);
+  speed: 95 km/h;
+  air_drag_coefficient: 0;
+  tractive_effort_coefficient:    0.25;
+  power: 1350 kW;
+  dual_headed: 0;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  cargo_capacity: 1; 
+  cargo_allow_refit: [PASS];
+  weight: 100;
+  reliability_decay: 20;
+  model_life: 30;
+  vehicle_life: 45;
+  cost_factor: 47;
+  length: 8;
+  running_cost_factor: 70;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+	misc_flags: bitmask(TRAIN_FLAG_2CC);
+  variant_group: 1910;
+	}
+
+
+  graphics { // graphics for engine
+  additional_text:	string(STR_CONCAT_3S, 
+                        string(STR_DESC_POWER_DC15),
+                        string(STR_DESC_NARROWGAUGE),
+                        string(STR_DESC_USAGE_FICTION)
+                  );
+  cargo_capacity: return 0;
+  cargo_subtype_text: switch_ef55_boxcab_subtype_text;
+  default: switch_ef55_boxcab_livery;
+  purchase: switch_ef55_boxcab_yeardep_purchase;
   }
 }

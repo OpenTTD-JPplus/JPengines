@@ -428,7 +428,7 @@ property {
   additional_text:	string(STR_CONCAT_3S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_CONCEPT)
+                        string(STR_DESC_USAGE_FICTION)
                   );  
   cargo_capacity: return 0;
   cargo_subtype_text: switch_ef66_2000_subtype_text;
