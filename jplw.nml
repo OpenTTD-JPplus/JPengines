@@ -11785,6 +11785,18 @@ spriteset(spriteset_eh50_cc_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 256)
 }
 
+spriteset(spriteset_eh50_green_front, "gfx/electric/eh10.png") {
+	template_2cc_std(1, 288)
+}
+
+spriteset(spriteset_eh50_tokkyu_front, "gfx/electric/eh10.png") {
+	template_2cc_std(1, 320)
+}
+
+spriteset(spriteset_eh50_jrf_new_front, "gfx/electric/eh10.png") {
+	template_2cc_std(1, 352)
+}
+
 //rear
 
 spriteset(spriteset_eh10_black_rear, "gfx/electric/eh10.png") {
@@ -11823,22 +11835,34 @@ spriteset(spriteset_eh50_cc_rear, "gfx/electric/eh10.png") {
 	template_2cc_std(180, 256)
 }
 
+spriteset(spriteset_eh50_green_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 288)
+}
+
+spriteset(spriteset_eh50_tokkyu_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 320)
+}
+
+spriteset(spriteset_eh50_jrf_new_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 352)
+}
+
 //purchase
 
 spriteset(spriteset_eh10_purchase, "gfx/electric/eh10.png") {
-	template_purchase(1, 288)
+	template_purchase(1, 384)
 }
 
 spriteset(spriteset_eh10_proto_purchase, "gfx/electric/eh10.png") {
-	template_purchase(89, 288)
+	template_purchase(89, 384)
 }
 
 spriteset(spriteset_eh50_purchase, "gfx/electric/eh10.png") {
-	template_purchase(1, 320)
+	template_purchase(1, 416)
 }
 
 spriteset(spriteset_eh10_jrf_purchase, "gfx/electric/eh10.png") {
-	template_purchase(89, 320)
+	template_purchase(89, 416)
 }
 
 
@@ -12063,15 +12087,21 @@ item (FEAT_TRAINS, eh10_2_rear, 1981) {
 switch(FEAT_TRAINS, SELF, switch_eh50_livery, cargo_subtype) {
 	0: spriteset_eh50_brown_front;
 	1: spriteset_eh50_blue_front;
-	2: spriteset_eh50_jrf_front;
-	3: spriteset_eh50_cc_front;
+  2: spriteset_eh50_green_front;
+  3: spriteset_eh50_tokkyu_front;
+	4: spriteset_eh50_jrf_front;
+  5: spriteset_eh50_jrf_new_front;
+	6: spriteset_eh50_cc_front;
 }
 
 switch(FEAT_TRAINS, SELF, switch_eh50_livery_rear, cargo_subtype) {
 	0: spriteset_eh50_brown_rear;
 	1: spriteset_eh50_blue_rear;
-	2: spriteset_eh50_jrf_rear;
-	3: spriteset_eh50_cc_rear;
+  2: spriteset_eh50_green_rear;
+  3: spriteset_eh50_tokkyu_rear;
+	4: spriteset_eh50_jrf_rear;
+  5: spriteset_eh50_jrf_new_rear;
+	6: spriteset_eh50_cc_rear;
 }
 
 
@@ -12086,16 +12116,35 @@ switch(FEAT_TRAINS, SELF, switch_eh50_subtype_text, cargo_subtype) {
                                    string(STR_CONCAT_2F, 
                                     string(STR_COLOUR_BLUE), 
                                     string(STR_COLOUR_CREAM)
-                                    ), string(STR_SUFFIX_PROPOSAL)
+                                    ), string(STR_SUFFIX_FICTION)
                                  );
-	2: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+	2: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_LTGREEN), 
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_TOKAIDO), string(STR_SUFFIX_FICTION)
+                                 );
+	3: return string(STR_CONCAT_4, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_3F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_CREAM),
+                                    string(STR_COLOUR_SILVER)
+                                    ), string(STR_SUFFIX_TOKKYU), string(STR_SUFFIX_FICTION)
+                                 );
+	4: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
                                    string(STR_CONCAT_3F, 
                                     string(STR_COLOUR_LTBLUE), 
                                     string(STR_COLOUR_WHITE),
                                     string(STR_COLOUR_YELLOW)
                                     ), string(STR_SUFFIX_FICTION)
                                  );
-	3: return string(STR_REFIT_CC);
+	5: return string(STR_CONCAT_3, string(STR_SUFFIX_JRF), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLUE), 
+                                    string(STR_COLOUR_WHITE)
+                                    ), string(STR_SUFFIX_FICTION)
+                                 );
+	6: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
