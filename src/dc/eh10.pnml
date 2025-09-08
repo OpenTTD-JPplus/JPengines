@@ -48,6 +48,10 @@ spriteset(spriteset_eh50_jrf_new_front, "gfx/electric/eh10.png") {
 	template_2cc_std(1, 352)
 }
 
+spriteset(spriteset_eh10_newpantos_front, "gfx/electric/eh10.png") {
+	template_2cc_std(1, 384)
+}
+
 //rear
 
 spriteset(spriteset_eh10_black_rear, "gfx/electric/eh10.png") {
@@ -98,14 +102,18 @@ spriteset(spriteset_eh50_jrf_new_rear, "gfx/electric/eh10.png") {
 	template_2cc_std(180, 352)
 }
 
+spriteset(spriteset_eh10_newpantos_rear, "gfx/electric/eh10.png") {
+	template_2cc_std(180, 384)
+}
+
 //purchase
 
 spriteset(spriteset_eh10_purchase, "gfx/electric/eh10.png") {
-	template_purchase(1, 384)
+	template_purchase(180, 416)
 }
 
 spriteset(spriteset_eh10_proto_purchase, "gfx/electric/eh10.png") {
-	template_purchase(89, 384)
+	template_purchase(268, 416)
 }
 
 spriteset(spriteset_eh50_purchase, "gfx/electric/eh10.png") {
@@ -121,12 +129,14 @@ spriteset(spriteset_eh10_jrf_purchase, "gfx/electric/eh10.png") {
 
 switch(FEAT_TRAINS, SELF, switch_eh10_livery, cargo_subtype) {
 	0: spriteset_eh10_black_front;
-	1: spriteset_eh10_cc_front;
+  1: spriteset_eh10_newpantos_front;
+	2: spriteset_eh10_cc_front;
 }
 
 switch(FEAT_TRAINS, SELF, switch_eh10_livery_rear, cargo_subtype) {
 	0: spriteset_eh10_black_rear;
-	1: spriteset_eh10_cc_rear;
+  1: spriteset_eh10_newpantos_rear;
+	2: spriteset_eh10_cc_rear;
 }
 
 
@@ -137,7 +147,14 @@ switch(FEAT_TRAINS, SELF, switch_eh10_subtype_text, cargo_subtype) {
                                     string(STR_COLOUR_YELLOW)
                                     )
                                  );
-	1: return string(STR_REFIT_CC);
+	1: return string(STR_CONCAT_3, string(STR_SUFFIX_JNR), 
+                                   string(STR_CONCAT_2F, 
+                                    string(STR_COLOUR_BLACK), 
+                                    string(STR_COLOUR_YELLOW)
+                                    ), string(STR_SUFFIX_PANTOS)
+                                 );
+
+	2: return string(STR_REFIT_CC);
 	   return CB_RESULT_NO_TEXT;
 	}
 
