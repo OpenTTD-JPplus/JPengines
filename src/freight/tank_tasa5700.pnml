@@ -144,8 +144,9 @@ property {
 		dual_headed: 0;
 		cargo_capacity: 25; 
 		refit_cost: 0;
-		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
-		refittable_cargo_classes: bitmask (CC_LIQUID);
+		refittable_cargo_classes: bitmask (CC_LIQUID, CC_HAZARDOUS);
+		non_refittable_cargo_classes: bitmask (CC_POTABLE);
+		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, CHLO, SULP, KAOL, RUBR];
 		loading_speed: 30;
 		weight: 11;
 		cost_factor: 40;

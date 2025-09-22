@@ -137,7 +137,8 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		dual_headed: 0;
 		cargo_capacity: 40; 
 		refit_cost: 0;
-		refittable_cargo_classes: bitmask (CC_LIQUID);
+		refittable_cargo_classes: bitmask (CC_LIQUID, CC_HAZARDOUS);
+		non_refittable_cargo_classes: bitmask (CC_POTABLE);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
 		loading_speed: 30;
 		weight: 17;
