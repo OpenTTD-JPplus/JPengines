@@ -449,7 +449,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_class, cargo_classes) {
 	bitmask(CC_EXPRESS): switch_conts_general_flip;
 	bitmask(CC_BULK): switch_conts_bulk_flip;
 	bitmask(CC_POWDERIZED): switch_conts_bulk_flip;
-//	bitmask(CC_PIECE_GOODS): switch_conts_mixed_open_flip;
+	bitmask(CC_PIECE_GOODS): switch_conts_mixed_open_flip;
 	switch_conts_mixed_flip;
 }
 
@@ -533,7 +533,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	switch_conts_cargo_class;
 }
 
+//main load randomisation switches
 
+//randomly show containers on empty wagons
 random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_empty) {
 
 	2: spriteset_blank;
@@ -541,16 +543,19 @@ random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_empty) {
 
 }
 
+/* 
 random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_half) {
 
 	1: spriteset_blank;
     3: switch_conts_cargo_selection;
 
 }
+*/
+
+//always show end containers if any cargo is present
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_end, cargo_count) {
-	0..1: random_conts_cargo_load_end_empty;
-	1..40: random_conts_cargo_load_end_half;
+	0: random_conts_cargo_load_end_empty;
 	switch_conts_cargo_selection;
 }
 
@@ -570,7 +575,7 @@ random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_middle_half) {
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_middle, cargo_count) {
 	0..10: spriteset_blank;
-	10..30: random_conts_cargo_load_middle_empty;
-	30..50: random_conts_cargo_load_middle_half;
+	10..25: random_conts_cargo_load_middle_empty;
+	25..40: random_conts_cargo_load_middle_half;
 	switch_conts_cargo_selection;
 }
