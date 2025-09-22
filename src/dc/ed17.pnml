@@ -58,7 +58,7 @@ property {
   track_type: TR_1067_DC;
   name: string(STR_NAME_ED17);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1923,1,1);
+  introduction_date: date(1930,1,1);
   speed: 65 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
@@ -69,13 +69,14 @@ property {
   cargo_allow_refit: [PASS];
   weight: 60;
   reliability_decay: 17;
-  model_life: 45;
+  model_life: 30;
   vehicle_life: 45;
   cost_factor: 31;
   length: 6;
   running_cost_factor: 37;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 1012;
 	}
 
 
@@ -83,7 +84,7 @@ graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_GP),
+                        string(STR_DESC_USAGE_LF),
                         string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JGR)
                     )
@@ -136,14 +137,14 @@ item (FEAT_TRAINS, ed50, 1012) {
   cargo_allow_refit: [PASS];
   weight: 60;
   reliability_decay: 17;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 31;
   length: 6;
   running_cost_factor: 40;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 1002;
+
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 

@@ -78,7 +78,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 38;
   length: 7;
@@ -152,7 +152,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 20;
   vehicle_life: 45;
   cost_factor: 38;
   length: 7;
