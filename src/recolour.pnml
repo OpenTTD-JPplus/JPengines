@@ -427,14 +427,14 @@ replace(recolour_piece) {
     }
 //reddish brown 7
     recolour_sprite {
-        0x88: 0x46;
-        0x89: 0x47;
-        0x8A: 0x48;
-        0x8B: 0x49;
-        0x8C: 0x4A;
-        0x8D: 0x4B;
-        0x8E: 0x4C;
-        0x8F: 0x4D;
+        0x88: 2;
+        0x89: 3;
+        0x8A: 122;
+        0x8B: 4;
+        0x8C: 123;
+        0x8D: 124;
+        0x8E: 5;
+        0x8F: 125;
     }
 //wood brown 8
     recolour_sprite {
@@ -502,7 +502,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 //	BDMT: return recolour_piece +4;
 	BRCK: return recolour_piece +4;
 	GOOD: return recolour_piece +6;
-	PAPR: return recolour_piece +1;
+	PAPR: return recolour_piece +9;
 	WOOD: return recolour_piece +8;
 	
 	STST: return recolour_piece +3;
@@ -510,6 +510,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 	STSH: return recolour_piece ;
 	STWR: return recolour_piece +2;
 	STAL: return recolour_piece +1;
+    STIG: return recolour_piece +1;
 	TYRE: return recolour_piece +2;
 	STCB: return recolour_piece +2;
 	CSTI: return recolour_piece +7;

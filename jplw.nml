@@ -728,14 +728,14 @@ replace(recolour_piece) {
     }
 //reddish brown 7
     recolour_sprite {
-        0x88: 0x46;
-        0x89: 0x47;
-        0x8A: 0x48;
-        0x8B: 0x49;
-        0x8C: 0x4A;
-        0x8D: 0x4B;
-        0x8E: 0x4C;
-        0x8F: 0x4D;
+        0x88: 2;
+        0x89: 3;
+        0x8A: 122;
+        0x8B: 4;
+        0x8C: 123;
+        0x8D: 124;
+        0x8E: 5;
+        0x8F: 125;
     }
 //wood brown 8
     recolour_sprite {
@@ -803,7 +803,7 @@ switch(FEAT_TRAINS, SELF, switch_piece_recolour, cargo_type_in_veh) {
 //	BDMT: return recolour_piece +4;
 	BRCK: return recolour_piece +4;
 	GOOD: return recolour_piece +6;
-	PAPR: return recolour_piece +1;
+	PAPR: return recolour_piece +9;
 	WOOD: return recolour_piece +8;
 	
 	STST: return recolour_piece +3;
@@ -6245,7 +6245,7 @@ property {
   track_type: TR_1067_DC;
   name: string(STR_NAME_ED17);
   climates_available: ALL_CLIMATES;
-  introduction_date: date(1923,1,1);
+  introduction_date: date(1930,1,1);
   speed: 65 km/h;
   air_drag_coefficient: 0;
   tractive_effort_coefficient:    0.26;
@@ -6256,13 +6256,14 @@ property {
   cargo_allow_refit: [PASS];
   weight: 60;
   reliability_decay: 17;
-  model_life: 45;
+  model_life: 30;
   vehicle_life: 45;
   cost_factor: 31;
   length: 6;
   running_cost_factor: 37;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
+	variant_group: 1012;
 	}
 
 
@@ -6323,14 +6324,14 @@ item (FEAT_TRAINS, ed50, 1012) {
   cargo_allow_refit: [PASS];
   weight: 60;
   reliability_decay: 17;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 31;
   length: 6;
   running_cost_factor: 40;
   running_cost_base: RUNNING_COST_ELECTRIC;
 	misc_flags: bitmask(TRAIN_FLAG_2CC);
-	variant_group: 1002;
+
   }
   graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
@@ -6998,7 +6999,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 98;
   reliability_decay: 22;
-  model_life: 45;
+  model_life: 35;
   vehicle_life: 45;
   cost_factor: 39;
   length: 7;
@@ -7097,7 +7098,7 @@ item (FEAT_TRAINS, ef10_2, 1052) {
   cargo_allow_refit: [PASS];
   weight: 98;
   reliability_decay: 22;
-  model_life: 45;
+  model_life: 35;
   vehicle_life: 45;
   cost_factor: 39;
   length: 7;
@@ -7203,7 +7204,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 38;
   length: 7;
@@ -7277,7 +7278,7 @@ item (FEAT_TRAINS, ef13_2, 1053) {
   cargo_allow_refit: [PASS];
   weight: 99;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 20;
   vehicle_life: 45;
   cost_factor: 38;
   length: 7;
@@ -7454,7 +7455,7 @@ item (FEAT_TRAINS, ef15, 1054) {
   cargo_allow_refit: [PASS];
   weight: 102;
   reliability_decay: 20;
-  model_life: 45;
+  model_life: 25;
   vehicle_life: 45;
   cost_factor: 42;
   length: 7;
@@ -7561,7 +7562,7 @@ item (FEAT_TRAINS, ef50, 1014) {
   cargo_allow_refit: [PASS];
   weight: 97;
   reliability_decay: 20;
-  model_life: 30;
+  model_life: 20;
   vehicle_life: 32;
   cost_factor: 45;
   length: 8;
@@ -7682,7 +7683,7 @@ item (FEAT_TRAINS, ef53, 1016) {
   cargo_allow_refit: [PASS];
   weight: 98;
   reliability_decay: 20;
-  model_life: 45;
+  model_life: 20;
   vehicle_life: 45;
   cost_factor: 45;
   length: 8;
@@ -8029,7 +8030,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 100;
   reliability_decay: 20;
-  model_life: 30;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 47;
   length: 8;
@@ -8139,7 +8140,7 @@ item (FEAT_TRAINS, ef56, 1019) {
   cargo_allow_refit: [PASS];
   weight: 110;
   reliability_decay: 20;
-  model_life: 45;
+  model_life: 20;
   vehicle_life: 45;
   cost_factor: 42;
   length: 8;
@@ -8405,7 +8406,7 @@ item (FEAT_TRAINS, ef57, 1020) {
   cargo_allow_refit: [PASS];
   weight: 110;
   reliability_decay: 20;
-  model_life: 45;
+  model_life: 35;
   vehicle_life: 45;
   cost_factor: 46;
   length: 8;
@@ -8481,7 +8482,7 @@ item (FEAT_TRAINS, ef57_2, 1920) {
   cargo_allow_refit: [PASS];
   weight: 110;
   reliability_decay: 20;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 46;
   length: 8;
@@ -8801,7 +8802,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 115;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 35;
   vehicle_life: 45;
   cost_factor: 68;
   length: 8;
@@ -8875,7 +8876,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 113;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 66;
   length: 8;
@@ -8937,7 +8938,7 @@ property {
   cargo_allow_refit: [PASS];
   weight: 113;
   reliability_decay: 15;
-  model_life: 45;
+  model_life: 15;
   vehicle_life: 45;
   cost_factor: 44;
   length: 8;
@@ -23619,6 +23620,383 @@ item (FEAT_TRAINS, pax_50_5000_series, 1341) {
 	}
 }
 
+spriteset(spriteset_pax_24twilight_1, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 1)
+}
+
+spriteset(spriteset_pax_24twilight_2, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 32)
+}
+
+spriteset(spriteset_pax_24twilight_3, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 64)
+}
+
+spriteset(spriteset_pax_24twilight_4, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 96)
+}
+
+spriteset(spriteset_pax_24twilight_5, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 128)
+}
+
+spriteset(spriteset_pax_24twilight_6, "gfx/paxmail/24series-twilight.png") { //repeats
+	template_2cc_std(1, 160)
+}
+
+spriteset(spriteset_pax_24twilight_7, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_24twilight_8, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_24twilight_gen, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 256)
+}
+
+//flipped
+spriteset(spriteset_pax_24twilight_flip_1, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 1)
+}
+
+spriteset(spriteset_pax_24twilight_flip_2, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 32)
+}
+
+spriteset(spriteset_pax_24twilight_flip_3, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 64)
+}
+
+spriteset(spriteset_pax_24twilight_flip_4, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 96)
+}
+
+spriteset(spriteset_pax_24twilight_flip_5, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 128)
+}
+
+spriteset(spriteset_pax_24twilight_flip_6, "gfx/paxmail/24series-twilight.png") { //repeats
+	template_2cc_flip(1, 160)
+}
+
+spriteset(spriteset_pax_24twilight_flip_7, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_pax_24twilight_flip_8, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_pax_24twilight_flip_gen, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 256)
+}
+
+
+//cc
+
+spriteset(spriteset_pax_24twilight_cc_1, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(180, 1)
+}
+
+spriteset(spriteset_pax_24twilight_cc_2, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(180, 32)
+}
+
+spriteset(spriteset_pax_24twilight_cc_3, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(180, 64)
+}
+
+spriteset(spriteset_pax_24twilight_cc_4, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(180, 96)
+}
+
+spriteset(spriteset_pax_24twilight_cc_5, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(180, 128)
+}
+
+spriteset(spriteset_pax_24twilight_cc_6, "gfx/paxmail/24series-twilight.png") { //repeats
+	template_2cc_std(180, 160)
+}
+
+spriteset(spriteset_pax_24twilight_cc_7, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 192)
+}
+
+spriteset(spriteset_pax_24twilight_cc_8, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 224)
+}
+
+spriteset(spriteset_pax_24twilight_cc_gen, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_std(1, 256)
+}
+
+
+//flipped
+spriteset(spriteset_pax_24twilight_cc_flip_1, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(180, 1)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_2, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(180, 32)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_3, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(180, 64)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_4, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(180, 96)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_5, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(180, 128)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_6, "gfx/paxmail/24series-twilight.png") { //repeats
+	template_2cc_flip(180, 160)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_7, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 192)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_8, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 224)
+}
+
+spriteset(spriteset_pax_24twilight_cc_flip_gen, "gfx/paxmail/24series-twilight.png") {
+	template_2cc_flip(1, 256)
+}
+
+//purch
+
+spriteset(spriteset_pax_24twilight_purchase, "gfx/paxmail/24series-twilight.png") {
+	template_purchase(1, 288)
+}
+
+//autoform forward
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_forward_autoform, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_1;
+	1: spriteset_pax_24twilight_2;
+	2: spriteset_pax_24twilight_3;
+	3: spriteset_pax_24twilight_4;
+	spriteset_pax_24twilight_5;
+	}
+
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_lounge_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_8;
+    1: spriteset_pax_24twilight_7;
+    2: spriteset_pax_24twilight_7;
+    3: spriteset_pax_24twilight_6;
+	switch_pax_24twilight_forward_autoform;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_gen_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_gen;
+    1: spriteset_pax_24twilight_7;
+    2: spriteset_pax_24twilight_7;
+    3: spriteset_pax_24twilight_6;
+	switch_pax_24twilight_forward_autoform;
+	}
+	
+//autoform rev
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_lounge_front, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_flip_8;
+    1: spriteset_pax_24twilight_flip_7;
+    2: spriteset_pax_24twilight_flip_7;
+    3: spriteset_pax_24twilight_flip_6;
+	spriteset_pax_24twilight_flip_5;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_lounge_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_flip_1;
+	1: spriteset_pax_24twilight_flip_2;
+	2: spriteset_pax_24twilight_flip_3;
+	3: spriteset_pax_24twilight_flip_4;
+	switch_pax_24twilight_lounge_front;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_gen_front, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_flip_gen;
+    1: spriteset_pax_24twilight_flip_7;
+    2: spriteset_pax_24twilight_flip_7;
+    3: spriteset_pax_24twilight_flip_6;
+	spriteset_pax_24twilight_flip_5;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_gen_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_flip_1;
+	1: spriteset_pax_24twilight_flip_2;
+	2: spriteset_pax_24twilight_flip_3;
+	3: spriteset_pax_24twilight_flip_4;
+	switch_pax_24twilight_gen_front;
+	}
+	
+//autoform forward CC
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_forward_autoform, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_cc_1;
+	1: spriteset_pax_24twilight_cc_2;
+	2: spriteset_pax_24twilight_cc_3;
+	3: spriteset_pax_24twilight_cc_4;
+	4: spriteset_pax_24twilight_cc_5;
+	spriteset_pax_24twilight_cc_6;
+	}
+
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_lounge_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_cc_8;
+	switch_pax_24twilight_cc_forward_autoform;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_gen_end, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_cc_gen;
+	switch_pax_24twilight_cc_forward_autoform;
+	}
+	
+//autoform rev CC
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_lounge_front, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_cc_flip_8;
+	spriteset_pax_24twilight_cc_flip_6;
+	}
+	
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_lounge_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_cc_flip_1;
+	1: spriteset_pax_24twilight_cc_flip_2;
+	2: spriteset_pax_24twilight_cc_flip_3;
+	3: spriteset_pax_24twilight_cc_flip_4;
+	4: spriteset_pax_24twilight_cc_flip_5;
+	switch_pax_24twilight_cc_lounge_front;
+	}
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_gen_front, position_in_vehid_chain) {
+	0: spriteset_pax_24twilight_cc_flip_gen;
+	spriteset_pax_24twilight_cc_flip_6;
+	}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_cc_gen_backward_autoform, position_in_vehid_chain_from_end) {
+	0: spriteset_pax_24twilight_cc_flip_1;
+	1: spriteset_pax_24twilight_cc_flip_2;
+	2: spriteset_pax_24twilight_cc_flip_3;
+	3: spriteset_pax_24twilight_cc_flip_4;
+	4: spriteset_pax_24twilight_cc_flip_5;
+	switch_pax_24twilight_cc_gen_front;
+	}
+	
+
+
+//refits
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_livery, cargo_subtype) {
+	0: switch_pax_24twilight_gen_end;
+	1: switch_pax_24twilight_lounge_end;
+	2: switch_pax_24twilight_gen_backward_autoform;
+	3: switch_pax_24twilight_lounge_backward_autoform;
+	4: switch_pax_24twilight_cc_gen_end;
+	5: switch_pax_24twilight_cc_lounge_end;
+	6: switch_pax_24twilight_cc_gen_backward_autoform;
+	7: switch_pax_24twilight_cc_lounge_backward_autoform;
+}
+
+
+switch(FEAT_TRAINS, SELF, switch_pax_24twilight_subtype_text, cargo_subtype) {
+	0: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_2F, 
+																string(STR_COLOUR_GREEN),
+																string(STR_COLOUR_YELLOW)
+                                    							)
+															);
+	1: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_2F, 
+																string(STR_COLOUR_GREEN),
+																string(STR_COLOUR_YELLOW)
+                                    							)
+															);
+	2: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_2F, 
+																string(STR_COLOUR_GREEN),
+																string(STR_COLOUR_YELLOW)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	3: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_2F, 
+																string(STR_COLOUR_GREEN),
+																string(STR_COLOUR_YELLOW)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	4: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							)
+															);
+	5: return string(STR_CONCAT_3, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							)
+															);
+	6: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_LOUNGE),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	7: return string(STR_CONCAT_4, string(STR_REFIT_AUTOFORM), string(STR_SUFFIX_GENERATOR),
+                                     						   string(STR_CONCAT_1F, 
+																string(STR_SUFFIX_CC)
+                                    							), string(STR_SUFFIX_FLIPPED)
+															);
+	   return CB_RESULT_NO_TEXT;
+	}
+
+
+item (FEAT_TRAINS, pax_24twilight, 1328) {
+	property {
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		track_type: TR_1067_NE;
+		name: string(STR_NAME_TWILIGHT_24);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1989,1,1);
+		speed: 120 km/h;
+		air_drag_coefficient: 0;
+		power: 0;
+		dual_headed: 0;
+		cargo_capacity: 70; 
+		refit_cost: 0;
+		cargo_age_period: 800;
+		default_cargo_type: PASS;
+		loading_speed: 50;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS); 
+		non_refittable_cargo_classes: 0; 
+		weight: 29;
+		cost_factor: 83;
+		running_cost_factor: 11;
+		running_cost_base: RUNNING_COST_STEAM;
+		length: 8;
+		misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
+        variant_group: 1540;
+	}
+	graphics {
+		additional_text:	string(STR_CONCAT_3S, 
+								string(STR_DESC_NARROWGAUGE),
+								string(STR_DESC_USAGE_PAX_LUX),
+								string(STR_CONCAT_1C, 
+									string(STR_SUFFIX_JRW)
+								)
+							);
+
+		default: switch_pax_24twilight_livery;
+		purchase: spriteset_pax_24twilight_purchase;
+		cargo_subtype_text: switch_pax_24twilight_subtype_text;
+
+	}
+}
 spriteset(spriteset_pax_26series_1, "gfx/paxmail/26series-cassiopeia.png") {
 	template_2cc_std(1, 1)
 }
@@ -38540,7 +38918,7 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_class, cargo_classes) {
 	bitmask(CC_EXPRESS): switch_conts_general_flip;
 	bitmask(CC_BULK): switch_conts_bulk_flip;
 	bitmask(CC_POWDERIZED): switch_conts_bulk_flip;
-//	bitmask(CC_PIECE_GOODS): switch_conts_mixed_open_flip;
+	bitmask(CC_PIECE_GOODS): switch_conts_mixed_open_flip;
 	switch_conts_mixed_flip;
 }
 
@@ -38624,7 +39002,9 @@ switch(FEAT_TRAINS, SELF, switch_conts_cargo_selection, cargo_type_in_veh) {
 	switch_conts_cargo_class;
 }
 
+//main load randomisation switches
 
+//randomly show containers on empty wagons
 random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_empty) {
 
 	2: spriteset_blank;
@@ -38632,16 +39012,19 @@ random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_empty) {
 
 }
 
+/* 
 random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_end_half) {
 
 	1: spriteset_blank;
     3: switch_conts_cargo_selection;
 
 }
+*/
+
+//always show end containers if any cargo is present
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_end, cargo_count) {
-	0..1: random_conts_cargo_load_end_empty;
-	1..40: random_conts_cargo_load_end_half;
+	0: random_conts_cargo_load_end_empty;
 	switch_conts_cargo_selection;
 }
 
@@ -38661,8 +39044,8 @@ random_switch(FEAT_TRAINS, SELF, random_conts_cargo_load_middle_half) {
 
 switch(FEAT_TRAINS, SELF, switch_conts_cargo_load_middle, cargo_count) {
 	0..10: spriteset_blank;
-	10..30: random_conts_cargo_load_middle_empty;
-	30..50: random_conts_cargo_load_middle_half;
+	10..25: random_conts_cargo_load_middle_empty;
+	25..40: random_conts_cargo_load_middle_half;
 	switch_conts_cargo_selection;
 }
 
@@ -43379,6 +43762,10 @@ spriteset(spriteset_toki_25000_black, "gfx/freight/toki_25000.png") {
 	template_2cc_std(1, 96)
 }
 
+spriteset(spriteset_toki_25000_cc, "gfx/freight/toki_25000.png") {
+	template_2cc_std(180, 1)
+}
+
 //15000
 spriteset(spriteset_toki_15000_black, "gfx/freight/toki_25000.png") {
 	template_2cc_std(1, 128)
@@ -43409,30 +43796,29 @@ spriteset(spriteset_toki_25000_bulk_full, "gfx/freight/toki_25000.png") {
 	template_2cc_anim(1, 320)
 }
 
-spriteset(spriteset_toki_25000_blank, "gfx/freight/toki_25000.png") {
-	template_2cc_std(180, 1)
-}
+
 
 /* for future loads
 spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
 	template_2cc_std(180, 32)
 }
+*/
 
-spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
+spriteset(spriteset_toki_25000_slabs_half, "gfx/freight/toki_25000.png") {
 	template_2cc_std(180, 64)
 }
 
-spriteset(spriteset_toki_25000_, "gfx/freight/toki_25000.png") {
-	template_2cc_stdm(180, 96)
+spriteset(spriteset_toki_25000_slabs_full, "gfx/freight/toki_25000.png") {
+	template_2cc_std(180, 96)
 }
-*/
+
 
 spriteset(spriteset_toki_25000_coils_half, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(180, 128)
+	template_2cc_std(180, 128)
 }
 
 spriteset(spriteset_toki_25000_coils_full, "gfx/freight/toki_25000.png") {
-	template_2cc_anim(180, 160)
+	template_2cc_std(180, 160)
 }
 
 spriteset(spriteset_toki_25000_rods_half, "gfx/freight/toki_25000.png") {
@@ -43479,65 +43865,69 @@ spriteset(spriteset_toki_25000_jrf_purchase, "gfx/freight/toki_25000.png") {
 
 
 spritegroup spritegroup_toki_25000_bulk {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
+    loading: [spriteset_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
 }
 
 spritegroup spritegroup_toki_25000_bulk_tarp_brown {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_brown];
+    loading: [spriteset_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_brown];
 }
 
 spritegroup spritegroup_toki_25000_bulk_tarp_green {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_green];
+    loading: [spriteset_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_green];
 }
 
 spritegroup spritegroup_toki_25000_bulk_tarp_grey {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_grey];
+    loading: [spriteset_blank, spriteset_toki_25000_bulk_quarter, spriteset_toki_25000_bulk_half, spriteset_toki_25000_bulk_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_grey];
 }
 
 
 spritegroup spritegroup_toki_25000_rods {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
+    loading: [spriteset_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
 }
 
 spritegroup spritegroup_toki_25000_rods_tarp_brown {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_brown];
+    loading: [spriteset_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_brown];
 }
 
 spritegroup spritegroup_toki_25000_rods_tarp_green {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_green];
+    loading: [spriteset_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_green];
 }
 
 spritegroup spritegroup_toki_25000_rods_tarp_grey {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_tarp_grey];
+    loading: [spriteset_blank, spriteset_toki_25000_rods_half, spriteset_toki_25000_rods_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_tarp_grey];
 }
 
+spritegroup spritegroup_toki_25000_slabs {
+    loading: [spriteset_blank, spriteset_toki_25000_slabs_half, spriteset_toki_25000_slabs_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_slabs_half, spriteset_toki_25000_slabs_full];
+}
 
 spritegroup spritegroup_toki_25000_coils {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_coils_half, spriteset_toki_25000_coils_full];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_coils_half, spriteset_toki_25000_coils_full];
+    loading: [spriteset_blank, spriteset_toki_25000_coils_half, spriteset_toki_25000_coils_full];
+    loaded:  [spriteset_blank, spriteset_toki_25000_coils_half, spriteset_toki_25000_coils_full];
 }
 
 spritegroup spritegroup_toki_25000_conts_a {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_conts_a];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_conts_a];
+    loading: [spriteset_blank, spriteset_toki_25000_conts_a];
+    loaded:  [spriteset_blank, spriteset_toki_25000_conts_a];
 }
 
 spritegroup spritegroup_toki_25000_conts_b {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_conts_b];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_conts_b];
+    loading: [spriteset_blank, spriteset_toki_25000_conts_b];
+    loaded:  [spriteset_blank, spriteset_toki_25000_conts_b];
 }
 
 spritegroup spritegroup_toki_25000_conts_c {
-    loading: [spriteset_toki_25000_blank, spriteset_toki_25000_conts_c];
-    loaded:  [spriteset_toki_25000_blank, spriteset_toki_25000_conts_c];
+    loading: [spriteset_blank, spriteset_toki_25000_conts_c];
+    loaded:  [spriteset_blank, spriteset_toki_25000_conts_c];
 }
 
 //random loads
@@ -43567,15 +43957,21 @@ random_switch (FEAT_TRAINS, SELF, random_toki_25000_rods_covered) {
 
 random_switch (FEAT_TRAINS, SELF, random_toki_25000_metal) {
  2: spritegroup_toki_25000_coils;
+ 1: spritegroup_toki_25000_slabs;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_toki_25000_metalmixed) {
  1: spritegroup_toki_25000_rods;
+ 2: spritegroup_toki_25000_slabs;
+ 2: random_toki_25000_rods_covered;
 }
 
 random_switch (FEAT_TRAINS, SELF, random_toki_25000_supplies) {
- 2: random_toki_25000_conts;
- 1: random_toki_25000_rods_tarp;
+ 1: random_toki_25000_conts;
+ 3: random_toki_25000_rods_covered;
 }
 
-
+//only for covered bulk
 switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
 	0..1990: random_toki_25000_bulk_tarp;
 	spritegroup_toki_25000_bulk_tarp_green;
@@ -43587,7 +43983,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_tarp_yeardep, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_piecegoods, hasbit(cargo_classes, CC_PIECE_GOODS)) {
 	0: switch_toki_25000_tarp_yeardep;
-        random_toki_25000_conts;}
+        random_toki_25000_supplies;}
 
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cc_covered, hasbit(cargo_classes, CC_COVERED)) {
 	0: switch_toki_25000_cc_piecegoods;
@@ -43609,16 +44005,21 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_class, cargo_classes) {
 */
 
 switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
-	IRON: random_toki_25000_metal;
 	STEL: spritegroup_toki_25000_coils;
 	METL: spritegroup_toki_25000_coils;
-	ALUM: spritegroup_toki_25000_coils;
+	ALUM: random_toki_25000_metal;
 	ZINC: random_toki_25000_metal;
 	COPR: random_toki_25000_metal;
 	STST: random_toki_25000_metal;
-	STSH: random_toki_25000_metal;
+	STSH: spritegroup_toki_25000_coils;
 	STAL: random_toki_25000_metal;
 	STCB: spritegroup_toki_25000_coils;
+	STSL: spritegroup_toki_25000_slabs;
+	STIG: random_toki_25000_metalmixed;
+	STBL: random_toki_25000_metalmixed;
+	STBR: random_toki_25000_metalmixed;
+	IRON: random_toki_25000_metalmixed;
+	CSTI: random_toki_25000_metalmixed;
 	
 	ENSP: random_toki_25000_supplies;
 	FMSP: random_toki_25000_supplies;
@@ -43635,7 +44036,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	STWR: random_toki_25000_rods_covered;
 	STSE: random_toki_25000_rods_covered;
 	
-	PAPR: random_toki_25000_conts;
+	PAPR: spritegroup_toki_25000_coils;
 	TYRE: random_toki_25000_conts;
 	WOOL: random_toki_25000_conts;
 	TEXT: random_toki_25000_conts;
@@ -43707,6 +44108,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_livery, cargo_subtype) {
 	1: switch_toki_25000_brown_yeardep;
 	2: spriteset_toki_25000_green;
 	3: spriteset_toki_25000_black;
+	4: spriteset_toki_25000_cc;
 	switch_toki_25000_all_yeardep;
 }
 
@@ -43715,6 +44117,7 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_subtype_text, cargo_subtype) {
 	1: return string(STR_CONCAT_1F, string(STR_COLOUR_BROWN));
 	2: return string(STR_CONCAT_1F, string(STR_COLOUR_GREEN));
 	3: return string(STR_CONCAT_1F, string(STR_COLOUR_BLACK));
+	4: return string(STR_CONCAT_1F, string(STR_SUFFIX_CC));
 	   return CB_RESULT_NO_TEXT;
 }
 
@@ -43726,12 +44129,19 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_purchase, current_year) {
 
 //stacking
 
-switch(FEAT_TRAINS, SELF, switch_toki_25000_all_loadstack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0:  switch_toki_25000_livery;
-    1:  switch_toki_25000_cargo_type;
+//CC+cargo recolour now possible thanks to Fairyfloss
+
+switch (FEAT_TRAINS, SELF, switch_toki_25000_getwagon, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return switch_toki_25000_livery;
+}
+
+switch (FEAT_TRAINS, SELF, switch_toki_25000_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return switch_toki_25000_cargo_type;
+}
+
+switch (FEAT_TRAINS, SELF, switch_toki_25000_all_loadstack, getbits(extra_callback_info1, 8, 8)) {
+    0: return switch_toki_25000_getwagon;
+    return switch_toki_25000_recolour_load;
 }
 
 
@@ -43774,7 +44184,6 @@ graphics {
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
 	cargo_subtype_text: switch_toki_25000_subtype_text;
-	colour_mapping: switch_generic_recolour;
 	}
 }
 
@@ -44252,8 +44661,9 @@ property {
 		dual_headed: 0;
 		cargo_capacity: 25; 
 		refit_cost: 0;
-		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, MILK, SULP, WATR, BEER, KAOL, RUBR];
-		refittable_cargo_classes: bitmask (CC_LIQUID);
+		refittable_cargo_classes: bitmask (CC_LIQUID, CC_HAZARDOUS);
+		non_refittable_cargo_classes: bitmask (CC_POTABLE);
+		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, CHLO, SULP, KAOL, RUBR];
 		loading_speed: 30;
 		weight: 11;
 		cost_factor: 40;
@@ -45052,7 +45462,8 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		dual_headed: 0;
 		cargo_capacity: 40; 
 		refit_cost: 0;
-		refittable_cargo_classes: bitmask (CC_LIQUID);
+		refittable_cargo_classes: bitmask (CC_LIQUID, CC_HAZARDOUS);
+		non_refittable_cargo_classes: bitmask (CC_POTABLE);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
 		loading_speed: 30;
 		weight: 17;
