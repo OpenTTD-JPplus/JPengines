@@ -179,6 +179,10 @@ item (FEAT_TRAINS, shiki_800_rear, 1651) {
 	}
 }
 
+switch(FEAT_TRAINS, SELF, switch_shiki_800_capacity, param_capacity_freight) {
+	1: 155*switch_capacity_quantity_multiplier()/100;
+	155;
+}
 //main item
 
 item (FEAT_TRAINS, shiki_800, 1950) {
@@ -218,7 +222,7 @@ item (FEAT_TRAINS, shiki_800, 1950) {
 								string(STR_DESC_BRAKE_NA)
 							);
 
-		cargo_capacity: return 155;
+		cargo_capacity: switch_shiki_800_capacity;
 		default: switch_shiki_800_front_livery;
 		purchase: switch_shiki_800_purchase;
 		articulated_part: switch_shiki_800_articulated_part;

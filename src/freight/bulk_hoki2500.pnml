@@ -85,6 +85,11 @@ switch(FEAT_TRAINS, SELF, switch_hoki_2500_purchase, current_year) {
 	spriteset_hoki_2500_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_hoki_2500_capacity, param_capacity_freight) {
+	1: 35;
+	55;
+}
+
 
 item (FEAT_TRAINS, hoki_2500, 1242) {
 
@@ -101,7 +106,6 @@ property {
 	speed: 100 km/h;
 	loading_speed: 40;
 	cargo_capacity: 65;
-	weight: 15;
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, SGBT, WDPR, FICR, WOOL, POWR, BAKE, FURN, GLAS, MPTS, PAPR, TEXT, SGCN, TBCO, SUGR];
@@ -110,6 +114,7 @@ property {
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	loading_speed: 40;
+  weight:14.9;
 	length: 6;
 	}
 graphics {
@@ -124,7 +129,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
-	cargo_capacity: return 55;
+	cargo_capacity: switch_hoki_2500_capacity;
 	default: switch_hoki_2500_livery;
 	purchase: switch_hoki_2500_purchase;
 	cargo_subtype_text: switch_hoki_2500_subtype_text;

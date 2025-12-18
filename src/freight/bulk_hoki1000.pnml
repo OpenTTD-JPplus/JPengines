@@ -27,7 +27,10 @@ random_switch(FEAT_TRAINS, SELF, switch_hoki_1000_livery) {
     1: spriteset_hoki_1000_d;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_hoki_1000_capacity, param_capacity_freight) {
+	1: 35;
+	72;
+}
 
 item (FEAT_TRAINS, hoki_1000, 1410) {
 	property {
@@ -47,7 +50,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
-		weight: 15;
+		weight: 18.8;
 		cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -64,7 +67,7 @@ item (FEAT_TRAINS, hoki_1000, 1410) {
 						);
 		speed: switch_speedboost_1;
 		purchase_speed: return 100;
-		cargo_capacity: return 72;
+		cargo_capacity: switch_hoki_1000_capacity;
 		default: switch_hoki_1000_livery;
 		purchase: spriteset_hoki_1000_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;

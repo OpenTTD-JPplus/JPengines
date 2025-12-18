@@ -69,7 +69,10 @@ switch(FEAT_TRAINS, SELF, switch_seki_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+switch(FEAT_TRAINS, SELF, switch_seki_1_capacity, param_capacity_freight) {
+	1: 30;
+	35;
+}
 
 item (FEAT_TRAINS, seki_1, 1441) {
 
@@ -91,7 +94,7 @@ property {
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
-	weight: 13;
+	weight: 14.5;
 	cost_factor: 18;
 		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -111,7 +114,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 35;
+	cargo_capacity: switch_seki_1_capacity;
 	default: switch_seki_1_livery;
 	cargo_subtype_text: switch_seki_1_subtype_text;
 	purchase: spriteset_seki_1_purchase;

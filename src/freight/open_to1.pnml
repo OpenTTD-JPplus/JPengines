@@ -201,6 +201,10 @@ switch(FEAT_TRAINS, SELF, switch_to_1_cargo_type, cargo_type_in_veh) {
 	switch_to_1_cargo_class;
 }
 
+switch(FEAT_TRAINS, SELF, switch_to_1_capacity, param_capacity_freight) {
+	1: 10;
+	15;
+}
 
 item (FEAT_TRAINS, to_1, 1469) {
 
@@ -221,7 +225,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	weight: 9;
+	weight: 6;
 	cost_factor: 14;
 	running_cost_factor: 2;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -240,7 +244,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
-	cargo_capacity: return 15;
+	cargo_capacity: switch_to_1_capacity;
 	default: switch_to_1_cargo_type;
 	purchase: spriteset_to_1_purchase;
 	colour_mapping: switch_generic_recolour;

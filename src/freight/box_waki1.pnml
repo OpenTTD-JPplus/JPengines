@@ -91,6 +91,10 @@ switch(FEAT_TRAINS, SELF, switch_waki_1_subtype_text, cargo_subtype) {
                                  );
 	}
 
+switch(FEAT_TRAINS, SELF, switch_waki_1_capacity, param_capacity_freight) {
+	1: 25*switch_capacity_quantity_multiplier()/100;
+	90;
+}
 
 
 item (FEAT_TRAINS, waki_1, 1445) {
@@ -132,7 +136,7 @@ item (FEAT_TRAINS, waki_1, 1445) {
 		default: switch_waki_1_livery;
 		purchase: switch_waki_1_yeardep_purchase;
 		cargo_subtype_text: switch_waki_1_subtype_text;
-		
+		cargo_capacity:switch_waki_1_capacity;
 	}
 }
 
@@ -173,6 +177,11 @@ switch(FEAT_TRAINS, SELF, switch_wamufu_1_subtype_text, cargo_subtype) {
                                  );
 	}
 
+switch(FEAT_TRAINS, SELF, switch_wamufu_1_capacity, param_capacity_freight) {
+	1: 10*switch_capacity_quantity_multiplier()/100;
+	45;
+}
+
 item (FEAT_TRAINS, wamufu_1, 1438) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -190,7 +199,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		cargo_disallow_refit: [PASS, COAL, LVST, WOOD, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, RFPR, VEHI];
-		weight: 20;
+		weight: 15;
 		cost_factor: 40;
 		running_cost_factor: 12;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -214,6 +223,7 @@ item (FEAT_TRAINS, wamufu_1, 1438) {
 		default: switch_wamufu_1_loadstack;
 		cargo_subtype_text: switch_wamufu_1_subtype_text;
 		purchase: switch_wamufu_1_yeardep_purchase;
+    cargo_capacity:switch_wamufu_1_capacity;
 		reverse_build_probability: return 50;
 	}
 }

@@ -210,6 +210,10 @@ switch(FEAT_TRAINS, SELF, switch_wamu_80000_loadstack, [
     3:  spritegroup_wamu_80000_load;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamu_80000_capacity, param_capacity_freight) {
+	1: 15;
+	50;
+}
 
 item (FEAT_TRAINS, wamu_80000, 1951) {
 
@@ -231,10 +235,10 @@ property {
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
 	non_refittable_cargo_classes: 0;
-	weight: 15;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
+  weight:11.3;
 	length: 6;
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}
@@ -251,7 +255,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 50;
+	cargo_capacity: switch_wamu_80000_capacity;
 	default: switch_wamu_80000_loadstack;
 	purchase: switch_wamu_80000_purchase;
 	cargo_subtype_text: switch_wamu_80000_subtype_text;
@@ -298,6 +302,10 @@ switch(FEAT_TRAINS, SELF, switch_wamu_480000_loadstack, [
     1:  spritegroup_wamu_480000_load;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamu_480000_capacity, param_capacity_freight) {
+	1: 15;
+	50;
+}
 
 item (FEAT_TRAINS, wamu_480000, 1462) {
 
@@ -319,7 +327,7 @@ property {
 	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
-	weight: 15;
+	weight: 13;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -338,7 +346,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 50;
+	cargo_capacity: switch_wamu_480000_capacity;
 	default: switch_wamu_480000_loadstack;
 	purchase: spriteset_wamu_480000_jrf_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -354,6 +362,10 @@ switch(FEAT_TRAINS, SELF, switch_wamu_580000_loadstack, [
     2:  spritegroup_wamu_80000_load;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamu_580000_capacity, param_capacity_freight) {
+	1: 15*switch_capacity_quantity_multiplier()/100;
+	50;
+}
 
 item (FEAT_TRAINS, wamu_580000, 1463) {
 
@@ -376,7 +388,7 @@ property {
 //	cargo_allow_refit: [GRAI, FICR, WOOD, WOOL, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, FRUT, FRVG, TATO, WDCH, TBCO];
 //	cargo_disallow_refit: [COAL, IORE, CORE, PORE, CMNT];
 	non_refittable_cargo_classes: 0;
-	weight: 15;
+	weight: 13;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -395,7 +407,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 50;
+	cargo_capacity: switch_wamu_580000_capacity;
 	default: switch_wamu_580000_loadstack;
 	purchase: spriteset_wamu_580000_jnr_purchase;
 //	colour_mapping: switch_generic_recolour;

@@ -58,6 +58,10 @@ random_switch (FEAT_TRAINS, SELF, random_wamu_21000) {
  1: spriteset_wamu_21000_6;
 }
 
+switch(FEAT_TRAINS, SELF, switch_wamu_21000_capacity, param_capacity_freight) {
+	1: 15*switch_capacity_quantity_multiplier()/100;
+	30;
+}
 
 item (FEAT_TRAINS, wamu_21000, 1435) {
 	property {
@@ -77,7 +81,7 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 		refittable_cargo_classes: bitmask(CC_COVERED, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED); 
 		cargo_allow_refit: [GRAI, MAIZ, BEAN];
 		cargo_disallow_refit: [PASS, COAL, WOOD, IORE, CORE, AORE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SGBT, SGCN, TOUR, VEHI, KAOL];
-		weight: 10;
+		weight: 10.2;
 		cost_factor: 18;
 		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -97,10 +101,10 @@ item (FEAT_TRAINS, wamu_21000, 1435) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
-		cargo_capacity: return 30;
+		cargo_capacity: switch_wamu_21000_capacity;
 		default: random_wamu_21000;
 		purchase: spriteset_wamu_21000_jgr_purchase;
-		
+
 	}
 }
 
@@ -111,6 +115,11 @@ switch(FEAT_TRAINS, SELF, stack_wafu_21000, [
     ]) {
     0:  spriteset_wafu_21000;
 	1:  switch_taillights_5;
+}
+
+switch(FEAT_TRAINS, SELF, switch_wafu_21000_capacity, param_capacity_freight) {
+	1: 2;
+	15;
 }
 
 item (FEAT_TRAINS, wafu_21000, 1436) {
@@ -153,7 +162,7 @@ item (FEAT_TRAINS, wafu_21000, 1436) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
-		cargo_capacity: return 15;
+		cargo_capacity: switch_wafu_21000_capacity;
 		default: stack_wafu_21000;
 		purchase: spriteset_wafu_21000_jgr_purchase;
 		reverse_build_probability: return 50;

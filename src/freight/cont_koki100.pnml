@@ -105,7 +105,10 @@ switch(FEAT_TRAINS, SELF, switch_koki_100_flip, vehicle_is_flipped) {
 	switch_koki_100_direction;
 	}
 
-
+switch(FEAT_TRAINS, SELF, switch_koki_100_capacity, param_capacity_freight) {
+	1: 40*switch_capacity_quantity_multiplier()/100;
+	75;
+}
 
 item (FEAT_TRAINS, koki_100, 1400) {
 	property {
@@ -126,7 +129,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, ALO_, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, GRVL, LIME, OLSD, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
-		weight: 20;
+		weight: 18.5;
 		cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -142,7 +145,7 @@ item (FEAT_TRAINS, koki_100, 1400) {
 							)
 						);
 		speed: switch_speedboost_1;
-		cargo_capacity: return 75;
+		cargo_capacity: switch_koki_100_capacity;
 		cargo_age_period: switch_container_cargo_decay;
 		purchase_speed: return 110;
 		default: switch_koki_100_flip;
@@ -202,10 +205,13 @@ switch(FEAT_TRAINS, SELF, switch_koki_107_direction_flipped, direction) {
 switch(FEAT_TRAINS, SELF, switch_koki_107_flip, vehicle_is_flipped) {
 	1: switch_koki_107_direction_flipped;
 	switch_koki_107_direction;
-	}
+}
 
 
-
+switch(FEAT_TRAINS, SELF, switch_koki_107_capacity, param_capacity_freight) {
+	1:41*switch_capacity_quantity_multiplier()/100;
+	80;
+}
 
 item (FEAT_TRAINS, koki_107, 1417) {
 	property {
@@ -226,7 +232,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 		non_refittable_cargo_classes: 0; 
 		cargo_allow_refit: [MAIL, GOOD, OIL_, PAPR, FOOD, RUBR, FRUT, WATR, SUGR, TOYS, BATT, STEL, METL, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, BEER, COPR, FICR, BDMT, CERA, CMNT, DYES, ENSP, FERT, FISH, FMSP, FRVG, GLAS, MILK, MNSP, PETR, PLAS, RCYC, RFPR, SULP, WDPR, WOOL, VEHI, EOIL, ACID, CHLO, SLAG]; 
 		cargo_disallow_refit: [PASS, COAL, LVST, GRAI, WOOD, IORE, VALU, WHEA, GOLD, MAIZ, CORE, DIAM, AORE, CERE, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, TOUR, JAVA];
-		weight: 20;
+		weight: 18.6;
 		cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -244,7 +250,7 @@ item (FEAT_TRAINS, koki_107, 1417) {
 						);
 		speed: switch_speedboost_1;
 		cargo_age_period: switch_container_cargo_decay;
-		cargo_capacity: return 80;
+		cargo_capacity: switch_koki_107_capacity;
 		purchase_speed: return 110;
 		default: switch_koki_107_flip;
 		purchase: spriteset_koki_107_purchase;

@@ -21,6 +21,11 @@ random_switch (FEAT_TRAINS, SELF, random_remu_5000) {
  1: spriteset_remu_5000_3;
 }
 
+switch(FEAT_TRAINS, SELF, switch_remu_5000_capacity, param_capacity_freight) {
+	1: 25;
+	40;
+}
+
 item (FEAT_TRAINS, remu_5000, 1286) {
 
 property {
@@ -39,7 +44,7 @@ property {
 		cargo_age_period: 1200;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
-		weight: 10;
+		weight: 11.4;
 		cost_factor: 22;
 		running_cost_factor: 4;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -57,6 +62,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
+  cargo_capacity:switch_remu_5000_capacity;
 	default: random_remu_5000;
 	purchase: spriteset_remu_5000_purchase;
 	}

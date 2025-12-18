@@ -108,6 +108,11 @@ switch(FEAT_TRAINS, SELF, stack_mail_mani34, [
 	1:  switch_taillights_8;
 }
 
+switch(FEAT_TRAINS, SELF, switch_mani_34_capacity, param_capacity_freight) {
+	1: 11*switch_capacity_quantity_multiplier()/100;
+	100;
+}
+
 item (FEAT_TRAINS, mail_mani34, 1357) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -144,5 +149,6 @@ item (FEAT_TRAINS, mail_mani34, 1357) {
 		default: stack_mail_mani34;
 		purchase: switch_mani34_purchase_yeardep;
 		cargo_subtype_text: switch_mani34_subtype_text;
+    cargo_capacity:switch_mani_34_capacity;
 	}
 }

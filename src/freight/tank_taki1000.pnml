@@ -162,6 +162,16 @@ switch(FEAT_TRAINS, SELF, switch_taki_1000_wearstack, [
     1:  random_taki_1000_wear;
 }
 
+switch(FEAT_TRAINS, SELF, switch_taki_1000_capacity_1, cargo_type_in_veh) {
+  NH3_:61;//car volume in m3
+  H2__:61;//car volume in m3
+  MEOH:61;//car volume in m3
+  45*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_taki_1000_capacity, param_capacity_freight) {
+	1: switch_taki_1000_capacity_1;
+	55;
+}
 
 item (FEAT_TRAINS, taki_1000, 1490) {
 	property {
@@ -178,7 +188,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 50;
-		weight: 20;
+		weight: 17.2;
 		cost_factor: 50;
 	running_cost_factor: 8;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -195,6 +205,7 @@ item (FEAT_TRAINS, taki_1000, 1490) {
 						);
 		speed: switch_speedboost_1;
 		purchase_speed: return 110;
+    cargo_capacity:switch_taki_1000_capacity;
 		default: switch_taki_1000_wearstack;
 		purchase: spriteset_taki_1000_purchase;
 		cargo_subtype_text: switch_taki_1000_subtype_text;
@@ -249,6 +260,16 @@ switch(FEAT_TRAINS, SELF, switch_taki_43000_wearstack, [
     1:  random_taki_1000_wear;
 }
 
+switch(FEAT_TRAINS, SELF, switch_taki_43000_capacity_1, cargo_type_in_veh) {
+  NH3_:60;//car volume in m3
+  H2__:60;//car volume in m3
+  MEOH:60;//car volume in m3
+  44*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_taki_43000_capacity, param_capacity_freight) {
+	1: switch_taki_43000_capacity_1;
+	50;
+}
 
 item (FEAT_TRAINS, taki_43000, 1496) {
 	property {
@@ -265,7 +286,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
-		weight: 20;
+		weight: 16;
 		cost_factor: 40;
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -284,7 +305,7 @@ item (FEAT_TRAINS, taki_43000, 1496) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
-//		cargo_capacity: return 0;
+		cargo_capacity: switch_taki_43000_capacity;
 		default: switch_taki_43000_wearstack;
 		purchase: switch_taki_43000_purchase;
 		cargo_subtype_text: switch_taki_43000_subtype_text;

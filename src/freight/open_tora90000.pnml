@@ -38,6 +38,10 @@ switch(FEAT_TRAINS, SELF, switch_tora_90000_cargo_class, cargo_classes) {
 	spritegroup_tora_90000_covered;
 }
 
+switch(FEAT_TRAINS, SELF, switch_tora_90000_capacity, param_capacity_freight) {
+	1: 17;
+	35;
+}
 
 item (FEAT_TRAINS, tora_90000, 1280) {
 
@@ -79,7 +83,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 35;
+	cargo_capacity: switch_tora_90000_capacity;
 	default: switch_tora_90000_cargo_class;
 	purchase: spriteset_tora_90000_purchase;
 	colour_mapping: switch_generic_recolour;

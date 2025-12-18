@@ -116,6 +116,16 @@ switch(FEAT_TRAINS, SELF, switch_tasa_500_purchase, current_year) {
 	spriteset_tasa_500_jnr_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_tasa_500_capacity_1, cargo_type_in_veh) {
+  NH3_:27;//car volume in m3
+  H2__:27;//car volume in m3
+  MEOH:27;//car volume in m3
+  20*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_tasa_500_capacity, param_capacity_freight) {
+	1: switch_tasa_500_capacity_1;
+	25;
+}
 
 item (FEAT_TRAINS, tasa_500, 1481) {
 	property {
@@ -132,7 +142,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
-		weight: 11;
+		weight: 14.2;
 		cost_factor: 18;
 		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -151,7 +161,7 @@ item (FEAT_TRAINS, tasa_500, 1481) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
-//		cargo_capacity: return 0;
+		cargo_capacity: switch_tasa_500_capacity;
 		default: switch_tasa_500_wearstack;
 		purchase: switch_tasa_500_purchase;
 		cargo_subtype_text: switch_tasa_500_subtype_text;

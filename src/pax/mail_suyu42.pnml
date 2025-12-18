@@ -178,6 +178,11 @@ switch(FEAT_TRAINS, SELF, stack_mail_suyu42, [
 	1:  switch_taillights_8;
 }
 
+switch(FEAT_TRAINS, SELF, switch_suyu42_capacity, param_capacity_freight) {
+	1: 11*switch_capacity_quantity_multiplier()/100;
+	100;
+}
+
 item (FEAT_TRAINS, mail_suyu42, 1359) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -214,5 +219,6 @@ item (FEAT_TRAINS, mail_suyu42, 1359) {
 		default: stack_mail_suyu42;
 		purchase: switch_suyu42_purchase_yeardep;
 		cargo_subtype_text: switch_suyu42_subtype_text;
+    cargo_capacity:switch_suyu42_capacity;
 	}
 }

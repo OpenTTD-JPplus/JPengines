@@ -137,6 +137,17 @@ switch(FEAT_TRAINS, SELF, switch_tamu_500_purchase, current_year) {
 	spriteset_tamu_500_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_tamu_500_capacity_1, cargo_type_in_veh) {
+  NH3_:21;//car volume in m3
+  H2__:21;//car volume in m3
+  MEOH:21;//car volume in m3
+  15*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_tamu_500_capacity, param_capacity_freight) {
+	1: switch_tamu_500_capacity_1;
+	30;
+}
+
 item (FEAT_TRAINS, tamu_500, 1482) {
 
 property {
@@ -154,7 +165,7 @@ property {
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask (CC_LIQUID);
 	loading_speed: 30;
-	weight: 10;
+	weight: 11;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -173,7 +184,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 30;
+	cargo_capacity: switch_tamu_500_capacity;
 	default: switch_tamu_500_wearstack;
 	purchase: switch_tamu_500_purchase;
 	cargo_subtype_text: switch_tamu_500_subtype_text;

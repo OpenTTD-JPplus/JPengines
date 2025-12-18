@@ -75,7 +75,10 @@ switch(FEAT_TRAINS, SELF, switch_oyu10_purchase_yeardep, current_year) {
     spriteset_oyu10_blue_purchase;
     }
 
-
+switch(FEAT_TRAINS, SELF, switch_oyu10_capacity, param_capacity_freight) {
+	1: 8*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, mail_oyu10, 1668) {
 	property {
@@ -113,6 +116,6 @@ item (FEAT_TRAINS, mail_oyu10, 1668) {
 		default: switch_oyu10_livery;
 		purchase: switch_oyu10_purchase_yeardep;
 		cargo_subtype_text: switch_oyu10_subtype_text;
-		
+		cargo_capacity:switch_oyu10_capacity;
 	}
 }

@@ -446,7 +446,10 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1, [
 	3:  switch_flatbed_5_rungs_front;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_chisa_1_capacity, param_capacity_freight) {
+	1: 20;
+	30;
+}
 
 //main item
 item (FEAT_TRAINS, chisa_1, 1934) {
@@ -485,6 +488,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
+  cargo_capacity:switch_chisa_1_capacity;
 	default: stack_chisa_1;
 	purchase: switch_chisa_1_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -527,6 +531,10 @@ switch(FEAT_TRAINS, SELF, stack_chisa_1600, [
 }
 
 
+switch(FEAT_TRAINS, SELF, switch_chi_1000_capacity, param_capacity_freight) {
+	1: 10*switch_capacity_quantity_multiplier()/100;
+	40;
+}
 
 //main item TODO FIX
 
@@ -544,7 +552,7 @@ property {
 	default_cargo_type: WOOD;
 	loading_speed: 20;
 	speed: 65 km/h;
-	weight: 12;
+	weight: 7.2;
 	cost_factor: 6;
 	running_cost_factor: 5;
 	length: 5;
@@ -565,7 +573,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 40;
+	cargo_capacity: switch_chi_1000_capacity;
 	default: stack_chisa_1600;
 	purchase: switch_chisa_1600_purchase;
 	colour_mapping: switch_generic_recolour;

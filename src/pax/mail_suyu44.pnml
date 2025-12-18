@@ -62,7 +62,10 @@ switch(FEAT_TRAINS, SELF, switch_suyu_44_loadstack, [
 	2:  switch_taillights_8;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_suyu44_capacity, param_capacity_freight) {
+	1: 14*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, suyu_44, 1395) {
 	property {
@@ -101,6 +104,7 @@ item (FEAT_TRAINS, suyu_44, 1395) {
 		default: switch_suyu_44_loadstack;
 		purchase: spriteset_suyu_44_post_purchase;
 		cargo_subtype_text: switch_suyu_44_subtype_text;
+    cargo_capacity:switch_suyu44_capacity;  
 	}
 }
 
@@ -176,5 +180,6 @@ item (FEAT_TRAINS, suni_41, 1396) {
 		purchase: spriteset_suni_41_post_purchase;
 		cargo_subtype_text: switch_suni_41_subtype_text;
 		reverse_build_probability: return 50;
+    cargo_capacity:switch_suyu44_capacity;
 	}
 }

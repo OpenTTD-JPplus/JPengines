@@ -114,6 +114,17 @@ switch(FEAT_TRAINS, SELF, switch_taki_3000_purchase, current_year) {
 	spriteset_taki_3000_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_taki_3000_capacity_1, cargo_type_in_veh) {
+  NH3_:41;//car volume in m3
+  H2__:41;//car volume in m3
+  MEOH:41;//car volume in m3
+  30*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_taki_3000_capacity, param_capacity_freight) {
+	1: switch_taki_3000_capacity_1;
+	48;
+}
+
 item (FEAT_TRAINS, taki_3000, 1489) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -129,7 +140,7 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
-		weight: 20;
+		weight: 19;
 		cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -148,7 +159,7 @@ item (FEAT_TRAINS, taki_3000, 1489) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
-//		cargo_capacity: return 0;
+		cargo_capacity: switch_taki_3000_capacity;
 		default: switch_taki_3000_wearstack;
 		purchase: switch_taki_3000_purchase;
 //		cargo_subtype_text: switch_taki_1000_subtype_text;

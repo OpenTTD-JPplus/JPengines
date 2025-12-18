@@ -18,6 +18,10 @@ random_switch(FEAT_TRAINS, SELF, switch_hoki_5700_livery) {
     1: spriteset_hoki_5700_b;
 }
 
+switch(FEAT_TRAINS, SELF, switch_hoki_5700_capacity, param_capacity_freight) {
+	1: 40;
+	50;
+}
 
 
 item (FEAT_TRAINS, hoki_5700, 1448) {
@@ -38,7 +42,7 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 		non_refittable_cargo_classes: 0;
 		cargo_disallow_refit: [SGBT, WDPR, FICR, WOOL, POWR, FURN, GLAS, MPTS, PAPR, TEXT, COAL, IORE, CORE, GRVL, LIME, RCYC, SCMT, SLAG, SULP, SGCN, TBCO];
 		cargo_allow_refit: [GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED, BAKE, POTA, LYE_];
-		weight: 13;
+		weight: 13.7;
 		cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -55,7 +59,7 @@ item (FEAT_TRAINS, hoki_5700, 1448) {
 							)
 						);
 
-		cargo_capacity: return 50;
+		cargo_capacity: switch_hoki_5700_capacity;
 		default: switch_hoki_5700_livery;
 		purchase: spriteset_hoki_5700_purchase;
 		refit_cost: CB_RESULT_AUTOREFIT;

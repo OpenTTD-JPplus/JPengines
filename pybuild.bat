@@ -1,7 +1,6 @@
 @echo off
 :start
-py nml_compiler.py -f "jplw.pnml" -o "jplw.nml"
-nmlc jplw.nml -o jplw.grf 
-
+gcc -E -x c -o JPengines.nml jplw.pnml
+nmlc -c JPengines.nml -o "D:\DocumentsWin\OpenTTD\newgrf\JPengines.grf" -o JPengines.grf -t custom_tags.txt
 pause
 goto start

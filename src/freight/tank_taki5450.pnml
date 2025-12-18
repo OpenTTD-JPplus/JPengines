@@ -123,6 +123,16 @@ switch(FEAT_TRAINS, SELF, switch_taki_5450_purchase, current_year) {
 	spriteset_taki_5450_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_taki_5450_capacity_1, cargo_type_in_veh) {
+  NH3_:20;//car volume in m3
+  H2__:20;//car volume in m3
+  MEOH:20;//car volume in m3
+  25*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_taki_5450_capacity, param_capacity_freight) {
+	1: switch_taki_5450_capacity_1;
+	40;
+}
 
 item (FEAT_TRAINS, taki_5450, 1491) {
 	property {
@@ -141,7 +151,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 		non_refittable_cargo_classes: bitmask (CC_POTABLE);
 		cargo_disallow_refit: [OIL_, PETR, FUEL];
 		loading_speed: 30;
-		weight: 17;
+		weight: 21;
 		cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -161,7 +171,7 @@ item (FEAT_TRAINS, taki_5450, 1491) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
-//		cargo_capacity: return 0;
+		cargo_capacity: switch_taki_5450_capacity;
 		default: switch_taki_5450_wearstack;
 		purchase: switch_taki_5450_purchase;
 		cargo_subtype_text: switch_taki_5450_subtype_text;

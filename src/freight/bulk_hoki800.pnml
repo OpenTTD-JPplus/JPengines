@@ -63,6 +63,10 @@ switch(FEAT_TRAINS, SELF, switch_hoki_800_purchase, current_year) {
 	spriteset_hoki_800_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_hoki_800_capacity, param_capacity_freight) {
+	1: 30;
+	60;
+}
 
 item (FEAT_TRAINS, hoki_800, 1446) {
 
@@ -84,7 +88,7 @@ property {
 	non_refittable_cargo_classes: bitmask(CC_COVERED); 
 //	cargo_allow_refit: [COAL, IORE, CORE, AORE, BRCK, CLAY, GRVL, LIME, OLSD, POTA, SAND, SCMT, SGBT, SGCN, SULP, FRUT]; 
 	cargo_disallow_refit: [GRAI, WHEA, BEAN, MAIZ, SEED, WDPR, WOOL, FICR, BAKE, GLAS, WDPR, SGCN, TBCO];
-	weight: 18;
+	weight: 18.1;
 	cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -101,7 +105,7 @@ graphics {
 							)
 						);
 
-	cargo_capacity: return 60;
+	cargo_capacity: switch_hoki_800_capacity;
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
 	default: random_hoki_800_livery;

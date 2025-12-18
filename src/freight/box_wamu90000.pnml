@@ -88,7 +88,10 @@ switch(FEAT_TRAINS, SELF, switch_wamu_90000_subtype_text, cargo_subtype) {
 	}
 
 
-
+switch(FEAT_TRAINS, SELF, switch_wamu_90000_capacity, param_capacity_freight) {
+	1: 15*switch_capacity_quantity_multiplier()/100;
+	30;
+}
 
 item (FEAT_TRAINS, wamu_90000, 1437) {
 	property {
@@ -108,7 +111,7 @@ item (FEAT_TRAINS, wamu_90000, 1437) {
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS);
 		cargo_allow_refit: [BEER, POWR, PAPR, VPTS, PPAR];
 		cargo_disallow_refit: [WOOL];
-		weight: 10;
+		weight: 9.9;
 		cost_factor: 18;
 		running_cost_factor: 3;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -127,7 +130,7 @@ item (FEAT_TRAINS, wamu_90000, 1437) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 75;
-		cargo_capacity: return 30;
+		cargo_capacity: switch_wamu_90000_capacity;
 		default: switch_wamu_90000_livery;
 		cargo_subtype_text: switch_wamu_90000_subtype_text;
 		purchase: switch_wamu_90000_purchase_yeardep;

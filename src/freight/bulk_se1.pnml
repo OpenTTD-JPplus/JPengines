@@ -87,7 +87,10 @@ switch(FEAT_TRAINS, SELF, switch_se_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
-
+switch(FEAT_TRAINS, SELF, switch_se_1_capacity, param_capacity_freight) {
+	1: 10;
+	20;
+}
 
 item (FEAT_TRAINS, se_1, 1439) {
 
@@ -128,7 +131,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
-	cargo_capacity: return 20;
+	cargo_capacity: switch_se_1_capacity;
 	default: switch_se_1_livery;
 	cargo_subtype_text: switch_se_1_subtype_text;
 	purchase: spriteset_se_1_jgr_purchase;

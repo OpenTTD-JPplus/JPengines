@@ -57,7 +57,10 @@ switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
 	2:  switch_taillights_8;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_waki_8000_capacity, param_capacity_freight) {
+	1: 30*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, waki_8000, 1452) {
 	property {
@@ -76,7 +79,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 21;
+		weight: 22.5;
 		cost_factor: 52;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -97,6 +100,7 @@ item (FEAT_TRAINS, waki_8000, 1452) {
 		default: switch_waki_8000_loadstack;
 		purchase: spriteset_waki_8000_jnr_purchase;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
+    cargo_capacity:switch_waki_8000_capacity;
 	}
 }
 
@@ -134,7 +138,10 @@ switch(FEAT_TRAINS, SELF, switch_wasafu_8000_loadstack, [
 	2:  switch_taillights_8;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_wasafu_8000_capacity, param_capacity_freight) {
+	1: 20*switch_capacity_quantity_multiplier()/100;
+	60;
+}
 
 item (FEAT_TRAINS, wasafu_8000, 1453) {
 	property {
@@ -153,7 +160,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS); 
 		non_refittable_cargo_classes: 0; 
-		weight: 21;
+		weight: 24;
 		cost_factor: 52;
 		running_cost_factor: 12;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -176,6 +183,7 @@ item (FEAT_TRAINS, wasafu_8000, 1453) {
 		default: switch_wasafu_8000_loadstack;
 		purchase: spriteset_wasafu_8000_jnr_purchase;
 		cargo_subtype_text: switch_wasafu_8000_subtype_text;
+    cargo_capacity:switch_wasafu_8000_capacity;
 		reverse_build_probability: return 50;
 	}
 }

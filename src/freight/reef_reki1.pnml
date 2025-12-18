@@ -39,7 +39,10 @@ random_switch (FEAT_TRAINS, SELF, random_reki_1) {
     1: spriteset_reki_1_5;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_reki_1_capacity, param_capacity_freight) {
+	1: 25;
+	50;
+}
 
 item (FEAT_TRAINS, reki_1, 1456) {
 	property {
@@ -58,7 +61,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 		cargo_age_period: 1000;
 		loading_speed: 20;
 		refittable_cargo_classes: bitmask(CC_REFRIGERATED); 
-		weight: 20;
+		weight: 27.5;
 		cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -77,6 +80,7 @@ item (FEAT_TRAINS, reki_1, 1456) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
+    cargo_capacity:switch_reki_1_capacity;
 		default: random_reki_1;
 		purchase: switch_reki_1_yeardep_purchase;
 		reverse_build_probability: return 50;

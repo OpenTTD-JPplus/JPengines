@@ -6,6 +6,7 @@
 #include "src/sort.pnml"
 #include "src/template.pnml"
 #include "src/recolour.pnml"
+#include "src/cargo_capacity.pnml"
 
 #include "src/steam/5000.pnml"
 #include "src/steam/5130.pnml"

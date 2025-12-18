@@ -396,6 +396,10 @@ switch (FEAT_TRAINS, SELF, switch_toki_25000_all_loadstack, getbits(extra_callba
     return switch_toki_25000_recolour_load;
 }
 
+switch(FEAT_TRAINS, SELF, switch_toki_25000_capacity, param_capacity_freight) {
+	1: 36;
+	60;
+}
 
 item (FEAT_TRAINS, toki_25000, 1471) {
 
@@ -432,7 +436,7 @@ graphics {
 						);
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
-	cargo_capacity: return 60;
+	cargo_capacity: switch_toki_25000_capacity;
 	default: switch_toki_25000_all_loadstack;
 	purchase: switch_toki_25000_purchase;
 	cargo_subtype_text: switch_toki_25000_subtype_text;
@@ -456,6 +460,10 @@ switch(FEAT_TRAINS, SELF, switch_toki_15000_all_loadstack, [
     1:  switch_toki_25000_cargo_type; //todo give its own class switch
 }
 
+switch(FEAT_TRAINS, SELF, switch_toki_15000_capacity, param_capacity_freight) {
+	1: 35;
+	50;
+}
 
 item (FEAT_TRAINS, toki_15000, 1470) {
 
@@ -471,7 +479,7 @@ property {
 	cargo_capacity: 50;
 	loading_speed: 10;
 	length: 7;
-	weight: 16;
+	weight: 16.7;
 	cost_factor: 30;
 	running_cost_factor: 5;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -493,7 +501,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 50;
+	cargo_capacity: switch_toki_15000_capacity;
 	default: switch_toki_15000_all_loadstack;
 	purchase: switch_toki_15000_purchase;
 	colour_mapping: switch_generic_recolour;

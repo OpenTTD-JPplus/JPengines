@@ -130,6 +130,16 @@ switch(FEAT_TRAINS, SELF, switch_tasa_5700_purchase, current_year) {
 	spriteset_tasa_5700_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_capacity_1, cargo_type_in_veh) {
+  NH3_:47;//car volume in m3
+  H2__:47;//car volume in m3
+  MEOH:47;//car volume in m3
+  20*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_tasa_5700_capacity, param_capacity_freight) {
+	1: switch_tasa_5700_capacity_1;
+	50;
+}
 
 item (FEAT_TRAINS, tasa_5700, 1485) {
 property {
@@ -148,7 +158,7 @@ property {
 		non_refittable_cargo_classes: bitmask (CC_POTABLE);
 		cargo_disallow_refit: [OIL_, PETR, FUEL, EOIL, CHLO, SULP, KAOL, RUBR];
 		loading_speed: 30;
-		weight: 11;
+		weight: 27;
 		cost_factor: 40;
 		running_cost_factor: 6;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -167,7 +177,7 @@ property {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
-		cargo_capacity: return 50;
+		cargo_capacity: switch_tasa_5700_capacity;
 		default: switch_tasa_5700_wearstack;
 		purchase: switch_tasa_5700_purchase;
 		cargo_subtype_text: switch_tasa_5700_subtype_text;

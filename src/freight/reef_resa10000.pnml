@@ -16,7 +16,10 @@ spriteset(spriteset_remufu_10000_purchase, "gfx/freight/resa_10000.png") {
 	template_purchase(89, 64)
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_resa_10000_capacity, param_capacity_freight) {
+	1: 24;
+	60;
+}
 
 item (FEAT_TRAINS, resa_10000, 1460) {
 	property {
@@ -52,7 +55,7 @@ item (FEAT_TRAINS, resa_10000, 1460) {
 							)
 						);
 
-		cargo_capacity: return 60;
+		cargo_capacity: switch_resa_10000_capacity;
 		speed: switch_speedboost_1;
 		purchase_speed: return 85;
 		default: spriteset_resa_10000;
@@ -69,6 +72,11 @@ switch(FEAT_TRAINS, SELF, switch_remufu_10000_loadstack, [
     0:  spriteset_remufu_10000;
  //   1:  spritegroup_boxvan8_doors_load;  //todo loading stages
 	1:  switch_taillights_7;
+}
+
+switch(FEAT_TRAINS, SELF, switch_remufu_10000_capacity, param_capacity_freight) {
+	1: 15;
+	45;
 }
 
 item (FEAT_TRAINS, remufu_10000, 1461) {
@@ -107,7 +115,7 @@ item (FEAT_TRAINS, remufu_10000, 1461) {
 							)
 						);
 
-		cargo_capacity: return 45;
+		cargo_capacity: switch_remufu_10000_capacity;
 		speed: switch_speedboost_1;
 		purchase_speed: return 100;
 		default: switch_remufu_10000_loadstack;

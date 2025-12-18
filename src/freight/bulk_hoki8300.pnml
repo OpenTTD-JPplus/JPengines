@@ -23,8 +23,10 @@ spriteset(spriteset_hoki_9300_purchase, "gfx/freight/hoki_covered.png") {
 
 
 
-
-
+switch(FEAT_TRAINS, SELF, switch_hoki_8300_capacity, param_capacity_freight) {
+	1: 35;
+	65;
+}
 
 item (FEAT_TRAINS, hoki_8300, 1464) {
 
@@ -38,10 +40,9 @@ property {
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;
-	speed: 100 km/h;
 	loading_speed: 40;
 	cargo_capacity: 65;
-	weight: 17;
+	weight: 17.2;
 	length: 7;
 //	refittable_cargo_classes: bitmask(CC_COVERED); 
 	default_cargo_type: FOOD;
@@ -64,7 +65,7 @@ graphics {
 						);
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
-	cargo_capacity: return 65;
+	cargo_capacity: switch_hoki_8300_capacity;
 	default: spriteset_hoki_8300_cream;
 	purchase: spriteset_hoki_8300_purchase;
 	}

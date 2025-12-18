@@ -63,8 +63,10 @@ random_switch(FEAT_TRAINS, SELF, random_ka_1_livery) {
 	1: spritegroup_ka_1_brown_load;
 	}
 	
-
-
+switch(FEAT_TRAINS, SELF, switch_ka_1_capacity, param_capacity_freight) {
+	1: 10*switch_capacity_quantity_multiplier()/100;
+	20;
+}
 
 item (FEAT_TRAINS, ka_1, 1282) {
 
@@ -89,7 +91,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	length: 4;
 	loading_speed: 20;
-	weight: 9;
+  weight: 6;
 	}
 graphics {
 		additional_text:	string(STR_CONCAT_3S, 
@@ -104,7 +106,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 60;
-	cargo_capacity: return 20;
+	cargo_capacity: switch_ka_1_capacity;
 	default: random_ka_1_livery;
 //	cargo_subtype_text: switch_ka_1_subtype_text;
 	purchase: spriteset_ka_1_jgr_purchase;

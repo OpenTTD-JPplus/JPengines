@@ -346,7 +346,10 @@ switch(FEAT_TRAINS, SELF, switch_tora_5000_cargo_type, cargo_type_in_veh) {
 }
 
 
-
+switch(FEAT_TRAINS, SELF, switch_tora_5000_capacity, param_capacity_freight) {
+	1: 17;
+	40;
+}
 
 item (FEAT_TRAINS, tora_5000, 1933) {
 
@@ -387,7 +390,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 40;
+	cargo_capacity: switch_tora_5000_capacity;
 	default: switch_tora_5000_cargo_type;
 	purchase: spriteset_tora_5000_purchase;
 	colour_mapping: switch_generic_recolour;

@@ -14,8 +14,17 @@ STR_PARAM_DESC_BASECOSTMODRUN	:Adjust vehicle running costs, to match Japan Set
 STR_PARAM_NAME_PURCHASELOGO     :Purchase Menu Logos
 STR_PARAM_DESC_PURCHASELOGO     :Enable or disable the railway company logos in the vehicle purchase menu
 
+STR_PARAM_NAME_FREIGHT_CAPACITY     :Freight Cars Capacity
+STR_PARAM_DESC_FREIGHT_CAPACITY     :Adjust freight cars capacity. "Realistic" option is not optimized for gameplay. Use with caution
+STR_PARAM_NAME_PAX_CAPACITY     :Passenger Cars Capacity
+STR_PARAM_DESC_PAX_CAPACITY     :Adjust passenger cars capacity. "Realistic" option is not optimized for gameplay. Use with caution
+
+STR_PARAM_NAME_LOAD_SPEED     :Loading Speed
+STR_PARAM_DESC_LOAD_SPEED     :Adjust vehicle loading speed
+
+STR_PARAM_REAL		:Realistic
 STR_PARAM_VLOW		:Very Low
-STR_PARAM_LOW		:Low
+STR_PARAM_LOW		  :Low
 STR_PARAM_NORMAL	:Normal
 STR_PARAM_HIGH		:High
 STR_PARAM_VHIGH		:Very High

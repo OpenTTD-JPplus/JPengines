@@ -446,7 +446,10 @@ switch(FEAT_TRAINS, SELF, stack_chiki_1500, [
 	3:  switch_flatbed_7_rungs_front;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_chiki_1500_capacity, param_capacity_freight) {
+	1: 35;
+	45;
+}
 
 //main item
 item (FEAT_TRAINS, chiki_1500, 1941) {
@@ -461,7 +464,7 @@ property {
 	speed: 75 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
-	weight: 16;
+	weight: 16.2;
 	length: 7;
 	dual_headed: 0;
 	cargo_capacity: 50; 
@@ -488,7 +491,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 75;
-	cargo_capacity: return 50;
+	cargo_capacity: switch_chiki_1500_capacity;
 	default: stack_chiki_1500;
 	purchase: switch_chiki_1500_purchase;
 	colour_mapping: switch_generic_recolour;
@@ -530,7 +533,10 @@ switch(FEAT_TRAINS, SELF, stack_chiki_7000, [
 	3:  switch_flatbed_7_rungs_front;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_chiki_7000_capacity, param_capacity_freight) {
+	1: 35*switch_capacity_quantity_multiplier()/100;
+	60;
+}
 
 //main item
 item (FEAT_TRAINS, chiki_7000, 1529) {
@@ -569,7 +575,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 100;
-	cargo_capacity: return 60;
+	cargo_capacity: switch_chiki_7000_capacity;
 	default: stack_chiki_7000;
 	purchase: switch_chiki_7000_purchase;
 	colour_mapping: switch_generic_recolour;

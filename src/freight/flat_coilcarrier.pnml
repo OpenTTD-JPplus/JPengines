@@ -159,6 +159,11 @@ switch(FEAT_TRAINS, SELF, switch_coilcarrier_cargo_selection, cargo_type_in_veh)
 	random_coilcarrier_all;
 }
 
+//kurogane line has 80t wagons
+switch(FEAT_TRAINS, SELF, switch_coil_carrier_capacity, param_capacity_freight) {
+	1: 60*switch_capacity_quantity_multiplier()/100;
+	42;
+}
 
 item (FEAT_TRAINS, coil_carrier, 1402) {
 	property {
@@ -198,7 +203,7 @@ item (FEAT_TRAINS, coil_carrier, 1402) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 65;
-		cargo_capacity: return 42;
+		cargo_capacity: switch_coil_carrier_capacity;
 		default: switch_coilcarrier_cargo_selection;
 		purchase: switch_coilcarrier_purchase;
 		colour_mapping: switch_generic_recolour;

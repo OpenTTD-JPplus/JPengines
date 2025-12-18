@@ -787,7 +787,10 @@ switch(FEAT_TRAINS, SELF, switch_ku_5000_purchase, current_year) {
 	0..1990: spriteset_ku_5000_jnr_purchase;
 	spriteset_ku_5000_jrf_purchase;
 	}
-
+switch(FEAT_TRAINS, SELF, switch_ku_5000_capacity, param_capacity_freight) {
+    1: 12;
+    40;
+  }
 
 item (FEAT_TRAINS, ku_5000, 1944) {
 
@@ -828,7 +831,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
-	cargo_capacity: return 40;
+	cargo_capacity: switch_ku_5000_capacity;
 	default: switch_ku_5000_livery;
 	purchase: switch_ku_5000_purchase;
 	cargo_subtype_text: switch_ku_5000_subtype_text;

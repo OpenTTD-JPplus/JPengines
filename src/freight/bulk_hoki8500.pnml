@@ -63,6 +63,11 @@ switch(FEAT_TRAINS, SELF, switch_hoki_8500_purchase, current_year) {
 	spriteset_hoki_8500_jrf_purchase;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_hoki_8500_capacity, param_capacity_freight) {
+	1: 35;
+	60;
+}
+
 
 item (FEAT_TRAINS, hoki_8500, 1285) {
 
@@ -88,7 +93,8 @@ property {
 	running_cost_factor: 6;
 	running_cost_base: RUNNING_COST_STEAM;
 	loading_speed: 40;
-	length: 6;
+  length:6;
+  weight:15;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -102,7 +108,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 85;
-	cargo_capacity: return 60;
+	cargo_capacity: switch_hoki_8500_capacity;
 	default: random_hoki_8500_livery;
 	purchase: switch_hoki_8500_purchase;
 //	cargo_subtype_text: switch_hoki_8500_subtype_text;

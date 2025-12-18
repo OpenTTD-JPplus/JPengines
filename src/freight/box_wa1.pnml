@@ -95,6 +95,10 @@ switch(FEAT_TRAINS, SELF, switch_wa_1_subtype_text, cargo_subtype) {
 	   return CB_RESULT_NO_TEXT;
 	}
 
+switch(FEAT_TRAINS, SELF, switch_wa_1_capacity, param_capacity_freight) {
+	1: 10*switch_capacity_quantity_multiplier()/100;
+	20;
+}
 
 
 item (FEAT_TRAINS, wa_1, 1932) {
@@ -121,7 +125,7 @@ property {
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT);
 	length: 4;
 	loading_speed: 20;
-	weight: 10;
+  weight: 7;
 	}
 graphics {
 	additional_text:	string(STR_CONCAT_3S, 
@@ -136,7 +140,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 20;
+	cargo_capacity: switch_wa_1_capacity;
 	default: switch_wa_1_livery;
 	cargo_subtype_text: switch_wa_1_subtype_text;
 	purchase: spriteset_wa_1_jgr_purchase;

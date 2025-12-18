@@ -96,7 +96,10 @@ switch(FEAT_TRAINS, SELF, switch_waki_8000_loadstack, [
     1:  spritegroup_boxvan8_doors_load;
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_waki_8000_capacity, param_capacity_freight) {
+	1: 30*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, mail_waki_8000, 1395) {
 	property {
@@ -135,5 +138,6 @@ item (FEAT_TRAINS, mail_waki_8000, 1395) {
 		default: switch_waki_8000_loadstack;
 		purchase: switch_waki_8000_purchase_yeardep;
 		cargo_subtype_text: switch_waki_8000_subtype_text;
+    cargo_capacity:switch_waki_8000_capacity;
 	}
 }

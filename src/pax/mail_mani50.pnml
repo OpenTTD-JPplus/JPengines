@@ -12,7 +12,10 @@ spriteset(spriteset_mani_50_purchase, "gfx/paxmail/suyu15.png") {
 	template_purchase(1, 192)
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_mani_50_capacity, param_capacity_freight) {
+	1: 13*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, mail_mani_50, 1370) {
 	property {
@@ -31,7 +34,7 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 		loading_speed: 50;
 		refittable_cargo_classes: bitmask(CC_MAIL); 
 		non_refittable_cargo_classes: 0; 
-		weight: 20;
+		weight: 28.6;
 		cost_factor: 52;
 		running_cost_factor: 8;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -50,6 +53,6 @@ item (FEAT_TRAINS, mail_mani_50, 1370) {
 
 		default: spriteset_mani_50;
 		purchase: spriteset_mani_50_purchase;
-		
+		cargo_capacity:switch_mani_50_capacity;
 	}
 }

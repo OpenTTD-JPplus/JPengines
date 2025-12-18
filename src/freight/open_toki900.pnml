@@ -334,8 +334,10 @@ switch(FEAT_TRAINS, SELF, switch_toki_900_cargo_type, cargo_type_in_veh) {
 	switch_toki_900_cargo_class;
 }
 
-
-
+switch(FEAT_TRAINS, SELF, switch_toki_900_capacity, param_capacity_freight) {
+	1: 30*switch_capacity_quantity_multiplier()/100;
+	45;
+}
 
 item (FEAT_TRAINS, toki_900, 1284) {
 
@@ -356,7 +358,7 @@ property {
 	refittable_cargo_classes: bitmask(CC_BULK, CC_COVERED, CC_PIECE_GOODS); 
 	non_refittable_cargo_classes: 0;
 	cargo_disallow_refit: [BAKE, PCL_, BEER, CHSE, MEAT, OYST, EOIL, LVST, BOOM, VBOD, VEHI];
-	weight: 11;
+	weight: 10.7;
 	cost_factor: 22;
 	running_cost_factor: 4;
 	running_cost_base: RUNNING_COST_STEAM;
@@ -375,7 +377,7 @@ graphics {
 
 	speed: switch_speedboost_1;
 	purchase_speed: return 65;
-	cargo_capacity: return 45;
+	cargo_capacity: switch_toki_900_capacity;
 	default: switch_toki_900_cargo_type;
 	purchase: spriteset_toki_900_purchase;
 	colour_mapping: switch_generic_recolour;

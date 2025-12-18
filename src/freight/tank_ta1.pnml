@@ -63,6 +63,17 @@ switch(FEAT_TRAINS, SELF, switch_ta_1_wearstack, [
     1:  random_ta_1_wear;
 }
 
+switch(FEAT_TRAINS, SELF, switch_ta_1_capacity_1, cargo_type_in_veh) {
+  NH3_:9;//car volume in m3
+  H2__:9;//car volume in m3
+  MEOH:9;//car volume in m3
+  8*switch_capacity_quantity_multiplier()/100;
+}
+switch(FEAT_TRAINS, SELF, switch_ta_1_capacity, param_capacity_freight) {
+	1: switch_ta_1_capacity_1;
+	15;
+}
+
 item (FEAT_TRAINS, ta_1, 1480) {
 	property {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
@@ -78,7 +89,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 		refit_cost: 0;
 		refittable_cargo_classes: bitmask (CC_LIQUID);
 		loading_speed: 30;
-		weight: 8;
+		weight: 9;
 		cost_factor: 14;
 		running_cost_factor: 2;
 		running_cost_base: RUNNING_COST_STEAM;
@@ -97,7 +108,7 @@ item (FEAT_TRAINS, ta_1, 1480) {
 
 		speed: switch_speedboost_1;
 		purchase_speed: return 60;
-//		cargo_capacity: return 0;
+		cargo_capacity: switch_ta_1_capacity;
 		default: switch_ta_1_wearstack;
 		purchase: spriteset_ta_1_purchase;
 //		cargo_subtype_text: switch_taki_1000_subtype_text;

@@ -1,0 +1,39 @@
+//As cargo_capacity unit by default equals to 1 t, this switch controls how many units there are per 1t of cargotype
+//Data is calculated using real world conversion, with correction if cargo exceeds load limits
+
+//20t 
+//40m3
+
+// m3/t
+switch(FEAT_TRAINS, SELF, switch_capacity_quantity_multiplier, cargo_type_in_veh) {
+	//bags,crates,etc in tonne
+  MAIL: 400;
+  GOOD: 200;
+
+  // m3/tonne * 100
+  ACET:95;
+  ACID:95;
+  CHLO:71;
+  BEER:99;
+  FORM:82; 
+  HYAC:87;
+  N7__:123;
+  O2__:88;
+  PHAC:53;
+  SUAC:54;
+  NHNO:59;
+  MILK:97;
+  C2H4:127;
+  PETR:127;
+  NAPH:127;
+  OIL_:118;
+  LYE_:66;
+  UREA:77;
+  RUBR:105;
+  LATX:105;
+  C3H6:127;
+  PLAS:95;
+  
+
+	100;
+}

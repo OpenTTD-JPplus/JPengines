@@ -50,6 +50,51 @@ grf {
 			}
 		}
 		*/
+		param 3 {
+			param_capacity_freight {
+				type: int;
+				name: string(STR_PARAM_NAME_FREIGHT_CAPACITY);
+				desc: string(STR_PARAM_DESC_FREIGHT_CAPACITY);
+				min_value: 0;
+        max_value: 1;
+        def_value: 0;
+        names: {
+          0: string(STR_PARAM_NORMAL);
+          1: string(STR_PARAM_REAL);
+        };
+			}
+		}
+		param 4 {
+			param_capacity_pax {
+				type: int;
+				name: string(STR_PARAM_NAME_PAX_CAPACITY);
+				desc: string(STR_PARAM_DESC_PAX_CAPACITY);
+				min_value: 0;
+        max_value: 1;
+        def_value: 0;
+        names: {
+          0: string(STR_PARAM_NORMAL);
+          1: string(STR_PARAM_REAL);
+        };
+			}
+		}
+		// param 5 {
+		// 	param_load_speed {
+		// 		type: int;
+		// 		name: string(STR_PARAM_NAME_LOAD_SPEED);
+		// 		desc: string(STR_PARAM_DESC_LOAD_SPEED);
+		// 		min_value: 0;
+    //     max_value: 4;
+    //     def_value: 2;
+    //     names: {
+    //       0: string(STR_PARAM_VLOW);
+    //       1: string(STR_PARAM_LOW);
+    //       2: string(STR_PARAM_NORMAL);
+    //       3: string(STR_PARAM_HIGH);
+    //       4: string(STR_PARAM_VHIGH);
+    //     };
+		// 	}
+		// }
 }
 
 //disable default trains

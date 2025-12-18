@@ -10,7 +10,10 @@ spriteset(spriteset_mani_30_purchase, "gfx/paxmail/mailvans.png") {
 	template_purchase(1, 224)
 }
 
-
+switch(FEAT_TRAINS, SELF, switch_mani_30_capacity, param_capacity_freight) {
+	1: 13*switch_capacity_quantity_multiplier()/100;
+	100;
+}
 
 item (FEAT_TRAINS, mail_mani_30, 1380) {
 	property {
@@ -47,6 +50,7 @@ item (FEAT_TRAINS, mail_mani_30, 1380) {
 
 		default: spriteset_mani_30;
 		purchase: spriteset_mani_30_purchase;
+    cargo_capacity:switch_mani_30_capacity;
 		
 	}
 }
