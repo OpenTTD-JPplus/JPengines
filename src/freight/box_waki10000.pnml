@@ -63,7 +63,7 @@ property {
 	introduction_date: date(1967,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_10000);
-	speed: 85 km/h;
+	speed: 100 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;

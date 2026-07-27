@@ -272,6 +272,10 @@ switch(FEAT_TRAINS, SELF, switch_toki_25000_cargo_type, cargo_type_in_veh) {
 	STBR: random_toki_25000_metalmixed;
 	IRON: random_toki_25000_metalmixed;
 	CSTI: random_toki_25000_metalmixed;
+	RBAR: spritegroup_toki_25000_rods;
+	PIPE: spritegroup_toki_25000_rods;
+	STPP: spritegroup_toki_25000_rods;
+	STTB: spritegroup_toki_25000_rods;
 	
 	ENSP: random_toki_25000_supplies;
 	FMSP: random_toki_25000_supplies;

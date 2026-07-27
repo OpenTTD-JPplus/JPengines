@@ -6271,7 +6271,7 @@ graphics { // graphics for engine
   additional_text:	string(STR_CONCAT_4S, 
                         string(STR_DESC_POWER_DC15),
                         string(STR_DESC_NARROWGAUGE),
-                        string(STR_DESC_USAGE_GP),
+                        string(STR_DESC_USAGE_LF),
                         string(STR_CONCAT_1C, 
                            string(STR_SUFFIX_JGR)
                     )
@@ -28166,7 +28166,7 @@ property {
 	introduction_date: date(1967,1,1);
 	climates_available: ALL_CLIMATES;
 	name: string(STR_NAME_WAKI_10000);
-	speed: 85 km/h;
+	speed: 100 km/h;
 	air_drag_coefficient: 0;
 	power: 0;
 	dual_headed: 0;

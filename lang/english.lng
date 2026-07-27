@@ -226,6 +226,7 @@ STR_NAME_PASSENGER_24	:24 Series Sleeper Coach
 STR_NAME_PASSENGER_50	:50 Series Passenger Coach
 STR_NAME_PAX_50_5000	:50-5000 Series {GOLD}"Rapid Kaikyō"{BLACK}
 
+STR_NAME_TWILIGHT_24	:24 Series {GOLD}"Twilight Express"{BLACK}
 STR_NAME_PAX_26			:E26 Series {GOLD}"Cassiopeia"{BLACK}
 STR_NAME_PAX_77			:77 Series {GOLD}"Seven Stars in Kyushu"{BLACK}
 STR_NAME_JOYFUL_12		:12 Series {GOLD}"Joyful Train"{BLACK}

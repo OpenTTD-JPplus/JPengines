@@ -255,6 +255,7 @@ switch(FEAT_TRAINS, SELF, switch_flatbed_7_cargo_type, cargo_type_in_veh) {
 	STSE: random_flatbed_7_metal_prod;
 	NICK: random_flatbed_7_metal;
 	COBL: random_flatbed_7_metal;
+	STIG: random_flatbed_7_metal_prod;
 	
 	ENSP: random_flatbed_7_ensp;
 	FMSP: random_flatbed_7_fmsp;
@@ -467,7 +468,7 @@ property {
 	cargo_capacity: 50; 
 	refit_cost: 0;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_LIQUID, CC_POWDERIZED, CC_BULK); 
 	default_cargo_type: WOOD;
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
@@ -553,7 +554,7 @@ property {
 	running_cost_base: RUNNING_COST_STEAM;
 	length: 7;
 	refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, CC_OVERSIZED);
-	non_refittable_cargo_classes: 0; 
+	non_refittable_cargo_classes: bitmask(CC_LIQUID, CC_POWDERIZED, CC_BULK); 
 	cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
 	misc_flags: bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 	}

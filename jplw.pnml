@@ -119,6 +119,7 @@
 #include "src/pax/50_series.pnml"
 #include "src/pax/50_5000_series.pnml"
 
+#include "src/pax/24_series_twilight.pnml"
 #include "src/pax/26_series.pnml"
 #include "src/pax/7stars.pnml"
 #include "src/pax/sleeper_10series.pnml"
